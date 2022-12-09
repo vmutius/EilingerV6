@@ -1,0 +1,38 @@
+.home-section{
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    z-index: 2;
+    background-color: #E7EBF1;
+  }
+  .sidebar.open ~ .home-section{
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+  .home-section {
+    .text{
+      display: inline-block;
+      color: #11101d;
+      font-size: 25px;
+      font-weight: 500;
+      margin: 18px
+    }
+    p, ul{
+      font-size: 15px;
+      font-weight: 500;
+      margin: 18px
+    }
+    li{
+      margin-left: 18px
+    }
+
+  }
+
+  @media (max-width: 420px) {
+    .sidebar li .tooltip{
+      display: none;
+    }
+  }
+  

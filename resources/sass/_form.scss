@@ -1,0 +1,136 @@
+.wrapper {
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center; }
+    
+    
+    .form-group {
+    display: flex; }
+    .form-group .form-wrapper {
+      width: 50%; }
+      .form-group .form-wrapper:first-child {
+        margin-right: 20px; }
+    
+    .form-wrapper {
+    margin-bottom: 17px; }
+    .form-wrapper label {
+      margin-bottom: 9px;
+      display: block; }
+    
+    .form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding:15px 20px;
+    border-radius:25px;
+    background:rgba(255,255,255,.1);
+    }
+    .form-control:focus {
+      border: 1px solid #ae3c33; }
+    
+      button {
+        border: none;
+        min-width: 300px;
+        height: 40px;
+        margin: auto;
+        margin-top: 33px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100;
+        background: #ae3c33;
+        font-size: 20px;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: "Roboto";
+        overflow: hidden;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s; }
+        button:before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #f11a09;
+          -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+          -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+          -webkit-transition-property: transform;
+          transition-property: transform;
+          -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+          -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out; }
+        button:hover:before {
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+          -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+          transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); }
+    
+    input::placeholder {
+    font-family: "Ubuntu", sans-serif;
+    }
+    
+    /*--------------------------------------------------------------
+    # Contact
+    --------------------------------------------------------------*/
+    .contact .info {
+    border-top: 3px solid #47b2e4;
+    border-bottom: 3px solid #47b2e4;
+    padding: 30px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact .info i {
+    font-size: 20px;
+    color: #47b2e4;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #e7f5fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    }
+    
+    .contact .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #37517e;
+    }
+    
+    .contact .info p {
+    padding: 0 0 10px 60px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #6182ba;
+    }
+    
+    .contact .info .email p {
+    padding-top: 5px;
+    }
+    
+    .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+    background: #47b2e4;
+    color: #fff;
+    }
+    

@@ -1,0 +1,19 @@
+.btn-colour-1 {
+    color: #fff;
+    background-color: rgba(40, 58, 90, 0.9);
+    border-color:rgba(40, 58, 90, 0.9);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-radius: 1;
+  }
+  
+  .btn-colour-1:hover,
+  .btn-colour-1:active,
+  .btn-colour-1:focus,
+  .btn-colour-1.active {
+    /* let's darken #004E64 a bit for hover effect */
+    background:#1d1B31;
+    color: #ffffff;
+    border-color:rgba(25, 37, 57, 0.9) ;
+  }
+  
