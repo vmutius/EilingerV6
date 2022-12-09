@@ -1,7 +1,7 @@
 <x-layouts.eilinger>
 
 @section('title', 'Datenschutzerklärung')
-@section('content')
+
 <main id="main">
     <section id="gesuche" class="pricing section-bg">
         <div class="container" data-aos="fade-up">
@@ -145,5 +145,5 @@
     </section>
 
 </main><!-- End #main -->
-@endsection
+
 </x-layouts.eilinger>

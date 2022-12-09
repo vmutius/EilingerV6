@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Auth\RegisterInst;
+use App\Http\Livewire\Auth\RegisterPrivat;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Controllers\HomeController;
 
@@ -29,6 +30,7 @@ Route::controller(HomeController::class)->group(function() {
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)->name('login');
     Route::get('/register_inst', RegisterInst::class)->name('register_inst');
+    Route::get('/register_privat', RegisterPrivat::class)->name('register_privat');
 });
 
 

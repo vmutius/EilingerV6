@@ -41,7 +41,7 @@ class RegisterInst extends Component
     {
         $countries = Country::all();
         return view('livewire.auth.register_inst', compact('countries'))
-            ->extends('components.layouts.eilinger')
-            ->section('content');
+            ->layout(\App\View\Components\Layouts\Eilinger::class);
+            
     }
 }

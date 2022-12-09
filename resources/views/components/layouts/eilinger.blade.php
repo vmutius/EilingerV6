@@ -39,7 +39,7 @@
 
     </section><!-- End Hero -->
 
-    @yield('content')
+    {{ $slot }}
 
     <!-- ======= Footer ======= -->
     @include('components.layouts.footer')

@@ -8,6 +8,7 @@ class Login extends Component
 {
     public function render()
     {
-        return view('livewire.auth.login');
+        return view('livewire.auth.login')
+            ->layout(\App\View\Components\Layouts\Eilinger::class);
     }
 }

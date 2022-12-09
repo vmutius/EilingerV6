@@ -92,7 +92,7 @@
     </ul>
   </div>
 
-  @yield('content')
+  {{ slot }}
 
   
   <script>
