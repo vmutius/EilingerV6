@@ -8,15 +8,10 @@
             <div>
                 <form wire:submit.prevent="register">
                     @csrf
-                    <div class="group">
-                        <label for="">Benutzername *</label>
-                        <input wire:model='username' type="text" class="form-control" name="username" id="username" required>
-                    </div>
-                    <div class="group">
-                        <label for="">Name Verein/Organisation *</label>
-                        <input wire:model='name_inst' type="text" class="form-control" name="name_inst" id="name_inst" 
-                            placeholder="Firma Mustermann"  required>
-                    </div>
+                    <x-form.input label='Benutzername *' input_var='username'required/>
+
+                    
+                    <x-form.input label='Name Verein/Organisation *' input_var='name_inst' placeholder='Firma Muster' required/>
                     <div class="group">
                         <label for="">Strasse *</label>
                         <input wire:model='street' type="text" class="form-control" name="street" id="street"
@@ -64,14 +59,8 @@
                             data-v-max-length="20" required>
                         <div class="form-text">Bitte Ländercode mit eingeben</div>
                     </div>
-                    <div class="group">
-                        <label for="">Email *</label>
-                        <input wire:model='email_inst' type="email" class="form-control" name="email_inst" id="email_inst"
-                            placeholder="max@firma_mustermann.ch" value="<?php if (isset($_POST['email_inst'])) {
-                                echo $_POST['email_inst'];
-                            } ?>" data-v-min-length="6"
-                            data-v-max-length="100" required>
-                    </div>
+                    <x-form.input label='Email *' input_var='email'/>
+
                     <div class="group">
                         <label for="">Webseite</label>
                         <input wire:model='website' type="text" class="form-control" name="website" id="website"

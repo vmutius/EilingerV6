@@ -32,7 +32,7 @@ class RegisterInst extends Component
 
     protected $rules = [
         'email' => 'required|email|unique:users',
-        'password' => 'required|min:6|same:passwordConfirmation',
+        'password' => 'required|min:6|same:password_confirmation',
     ];
 
     public function updatedEmail()
@@ -42,7 +42,7 @@ class RegisterInst extends Component
 
     public function register()
     {
-
+        $this->validate();
 
         $user = User::create([
             'username' => $this->username,

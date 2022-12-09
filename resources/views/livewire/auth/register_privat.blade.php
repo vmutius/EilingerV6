@@ -15,7 +15,7 @@
 
             <form action="{{ route('register_privat') }}" method="POST">
                 @csrf
-                <input type="hidden" id="type" name="type" value="nat">
+                <x-form.input label='Benutzername *' input_var='username'/>
 
                 <div class="group">
                     <label for="salutation">Anrede *</label>
