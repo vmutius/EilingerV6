@@ -1,3 +1,4 @@
+@section('title', 'Gesuchsportal')
 <main id="main">
     <section id="contact" class="contact">
         <div class="container">

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Child extends Model
+class Application extends Model
 {
     use HasFactory;
 
@@ -14,19 +14,8 @@ class Child extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'lastname',
-        'firstname',
-        'birthday'
-    ];
-
-    public function user()
+       public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
-    }
-
-    public function application()
-    {
-        return $this->belongsTo(Application::class, 'application_id');
     }
 }

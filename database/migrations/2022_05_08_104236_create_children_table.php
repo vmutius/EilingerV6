@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
+use App\Models\Application;
 
 class CreateChildrenTable extends Migration
 {
@@ -15,13 +17,11 @@ class CreateChildrenTable extends Migration
     {
         Schema::create('childrens', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('appl_id')->nullable($value = true);
+            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->string('lastname', 255);
             $table->string('firstname', 255);
             $table->date('birthday');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('appl_id')->references('id')->on('applications');
             $table->timestamps();
         });
     }

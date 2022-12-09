@@ -15,6 +15,7 @@ class Address extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
         'street',
         'number',
         'plz',
@@ -31,6 +32,11 @@ class Address extends Model
     public function country()
     {
         return $this->belongsTo(Country::class, 'country');
+    }
+
+    public function application()
+    {
+        return $this->belongsTo(Application::class, 'application_id');
     }
 
 }

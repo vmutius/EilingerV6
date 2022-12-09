@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
 
 return new class extends Migration
 {
@@ -34,11 +35,10 @@ return new class extends Migration
 
         Schema::create('applications', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignIdFor(User::class);
             $table->string('appl_status')->default('not_send');
             $table->string('bereich');
             $table->longText('comment');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

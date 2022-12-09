@@ -26,4 +26,9 @@ class Partner extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    
+    public function application()
+    {
+        return $this->belongsTo(Application::class, 'application_id');
+    }
 }

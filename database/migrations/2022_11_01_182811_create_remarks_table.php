@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Application;
 
 return new class extends Migration
 {
@@ -15,10 +16,8 @@ return new class extends Migration
     {
         Schema::create('remarks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('appl_id')->nullable($value = true);
-            $table->timestamps();
+            $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->text('remark');
-            $table->foreign('appl_id')->references('id')->on('applications');
             $table->timestamps();
         });
     }
