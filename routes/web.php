@@ -23,6 +23,7 @@ Route::controller(HomeController::class)->group(function() {
     Route::get('/disclaimer', 'disclaimer')->name('disclaimer');
     Route::get('/impressum', 'impressum')->name('impressum');
     Route::get('/datenschutz', 'datenschutz')->name('datenschutz');
+    Route::get('/verifikation', 'verifikation')->name('verifikation');
 
 });
 

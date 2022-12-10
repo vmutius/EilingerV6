@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('type');
             $table->string('salutation');
-            $table->boolean('is_admin')->default(false);
+            $table->boolean('isAdmin')->default(false);
             $table->string('lastname', 255);
             $table->string('firstname', 255);
             $table->date('birthday')->nullable($value = true);
@@ -27,13 +27,13 @@ class CreateUsersTable extends Migration
             $table->string('email', 100)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password', 255);
-            $table->string('name_inst', 255)->nullable($value = true);
-            $table->string('email_inst', 100)->nullable($value = true);
-            $table->string('telefon_inst', 20)->nullable($value = true);
+            $table->string('nameInst', 255)->nullable($value = true)->unique();
+            $table->string('emailInst', 100)->nullable($value = true)->unique();
+            $table->string('telefonInst', 20)->nullable($value = true);
             $table->string('website', 255)->nullable($value = true);
             $table->string('mobile', 20)->nullable($value = true);
-            $table->string('soz_vers_nr', 20)->nullable($value = true);
-            $table->string('civil_status')->nullable($value = true);
+            $table->string('sozVersNr', 20)->nullable($value = true);
+            $table->string('civilStatus')->nullable($value = true);
             $table->rememberToken();
             $table->timestamps();
         });

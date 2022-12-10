@@ -1,11 +1,17 @@
 <x-layouts.eilinger>
 
-@section('title', 'Impressum')
-@section('content')
+    @section('title', 'Impressum')
+            
     <main id="main">
-    <h1>Impressum</h1>
-
-
-    </main><!-- End #main -->
-@endsection
-</x-layouts.eilinger>
+        <section id="gesuche" class="pricing section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Impressum</h2>
+    
+        
+        
+                </div>
+            </div>
+        </section>
+    </main><!-- End #main -->        
+    </x-layouts.eilinger>

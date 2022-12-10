@@ -58,13 +58,13 @@ class User extends Authenticatable
         'telefon',
         'email',
         'password',
-        'name_inst',
-        'email_inst',
-        'telefon_inst',
+        'nameInst',
+        'emailInst',
+        'telefonInst',
         'website',
         'mobile',
-        'soz_vers_nr',
-        'zivilstand',
+        'sozVersNr',
+        'civilStatus',
         'status'
     ];
 

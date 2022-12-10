@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Auth;
 
+use App\Http\Traits\AddressUpdateTrait;
+use App\Http\Traits\UserUpdateTrait;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Country;
@@ -10,49 +12,65 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterInst extends Component
 {
-    public $username ='';
-    public $name_inst = '';
-    public $email = '';
-    public $password = '';
-    public $password_confirmation = '';
-    public $user_id = '';
-    public $street = '';
-    public $number = '';
-    public $plz = '';
-    public $town = '';
-    public $country = '';
-    public $telefon_inst = '';
-    public $email_inst = '';
-    public $website = '';
-    public $salutation = '';
-    public $firstname = '';
-    public $lastname = '';
-    public $telefon = '';
-    public $mobile = '';
+    use UserUpdateTrait, AddressUpdateTrait;
+    
+    public $terms = false;
 
     protected $rules = [
-        'email' => 'required|email|unique:users',
-        'password' => 'required|min:6|same:password_confirmation',
+        //User
+        'username' => 'required|unique:users,username',
+        'nameInst' =>'required|unique:users,nameInst',
+        'telefon' => '',
+        'mobile' => '',
+        'telefonInst' => '',
+        'email' => 'required|email|unique:users,email',
+        'nameInst' => 'min:3',
+        'emailInst' => 'required|email|unique:users',
+        'password' => 'required|confirmed|min:8',
+        'password_confirmation' => '',
+        'salutation' => 'required',
+        'firstname' => 'required|min:2',
+        'lastname' => 'required|min:2',
+
+        //Address
+        'street' => 'required|min:3',
+        'number' => '',
+        'plz' => 'required|min:4',
+        'town' => 'required|min:3',
+        'country' => 'required',
+
+        //
+        'terms' =>'required',
     ];
 
-    public function updatedEmail()
+    protected $messages = [
+        //User
+        'username.unique' => 'Dieser Benutzername ist bereits vergeben',
+        'nameInst.unique' => 'Ihre Organisation ist bereits registriert',
+        'emailInst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
+
+        //Address
+        'plz' => 'Postleitzahl ist eine vierstellige Zahl',
+    ];
+
+    public function updated($propertyName)
     {
-        $this->validate(['email' => 'unique:users']);
+        $this->validateOnly($propertyName);
     }
 
-    public function register()
+    public function registerInst()
     {
         $this->validate();
 
         $user = User::create([
             'username' => $this->username,
             'type' => 'jur',
-            'name_inst'=> $this->name_inst,
+            'nameInst'=> $this->nameInst,
             'email' => $this->email,
             'password' => Hash::make($this->password),
             'salutation' => $this->salutation,
-            'telefon_inst' => $this->telefon_inst,
-            'email_inst' => $this->email_inst,
+            'telefonInst' => $this->telefonInst,
+            'emailInst' => $this->emailInst,
             'website' => $this->website,
             'firstname' => $this->firstname,
             'lastname' => $this->lastname,
@@ -68,7 +86,24 @@ class RegisterInst extends Component
             'town' => $this->town,
         ]);
 
+        session()->flash('success', 'Registrierung erfolgreich');
+
         return redirect('/');
+    }
+
+
+    public function mount()
+    {
+        $this->model = User::class;
+        request()->session()->forget('valid-username');
+        request()->session()->forget('valid-nameInst');
+        request()->session()->forget('valid-emailInst');
+        
+        $this->model = Address::class;
+        request()->session()->forget('valid-street');
+        request()->session()->forget('valid-number');
+        request()->session()->forget('valid-plz');
+        request()->session()->forget('valid-town');
     }
 
     public function render()

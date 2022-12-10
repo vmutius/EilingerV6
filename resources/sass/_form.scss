@@ -83,53 +83,11 @@
     font-family: "Ubuntu", sans-serif;
     }
     
-    /*--------------------------------------------------------------
-    # Contact
-    --------------------------------------------------------------*/
-    .contact .info {
-    border-top: 3px solid #47b2e4;
-    border-bottom: 3px solid #47b2e4;
-    padding: 30px;
-    background: #fff;
-    width: 100%;
-    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
+    .form-check {
+      padding-left: 0px;
     }
-    
-    .contact .info i {
-    font-size: 20px;
-    color: #47b2e4;
-    float: left;
-    width: 44px;
-    height: 44px;
-    background: #e7f5fb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
-    }
-    
-    .contact .info h4 {
-    padding: 0 0 0 60px;
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #37517e;
-    }
-    
-    .contact .info p {
-    padding: 0 0 10px 60px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #6182ba;
-    }
-    
-    .contact .info .email p {
-    padding-top: 5px;
-    }
-    
-    .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-    background: #47b2e4;
-    color: #fff;
+
+    label {
+      padding-top: 10px;
     }
     
