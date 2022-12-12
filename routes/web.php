@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Auth\RegisterInst;
 use App\Http\Livewire\Auth\RegisterPrivat;
+use App\Http\Livewire\User\Antrag;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserDashController;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,7 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [UserDashController::class,'index'])->name('user_dashboard');
-    Route::get('/antrag', [UserDashController::class,'antrag'])->name('user_antrag');
+    Route::get('/antrag', Antrag::class)->name('user_antrag');
     Route::get('/gesuch', [UserDashController::class,'gesuch'])->name('user_gesuch');
     Route::get('/nachrichten', [UserDashController::class,'nachrichten'])->name('user_nachrichten');
     Route::get('/benutzer', [UserDashController::class,'benutzer'])->name('user_benutzer');

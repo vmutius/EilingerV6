@@ -1,4 +1,4 @@
-<form action="{{ route('user.update', Auth::user()->id) }}" methode="POST">
+<form wire:submit.prevent="Step1UserSubmit">
     <div class="content-header mb-3">
         <h3 class="mb-0">Bewerber</h3>
         <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
@@ -6,20 +6,20 @@
     <div class="row g-3">
         <div class="col-sm-6">
             <label class="form-label" for="firstname">Vorname</label>
-            <input type="text" id="firstname" class="form-control" value="{{ old('firstname', $user->firstname) }}"/>
+            <input wire:model.lazy="firstname" type="text" id="firstname" class="form-control" />
         </div>
         <div class="col-sm-6">       
             <label class="form-label" for="lastname">Nachname</label>
-            <input type="text" id="lastname" class="form-control" value="{{ old('lastname', $user->lastname) }}"/>
+            <input wire:model.lazy="lastname" type="text" id="lastname" class="form-control"/>
         </div>
     
         <div class="col-sm-6">
             <label for="birthday" class="form-label">Geburtstag</label>
-            <input class="form-control" id="flatpickr-human-friendly" type="text" placeholder="Bitte Datum wählen ..." value="{{ old('birthday', $user->birthday) }}"/>
+            <input wire:model.lazy="birthday" class="form-control" id="flatpickr-human-friendly" type="text" placeholder="Bitte Datum wählen ..." />
         </div>
         <div class="col-md-6">
             <label class="form-label" for="email">Email</label>
-            <input type="email" id="email" class="form-control" value="{{ old('email', $user->email) }}"/>
+            <input wire:model.lazy="email" type="email" id="email" class="form-control" />
         </div>
 
         <div class="form-group">
@@ -31,7 +31,7 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label" for="street">in der Schweiz seit</label>
-                    <input type="text" id="street" class="form-control"/>
+                    <input wire:model.lazy="street" type="text" id="street" class="form-control"/>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="number">Art der Bewilligung</label>

@@ -25,11 +25,7 @@ class UserDashController extends Controller
         return view('user.dashboard');
     }
 
-    public function antrag()
-    {
-        return view('user.antrag'); 
-    }
-
+   
     public function gesuch()
     {
 

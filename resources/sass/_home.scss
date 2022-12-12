@@ -7,6 +7,10 @@
     z-index: 2;
     background-color: #E7EBF1;
   }
+
+  .home-content{
+    padding: 10px;
+  }
   .sidebar.open ~ .home-section{
     left: 250px;
     width: calc(100% - 250px);
