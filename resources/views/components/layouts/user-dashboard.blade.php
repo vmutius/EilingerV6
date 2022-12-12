@@ -19,6 +19,9 @@
 
 
 <body>
+    <!-- ======= Header ======= -->
+    @include('components.layouts.user_header')
+
     <div class="sidebar">
         <div class="logo-details">
             <div class="logo_name">Eilinger Stiftung</div>
@@ -74,21 +77,6 @@
                     <span class="links_name">Einstellungen</span>
                 </a>
                 <span class="tooltip">Einstellungen</span>
-            </li>
-            <li class="profile">
-                <div class="profile-details">
-                    <!--<img src="profile.jpg" alt="profileImg">-->
-                    <div class="name_job">
-                        <div class="name">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
-                    </div>
-                </div>
-                <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); document.getElementById('logout').submit();">
-                    <i class='bx bx-log-out' id="log_out"></i>
-                </a>
-                <form id="logout" action="{{ route('logout') }}" method="POST" class="hidden">
-                    @crsf
-                </form>
             </li>
         </ul>
     </div>

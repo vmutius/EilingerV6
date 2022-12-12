@@ -2,9 +2,9 @@
 
 use App\Http\Livewire\Auth\RegisterInst;
 use App\Http\Livewire\Auth\RegisterPrivat;
-use App\Http\Livewire\Auth\Login;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\UserDashController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
 Route::controller(HomeController::class)->group(function() {
     Route::get('/', 'index')->name('index');
     Route::get('/disclaimer', 'disclaimer')->name('disclaimer');
@@ -27,12 +29,17 @@ Route::controller(HomeController::class)->group(function() {
 
 });
 
-
 Route::middleware('guest')->group(function () {
-    Route::get('/login', Login::class)->name('login');
     Route::get('/register_inst', RegisterInst::class)->name('register_inst');
     Route::get('/register_privat', RegisterPrivat::class)->name('register_privat');
 });
 
-
-//Fallback Route definieren
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [UserDashController::class,'index'])->name('user_dashboard');
+    Route::get('/antrag', [UserDashController::class,'antrag'])->name('user_antrag');
+    Route::get('/gesuch', [UserDashController::class,'gesuch'])->name('user_gesuch');
+    Route::get('/nachrichten', [UserDashController::class,'nachrichten'])->name('user_nachrichten');
+    Route::get('/benutzer', [UserDashController::class,'benutzer'])->name('user_benutzer');
+    Route::get('/dateien', [UserDashController::class,'dateien'])->name('user_dateien');
+    Route::get('/einstellungen', [UserDashController::class,'einstellungen'])->name('user_einstellungen');
+});
