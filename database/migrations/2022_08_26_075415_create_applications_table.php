@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\User;
 
-return new class extends Migration
+class CreateApplicationsTable extends Migration
 {
     public const APPL_STATUS = [
         'not_send' => 'not_send',

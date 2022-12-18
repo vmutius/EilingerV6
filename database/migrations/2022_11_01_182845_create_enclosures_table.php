@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Application;
 
-return new class extends Migration
+class CreateEnclosuresTable extends Migration
 {
     /**
      * Run the migrations.

@@ -26,6 +26,7 @@ class RegisterPrivat extends Component
         'salutation' => 'required',
         'firstname' => 'required|min:2',
         'lastname' => 'required|min:2',
+        'email' => 'required|email|unique:users,email',
 
         //Address
         'street' => 'required|min:3',
@@ -67,6 +68,7 @@ class RegisterPrivat extends Component
             'lastname' => $this->lastname,
             'telefon' => $this->telefon,
             'mobile' => $this->mobile,
+            'email' => $this->email,
         ]);
 
         $address = Address::create([
@@ -75,6 +77,7 @@ class RegisterPrivat extends Component
             'number' => $this->number,
             'plz' => $this->plz,
             'town' => $this->town,
+            'country' => $this->country,
         ]);
 
         session()->flash('success', 'Registrierung erfolgreich');

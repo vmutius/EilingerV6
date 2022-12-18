@@ -1,4 +1,4 @@
-<form action="{{ route('user.update', Auth::user()->id) }}" methode="POST">
+<form wire:submit.prevent="Step2AddressSubmit">
     <div class="content-header mb-3">
         <h3 class="mb-0">Anschrift</h3>
         <small>Angaben über Wohnsitz</small>
@@ -7,7 +7,7 @@
         
         <div class="col-md-6">
             <label class="form-label" for="street">Strasse</label>
-            <input type="text" id="street" class="form-control" value="{{ old('street', $address->street) }}"//>
+            <input wire:model.lazy="address.street" type="text" id="street" class="form-control"/>
         </div>
         <div class="col-md-6">
             <label class="form-label" for="number">Hausnummer</label>
@@ -54,19 +54,19 @@
         </div>
         
         <div class="col-12 d-flex justify-content-between">
-        <button class="btn btn-colour-1 btn-prev" disabled>
-            <i class="bx bx-chevron-left bx-sm ms-sm-n2 align-middle"></i>
-            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-        </button>
-
-        <button type="submit"  class="btn btn-colour-1">
-            <span class="align-middle d-sm-inline-block d-none">Save</span>
-        </button>
-
-        <button class="btn btn-colour-1  btn-next">
-            <span class="align-middle d-sm-inline-block d-none me-sm-1 align-middle">Next</span>
-            <i class="bx bx-chevron-right bx-sm me-sm-n2 align-middle"></i>
-        </button>
+            <button class="btn btn-colour-1 btn-prev" wire:click="decreaseStep()">
+                <i class="bx bx-chevron-left bx-sm ms-sm-n2 align-middle"></i>
+                <span class="align-middle d-sm-inline-block d-none">Zurück</span>
+            </button>
+    
+            <button type="submit"  class="btn btn-colour-1">
+                <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
+            </button>
+    
+            <button class="btn btn-colour-1  btn-next " wire:click="increaseStep()">
+                <span class="align-middle d-sm-inline-block d-none me-sm-1 align-middle">Weiter</span>
+                <i class="bx bx-chevron-right bx-sm me-sm-n2 align-middle"></i>
+            </button>
         </div>
     </div>
 </form>

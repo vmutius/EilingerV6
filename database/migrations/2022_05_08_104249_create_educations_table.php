@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Models\User;
 use App\Models\Application;
 
-class CreateEducationTable extends Migration
+class CreateEducationsTable extends Migration
 {
     
     /**

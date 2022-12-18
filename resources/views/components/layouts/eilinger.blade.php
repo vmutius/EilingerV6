@@ -41,6 +41,11 @@
 
     {{ $slot }}
 
+    @if (session()->has('success'))
+      <div class="position-absolute top-0 start-100 translate-middle p-3 mb-2 bg-success text-white">
+        <p>{{ session('success') }}</p>
+      </div>
+    @endif
     <!-- ======= Footer ======= -->
     @include('components.layouts.footer')
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
