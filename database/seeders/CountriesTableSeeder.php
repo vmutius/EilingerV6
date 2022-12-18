@@ -13,27 +13,27 @@ class CountriesTableSeeder extends Seeder
             [
                 'id'         => 1,
                 'name'       => 'Afghanistan',
-                'short_code' => 'af',
+                'short_code' => 'AF',
             ],
             [
                 'id'         => 2,
                 'name'       => 'Albania',
-                'short_code' => 'al',
+                'short_code' => 'AL',
             ],
             [
                 'id'         => 3,
                 'name'       => 'Algeria',
-                'short_code' => 'dz',
+                'short_code' => 'DZ',
             ],
             [
                 'id'         => 4,
                 'name'       => 'American Samoa',
-                'short_code' => 'as',
+                'short_code' => 'AS',
             ],
             [
                 'id'         => 5,
                 'name'       => 'Andorra',
-                'short_code' => 'ad',
+                'short_code' => 'AD',
             ],
             [
                 'id'         => 6,

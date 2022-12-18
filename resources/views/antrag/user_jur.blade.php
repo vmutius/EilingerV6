@@ -4,22 +4,41 @@
         <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
     </div>
     <div class="row g-3">
-        <div class="col-sm-6">
+        <div class="col-sm-2">
+            <label class="form-label" for="salutation">Anrede</label>
+            <select wire:model.lazy="user.salutation" class="form-select">
+                <option value="" disabled>Bitte Anrede auswählen</option>
+                @foreach (App\Models\User::SALUTATION as $key => $label)
+                    <option value="{{ $key }}">{{ $label }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-sm-5">
             <label class="form-label" for="firstname">Vorname</label>
             <input wire:model.lazy="user.firstname" type="text" id="firstname" class="form-control" />
         </div>
-        <div class="col-sm-6">       
+        <div class="col-sm-5">       
             <label class="form-label" for="lastname">Nachname</label>
             <input wire:model.lazy="user.lastname" type="text" id="lastname" class="form-control"/>
         </div>
     
-        <div class="col-sm-6">
-            <label for="birthday" class="form-label">Geburtstag</label>
-            <input wire:model.lazy="user.birthday" class="form-control" id="flatpickr-human-friendly" type="text" placeholder="Bitte Datum wählen ..." />
-        </div>
-        <div class="col-md-6">
+        
+        <div class="col-md-5">
             <label class="form-label" for="email">Email</label>
             <input wire:model.lazy="user.email" type="email" id="email" class="form-control" />
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label" for="telefon">Telefon</label>
+            <input wire:model.lazy="user.telefon" type="text" id="telefon" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="mobile">Mobile</label>
+            <input wire:model.lazy="user.mobile" type="email" id="mobile" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="sozVersNr">Sozialversicherungsnummer</label>
+            <input wire:model.lazy="user.sozVersNr" type="text" id="sozVersNr" class="form-control" />
         </div>
 
         <div class="form-group">
@@ -44,10 +63,6 @@
         <button class="btn btn-colour-1 btn-prev" disabled>
             <i class="bx bx-chevron-left bx-sm ms-sm-n2 align-middle"></i>
             <span class="align-middle d-sm-inline-block d-none">Zurück</span>
-        </button>
-
-        <button type="submit"  class="btn btn-colour-1">
-            <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
         </button>
 
         <button class="btn btn-colour-1  btn-next " wire:click="increaseStep()">

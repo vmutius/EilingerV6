@@ -9,37 +9,30 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    
-    /**
-    * Benutzertypen
-    * 
-    * @var array
-    */
+
     public const TYPES = [
         'nat' => 'nat',
         'jur' => 'jur'
     ];
-    
-    /**
-    * Anreden
-    * 
-    * @var array
-    */
+
     public const SALUTATION = [
         'Herr' => 'Herr',
         'Frau' => 'Frau'
     ];
-    
-    /**
-    * Zivilstand
-    * 
-    * @var array
-    */
+
     public const CIVIL_STATUS = [
         'ledig'         => 'ledig',
         'verheiratet'   => 'verheiratet',
         'geschieden'    => 'geschieden',
         'verwitwet'     => 'verwitwet'
+    ];
+
+    public const BEWILLIGUNG = [
+        'C' => 'Ausweis C EU/EFTA',
+        'B' => 'Ausweis B EU/EFTA',
+        'Ci'=> 'Ausweis Ci EU/EFTA',
+        'G' => 'Ausweis G EU/EFTA',
+        'L' => 'Ausweis L EU/EFTA',
     ];
 
     /**
@@ -65,7 +58,9 @@ class User extends Authenticatable
         'mobile',
         'sozVersNr',
         'civilStatus',
-        'status'
+        'status',
+        'inCHsince',
+        'bewilligung'
     ];
 
     /**

@@ -13,6 +13,7 @@ use App\Models\Financing;
 use App\Models\Parents;
 use App\Models\Remark;
 use App\Models\Sibling;
+use App\Models\Country;
 
 class Antrag extends Component
 {
@@ -34,6 +35,11 @@ class Antrag extends Component
         'user.lastname' => 'required',
         'user.email' => 'required',
         'user.birthday' => 'nullable', 
+        'user.salutation' => 'nullable',
+        'user.nationality' => 'nullable',
+        'user.telefon' => 'nullable',
+        'user.mobile' => 'nullable',
+        'user.sozVersNr' => 'nullable',
         'address.*' => 'nullable',
         'education.*' => 'nullable',
     ];
@@ -45,8 +51,10 @@ class Antrag extends Component
      */
     public function render()
     {
-        
-        return view('livewire.user.antrag', ['user' => User::findOrfail(auth()->user()->id)])
+        $countries = Country::all();
+        $user = User::findOrfail(auth()->user()->id);
+
+        return view('livewire.user.antrag', compact('countries', 'user'))
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
   
@@ -79,83 +87,85 @@ class Antrag extends Component
         ],[
             'education' => $this->education,
         ]);
+        $this->education->save();
         $this->currentStep = 4;
     }
 
     public function Step4AccountSubmit()
     {
-        $account = Account::find($this->user_id);
-        $account->update([
-            'street' => $this->street,
-            'firstname' => $this->firstname,
+        $account = Account::UpdateOrCreate([
+            'user_id'   => auth()->user()->id,
+        ],[
+            'education' => $this->education,
         ]);
-  
+
+        $this->account->save();
         $this->currentStep = 5;
     }
 
     public function Step5ParentsSubmit()
     {
-        $parents = Parents::find($this->user_id);
-        $parents->update([
-            'street' => $this->street,
-            'firstname' => $this->firstname,
+        $parent = Parent::UpdateOrCreate([
+            'user_id'   => auth()->user()->id,
+        ],[
+            'education' => $this->education,
         ]);
-  
+        $this->parent->save();
         $this->currentStep = 6;
     }
     public function Step6SiblingSubmit()
     {
-        $sibling = Sibling::find($this->user_id);
-        $sibling->update([
-            'street' => $this->street,
-            'firstname' => $this->firstname,
+        $sibling = Sibling::UpdateOrCreate([
+            'user_id'   => auth()->user()->id,
+        ],[
+            'education' => $this->education,
         ]);
-  
+        $this->sibling->save();
         $this->currentStep = 7;
     }
 
     public function Step7CostSubmit()
     {
-        $cost = Cost::find($this->user_id);
-        $cost->update([
-            'street' => $this->street,
-            'firstname' => $this->firstname,
+        $cost = Cost::UpdateOrCreate([
+            'user_id'   => auth()->user()->id,
+        ],[
+            'education' => $this->education,
         ]);
-  
+        $this->cost->save();
         $this->currentStep = 8;
     }
 
     public function Step8FinancingSubmit()
     {
-        $financing = Financing::find($this->user_id);
-        $financing->update([
-            'street' => $this->street,
-            'firstname' => $this->firstname,
+        $financing = Financing::UpdateOrCreate([
+            'user_id'   => auth()->user()->id,
+        ],[
+            'education' => $this->education,
         ]);
-  
+        $this->financing->save();
         $this->currentStep = 9;
     }
 
     public function Step9RemarkSubmit()
     {
-        $remark = Remark::find($this->user_id);
-        $remark->update([
-            'street' => $this->street,
-            'firstname' => $this->firstname,
+        $remark = Remark::UpdateOrCreate([
+            'user_id'   => auth()->user()->id,
+        ],[
+            'education' => $this->education,
         ]);
-  
+        $this->remark->save();
         $this->currentStep = 10;
     }
 
     public function Step10EnclosureSubmit()
     {
-        $enclosure = Enclosure::find($this->user_id);
-        $enclosure->update([
-            'street' => $this->street,
-            'firstname' => $this->firstname,
+        $enclosure = Enclosure::UpdateOrCreate([
+            'user_id'   => auth()->user()->id,
+        ],[
+            'education' => $this->education,
         ]);
-  
-        $this->currentStep = 3;
+        $this->enclosure->save();
+        $this->currentStep = 1;
     }
 
     public function SendApplication()

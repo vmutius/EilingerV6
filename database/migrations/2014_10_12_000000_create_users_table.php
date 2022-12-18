@@ -34,6 +34,8 @@ class CreateUsersTable extends Migration
             $table->string('mobile', 20)->nullable($value = true);
             $table->string('sozVersNr', 20)->nullable($value = true);
             $table->string('civilStatus')->nullable($value = true);
+            $table->date('inCHsince')->nullable($value = true);
+            $table->char('bewilligung')->nullable($value = true);
             $table->rememberToken();
             $table->timestamps();
         });
