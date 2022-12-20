@@ -19,13 +19,13 @@ class Antrag extends Component
 {
     public $currentStep = 1;
     public $successMessage = '';
+    public $message = '';
     public User $user;
     public Address $address;
     public Education $education;
   
     public function mount() 
     {
-        $this->currentStep = 1;
         $this->user = auth()->user();
         $this->address = $this->user->address->first();
     }
@@ -80,18 +80,25 @@ class Antrag extends Component
         $this->currentStep = 3;
     }
 
-    public function Step3EducationSubmit()
+    public function Step3AweichendeAddressSubmit()
     {
-        $education = Education::UpdateOrCreate([
+        $this->address->save();
+        $this->currentStep = 4;
+    }
+
+
+    public function Step4EducationSubmit()
+    {
+        $this->education = Education::UpdateOrCreate([
             'user_id'   => auth()->user()->id,
         ],[
             'education' => $this->education,
         ]);
         $this->education->save();
-        $this->currentStep = 4;
+        $this->currentStep = 5;
     }
 
-    public function Step4AccountSubmit()
+    public function Step5AccountSubmit()
     {
         $account = Account::UpdateOrCreate([
             'user_id'   => auth()->user()->id,
@@ -100,10 +107,10 @@ class Antrag extends Component
         ]);
 
         $this->account->save();
-        $this->currentStep = 5;
+        $this->currentStep = 6;
     }
 
-    public function Step5ParentsSubmit()
+    public function Step6ParentsSubmit()
     {
         $parent = Parent::UpdateOrCreate([
             'user_id'   => auth()->user()->id,
@@ -111,9 +118,9 @@ class Antrag extends Component
             'education' => $this->education,
         ]);
         $this->parent->save();
-        $this->currentStep = 6;
+        $this->currentStep = 7;
     }
-    public function Step6SiblingSubmit()
+    public function Step7SiblingSubmit()
     {
         $sibling = Sibling::UpdateOrCreate([
             'user_id'   => auth()->user()->id,
@@ -121,10 +128,10 @@ class Antrag extends Component
             'education' => $this->education,
         ]);
         $this->sibling->save();
-        $this->currentStep = 7;
+        $this->currentStep = 8;
     }
 
-    public function Step7CostSubmit()
+    public function Step8CostSubmit()
     {
         $cost = Cost::UpdateOrCreate([
             'user_id'   => auth()->user()->id,
@@ -132,10 +139,10 @@ class Antrag extends Component
             'education' => $this->education,
         ]);
         $this->cost->save();
-        $this->currentStep = 8;
+        $this->currentStep = 9;
     }
 
-    public function Step8FinancingSubmit()
+    public function Step9FinancingSubmit()
     {
         $financing = Financing::UpdateOrCreate([
             'user_id'   => auth()->user()->id,
@@ -143,10 +150,10 @@ class Antrag extends Component
             'education' => $this->education,
         ]);
         $this->financing->save();
-        $this->currentStep = 9;
+        $this->currentStep = 10;
     }
 
-    public function Step9RemarkSubmit()
+    public function Step10RemarkSubmit()
     {
         $remark = Remark::UpdateOrCreate([
             'user_id'   => auth()->user()->id,
@@ -154,10 +161,10 @@ class Antrag extends Component
             'education' => $this->education,
         ]);
         $this->remark->save();
-        $this->currentStep = 10;
+        $this->currentStep = 11;
     }
 
-    public function Step10EnclosureSubmit()
+    public function Step11EnclosureSubmit()
     {
         $enclosure = Enclosure::UpdateOrCreate([
             'user_id'   => auth()->user()->id,
@@ -165,7 +172,6 @@ class Antrag extends Component
             'education' => $this->education,
         ]);
         $this->enclosure->save();
-        $this->currentStep = 1;
     }
 
     public function SendApplication()
@@ -175,12 +181,14 @@ class Antrag extends Component
   
     public function increaseStep()
     {
-         $this->currentStep++;
+        $this->currentStep++;
+        $this->emit('moveNext');
     }
 
     public function decreaseStep()
     {
         $this->currentStep--;
+        $this->emit('movePrevious');
     }
 
 }

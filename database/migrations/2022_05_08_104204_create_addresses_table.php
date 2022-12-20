@@ -25,6 +25,7 @@ class CreateAddressesTable extends Migration
             $table->string('town', 50);
             $table->string('country', 2)->default('CH');
             $table->date('since')->nullable($value = true);
+            $table->boolean('isWochenaufenthalt')->default(false);
             $table->timestamps();
         });
     }

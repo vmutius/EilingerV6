@@ -2,6 +2,7 @@
     <div class="content-header mb-3">
         <h6 class="mb-0">Ausbildung</h6>
         <small>Enter Your Account Details.</small>
+        <p>{{ $currentStep }}</p>
     </div>
     <div class="row g-3">
         <div class="col-sm-6">
@@ -44,15 +45,10 @@
             </select>
         </div>
 
-
-        <div class="col-12 d-flex justify-content-between">
-            <button class="btn btn-colour-1 btn-prev">
-                <i class="bx bx-chevron-left bx-sm ms-sm-n2 align-middle"></i>
-                <span class="align-middle d-sm-inline-block d-none">Previous</span>
-            </button>
-            <button class="btn btn-colour-1  btn-next">
-                <span class="align-middle d-sm-inline-block d-none me-sm-1">Next</span>
-                <i class="bx bx-chevron-right bx-sm me-sm-n2 align-middle"></i>
+        
+        <div class="col-md-12 text-center">        
+            <button type="submit"  class="btn btn-success">
+                <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
             </button>
         </div>
     </div>

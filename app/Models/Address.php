@@ -21,7 +21,8 @@ class Address extends Model
         'plz',
         'town',
         'country',
-        'since'
+        'since',
+        'isWochenaufenthalt',
     ];
 
     public function user()
