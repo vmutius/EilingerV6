@@ -30,7 +30,7 @@ class User extends Authenticatable
     public const BEWILLIGUNG = [
         'C' => 'Ausweis C EU/EFTA',
         'B' => 'Ausweis B EU/EFTA',
-        'Ci'=> 'Ausweis Ci EU/EFTA',
+        'I' => 'Ausweis Ci EU/EFTA',
         'G' => 'Ausweis G EU/EFTA',
         'L' => 'Ausweis L EU/EFTA',
     ];

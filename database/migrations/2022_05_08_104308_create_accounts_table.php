@@ -23,7 +23,7 @@ class CreateAccountsTable extends Migration
             $table->string('name_bank', 100);
             $table->string('city_bank');
             $table->string('owner', 255);
-            $table->string('IBAN, 34');
+            $table->string('IBAN', 34);
             $table->timestamps();
         });
     }

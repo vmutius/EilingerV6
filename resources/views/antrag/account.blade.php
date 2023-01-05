@@ -1,24 +1,24 @@
-<form wire:submit.prevent="Step4AccountSubmit">
+<form wire:submit.prevent="Step5AccountSubmit">
     <div class="content-header mb-3">
-        <h6 class="mb-0">Auszahlung</h6>
+        <h3 class="mb-0">Auszahlung</h3>
         <small>Enter Your Account Details.</small>
     </div>
     <div class="row g-3">
         <div class="col-sm-6">
             <label class="form-label" for="name_bank">Name der Bank</label>
-            <input type="text" id="name_bank" class="form-control" />
+            <input wire:model.lazy="account.name_bank" type="text" id="name_bank" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="city_bank">Ort der Bank</label>
-            <input type="text" id="city_bank" class="form-control" />
+            <input wire:model.lazy="account.city_bank" type="text" id="city_bank" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="owner">Kontoinhaber</label>
-            <input type="text" id="owner" class="form-control" />
+            <input wire:model.lazy="account.owner" type="text" id="owner" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="IBAN">IBAN</label>
-            <input type="text" id="IBAN" class="form-control" />
+            <input wire:model.lazy="account.IBAN" type="text" id="IBAN" class="form-control" />
         </div>
 
         <div class="col-md-12 text-center">        

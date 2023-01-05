@@ -15,18 +15,32 @@ class Parents extends Model
         'stepmother' => 'stepmother',
         'stepfather' => 'stepfather'
     ];
+
+    public const JOB_TYPE = [
+        'selbstständig' => 'selbstständig',
+        'angestellt' => 'angestellt',      
+    ];
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+        'parent_type',
         'lastname',
         'firstname',
         'birthday',
-        'profession',
-        'begin',
-        'end'
+        'address',
+        'plz_ort',
+        'since',
+        'job_type',
+        'job',
+        'employer',
+        'inCHsince',
+        'marriedSince',
+        'separatedSince',
+        'divorcedSince',
+        'death'
     ];
 
     public function user()

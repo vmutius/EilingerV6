@@ -3,7 +3,6 @@
         <h3 class="mb-0">Anschrift</h3>
         <small>Angaben über Wohnsitz</small>
     </div>
-    <p>{{ $currentStep }}</p>
     <div class="row g-3">
         
         <div class="col-md-6">
@@ -14,13 +13,23 @@
             <label class="form-label" for="number">Hausnummer</label>
             <input wire:model.lazy="address.number" type="text" id="number" class="form-control"/>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <label class="form-label" for="plz">PLZ</label>
             <input wire:model.lazy="address.plz" type="text" id="plz" class="form-control"/>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <label class="form-label" for="town">Ort</label>
             <input wire:model.lazy="address.town" type="text" id="town" class="form-control"/>
+        </div>
+
+        <div class="col-sm-2">
+            <label class="form-label" for="country">Land</label>
+            <select wire:model.lazy="address.country" class="form-select">
+                <option disabled>Bitte auswählen...</option>
+                @foreach ($countries as $country)
+                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                @endforeach
+            </select>
         </div>
       
         <div class="col-md-12 text-center">        

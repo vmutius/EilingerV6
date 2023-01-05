@@ -24,6 +24,17 @@ class CreateParentsTable extends Migration
             $table->string('firstname', 255);
             $table->date('birthday');
             $table->string('telefon', 20)->nullable($value = true);
+            $table->string('address', 255)->nullable($value = true);
+            $table->string('plz_ort', 255)->nullable($value = true);
+            $table->date('since')->nullable($value = true);
+            $table->string('job_type');
+            $table->string('job', 255)->nullable($value = true);
+            $table->string('employer', 255)->nullable($value = true);
+            $table->date('inCHsince')->nullable($value = true);
+            $table->date('marriedSince')->nullable($value = true);
+            $table->date('separatedSince')->nullable($value = true);
+            $table->date('divorcedSince')->nullable($value = true);
+            $table->year('death')->nullable($value = true);
             $table->timestamps();
         });
     }

@@ -2,7 +2,6 @@
     <div class="content-header mb-3">
         <h3 class="mb-0">Bewerber</h3>
         <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
-        <p>{{ $currentStep }}</p>
     </div>
     <div class="row g-3">
         <div class="col-sm-2">
@@ -34,7 +33,7 @@
         </div>
         <div class="col-sm-5">
             <label for="birthday" class="form-label">Geburtstag</label>
-            <input wire:model.lazy="user.birthday" class="form-control" id="flatpickr-human-friendly" type="text" placeholder="Bitte Datum wählen ..." />
+            <input wire:model.lazy="user.birthday" class="form-control" id="datepicker" type="text" placeholder="DD.MM.YYYY" />
         </div>
         <div class="col-md-5">
             <label class="form-label" for="email">Email</label>
@@ -60,7 +59,7 @@
         </div>
         <div class="col-sm-6">       
             <label class="form-label" for="bewilligung">Art der Bewilligung  (für Ausländer)</label>
-            <select id="bewilligung" name="bewilligung" class="form-select">
+            <select wire:model.lazy="user.bewilligung" id="bewilligung" name="bewilligung" class="form-select">
                 <option value="">-- Wählen Sie eine Option --</option>
                 @foreach (App\Models\User::BEWILLIGUNG as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>

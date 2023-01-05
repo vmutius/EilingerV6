@@ -1,16 +1,17 @@
-<form wire:submit.prevent="Step5ParentSubmit">
+<form wire:submit.prevent="Step6ParentSubmit">
     <div class="content-header mb-3">
-        <h6 class="mb-0">Eltern</h6>
-        <small>Enter Your Account Details.</small>
+        <h3 class="mb-0">Eltern</h3>
+        <small>Leibliche Eltern der gesuchstellenden Person</small>
     </div>
     <div class="row g-3">
+        <h4 class="mb-0">Mutter</h4>
         <div class="col-sm-6">
-            <label class="form-label" for="username">Username</label>
-            <input type="text" id="username" class="form-control" placeholder="johndoe" />
+            <label class="form-label" for="lastname">Nachname</label>
+            <input wire:model.lazy="partner.lastname" type="text" id="lastname" class="form-control" placeholder="Mustermann" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="email">Email</label>
-            <input type="email" id="email" class="form-control" placeholder="john.doe@email.com"
+            <label class="form-label" for="firstname">Email</label>
+            <input type="email" id="text" class="form-control" placeholder="john.doe@email.com"
                 aria-label="john.doe" />
         </div>
         <div class="col-sm-6 form-password-toggle">
