@@ -15,11 +15,11 @@
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="firstname">Vorname</label>
-            <input wire:model.lazy="user.firstname" type="text" id="firstname" class="form-control" />
+            <input wire:model.lazy="user.firstname" type="text" class="form-control" />
         </div>
         <div class="col-sm-5">       
             <label class="form-label" for="lastname">Nachname</label>
-            <input wire:model.lazy="user.lastname" type="text" id="lastname" class="form-control"/>
+            <input wire:model.lazy="user.lastname" type="text" class="form-control"/>
         </div>
     
         <div class="col-sm-2">
@@ -33,33 +33,33 @@
         </div>
         <div class="col-sm-5">
             <label for="birthday" class="form-label">Geburtstag</label>
-            <input wire:model.lazy="user.birthday" class="form-control" id="datepicker" type="text" placeholder="DD.MM.YYYY" />
+            <input wire:model.lazy="user.birthday" class="form-control" type="text" placeholder="DD.MM.YYYY" />
         </div>
         <div class="col-md-5">
             <label class="form-label" for="email">Email</label>
-            <input wire:model.lazy="user.email" type="email" id="email" class="form-control" />
+            <input wire:model.lazy="user.email" type="email" class="form-control" />
         </div>
 
         <div class="col-md-4">
             <label class="form-label" for="telefon">Telefon</label>
-            <input wire:model.lazy="user.telefon" type="text" id="telefon" class="form-control" />
+            <input wire:model.lazy="user.telefon" type="text" class="form-control" />
         </div>
         <div class="col-md-4">
             <label class="form-label" for="mobile">Mobile</label>
-            <input wire:model.lazy="user.mobile" type="text" id="mobile" class="form-control" />
+            <input wire:model.lazy="user.mobile" type="text" class="form-control" />
         </div>
         <div class="col-md-4">
             <label class="form-label" for="sozVersNr">Sozialversicherungsnummer</label>
-            <input wire:model.lazy="user.sozVersNr" type="text" id="sozVersNr" class="form-control" />
+            <input wire:model.lazy="user.sozVersNr" type="text" class="form-control" />
         </div>
 
         <div class="col-sm-6">
             <label class="form-label" for="inCHsince">In der Schweiz seit (für Ausländer)</label>
-            <input wire:model.lazy="user.inCHsince" type="text" id="inCHsince" class="form-control" />
+            <input wire:model.lazy="user.inCHsince" type="text" class="form-control" />
         </div>
         <div class="col-sm-6">       
             <label class="form-label" for="bewilligung">Art der Bewilligung  (für Ausländer)</label>
-            <select wire:model.lazy="user.bewilligung" id="bewilligung" name="bewilligung" class="form-select">
+            <select wire:model.lazy="user.bewilligung" name="bewilligung" class="form-select">
                 <option value="">-- Wählen Sie eine Option --</option>
                 @foreach (App\Models\User::BEWILLIGUNG as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>

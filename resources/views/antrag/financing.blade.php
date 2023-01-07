@@ -1,36 +1,38 @@
-<form wire:submit.prevent="Step8FinancingSubmit">
+<form wire:submit.prevent="Step9FinancingSubmit">
     <div class="content-header mb-3">
-        <h6 class="mb-0">Finanzierung</h6>
+        <h3 class="mb-0">Finanzierung</h3>
         <small>Enter Your Account Details.</small>
     </div>
     <div class="row g-3">
         <div class="col-sm-6">
-            <label class="form-label" for="username">Username</label>
-            <input type="text" id="username" class="form-control" placeholder="johndoe" />
+            <label class="form-label" for="personalContribution">Eigenleistung vom Bewerber selbst</label>
+            <input wire:model.lazy="financing.personalContribution" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="email">Email</label>
-            <input type="email" id="email" class="form-control" placeholder="john.doe@email.com"
-                aria-label="john.doe" />
+            <label class="form-label" for="nettoIncome">Einkommen netto des Ehe- / Lebenspartners minus Freibetrag</label>
+            <input wire:model.lazy="financing.nettoIncome" type="number" class="form-control" />
         </div>
-        <div class="col-sm-6 form-password-toggle">
-            <label class="form-label" for="password">Password</label>
-            <div class="input-group input-group-merge">
-                <input type="password" id="password" class="form-control"
-                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                    aria-describedby="password2" />
-                <span class="input-group-text cursor-pointer" id="password2"><i class="bx bx-hide"></i></span>
-            </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="assets">eigenes Vermögen (Vermögen bei erster Gesuchstellung) </label>
+            <input wire:model.lazy="financing.assets" type="number" class="form-control" />
         </div>
-        <div class="col-sm-6 form-password-toggle">
-            <label class="form-label" for="confirm-password">Confirm Password</label>
-            <div class="input-group input-group-merge">
-                <input type="password" id="confirm-password" class="form-control"
-                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                    aria-describedby="confirm-password2" />
-                <span class="input-group-text cursor-pointer" id="confirm-password2"><i class="bx bx-hide"></i></span>
-            </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="scholarship">zumutbare Elternleistung gem. Berechnung </label>
+            <input wire:model.lazy="financing.scholarship" type="number" class="form-control" />
         </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="otherIncome">Anderweitige Einkünfte (Betrag)</label>
+            <input wire:model.lazy="financing.otherIncome" type="number" class="form-control" />
+        </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="incomeWhere">Auszahlende Stelle der anderweitige Einkünfte </label>
+            <input wire:model.lazy="financing.incomeWhere" type="number" class="form-control" />
+        </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="incomeWh">Begünstigter der anderweitige Einkünfte (Betrag)</label>
+            <input wire:model.lazy="financing.incomeWho" type="number" class="form-control" />
+        </div>
+      
 
        <div class="col-md-12 text-center">        
             <button type="submit"  class="btn btn-success">

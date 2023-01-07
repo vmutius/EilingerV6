@@ -19,12 +19,14 @@ class CreateSiblingsTable extends Migration
             $table->id()->autoIncrement();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Application::class)->nullable($value = true);
-            $table->year('birth_year');
-            $table->string('lastname', 255);
-            $table->string('firstname', 255);
-            $table->string('education', 255);
-            $table->year('graduation_year');
-            $table->string('place of residence', 500);
+            $table->year('birth_year')->nullable($value = true);
+            $table->string('lastname', 255)->nullable($value = true);
+            $table->string('firstname', 255)->nullable($value = true);
+            $table->string('education', 255)->nullable($value = true);
+            $table->year('graduation_year')->nullable($value = true);
+            $table->string('placeOfResidence', 500)->nullable($value = true);
+            $table->boolean('getAmount')->nullable($value = true);
+            $table->string('supportSite', 255)->nullable($value = true);
             $table->timestamps();
         });
     }

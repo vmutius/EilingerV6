@@ -19,13 +19,16 @@ class CreateCostsTable extends Migration
             $table->id()->autoIncrement();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Application::class)->nullable($value = true);
-            $table->decimal('semester_fees', $precision=8, $scale=2);
-            $table->decimal('fees', $precision=8, $scale=2);
-            $table->decimal('educational_material', $precision=8, $scale=2);
-            $table->decimal('excursion', $precision=8, $scale=2);
-            $table->decimal('travel_expenses', $precision=8, $scale=2);
-            $table->decimal('cost_of_living', $precision=8, $scale=2);
-            $table->decimal('cost_childeren', $precision=8, $scale=2);
+            $table->decimal('semesterFees', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('fees', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('educationalMaterial', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('excursion', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('travelExpenses', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('costOfLivingWithParents', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('costOfLivingAlone', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('costOfLivingSingleParent', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('costOfLivingWithPartner', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('numberOfChildren', $precision=8, $scale=2)->nullable($value = true);
             $table->timestamps();
         });
     }

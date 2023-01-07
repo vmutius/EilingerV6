@@ -9,6 +9,22 @@ class Enclosure extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'hasID',
+        'hasCV',
+        'hasApprenticeshipContract',
+        'hasDiploma',
+        'hasDivorce',
+        'hasRentalContract',
+        'hasCertificateOfStudy',
+        'hasTaxAssessment',
+        'hasExpenseReceipts',
+        'hasPartnerTaxAssessment',
+        'hasSupplementaryServices',
+        'hasECTSPoints',
+        'hasParentsTaxFactors'
+    ];
+
     public function application()
     {
         return $this->belongsTo(Application::class, 'application_id');

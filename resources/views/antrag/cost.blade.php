@@ -1,36 +1,54 @@
-<form wire:submit.prevent="Step7CostSubmit">
+<form wire:submit.prevent="Step8CostSubmit">
     <div class="content-header mb-3">
-        <h6 class="mb-0">Kosten</h6>
-        <small>Enter Your Account Details.</small>
+        <h3 class="mb-0">Ausbildungs- und Lebenskosten</h3>
+        <small>im bevorstehenden Ausbildungsjahr</small>
     </div>
     <div class="row g-3">
         <div class="col-sm-6">
-            <label class="form-label" for="username">Username</label>
-            <input type="text" id="username" class="form-control" placeholder="johndoe" />
+            <label class="form-label" for="semesterFees">Semestergebühren</label>
+            <input wire:model.lazy="cost.semesterFees" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="email">Email</label>
-            <input type="email" id="email" class="form-control" placeholder="john.doe@email.com"
-                aria-label="john.doe" />
+            <label class="form-label" for="fees">übrige Gebühren</label>
+            <input wire:model.lazy="cost.fees" type="number" class="form-control" />
         </div>
-        <div class="col-sm-6 form-password-toggle">
-            <label class="form-label" for="password">Password</label>
-            <div class="input-group input-group-merge">
-                <input type="password" id="password" class="form-control"
-                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                    aria-describedby="password2" />
-                <span class="input-group-text cursor-pointer" id="password2"><i class="bx bx-hide"></i></span>
-            </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="educationalMaterial">Schulmaterialien/Lehrmittel</label>
+            <input wire:model.lazy="cost.educationalMaterial" type="number" class="form-control" />
         </div>
-        <div class="col-sm-6 form-password-toggle">
-            <label class="form-label" for="confirm-password">Confirm Password</label>
-            <div class="input-group input-group-merge">
-                <input type="password" id="confirm-password" class="form-control"
-                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                    aria-describedby="confirm-password2" />
-                <span class="input-group-text cursor-pointer" id="confirm-password2"><i class="bx bx-hide"></i></span>
-            </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="excursion">Exkursionen/Schulverlegungen Sprachaufenthalte</label>
+            <input wire:model.lazy="cost.excursion" type="number" class="form-control" />
         </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="travelExpenses">Reisespesen</label>
+            <input wire:model.lazy="cost.travelExpenses" type="number" class="form-control" />
+        </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="numberOfChildren">Anzahl Kinder im eigenen Haushalt</label>
+            <input wire:model.lazy="cost.numberOfChildren" type="number" class="form-control" />
+        </div>
+
+        <h4 class="mb-0">Übrige Lebenshaltung</h4>
+        <small>Bitte nur das Zutreffende ausfüllen</small>
+        <div class="col-sm-6">
+            <label class="form-label" for="costOfLivingWithParents">im Haushalt der Elternn</label>
+            <input wire:model.lazy="cost.costOfLivingWithParents" type="number" class="form-control" />
+        </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="costOfLivingAlone">im eigenen Haushalt (Begründung) </label>
+            <input wire:model.lazy="cost.costOfLivingAlone" type="number" class="form-control" />
+        </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="costOfLivingSingleParent">im eigenen Haushalt für Alleinerziehende</label>
+            <input wire:model.lazy="cost.costOfLivingSingleParent" type="number" class="form-control" />
+        </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="costOfLivingWithPartner">im eigenen Haushalt mit Partner</label>
+            <input wire:model.lazy="cost.costOfLivingWithPartner" type="number" class="form-control" />
+        </div>
+        
+       
 
         <div class="col-md-12 text-center">        
             <button type="submit"  class="btn btn-success">

@@ -7,19 +7,19 @@
         
         <div class="col-md-6">
             <label class="form-label" for="street">Strasse</label>
-            <input wire:model.lazy="address.street" type="text" id="street" class="form-control"/>
+            <input wire:model.lazy="address.street" type="text" class="form-control"/>
         </div>
         <div class="col-md-6">
             <label class="form-label" for="number">Hausnummer</label>
-            <input wire:model.lazy="address.number" type="text" id="number" class="form-control"/>
+            <input wire:model.lazy="address.number" type="text" class="form-control"/>
         </div>
         <div class="col-md-5">
             <label class="form-label" for="plz">PLZ</label>
-            <input wire:model.lazy="address.plz" type="text" id="plz" class="form-control"/>
+            <input wire:model.lazy="address.plz" type="text" class="form-control"/>
         </div>
         <div class="col-md-5">
             <label class="form-label" for="town">Ort</label>
-            <input wire:model.lazy="address.town" type="text" id="town" class="form-control"/>
+            <input wire:model.lazy="address.town" type="text" class="form-control"/>
         </div>
 
         <div class="col-sm-2">

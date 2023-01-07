@@ -15,13 +15,16 @@ class Cost extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'semester_fees',
+        'semesterFees',
         'fees',
-        'educational_material',
+        'educationalMaterial',
         'excursion', 
-        'travel_expenses', 
-        'cost_of_living', 
-        'cost_childeren'
+        'travelExpenses', 
+        'costOfLivingWithParents', 
+        'costOfLivingAlone',
+        'costOfLivingSingleParent',
+        'costOfLivingWithPartner',
+        'numberOfChildren'
     ];
 
     public function user()

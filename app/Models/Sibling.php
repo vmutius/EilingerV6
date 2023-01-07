@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Sibling extends Model
 {
     use HasFactory;
+
+    public const GETAMOUNT = [
+        true => 'Ja',
+        false => 'Nein',
+    ];
     /**
      * The attributes that are mass assignable.
      *
@@ -15,10 +20,14 @@ class Sibling extends Model
      */
     protected $fillable = [
         'birth_year',
-        'lastname', 
+        'lastname',
+        'firstname', 
         'education', 
         'graduation_year',
-        'place of residence'
+        'placeOfResidence',
+        'getAmount',
+        'supportSite'
+
     ];
 
     public function user()

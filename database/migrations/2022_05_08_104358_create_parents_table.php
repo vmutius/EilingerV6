@@ -20,14 +20,14 @@ class CreateParentsTable extends Migration
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->string('parent_type');
-            $table->string('lastname', 255);
-            $table->string('firstname', 255);
-            $table->date('birthday');
+            $table->string('lastname', 255)->nullable($value = true);;
+            $table->string('firstname', 255)->nullable($value = true);;
+            $table->date('birthday')->nullable($value = true);;
             $table->string('telefon', 20)->nullable($value = true);
             $table->string('address', 255)->nullable($value = true);
             $table->string('plz_ort', 255)->nullable($value = true);
             $table->date('since')->nullable($value = true);
-            $table->string('job_type');
+            $table->string('job_type')->nullable($value = true);;
             $table->string('job', 255)->nullable($value = true);
             $table->string('employer', 255)->nullable($value = true);
             $table->date('inCHsince')->nullable($value = true);

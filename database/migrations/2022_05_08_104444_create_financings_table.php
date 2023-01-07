@@ -19,13 +19,13 @@ class CreateFinancingsTable extends Migration
             $table->id()->autoIncrement();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Application::class)->nullable($value = true);
-            $table->decimal('personal_contribution', $precision=8, $scale=2);
-            $table->decimal('other_income', $precision=8, $scale=2);
-            $table->string('income_where');
-            $table->string('income_what');
-            $table->decimal('netto_income', $precision=8, $scale=2);
-            $table->decimal('assets', $precision=8, $scale=2);
-            $table->decimal('scholarship', $precision=8, $scale=2);
+            $table->decimal('personalContribution', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('otherIncome', $precision=8, $scale=2)->nullable($value = true);
+            $table->string('incomeWhere')->nullable($value = true);
+            $table->string('incomeWho')->nullable($value = true);
+            $table->decimal('nettoIncome', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('assets', $precision=8, $scale=2)->nullable($value = true);
+            $table->decimal('scholarship', $precision=8, $scale=2)->nullable($value = true);
             $table->timestamps();
         });
     }

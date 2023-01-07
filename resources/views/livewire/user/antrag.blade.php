@@ -20,7 +20,7 @@
             @if ($currentStep == 1)
                 <div class="step-one">
                     <div class="card">
-                        <div class="card-header bg-secondary text-white">Schritt 1/11 - Bewerber</div>
+                        <div class="card-header bg-secondary text-white">Schritt 1/10 - Bewerber</div>
                         <div class="card-body">
                             @include('antrag.user_nat')
                         </div>
@@ -31,7 +31,7 @@
             @if ($currentStep == 1)
                 <div class="step-one">
                     <div class="card">
-                        <div class="card-header bg-secondary text-white">Schritt 1/11 - Bewerber</div>
+                        <div class="card-header bg-secondary text-white">Schritt 1/10 - Bewerber</div>
                         <div class="card-body">
                             @include('antrag.user_jur')
                         </div>
@@ -44,7 +44,7 @@
         @if ($currentStep == 2)
             <div class="step-two">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 2/11 - Adresse</div>
+                    <div class="card-header bg-secondary text-white">Schritt 2/10 - Adresse</div>
                     <div class="card-body">
                         @include('antrag.address')
                     </div>
@@ -56,7 +56,7 @@
         @if ($currentStep == 3)
             <div class="step-three">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 3/11 - Abweichende Adresse</div>
+                    <div class="card-header bg-secondary text-white">Schritt 3/10 - Abweichende Adresse</div>
                     <div class="card-body">
                         @include('antrag.abweichendeAddress')
                     </div>
@@ -69,7 +69,7 @@
         @if ($currentStep == 4)
             <div class="step-four">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 4/11 - Ausbildung</div>
+                    <div class="card-header bg-secondary text-white">Schritt 4/10 - Ausbildung</div>
                     <div class="card-body">
                         @include('antrag.education')
                     </div>
@@ -81,7 +81,7 @@
         @if ($currentStep == 5)
             <div class="step-five">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 5/11 - Auszahlung</div>
+                    <div class="card-header bg-secondary text-white">Schritt 5/10 - Auszahlung</div>
                     <div class="card-body">
                         @include('antrag.account')
                     </div>
@@ -93,7 +93,7 @@
         @if ($currentStep == 6)
             <div class="step-six">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 6/11 - Eltern</div>
+                    <div class="card-header bg-secondary text-white">Schritt 6/10 - Eltern</div>
                     <div class="card-body">
                         @include('antrag.parent')
                     </div>
@@ -105,7 +105,7 @@
         @if ($currentStep == 7)
             <div class="step-seven">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 7/11 - Geschwister</div>
+                    <div class="card-header bg-secondary text-white">Schritt 7/10 - Geschwister</div>
                     <div class="card-body">
                         @include('antrag.sibling')
                     </div>
@@ -117,7 +117,7 @@
         @if ($currentStep == 8)
             <div class="step-eight">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 8/11 - Kosten</div>
+                    <div class="card-header bg-secondary text-white">Schritt 8/10 - Kosten</div>
                     <div class="card-body">
                         @include('antrag.cost')
                     </div>
@@ -129,7 +129,7 @@
         @if ($currentStep == 9)
             <div class="step-nine">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 9/11 - Finanzierung</div>
+                    <div class="card-header bg-secondary text-white">Schritt 9/10 - Finanzierung</div>
                     <div class="card-body">
                         @include('antrag.financing')
                     </div>
@@ -137,23 +137,11 @@
             </div>
         @endif
 
-        {{-- 10 Bemerkungen --}}
+        {{-- 10 Beilagen --}}
         @if ($currentStep == 10)
-            <div class="step-ten">
-                <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 10/11 - Bemerkungen</div>
-                    <div class="card-body">
-                        @include('antrag.remark')
-                    </div>
-                </div>
-            </div>
-        @endif
-
-        {{-- 11 Beilagen --}}
-        @if ($currentStep == 11)
             <div class="step-eleven">
                 <div class="card">
-                    <div class="card-header bg-secondary text-white">Schritt 11/11 - Beilagen</div>
+                    <div class="card-header bg-secondary text-white">Schritt 10/10 - Bemerkungen und Beilagen</div>
                     <div class="card-body">
 
                         @include('antrag.enclosure')
@@ -169,7 +157,7 @@
                 <span class="align-middle d-sm-inline-block d-none">Zurück</span>
             </button>
 
-            @if ($currentStep == 11)
+            @if ($currentStep == 10)
             <button class="btn btn-danger btn-lg" wire:click="SendApplication()">
                 <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
             </button>

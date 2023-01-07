@@ -14,11 +14,11 @@ class Financing extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'personal_contribution',
-        'other_income',
-        'income_where',
-        'income_what',
-        'netto_income', 
+        'personalContribution',
+        'otherIncome',
+        'incomeWhere',
+        'incomeWho',
+        'nettoIncome', 
         'assets',
         'scholarship'
     ];

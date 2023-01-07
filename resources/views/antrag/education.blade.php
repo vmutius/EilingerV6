@@ -7,7 +7,7 @@
     <div class="row g-3">
         <div class="col-sm-6">
             <label class="form-label" for="education">Ausbildung</label>
-            <select wire:model.lazy="education.education" id="education" name="education" class="form-select">
+            <select wire:model.lazy="education.education" name="education" class="form-select">
                 <option value="">-- Wählen Sie eine Option --</option>
                 @foreach (App\Models\Education::EDUCATION as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
@@ -16,15 +16,15 @@
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="name">Bezeichnung und Ort der Ausbildungsstätte</label>
-            <input wire:model.lazy="education.name" type="text" id="name" class="form-control" />
+            <input wire:model.lazy="education.name" type="text" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="final">beabsichtigter Abschluss als</label>
-            <input wire:model.lazy="education.final" type="text" id="final" class="form-control" />
+            <input wire:model.lazy="education.final" type="text" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="grade">Abschluss</label>
-            <select wire:model.lazy="education.grade" id="grade" name="grade" class="form-select">
+            <select wire:model.lazy="education.grade" name="grade" class="form-select">
                 <option value="">-- Wählen Sie eine Option --</option>
                 @foreach (App\Models\Education::GRADE as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>

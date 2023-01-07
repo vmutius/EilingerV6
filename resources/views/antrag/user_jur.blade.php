@@ -15,49 +15,33 @@
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="firstname">Vorname</label>
-            <input wire:model.lazy="user.firstname" type="text" id="firstname" class="form-control" />
+            <input wire:model.lazy="user.firstname" type="text" class="form-control" />
         </div>
         <div class="col-sm-5">       
             <label class="form-label" for="lastname">Nachname</label>
-            <input wire:model.lazy="user.lastname" type="text" id="lastname" class="form-control"/>
+            <input wire:model.lazy="user.lastname" type="text" class="form-control"/>
         </div>
     
         
         <div class="col-md-5">
             <label class="form-label" for="email">Email</label>
-            <input wire:model.lazy="user.email" type="email" id="email" class="form-control" />
+            <input wire:model.lazy="user.email" type="email" class="form-control" />
         </div>
 
         <div class="col-md-4">
             <label class="form-label" for="telefon">Telefon</label>
-            <input wire:model.lazy="user.telefon" type="text" id="telefon" class="form-control" />
+            <input wire:model.lazy="user.telefon" type="text" class="form-control" />
         </div>
         <div class="col-md-4">
             <label class="form-label" for="mobile">Mobile</label>
-            <input wire:model.lazy="user.mobile" type="email" id="mobile" class="form-control" />
+            <input wire:model.lazy="user.mobile" type="email" class="form-control" />
         </div>
         <div class="col-md-4">
             <label class="form-label" for="sozVersNr">Sozialversicherungsnummer</label>
-            <input wire:model.lazy="user.sozVersNr" type="text" id="sozVersNr" class="form-control" />
+            <input wire:model.lazy="user.sozVersNr" type="text" class="form-control" />
         </div>
 
-        <div class="form-group">
-            <label class="form-label" for="number">Für Ausländer</label>
-            <input id="checkbox" type=checkbox >
-        </div>
-
-        <div id="additional" style="display:none;">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label" for="street">in der Schweiz seit</label>
-                    <input wire:model.lazy="street" type="text" id="street" class="form-control"/>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="number">Art der Bewilligung</label>
-                    <input type="text" id="number" class="form-control"/>
-                </div>
-            </div>
-        </div>
+       
         
         <div class="col-md-12 text-center">        
             <button type="submit"  class="btn btn-success">
