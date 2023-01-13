@@ -14,6 +14,17 @@
     <p>Durch Einreichen des Antrag bestätigen Sie, dass Sie die Fördervoraussetzungen sowie die Ausschlusskriterien
         gelesen und zur
         Kenntnis genommen haben. </p>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
     <div class="home-content">
         @if (auth()->user()->type == 'nat')
             {{-- 1 Account Details --}}
@@ -158,9 +169,9 @@
             </button>
 
             @if ($currentStep == 10)
-            <button class="btn btn-danger btn-lg" wire:click="SendApplication()">
-                <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
-            </button>
+                <button class="btn btn-danger btn-lg" wire:click="SendApplication()">
+                    <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
+                </button>
             @endif
 
             <button class="btn btn-colour-1  btn-next pull-right" wire:click="increaseStep()">

@@ -27,7 +27,7 @@ class CreateApplicationsTable extends Migration
      * Status
      *
      * not_send = noch nicht eingereicht
-     * pending = Wartet auf Antwort der Stiftun
+     * pending = Wartet auf Antwort der Stiftung
      * waiting = Wartet auf Antwort vom Benutzer
      * blocked = abgelehnt
      * approved = bewilligt

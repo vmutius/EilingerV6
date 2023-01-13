@@ -6,6 +6,7 @@ use App\Models\Account;
 use Livewire\Component;
 use App\Models\User;
 use App\Models\Address;
+use App\Models\Application;
 use App\Models\Cost;
 use App\Models\Education;
 use App\Models\Enclosure;
@@ -14,6 +15,7 @@ use App\Models\Parents;
 use App\Models\Sibling;
 use App\Models\Country;
 use Carbon\Carbon;
+use Illuminate\Support\Collection;
 
 class Antrag extends Component
 {
@@ -34,6 +36,8 @@ class Antrag extends Component
     public Cost $cost;
     public Financing $financing;
     public Enclosure $enclosure;
+    public Application $application;
+    public Collection $siblings;
 
     protected $casts = [
         'birthday' => 'date:d.m.Y',
@@ -77,6 +81,10 @@ class Antrag extends Component
         ]);
         $this->financing = Financing::firstOrNew([
             'user_id' => $this->user->id,
+        ]);
+        $this->application = Application::firstOrCreate([
+            'user_id' => $this->user->id,
+            'appl_status' => 'not send',
         ]);
 
 
@@ -229,6 +237,7 @@ class Antrag extends Component
      */
     public function Step2AddressSubmit()
     {
+        $this->address->application_id = $this->application->id;
         $this->address->save();
         $this->currentStep = 3;
     }
@@ -237,6 +246,7 @@ class Antrag extends Component
     {
         $this->abweichendeAddress->user_id = auth()->user()->id;
         $this->abweichendeAddress->isWochenaufenthalt = true;
+        $this->abweichendeAddress->application_id = $this->application->id;
         $this->abweichendeAddress->save();
         $this->currentStep = 4;
     }
@@ -244,6 +254,7 @@ class Antrag extends Component
 
     public function Step4EducationSubmit()
     {
+        $this->education->application_id = $this->application->id;
         $this->education->user_id = auth()->user()->id;
         $this->education->save();
         $this->currentStep = 5;
@@ -251,6 +262,7 @@ class Antrag extends Component
 
     public function Step5AccountSubmit()
     {
+        $this->account->application_id = $this->application->id;
         $this->account->user_id = auth()->user()->id;
         $this->account->save();
         $this->currentStep = 6;
@@ -258,6 +270,7 @@ class Antrag extends Component
 
     public function Step6ParentsSubmit()
     {
+        $this->father->application_id = $this->application->id;
         $this->father->user_id = auth()->user()->id;
         $this->father->parent_type ='father';
         $this->father->save();
@@ -274,13 +287,23 @@ class Antrag extends Component
     }
     public function Step7SiblingSubmit()
     {
+        $this->sibling->application_id = $this->application->id;
         $this->sibling->user_id = auth()->user()->id;
         $this->sibling->save();
         $this->currentStep = 8;
     }
 
+    public function AddSibling()
+    {
+        $this->sibling->push(['lastname' => '']);
+        $this->sibling = Sibling::firstOrNew([
+            'user_id' => $this->user->id,
+        ]);
+    }
+
     public function Step8CostSubmit()
     {
+        $this->cost->application_id = $this->application->id;
         $this->cost->user_id = auth()->user()->id;
         $this->cost->save();
         $this->currentStep = 9;
@@ -288,14 +311,133 @@ class Antrag extends Component
 
     public function Step9FinancingSubmit()
     {
+        
+        $this->financing->application_id = $this->application->id;
         $this->financing->user_id = auth()->user()->id;
         $this->financing->save();
         $this->currentStep = 10;
     }
 
-    public function SendApplication()
+    public function Step10EnclosureSubmit()
     {
-        
+        $this->enclosure->application_id = $this->application->id;
+        $this->enclosure->save();
+    }
+
+    public function SendApplication()
+    {   
+       $this->validate([
+        'user.birthday' => 'required', 
+        'user.salutation' => 'required',
+        'user.nationality' => 'required',
+        'user.telefon' => 'required',
+        'user.mobile' => 'required',
+        'user.sozVersNr' => 'requiredIf()',
+        'user.birthday' => 'nullable',
+        'user.inCHsince' => 'nullable',
+        'user.bewilligung' => 'nullable',
+        'address.street' => 'nullable',
+        'address.number' => 'nullable',
+        'address.town' => 'nullable',
+        'address.plz' => 'nullable',
+        'address.country' => 'nullable',
+        'abweichendeAddress.street' => 'nullable',
+        'abweichendeAddress.number' => 'nullable',
+        'abweichendeAddress.town' => 'nullable',
+        'abweichendeAddress.plz' => 'nullable',
+        'abweichendeAddress.country' => 'nullable',
+        'education.education' => 'nullable',
+        'education.name' => 'nullable',
+        'education.final' => 'nullable',
+        'education.grade' => 'nullable',
+        'education.ects-points' => 'nullable',
+        'education.time' => 'nullable',
+        'account.name_bank' => 'nullable',
+        'account.city_bank' => 'nullable',
+        'account.owner' => 'nullable',
+        'account.IBAN' => 'nullable',
+        'mother.lastname' => 'nullable',
+        'mother.firstname' => 'nullable',
+        'mother.birthday' => 'nullable',
+        'mother.telefon' => 'nullable',
+        'mother.address' => 'nullable',
+        'mother.plz_ort' => 'nullable',
+        'mother.since' => 'nullable',
+        'mother.job_type' => 'nullable',
+        'mother.job' => 'nullable',
+        'mother.employer' => 'nullable',
+        'mother.inCHsince' => 'nullable',
+        'mother.marriedSince' => 'nullable',
+        'mother.separatedSince' => 'nullable',
+        'mother.divorcedSince' => 'nullable',
+        'mother.death' => 'nullable',
+        'father.lastname' => 'nullable',
+        'father.firstname' => 'nullable',
+        'father.birthday' => 'nullable',
+        'father.telefon' => 'nullable',
+        'father.address' => 'nullable',
+        'father.plz_ort' => 'nullable',
+        'father.since' => 'nullable',
+        'father.job_type' => 'nullable',
+        'father.job' => 'nullable',
+        'father.employer' => 'nullable',
+        'father.inCHsince' => 'nullable',
+        'father.marriedSince' => 'nullable',
+        'father.separatedSince' => 'nullable',
+        'father.divorcedSince' => 'nullable',
+        'father.death' => 'nullable',
+        'stepmother.lastname' => 'nullable',
+        'stepmother.firstname' => 'nullable',
+        'stepmother.address' => 'nullable',
+        'stepmother.plz_ort' => 'nullable',
+        'stepmother.employer' => 'nullable',
+        'stepfather.lastname' => 'nullable',
+        'stepfather.firstname' => 'nullable',
+        'stepfather.address' => 'nullable',
+        'stepfather.plz_ort' => 'nullable',
+        'stepfather.employer' => 'nullable',
+        'sibling.birth_year' => 'nullable',
+        'sibling.lastname' => 'nullable',
+        'sibling.firstname' => 'nullable',
+        'sibling.education' => 'nullable',
+        'sibling.graduation_year' => 'nullable',
+        'sibling.placeOfResidence' => 'nullable',
+        'sibling.getAmount' => 'nullable',
+        'sibling.supportSite' => 'nullable',
+        'cost.semesterFees' => 'nullable',
+        'cost.fees' => 'nullable',
+        'cost.educationalMaterial' => 'nullable',
+        'cost.excursion' => 'nullable',
+        'cost.travelExpenses' => 'nullable',
+        'cost.costOfLivingWithParents' => 'nullable',
+        'cost.costOfLivingAlone' => 'nullable',
+        'cost.costOfLivingAlone' => 'nullable',
+        'cost.costOfLivingWithPartner' => 'nullable',
+        'cost.numberOfChildren' => 'nullable',
+        'financing.personalContribution' => 'nullable',
+        'financing.otherIncome' => 'nullable',
+        'financing.incomeWhere' => 'nullable',
+        'financing.incomeWho' => 'nullable',
+        'financing.nettoIncome' => 'nullable',
+        'financing.assets' => 'nullable',
+        'financing.scholarship' => 'nullable',
+        'enclosure.hasID',
+        'enclosure.hasCV',
+        'enclosure.hasApprenticeshipContract',
+        'enclosure.hasDiploma',
+        'enclosure.hasDivorce',
+        'enclosure.hasRentalContract',
+        'enclosure.hasCertificateOfStudy',
+        'enclosure.hasTaxAssessment',
+        'enclosure.hasExpenseReceipts',
+        'enclosure.hasPartnerTaxAssessment',
+        'enclosure.hasSupplementaryServices',
+        'enclosure.hasECTSPoints',
+        'enclosure.hasParentsTaxFactors'
+        ]);
+
+        $this->application->appl_status = 'pending';
+        $this->application->save;
     }
   
     public function increaseStep()

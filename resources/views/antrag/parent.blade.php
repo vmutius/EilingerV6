@@ -57,11 +57,11 @@
         <h4 class="mb-0">Mutter</h4>
         <div class="col-sm-6">
             <label class="form-label" for="lastname">Nachname</label>
-            <input wire:model.lazy="mother.lastname" type="text" class="form-control" placeholder="Mustermann" />
+            <input wire:model.lazy="mother.lastname" type="text" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="firstname">Vorname</label>
-            <input wire:model.lazy="mother.firstname" type="text" class="form-control" placeholder="Maxima" />
+            <input wire:model.lazy="mother.firstname" type="text" class="form-control"  />
         </div>
 
         <div class="col-sm-6">
@@ -70,7 +70,7 @@
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="telefon">Telefon</label>
-            <input wire:model.lazy="mother.telefon" type="text" class="form-control" placeholder="Maxima" />
+            <input wire:model.lazy="mother.telefon" type="text" class="form-control"  />
         </div>
 
         <div class="col-sm-5">
@@ -79,7 +79,7 @@
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="plz_ort">PLZ und Ort</label>
-            <input wire:model.lazy="mother.plz_ort" type="text" class="form-control" placeholder="Maxima" />
+            <input wire:model.lazy="mother.plz_ort" type="text" class="form-control"  />
         </div>
         <div class="col-sm-2">
             <label class="form-label" for="since">Wohnhaft seit</label>
