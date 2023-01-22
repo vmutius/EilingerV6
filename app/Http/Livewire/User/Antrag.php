@@ -14,7 +14,6 @@ use App\Models\Financing;
 use App\Models\Parents;
 use App\Models\Sibling;
 use App\Models\Country;
-use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
 class Antrag extends Component
@@ -33,11 +32,11 @@ class Antrag extends Component
     public Parents $stepmother;
     public Parents $stepfather;
     public Sibling $sibling;
+    public array $siblings = [];
     public Cost $cost;
     public Financing $financing;
     public Enclosure $enclosure;
     public Application $application;
-    public Collection $siblings;
 
     protected $casts = [
         'birthday' => 'date:d.m.Y',
@@ -73,9 +72,9 @@ class Antrag extends Component
             'user_id' => $this->user->id,
             'parent_type' => 'stepfather',
         ]);
-        $this->sibling = Sibling::firstOrNew([
-            'user_id' => $this->user->id,
-        ]);
+        
+        
+
         $this->cost = Cost::firstOrNew([
             'user_id' => $this->user->id,
         ]);
@@ -165,14 +164,14 @@ class Antrag extends Component
         'stepfather.address' => 'nullable',
         'stepfather.plz_ort' => 'nullable',
         'stepfather.employer' => 'nullable',
-        'sibling.birth_year' => 'nullable',
-        'sibling.lastname' => 'nullable',
-        'sibling.firstname' => 'nullable',
-        'sibling.education' => 'nullable',
-        'sibling.graduation_year' => 'nullable',
-        'sibling.placeOfResidence' => 'nullable',
-        'sibling.getAmount' => 'nullable',
-        'sibling.supportSite' => 'nullable',
+        'sibling.*.birth_year' => 'nullable',
+        'sibling.*.lastname' => 'nullable',
+        'sibling.*.firstname' => 'nullable',
+        'sibling.*.education' => 'nullable',
+        'sibling.*.graduation_year' => 'nullable',
+        'sibling.*.placeOfResidence' => 'nullable',
+        'sibling.*.getAmount' => 'nullable',
+        'sibling.*.supportSite' => 'nullable',
         'cost.semesterFees' => 'nullable',
         'cost.fees' => 'nullable',
         'cost.educationalMaterial' => 'nullable',
@@ -214,8 +213,9 @@ class Antrag extends Component
     {
         $countries = Country::all();
         $user = User::findOrfail(auth()->user()->id);
+        $siblings = Sibling::where('user_id', $this->user->id)->get()->toArray();
 
-        return view('livewire.user.antrag', compact('countries', 'user'))
+        return view('livewire.user.antrag', compact('countries', 'user', 'siblings'))
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
   
@@ -287,19 +287,24 @@ class Antrag extends Component
     }
     public function Step7SiblingSubmit()
     {
-        $this->sibling->application_id = $this->application->id;
-        $this->sibling->user_id = auth()->user()->id;
-        $this->sibling->save();
+        $this->siblings->each(function($sibling){
+            $sibling->application_id = $this->application->id;
+            $sibling->user_id = auth()->user()->id;
+            $sibling->save();
+        });
         $this->currentStep = 8;
     }
 
     public function AddSibling()
-    {
-        $this->sibling->push(['lastname' => '']);
-        $this->sibling = Sibling::firstOrNew([
-            'user_id' => $this->user->id,
-        ]);
+    {      
+        $this->siblings->push(new Sibling(['user_id' => '']));
     }
+
+    public function removeSibling($index)
+    {
+        $this->inputs->pull($index);
+    }
+
 
     public function Step8CostSubmit()
     {
