@@ -17,7 +17,7 @@ class CreateFinancingsTable extends Migration
     {
         Schema::create('financings', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->foreignIdFor(User::class);
+            $table->foreignId('user_id')->constrained();
             $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->decimal('personalContribution', $precision=8, $scale=2)->nullable($value = true);
             $table->decimal('otherIncome', $precision=8, $scale=2)->nullable($value = true);

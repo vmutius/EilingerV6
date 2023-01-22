@@ -27,6 +27,6 @@ class Enclosure extends Model
 
     public function application()
     {
-        return $this->belongsTo(Application::class, 'application_id');
+        return $this->belongsTo(Application::class);
     }
 }

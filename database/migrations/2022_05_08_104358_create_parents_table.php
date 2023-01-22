@@ -17,7 +17,7 @@ class CreateParentsTable extends Migration
     {
         Schema::create('parents', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->foreignIdFor(User::class);
+            $table->foreignId('user_id')->constrained();
             $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->string('parent_type');
             $table->string('lastname', 255)->nullable($value = true);;

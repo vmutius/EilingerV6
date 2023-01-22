@@ -17,7 +17,7 @@ class CreateCostsTable extends Migration
     {
         Schema::create('costs', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->foreignIdFor(User::class);
+            $table->foreignId('user_id')->constrained();
             $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->decimal('semesterFees', $precision=8, $scale=2)->nullable($value = true);
             $table->decimal('fees', $precision=8, $scale=2)->nullable($value = true);

@@ -36,6 +36,7 @@ class CreateUsersTable extends Migration
             $table->string('civilStatus')->nullable($value = true);
             $table->date('inCHsince')->nullable($value = true);
             $table->char('bewilligung')->nullable($value = true);
+            $table->index('email');
             $table->rememberToken();
             $table->timestamps();
         });

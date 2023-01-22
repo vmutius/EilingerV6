@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Sibling extends Model
 {
     use HasFactory;
+    protected $connection = "mysql";
 
     public const GETAMOUNT = [
         true => 'Ja',
@@ -32,11 +33,11 @@ class Sibling extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 
     public function application()
     {
-        return $this->belongsTo(Application::class, 'application_id');
+        return $this->belongsTo(Application::class);
     }
 }

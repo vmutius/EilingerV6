@@ -17,7 +17,7 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->foreignIdFor(User::class);
+            $table->foreignId('user_id')->constrained();
             $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->string('street', 50);
             $table->string('number', 10)->nullable($value = true);

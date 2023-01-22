@@ -90,6 +90,16 @@ class User extends Authenticatable
 
     public function address() 
     {
-        return $this->hasMany(Address::class, 'user_id');
+        return $this->hasMany(Address::class);
+    }
+
+    public function sibling() 
+    {
+        return $this->hasMany(Sibling::class);
+    }
+
+    public function lastLogin()
+    {
+        return $this->belongsTo(Login::class);
     }
 }

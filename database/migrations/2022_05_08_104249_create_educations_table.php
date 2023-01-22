@@ -18,7 +18,7 @@ class CreateEducationsTable extends Migration
     {
         Schema::create('educations', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->foreignIdFor(User::class);
+            $table->foreignId('user_id')->constrained();
             $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->string('education');
             $table->string('name', 255);

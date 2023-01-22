@@ -35,7 +35,7 @@ class CreateApplicationsTable extends Migration
 
         Schema::create('applications', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->foreignIdFor(User::class);
+            $table->foreignId('user_id')->constrained();
             $table->string('appl_status')->default('not_send');
             $table->string('bereich');
             $table->longText('comment');

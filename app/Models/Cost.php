@@ -29,11 +29,11 @@ class Cost extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 
     public function application()
     {
-        return $this->belongsTo(Application::class, 'application_id');
+        return $this->belongsTo(Application::class);
     }
 }

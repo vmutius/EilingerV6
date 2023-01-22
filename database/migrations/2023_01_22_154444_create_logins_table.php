@@ -3,10 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\User;
-use App\Models\Application;
 
-class CreateChildrenTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -15,13 +13,10 @@ class CreateChildrenTable extends Migration
      */
     public function up()
     {
-        Schema::create('childrens', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+        Schema::create('logins', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable($value = true);
-            $table->string('lastname', 255);
-            $table->string('firstname', 255);
-            $table->date('birthday');
+            $table->string('ip_adress', 50);
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateChildrenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('childrens');
+        Schema::dropIfExists('logins');
     }
-}
+};
