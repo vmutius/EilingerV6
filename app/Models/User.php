@@ -93,7 +93,7 @@ class User extends Authenticatable
         return $this->hasMany(Address::class);
     }
 
-    public function sibling() 
+    public function siblings() 
     {
         return $this->hasMany(Sibling::class);
     }

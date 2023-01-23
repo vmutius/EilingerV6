@@ -33,7 +33,7 @@
         </div>
         <div class="col-sm-5">
             <label for="birthday" class="form-label">Geburtstag</label>
-            <input wire:model.lazy="user.birthday" class="form-control" type="text" placeholder="DD.MM.YYYY" />
+            <input wire:model.lazy="user.birthday" class="form-control" type="date" placeholder="DD.MM.YYYY" />
         </div>
         <div class="col-md-5">
             <label class="form-label" for="email">Email</label>

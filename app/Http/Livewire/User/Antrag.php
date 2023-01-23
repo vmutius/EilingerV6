@@ -32,7 +32,7 @@ class Antrag extends Component
     public Parents $stepmother;
     public Parents $stepfather;
     public Sibling $sibling;
-    public array $siblings = [];
+    public Collection $siblings;
     public Cost $cost;
     public Financing $financing;
     public Enclosure $enclosure;
@@ -73,7 +73,11 @@ class Antrag extends Component
             'parent_type' => 'stepfather',
         ]);
         
-        
+        if ($this->user->siblings()->count()>0) {
+            $this->siblings = $this->user->siblings;
+        } else {
+            $this->siblings = collect(new Sibling);
+        }
 
         $this->cost = Cost::firstOrNew([
             'user_id' => $this->user->id,
