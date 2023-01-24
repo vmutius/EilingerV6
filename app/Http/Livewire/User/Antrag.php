@@ -21,7 +21,6 @@ class Antrag extends Component
     public $currentStep = 1;
     public $successMessage = '';
     public $message = '';
-    public $birthday;
     public User $user;
     public Address $address;
     public Address $abweichendeAddress;

@@ -1,6 +1,4 @@
-@extends('layouts.user_dashboard')
-
-@section('content')
+<x-layouts.user_dashboard>
 <section class="home-section">
     <div class="text">Dashboard</div>
     <div class="home-content">
@@ -42,4 +40,4 @@
         </div>
     </div>
 </section>
-@endsection
+</x-layouts.user_dashboard>

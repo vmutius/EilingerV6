@@ -4,11 +4,11 @@ namespace App\Http\Livewire\User;
 
 use Livewire\Component;
 
-class Message extends Component
+class Profile extends Component
 {
     public function render()
     {
-        return view('livewire.user.message')
+        return view('livewire.user.profile')
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
 }

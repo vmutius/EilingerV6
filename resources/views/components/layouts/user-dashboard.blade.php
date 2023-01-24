@@ -57,11 +57,11 @@
                 <span class="tooltip">Ihre Nachrichten</span>
             </li>
             <li>
-                <a href="{{ route('user_benutzer', Auth::user()->username) }}">
+                <a href="{{ route('user_profile', Auth::user()->username) }}">
                     <i class='bx bx-user'></i>
-                    <span class="links_name">Benutzer</span>
+                    <span class="links_name">Profil</span>
                 </a>
-                <span class="tooltip">Benutzer</span>
+                <span class="tooltip">Profil</span>
             </li>
 
             <li>

@@ -25,30 +25,7 @@ class UserDashController extends Controller
         return view('user.dashboard');
     }
 
-   
-    public function gesuch()
-    {
 
-        return view('user.gesuch');
-    }
-
-    public function nachrichten($appl_id)
-    {
-        
-        return view('user.nachrichten');
-    }
-
-    public function benutzer()
-    {
-        
-        return view('user.benutzer');
-    }
-
-    public function dateien()
-    {
-        
-        return view('user.dateien');
-    }
 
     public function einstellungen()
     {

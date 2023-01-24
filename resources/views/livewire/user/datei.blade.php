@@ -1,3 +1,3 @@
 <section class="home-section">
-    <div class="text">Nachrichten</div>
+    <div class="text">Dateien</div>
 </section>
