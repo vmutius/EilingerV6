@@ -29,35 +29,35 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="{{ route('user_dashboard', Auth::user()->username) }}">
+                <a href="{{ route('user_dashboard') }}">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{ route('user_antrag', Auth::user()->username) }}">
+                <a href="{{ route('user_antrag') }}">
                     <i class='bx bx-pie-chart-alt-2'></i>
                     <span class="links_name">Anträge</span>
                 </a>
                 <span class="tooltip">Stellen Sie hier ihre Anträge</span>
             </li>
             <li>
-                <a href="{{ route('user_gesuch', Auth::user()->username) }}">
+                <a href="{{ route('user_gesuch') }}">
                     <i class='bx bx-pie-chart-alt-2'></i>
                     <span class="links_name">Gesuche</span>
                 </a>
                 <span class="tooltip">Sehen Sie hier ihre Gesuche</span>
             </li>
             <li>
-                <a href="{{ route('user_nachrichten', Auth::user()->username) }}">
+                <a href="{{ route('user_nachrichten') }}">
                     <i class='bx bx-chat'></i>
                     <span class="links_name">Nachrichten</span>
                 </a>
                 <span class="tooltip">Ihre Nachrichten</span>
             </li>
             <li>
-                <a href="{{ route('user_profile', Auth::user()->username) }}">
+                <a href="{{ route('user_profile') }}">
                     <i class='bx bx-user'></i>
                     <span class="links_name">Profil</span>
                 </a>
@@ -65,14 +65,14 @@
             </li>
 
             <li>
-                <a href="{{ route('user_dateien', Auth::user()->username) }}">
+                <a href="{{ route('user_dateien') }}">
                     <i class='bx bx-folder'></i>
                     <span class="links_name">Datei Ablage</span>
                 </a>
                 <span class="tooltip">Datei Ablage</span>
             </li>
             <li>
-                <a href="{{ route('user_einstellungen', Auth::user()->username) }}">
+                <a href="{{ route('user_einstellungen') }}">
                     <i class='bx bx-cog'></i>
                     <span class="links_name">Einstellungen</span>
                 </a>

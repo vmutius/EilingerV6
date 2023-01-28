@@ -2,6 +2,8 @@
 
 use App\Http\Livewire\Auth\RegisterInst;
 use App\Http\Livewire\Auth\RegisterPrivat;
+use App\Http\Livewire\Auth\Login;
+use App\Http\Livewire\Auth\Password\Reset;
 use App\Http\Livewire\User\Antrag;
 use App\Http\Livewire\User\Profile;
 use App\Http\Livewire\User\Gesuch;
@@ -31,12 +33,13 @@ Route::controller(HomeController::class)->group(function() {
     Route::get('/impressum', 'impressum')->name('impressum');
     Route::get('/datenschutz', 'datenschutz')->name('datenschutz');
     Route::get('/verifikation', 'verifikation')->name('verifikation');
-
 });
 
 Route::middleware('guest')->group(function () {
     Route::get('/register_inst', RegisterInst::class)->name('register_inst');
     Route::get('/register_privat', RegisterPrivat::class)->name('register_privat');
+    Route::get('/login',Login::class)->name('login');
+    Route::get('/reset', Reset::class)->name('password_reset');
 });
 
 Route::middleware('auth')->group(function () {

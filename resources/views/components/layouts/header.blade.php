@@ -11,7 +11,7 @@
                 <li><a class="nav-link scrollto" href="{{ route('index') }}#projekte">Projekte</a></li>
                 <li><a class="nav-link scrollto" href="{{ route('index') }}#gesuche">Gesuche</a></li>
                 @if (Auth::guest())
-                  <li><a class="getstarted" href="{{ route('login') }}">{{ __('register') }} | Einloggen</a></li>
+                  <li><a class="getstarted" href="{{ route('login') }}">Registrieren | Einloggen</a></li>
                 @else
                   <li><a class="getstarted" href="{{ route('user_dashboard') }}">Dashboard</a></li>
                 @endif

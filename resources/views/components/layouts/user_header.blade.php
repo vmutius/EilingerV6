@@ -7,7 +7,7 @@
                     {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a href="{{ route('user_profile') }}">Profile</a></li>
                   <li><livewire:auth.logout></li>
                 </ul>
               </div>
