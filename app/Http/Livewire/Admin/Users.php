@@ -9,18 +9,29 @@ use Livewire\WithPagination;
 class Users extends Component
 {
     use WithPagination;
+    public $searchUsername;
+    public $searchUserEmail;
 
     protected $paginationTheme = 'bootstrap';
    
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    public function mount()
+    {
+        $this->searchUsername = '';
+        $this->searchUserEmail = '';
+    }
+    
     public function render()
     {
+        $users = User::query()
+            ->when($this->searchUsername!='', function($query){
+                $query->where('username', 'like','%'.$this->searchUsername.'%');
+             })    
+             ->when($this->searchUserEmail!='', function($query){
+                $query->where('email', 'like','%'.$this->searchUserEmail.'%');
+             })   
+            ->paginate(10);
         return view('livewire.admin.users', [
-                'users' => User::paginate(10)
+                'users' => $users
             ])
             ->layout(\App\View\Components\Layouts\AdminDashboard::class);
     }
