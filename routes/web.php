@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/einstellungen', App\Http\Livewire\User\Settings::class)->name('user_einstellungen');
 });
 
-Route::middleware('auth')->group(function() {
+Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/dashboard', [AdminDashController::class,'index'])->name('admin_dashboard');
     Route::get('/admin/users', App\Http\Livewire\Admin\Users::class)->name('admin_users');
 });

@@ -21,8 +21,12 @@ class Login extends Component
         auth()->attempt($credentials)
             ? redirect()->intended('/')
             : $this->addError('email', trans('auth.failed'));
-        
-        return redirect('/user/dashboard');
+
+        if(auth()->user()->isAdmin){
+            return redirect('/admin/dashboard');
+        } else {
+            return redirect('/user/dashboard');
+        }
     }
 
     
