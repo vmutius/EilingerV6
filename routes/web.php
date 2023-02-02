@@ -1,10 +1,5 @@
 <?php
 
-use App\Http\Livewire\User\Profile;
-use App\Http\Livewire\User\Gesuch;
-use App\Http\Livewire\User\Message;
-use App\Http\Livewire\User\Datei;
-use App\Http\Livewire\User\Settings;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserDashController;
 use App\Http\Controllers\AdminDashController;
@@ -41,14 +36,14 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/user/dashboard', [UserDashController::class,'index'])->name('user_dashboard');
     Route::get('/user/antrag', App\Http\Livewire\User\Antrag::class)->name('user_antrag');
-    Route::get('/user/gesuch', Gesuch::class)->name('user_gesuch');
-    Route::get('/user/nachrichten', Message::class)->name('user_nachrichten');
-    Route::get('/user/profile', Profile::class)->name('user_profile');
-    Route::get('/user/dateien', Datei::class)->name('user_dateien');
-    Route::get('/user/einstellungen', Settings::class)->name('user_einstellungen');
+    Route::get('/user/gesuch', App\Http\Livewire\User\Gesuch::class)->name('user_gesuch');
+    Route::get('/user/nachrichten', App\Http\Livewire\User\Message::class)->name('user_nachrichten');
+    Route::get('/user/profile', App\Http\Livewire\User\Profile::class)->name('user_profile');
+    Route::get('/user/dateien', App\Http\Livewire\User\Datei::class)->name('user_dateien');
+    Route::get('/user/einstellungen', App\Http\Livewire\User\Settings::class)->name('user_einstellungen');
 });
 
 Route::middleware('auth')->group(function() {
     Route::get('/admin/dashboard', [AdminDashController::class,'index'])->name('admin_dashboard');
-    Route::get('/admin/users', App\Http\Livewire\Users::class)->name('admin_users');
+    Route::get('/admin/users', App\Http\Livewire\Admin\Users::class)->name('admin_users');
 });

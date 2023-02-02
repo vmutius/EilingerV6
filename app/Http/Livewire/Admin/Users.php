@@ -1,6 +1,6 @@
 <?php
   
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
   
 use Livewire\Component;
 use App\Models\User;
@@ -19,7 +19,7 @@ class Users extends Component
      */
     public function render()
     {
-        return view('livewire.users', [
+        return view('livewire.admin.users', [
                 'users' => User::paginate(10)
             ])
             ->layout(\App\View\Components\Layouts\AdminDashboard::class);
