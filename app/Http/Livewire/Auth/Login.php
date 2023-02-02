@@ -22,7 +22,7 @@ class Login extends Component
             ? redirect()->intended('/')
             : $this->addError('email', trans('auth.failed'));
         
-        return redirect('/dashboard');
+        return redirect('/user/dashboard');
     }
 
     

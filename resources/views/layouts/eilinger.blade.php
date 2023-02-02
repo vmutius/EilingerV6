@@ -22,7 +22,7 @@
     <body>
 
     <!-- ======= Header ======= -->
-    @include('components.layouts.header')
+    @include('layouts.header')
 
 
     <!-- ======= Hero Section ======= -->
@@ -47,7 +47,7 @@
       </div>
     @endif
     <!-- ======= Footer ======= -->
-    @include('components.layouts.footer')
+    @include('layouts.footer')
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     @livewireScripts()

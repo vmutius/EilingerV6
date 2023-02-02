@@ -23,6 +23,6 @@ class UserDashboard extends Component
      */
     public function render()
     {
-        return view('components.layouts.user-dashboard');
+        return view('layouts.user-dashboard');
     }
 }

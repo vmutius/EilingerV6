@@ -215,10 +215,9 @@ class Antrag extends Component
     public function render()
     {
         $countries = Country::all();
-        $user = User::findOrfail(auth()->user()->id);
         $siblings = Sibling::where('user_id', $this->user->id)->get()->toArray();
 
-        return view('livewire.user.antrag', compact('countries', 'user', 'siblings'))
+        return view('livewire.user.antrag', compact('countries', 'siblings'))
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
   

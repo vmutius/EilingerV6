@@ -23,6 +23,6 @@ class Footer extends Component
      */
     public function render()
     {
-        return view('components.layouts.footer');
+        return view('layouts.footer');
     }
 }

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keyword" content="">
-    <title>Eilinger Stiftung - Dashboard</title>
+    <title>Eilinger Stiftung - Admin Dashboard</title>
 
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -20,7 +20,7 @@
 
 <body>
     <!-- ======= Header ======= -->
-    @include('components.layouts.user_header')
+    @include('layouts.dash_header')
 
     <div class="sidebar">
         <div class="logo-details">
@@ -29,16 +29,16 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="{{ route('user_dashboard') }}">
+                <a href="{{ route('admin_dashboard') }}">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{ route('user_antrag') }}">
+                <a href="{{ route('admin_users') }}">
                     <i class='bx bx-pie-chart-alt-2'></i>
-                    <span class="links_name">Anträge</span>
+                    <span class="links_name">Benutzerübersicht</span>
                 </a>
                 <span class="tooltip">Stellen Sie hier ihre Anträge</span>
             </li>

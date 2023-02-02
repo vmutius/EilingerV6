@@ -4,13 +4,13 @@ namespace App\Http\Livewire;
   
 use Livewire\Component;
 use App\Models\User;
+use Livewire\WithPagination;
   
 class Users extends Component
 {
-    public $username, $salutation, $lastname, $firstname, $birthday, $nationality, $telefon, $email, $password, $password_confirmation;
-    public $nameInst, $user_id, $telefonInst, $emailInst, $website, $sozVersNr, $civilStatus;
-    
-    public $updateMode = false;
+    use WithPagination;
+
+    protected $paginationTheme = 'bootstrap';
    
     /**
      * The attributes that are mass assignable.
@@ -19,8 +19,10 @@ class Users extends Component
      */
     public function render()
     {
-        $this->Users = User::all();
-        return view('livewire.users');
+        return view('livewire.users', [
+                'users' => User::paginate(10)
+            ])
+            ->layout(\App\View\Components\Layouts\AdminDashboard::class);
     }
   
     /**

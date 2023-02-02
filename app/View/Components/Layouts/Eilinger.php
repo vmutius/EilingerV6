@@ -23,6 +23,6 @@ class Eilinger extends Component
      */
     public function render()
     {
-        return view('components.layouts.eilinger');
+        return view('layouts.eilinger');
     }
 }
