@@ -15,6 +15,8 @@ class Cost extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
+        'application_id',
         'semesterFees',
         'fees',
         'educationalMaterial',

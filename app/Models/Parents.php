@@ -26,6 +26,8 @@ class Parents extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
+        'application_id',
         'parent_type',
         'lastname',
         'firstname',

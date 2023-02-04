@@ -18,15 +18,20 @@ class Login extends Component
     {
         $credentials = $this->validate();
 
-        auth()->attempt($credentials)
-            ? redirect()->intended('/')
-            : $this->addError('email', trans('auth.failed'));
-
-        if(auth()->user()->isAdmin){
-            return redirect('/admin/dashboard');
+        if (auth()->attempt($credentials))
+        {
+            if(auth()->user()->isAdmin){
+                return redirect('/admin/dashboard')
+                ->with('success', 'Sie sind eingeloggt');
+            } else {
+                return redirect('/user/dashboard')
+                ->with('success', 'Sie sind eingeloggt');
+            }
         } else {
-            return redirect('/user/dashboard');
+            return redirect ('login')
+            ->with('danger', 'Email oder Passwort stimmen nicht'); 
         }
+        
     }
 
     

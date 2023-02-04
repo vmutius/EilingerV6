@@ -14,6 +14,8 @@ class Financing extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
+        'application_id',
         'personalContribution',
         'otherIncome',
         'incomeWhere',

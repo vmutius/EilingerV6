@@ -33,7 +33,7 @@
                     <div class="card">
                         <div class="card-header bg-secondary text-white">Schritt 1/10 - Bewerber</div>
                         <div class="card-body">
-                            @include('antrag.user_nat')
+                            @livewire('antrag.user-nat-form')
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">Schritt 2/10 - Adresse</div>
                     <div class="card-body">
-                        @include('antrag.address')
+                        @livewire('antrag.address-form')
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">Schritt 3/10 - Abweichende Adresse</div>
                     <div class="card-body">
-                        @include('antrag.abweichendeAddress')
+                        @livewire('antrag.abweichende-address-form')
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">Schritt 4/10 - Ausbildung</div>
                     <div class="card-body">
-                        @include('antrag.education')
+                        @livewire('antrag.education-form')
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">Schritt 5/10 - Auszahlung</div>
                     <div class="card-body">
-                        @include('antrag.account')
+                        @livewire('antrag.account-form')
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">Schritt 6/10 - Eltern</div>
                     <div class="card-body">
-                        @include('antrag.parent')
+                        @livewire('antrag.parent-form')
                     </div>
                 </div>
             </div>

@@ -22,7 +22,6 @@ class Antrag extends Component
     public $successMessage = '';
     public $message = '';
     public User $user;
-    public Address $address;
     public Address $abweichendeAddress;
     public Education $education;
     public Account $account;
@@ -44,7 +43,6 @@ class Antrag extends Component
     public function mount() 
     {
         $this->user = auth()->user();
-        $this->address = $this->user->address->first();
         $this->abweichendeAddress = Address::firstOrNew([
             'isWochenaufenthalt' => true,
             'user_id' => $this->user->id,
@@ -214,44 +212,11 @@ class Antrag extends Component
      */
     public function render()
     {
-        $countries = Country::all();
-        $siblings = Sibling::where('user_id', $this->user->id)->get()->toArray();
-
-        return view('livewire.user.antrag', compact('countries', 'siblings'))
+        return view('livewire.user.antrag')
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
   
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function Step1UserSubmit()
-    {
-        $this->user->save();
-        $this->currentStep = 2;
-    }
-  
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function Step2AddressSubmit()
-    {
-        $this->address->application_id = $this->application->id;
-        $this->address->save();
-        $this->currentStep = 3;
-    }
-
-    public function Step3AweichendeAddressSubmit()
-    {
-        $this->abweichendeAddress->user_id = auth()->user()->id;
-        $this->abweichendeAddress->isWochenaufenthalt = true;
-        $this->abweichendeAddress->application_id = $this->application->id;
-        $this->abweichendeAddress->save();
-        $this->currentStep = 4;
-    }
+   
 
 
     public function Step4EducationSubmit()
@@ -450,13 +415,11 @@ class Antrag extends Component
     public function increaseStep()
     {
         $this->currentStep++;
-        $this->emit('moveNext');
     }
 
     public function decreaseStep()
     {
         $this->currentStep--;
-        $this->emit('movePrevious');
     }
 
 }

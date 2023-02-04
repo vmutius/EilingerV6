@@ -1,9 +1,16 @@
-<form wire:submit.prevent="Step6ParentsSubmit">
+<form wire:submit.prevent="save">
     <div class="content-header mb-3">
         <h3 class="mb-0">Eltern</h3>
         <small>Leibliche Eltern der gesuchstellenden Person</small>
     </div>
     <div class="row g-3">
+
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <h4 class="mb-0">Vater</h4>
         <div class="col-sm-6">
             <label class="form-label" for="lastname">Nachname</label>
@@ -16,11 +23,11 @@
 
         <div class="col-sm-6">
             <label class="form-label" for="birthday">Geburtstag</label>
-            <input wire:model.lazy="father.birthday" type="text"  class="form-control" />
+            <input wire:model.lazy="father.birthday" type="text" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="telefon">Telefon</label>
-            <input wire:model.lazy="father.telefon" type="text" class="form-control"/>
+            <input wire:model.lazy="father.telefon" type="text" class="form-control" />
         </div>
 
         <div class="col-sm-5">
@@ -29,7 +36,7 @@
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="plz_ort">PLZ und Ort</label>
-            <input wire:model.lazy="father.plz_ort" type="text" class="form-control"/>
+            <input wire:model.lazy="father.plz_ort" type="text" class="form-control" />
         </div>
         <div class="col-sm-2">
             <label class="form-label" for="since">Wohnhaft seit</label>
@@ -42,7 +49,7 @@
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="plz_ort">Arbeitgeber</label>
-            <input wire:model.lazy="father.plz_ort" type="text" class="form-control"/>
+            <input wire:model.lazy="father.plz_ort" type="text" class="form-control" />
         </div>
         <div class="col-sm-2">
             <label class="form-label" for="job_type">Arbeitsverhältnis</label>
@@ -61,7 +68,7 @@
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="firstname">Vorname</label>
-            <input wire:model.lazy="mother.firstname" type="text" class="form-control"  />
+            <input wire:model.lazy="mother.firstname" type="text" class="form-control" />
         </div>
 
         <div class="col-sm-6">
@@ -70,7 +77,7 @@
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="telefon">Telefon</label>
-            <input wire:model.lazy="mother.telefon" type="text" class="form-control"  />
+            <input wire:model.lazy="mother.telefon" type="text" class="form-control" />
         </div>
 
         <div class="col-sm-5">
@@ -79,7 +86,7 @@
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="plz_ort">PLZ und Ort</label>
-            <input wire:model.lazy="mother.plz_ort" type="text" class="form-control"  />
+            <input wire:model.lazy="mother.plz_ort" type="text" class="form-control" />
         </div>
         <div class="col-sm-2">
             <label class="form-label" for="since">Wohnhaft seit</label>
@@ -107,11 +114,11 @@
         <h4 class="mb-0">Stiefvater, wenn Mutter wiederverheiratet ist</h4>
         <div class="col-sm-6">
             <label class="form-label" for="lastname">Nachname</label>
-            <input wire:model.lazy="stepfather.lastname" type="text" class="form-control"/>
+            <input wire:model.lazy="stepfather.lastname" type="text" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="firstname">Vorname</label>
-            <input wire:model.lazy="stepfather.firstname" type="text" class="form-control"/>
+            <input wire:model.lazy="stepfather.firstname" type="text" class="form-control" />
         </div>
 
         <div class="col-sm-6">
@@ -120,12 +127,12 @@
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="plz_ort">PLZ und Ort</label>
-            <input wire:model.lazy="stepfather.plz_ort" type="text" class="form-control"/>
+            <input wire:model.lazy="stepfather.plz_ort" type="text" class="form-control" />
         </div>
-        
+
         <div class="col-sm-6">
             <label class="form-label" for="plz_ort">Arbeitgeber</label>
-            <input wire:model.lazy="stepfather.plz_ort" type="text" class="form-control"  />
+            <input wire:model.lazy="stepfather.plz_ort" type="text" class="form-control" />
         </div>
 
         <h4 class="mb-0">Stiefmutter, wenn Vater wiederverheiratet ist</h4>
@@ -135,7 +142,7 @@
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="firstname">Vorname</label>
-            <input wire:model.lazy="stepmother.firstname" type="text" class="form-control"/>
+            <input wire:model.lazy="stepmother.firstname" type="text" class="form-control" />
         </div>
 
         <div class="col-sm-6">
@@ -146,15 +153,15 @@
             <label class="form-label" for="plz_ort">PLZ und Ort</label>
             <input wire:model.lazy="stepmother.plz_ort" type="text" class="form-control" />
         </div>
-        
+
         <div class="col-sm-6">
             <label class="form-label" for="plz_ort">Arbeitgeber</label>
-            <input wire:model.lazy="stepmother.plz_ort" type="text"class="form-control"  />
+            <input wire:model.lazy="stepmother.plz_ort" type="text"class="form-control" />
         </div>
-        
-        
-        <div class="col-md-12 text-center">        
-            <button type="submit"  class="btn btn-success">
+
+
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-success">
                 <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
             </button>
         </div>

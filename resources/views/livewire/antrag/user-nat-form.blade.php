@@ -1,9 +1,15 @@
-<form wire:submit.prevent="Step1UserSubmit">
+<form wire:submit.prevent="save">
     <div class="content-header mb-3">
         <h3 class="mb-0">Bewerber</h3>
         <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
     </div>
     <div class="row g-3">
+
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
         <div class="col-sm-2">
             <label class="form-label" for="salutation">Anrede</label>
             <select wire:model.lazy="user.salutation" class="form-select">
@@ -17,17 +23,17 @@
             <label class="form-label" for="firstname">Vorname</label>
             <input wire:model.lazy="user.firstname" type="text" class="form-control" />
         </div>
-        <div class="col-sm-5">       
+        <div class="col-sm-5">
             <label class="form-label" for="lastname">Nachname</label>
-            <input wire:model.lazy="user.lastname" type="text" class="form-control"/>
+            <input wire:model.lazy="user.lastname" type="text" class="form-control" />
         </div>
-    
+
         <div class="col-sm-2">
             <label class="form-label" for="country">Nationalität</label>
             <select wire:model.lazy="user.nationality" class="form-select">
                 <option disabled>Bitte auswählen...</option>
                 @foreach ($countries as $country)
-                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                    <option value="{{ $country->short_code }}">{{ $country->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -57,8 +63,8 @@
             <label class="form-label" for="inCHsince">In der Schweiz seit (für Ausländer)</label>
             <input wire:model.lazy="user.inCHsince" type="text" class="form-control" />
         </div>
-        <div class="col-sm-6">       
-            <label class="form-label" for="bewilligung">Art der Bewilligung  (für Ausländer)</label>
+        <div class="col-sm-6">
+            <label class="form-label" for="bewilligung">Art der Bewilligung (für Ausländer)</label>
             <select wire:model.lazy="user.bewilligung" name="bewilligung" class="form-select">
                 <option value="">-- Wählen Sie eine Option --</option>
                 @foreach (App\Models\User::BEWILLIGUNG as $key => $label)
@@ -66,12 +72,12 @@
                 @endforeach
             </select>
         </div>
-      
-        <div class="col-md-12 text-center">        
-            <button type="submit"  class="btn btn-success">
+
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-success">
                 <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
             </button>
+
         </div>
     </div>
 </form>
-

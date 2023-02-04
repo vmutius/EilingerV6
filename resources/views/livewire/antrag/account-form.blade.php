@@ -1,9 +1,16 @@
-<form wire:submit.prevent="Step5AccountSubmit">
+<form wire:submit.prevent="save">
     <div class="content-header mb-3">
         <h3 class="mb-0">Auszahlung</h3>
         <small>Enter Your Account Details.</small>
     </div>
     <div class="row g-3">
+
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <div class="col-sm-6">
             <label class="form-label" for="name_bank">Name der Bank</label>
             <input wire:model.lazy="account.name_bank" type="text" class="form-control" />

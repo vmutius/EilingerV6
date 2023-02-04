@@ -36,6 +36,8 @@ class Education extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
+        'application_id',
         'education', 
         'name', 
         'final', 

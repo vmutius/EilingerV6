@@ -10,6 +10,8 @@ class Enclosure extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
+        'application_id',
         'hasID',
         'hasCV',
         'hasApprenticeshipContract',

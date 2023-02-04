@@ -20,6 +20,8 @@ class Sibling extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
+        'application_id',
         'birth_year',
         'lastname',
         'firstname', 

@@ -1,10 +1,17 @@
-<form wire:submit.prevent="Step4EducationSubmit">
+<form wire:submit.prevent="save">
     <div class="content-header mb-3">
         <h3 class="mb-0">Ausbildung</h3>
         <small>für welche Beiträge verlangt werden</small>
 
     </div>
     <div class="row g-3">
+
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <div class="col-sm-6">
             <label class="form-label" for="education">Ausbildung</label>
             <select wire:model.lazy="education.education" name="education" class="form-select">

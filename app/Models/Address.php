@@ -9,13 +9,11 @@ class Address extends Model
 {
     use HasFactory;
     
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    protected $connection = 'mysql';
+     
     protected $fillable = [
         'user_id',
+        'application_id',
         'street',
         'number',
         'plz',
