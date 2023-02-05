@@ -15,17 +15,14 @@
         gelesen und zur
         Kenntnis genommen haben. </p>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    
     <div class="home-content">
+
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
         @if (auth()->user()->type == 'nat')
             {{-- 1 Account Details --}}
             @if ($currentStep == 1)
@@ -44,7 +41,7 @@
                     <div class="card">
                         <div class="card-header bg-secondary text-white">Schritt 1/10 - Bewerber</div>
                         <div class="card-body">
-                            @include('antrag.user_jur')
+                            @livewire('antrag.user-jur-form')
                         </div>
                     </div>
                 </div>
@@ -118,7 +115,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">Schritt 7/10 - Geschwister</div>
                     <div class="card-body">
-                        @include('antrag.sibling')
+                        @livewire('antrag.sibling-form')
                     </div>
                 </div>
             </div>
@@ -130,7 +127,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">Schritt 8/10 - Kosten</div>
                     <div class="card-body">
-                        @include('antrag.cost')
+                        @livewire('antrag.cost-form')
                     </div>
                 </div>
             </div>
@@ -142,7 +139,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-white">Schritt 9/10 - Finanzierung</div>
                     <div class="card-body">
-                        @include('antrag.financing')
+                        @livewire('antrag.financing-form')
                     </div>
                 </div>
             </div>
@@ -150,34 +147,35 @@
 
         {{-- 10 Beilagen --}}
         @if ($currentStep == 10)
-            <div class="step-eleven">
+            <div class="step-ten">
                 <div class="card">
                     <div class="card-header bg-secondary text-white">Schritt 10/10 - Bemerkungen und Beilagen</div>
                     <div class="card-body">
-
-                        @include('antrag.enclosure')
-
+                        @livewire('antrag.enclosure-form')
                     </div>
                 </div>
             </div>
         @endif
 
         <div class="col-12 pt-2 d-flex justify-content-between">
-            <button class="btn btn-colour-1 btn-prev pull-left" wire:click="decreaseStep()">
-                <i class="bx bx-chevron-left bx-sm ms-sm-n2 align-middle"></i>
-                <span class="align-middle d-sm-inline-block d-none">Zurück</span>
-            </button>
-
+            @if ($currentStep > 1)
+                <button class="btn btn-colour-1 btn-prev pull-left" wire:click="decreaseStep()">
+                    <i class="bx bx-chevron-left bx-sm ms-sm-n2 align-middle"></i>
+                    <span class="align-middle d-sm-inline-block d-none">Zurück</span>
+                </button>
+            @endif
             @if ($currentStep == 10)
                 <button class="btn btn-danger btn-lg" wire:click="SendApplication()">
                     <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
                 </button>
             @endif
 
-            <button class="btn btn-colour-1  btn-next pull-right" wire:click="increaseStep()">
-                <span class="align-middle d-sm-inline-block d-none me-sm-1 align-middle">Weiter</span>
-                <i class="bx bx-chevron-right bx-sm me-sm-n2 align-middle"></i>
-            </button>
+            @if ($currentStep < 10)
+                <button class="btn btn-colour-1  btn-next pull-right" wire:click="increaseStep()">
+                    <span class="align-middle d-sm-inline-block d-none me-sm-1 align-middle">Weiter</span>
+                    <i class="bx bx-chevron-right bx-sm me-sm-n2 align-middle"></i>
+                </button>
+            @endif
         </div>
 
     </div>

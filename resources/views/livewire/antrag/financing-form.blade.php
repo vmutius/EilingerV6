@@ -1,4 +1,4 @@
-<form wire:submit.prevent="Step9FinancingSubmit">
+<form wire:submit.prevent="saveFinancing">
     <div class="content-header mb-3">
         <h3 class="mb-0">Finanzierung</h3>
         <small>Enter Your Account Details.</small>

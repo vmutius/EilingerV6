@@ -1,4 +1,4 @@
-<form wire:submit.prevent="save">
+<form wire:submit.prevent="saveAbweichendeAddress">
     <div class="content-header mb-3">
         <h3 class="mb-0">Anschrift</h3>
         <small>Abweichende Adresse bei Wochenentaufhalt</small>

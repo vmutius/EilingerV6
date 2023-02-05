@@ -10,10 +10,10 @@ class Parents extends Model
     use HasFactory;
 
     public const PARENT_TYPE = [
-        'mother' => 'mother',
-        'father' => 'father',
-        'stepmother' => 'stepmother',
-        'stepfather' => 'stepfather'
+        'mother' => 'Mutter',
+        'father' => 'Vater',
+        'stepmother' => 'Stiefmutter',
+        'stepfather' => 'Stiefvater'
     ];
 
     public const JOB_TYPE = [

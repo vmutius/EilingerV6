@@ -10,6 +10,8 @@ class UserNatForm extends Component
 {
     public User $user;
     public $countries;
+
+    protected $listeners = ['applicationSaved' => 'userNatApplicationId'];
     
     public function mount()
     {
@@ -37,9 +39,14 @@ class UserNatForm extends Component
         return view('livewire.antrag.user-nat-form');
     }
 
-    public function save()
+    public function saveUserNat()
     {
         $this->user->save();
+    }
+
+    public function userNatApplicationId() {
+        $parent->application_id = $application->id;    
+        $parent->save();
     }
 
 }

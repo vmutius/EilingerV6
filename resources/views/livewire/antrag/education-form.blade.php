@@ -1,4 +1,4 @@
-<form wire:submit.prevent="save">
+<form wire:submit.prevent="saveEducation">
     <div class="content-header mb-3">
         <h3 class="mb-0">Ausbildung</h3>
         <small>für welche Beiträge verlangt werden</small>

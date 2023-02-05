@@ -8,6 +8,7 @@ use App\Models\Account;
 class AccountForm extends Component
 {
     public Account $account;
+    protected $listeners = ['applicationSaved' => 'accountApplicationId'];
 
     protected $rules = [
         'account.name_bank' => 'nullable',
@@ -28,10 +29,15 @@ class AccountForm extends Component
         return view('livewire.antrag.account-form');
     }
 
-    public function save()
+    public function saveAccount()
     {
         $this->account->user_id = auth()->user()->id;
         $this->account->save();
         session()->flash('message', 'Auszahlungsdaten aktualisiert.');
+    }
+
+    public function accountApplicationId() {
+        $parent->application_id = $application->id;    
+        $parent->save();
     }
 }

@@ -1,4 +1,4 @@
-<form wire:submit.prevent="save">
+<form wire:submit.prevent="saveUserNat">
     <div class="content-header mb-3">
         <h3 class="mb-0">Bewerber</h3>
         <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>

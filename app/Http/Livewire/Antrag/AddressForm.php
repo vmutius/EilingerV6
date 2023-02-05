@@ -11,6 +11,7 @@ class AddressForm extends Component
     public Address $address;
     public $countries;
 
+    protected $listeners = ['applicationSaved' => 'addrApplicationId'];
    
     protected $rules = [
         'address.street' => 'nullable',
@@ -33,9 +34,14 @@ class AddressForm extends Component
         return view('livewire.antrag.address-form');
     }
 
-    public function save()
+    public function saveAddress()
     {
         $this->address->save();
         session()->flash('message', 'Adresse aktualisiert.');
+    }
+
+    public function addrApplicationId() {
+        $parent->application_id = $application->id;    
+        $parent->save();
     }
 }

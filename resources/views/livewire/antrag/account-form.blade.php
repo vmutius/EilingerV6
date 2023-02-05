@@ -1,4 +1,4 @@
-<form wire:submit.prevent="save">
+<form wire:submit.prevent="saveAccount">
     <div class="content-header mb-3">
         <h3 class="mb-0">Auszahlung</h3>
         <small>Enter Your Account Details.</small>

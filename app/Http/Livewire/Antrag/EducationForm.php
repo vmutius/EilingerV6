@@ -9,6 +9,8 @@ class EducationForm extends Component
 {
     public Education $education;
 
+    protected $listeners = ['applicationSaved' => 'educationApplicationId'];
+
     protected $rules = [
         'education.education' => 'nullable',
         'education.name' => 'nullable',
@@ -30,10 +32,15 @@ class EducationForm extends Component
         return view('livewire.antrag.education-form');
     }
 
-    public function save()
+    public function saveEducation()
     {
         $this->education->user_id = auth()->user()->id;
         $this->education->save();
         session()->flash('message', 'Ausbildungsdaten aktualisiert.');
+    }
+
+    public function educationApplicationId() {
+        $parent->application_id = $application->id;    
+        $parent->save();
     }
 }

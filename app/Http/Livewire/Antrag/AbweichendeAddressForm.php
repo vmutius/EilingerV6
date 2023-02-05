@@ -8,8 +8,10 @@ use App\Models\Address;
 
 class AbweichendeAddressForm extends Component
 {
-    public Address $abweichendeAddress;
+    public $abweichendeAddress;
     public $countries;
+
+    protected $listeners = ['applicationSaved' => 'abwAddrApplicationId'];
 
     protected $rules = [
         'abweichendeAddress.street' => 'nullable',
@@ -31,11 +33,16 @@ class AbweichendeAddressForm extends Component
         return view('livewire.antrag.abweichende-address-form');
     }
 
-    public function save()
+    public function saveAbweichendeAddress()
     {
         $this->abweichendeAddress->user_id = auth()->user()->id;
         $this->abweichendeAddress->isWochenaufenthalt = true;
         $this->abweichendeAddress->save();
         session()->flash('message', 'Adresse Wochenaufenthalt aktualisiert.');
+    }
+
+    public function abwAddrApplicationId() {
+        $parent->application_id = $application->id;    
+        $parent->save();
     }
 }

@@ -1,4 +1,4 @@
-<form>
+<form wire:submit.prevent="saveEnclosure">
     <div class="content-header mb-3">
         <h3 class="mb-0">Bemerkungen und Beilagen</h3>
         <small>die mit dem Stipendienantrag einzureichen sind</small>
@@ -71,6 +71,12 @@
                 <label class="form-check-label" for="hasParentsTaxFactors">Steuerfaktoren der Eltern</label>
                 <input wire:model.lazy="enclosure.hasParentsTaxFactors" class="form-check-input" type="checkbox" value="" />
             </div>
+        </div>
+
+        <div class="col-md-12 text-center">        
+            <button type="submit"  class="btn btn-success">
+                <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
+            </button>
         </div>
     </div>
 </form>
