@@ -36,7 +36,7 @@
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{ route('user_antrag') }}">
+                <a href="{{ route('user_antraege') }}">
                     <i class='bx bx-mail-send'></i>
                     <span class="links_name">Anträge</span>
                 </a>

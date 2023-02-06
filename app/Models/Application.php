@@ -9,8 +9,24 @@ class Application extends Model
 {
     use HasFactory;
 
+    public const APPL_STATUS = [
+        'not_send' => 'not_send',
+        'approved' => 'approved',
+        'pending' => 'pending',
+        'waiting' => 'waiting',
+        'blocked' =>'blocked'
+    ];
+
+    public const BEREICH = [
+        'Bildung' => 'Bildung',
+        'Menschen' => 'Menschen',
+        'Tierschutz' => 'Tierschutz',
+        'Umwelt' => 'Umwelt'
+    ];
+
     protected $fillable = [
         'user_id',
+        'name',
         'appl_status',
         'bereich'
     ];

@@ -18,7 +18,6 @@ class CreateSiblingsTable extends Migration
         Schema::create('siblings', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->year('birth_year')->nullable($value = true);
             $table->string('lastname', 255)->nullable($value = true);
             $table->string('firstname', 255)->nullable($value = true);

@@ -31,7 +31,6 @@ class ParentForm extends Component
     public function mount() 
     {
         $this->parents = Parents::where('user_id', auth()->user()->id)
-            ->where('application_id', session()->get('appl_id'))
             ->get() ?? new Collection;
     }
 
@@ -40,7 +39,6 @@ class ParentForm extends Component
         $this->parents->each(function($parent)
         {
             $parent->user_id = auth()->user()->id;
-            $parent->application_id = session()->get('appl_id');
             $parent->save();
         });
 

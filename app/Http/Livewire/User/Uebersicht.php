@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\User;
 
 use Livewire\Component;
-use App\Models\Application;
 
 class Uebersicht extends Component
 {
@@ -14,10 +13,8 @@ class Uebersicht extends Component
     
     public function render()
     {
-        $applications = Application::where ('user_id', auth()->user()->id)->get();
-        return view('livewire.user.uebersicht', [
-            'applications' => $applications
-        ])
+        
+        return view('livewire.user.uebersicht')
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
 }

@@ -7,7 +7,7 @@ use App\Models\Account;
 
 class AccountForm extends Component
 {
-    public Account $account;
+    public $account;
 
     protected $rules = [
         'account.name_bank' => 'nullable',

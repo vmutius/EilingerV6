@@ -7,20 +7,6 @@ use App\Models\User;
 
 class CreateApplicationsTable extends Migration
 {
-    public const APPL_STATUS = [
-        'not_send' => 'not_send',
-        'approved' => 'approved',
-        'pending' => 'pending',
-        'waiting' => 'waiting',
-        'blocked' =>'blocked'
-    ];
-
-    public const BEREICH = [
-        'Bildung' => 'Bildung',
-        'Menschen' => 'Menschen',
-        'Tierschutz' => 'Tierschutz',
-        'Umwelt' => 'Umwelt'
-    ];
 
     public function up()
     {/**
@@ -35,6 +21,7 @@ class CreateApplicationsTable extends Migration
 
         Schema::create('applications', function (Blueprint $table) {
             $table->id()->autoIncrement();
+            $table->string('name');
             $table->foreignId('user_id')->constrained();
             $table->string('appl_status')->default('not_send');
             $table->string('bereich');

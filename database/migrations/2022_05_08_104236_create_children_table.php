@@ -15,10 +15,9 @@ class CreateChildrenTable extends Migration
      */
     public function up()
     {
-        Schema::create('childrens', function (Blueprint $table) {
+        Schema::create('children', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->string('lastname', 255);
             $table->string('firstname', 255);
             $table->date('birthday');
@@ -33,6 +32,6 @@ class CreateChildrenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('childrens');
+        Schema::dropIfExists('children');
     }
 }

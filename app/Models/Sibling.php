@@ -21,7 +21,6 @@ class Sibling extends Model
      */
     protected $fillable = [
         'user_id',
-        'application_id',
         'birth_year',
         'lastname',
         'firstname', 

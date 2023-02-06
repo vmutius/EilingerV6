@@ -18,7 +18,6 @@ class CreatePartnersTable extends Migration
         Schema::create('partners', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->string('lastname', 255);
             $table->string('firstname', 255);
             $table->date('birthday');

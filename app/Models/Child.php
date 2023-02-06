@@ -16,7 +16,6 @@ class Child extends Model
      */
     protected $fillable = [
         'user_id',
-        'application_id',
         'lastname',
         'firstname',
         'birthday'

@@ -8,7 +8,7 @@ use App\Models\Address;
 
 class AddressForm extends Component
 {
-    public Address $address;
+    public $address;
     public $countries;
    
     protected $rules = [
@@ -22,8 +22,7 @@ class AddressForm extends Component
     public function mount(Address $address) 
     {
         $this->countries = Country::all();
-        $this->address = Address::where('user_id', auth()->user()->id)
-            ->where('application_id', session()->get('appl_id'))            
+        $this->address = Address::where('user_id', auth()->user()->id)  
             ->first();
     }
 
@@ -35,7 +34,6 @@ class AddressForm extends Component
 
     public function saveAddress()
     {
-        $this->address->application_id = session()->get('appl_id');
         $this->address->save();
         session()->flash('message', 'Adresse aktualisiert.');
     }

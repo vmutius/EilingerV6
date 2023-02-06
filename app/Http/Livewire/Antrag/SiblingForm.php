@@ -23,7 +23,6 @@ class SiblingForm extends Component
     public function mount() 
     {
         $this->siblings = Sibling::where('user_id', auth()->user()->id)
-            ->where('application_id', session()->get('appl_id'))
             ->get() ?? new Collection;
     }
 
@@ -37,7 +36,6 @@ class SiblingForm extends Component
         $this->siblings->each(function($sibling)
         {
             $sibling->user_id = auth()->user()->id;
-            $sibling->application_id = session()->get('appl_id');
             $sibling->save();
         });
 

@@ -23,7 +23,6 @@ class AbweichendeAddressForm extends Component
     {
         $this->countries = Country::all();
         $this->abweichendeAddress = Address::where('user_id', auth()->user()->id)
-            ->where('application_id', session()->get('appl_id'))
             ->where('isWochenaufenthalt', 1)->first() ?? new Address;
     }
 
@@ -35,7 +34,6 @@ class AbweichendeAddressForm extends Component
     public function saveAbweichendeAddress()
     {
         $this->abweichendeAddress->user_id = auth()->user()->id;
-        $this->abweichendeAddress->application_id = session()->get('appl_id');
         $this->abweichendeAddress->isWochenaufenthalt = true;
         $this->abweichendeAddress->save();
         session()->flash('message', 'Adresse Wochenaufenthalt aktualisiert.');
