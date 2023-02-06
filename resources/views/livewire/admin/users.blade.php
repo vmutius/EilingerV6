@@ -19,7 +19,7 @@
                         <th>Nachname</th>
                         <th>Vorame</th>
                         <th>Email</th>
-                        <th width="280px">Action</th>
+                        <th>Anträge</th>
                     </tr>
                 </thead>
                 <tbody>

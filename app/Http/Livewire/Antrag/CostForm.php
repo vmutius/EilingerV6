@@ -9,8 +9,6 @@ class CostForm extends Component
 {
     public $cost;
 
-    protected $listeners = ['applicationSaved' => 'costApplicationId'];
-
     protected $rules = [
         'cost.semesterFees' => 'nullable',
         'cost.fees' => 'nullable',
@@ -27,7 +25,7 @@ class CostForm extends Component
     public function mount() 
     {
         $this->cost = Cost::where('user_id', auth()->user()->id)
-            ->whereNull('application_id')
+            ->where('application_id', session()->get('appl_id'))
             ->first() ?? new Cost;
     }
 
@@ -40,12 +38,9 @@ class CostForm extends Component
     public function saveCost()
     {
         $this->cost->user_id = auth()->user()->id;
+        $this->cost->application_id = session()->get('appl_id');
         $this->cost->save();
         session()->flash('message', 'Kosten aktualisiert.');
     }
 
-    public function costApplicationId() {
-        $parent->application_id = $application->id;    
-        $parent->save();
-    }
 }

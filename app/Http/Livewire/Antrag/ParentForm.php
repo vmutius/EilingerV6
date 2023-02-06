@@ -9,8 +9,6 @@ class ParentForm extends Component
 {
     public $parents;
 
-    protected $listeners = ['applicationSaved' => 'parentApplicationId'];
-
     protected $rules = [
         'parents.*.firstname' => 'nullable',
         'parents.*.parent_type' => 'nullable',
@@ -33,7 +31,7 @@ class ParentForm extends Component
     public function mount() 
     {
         $this->parents = Parents::where('user_id', auth()->user()->id)
-            ->whereNull('application_id')
+            ->where('application_id', session()->get('appl_id'))
             ->get() ?? new Collection;
     }
 
@@ -42,6 +40,7 @@ class ParentForm extends Component
         $this->parents->each(function($parent)
         {
             $parent->user_id = auth()->user()->id;
+            $parent->application_id = session()->get('appl_id');
             $parent->save();
         });
 
@@ -58,8 +57,4 @@ class ParentForm extends Component
         return view('livewire.antrag.parent-form');
     }
 
-    public function parentApplicationId() {
-        $parent->application_id = $application->id;    
-        $parent->save();
-    }
 }

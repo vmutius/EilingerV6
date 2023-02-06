@@ -10,8 +10,6 @@ class AddressForm extends Component
 {
     public Address $address;
     public $countries;
-
-    protected $listeners = ['applicationSaved' => 'addrApplicationId'];
    
     protected $rules = [
         'address.street' => 'nullable',
@@ -24,8 +22,9 @@ class AddressForm extends Component
     public function mount(Address $address) 
     {
         $this->countries = Country::all();
-        $this->address = Address::where('user_id', auth()->user()->id)->first();
-
+        $this->address = Address::where('user_id', auth()->user()->id)
+            ->where('application_id', session()->get('appl_id'))            
+            ->first();
     }
 
 
@@ -36,12 +35,9 @@ class AddressForm extends Component
 
     public function saveAddress()
     {
+        $this->address->application_id = session()->get('appl_id');
         $this->address->save();
         session()->flash('message', 'Adresse aktualisiert.');
     }
 
-    public function addrApplicationId() {
-        $parent->application_id = $application->id;    
-        $parent->save();
-    }
 }

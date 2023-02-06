@@ -8,10 +8,8 @@ use App\Models\Country;
 
 class UserNatForm extends Component
 {
-    public User $user;
+    public $user;
     public $countries;
-
-    protected $listeners = ['applicationSaved' => 'userNatApplicationId'];
     
     public function mount()
     {
@@ -42,11 +40,6 @@ class UserNatForm extends Component
     public function saveUserNat()
     {
         $this->user->save();
-    }
-
-    public function userNatApplicationId() {
-        $parent->application_id = $application->id;    
-        $parent->save();
     }
 
 }

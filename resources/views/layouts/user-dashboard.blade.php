@@ -37,7 +37,7 @@
             </li>
             <li>
                 <a href="{{ route('user_antrag') }}">
-                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <i class='bx bx-mail-send'></i>
                     <span class="links_name">Anträge</span>
                 </a>
                 <span class="tooltip">Stellen Sie hier ihre Anträge</span>
@@ -51,7 +51,7 @@
             </li>
             <li>
                 <a href="{{ route('user_nachrichten') }}">
-                    <i class='bx bx-chat'></i>
+                    <i class='bx bx-message-rounded-dots'></i>
                     <span class="links_name">Nachrichten</span>
                 </a>
                 <span class="tooltip">Ihre Nachrichten</span>

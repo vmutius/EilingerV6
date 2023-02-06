@@ -20,8 +20,8 @@ class Application extends Model
      *
      * @var array<int, string>
      */
-       public function user()
+       public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
     }
 }

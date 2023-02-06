@@ -9,8 +9,6 @@ class FinancingForm extends Component
 {
     public $financing;
 
-    protected $listeners = ['applicationSaved' => 'financingApplicationId'];
-
     protected $rules = [
         'financing.user_id' => 'nullable',
         'financing.personalContribution' => 'nullable',
@@ -25,7 +23,7 @@ class FinancingForm extends Component
     public function mount() 
     {
         $this->financing = Financing::where('user_id', auth()->user()->id)
-            ->whereNull('application_id')
+            ->where('application_id', session()->get('appl_id'))
             ->first() ?? new Financing;
     }
 
@@ -37,12 +35,9 @@ class FinancingForm extends Component
     public function saveFinancing()
     {
         $this->financing->user_id = auth()->user()->id;
+        $this->financing->application_id = session()->get('appl_id');
         $this->financing->save();
         session()->flash('message', 'Finanzierung aktualisiert.');
     }
 
-    public function financingApplicationId() {
-        $parent->application_id = $application->id;    
-        $parent->save();
-    }
 }

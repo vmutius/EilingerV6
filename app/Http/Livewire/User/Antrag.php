@@ -19,29 +19,20 @@ use Illuminate\Support\Collection;
 class Antrag extends Component
 {
     public $currentStep = 1;
-    public $successMessage = '';
-    public $message = '';
-    public User $user;
-    public Sibling $sibling;
-    public Collection $siblings;
-    public Cost $cost;
-    public Financing $financing;
-    public Enclosure $enclosure;
-    public Application $application;
 
-    protected $casts = [
-        'birthday' => 'date:d.m.Y',
-    ];
-  
     public function mount() 
     {
         $this->user = auth()->user();
         $this->application = Application::where('user_id', auth()->user()->id)
             ->first() ?? new Application;
+        session(['appl_id' => $this->application->id]);   
+        $this->application->users()->attach(auth()->user()->id); 
     }
     
     protected $rules = [
-       
+        'user.firstname' => 'required',
+        'user.lastname' => 'required',
+        'user.email' => 'required',
         'user.birthday' => 'required', 
         'user.salutation' => 'required',
         'user.nationality' => 'required',
@@ -51,21 +42,21 @@ class Antrag extends Component
         'user.birthday' => 'nullable',
         'user.inCHsince' => 'nullable',
         'user.bewilligung' => 'nullable',
-        'address.street' => 'nullable',
-        'address.number' => 'nullable',
-        'address.town' => 'nullable',
-        'address.plz' => 'nullable',
-        'address.country' => 'nullable',
+        'address.street' => 'required',
+        'address.number' => 'required',
+        'address.town' => 'required',
+        'address.plz' => 'required',
+        'address.country' => 'required',
         'abweichendeAddress.street' => 'nullable',
         'abweichendeAddress.number' => 'nullable',
         'abweichendeAddress.town' => 'nullable',
         'abweichendeAddress.plz' => 'nullable',
         'abweichendeAddress.country' => 'nullable',
-        'education.education' => 'nullable',
-        'education.name' => 'nullable',
-        'education.final' => 'nullable',
-        'education.grade' => 'nullable',
-        'education.ects-points' => 'nullable',
+        'education.education' => 'required',
+        'education.name' => 'required',
+        'education.final' => 'required',
+        'education.grade' => 'required',
+        'education.ects-points' => 'required',
         'education.time' => 'nullable',
         'account.name_bank' => 'nullable',
         'account.city_bank' => 'nullable',
@@ -127,8 +118,7 @@ class Antrag extends Component
     public function SendApplication()
     {   
         $this->application->appl_status = 'pending';
-        $this->application->save;
-        $this->emit('applicationSaved', $this->application->id);
+        $this->application->save();
     }
   
     public function increaseStep()

@@ -30,6 +30,7 @@ class Users extends Component
                 $query->where('email', 'like','%'.$this->searchUserEmail.'%');
              })   
             ->paginate(10);
+            
         return view('livewire.admin.users', [
                 'users' => $users
             ])

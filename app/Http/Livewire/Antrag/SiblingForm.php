@@ -9,8 +9,6 @@ class SiblingForm extends Component
 {
     public $siblings;
 
-    protected $listeners = ['applicationSaved' => 'siblingApplicationId'];
-
     protected $rules = [
         'siblings.*.birth_year' => 'nullable',
         'siblings.*.lastname' => 'nullable',
@@ -25,7 +23,7 @@ class SiblingForm extends Component
     public function mount() 
     {
         $this->siblings = Sibling::where('user_id', auth()->user()->id)
-            ->whereNull('application_id')
+            ->where('application_id', session()->get('appl_id'))
             ->get() ?? new Collection;
     }
 
@@ -39,6 +37,7 @@ class SiblingForm extends Component
         $this->siblings->each(function($sibling)
         {
             $sibling->user_id = auth()->user()->id;
+            $sibling->application_id = session()->get('appl_id');
             $sibling->save();
         });
 
@@ -48,14 +47,5 @@ class SiblingForm extends Component
     public function addSibling()
     {
         $this->siblings->push(new Sibling);
-    }
-
-    public function siblingApplicationId() {
-        $this->siblings->each(function($sibling)
-        {
-            $sibling->spplication_id = $applicaton->id;
-            $parent->save();
-        });
-
     }
 }

@@ -34,7 +34,7 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/user/dashboard', [UserDashController::class,'index'])->name('user_dashboard');
+    Route::get('/user/dashboard', App\Http\Livewire\User\Uebersicht::class)->name('user_dashboard');
     Route::get('/user/antrag', App\Http\Livewire\User\Antrag::class)->name('user_antrag');
     Route::get('/user/gesuch', App\Http\Livewire\User\Gesuch::class)->name('user_gesuch');
     Route::get('/user/nachrichten', App\Http\Livewire\User\Message::class)->name('user_nachrichten');

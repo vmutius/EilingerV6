@@ -13,8 +13,4 @@ class UserJurForm extends Component
         return view('livewire.antrag.user-jur-form');
     }
 
-    public function userJurApplicationId() {
-        $parent->application_id = $application->id;    
-        $parent->save();
-    }
 }
