@@ -17,6 +17,8 @@ class UserNatForm extends Component
         $this->countries = Country::all();
     }
 
+    protected $casts = ['user.birthday' => 'date:dd.mm.YYYY',];
+
     protected $rules = [
         'user.firstname' => 'required',
         'user.lastname' => 'required',

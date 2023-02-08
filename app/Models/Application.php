@@ -36,8 +36,8 @@ class Application extends Model
      *
      * @var array<int, string>
      */
-       public function users()
+       public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }

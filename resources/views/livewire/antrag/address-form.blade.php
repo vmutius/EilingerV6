@@ -14,18 +14,22 @@
         <div class="col-md-6">
             <label class="form-label" for="street">Strasse</label>
             <input wire:model.lazy="address.street" type="text" class="form-control" />
+            <span class="text-danger">@error('address.street'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-6">
             <label class="form-label" for="number">Hausnummer</label>
             <input wire:model.lazy="address.number" type="text" class="form-control" />
+            <span class="text-danger">@error('address.number'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
             <label class="form-label" for="plz">PLZ</label>
             <input wire:model.lazy="address.plz" type="text" class="form-control" />
+            <span class="text-danger">@error('address.plz'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
             <label class="form-label" for="town">Ort</label>
             <input wire:model.lazy="address.town" type="text" class="form-control" />
+            <span class="text-danger">@error('address.town'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-sm-2">
@@ -36,6 +40,7 @@
                     <option value="{{ $country->short_code }}">{{ $country->name }}</option>
                 @endforeach
             </select>
+            <span class="text-danger">@error('address.country'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-12 text-center">

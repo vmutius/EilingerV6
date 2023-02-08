@@ -103,4 +103,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Login::class);
     }
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
 }

@@ -44,8 +44,6 @@ class Antraege extends Component
             'bereich'=>$this->bereich,
             'user_id'=>auth()->user()->id,
         ]);
-        
-        $application->users()->attach(auth()->user()->id); 
         $this->showModal = false;
     }
 
