@@ -59,7 +59,7 @@
             </div>
             <div class="col-sm-5">
                 <label class="form-label" for="plz_ort">Arbeitgeber</label>
-                <input wire:model.lazy="parents.{{ $index }}.plz_ort" type="text" class="form-control" />
+                <input wire:model.lazy="parents.{{ $index }}.employer" type="text" class="form-control" />
             </div>
             <div class="col-sm-2">
                 <label class="form-label" for="job_type">Arbeitsverhältnis</label>

@@ -39,8 +39,8 @@
             </select>
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="ects-points">ECTS-Punkte für das kommende Semester gemäss Beleg</label>
-            <input wire:model.lazy="education.ects-points" type="text" id="ects-points" class="form-control" />
+            <label class="form-label" for="ectsPoints">ECTS-Punkte für das kommende Semester gemäss Beleg</label>
+            <input wire:model.lazy="education.ectsPoints" type="text" id="ectsPoints" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="time">Pensum</label>

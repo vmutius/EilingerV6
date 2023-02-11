@@ -47,4 +47,5 @@ Route::middleware('auth')->group(function () {
 Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/dashboard', [AdminDashController::class,'index'])->name('admin_dashboard');
     Route::get('/admin/users', App\Http\Livewire\Admin\Users::class)->name('admin_users');
+    Route::get('/admin/antrag/{application_id}', App\Http\Livewire\Admin\Antrag::class)->name('admin_antrag');
 });

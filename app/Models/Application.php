@@ -10,11 +10,12 @@ class Application extends Model
     use HasFactory;
 
     public const APPL_STATUS = [
-        'not_send' => 'not_send',
+        'not_send' => 'not_send', // antrag noch nicht eingereicht
+        'pending' => 'pending', // Antrag liegt bei EIlinger zur Bearbeitung
+        'waiting' => 'waiting', //Antrag liegt wieder beim Benutzer zur Beantwortung der Fragen
+        'complete' => 'complete', //Angaben im Antrag vollständig. Wartet auf nächste Stiftungsratssitzung
         'approved' => 'approved',
-        'pending' => 'pending',
-        'waiting' => 'waiting',
-        'blocked' =>'blocked'
+        'blocked' =>'blocked', 
     ];
 
     public const BEREICH = [

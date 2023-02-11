@@ -42,7 +42,7 @@ class Education extends Model
         'name', 
         'final', 
         'grade', 
-        'ects-points',
+        'ectsPoints',
         'time', 
         'begin_edu',
         'duration_edu',

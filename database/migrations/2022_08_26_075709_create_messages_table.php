@@ -30,7 +30,7 @@ class CreateMessagesTable extends Migration
         
         Schema::create('messages', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->foreignIdFor(Application::class)->nullable($value = true);
+            $table->foreignId('application_id')->constrained()->nullable($value = true);
             $table->longText('message');
             $table->longText('answer');
             $table->string('msg_status')->default('not_send');

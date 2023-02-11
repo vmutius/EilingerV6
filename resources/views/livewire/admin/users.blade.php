@@ -5,13 +5,19 @@
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="row">
                 <div class="col-md-3">
-                    <input wire:model="searchUsername"  class="form-control" type "text" placeholder="Suchen nach Benutzernamen">
+                    <input wire:model="searchUsername" class="form-control" type "text"
+                        placeholder="Suchen nach Benutzernamen">
                 </div>
                 <div class="col-md-3">
-                    <input wire:model="searchUserEmail"  class="form-control" type "text" placeholder="Suchen nach Benutzer Email">
+                    <input wire:model="searchUserEmail" class="form-control" type "text"
+                        placeholder="Suchen nach Benutzer Email">
+                </div>
+                <div class="col-md-3">
+                    <input wire:model="searchStatusProjekt" class="form-control" type "text"
+                        placeholder="Suchen nach Projekt Status">
                 </div>
             </div>
-            <hr/>
+            <hr />
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -30,6 +36,11 @@
                             <td>{{ $user->firstname }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
+                                @foreach ($user->applications as $application)
+                                    <div class="row">
+                                        <a href="{{ route('admin_antrag', $application->id) }}">{{ $application->name }} ({{ $application->appl_status }})</a>
+                                    </div>
+                                @endforeach
                             </td>
                         </tr>
                     @empty

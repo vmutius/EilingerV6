@@ -19,12 +19,12 @@ class CreateEducationsTable extends Migration
         Schema::create('educations', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable($value = true);
+            $table->foreignId('application_id')->constrained()->nullable($value = true);
             $table->string('education');
             $table->string('name', 255);
             $table->string('final', 255);
             $table->string('grade');
-            $table->integer('ects-points');
+            $table->integer('ectsPoints');
             $table->string('time');
             $table->date('begin_edu');
             $table->integer('duration_edu');
