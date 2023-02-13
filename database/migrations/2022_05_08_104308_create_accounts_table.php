@@ -19,7 +19,7 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('application_id')->constrained()->nullable($value = true);
+            $table->foreignIdFor(Application::class)->nullable($value = true);
             $table->string('name_bank', 100);
             $table->string('city_bank');
             $table->string('owner', 255);
