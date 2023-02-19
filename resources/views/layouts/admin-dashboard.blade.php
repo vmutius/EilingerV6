@@ -40,39 +40,25 @@
                     <i class='bx bx-pie-chart-alt-2'></i>
                     <span class="links_name">Benutzerübersicht</span>
                 </a>
-                <span class="tooltip">Stellen Sie hier ihre Anträge</span>
+                <span class="tooltip">Benutzerübersich mit allen Anträgen </span>
             </li>
             <li>
-                <a href="{{ route('user_gesuch') }}">
+                <a href="{{ route('admin_applications') }}">
                     <i class='bx bx-pie-chart-alt-2'></i>
-                    <span class="links_name">Gesuche</span>
+                    <span class="links_name">Antragsübersicht</span>
                 </a>
-                <span class="tooltip">Sehen Sie hier ihre Gesuche</span>
+                <span class="tooltip">Übersicht aller Anträge</span>
             </li>
             <li>
-                <a href="{{ route('user_nachrichten') }}">
+                <a href="{{ route('admin_projects') }}">
                     <i class='bx bx-chat'></i>
-                    <span class="links_name">Nachrichten</span>
+                    <span class="links_name">Projekübersicht</span>
                 </a>
-                <span class="tooltip">Ihre Nachrichten</span>
+                <span class="tooltip">Übersicht aller Projekte</span>
             </li>
+            
             <li>
-                <a href="{{ route('user_profile') }}">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">Profil</span>
-                </a>
-                <span class="tooltip">Profil</span>
-            </li>
-
-            <li>
-                <a href="{{ route('user_dateien') }}">
-                    <i class='bx bx-folder'></i>
-                    <span class="links_name">Datei Ablage</span>
-                </a>
-                <span class="tooltip">Datei Ablage</span>
-            </li>
-            <li>
-                <a href="{{ route('user_einstellungen') }}">
+                <a href="{{ route('admin_settings') }}">
                     <i class='bx bx-cog'></i>
                     <span class="links_name">Einstellungen</span>
                 </a>

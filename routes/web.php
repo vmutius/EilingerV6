@@ -48,4 +48,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/dashboard', [AdminDashController::class,'index'])->name('admin_dashboard');
     Route::get('/admin/users', App\Http\Livewire\Admin\Users::class)->name('admin_users');
     Route::get('/admin/antrag/{application_id}', App\Http\Livewire\Admin\Antrag::class)->name('admin_antrag');
+    Route::get('/admin/applications', App\Http\Livewire\Admin\Applications::class)->name('admin_applications');
+    Route::get('/admin/projects', App\Http\Livewire\Admin\Projects::class)->name('admin_projects');
+    Route::get('/admin/settings', App\Http\Livewire\Admin\Settings::class)->name('admin_settings');
 });

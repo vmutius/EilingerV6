@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Antrag;
 
 use Livewire\Component;
 use App\Models\Sibling;
+use Illuminate\Database\Eloquent\Collection;
 
 class SiblingForm extends Component
 {
@@ -23,7 +24,7 @@ class SiblingForm extends Component
     public function mount() 
     {
         $this->siblings = Sibling::where('user_id', auth()->user()->id)
-            ->get() ?? new Collection;
+            ->get() ?? new Collection();
     }
 
     public function render()

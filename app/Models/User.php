@@ -108,4 +108,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Application::class);
     }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
+    public function avatar()
+    {
+        return 'https://www.gravatar.com/avatar' . md5($this->email) . '?s=80&d=mp';
+    }
 }

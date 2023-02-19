@@ -34,7 +34,7 @@ class Users extends Component
              ->when($this->searchStatusProjekt!='', function($query){
                 $query->where('email', 'like','%'.$this->searchUserEmail.'%');
              })
-            ->paginate(10);
+            ->paginate(20);
             
         return view('livewire.admin.users', [
                 'users' => $users

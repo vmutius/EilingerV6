@@ -332,7 +332,7 @@
                                         <p>Abschluss: {{ $education->grade }}</p>
                                     </div>
                                     <div class="col-sm-3">
-                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ectsPoints  }}</p>
+                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ectsPoints }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -386,6 +386,8 @@
                 </div>
             </div>
         </div>
+        @livewire('messages-section', ['application' => $application]);
     </div>
+   
     </div>
 </section>
