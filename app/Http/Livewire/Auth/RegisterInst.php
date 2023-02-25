@@ -10,11 +10,10 @@ use App\Models\Country;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterInst extends Component
 {
-    use UserUpdateTrait, AddressUpdateTrait, RegistersUsers;
+    use UserUpdateTrait, AddressUpdateTrait;
     
     public $terms = false;
 
@@ -87,8 +86,9 @@ class RegisterInst extends Component
             'plz' => $this->plz,
             'town' => $this->town,
         ]);
-
-        return redirect('/verify');
+        
+        event(new Registered($user));
+        return redirect('/email/verify');
     }
 
 

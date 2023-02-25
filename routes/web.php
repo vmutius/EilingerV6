@@ -5,6 +5,7 @@ use App\Http\Controllers\UserDashController;
 use App\Http\Controllers\AdminDashController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\VerificationController;
 
 
 /*
@@ -28,12 +29,17 @@ Route::controller(HomeController::class)->group(function() {
 Route::middleware('guest')->group(function () {
     Route::get('/register_inst', App\Http\Livewire\Auth\RegisterInst::class)->name('register_inst');
     Route::get('/register_privat', App\Http\Livewire\Auth\RegisterPrivat::class)->name('register_privat');
-    Route::get('/verify', App\Http\Livewire\Auth\Verify::class)->name('verify');
     Route::get('/login',App\Http\Livewire\Auth\Login::class)->name('login');
     Route::get('/reset', App\Http\Livewire\Auth\Password\Reset::class)->name('password_reset');
+    /**
+    * Verification Routes
+    */
+    Route::get('/email/verify', [VerificationController::class, 'show'])->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify')->middleware(['signed']);
+    Route::post('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'verified')->group(function () {
     Route::get('/user/dashboard', App\Http\Livewire\User\Uebersicht::class)->name('user_dashboard');
     Route::get('/user/antraege', App\Http\Livewire\User\Antraege::class)->name('user_antraege');
     Route::get('/user/antrag/{application_id}', App\Http\Livewire\User\Antrag::class)->name('user_antrag');

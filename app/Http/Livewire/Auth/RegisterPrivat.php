@@ -9,6 +9,7 @@ use App\Models\Address;
 use App\Models\Country;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterPrivat extends Component
 {
@@ -79,8 +80,8 @@ class RegisterPrivat extends Component
             'town' => $this->town,
             'country' => $this->country,
         ]);
-
-        return redirect('/verify');
+        event(new Registered($user));
+        return redirect('/email/verify');
     }
 
 
