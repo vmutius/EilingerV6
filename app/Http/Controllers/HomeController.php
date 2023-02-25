@@ -30,9 +30,4 @@ class HomeController extends Controller
     {
         return view('home.datenschutz');
     }
-
-    public function verifikation()
-    {
-        return view('home.verifikation');
-    }
 }

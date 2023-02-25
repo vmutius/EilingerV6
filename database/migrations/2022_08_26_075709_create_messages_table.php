@@ -10,22 +10,13 @@ class CreateMessagesTable extends Migration
 {
 
     public function up()
-    { /**
-        * Status
-        *
-        * not_send = noch nicht eingereicht
-        * pending = Wartet auf Antwort der Stiftung
-        * waiting = Wartet auf Antwort vom Benutzer
-        */
-        
+    {         
         Schema::create('messages', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignIdFor(Application::class);
             $table->foreignIdFor(User::class);
-            $table->foreignId('parent_id')->nullable()->constrained('messages')->onDelete('cascade');
-            $table->longText('body');
-            $table->longText('answer')->nullable();
-            $table->string('msg_status')->default('not_send');
+            $table->foreignId('mainmessage_id')->nullable()->constrained('messages')->onDelete('cascade'); // Für Reply
+            $table->text('body');
             $table->timestamps();
         });
     }

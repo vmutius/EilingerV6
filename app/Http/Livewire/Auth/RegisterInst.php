@@ -9,10 +9,12 @@ use App\Models\Address;
 use App\Models\Country;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterInst extends Component
 {
-    use UserUpdateTrait, AddressUpdateTrait;
+    use UserUpdateTrait, AddressUpdateTrait, RegistersUsers;
     
     public $terms = false;
 
@@ -86,9 +88,7 @@ class RegisterInst extends Component
             'town' => $this->town,
         ]);
 
-        session()->flash('success', 'Registrierung erfolgreich');
-
-        return redirect('/');
+        return redirect('/verify');
     }
 
 

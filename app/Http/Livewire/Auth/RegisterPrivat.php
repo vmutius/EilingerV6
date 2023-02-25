@@ -80,9 +80,7 @@ class RegisterPrivat extends Component
             'country' => $this->country,
         ]);
 
-        session()->flash('success', 'Registrierung erfolgreich');
-
-        return redirect('/');
+        return redirect('/verify');
     }
 
 

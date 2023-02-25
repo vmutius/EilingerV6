@@ -23,12 +23,12 @@ Route::controller(HomeController::class)->group(function() {
     Route::get('/disclaimer', 'disclaimer')->name('disclaimer');
     Route::get('/impressum', 'impressum')->name('impressum');
     Route::get('/datenschutz', 'datenschutz')->name('datenschutz');
-    Route::get('/verifikation', 'verifikation')->name('verifikation');
 });
 
 Route::middleware('guest')->group(function () {
     Route::get('/register_inst', App\Http\Livewire\Auth\RegisterInst::class)->name('register_inst');
     Route::get('/register_privat', App\Http\Livewire\Auth\RegisterPrivat::class)->name('register_privat');
+    Route::get('/verify', App\Http\Livewire\Auth\Verify::class)->name('verify');
     Route::get('/login',App\Http\Livewire\Auth\Login::class)->name('login');
     Route::get('/reset', App\Http\Livewire\Auth\Password\Reset::class)->name('password_reset');
 });

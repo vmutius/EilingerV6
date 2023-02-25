@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Message extends Model
 {
@@ -13,9 +14,18 @@ class Message extends Model
         'application_id',
         'user_id',
         'body',
-        'answer',
-        'msg_status'
+        'mainmessage_id'
     ];
+
+    public function scopeMain (Builder $builder)
+    {
+        $builder->WhereNull('mainmessage_id');
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Message::class, 'mainmessage_id')->oldest();
+    }
 
     public function application()
     {
