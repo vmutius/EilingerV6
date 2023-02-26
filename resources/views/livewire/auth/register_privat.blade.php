@@ -149,6 +149,7 @@
                     <label class="form-label" for="country">Land *</label>
                     <select wire:model.lazy="country" class="form-select @error('country') is-invalid @enderror @if(session('valid-country')) 
                         is-valid @endif" id="country" type="text" placeholder="Schweiz"  autofocus autocomplete="off">
+                        <option selected>Bitte Land auswählen</option>
                         @foreach ($countries as $country)
                             <option value="{{ $country->id }}">{{ $country->name }}
                             </option>

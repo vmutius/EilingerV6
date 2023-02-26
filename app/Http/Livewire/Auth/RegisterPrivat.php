@@ -9,7 +9,10 @@ use App\Models\Address;
 use App\Models\Country;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
+use Validator;
+
 
 class RegisterPrivat extends Component
 {
@@ -22,8 +25,7 @@ class RegisterPrivat extends Component
         'username' => 'required|unique:users,username',
         'telefon' => '',
         'mobile' => '',
-        'password' => 'required|confirmed|min:8',
-        'password_confirmation' => '',
+        'password' => 'required'|'confirmed'|'Password::min(8)->numbers()->letters()->mixedCase()->symbols()',
         'salutation' => 'required',
         'firstname' => 'required|min:2',
         'lastname' => 'required|min:2',
@@ -38,7 +40,7 @@ class RegisterPrivat extends Component
 
         //
         'terms' =>'required',
-    ];
+        ];
 
     protected $messages = [
         //User
@@ -81,7 +83,8 @@ class RegisterPrivat extends Component
             'country' => $this->country,
         ]);
         event(new Registered($user));
-        return redirect('/email/verify');
+        Auth::login($user);
+        return redirect('verify-email');
     }
 
 

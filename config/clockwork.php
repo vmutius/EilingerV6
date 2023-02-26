@@ -57,7 +57,7 @@ return [
 			'slow_only' => env('CLOCKWORK_DATABASE_SLOW_ONLY', false),
 
 			// Detect and report duplicate queries
-			'detect_duplicate_queries' => env('CLOCKWORK_DATABASE_DETECT_DUPLICATE_QUERIES', false)
+			'detect_duplicate_queries' => env('CLOCKWORK_DATABASE_DETECT_DUPLICATE_QUERIES', true)
 		],
 
 		// Dispatched events
@@ -99,7 +99,7 @@ return [
 
 		// Routes list
 		'routes' => [
-			'enabled' => env('CLOCKWORK_ROUTES_ENABLED', false),
+			'enabled' => env('CLOCKWORK_ROUTES_ENABLED', true),
 
 			// Collect only routes from particular namespaces (only application routes by default)
 			'only_namespaces' => [ 'App' ]

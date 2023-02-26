@@ -42,8 +42,8 @@
                     </div>
 
 
-                    <div class="col-md-4">
-                        <a class="btn btn-link" href="{{ route('password_reset') }}">Passwort zurücksetzen?</a>
+                    <div class="col-md-4"> 
+                        <a class="btn btn-link" href="{{ route('password.request') }}">Passwort zurücksetzen?</a>
                     </div>
                     <div class="col-md-4">
                         <div class="form-check form-switch">

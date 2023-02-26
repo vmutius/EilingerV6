@@ -5,7 +5,15 @@ use App\Http\Controllers\UserDashController;
 use App\Http\Controllers\AdminDashController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\Auth\PasswordController;
+use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\VerifyEmailController;
 
 
 /*
@@ -30,13 +38,6 @@ Route::middleware('guest')->group(function () {
     Route::get('/register_inst', App\Http\Livewire\Auth\RegisterInst::class)->name('register_inst');
     Route::get('/register_privat', App\Http\Livewire\Auth\RegisterPrivat::class)->name('register_privat');
     Route::get('/login',App\Http\Livewire\Auth\Login::class)->name('login');
-    Route::get('/reset', App\Http\Livewire\Auth\Password\Reset::class)->name('password_reset');
-    /**
-    * Verification Routes
-    */
-    Route::get('/email/verify', [VerificationController::class, 'show'])->name('verification.notice');
-    Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify')->middleware(['signed']);
-    Route::post('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
 });
 
 Route::middleware('auth', 'verified')->group(function () {
@@ -57,4 +58,40 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/applications', App\Http\Livewire\Admin\Applications::class)->name('admin_applications');
     Route::get('/admin/projects', App\Http\Livewire\Admin\Projects::class)->name('admin_projects');
     Route::get('/admin/settings', App\Http\Livewire\Admin\Settings::class)->name('admin_settings');
+});
+
+
+Route::middleware('guest')->group(function () {
+    Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
+                ->name('password.request');
+
+    Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
+                ->name('password.email');
+
+    Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
+                ->name('password.reset');
+
+    Route::post('reset-password', [NewPasswordController::class, 'store'])
+                ->name('password.store');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('verify-email', EmailVerificationPromptController::class)
+                ->name('verification.notice');
+
+    Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
+                ->middleware(['signed', 'throttle:6,1'])
+                ->name('verification.verify');
+
+    Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
+                ->middleware('throttle:6,1')
+                ->name('verification.send');
+
+    Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])
+                ->name('password.confirm');
+
+    Route::post('confirm-password', [ConfirmablePasswordController::class, 'store']);
+
+    Route::put('password', [PasswordController::class, 'update'])->name('password.update');
+
 });

@@ -12,10 +12,11 @@
         "laravel-vite-plugin": "^0.7.4",
         "lodash": "^4.17.21",
         "postcss": "^8.4.21",
-        "sass": "^1.58.2",
+        "sass": "^1.56.1",
         "vite": "^4.1.1"
     },
     "dependencies": {
-        "bootstrap-icons": "^1.10.3"
+        "bootstrap-icons": "^1.10.3",
+        "clockwork-browser": "^1.1.1"
     }
 }

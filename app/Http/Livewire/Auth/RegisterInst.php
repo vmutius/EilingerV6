@@ -9,6 +9,7 @@ use App\Models\Address;
 use App\Models\Country;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
 
 class RegisterInst extends Component
@@ -27,8 +28,7 @@ class RegisterInst extends Component
         'email' => 'required|email|unique:users,email',
         'nameInst' => 'min:3',
         'emailInst' => 'required|email|unique:users',
-        'password' => 'required|min:8',
-        'password_confirmation' => 'confirmed',
+        'password' => 'required|min:8'|'confirmed',
         'salutation' => 'required',
         'firstname' => 'required|min:2',
         'lastname' => 'required|min:2',
@@ -88,7 +88,8 @@ class RegisterInst extends Component
         ]);
         
         event(new Registered($user));
-        return redirect('/email/verify');
+        Auth::login($user);
+        return redirect('verify-email');
     }
 
 

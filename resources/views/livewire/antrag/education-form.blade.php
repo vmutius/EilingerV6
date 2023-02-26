@@ -15,7 +15,7 @@
         <div class="col-sm-6">
             <label class="form-label" for="education">Ausbildung</label>
             <select wire:model.lazy="education.education" name="education" class="form-select">
-                <option value="">-- Wählen Sie eine Option --</option>
+                <option selected>-- Wählen Sie eine Option --</option>
                 @foreach (App\Models\Education::EDUCATION as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach
