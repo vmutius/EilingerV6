@@ -63,7 +63,7 @@
                             Bereich:
                             <br />  
                             <select wire:model.lazy="bereich" class="form-select">
-                                <option disabled>Bitte auswählen...</option>
+                                <option selected>Bitte auswählen...</option>
                                 @foreach (App\Models\APPLICATION::BEREICH as $key => $label)
                                     <option value="{{ $key }}">{{ $label }}</option>
                                 @endforeach

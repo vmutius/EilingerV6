@@ -42,6 +42,7 @@ class UserNatForm extends Component
     public function saveUserNat()
     {
         $this->user->save();
+        $this->dispatchBrowserEvent('notify');
     }
 
 }
