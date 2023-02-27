@@ -29,7 +29,6 @@ class UserNatForm extends Component
         'user.telefon' => 'nullable',
         'user.mobile' => 'nullable',
         'user.sozVersNr' => 'nullable',
-        'user.birthday' => 'nullable',
         'user.inCHsince' => 'nullable',
         'user.bewilligung' => 'nullable',
     ];
@@ -42,7 +41,7 @@ class UserNatForm extends Component
     public function saveUserNat()
     {
         $this->user->save();
-        $this->dispatchBrowserEvent('notify');
+        session()->flash('success', 'Benutzerdaten aktualisiert.');
     }
 
 }

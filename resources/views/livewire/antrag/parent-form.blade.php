@@ -4,12 +4,7 @@
         <small>Leibliche Eltern der gesuchstellenden Person</small>
     </div>
 
-    @if (session()->has('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
-
+    <x-notification/>
 
     @foreach ($parents as $index => $parent)
         <div class="row g-3" wire:key="{{ $parent->id }}">

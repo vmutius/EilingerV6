@@ -249,7 +249,11 @@
                         Ich akzeptiere die Nutzungsbedingungen.
                     </label>
                 </div>
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Registrieren</button>
+                <div class="col-md-12 text-center">
+                    <x-primary-button>
+                        {{ __('Registrieren') }}
+                    </x-primary-button>
+                </div>
             </form>
             </form>
         </div>

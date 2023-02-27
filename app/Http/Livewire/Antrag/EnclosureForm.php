@@ -41,7 +41,7 @@ class EnclosureForm extends Component
     {
         $this->enclosure->application_id = session()->get('appl_id');
         $this->enclosure->save();
-        session()->flash('message', 'Beilagen aktualisiert.');
+        session()->flash('success', 'Beilagen aktualisiert.');
     }
 
 }

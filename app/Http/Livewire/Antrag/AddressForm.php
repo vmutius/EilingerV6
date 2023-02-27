@@ -38,7 +38,7 @@ class AddressForm extends Component
     {
         //$this->emit('validated');
         $this->address->save();
-        session()->flash('message', 'Adresse aktualisiert.');
+        session()->flash('success', 'Adresse aktualisiert.');
        
     }
 

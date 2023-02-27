@@ -4,6 +4,29 @@
         <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
     </div>
     <div class="row g-3">
+        
+        <x-notification/>
+
+        <div class="col-md-6">
+            <label class="form-label" for="nameInst">Name der Organisation</label>
+            <input wire:model.lazy="user.nameInst" type="text" class="form-control" />
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="telefonInst">Telefonnummer der Organisation</label>
+            <input wire:model.lazy="user.telefonInst" type="text" class="form-control" />
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="emailInst">Email der Organisation</label>
+            <input wire:model.lazy="user.emailInst" type="text" class="form-control" />
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="website">Webseite der Organisation</label>
+            <input wire:model.lazy="user.website" type="text" class="form-control" />
+        </div>
+        
         <div class="col-sm-2">
             <label class="form-label" for="salutation">Anrede</label>
             <select wire:model.lazy="user.salutation" class="form-select">
@@ -14,32 +37,29 @@
             </select>
         </div>
         <div class="col-sm-5">
-            <label class="form-label" for="firstname">Vorname</label>
+            <label class="form-label" for="firstname">Vorname der Kontaktperson</label>
             <input wire:model.lazy="user.firstname" type="text" class="form-control" />
         </div>
         <div class="col-sm-5">       
-            <label class="form-label" for="lastname">Nachname</label>
+            <label class="form-label" for="lastname">Nachname der Kontaktperson</label>
             <input wire:model.lazy="user.lastname" type="text" class="form-control"/>
         </div>
     
         
-        <div class="col-md-5">
-            <label class="form-label" for="email">Email</label>
+        <div class="col-md-4">
+            <label class="form-label" for="email">Email der Kontaktperson</label>
             <input wire:model.lazy="user.email" type="email" class="form-control" />
         </div>
 
         <div class="col-md-4">
-            <label class="form-label" for="telefon">Telefon</label>
+            <label class="form-label" for="telefon">Telefon der Kontaktperson</label>
             <input wire:model.lazy="user.telefon" type="text" class="form-control" />
         </div>
         <div class="col-md-4">
-            <label class="form-label" for="mobile">Mobile</label>
+            <label class="form-label" for="mobile">Mobile der Kontaktperson</label>
             <input wire:model.lazy="user.mobile" type="email" class="form-control" />
         </div>
-        <div class="col-md-4">
-            <label class="form-label" for="sozVersNr">Sozialversicherungsnummer</label>
-            <input wire:model.lazy="user.sozVersNr" type="text" class="form-control" />
-        </div>
+        
 
        
         

@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="group">
-                        <label class="form-label" for="nameInst">Name Verein/Organisation *</label>
+                        <label class="form-label" for="nameInst">Name der Organisation *</label>
                         <input wire:model.lazy="nameInst" class="form-control @error('nameInst') is-invalid @enderror @if(session('valid-nameInst')) is-valid @endif" id="name_inst" type="text"
                             placeholder="Firma Mustermann"  autofocus autocomplete="off">
                         @error('nameInst')
@@ -158,7 +158,7 @@
 
 
                     <div class="group">
-                        <label class="form-label" for="website">Webseite</label>
+                        <label class="form-label" for="website">Webseite der Organisation</label>
                         <input wire:model.lazy="website" class="form-control @error('website') is-invalid @enderror @if(session('valid-website')) 
                             is-valid @endif" id="website" type="text" placeholder="https://www.musterfirma.ch"  autofocus autocomplete="off">
                         @error('website')
@@ -327,7 +327,11 @@
                             Ich akzeptiere die Nutzungsbedingungen.
                         </label>
                     </div>
-                    <input type="submit" value="Register">
+                    <div class="col-md-12 text-center">
+                        <x-primary-button>
+                            {{ __('Registrieren') }}
+                        </x-primary-button>
+                    </div>
                 </form>
             </div>
 

@@ -40,7 +40,7 @@ class SiblingForm extends Component
             $sibling->save();
         });
 
-        session()->flash('message', 'Geschwister aktualisiert.');
+        session()->flash('success', 'Geschwister aktualisiert.');
     }
 
     public function addSibling()

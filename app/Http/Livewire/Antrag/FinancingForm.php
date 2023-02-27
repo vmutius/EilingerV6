@@ -37,7 +37,7 @@ class FinancingForm extends Component
         $this->financing->user_id = auth()->user()->id;
         $this->financing->application_id = session()->get('appl_id');
         $this->financing->save();
-        session()->flash('message', 'Finanzierung aktualisiert.');
+        session()->flash('success', 'Finanzierung aktualisiert.');
     }
 
 }

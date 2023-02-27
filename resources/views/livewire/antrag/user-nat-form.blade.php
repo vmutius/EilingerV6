@@ -3,13 +3,11 @@
         <h3 class="mb-0">Bewerber</h3>
         <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
     </div>
+    
     <div class="row g-3">
 
-        @if (session()->has('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
+        <x-notification/>
+        
         <div class="col-sm-2">
             <label class="form-label" for="salutation">Anrede</label>
             <select wire:model.lazy="user.salutation" class="form-select">

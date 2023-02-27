@@ -4,6 +4,9 @@
         <small>im bevorstehenden Ausbildungsjahr</small>
     </div>
     <div class="row g-3">
+
+        <x-notification/>
+        
         <div class="col-sm-6">
             <label class="form-label" for="semesterFees">Semestergebühren</label>
             <input wire:model.lazy="cost.semesterFees" type="number" class="form-control" />

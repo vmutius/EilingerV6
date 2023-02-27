@@ -40,7 +40,7 @@ class CostForm extends Component
         $this->cost->user_id = auth()->user()->id;
         $this->cost->application_id = session()->get('appl_id');
         $this->cost->save();
-        session()->flash('message', 'Kosten aktualisiert.');
+        session()->flash('success', 'Kosten aktualisiert.');
     }
 
 }

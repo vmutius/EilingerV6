@@ -4,6 +4,9 @@
         <small>Enter Your Account Details.</small>
     </div>
     <div class="row g-3">
+
+        <x-notification/>
+        
         <div class="col-sm-6">
             <label class="form-label" for="personalContribution">Eigenleistung vom Bewerber selbst</label>
             <input wire:model.lazy="financing.personalContribution" type="number" class="form-control" />

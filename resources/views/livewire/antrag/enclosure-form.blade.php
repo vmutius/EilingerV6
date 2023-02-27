@@ -4,6 +4,9 @@
         <small>die mit dem Stipendienantrag einzureichen sind</small>
     </div>
     <div class="row g-3">
+
+        <x-notification/>
+        
         <h4 class="mb-0">Bemerkungen</h4>
         <div class="col-sm-12">
             <div class="row g-3">

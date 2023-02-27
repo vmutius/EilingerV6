@@ -6,11 +6,7 @@
     </div>
     <div class="row g-3">
 
-        @if (session()->has('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
+        <x-notification/>
 
         <div class="col-sm-6">
             <label class="form-label" for="education">Ausbildung</label>
