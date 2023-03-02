@@ -19,7 +19,7 @@ class UserJurForm extends Component
 
     protected $rules = [
         'user.nameInst' => 'required',
-        'user.telefonInst' => 'nullable',
+        'user.telefonInst' => 'required',
         'user.emailInst' => 'required',
         'user.website' => 'required',
         'user.firstname' => 'required',
@@ -38,6 +38,11 @@ class UserJurForm extends Component
 
     public function saveUserJur()
     {
+       $this->validateWithBag('userJur');
+
+        if (session($errors)){
+            session()->flash('error', 'Bitte beachten Sie den Hinweis. Sie können jetzt fortfahren, aber hinterher den Antrag so nicht einreichen.');
+        }
         $this->user->save();
         session()->flash('success', 'Benutzerdaten aktualisiert.');
     }

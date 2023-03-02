@@ -11,6 +11,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Validation\Rules\Password;
 
 class RegisterInst extends Component
 {
@@ -18,37 +19,44 @@ class RegisterInst extends Component
     
     public $terms = false;
 
-    protected $rules = [
-        //User
-        'username' => 'required|unique:users,username',
-        'nameInst' =>'required|unique:users,nameInst',
-        'telefon' => '',
-        'mobile' => '',
-        'telefonInst' => '',
-        'email' => 'required|email|unique:users,email',
-        'nameInst' => 'min:3',
-        'emailInst' => 'required|email|unique:users',
-        'password' => 'required|min:8'|'confirmed',
-        'salutation' => 'required',
-        'firstname' => 'required|min:2',
-        'lastname' => 'required|min:2',
-
-        //Address
-        'street' => 'required|min:3',
-        'number' => '',
-        'plz' => 'required|min:4',
-        'town' => 'required|min:3',
-        'country' => 'required',
-
-        //
-        'terms' =>'required',
-    ];
+    public function rules() {
+        return [
+            'username' => 'required|unique:users,username',
+            'nameInst' =>'required|unique:users,nameInst',
+            'telefon' => 'nullable',
+            'telefonInst' => 'nullable',
+            'mobile' => 'nullable',
+            'salutation' => 'required',
+            'firstname' => 'required|min:2',
+            'lastname' => 'required|min:2',
+            'email' => 'required|email|unique:users,email',
+            'emailInst' => 'required|email|unique:users',
+            'password' => [
+                'required',
+                Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols()
+                    ->uncompromised()
+            ],
+            'password_confirmation' => 'required|same:password',
+            'street' => 'required|min:3',
+            'number' => 'nullable',
+            'plz' => 'required|min:4',
+            'town' => 'required|min:3',
+            'country' => 'required',
+            'terms' =>'accepted',
+        ];
+    }
 
     protected $messages = [
         //User
         'username.unique' => 'Dieser Benutzername ist bereits vergeben',
         'nameInst.unique' => 'Ihre Organisation ist bereits registriert',
         'emailInst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
+        'password.regexp' => 'Das Passwort muss mindestens 8 Zeichen lang sein und muss mindestens 1 Grossbuchstaben, 
+                    einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten',
 
         //Address
         'plz' => 'Postleitzahl ist eine vierstellige Zahl',

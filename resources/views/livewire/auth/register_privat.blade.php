@@ -29,7 +29,7 @@
                     <label class="form-label" for="salutation">Anrede *</label>
                     <select wire:model.lazy="salutation" class="form-select @error('salutation') is-invalid @enderror @if(session('valid-salutation')) 
                         is-valid @endif" id="salutation" type="text" autofocus autocomplete="off">
-                        <option selected>Bitte Anrede auswählen</option>
+                        <option selected>Bitte Anrede auswählen...</option>
                         @foreach (App\Models\User::SALUTATION as $key => $label)
                             <option value="{{ $key }}"
                                 {{ old('salutation', '') === (string) $key ? 'selected' : '' }}>{{ $label }}
@@ -149,7 +149,7 @@
                     <label class="form-label" for="country">Land *</label>
                     <select wire:model.lazy="country" class="form-select @error('country') is-invalid @enderror @if(session('valid-country')) 
                         is-valid @endif" id="country" type="text" placeholder="Schweiz"  autofocus autocomplete="off">
-                        <option selected>Bitte Land auswählen</option>
+                        <option selected>Bitte Land auswählen...</option>
                         @foreach ($countries as $country)
                             <option value="{{ $country->id }}">{{ $country->name }}
                             </option>
@@ -234,8 +234,8 @@
                 </br>
                 <div class="form-check">
                     <label class="form-label" for="terms">
-                        <input wire:model.lazy="terms" @error('terms') is-invalid @enderror @if(session('valid-terms')) 
-                            is-valid @endif" id="terms" type="checkbox" autofocus autocomplete="off">
+                        <input wire:model.lazy="terms" class="@error('terms') is-invalid @enderror @if(session('valid-terms')) 
+                            is-valid @endif" id="terms" type="checkbox" required>
                         @error('terms')
                             <div id="invalidFeedback" class="invalid-feedback">
                                 {{ $message }}

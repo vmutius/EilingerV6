@@ -11,7 +11,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
-use Validator;
+use Illuminate\Validation\Rules\Password;
 
 
 class RegisterPrivat extends Component
@@ -20,27 +20,33 @@ class RegisterPrivat extends Component
     
     public $terms = false;
 
-    protected $rules = [
-        //User
-        'username' => 'required|unique:users,username',
-        'telefon' => '',
-        'mobile' => '',
-        'password' => 'required'|'confirmed'|'Password::min(8)->numbers()->letters()->mixedCase()->symbols()',
-        'salutation' => 'required',
-        'firstname' => 'required|min:2',
-        'lastname' => 'required|min:2',
-        'email' => 'required|email|unique:users,email',
-
-        //Address
-        'street' => 'required|min:3',
-        'number' => '',
-        'plz' => 'required|min:4',
-        'town' => 'required|min:3',
-        'country' => 'required',
-
-        //
-        'terms' =>'required',
+    public function rules() {
+        return [
+            'username' => 'required|unique:users,username',
+            'telefon' => 'nullable',
+            'mobile' => 'nullable',
+            'salutation' => 'required',
+            'firstname' => 'required|min:2',
+            'lastname' => 'required|min:2',
+            'email' => 'required|email|unique:users,email',
+            'password' => [
+                'required',
+                Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols()
+                    ->uncompromised()
+            ],
+            'password_confirmation' => 'required|same:password',
+            'street' => 'required|min:3',
+            'number' => 'nullable',
+            'plz' => 'required|min:4',
+            'town' => 'required|min:3',
+            'country' => 'required',
+            'terms' =>'accepted',
         ];
+    }
 
     protected $messages = [
         //User

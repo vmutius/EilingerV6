@@ -20,6 +20,7 @@
         <div class="col-md-6">
             <label class="form-label" for="emailInst">Email der Organisation</label>
             <input wire:model.lazy="user.emailInst" type="text" class="form-control" />
+            @error('user.emailInst') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
 
         <div class="col-md-6">
