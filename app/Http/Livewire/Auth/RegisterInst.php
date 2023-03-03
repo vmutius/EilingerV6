@@ -30,7 +30,7 @@ class RegisterInst extends Component
             'firstname' => 'required|min:2',
             'lastname' => 'required|min:2',
             'email' => 'required|email|unique:users,email',
-            'emailInst' => 'required|email|unique:users',
+            'emailInst' => 'required|email|unique:users,emailInst',
             'password' => [
                 'required',
                 Password::min(8)

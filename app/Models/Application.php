@@ -29,7 +29,8 @@ class Application extends Model
         'user_id',
         'name',
         'appl_status',
-        'bereich'
+        'bereich',
+        'appl_status',
     ];
 
        public function user()
@@ -40,5 +41,16 @@ class Application extends Model
     public function messages()
     {
         return $this->hasMany(Message::class);
+    }
+
+    public function getApplStatusContextAttribute()
+    {
+        return [
+            'pending' => 'warning', // Antrag liegt bei Eilinger zur Bearbeitung
+            'waiting' => 'info', //Antrag liegt wieder beim Benutzer zur Beantwortung der Fragen
+            'complete' => 'dark', //Angaben im Antrag vollständig. Wartet auf nächste Stiftungsratssitzung
+            'approved' => 'success',
+            'blocked' =>'danger', 
+        ][$this->appl_status] ?? 'gray';
     }
 }

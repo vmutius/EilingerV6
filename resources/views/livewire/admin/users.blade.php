@@ -12,13 +12,13 @@
                     <input wire:model="searchUserEmail" class="form-control" type "text"
                         placeholder="Suchen nach Benutzer Email">
                 </div>
-                <div class="col-md-3">
-                    <input wire:model="searchStatusProjekt" class="form-control" type "text"
-                        placeholder="Suchen nach Projekt Status">
-                </div>
+                 {{-- <div class="col-md-3">
+                    <input wire:model="searchStatusProject" class="form-control" type "text"
+                    placeholder="Suchen nach Projekt Status">
+                </div>  --}}
             </div>
             <hr />
-            <table class="table table-striped">
+            <table class="table table-striped" id="sortTable">
                 <thead>
                     <tr>
                         <th>Benutzername</th>
@@ -26,6 +26,7 @@
                         <th>Vorame</th>
                         <th>Email</th>
                         <th>Anträge</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,17 +36,18 @@
                             <td>{{ $user->lastname }}</td>
                             <td>{{ $user->firstname }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>
-                                @foreach ($user->applications as $application)
-                                    <div class="row">
-                                        <a href="{{ route('admin_antrag', $application->id) }}">{{ $application->name }} ({{ $application->appl_status }})</a>
-                                    </div>
-                                @endforeach
+                            @forelse ($user->sendApplications as $application)
+                                <td><a href="{{ route('admin_antrag', $application->id) }}">{{ $application->name }}</a></td>
+                                <td><span class="badge text-bg-{{ $application->appl_status_context }}">{{ $application->appl_status }}</span></td>
+                            @empty
+                                <td></td>
+                                <td></td>
+                            @endforelse
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4">Keine Benutzer gefunden</td>
+                            <td colspan="6">Keine Benutzer gefunden</td>
                         </tr>
                     @endforelse
                 </tbody>

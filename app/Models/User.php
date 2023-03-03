@@ -110,13 +110,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Application::class);
     }
 
+    public function sendApplications()
+    {
+        return $this->hasMany(Application::class)->where('appl_status', '!=', 'not_send');
+    }
+
     public function messages()
     {
         return $this->hasMany(Message::class);
     }
 
-    public function avatar()
-    {
-        return 'https://www.gravatar.com/avatar' . md5($this->email) . '?s=80&d=mp';
-    }
 }
