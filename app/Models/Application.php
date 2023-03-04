@@ -10,12 +10,13 @@ class Application extends Model
     use HasFactory;
 
     public const APPL_STATUS = [
-        'not_send' => 'not_send', // antrag noch nicht eingereicht
-        'pending' => 'pending', // Antrag liegt bei EIlinger zur Bearbeitung
+        'not_send' => 'not_send', // Antrag noch nicht eingereicht
+        'pending' => 'pending', // Antrag liegt bei Eilinger zur Bearbeitung
         'waiting' => 'waiting', //Antrag liegt wieder beim Benutzer zur Beantwortung der Fragen
         'complete' => 'complete', //Angaben im Antrag vollständig. Wartet auf nächste Stiftungsratssitzung
         'approved' => 'approved',
-        'blocked' =>'blocked', 
+        'blocked' => 'blocked', 
+        'finished' => 'finished',
     ];
 
     public const BEREICH = [
@@ -25,12 +26,18 @@ class Application extends Model
         'Umwelt' => 'Umwelt'
     ];
 
+    public const FORM = [
+        'Stipendium' => 'Stipendium',
+        'Darlehen' => 'Darlehen'
+    ];
+
     protected $fillable = [
         'user_id',
         'name',
         'appl_status',
         'bereich',
         'appl_status',
+        'form',
     ];
 
        public function user()

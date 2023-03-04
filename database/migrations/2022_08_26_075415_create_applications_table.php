@@ -9,15 +9,7 @@ class CreateApplicationsTable extends Migration
 {
 
     public function up()
-    {/**
-     * Status
-     *
-     * not_send = noch nicht eingereicht
-     * pending = Wartet auf Antwort der Stiftung
-     * waiting = Wartet auf Antwort vom Benutzer
-     * blocked = abgelehnt
-     * approved = bewilligt
-     */
+    {
 
         Schema::create('applications', function (Blueprint $table) {
             $table->id()->autoIncrement();
@@ -25,7 +17,11 @@ class CreateApplicationsTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->string('appl_status')->default('not_send');
             $table->string('bereich');
+            $table->string('form');
+            $table->date('start')->nullable();
+            $table->date('end')->nullable();
             $table->longText('comment');
+            $table->longText('reason');
             $table->timestamps();
         });
     }

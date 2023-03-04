@@ -10,11 +10,13 @@
                 </div>
             </div>
             <hr />
+            <x-notification/>
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Antrag</th>
                         <th>Bereich</th>
+                        <th>Antragsform</th>
                         <th>Erstellt</th>
                         <th>Zuletzt Geändert</th>
                     </tr>
@@ -24,17 +26,18 @@
                         <tr>
                             <td>{{ $application->name }}</td>
                             <td>{{ $application->bereich }}</td>
-                            <td>{{ $application->created_at }}</td>
-                            <td>{{ $application->updated_at }}</td>
+                            <td>{{ $application->form }}</td>
+                            <td>{{ $application->created_at ? $application->created_at->format('d.m.Y H:i') : null }}</td>
+                            <td>{{ $application->updated_at ? $application->updated_at->format('d.m.Y H:i') : null }}</td>
                             <td>
                                 <a class="btn btn-sm btn-primary"
                                     href="{{ route('user_antrag', $application->id) }}">Bearbeiten</a>
-                                <a class="btn btn-sm btn-danger" wire:click="deleteApplication()">Löschen</a>
+                                <a class="btn btn-sm btn-danger" wire:click="deleteApplication({{ $application->id }})">Löschen</a>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4">Keine Anträge gefunden</td>
+                            <td colspan="5">Keine Anträge gefunden</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -53,14 +56,14 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            Name:
+                            Name des Projektes:
                             <br />
                             <input wire:model="name" class="form-control" />
                             @error('name')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
                             <br />
-                            Bereich:
+                            Bereich des Projektes:
                             <br />  
                             <select wire:model.lazy="bereich" class="form-select">
                                 <option selected>Bitte auswählen...</option>
@@ -69,6 +72,18 @@
                                 @endforeach
                             </select>
                             @error('bereich')
+                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                            @enderror
+                            <br />
+                            Gewünschte Antragsform des Projektes:
+                            <br />  
+                            <select wire:model.lazy="form" class="form-select">
+                                <option selected>Bitte auswählen...</option>
+                                @foreach (App\Models\APPLICATION::FORM as $key => $label)
+                                    <option value="{{ $key }}">{{ $label }}</option>
+                                @endforeach
+                            </select>
+                            @error('form')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
                         </div>

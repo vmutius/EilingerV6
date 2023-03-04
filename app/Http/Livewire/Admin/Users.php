@@ -13,6 +13,7 @@ class Users extends Component
     public $searchUsername;
     public $searchUserEmail;
     public $searchStatusProject;
+    public $searchNameInst;
 
 
     protected $paginationTheme = 'bootstrap';
@@ -22,19 +23,20 @@ class Users extends Component
         $this->searchUsername = '';
         $this->searchUserEmail = '';
         $this->searchStatusProject = '';
+        $this->searchNameInst = '';
     }
     
     public function render()
     {
-        $users = User::with('sendApplications')
+        $users = User::with('sendApplications')->orderBy('lastname')
             ->when($this->searchUsername!='', function($query){
                 $query->where('username', 'like','%'.$this->searchUsername.'%');
             }) 
             ->when($this->searchUserEmail!='', function($query){
                  $query->where('email', 'like','%'.$this->searchUserEmail.'%');
              })  
-            ->when($this->searchStatusProject!='', function($query){
-                $query->where('appl_status', 'like','%'.$this->searchStatusProject.'%');
+            ->when($this->searchNameInst!='', function($query){
+                $query->where('nameInst', 'like','%'.$this->searchNameInst.'%');
             })
         ->paginate(20);
         

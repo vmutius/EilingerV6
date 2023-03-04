@@ -10,10 +10,12 @@ class Antraege extends Component
     public $showModal = false;
     public $name;
     public $bereich;
+    public $form;
 
     protected $rules = [
         'name' => 'required',
         'bereich' => 'required',
+        'form' => 'required',
     ];
 
     public function render()
@@ -32,7 +34,8 @@ class Antraege extends Component
 
     public function deleteApplication($id)
     {
-        
+       Application::find($id)->delete();
+       session()->flash('success', 'Antrag erfolgreich gelöscht'); 
     }
 
     public function save()
@@ -40,13 +43,15 @@ class Antraege extends Component
         $this->validate();
 
         $application= Application::create([
-            'name'=>$this->name,
-            'bereich'=>$this->bereich,
-            'user_id'=>auth()->user()->id,
+            'name' => $this->name,
+            'bereich' => $this->bereich,
+            'user_id' => auth()->user()->id,
+            'form' => $this->form,
         ]);
         
         $this->name = '';
         $this->bereich = '';
+        $this->form = '';
 
         $this->showModal = false;
     }

@@ -14,7 +14,7 @@
                     <textarea wire:model.lazy="enclosure.remark" class="form-control" rows="3"></textarea>
                 </div>
             </div>
-        </br>
+        <br/>
             <h4 class="mb-0">Nur für Erstantrag</h4>
             <div class="form-check mt-3">
                 <label class="form-check-label" for="hasID">Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</label>
