@@ -71,13 +71,6 @@
                 </a>
                 <span class="tooltip">Datei Ablage</span>
             </li>
-            <li>
-                <a href="{{ route('user_einstellungen') }}">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Einstellungen</span>
-                </a>
-                <span class="tooltip">Einstellungen</span>
-            </li>
         </ul>
     </div>
 

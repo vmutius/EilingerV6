@@ -48,7 +48,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/user/nachrichten', App\Http\Livewire\User\Message::class)->name('user_nachrichten');
     Route::get('/user/profile', App\Http\Livewire\User\Profile::class)->name('user_profile');
     Route::get('/user/dateien', App\Http\Livewire\User\Datei::class)->name('user_dateien');
-    Route::get('/user/einstellungen', App\Http\Livewire\User\Settings::class)->name('user_einstellungen');
+    Route::get('/logout',App\Http\Livewire\Auth\Logout::class)->name('logout');
 });
 
 Route::group(['middleware' => ['admin']], function () {
@@ -58,6 +58,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/applications', App\Http\Livewire\Admin\Applications::class)->name('admin_applications');
     Route::get('/admin/projects', App\Http\Livewire\Admin\Projects::class)->name('admin_projects');
     Route::get('/admin/settings', App\Http\Livewire\Admin\Settings::class)->name('admin_settings');
+    Route::get('/logout',App\Http\Livewire\Auth\Logout::class)->name('logout');
 });
 
 
