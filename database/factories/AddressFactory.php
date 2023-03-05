@@ -18,7 +18,7 @@ class AddressFactory extends Factory
         return [
             'user_id' => User::factory(),
             'street' => $this->faker->word,
-            'number' => $this->faker->randomNumber(2, false),
+            'number' => $this->faker->randomNumber(2),
             'plz' =>$this->faker->randomNumber(4, true),
             'town'=> $this->faker->lexify,
         ];
