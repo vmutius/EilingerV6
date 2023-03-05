@@ -11,7 +11,6 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +35,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/login', App\Http\Livewire\Auth\Login::class)->name('login');
 });
 
-Route::middleware('auth', 'verified')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/user/dashboard', App\Http\Livewire\User\Uebersicht::class)->name('user_dashboard');
     Route::get('/user/antraege', App\Http\Livewire\User\Antraege::class)->name('user_antraege');
     Route::get('/user/antrag/{application_id}', App\Http\Livewire\User\Antrag::class)->name('user_antrag');
@@ -56,7 +55,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/settings', App\Http\Livewire\Admin\Settings::class)->name('admin_settings');
     Route::get('/logout', App\Http\Livewire\Auth\Logout::class)->name('logout');
 });
-
 
 Route::middleware('guest')->group(function () {
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
