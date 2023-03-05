@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Middleware;
+
 use Closure;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+
 class IsAdmin
 {
     /**
@@ -16,6 +18,7 @@ class IsAdmin
         if (Auth::user() &&  Auth::user()->isAdmin == 1) {
              return $next($request);
         }
+
         return redirect('/');
     }
 }
