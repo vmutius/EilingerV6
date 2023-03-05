@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\Address::factory(30)->create();
 
-
         $this->call([
             CountrySeeder::class,
         ]);
