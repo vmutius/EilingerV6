@@ -8,16 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Address extends Model
 {
     use HasFactory;
-    
+
     protected $connection = 'mysql';
-     
+
     protected $fillable = [
         'user_id',
+        'country_id',
         'street',
         'number',
         'plz',
         'town',
-        'country',
         'since',
         'isWochenaufenthalt',
     ];
@@ -36,5 +36,4 @@ class Address extends Model
     {
         return $this->belongsTo(Application::class);
     }
-
 }
