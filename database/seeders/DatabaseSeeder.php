@@ -14,10 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Address::factory(30)->create();
-
         $this->call([
             CountrySeeder::class,
+            AddressSeeder::class,
         ]);
     }
 }
