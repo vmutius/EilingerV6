@@ -3,8 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\User;
-use App\Models\Application;
 
 class CreateAddressesTable extends Migration
 {
@@ -18,12 +16,12 @@ class CreateAddressesTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->foreignId('user_id')->constrained();
+            $table->foreignId('country_id')->constrained();
             $table->string('street', 50);
-            $table->string('number', 10)->nullable($value = true);
+            $table->string('number', 10)->nullable();
             $table->string('plz', 20);
             $table->string('town', 50);
-            $table->string('country', 2)->default('CH');
-            $table->date('since')->nullable($value = true);
+            $table->date('since')->nullable();
             $table->boolean('isWochenaufenthalt')->default(false);
             $table->timestamps();
         });
