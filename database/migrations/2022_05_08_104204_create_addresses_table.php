@@ -19,11 +19,11 @@ class CreateAddressesTable extends Migration
             $table->id()->autoIncrement();
             $table->foreignId('user_id')->constrained();
             $table->string('street', 50);
-            $table->string('number', 10)->nullable($value = true);
+            $table->string('number', 10)->nullable();
             $table->string('plz', 20);
             $table->string('town', 50);
             $table->string('country', 2)->default('CH');
-            $table->date('since')->nullable($value = true);
+            $table->date('since')->nullable();
             $table->boolean('isWochenaufenthalt')->default(false);
             $table->timestamps();
         });
