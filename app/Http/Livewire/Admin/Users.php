@@ -10,20 +10,13 @@ use Illuminate\Support\Collection;
 class Users extends Component
 {
     use WithPagination;
-    public $searchUsername;
-    public $searchUserEmail;
-    public $searchStatusProject;
-    public $searchname_inst;
-
+    public $searchUsername,$searchUserEmail,$searchStatusProject,$searchname_inst;
 
     protected $paginationTheme = 'bootstrap';
    
     public function mount()
     {
-        $this->searchUsername = '';
-        $this->searchUserEmail = '';
-        $this->searchStatusProject = '';
-        $this->searchname_inst = '';
+        $this->searchUsername = $this->searchUserEmail=$this->searchStatusProject=$this->searchname_inst='';
     }
     
     public function render()
