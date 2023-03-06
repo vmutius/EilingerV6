@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDashController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
@@ -30,7 +31,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('guest')->group(function () {
     Route::get('/register-inst', App\Http\Livewire\Auth\RegisterInst::class)->name('registerInst');
     Route::get('/register-privat', App\Http\Livewire\Auth\RegisterPrivat::class)->name('registerPrivat');
-    Route::get('/login', App\Http\Livewire\Auth\Login::class)->name('login');
+    Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
+    Route::post('login', [AuthenticatedSessionController::class, 'store']);
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
