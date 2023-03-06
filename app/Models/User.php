@@ -53,15 +53,15 @@ class User extends Authenticatable implements MustVerifyEmail
         'telefon',
         'email',
         'password',
-        'nameInst',
-        'emailInst',
-        'telefonInst',
+        'name_inst',
+        'email_inst',
+        'telefon_inst',
         'website',
         'mobile',
-        'sozVersNr',
-        'civilStatus',
+        'soz_vers_nr',
+        'civil_status',
         'status',
-        'inCHsince',
+        'in_ch_since',
         'bewilligung'
     ];
 
@@ -84,11 +84,6 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function nationality()
-    {
-        return $this->belongsTo(Country::class, 'nationality');
-    }
 
     public function address() 
     {
@@ -118,6 +113,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function messages()
     {
         return $this->hasMany(Message::class);
+    }
+
+    public function nationality()
+    {
+        return $this->belongsTo(Country::Class, 'country_id');
     }
 
 }

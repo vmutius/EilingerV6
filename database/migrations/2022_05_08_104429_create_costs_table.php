@@ -16,19 +16,19 @@ class CreateCostsTable extends Migration
     public function up()
     {
         Schema::create('costs', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable($value = true);
-            $table->decimal('semesterFees', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('fees', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('educationalMaterial', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('excursion', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('travelExpenses', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('costOfLivingWithParents', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('costOfLivingAlone', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('costOfLivingSingleParent', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('costOfLivingWithPartner', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('numberOfChildren', $precision=8, $scale=2)->nullable($value = true);
+            $table->foreignIdFor(Application::class)->nullable();
+            $table->decimal('semester_fees', $precision=8, $scale=2)->nullable();
+            $table->decimal('fees', $precision=8, $scale=2)->nullable();
+            $table->decimal('educational_material', $precision=8, $scale=2)->nullable();
+            $table->decimal('excursion', $precision=8, $scale=2)->nullable();
+            $table->decimal('travel_expenses', $precision=8, $scale=2)->nullable();
+            $table->decimal('cost_of_living_with_parents', $precision=8, $scale=2)->nullable();
+            $table->decimal('cost_of_living_alone', $precision=8, $scale=2)->nullable();
+            $table->decimal('cost_of_living_single_parent', $precision=8, $scale=2)->nullable();
+            $table->decimal('cost_of_living_with_partner', $precision=8, $scale=2)->nullable();
+            $table->decimal('number_of_children', $precision=8, $scale=2)->nullable();
             $table->timestamps();
         });
     }

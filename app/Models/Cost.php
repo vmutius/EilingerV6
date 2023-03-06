@@ -17,16 +17,16 @@ class Cost extends Model
     protected $fillable = [
         'user_id',
         'application_id',
-        'semesterFees',
+        'semester_fees',
         'fees',
-        'educationalMaterial',
+        'educational_material',
         'excursion', 
-        'travelExpenses', 
-        'costOfLivingWithParents', 
-        'costOfLivingAlone',
-        'costOfLivingSingleParent',
-        'costOfLivingWithPartner',
-        'numberOfChildren'
+        'travel_expenses', 
+        'cost_of_living_with_parents', 
+        'cost_of_living_alone',
+        'cost_of_living_single_parent',
+        'cost_of_living_with_partner',
+        'number_of_children'
     ];
 
     public function user()

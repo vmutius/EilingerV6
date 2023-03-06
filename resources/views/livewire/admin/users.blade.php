@@ -13,7 +13,7 @@
                         placeholder="Suchen nach Benutzer Email">
                 </div>
                 <div class="col-md-3">
-                    <input wire:model="searchNameInst" class="form-control" type "text"
+                    <input wire:model="searchname_inst" class="form-control" type "text"
                         placeholder="Suchen nach Vereinsname">
                 </div>
                  {{-- <div class="col-md-3">
@@ -42,7 +42,7 @@
                     @forelse ($users as $user)
                         <tr>
                             <td>{{ $user->username }}</td>
-                            <td>{{ $user->nameInst }}</td>
+                            <td>{{ $user->name_inst }}</td>
                             <td>{{ $user->lastname }}</td>
                             <td>{{ $user->firstname }}</td>
                             <td>{{ $user->email }}</td>

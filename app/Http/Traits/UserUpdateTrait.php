@@ -5,13 +5,13 @@ use App\Models\User;
 trait UserUpdateTrait {
 
     public $username ='';
-    public $nameInst = '';
+    public $name_inst = '';
     public $email = '';
     public $password = '';
     public $password_confirmation = '';
     public $user_id = '';
-    public $telefonInst = '';
-    public $emailInst = '';
+    public $telefon_inst = '';
+    public $email_inst = '';
     public $website = '';
     public $salutation = '';
     public $firstname = '';
@@ -32,27 +32,27 @@ trait UserUpdateTrait {
         }
     }
 
-    public function updatedNameInst()
+    public function updatedname_inst()
     {
-        request()->session()->forget('valid-nameInst');
+        request()->session()->forget('valid-name_inst');
 
-        $validated = $this->validateOnly('nameInst');
+        $validated = $this->validateOnly('name_inst');
 
         //Valid username
         if(!empty($validated)){
-            session(['valid-nameInst' => 'OK']);
+            session(['valid-name_inst' => 'OK']);
         }
     }
 
-    public function updatedEmailInst()
+    public function updatedemail_inst()
     {
-        request()->session()->forget('valid-emailInst');
+        request()->session()->forget('valid-email_inst');
 
-        $validated = $this->validateOnly('emailInst');
+        $validated = $this->validateOnly('email_inst');
 
         //Valid username
         if(!empty($validated)){
-            session(['valid-emailInst' => 'OK']);
+            session(['valid-email_inst' => 'OK']);
         }
     }
 

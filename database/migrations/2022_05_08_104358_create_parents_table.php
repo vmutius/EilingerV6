@@ -16,24 +16,24 @@ class CreateParentsTable extends Migration
     public function up()
     {
         Schema::create('parents', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('parent_type');
-            $table->string('lastname', 255)->nullable($value = true);;
-            $table->string('firstname', 255)->nullable($value = true);;
-            $table->date('birthday')->nullable($value = true);;
-            $table->string('telefon', 20)->nullable($value = true);
-            $table->string('address', 255)->nullable($value = true);
-            $table->string('plz_ort', 255)->nullable($value = true);
-            $table->date('since')->nullable($value = true);
-            $table->string('job_type')->nullable($value = true);;
-            $table->string('job', 255)->nullable($value = true);
-            $table->string('employer', 255)->nullable($value = true);
-            $table->date('inCHsince')->nullable($value = true);
-            $table->date('marriedSince')->nullable($value = true);
-            $table->date('separatedSince')->nullable($value = true);
-            $table->date('divorcedSince')->nullable($value = true);
-            $table->year('death')->nullable($value = true);
+            $table->string('lastname', 255)->nullable();;
+            $table->string('firstname', 255)->nullable();;
+            $table->date('birthday')->nullable();;
+            $table->string('telefon', 20)->nullable();
+            $table->string('address', 255)->nullable();
+            $table->string('plz_ort', 255)->nullable();
+            $table->date('since')->nullable();
+            $table->string('job_type')->nullable();;
+            $table->string('job', 255)->nullable();
+            $table->string('employer', 255)->nullable();
+            $table->date('in_ch_since')->nullable();
+            $table->date('married_since')->nullable();
+            $table->date('separated_since')->nullable();
+            $table->date('divorced_since')->nullable();
+            $table->year('death')->nullable();
             $table->timestamps();
         });
     }

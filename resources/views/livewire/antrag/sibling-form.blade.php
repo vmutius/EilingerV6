@@ -22,8 +22,8 @@
             </div>
 
             <div class="col-sm-12">
-                <label class="form-label" for="placeOfResidence">Aufenthaltsadresse</label>
-                <input wire:model.lazy="siblings.{{ $index }}.placeOfResidence" type="text"
+                <label class="form-label" for="place_of_residence">Aufenthaltsadresse</label>
+                <input wire:model.lazy="siblings.{{ $index }}.place_of_residence" type="text"
                     class="form-control" />
             </div>
 
@@ -37,17 +37,17 @@
                     class="form-control" />
             </div>
             <div class="col-sm-2">
-                <label class="form-label" for="getAmount">Bezieht Ausbildungsbeiträge</label>
-                <select wire:model.lazy="siblings.{{ $index }}.getAmount" class="form-select">
+                <label class="form-label" for="get_amount">Bezieht Ausbildungsbeiträge</label>
+                <select wire:model.lazy="siblings.{{ $index }}.get_amount" class="form-select">
                     <option value="">-- Wählen Sie eine Option --</option>
-                    @foreach (App\Models\Sibling::GETAMOUNT as $key => $label)
+                    @foreach (App\Models\Sibling::get_amount as $key => $label)
                         <option value="{{ $key }}">{{ $label }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="col-sm-4">
-                <label class="form-label" for="supportSite">Beziehende Stelle</label>
-                <input wire:model.lazy="siblings.{{ $index }}.supportSite" type="text"
+                <label class="form-label" for="support_site">Beziehende Stelle</label>
+                <input wire:model.lazy="siblings.{{ $index }}.support_site" type="text"
                     class="form-control" />
             </div>
             <hr class="hr" />

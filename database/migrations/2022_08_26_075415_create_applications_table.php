@@ -12,14 +12,14 @@ class CreateApplicationsTable extends Migration
     {
 
         Schema::create('applications', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->string('name');
             $table->foreignId('user_id')->constrained();
             $table->string('appl_status')->default('not_send');
             $table->string('bereich');
             $table->string('form');
-            $table->date('start')->nullable();
-            $table->date('end')->nullable();
+            $table->date('start_appl')->nullable();
+            $table->date('end_appl')->nullable();
             $table->longText('comment');
             $table->longText('reason');
             $table->timestamps();

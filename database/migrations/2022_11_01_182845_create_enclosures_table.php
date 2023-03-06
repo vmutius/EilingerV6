@@ -7,7 +7,7 @@ use App\Models\Application;
 
 class CreateEnclosuresTable extends Migration
 {
-    /**
+   /**
      * Run the migrations.
      *
      * @return void
@@ -16,21 +16,21 @@ class CreateEnclosuresTable extends Migration
     {
         Schema::create('enclosures', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Application::class)->nullable($value = true);
-            $table->text('remark')->nullable($value = true);;
-            $table->boolean('hasID')->nullable($value = true);; //Kopie des aktuellen Personalausweises
-            $table->boolean('hasCV')->nullable($value = true);; //Lebenslauf
-            $table->boolean('hasApprenticeshipContract')->nullable($value = true);; //Ausbildungs- oder Lehrvertrag
-            $table->boolean('hasDiploma')->nullable($value = true);; //Abschlüsse
-            $table->boolean('hasDivorce')->nullable($value = true);; //Unterhaltsvereinbarung/Scheidungsurteil
-            $table->boolean('hasRentalContract')->nullable($value = true);; //Mietvertrag/Wochenaufenthaltsbestätigung
-            $table->boolean('hasCertificateOfStudy')->nullable($value = true);; //Semesterbestätigung/ Studienbescheinigung
-            $table->boolean('hasTaxAssessment')->nullable($value = true);; //Steuerveranlagung
-            $table->boolean('hasExpenseReceipts')->nullable($value = true);; //Kostenbelege
-            $table->boolean('hasPartnerTaxAssessment')->nullable($value = true);; //Steuerveranlagung des Partners
-            $table->boolean('hasSupplementaryServices')->nullable($value = true);; // Ergänzungsleistungen
-            $table->boolean('hasECTSPoints')->nullable($value = true);;
-            $table->boolean('hasParentsTaxFactors')->nullable($value = true);; //Steuerfaktoren der Eltern
+            $table->foreignIdFor(Application::class)->nullable();
+            $table->text('remark')->nullable();
+            $table->boolean('has_id')->nullable(); //Kopie des aktuellen Personalausweises
+            $table->boolean('has_cv')->nullable(); //Lebenslauf
+            $table->boolean('has_apprenticeship_contract')->nullable(); //Ausbildungs- oder Lehrvertrag
+            $table->boolean('has_diploma')->nullable(); //Abschlüsse
+            $table->boolean('has_divorce')->nullable(); //Unterhaltsvereinbarung/Scheidungsurteil
+            $table->boolean('has_rental_contract')->nullable(); //Mietvertrag/Wochenaufenthaltsbestätigung
+            $table->boolean('has_certificate_of_study')->nullable(); //Semesterbestätigung/ Studienbescheinigung
+            $table->boolean('has_tax_assessment')->nullable(); //Steuerveranlagung
+            $table->boolean('has_expense_receipts')->nullable(); //Kostenbelege
+            $table->boolean('has_partner_tax_assessment')->nullable(); //Steuerveranlagung des Partners
+            $table->boolean('has_supplementary_services')->nullable(); // Ergänzungsleistungen
+            $table->boolean('has_ects_points')->nullable();
+            $table->boolean('has_parents_tax_factors')->nullable(); //Steuerfaktoren der Eltern
             $table->timestamps();
         });
     }

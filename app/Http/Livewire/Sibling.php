@@ -25,17 +25,17 @@ class Sibling extends Component
         'siblings.*.firstname' => ['nullable'],
         'siblings.*.education' => ['nullable'],
         'siblings.*.graduation_year' => ['nullable'],
-        'siblings.*.placeOfResidence' => ['nullable'],
-        'siblings.*.getAmount' => ['nullable'],
-        'siblings.*.supportSite' => ['nullable'],
+        'siblings.*.place_of_residence' => ['nullable'],
+        'siblings.*.get_amount' => ['nullable'],
+        'siblings.*.support_site' => ['nullable'],
         'addSibling.*.birth_year' => ['nullable'],
         'addSibling.*.lastname' => ['nullable'],
         'addSibling.*.firstname' => ['nullable'],
         'addSibling.*.education' => ['nullable'],
         'addSibling.*.graduation_year' => ['nullable'],
-        'addSibling.*.placeOfResidence' => ['nullable'],
-        'addSibling.*.getAmount' => ['nullable'],
-        'addSibling.*.supportSite' => ['nullable'],
+        'addSibling.*.place_of_residence' => ['nullable'],
+        'addSibling.*.get_amount' => ['nullable'],
+        'addSibling.*.support_site' => ['nullable'],
 
     ];
 

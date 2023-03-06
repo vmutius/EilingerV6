@@ -11,19 +11,19 @@ class EnclosureForm extends Component
 
     protected $rules = [
         'enclosure.remark' => 'nullable',
-        'enclosure.hasID' => 'nullable',
-        'enclosure.hasCV' => 'nullable',
-        'enclosure.hasApprenticeshipContract' => 'nullable',
-        'enclosure.hasDiploma' => 'nullable',
-        'enclosure.hasDivorce' => 'nullable',
-        'enclosure.hasRentalContract' => 'nullable',
-        'enclosure.hasCertificateOfStudy' => 'nullable',
-        'enclosure.hasTaxAssessment' => 'nullable',
-        'enclosure.hasExpenseReceipts' => 'nullable',
-        'enclosure.hasPartnerTaxAssessment' => 'nullable',
-        'enclosure.hasSupplementaryServices' => 'nullable',
-        'enclosure.hasECTSPoints' => 'nullable',
-        'enclosure.hasParentsTaxFactors' => 'nullable',
+        'enclosure.has_id' => 'nullable',
+        'enclosure.has_cv' => 'nullable',
+        'enclosure.has_apprenticeship_contract' => 'nullable',
+        'enclosure.has_diploma' => 'nullable',
+        'enclosure.has_divorce' => 'nullable',
+        'enclosure.has_rental_contract' => 'nullable',
+        'enclosure.has_certificate_of_study' => 'nullable',
+        'enclosure.has_tax_assessment' => 'nullable',
+        'enclosure.has_expense_receipts' => 'nullable',
+        'enclosure.has_partner_tax_assessment' => 'nullable',
+        'enclosure.has_supplementary_services' => 'nullable',
+        'enclosure.has_ects_points' => 'nullable',
+        'enclosure.has_parents_tax_factors' => 'nullable',
     ];
 
     public function mount() 

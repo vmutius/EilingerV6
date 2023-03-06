@@ -18,7 +18,7 @@ class AddressForm extends Component
         'address.number' => 'nullable',
         'address.town' => 'required',
         'address.plz' => 'required',
-        'address.country' => 'required',
+        'address.country_id' => 'required',
     ];
 
     public function mount(Address $address) 

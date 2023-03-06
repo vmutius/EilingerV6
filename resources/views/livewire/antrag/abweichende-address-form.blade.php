@@ -26,7 +26,7 @@
 
         <div class="col-sm-2">
             <label class="form-label" for="country">Land</label>
-            <select wire:model.lazy="abweichendeAddress.country" class="form-select">
+            <select wire:model.lazy="abweichendeAddress.country_id" class="form-select">
                 <option disabled>Bitte auswählen...</option>
                 @foreach ($countries as $country)
                     <option value="{{ $country->short_code }}">{{ $country->name }}</option>

@@ -21,10 +21,10 @@ class ParentForm extends Component
         'parents.*.job_type' => 'nullable',
         'parents.*.job' => 'nullable',
         'parents.*.employer' => 'nullable',
-        'parents.*.inCHsince' => 'nullable',
-        'parents.*.marriedSince' => 'nullable',
-        'parents.*.separatedSince' => 'nullable',
-        'parents.*.divorcedSince' => 'nullable',
+        'parents.*.in_ch_since' => 'nullable',
+        'parents.*.married_since' => 'nullable',
+        'parents.*.separated_since' => 'nullable',
+        'parents.*.divorced_since' => 'nullable',
         'parents.*.death' => 'nullable',
     ];
 

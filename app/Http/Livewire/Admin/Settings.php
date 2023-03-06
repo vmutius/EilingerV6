@@ -28,7 +28,7 @@ class Settings extends Component
 
     public function render()
     {
-        $users=User::where('isAdmin', true)->get();
+        $users=User::where('is_admin', true)->get();
         return view('livewire.admin.settings',[
             'users' => $users
         ])
@@ -56,7 +56,7 @@ class Settings extends Component
             'password' => Hash::make($this->password),
             
         ]);
-        $user->isAdmin = 1;
+        $user->is_admin = 1;
         $user->save();
         $this->reset(['salutation','username', 'email', 'lastname', 'firstname', 'telefon', 'password']);
         $this->showModal = false;

@@ -22,15 +22,15 @@ class RegisterInst extends Component
     public function rules() {
         return [
             'username' => 'required|unique:users,username',
-            'nameInst' =>'required|unique:users,nameInst',
+            'name_inst' =>'required|unique:users,name_inst',
             'telefon' => 'nullable',
-            'telefonInst' => 'nullable',
+            'telefon_inst' => 'nullable',
             'mobile' => 'nullable',
             'salutation' => 'required',
             'firstname' => 'required|min:2',
             'lastname' => 'required|min:2',
             'email' => 'required|email|unique:users,email',
-            'emailInst' => 'required|email|unique:users,emailInst',
+            'email_inst' => 'required|email|unique:users,email_inst',
             'password' => [
                 'required',
                 Password::min(8)
@@ -45,7 +45,7 @@ class RegisterInst extends Component
             'number' => 'nullable',
             'plz' => 'required|min:4',
             'town' => 'required|min:3',
-            'country' => 'required',
+            'country_id' => 'required',
             'terms' =>'accepted',
         ];
     }
@@ -53,8 +53,8 @@ class RegisterInst extends Component
     protected $messages = [
         //User
         'username.unique' => 'Dieser Benutzername ist bereits vergeben',
-        'nameInst.unique' => 'Ihre Organisation ist bereits registriert',
-        'emailInst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
+        'name_inst.unique' => 'Ihre Organisation ist bereits registriert',
+        'email_inst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
         'password.regexp' => 'Das Passwort muss mindestens 8 Zeichen lang sein und muss mindestens 1 Grossbuchstaben, 
                     einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten',
 
@@ -74,12 +74,12 @@ class RegisterInst extends Component
         $user = User::create([
             'username' => $this->username,
             'type' => 'jur',
-            'nameInst'=> $this->nameInst,
+            'name_inst'=> $this->name_inst,
             'email' => $this->email,
             'password' => Hash::make($this->password),
             'salutation' => $this->salutation,
-            'telefonInst' => $this->telefonInst,
-            'emailInst' => $this->emailInst,
+            'telefon_inst' => $this->telefon_inst,
+            'email_inst' => $this->email_inst,
             'website' => $this->website,
             'firstname' => $this->firstname,
             'lastname' => $this->lastname,
@@ -93,6 +93,7 @@ class RegisterInst extends Component
             'number' => $this->number,
             'plz' => $this->plz,
             'town' => $this->town,
+            'country_id' => $this->country_id,
         ]);
         
         event(new Registered($user));
@@ -105,8 +106,8 @@ class RegisterInst extends Component
     {
         $this->model = User::class;
         request()->session()->forget('valid-username');
-        request()->session()->forget('valid-nameInst');
-        request()->session()->forget('valid-emailInst');
+        request()->session()->forget('valid-name_inst');
+        request()->session()->forget('valid-email_inst');
         
         $this->model = Address::class;
         request()->session()->forget('valid-street');

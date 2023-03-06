@@ -28,8 +28,8 @@ class UserNatForm extends Component
         'user.nationality' => 'nullable',
         'user.telefon' => 'nullable',
         'user.mobile' => 'nullable',
-        'user.sozVersNr' => 'nullable',
-        'user.inCHsince' => 'nullable',
+        'user.soz_vers_nr' => 'nullable',
+        'user.in_ch_since' => 'nullable',
         'user.bewilligung' => 'nullable',
     ];
 

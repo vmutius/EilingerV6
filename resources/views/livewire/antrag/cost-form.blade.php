@@ -8,47 +8,47 @@
         <x-notification/>
         
         <div class="col-sm-6">
-            <label class="form-label" for="semesterFees">Semestergebühren</label>
-            <input wire:model.lazy="cost.semesterFees" type="number" class="form-control" />
+            <label class="form-label" for="semester_fees">Semestergebühren</label>
+            <input wire:model.lazy="cost.semester_fees" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="fees">übrige Gebühren</label>
             <input wire:model.lazy="cost.fees" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="educationalMaterial">Schulmaterialien/Lehrmittel</label>
-            <input wire:model.lazy="cost.educationalMaterial" type="number" class="form-control" />
+            <label class="form-label" for="educational_material">Schulmaterialien/Lehrmittel</label>
+            <input wire:model.lazy="cost.educational_material" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="excursion">Exkursionen/Schulverlegungen Sprachaufenthalte</label>
             <input wire:model.lazy="cost.excursion" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="travelExpenses">Reisespesen</label>
-            <input wire:model.lazy="cost.travelExpenses" type="number" class="form-control" />
+            <label class="form-label" for="travel_expenses">Reisespesen</label>
+            <input wire:model.lazy="cost.travel_expenses" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="numberOfChildren">Anzahl Kinder im eigenen Haushalt</label>
-            <input wire:model.lazy="cost.numberOfChildren" type="number" class="form-control" />
+            <label class="form-label" for="number_of_children">Anzahl Kinder im eigenen Haushalt</label>
+            <input wire:model.lazy="cost.number_of_children" type="number" class="form-control" />
         </div>
 
         <h4 class="mb-0">Übrige Lebenshaltung</h4>
         <small>Bitte nur das Zutreffende ausfüllen</small>
         <div class="col-sm-6">
-            <label class="form-label" for="costOfLivingWithParents">im Haushalt der Elternn</label>
-            <input wire:model.lazy="cost.costOfLivingWithParents" type="number" class="form-control" />
+            <label class="form-label" for="cost_of_living_with_parents">im Haushalt der Elternn</label>
+            <input wire:model.lazy="cost.cost_of_living_with_parents" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="costOfLivingAlone">im eigenen Haushalt (Begründung) </label>
-            <input wire:model.lazy="cost.costOfLivingAlone" type="number" class="form-control" />
+            <label class="form-label" for="cost_of_living_alone">im eigenen Haushalt (Begründung) </label>
+            <input wire:model.lazy="cost.cost_of_living_alone" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="costOfLivingSingleParent">im eigenen Haushalt für Alleinerziehende</label>
-            <input wire:model.lazy="cost.costOfLivingSingleParent" type="number" class="form-control" />
+            <label class="form-label" for="cost_of_living_single_parent">im eigenen Haushalt für Alleinerziehende</label>
+            <input wire:model.lazy="cost.cost_of_living_single_parent" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="costOfLivingWithPartner">im eigenen Haushalt mit Partner</label>
-            <input wire:model.lazy="cost.costOfLivingWithPartner" type="number" class="form-control" />
+            <label class="form-label" for="cost_of_living_with_partner">im eigenen Haushalt mit Partner</label>
+            <input wire:model.lazy="cost.cost_of_living_with_partner" type="number" class="form-control" />
         </div>
         
     

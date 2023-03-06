@@ -10,16 +10,16 @@ class CostForm extends Component
     public $cost;
 
     protected $rules = [
-        'cost.semesterFees' => 'nullable',
+        'cost.semester_fees' => 'nullable',
         'cost.fees' => 'nullable',
-        'cost.educationalMaterial' => 'nullable',
+        'cost.educational_material' => 'nullable',
         'cost.excursion' => 'nullable',
-        'cost.travelExpenses' => 'nullable',
-        'cost.costOfLivingWithParents' => 'nullable',
-        'cost.costOfLivingAlone' => 'nullable',
-        'cost.costOfLivingAlone' => 'nullable',
-        'cost.costOfLivingWithPartner' => 'nullable',
-        'cost.numberOfChildren' => 'nullable',
+        'cost.travel_expenses' => 'nullable',
+        'cost.cost_of_living_with_parents' => 'nullable',
+        'cost.cost_of_living_alone' => 'nullable',
+        'cost.cost_of_living_alone' => 'nullable',
+        'cost.cost_of_living_with_partner' => 'nullable',
+        'cost.number_of_children' => 'nullable',
     ];
 
     public function mount() 

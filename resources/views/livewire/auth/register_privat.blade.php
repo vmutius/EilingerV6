@@ -147,7 +147,7 @@
 
                 <div class="group">
                     <label class="form-label" for="country">Land *</label>
-                    <select wire:model.lazy="country" class="form-select @error('country') is-invalid @enderror @if(session('valid-country')) 
+                    <select wire:model.lazy="country_id" class="form-select @error('country_id') is-invalid @enderror @if(session('valid-country_id')) 
                         is-valid @endif" id="country" type="text" placeholder="Schweiz"  autofocus autocomplete="off">
                         <option selected>Bitte Land auswählen...</option>
                         @foreach ($countries as $country)
@@ -155,14 +155,14 @@
                             </option>
                         @endforeach
                     </select>
-                    @error('country')
+                    @error('country_id')
                         <div id="invalidFeedback" class="invalid-feedback">
                             {{ $message }}
                         </div>
                     @enderror
-                    @if(session()->has('valid-country'))
+                    @if(session()->has('valid-country_id'))
                         <div class="valid-feedback">
-                            {{ session('valid-country') }}
+                            {{ session('valid-country_id') }}
                         </div>
                     @endif
                 </div>

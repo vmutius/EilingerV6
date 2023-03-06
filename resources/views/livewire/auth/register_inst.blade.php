@@ -24,17 +24,17 @@
                     </div>
 
                     <div class="group">
-                        <label class="form-label" for="nameInst">Name der Organisation *</label>
-                        <input wire:model.lazy="nameInst" class="form-control @error('nameInst') is-invalid @enderror @if(session('valid-nameInst')) is-valid @endif" id="name_inst" type="text"
+                        <label class="form-label" for="name_inst">Name der Organisation *</label>
+                        <input wire:model.lazy="name_inst" class="form-control @error('name_inst') is-invalid @enderror @if(session('valid-name_inst')) is-valid @endif" id="name_inst" type="text"
                             placeholder="Firma Mustermann"  autofocus autocomplete="off">
-                        @error('nameInst')
-                            <div id="invalidnameInstFeedback" class="invalid-feedback">
+                        @error('name_inst')
+                            <div id="invalidname_instFeedback" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        @if(session()->has('valid-nameInst'))
+                        @if(session()->has('valid-name_inst'))
                             <div class="valid-feedback">
-                                {{ session('valid-nameInst') }}
+                                {{ session('valid-name_inst') }}
                             </div>
                         @endif
                     </div>
@@ -105,54 +105,54 @@
 
                     <div class="group">
                         <label class="form-label" for="country">Land *</label>
-                        <select wire:model.lazy="country" class="form-select @error('country') is-invalid @enderror @if(session('valid-country')) 
-                            is-valid @endif" id="country" type="text" placeholder="Schweiz"  autofocus autocomplete="off">
+                        <select wire:model.lazy="country_id" class="form-select @error('country_id') is-invalid @enderror @if(session('valid-country_id')) 
+                            is-valid @endif" id="country_id" type="text" autofocus autocomplete="off">
                             <option selected>Bitte Land auswählen...</option>
                             @foreach ($countries as $country)
                                 <option value="{{ $country->id }}">{{ $country->name }}
                                 </option>
                             @endforeach
                         </select>
-                        @error('country')
+                        @error('country_id')
                             <div id="invalidFeedback" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        @if(session()->has('valid-country'))
+                        @if(session()->has('valid-country_id'))
                             <div class="valid-feedback">
-                                {{ session('valid-country') }}
+                                {{ session('valid-country_id') }}
                             </div>
                         @endif
                     </div>
 
                     <div class="group">
-                        <label class="form-label" for="telefonInst">Telefonnummer der Organisation</label>
-                        <input wire:model.lazy="telefonInst" class="form-control @error('telefonInst') is-invalid @enderror @if(session('valid-telefonInst')) 
-                            is-valid @endif" id="telefonInst" type="text" placeholder="+41 81 123 4567"  autofocus autocomplete="off">
-                        @error('telefonInst')
+                        <label class="form-label" for="telefon_inst">Telefonnummer der Organisation</label>
+                        <input wire:model.lazy="telefon_inst" class="form-control @error('telefon_inst') is-invalid @enderror @if(session('valid-telefon_inst')) 
+                            is-valid @endif" id="telefon_inst" type="text" placeholder="+41 81 123 4567"  autofocus autocomplete="off">
+                        @error('telefon_inst')
                             <div id="invalidFeedback" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        @if(session()->has('valid-telefonInst'))
+                        @if(session()->has('valid-telefon_inst'))
                             <div class="valid-feedback">
-                                {{ session(['valid-telefonInst' => 'OK']) }}
+                                {{ session(['valid-telefon_inst' => 'OK']) }}
                             </div>
                         @endif
                     </div>
 
                     <div class="group">
-                        <label class="form-label" for="emailInst">Email der Organisation</label>
-                        <input wire:model.lazy="emailInst" class="form-control @error('emailInst') is-invalid @enderror @if(session('valid-emailInst')) 
-                            is-valid @endif" id="emailInst" type="email" placeholder="muster@muster.ch"  autofocus autocomplete="off">
-                        @error('emailInst')
+                        <label class="form-label" for="email_inst">Email der Organisation</label>
+                        <input wire:model.lazy="email_inst" class="form-control @error('email_inst') is-invalid @enderror @if(session('valid-email_inst')) 
+                            is-valid @endif" id="email_inst" type="email" placeholder="muster@muster.ch"  autofocus autocomplete="off">
+                        @error('email_inst')
                             <div id="invalidFeedback" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        @if(session()->has('valid-emailInst'))
+                        @if(session()->has('valid-email_inst'))
                             <div class="valid-feedback">
-                                {{ session('valid-emailInst') }}
+                                {{ session('valid-email_inst') }}
                             </div>
                         @endif
                     </div>

@@ -16,14 +16,14 @@ class CreatePartnersTable extends Migration
     public function up()
     {
         Schema::create('partners', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('lastname', 255);
             $table->string('firstname', 255);
             $table->date('birthday');
-            $table->string('profession', 255)->nullable($value = true);
-            $table->date('begin')->nullable($value = true);
-            $table->date('end')->nullable($value = true);
+            $table->string('profession', 255)->nullable();
+            $table->date('begin')->nullable();
+            $table->date('end')->nullable();
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class CreateAddressesTable extends Migration
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('country_id')->constrained();
             $table->string('street', 50);
@@ -22,7 +22,7 @@ class CreateAddressesTable extends Migration
             $table->string('plz', 20);
             $table->string('town', 50);
             $table->date('since')->nullable();
-            $table->boolean('isWochenaufenthalt')->default(false);
+            $table->boolean('is_wochenaufenthalt')->default(false);
             $table->timestamps();
         });
     }

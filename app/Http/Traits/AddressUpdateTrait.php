@@ -8,7 +8,7 @@ trait AddressUpdateTrait {
     public $number = '';
     public $plz = '';
     public $town = '';
-    public $country = '';
+    public $country_id = '';
 
     public function updatedStreet()
     {

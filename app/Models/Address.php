@@ -19,7 +19,7 @@ class Address extends Model
         'plz',
         'town',
         'since',
-        'isWochenaufenthalt',
+        'is_wochenaufenthalt',
     ];
 
     public function user()

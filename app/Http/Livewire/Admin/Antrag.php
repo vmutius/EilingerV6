@@ -28,10 +28,10 @@ class Antrag extends Component
         $this->application = Application::where('id', $application_id)->first();
         $this->user = User::where('id',$this->application->user_id)->first();
         $this->address = Address::where('user_id', $this->user->id)
-            ->where('isWochenaufenthalt', 0)    
+            ->where('is_wochenaufenthalt', 0)    
             ->first();
         $this->abweichendeAddress = Address::where('user_id', $this->user->id)
-            ->where('isWochenaufenthalt', 1)
+            ->where('is_wochenaufenthalt', 1)
             ->first();
         $this->education = Education::where('application_id', $application_id)->first();
         $this->account = Account::where('application_id', $application_id)->first();

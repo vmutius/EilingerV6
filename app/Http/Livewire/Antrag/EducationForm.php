@@ -14,7 +14,7 @@ class EducationForm extends Component
         'education.name' => 'nullable',
         'education.final' => 'nullable',
         'education.grade' => 'nullable',
-        'education.ectsPoints' => 'nullable',
+        'education.ects_points' => 'nullable',
         'education.time' => 'nullable',
     ];
 

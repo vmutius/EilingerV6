@@ -34,10 +34,10 @@
                                     <p>Mobil: {{ $user->mobile }}</p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <p>SozVersNr: {{ $user->sozversnr }}</p>
+                                    <p>soz_vers_nr: {{ $user->soz_vers_nr }}</p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <p>In der Schweiz seit: {{ $user->inCHsince }}</p>
+                                    <p>In der Schweiz seit: {{ $user->in_ch_since }}</p>
                                 </div>
                                 <div class="col-sm-3">
                                     <p>Bewilligung: {{ $user->bewilligung }}</p>
@@ -67,7 +67,7 @@
                                     <p>Stadt: {{ $address->town }}</p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <p>Land: {{ $address->country }}</p>
+                                    <p>Land: {{ $address->_id }}</p>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                                         <p>Abschluss: {{ $education->grade }}</p>
                                     </div>
                                     <div class="col-sm-3">
-                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ectsPoints }}</p>
+                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ects_points }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -258,7 +258,7 @@
                                         <p>Abschluss: {{ $education->grade }}</p>
                                     </div>
                                     <div class="col-sm-3">
-                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ectsPoints }}</p>
+                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ects_points }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +295,7 @@
                                         <p>Abschluss: {{ $education->grade }}</p>
                                     </div>
                                     <div class="col-sm-3">
-                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ectsPoints }}</p>
+                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ects_points }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -332,7 +332,7 @@
                                         <p>Abschluss: {{ $education->grade }}</p>
                                     </div>
                                     <div class="col-sm-3">
-                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ectsPoints }}</p>
+                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ects_points }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -369,7 +369,7 @@
                                         <p>Abschluss: {{ $education->grade }}</p>
                                     </div>
                                     <div class="col-sm-3">
-                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ectsPoints }}</p>
+                                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ects_points }}</p>
                                     </div>
                                 </div>
                             </div>

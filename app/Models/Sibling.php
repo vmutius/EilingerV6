@@ -10,7 +10,7 @@ class Sibling extends Model
     use HasFactory;
     protected $connection = "mysql";
 
-    public const GETAMOUNT = [
+    public const get_amount = [
         true => 'Ja',
         false => 'Nein',
     ];
@@ -26,9 +26,9 @@ class Sibling extends Model
         'firstname', 
         'education', 
         'graduation_year',
-        'placeOfResidence',
-        'getAmount',
-        'supportSite'
+        'place_of_residence',
+        'get_amount',
+        'support_site'
 
     ];
 

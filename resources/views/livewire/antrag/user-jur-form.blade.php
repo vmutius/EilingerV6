@@ -8,19 +8,19 @@
         <x-notification/>
 
         <div class="col-md-6">
-            <label class="form-label" for="nameInst">Name der Organisation</label>
-            <input wire:model.lazy="user.nameInst" type="text" class="form-control" />
+            <label class="form-label" for="name_inst">Name der Organisation</label>
+            <input wire:model.lazy="user.name_inst" type="text" class="form-control" />
         </div>
 
         <div class="col-md-6">
-            <label class="form-label" for="telefonInst">Telefonnummer der Organisation</label>
-            <input wire:model.lazy="user.telefonInst" type="text" class="form-control" />
+            <label class="form-label" for="telefon_inst">Telefonnummer der Organisation</label>
+            <input wire:model.lazy="user.telefon_inst" type="text" class="form-control" />
         </div>
 
         <div class="col-md-6">
-            <label class="form-label" for="emailInst">Email der Organisation</label>
-            <input wire:model.lazy="user.emailInst" type="text" class="form-control" />
-            @error('user.emailInst') <span class="text-danger">{{ $message }}</span> @enderror
+            <label class="form-label" for="email_inst">Email der Organisation</label>
+            <input wire:model.lazy="user.email_inst" type="text" class="form-control" />
+            @error('user.email_inst') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
 
         <div class="col-md-6">

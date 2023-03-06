@@ -37,10 +37,10 @@ class Parents extends Model
         'job_type',
         'job',
         'employer',
-        'inCHsince',
-        'marriedSince',
-        'separatedSince',
-        'divorcedSince',
+        'in_ch_since',
+        'married_since',
+        'separated_since',
+        'divorced_since',
         'death'
     ];
 

@@ -11,11 +11,11 @@ class FinancingForm extends Component
 
     protected $rules = [
         'financing.user_id' => 'nullable',
-        'financing.personalContribution' => 'nullable',
-        'financing.otherIncome' => 'nullable',
-        'financing.incomeWhere' => 'nullable',
-        'financing.incomeWho' => 'nullable',
-        'financing.nettoIncome' => 'nullable',
+        'financing.personal_contribution' => 'nullable',
+        'financing.other_income' => 'nullable',
+        'financing.income_where' => 'nullable',
+        'financing.income_who' => 'nullable',
+        'financing.netto_income' => 'nullable',
         'financing.assets' => 'nullable',
         'financing.scholarship' => 'nullable',
     ];

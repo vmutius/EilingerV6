@@ -8,12 +8,12 @@
         <x-notification/>
         
         <div class="col-sm-6">
-            <label class="form-label" for="personalContribution">Eigenleistung vom Bewerber selbst</label>
-            <input wire:model.lazy="financing.personalContribution" type="number" class="form-control" />
+            <label class="form-label" for="personal_contribution">Eigenleistung vom Bewerber selbst</label>
+            <input wire:model.lazy="financing.personal_contribution" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="nettoIncome">Einkommen netto des Ehe- / Lebenspartners minus Freibetrag</label>
-            <input wire:model.lazy="financing.nettoIncome" type="number" class="form-control" />
+            <label class="form-label" for="netto_income">Einkommen netto des Ehe- / Lebenspartners minus Freibetrag</label>
+            <input wire:model.lazy="financing.netto_income" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="assets">eigenes Vermögen (Vermögen bei erster Gesuchstellung) </label>
@@ -24,16 +24,16 @@
             <input wire:model.lazy="financing.scholarship" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="otherIncome">Anderweitige Einkünfte (Betrag)</label>
-            <input wire:model.lazy="financing.otherIncome" type="number" class="form-control" />
+            <label class="form-label" for="other_income">Anderweitige Einkünfte (Betrag)</label>
+            <input wire:model.lazy="financing.other_income" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="incomeWhere">Auszahlende Stelle der anderweitige Einkünfte </label>
-            <input wire:model.lazy="financing.incomeWhere" type="number" class="form-control" />
+            <label class="form-label" for="income_where">Auszahlende Stelle der anderweitige Einkünfte </label>
+            <input wire:model.lazy="financing.income_where" type="number" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="incomeWh">Begünstigter der anderweitige Einkünfte (Betrag)</label>
-            <input wire:model.lazy="financing.incomeWho" type="number" class="form-control" />
+            <input wire:model.lazy="financing.income_who" type="number" class="form-control" />
         </div>
       
 

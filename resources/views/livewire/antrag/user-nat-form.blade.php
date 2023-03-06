@@ -53,13 +53,13 @@
             <input wire:model.lazy="user.mobile" type="text" class="form-control" />
         </div>
         <div class="col-md-4">
-            <label class="form-label" for="sozVersNr">Sozialversicherungsnummer</label>
-            <input wire:model.lazy="user.sozVersNr" type="text" class="form-control" />
+            <label class="form-label" for="soz_vers_nr">Sozialversicherungsnummer</label>
+            <input wire:model.lazy="user.soz_vers_nr" type="text" class="form-control" />
         </div>
 
         <div class="col-sm-6">
-            <label class="form-label" for="inCHsince">In der Schweiz seit (für Ausländer)</label>
-            <input wire:model.lazy="user.inCHsince" type="text" class="form-control" />
+            <label class="form-label" for="in_ch_since">In der Schweiz seit (für Ausländer)</label>
+            <input wire:model.lazy="user.in_ch_since" type="text" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="bewilligung">Art der Bewilligung (für Ausländer)</label>

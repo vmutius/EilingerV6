@@ -16,11 +16,11 @@ class Financing extends Model
     protected $fillable = [
         'user_id',
         'application_id',
-        'personalContribution',
-        'otherIncome',
-        'incomeWhere',
-        'incomeWho',
-        'nettoIncome', 
+        'personal_contribution',
+        'other_income',
+        'income_where',
+        'income_who',
+        'netto_income', 
         'assets',
         'scholarship'
     ];

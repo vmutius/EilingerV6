@@ -12,10 +12,10 @@ class CreateMessagesTable extends Migration
     public function up()
     {         
         Schema::create('messages', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->foreignIdFor(Application::class);
             $table->foreignIdFor(User::class);
-            $table->foreignId('mainmessage_id')->nullable()->constrained('messages')->onDelete('cascade'); // Für Reply
+            $table->foreignId('main_message_id')->nullable()->constrained('messages')->onDelete('cascade'); // Für Reply
             $table->text('body');
             $table->timestamps();
         });

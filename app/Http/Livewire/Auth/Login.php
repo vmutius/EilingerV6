@@ -20,7 +20,7 @@ class Login extends Component
 
         if (auth()->attempt($credentials))
         {
-            if(auth()->user()->isAdmin){
+            if(auth()->user()->is_admin){
                 return redirect('/admin/dashboard')
                 ->with('success', 'Sie sind eingeloggt');
             } else {

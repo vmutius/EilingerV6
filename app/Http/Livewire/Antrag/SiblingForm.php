@@ -16,9 +16,9 @@ class SiblingForm extends Component
         'siblings.*.firstname' => 'nullable',
         'siblings.*.education' => 'nullable',
         'siblings.*.graduation_year' => 'nullable',
-        'siblings.*.placeOfResidence' => 'nullable',
-        'siblings.*.getAmount' => 'nullable',
-        'siblings.*.supportSite' => 'nullable',
+        'siblings.*.place_of_residence' => 'nullable',
+        'siblings.*.get_amount' => 'nullable',
+        'siblings.*.support_site' => 'nullable',
     ];
 
     public function mount() 

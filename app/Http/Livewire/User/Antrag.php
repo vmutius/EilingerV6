@@ -26,7 +26,7 @@ class Antrag extends Component
         $this->application = Application::where('user_id', auth()->user()->id)
             ->first() ?? new Application;
             $this->address = Address::where('user_id', auth()->user()->id)
-            ->where('isWochenaufenthalt', 0)    
+            ->where('is_wochenaufenthalt', 0)    
             ->first();
         session(['appl_id' => $application_id]);   
 
@@ -70,14 +70,14 @@ class Antrag extends Component
         'user.nationality' => 'required',
         'user.telefon' => 'required',
         'user.mobile' => 'required',
-        'user.sozVersNr' => 'required',
+        'user.soz_vers_nr' => 'required',
         'user.birthday' => 'nullable',
-        'user.inCHsince' => 'nullable',
+        'user.in_ch_since' => 'nullable',
         'user.bewilligung' => 'nullable',
         'address.street' => 'required',
         'address.number' => 'required',
         'address.town' => 'required',
         'address.plz' => 'required',
-        'address.country' => 'required',
+        'address.country_id' => 'required',
     ];
 }

@@ -43,7 +43,7 @@ class RegisterPrivat extends Component
             'number' => 'nullable',
             'plz' => 'required|min:4',
             'town' => 'required|min:3',
-            'country' => 'required',
+            'country_id' => 'required',
             'terms' =>'accepted',
         ];
     }
@@ -51,8 +51,8 @@ class RegisterPrivat extends Component
     protected $messages = [
         //User
         'username.unique' => 'Dieser Benutzername ist bereits vergeben',
-        'nameInst.unique' => 'Ihre Organisation ist bereits registriert',
-        'emailInst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
+        'name_inst.unique' => 'Ihre Organisation ist bereits registriert',
+        'email_inst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
 
         //Address
         'plz' => 'Postleitzahl ist eine vierstellige Zahl',
@@ -86,7 +86,7 @@ class RegisterPrivat extends Component
             'number' => $this->number,
             'plz' => $this->plz,
             'town' => $this->town,
-            'country' => $this->country,
+            'country_id' => $this->country_id,
         ]);
         event(new Registered($user));
         Auth::login($user);
@@ -98,8 +98,8 @@ class RegisterPrivat extends Component
     {
         $this->model = User::class;
         request()->session()->forget('valid-username');
-        request()->session()->forget('valid-nameInst');
-        request()->session()->forget('valid-emailInst');
+        request()->session()->forget('valid-name_inst');
+        request()->session()->forget('valid-email_inst');
         
         $this->model = Address::class;
         request()->session()->forget('valid-street');

@@ -16,16 +16,16 @@ class CreateFinancingsTable extends Migration
     public function up()
     {
         Schema::create('financings', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable($value = true);
-            $table->decimal('personalContribution', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('otherIncome', $precision=8, $scale=2)->nullable($value = true);
-            $table->string('incomeWhere')->nullable($value = true);
-            $table->string('incomeWho')->nullable($value = true);
-            $table->decimal('nettoIncome', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('assets', $precision=8, $scale=2)->nullable($value = true);
-            $table->decimal('scholarship', $precision=8, $scale=2)->nullable($value = true);
+            $table->foreignIdFor(Application::class)->nullable();
+            $table->decimal('personal_contribution', $precision=8, $scale=2)->nullable();
+            $table->decimal('other_income', $precision=8, $scale=2)->nullable();
+            $table->string('income_where')->nullable();
+            $table->string('income_who')->nullable();
+            $table->decimal('netto_income', $precision=8, $scale=2)->nullable();
+            $table->decimal('assets', $precision=8, $scale=2)->nullable();
+            $table->decimal('scholarship', $precision=8, $scale=2)->nullable();
             $table->timestamps();
         });
     }

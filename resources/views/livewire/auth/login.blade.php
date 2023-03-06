@@ -17,9 +17,9 @@
             <h3>NEUES BENUTZERKONTO </h3>
 
             <p> Ich erstelle ein Benutzerkonto für mich als <strong><a
-                        href="{{ route('register_privat') }}">Privatperson</a></strong> (für ein Stipendiengesuch bitte
+                        href="{{ route('registerPrivat') }}">Privatperson</a></strong> (für ein Stipendiengesuch bitte
                 diese Option wählen)
-                ODER ich erstelle das Benutzerkonto für <strong><a href="{{ route('register_inst') }}">einen Verein/eine
+                ODER ich erstelle das Benutzerkonto für <strong><a href="{{ route('registerInst') }}">einen Verein/eine
                         Institution </a></strong>.</p>
             </br>
             <h3>Ich bin bereits registriert </h3>

@@ -12,19 +12,19 @@ class Enclosure extends Model
     protected $fillable = [
         'user_id',
         'application_id',
-        'hasID',
-        'hasCV',
-        'hasApprenticeshipContract',
-        'hasDiploma',
-        'hasDivorce',
-        'hasRentalContract',
-        'hasCertificateOfStudy',
-        'hasTaxAssessment',
-        'hasExpenseReceipts',
-        'hasPartnerTaxAssessment',
-        'hasSupplementaryServices',
-        'hasECTSPoints',
-        'hasParentsTaxFactors'
+        'has_id',
+        'has_cv',
+        'has_apprenticeship_contract',
+        'has_diploma',
+        'has_divorce',
+        'has_rental_contract',
+        'has_certificate_of_study',
+        'has_tax_assessment',
+        'has_expense_receipts',
+        'has_partner_tax_assessment',
+        'has_supplementary_services',
+        'has_ects_points',
+        'has_parents_tax_factors'
     ];
 
     public function user()

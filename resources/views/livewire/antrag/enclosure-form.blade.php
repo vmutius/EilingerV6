@@ -17,62 +17,62 @@
         <br/>
             <h4 class="mb-0">Nur für Erstantrag</h4>
             <div class="form-check mt-3">
-                <label class="form-check-label" for="hasID">Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</label>
-                <input wire:model.lazy="enclosure.hasID" class="form-check-input" type="checkbox" />             
+                <label class="form-check-label" for="has_id">Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</label>
+                <input wire:model.lazy="enclosure.has_id" class="form-check-input" type="checkbox" />             
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasCV">Lebenslauf</label>
-                <input wire:model.lazy="enclosure.hasCV" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_cv">Lebenslauf</label>
+                <input wire:model.lazy="enclosure.has_cv" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasApprenticeshipContract">Kopie: Ausbildungs- oder Lehrvertrag(Für Uni/FH: ausgefülltes Zusatzformular A)</label>
-                <input wire:model.lazy="enclosure.hasApprenticeshipContract" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_apprenticeship_contract">Kopie: Ausbildungs- oder Lehrvertrag(Für Uni/FH: ausgefülltes Zusatzformular A)</label>
+                <input wire:model.lazy="enclosure.has_apprenticeship_contract" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasDiploma">Kopie: Ausweis über einen Berufsabschluss, BM, Matura bzw. andere Abschlüsse falls vorhanden</label>
-                <input wire:model.lazy="enclosure.hasDiploma" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_diploma">Kopie: Ausweis über einen Berufsabschluss, BM, Matura bzw. andere Abschlüsse falls vorhanden</label>
+                <input wire:model.lazy="enclosure.has_diploma" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasDivorce">Für Gesuchsteller aus getrennten oder geschiedenen Ehen: Kopie
+                <label class="form-check-label" for="has_divorce">Für Gesuchsteller aus getrennten oder geschiedenen Ehen: Kopie
                     Unterhaltsvereinbarung/Scheidungsurteil</label>
-                <input wire:model.lazy="enclosure.hasDivorce" class="form-check-input" type="checkbox" value="" />
+                <input wire:model.lazy="enclosure.has_divorce" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasRentalContract">Für Gesuchsteller mit auswärtigem Wohnsitz: Kopie eines Mietvertrages / Wochenaufenthaltsbestätigung</label>
-                <input wire:model.lazy="enclosure.hasRentalContract" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_rental_contract">Für Gesuchsteller mit auswärtigem Wohnsitz: Kopie eines Mietvertrages / Wochenaufenthaltsbestätigung</label>
+                <input wire:model.lazy="enclosure.has_rental_contract" class="form-check-input" type="checkbox" value="" />
             </div>
 
             <br/>
             <h4 class="mb-0">Immer einreichen</h4>
 
             <div class="form-check">
-                <label class="form-check-label" for="hasCertificateOfStudy">Semesterbestätigung/ Studienbescheinigung</label>
-                <input wire:model.lazy="enclosure.hasCertificateOfStudy" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_certificate_of_study">Semesterbestätigung/ Studienbescheinigung</label>
+                <input wire:model.lazy="enclosure.has_certificate_of_study" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasTaxAssessment">Für Steuerpflichtige Gesuchsteller: Kopie der neuesten Steuerveranlagung(Veranlagungsprotokoll nicht
+                <label class="form-check-label" for="has_tax_assessment">Für Steuerpflichtige Gesuchsteller: Kopie der neuesten Steuerveranlagung(Veranlagungsprotokoll nicht
                     Steuerrechnung)</label>
-                <input wire:model.lazy="enclosure.hasTaxAssessment" class="form-check-input" type="checkbox" value="" />
+                <input wire:model.lazy="enclosure.has_tax_assessment" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasExpenseReceipts">Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht werden</label>
-                <input wire:model.lazy="enclosure.hasExpenseReceipts" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_expense_receipts">Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht werden</label>
+                <input wire:model.lazy="enclosure.has_expense_receipts" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasPartnerTaxAssessment">Nur für Partner von in Partnerschaft lebenden Gesuchsteller: neueste Steuerveranlagung</label>
-                <input wire:model.lazy="enclosure.hasPartnerTaxAssessment" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_partner_tax_assessment">Nur für Partner von in Partnerschaft lebenden Gesuchsteller: neueste Steuerveranlagung</label>
+                <input wire:model.lazy="enclosure.has_partner_tax_assessment" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasSupplementaryServices">Empfänger von IV-, Waisenrenten bzw. Ergänzungsleistungen: Kopie der Verfügung beilegen</label>
-                <input wire:model.lazy="enclosure.hasSupplementaryServices" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_supplementary_services">Empfänger von IV-, Waisenrenten bzw. Ergänzungsleistungen: Kopie der Verfügung beilegen</label>
+                <input wire:model.lazy="enclosure.has_supplementary_services" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasECTSPoints">Nur für Studenten an universitären Hochschulen: Beleg über die geplanten/gebuchten ECTS-Punkte</label>
-                <input wire:model.lazy="enclosure.hasECTSPoints" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_ects_points">Nur für Studenten an universitären Hochschulen: Beleg über die geplanten/gebuchten ECTS-Punkte</label>
+                <input wire:model.lazy="enclosure.has_ects_points" class="form-check-input" type="checkbox" value="" />
             </div>
             <div class="form-check">
-                <label class="form-check-label" for="hasParentsTaxFactors">Steuerfaktoren der Eltern</label>
-                <input wire:model.lazy="enclosure.hasParentsTaxFactors" class="form-check-input" type="checkbox" value="" />
+                <label class="form-check-label" for="has_parents_tax_factors">Steuerfaktoren der Eltern</label>
+                <input wire:model.lazy="enclosure.has_parents_tax_factors" class="form-check-input" type="checkbox" value="" />
             </div>
         </div>
 

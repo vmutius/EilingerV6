@@ -18,9 +18,9 @@ class UserJurForm extends Component
     }
 
     protected $rules = [
-        'user.nameInst' => 'required',
-        'user.telefonInst' => 'required',
-        'user.emailInst' => 'required',
+        'user.name_inst' => 'required',
+        'user.telefon_inst' => 'required',
+        'user.email_inst' => 'required',
         'user.website' => 'required',
         'user.firstname' => 'required',
         'user.lastname' => 'required',

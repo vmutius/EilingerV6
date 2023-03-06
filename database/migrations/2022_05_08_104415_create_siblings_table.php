@@ -16,16 +16,16 @@ class CreateSiblingsTable extends Migration
     public function up()
     {
         Schema::create('siblings', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->year('birth_year')->nullable($value = true);
-            $table->string('lastname', 255)->nullable($value = true);
-            $table->string('firstname', 255)->nullable($value = true);
-            $table->string('education', 255)->nullable($value = true);
-            $table->year('graduation_year')->nullable($value = true);
-            $table->string('placeOfResidence', 500)->nullable($value = true);
-            $table->boolean('getAmount')->nullable($value = true);
-            $table->string('supportSite', 255)->nullable($value = true);
+            $table->year('birth_year')->nullable();
+            $table->string('lastname', 255)->nullable();
+            $table->string('firstname', 255)->nullable();
+            $table->string('education', 255)->nullable();
+            $table->year('graduation_year')->nullable();
+            $table->string('place_of_residence', 500)->nullable();
+            $table->boolean('get_amount')->nullable();
+            $table->string('support_site', 255)->nullable();
             $table->timestamps();
         });
     }
