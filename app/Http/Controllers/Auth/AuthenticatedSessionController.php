@@ -29,13 +29,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if(auth()->user()->is_admin){
-            return redirect('/admin/dashboard')
-            ->with('success', 'Sie sind eingeloggt');
-        } else {
-            return redirect('/user/dashboard')
-            ->with('success', 'Sie sind eingeloggt');
-        }
+        $success_route = auth()->user()->is_admin ? 'admin_dashboard' : 'user_dashboard';
+        return redirect()->route($success_route)->with('success', 'Sie sind eingeloggt');
     }
 
     /**

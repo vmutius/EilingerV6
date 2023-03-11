@@ -17,8 +17,8 @@ class CreateFinancingsTable extends Migration
     {
         Schema::create('financings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('application_id')->nullable()->onDelete('cascade');
             $table->decimal('personal_contribution', $precision=8, $scale=2)->nullable();
             $table->decimal('other_income', $precision=8, $scale=2)->nullable();
             $table->string('income_where')->nullable();

@@ -18,8 +18,8 @@ class CreateEducationsTable extends Migration
     {
         Schema::create('educations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('application_id')->nullable()->onDelete('cascade');;
             $table->string('education');
             $table->string('name', 255);
             $table->string('final', 255);

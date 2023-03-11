@@ -17,8 +17,8 @@ class CreateCostsTable extends Migration
     {
         Schema::create('costs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignIdFor(Application::class)->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('application_id')->nullable()->onDelete('cascade');
             $table->decimal('semester_fees', $precision=8, $scale=2)->nullable();
             $table->decimal('fees', $precision=8, $scale=2)->nullable();
             $table->decimal('educational_material', $precision=8, $scale=2)->nullable();

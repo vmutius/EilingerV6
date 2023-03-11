@@ -16,7 +16,7 @@ class CreateEnclosuresTable extends Migration
     {
         Schema::create('enclosures', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Application::class)->nullable();
+            $table->foreignId('application_id')->nullable()->onDelete('cascade');
             $table->text('remark')->nullable();
             $table->boolean('has_id')->nullable(); //Kopie des aktuellen Personalausweises
             $table->boolean('has_cv')->nullable(); //Lebenslauf

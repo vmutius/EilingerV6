@@ -69,7 +69,8 @@
                     @endforelse
                 </tbody>
             </table>
-            {{ $users->count() }} von {{ $users->total() }} {{ $users->links() }}
+            Showing {{ $users->firstItem() }} to {{ $users->lastItem() }}
+of total {{$users->total()}} entries {{ $users->links() }}
         </div>
     </div>
 </section>

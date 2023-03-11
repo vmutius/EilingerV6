@@ -65,7 +65,7 @@
                                         Änderung der Email Adresse
                                         müssen Sie diese erneut verifizieren.
                                     </p>
-                                    <a href="{{ route('user_profile') }}" class="card-link">Neuen Antrag erstellen</a>
+                                    <a href="{{ route('user_profile.edit') }}" class="card-link">Neuen Antrag erstellen</a>
 
                                 </div>
                             </div>

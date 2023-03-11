@@ -57,7 +57,7 @@
                 <span class="tooltip">Ihre Nachrichten</span>
             </li>
             <li>
-                <a href="{{ route('user_profile') }}">
+                <a href="{{ route('user_profile.edit') }}">
                     <i class='bx bx-user'></i>
                     <span class="links_name">Profil</span>
                 </a>

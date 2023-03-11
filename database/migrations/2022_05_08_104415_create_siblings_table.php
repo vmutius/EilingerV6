@@ -17,7 +17,7 @@ class CreateSiblingsTable extends Migration
     {
         Schema::create('siblings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->year('birth_year')->nullable();
             $table->string('lastname', 255)->nullable();
             $table->string('firstname', 255)->nullable();

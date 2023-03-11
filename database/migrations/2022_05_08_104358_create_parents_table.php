@@ -17,7 +17,7 @@ class CreateParentsTable extends Migration
     {
         Schema::create('parents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('parent_type');
             $table->string('lastname', 255)->nullable();;
             $table->string('firstname', 255)->nullable();;
