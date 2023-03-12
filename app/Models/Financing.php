@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Financing extends Model
 {
     use HasFactory;
-     /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -20,9 +20,9 @@ class Financing extends Model
         'other_income',
         'income_where',
         'income_who',
-        'netto_income', 
+        'netto_income',
         'assets',
-        'scholarship'
+        'scholarship',
     ];
 
     public function user()
@@ -34,5 +34,4 @@ class Financing extends Model
     {
         return $this->belongsTo(Application::class);
     }
-
 }

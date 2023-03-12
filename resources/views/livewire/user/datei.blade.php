@@ -7,7 +7,7 @@
                     <input name="file" type="file" multiple />
                 </div>
             </form>
-            
+
         </div>
     </div>
     </div>

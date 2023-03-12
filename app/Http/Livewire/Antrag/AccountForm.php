@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
 use App\Models\Account;
+use Livewire\Component;
 
 class AccountForm extends Component
 {
@@ -16,7 +16,7 @@ class AccountForm extends Component
         'account.IBAN' => 'nullable',
     ];
 
-    public function mount() 
+    public function mount()
     {
         $this->account = Account::where('user_id', auth()->user()->id)
             ->where('application_id', session()->get('appl_id'))
@@ -35,5 +35,4 @@ class AccountForm extends Component
         $this->account->save();
         session()->flash('success', 'Auszahlungsdaten aktualisiert.');
     }
-
 }

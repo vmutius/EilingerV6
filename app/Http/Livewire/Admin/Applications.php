@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Application;
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\Application;
 
 class Applications extends Component
 {
@@ -13,9 +13,10 @@ class Applications extends Component
 
     public function render()
     {
-        $applications=Application::whereIn('appl_status', array('pending', 'waiting', 'complete'))->paginate(10);
-        return view('livewire.admin.applications',[
-            'applications' => $applications
+        $applications = Application::whereIn('appl_status', ['pending', 'waiting', 'complete'])->paginate(10);
+
+        return view('livewire.admin.applications', [
+            'applications' => $applications,
         ])
             ->layout(\App\View\Components\Layouts\AdminDashboard::class);
     }

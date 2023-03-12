@@ -1,9 +1,9 @@
 <?php
+
 namespace App\Http\Traits;
-use App\Models\Address;
 
-trait AddressUpdateTrait {
-
+trait AddressUpdateTrait
+{
     public $street = '';
     public $number = '';
     public $plz = '';
@@ -14,7 +14,7 @@ trait AddressUpdateTrait {
     {
         request()->session()->forget('valid-street');
         $validated = $this->validateOnly('street');
-        if(!empty($validated)){
+        if (! empty($validated)) {
             session(['valid-street' => 'OK']);
         }
     }
@@ -23,7 +23,7 @@ trait AddressUpdateTrait {
     {
         request()->session()->forget('valid-plz');
         $validated = $this->validateOnly('plz');
-        if(!empty($validated)){
+        if (! empty($validated)) {
             session(['valid-plz' => 'OK']);
         }
     }
@@ -32,9 +32,8 @@ trait AddressUpdateTrait {
     {
         request()->session()->forget('valid-town');
         $validated = $this->validateOnly('town');
-        if(!empty($validated)){
+        if (! empty($validated)) {
             session(['valid-town' => 'OK']);
         }
     }
-
 }

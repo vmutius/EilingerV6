@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
 use App\Models\Education;
+use Livewire\Component;
 
 class EducationForm extends Component
 {
@@ -18,7 +18,7 @@ class EducationForm extends Component
         'education.time' => 'nullable',
     ];
 
-    public function mount() 
+    public function mount()
     {
         $this->education = Education::where('user_id', auth()->user()->id)
             ->where('application_id', session()->get('appl_id'))

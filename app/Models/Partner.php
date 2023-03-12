@@ -15,19 +15,19 @@ class Partner extends Model
      */
     protected $fillable = [
         'user_id',
-        'lastname', 
-        'firstname', 
+        'lastname',
+        'firstname',
         'birthday',
-        'profession', 
+        'profession',
         'begin',
-        'end'
+        'end',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    
+
     public function application()
     {
         return $this->belongsTo(Application::class);

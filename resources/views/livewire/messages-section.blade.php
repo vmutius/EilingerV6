@@ -39,7 +39,7 @@
                             {{ $message->body }}
                         </p>
                     </div>
-                    @forelse($message->replies as $reply)
+                    @forelse ($message->replies as $reply)
                         <ul class="comments">
                             <li class="clearfix">
                                 <div class="post-comments">

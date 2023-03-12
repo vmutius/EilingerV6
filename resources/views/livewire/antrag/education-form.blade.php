@@ -48,8 +48,8 @@
             </select>
         </div>
 
-        
-        <div class="col-md-12 text-center">        
+
+        <div class="col-md-12 text-center">
             <button type="submit"  class="btn btn-success">
                 <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
             </button>

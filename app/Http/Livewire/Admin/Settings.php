@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire\Admin;
 
-use Livewire\Component;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Livewire\Component;
 
 class Settings extends Component
 {
@@ -18,47 +18,48 @@ class Settings extends Component
     public $password;
 
     protected $rules = [
-            'username' =>  'required|unique:users,username',
-            'lastname' => 'required',
-            'firstname' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'telefon' => 'required',
-            'password' => 'required',
+        'username' => 'required|unique:users,username',
+        'lastname' => 'required',
+        'firstname' => 'required',
+        'email' => 'required|email|unique:users,email',
+        'telefon' => 'required',
+        'password' => 'required',
     ];
 
     public function render()
     {
-        $users=User::where('is_admin', true)->get();
-        return view('livewire.admin.settings',[
-            'users' => $users
+        $users = User::where('is_admin', true)->get();
+
+        return view('livewire.admin.settings', [
+            'users' => $users,
         ])
             ->layout(\App\View\Components\Layouts\AdminDashboard::class);
     }
 
-    public function addAdmin() 
+    public function addAdmin()
     {
-        $this->showModal = true; 
+        $this->showModal = true;
     }
 
     public function save()
     {
         $this->validate();
 
-        $user= User::create([
-            'type'=>'nat',
-            'salutation'=>$this->salutation,
-            'telefon'=>$this->telefon,
-            'username'=>$this->username,
-            'lastname'=>$this->lastname,
-            'firstname'=>$this->firstname,
-            'email'=>$this->email,
-            'email_verified_at'=>now(),
+        $user = User::create([
+            'type' => 'nat',
+            'salutation' => $this->salutation,
+            'telefon' => $this->telefon,
+            'username' => $this->username,
+            'lastname' => $this->lastname,
+            'firstname' => $this->firstname,
+            'email' => $this->email,
+            'email_verified_at' => now(),
             'password' => Hash::make($this->password),
-            
+
         ]);
         $user->is_admin = 1;
         $user->save();
-        $this->reset(['salutation','username', 'email', 'lastname', 'firstname', 'telefon', 'password']);
+        $this->reset(['salutation', 'username', 'email', 'lastname', 'firstname', 'telefon', 'password']);
         $this->showModal = false;
     }
 

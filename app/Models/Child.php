@@ -18,7 +18,7 @@ class Child extends Model
         'user_id',
         'lastname',
         'firstname',
-        'birthday'
+        'birthday',
     ];
 
     public function user()

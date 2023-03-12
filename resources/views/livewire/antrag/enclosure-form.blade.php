@@ -6,7 +6,7 @@
     <div class="row g-3">
 
         <x-notification/>
-        
+
         <h4 class="mb-0">Bemerkungen</h4>
         <div class="col-sm-12">
             <div class="row g-3">
@@ -18,7 +18,7 @@
             <h4 class="mb-0">Nur für Erstantrag</h4>
             <div class="form-check mt-3">
                 <label class="form-check-label" for="has_id">Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</label>
-                <input wire:model.lazy="enclosure.has_id" class="form-check-input" type="checkbox" />             
+                <input wire:model.lazy="enclosure.has_id" class="form-check-input" type="checkbox" />
             </div>
             <div class="form-check">
                 <label class="form-check-label" for="has_cv">Lebenslauf</label>
@@ -76,7 +76,7 @@
             </div>
         </div>
 
-        <div class="col-md-12 text-center">        
+        <div class="col-md-12 text-center">
             <button type="submit"  class="btn btn-success">
                 <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
             </button>

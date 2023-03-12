@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
 use App\Models\Cost;
+use Livewire\Component;
 
 class CostForm extends Component
 {
@@ -22,13 +22,12 @@ class CostForm extends Component
         'cost.number_of_children' => 'nullable',
     ];
 
-    public function mount() 
+    public function mount()
     {
         $this->cost = Cost::where('user_id', auth()->user()->id)
             ->where('application_id', session()->get('appl_id'))
             ->first() ?? new Cost;
     }
-
 
     public function render()
     {
@@ -42,5 +41,4 @@ class CostForm extends Component
         $this->cost->save();
         session()->flash('success', 'Kosten aktualisiert.');
     }
-
 }

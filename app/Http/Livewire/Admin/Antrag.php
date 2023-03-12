@@ -2,14 +2,14 @@
 
 namespace App\Http\Livewire\Admin;
 
-use Livewire\Component;
-use App\Models\Application;
-use App\Models\User;
-use App\Models\Address;
-use App\Models\Education;
 use App\Models\Account;
+use App\Models\Address;
+use App\Models\Application;
+use App\Models\Education;
 use App\Models\Parents;
 use App\Models\Sibling;
+use App\Models\User;
+use Livewire\Component;
 
 class Antrag extends Component
 {
@@ -22,13 +22,12 @@ class Antrag extends Component
     public $parents;
     public $siblings;
 
-
-    public function mount($application_id) 
+    public function mount($application_id)
     {
         $this->application = Application::where('id', $application_id)->first();
-        $this->user = User::where('id',$this->application->user_id)->first();
+        $this->user = User::where('id', $this->application->user_id)->first();
         $this->address = Address::where('user_id', $this->user->id)
-            ->where('is_wochenaufenthalt', 0)    
+            ->where('is_wochenaufenthalt', 0)
             ->first();
         $this->abweichendeAddress = Address::where('user_id', $this->user->id)
             ->where('is_wochenaufenthalt', 1)
@@ -37,8 +36,8 @@ class Antrag extends Component
         $this->account = Account::where('application_id', $application_id)->first();
         $this->parents = Parents::where('user_id', $this->user->id)->get();
         $this->siblings = Sibling::where('user_id', $this->user->id)->get();
-        
     }
+
     public function render()
     {
         return view('livewire.admin.antrag')

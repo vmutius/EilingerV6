@@ -1,5 +1,5 @@
 <x-layouts.admin_dashboard>
-    
+
     <section class="home-section">
         <div class="text">Dashboard</div>
         <div class="home-content">

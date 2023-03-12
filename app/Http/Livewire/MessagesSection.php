@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\Application;
-use App\Models\Message;
 use Livewire\Component;
 
 class MessagesSection extends Component
@@ -14,7 +13,7 @@ class MessagesSection extends Component
     protected $rules = [
         'newMessage.body' => 'required',
     ];
-    
+
     protected $messages = [
         'newMessage.body' => 'Nachricht muss eingegeben werden.',
     ];
@@ -25,21 +24,21 @@ class MessagesSection extends Component
             'body' => '',
             'application_id' => $this->application->id,
             'user_id' => auth()->user()->id,
-    
+
         ];
-    
     }
-    
+
     public function render()
     {
         $messages = $this->application->messages()->main()->latest()->get();
+
         return view('livewire.messages-section', [
-            'messages' => $messages
+            'messages' => $messages,
         ]);
     }
 
     public function postMessage()
-    {   
+    {
         $this->validate();
         $this->newMessage->save();
 

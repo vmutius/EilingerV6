@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
 use App\Models\Financing;
+use Livewire\Component;
 
 class FinancingForm extends Component
 {
@@ -20,7 +20,7 @@ class FinancingForm extends Component
         'financing.scholarship' => 'nullable',
     ];
 
-    public function mount() 
+    public function mount()
     {
         $this->financing = Financing::where('user_id', auth()->user()->id)
             ->where('application_id', session()->get('appl_id'))
@@ -39,5 +39,4 @@ class FinancingForm extends Component
         $this->financing->save();
         session()->flash('success', 'Finanzierung aktualisiert.');
     }
-
 }

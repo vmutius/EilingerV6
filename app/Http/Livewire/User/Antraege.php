@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\User;
 
-use Livewire\Component;
 use App\Models\Application;
+use Livewire\Component;
 
 class Antraege extends Component
 {
@@ -20,35 +20,36 @@ class Antraege extends Component
 
     public function render()
     {
-        $applications = Application::where ('user_id', auth()->user()->id)->get();
+        $applications = Application::where('user_id', auth()->user()->id)->get();
+
         return view('livewire.user.antraege', [
-            'applications' => $applications
+            'applications' => $applications,
         ])
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
 
-    public function addApplication() 
+    public function addApplication()
     {
-        $this->showModal = true; 
+        $this->showModal = true;
     }
 
     public function deleteApplication($id)
     {
-       Application::find($id)->delete();
-       session()->flash('success', 'Antrag erfolgreich gelöscht'); 
+        Application::find($id)->delete();
+        session()->flash('success', 'Antrag erfolgreich gelöscht');
     }
 
     public function save()
     {
         $this->validate();
 
-        $application= Application::create([
+        $application = Application::create([
             'name' => $this->name,
             'bereich' => $this->bereich,
             'user_id' => auth()->user()->id,
             'form' => $this->form,
         ]);
-        
+
         $this->name = '';
         $this->bereich = '';
         $this->form = '';

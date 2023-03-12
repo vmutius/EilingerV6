@@ -2,17 +2,15 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
-use App\Models\Country;
 use App\Models\Address;
- 
+use App\Models\Country;
+use Livewire\Component;
 
 class AddressForm extends Component
 {
     public $address;
     public $countries;
 
-   
     protected $rules = [
         'address.street' => 'required|min:3',
         'address.number' => 'nullable',
@@ -21,13 +19,12 @@ class AddressForm extends Component
         'address.country_id' => 'required',
     ];
 
-    public function mount(Address $address) 
+    public function mount(Address $address)
     {
         $this->countries = Country::all();
-        $this->address = Address::where('user_id', auth()->user()->id)  
+        $this->address = Address::where('user_id', auth()->user()->id)
             ->first();
     }
-
 
     public function render()
     {
@@ -39,7 +36,5 @@ class AddressForm extends Component
         //$this->emit('validated');
         $this->address->save();
         session()->flash('success', 'Adresse aktualisiert.');
-       
     }
-
 }

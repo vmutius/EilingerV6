@@ -64,7 +64,7 @@
                             @enderror
                             <br />
                             Bereich des Projektes:
-                            <br />  
+                            <br />
                             <select wire:model.lazy="bereich" class="form-select">
                                 <option selected>Bitte auswählen...</option>
                                 @foreach (App\Models\APPLICATION::BEREICH as $key => $label)
@@ -76,7 +76,7 @@
                             @enderror
                             <br />
                             Gewünschte Antragsform des Projektes:
-                            <br />  
+                            <br />
                             <select wire:model.lazy="form" class="form-select">
                                 <option selected>Bitte auswählen...</option>
                                 @foreach (App\Models\APPLICATION::FORM as $key => $label)

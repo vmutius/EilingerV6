@@ -8,12 +8,10 @@ class Uebersicht extends Component
 {
     public function mount()
     {
-
     }
-    
+
     public function render()
     {
-        
         return view('livewire.user.uebersicht')
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }

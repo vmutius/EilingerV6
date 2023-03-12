@@ -1,10 +1,10 @@
 <?php
+
 namespace App\Http\Traits;
-use App\Models\User;
 
-trait UserUpdateTrait {
-
-    public $username ='';
+trait UserUpdateTrait
+{
+    public $username = '';
     public $name_inst = '';
     public $email = '';
     public $password = '';
@@ -19,7 +19,6 @@ trait UserUpdateTrait {
     public $telefon = '';
     public $mobile = '';
 
-
     public function updatedUsername()
     {
         request()->session()->forget('valid-username');
@@ -27,7 +26,7 @@ trait UserUpdateTrait {
         $validated = $this->validateOnly('username');
 
         //Valid username
-        if(!empty($validated)){
+        if (! empty($validated)) {
             session(['valid-username' => 'Username is available']);
         }
     }
@@ -39,7 +38,7 @@ trait UserUpdateTrait {
         $validated = $this->validateOnly('name_inst');
 
         //Valid username
-        if(!empty($validated)){
+        if (! empty($validated)) {
             session(['valid-name_inst' => 'OK']);
         }
     }
@@ -51,9 +50,8 @@ trait UserUpdateTrait {
         $validated = $this->validateOnly('email_inst');
 
         //Valid username
-        if(!empty($validated)){
+        if (! empty($validated)) {
             session(['valid-email_inst' => 'OK']);
         }
     }
-
 }

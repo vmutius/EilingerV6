@@ -56,7 +56,7 @@
                 </a>
                 <span class="tooltip">Übersicht aller Projekte</span>
             </li>
-            
+
             <li>
                 <a href="{{ route('admin_settings') }}">
                     <i class='bx bx-cog'></i>

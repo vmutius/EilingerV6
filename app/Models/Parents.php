@@ -13,13 +13,14 @@ class Parents extends Model
         'mother' => 'Mutter',
         'father' => 'Vater',
         'stepmother' => 'Stiefmutter',
-        'stepfather' => 'Stiefvater'
+        'stepfather' => 'Stiefvater',
     ];
 
     public const JOB_TYPE = [
         'selbstständig' => 'selbstständig',
-        'angestellt' => 'angestellt',      
+        'angestellt' => 'angestellt',
     ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,7 +42,7 @@ class Parents extends Model
         'married_since',
         'separated_since',
         'divorced_since',
-        'death'
+        'death',
     ];
 
     public function user()
@@ -53,6 +54,4 @@ class Parents extends Model
     {
         return $this->belongsTo(Application::class);
     }
-
-
 }

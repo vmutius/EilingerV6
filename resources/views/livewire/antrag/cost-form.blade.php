@@ -6,7 +6,7 @@
     <div class="row g-3">
 
         <x-notification/>
-        
+
         <div class="col-sm-6">
             <label class="form-label" for="semester_fees">Semestergebühren</label>
             <input wire:model.lazy="cost.semester_fees" type="number" class="form-control" />
@@ -50,9 +50,9 @@
             <label class="form-label" for="cost_of_living_with_partner">im eigenen Haushalt mit Partner</label>
             <input wire:model.lazy="cost.cost_of_living_with_partner" type="number" class="form-control" />
         </div>
-        
-    
-        <div class="col-md-12 text-center">        
+
+
+        <div class="col-md-12 text-center">
             <button type="submit"  class="btn btn-success">
                 <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
             </button>

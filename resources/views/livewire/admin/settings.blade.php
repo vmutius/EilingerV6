@@ -1,6 +1,6 @@
 <section class="home-section">
     <div class="text">Einstellungen</div>
-   
+
     <div class="content">
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="row">
@@ -49,7 +49,7 @@
                             @error('username')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
-                            
+
                             Anrede:
                             <select wire:model.lazy="salutation" class="form-select" type="text">
                             <option selected>Bitte Anrede auswählen...</option>
@@ -68,7 +68,7 @@
                             @error('lastname')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
-                           
+
                             Vorname:
                             <input wire:model="firstname" class="form-control" />
                             @error('firstname')
@@ -80,7 +80,7 @@
                             @error('telefon')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
-                            
+
                             Email:
                             <input wire:model="email" class="form-control" />
                             @error('email')
@@ -93,7 +93,7 @@
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
 
-                            
+
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">Speichern</button>

@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -13,19 +13,19 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public const TYPES = [
         'nat' => 'nat',
-        'jur' => 'jur'
+        'jur' => 'jur',
     ];
 
     public const SALUTATION = [
         'Herr' => 'Herr',
-        'Frau' => 'Frau'
+        'Frau' => 'Frau',
     ];
 
     public const CIVIL_STATUS = [
-        'ledig'         => 'ledig',
-        'verheiratet'   => 'verheiratet',
-        'geschieden'    => 'geschieden',
-        'verwitwet'     => 'verwitwet'
+        'ledig' => 'ledig',
+        'verheiratet' => 'verheiratet',
+        'geschieden' => 'geschieden',
+        'verwitwet' => 'verwitwet',
     ];
 
     public const BEWILLIGUNG = [
@@ -62,7 +62,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'civil_status',
         'status',
         'in_ch_since',
-        'bewilligung'
+        'bewilligung',
     ];
 
     /**
@@ -85,12 +85,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function address() 
+    public function address()
     {
         return $this->hasMany(Address::class);
     }
 
-    public function siblings() 
+    public function siblings()
     {
         return $this->hasMany(Sibling::class);
     }
@@ -117,7 +117,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function nationality()
     {
-        return $this->belongsTo(Country::Class, 'country_id');
+        return $this->belongsTo(Country::class, 'country_id');
     }
-
 }

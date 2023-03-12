@@ -2,28 +2,21 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
-use App\Models\User;
 use App\Models\Country;
+use Livewire\Component;
 
 class UserNatForm extends Component
 {
     public $user;
     public $countries;
-    
-    public function mount()
-    {
-        $this->user = auth()->user();
-        $this->countries = Country::all();
-    }
 
-    protected $casts = ['user.birthday' => 'date:dd.mm.YYYY',];
+    protected $casts = ['user.birthday' => 'date:dd.mm.YYYY'];
 
     protected $rules = [
         'user.firstname' => 'required',
         'user.lastname' => 'required',
         'user.email' => 'required',
-        'user.birthday' => 'nullable', 
+        'user.birthday' => 'nullable',
         'user.salutation' => 'nullable',
         'user.nationality' => 'nullable',
         'user.telefon' => 'nullable',
@@ -33,8 +26,14 @@ class UserNatForm extends Component
         'user.bewilligung' => 'nullable',
     ];
 
+    public function mount()
+    {
+        $this->user = auth()->user();
+        $this->countries = Country::all();
+    }
+
     public function render()
-    {   
+    {
         return view('livewire.antrag.user-nat-form');
     }
 
@@ -43,5 +42,4 @@ class UserNatForm extends Component
         $this->user->save();
         session()->flash('success', 'Benutzerdaten aktualisiert.');
     }
-
 }

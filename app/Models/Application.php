@@ -15,7 +15,7 @@ class Application extends Model
         'waiting' => 'waiting', //Antrag liegt wieder beim Benutzer zur Beantwortung der Fragen
         'complete' => 'complete', //Angaben im Antrag vollständig. Wartet auf nächste Stiftungsratssitzung
         'approved' => 'approved',
-        'blocked' => 'blocked', 
+        'blocked' => 'blocked',
         'finished' => 'finished',
     ];
 
@@ -23,12 +23,12 @@ class Application extends Model
         'Bildung' => 'Bildung',
         'Menschen' => 'Menschen',
         'Tierschutz' => 'Tierschutz',
-        'Umwelt' => 'Umwelt'
+        'Umwelt' => 'Umwelt',
     ];
 
     public const FORM = [
         'Stipendium' => 'Stipendium',
-        'Darlehen' => 'Darlehen'
+        'Darlehen' => 'Darlehen',
     ];
 
     protected $fillable = [
@@ -40,7 +40,7 @@ class Application extends Model
         'form',
     ];
 
-       public function user()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
@@ -57,7 +57,7 @@ class Application extends Model
             'waiting' => 'info', //Antrag liegt wieder beim Benutzer zur Beantwortung der Fragen
             'complete' => 'dark', //Angaben im Antrag vollständig. Wartet auf nächste Stiftungsratssitzung
             'approved' => 'success',
-            'blocked' =>'danger', 
+            'blocked' => 'danger',
         ][$this->appl_status] ?? 'gray';
     }
 }

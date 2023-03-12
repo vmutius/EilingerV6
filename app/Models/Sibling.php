@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Sibling extends Model
 {
     use HasFactory;
-    protected $connection = "mysql";
 
     public const get_amount = [
         true => 'Ja',
         false => 'Nein',
     ];
+    protected $connection = 'mysql';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,12 +24,12 @@ class Sibling extends Model
         'user_id',
         'birth_year',
         'lastname',
-        'firstname', 
-        'education', 
+        'firstname',
+        'education',
         'graduation_year',
         'place_of_residence',
         'get_amount',
-        'support_site'
+        'support_site',
 
     ];
 

@@ -42,7 +42,7 @@
                     </div>
 
 
-                    <div class="col-md-4"> 
+                    <div class="col-md-4">
                         <a class="btn btn-link" href="{{ route('password.request') }}">Passwort zurücksetzen?</a>
                     </div>
                     <div class="col-md-4">

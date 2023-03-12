@@ -6,7 +6,7 @@
     <div class="row g-3">
 
         <x-notification/>
-        
+
         <div class="col-sm-6">
             <label class="form-label" for="personal_contribution">Eigenleistung vom Bewerber selbst</label>
             <input wire:model.lazy="financing.personal_contribution" type="number" class="form-control" />
@@ -35,9 +35,9 @@
             <label class="form-label" for="incomeWh">Begünstigter der anderweitige Einkünfte (Betrag)</label>
             <input wire:model.lazy="financing.income_who" type="number" class="form-control" />
         </div>
-      
 
-       <div class="col-md-12 text-center">        
+
+       <div class="col-md-12 text-center">
             <button type="submit"  class="btn btn-success">
                 <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
             </button>

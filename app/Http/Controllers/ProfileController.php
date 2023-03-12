@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -42,6 +41,7 @@ class ProfileController extends Controller
         $request->user()->save();
 
         $success_route = auth()->user()->is_admin ? 'admin_dashboard' : 'user_dashboard';
+
         return redirect()->route($success_route)->with('success', 'Profil wurde aktualisiert');
     }
 
@@ -56,7 +56,7 @@ class ProfileController extends Controller
 
         $user = $request->user();
 
-        Auth::logout();
+        auth()->logout();
 
         $user->delete();
 

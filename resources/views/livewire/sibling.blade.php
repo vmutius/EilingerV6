@@ -1,4 +1,3 @@
-
 <div>
     <!-- loop over all your sibling models -->
     @foreach ($siblings as $index => $sibling)

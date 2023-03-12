@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
-use App\Models\Country;
 use App\Models\Address;
+use App\Models\Country;
+use Livewire\Component;
 
 class AbweichendeAddressForm extends Component
 {
@@ -19,7 +19,7 @@ class AbweichendeAddressForm extends Component
         'abweichendeAddress.country_id' => 'nullable',
     ];
 
-    public function mount() 
+    public function mount()
     {
         $this->countries = Country::all();
         $this->abweichendeAddress = Address::where('user_id', auth()->user()->id)

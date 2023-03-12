@@ -24,14 +24,14 @@ class Enclosure extends Model
         'has_partner_tax_assessment',
         'has_supplementary_services',
         'has_ects_points',
-        'has_parents_tax_factors'
+        'has_parents_tax_factors',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    
+
     public function application()
     {
         return $this->belongsTo(Application::class);

@@ -20,8 +20,8 @@
 
                 <h3>NEUES BENUTZERKONTO </h3>
 
-                <p> Ich erstelle ein Benutzerkonto für mich als <strong><a href="{{ route('registerPrivat') }}">Privatperson</a></strong> 
-                    (für ein Stipendiengesuch bitte diese Option wählen) ODER ich erstelle das Benutzerkonto für 
+                <p> Ich erstelle ein Benutzerkonto für mich als <strong><a href="{{ route('registerPrivat') }}">Privatperson</a></strong>
+                    (für ein Stipendiengesuch bitte diese Option wählen) ODER ich erstelle das Benutzerkonto für
                     <strong><a href="{{ route('registerInst') }}">einen Verein/eine Institution </a></strong>.</p>
                 <br/>
                 <h3>Ich bin bereits registriert </h3>
@@ -35,7 +35,7 @@
                                 placeholder="name@example.com">
                             <x-input-error :messages="$errors->get('email')" />
                         </div>
-                        
+
 
                         <div class="col-md-4">
                             <label for="">{{ __('Password') }}</label>
@@ -45,7 +45,7 @@
                         <div class="col-md-4">
                             <button type="submit" class="btn btn-colour-1">{{ __('Login') }}</button>
                         </div>
-                        
+
 
 
                         <div class="col-md-4">

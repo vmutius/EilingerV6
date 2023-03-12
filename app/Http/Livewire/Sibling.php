@@ -61,10 +61,10 @@ class Sibling extends Component
     {
         $this->isAdding = true;
 
-        // Push (add) a new empty Sibling model to the collection   
+        // Push (add) a new empty Sibling model to the collection
         $this->addSibling->push([
             'user_id' => auth()->user()->id,
-        ]);  
+        ]);
 
         // Save the value of the toAdd collection to a session
         // This is required because Livewire doesnt understand how to hydrate an empty model
@@ -82,7 +82,7 @@ class Sibling extends Component
         $this->addSibling->forget($key);
 
         // Clean things up
-        $this->cleanUp(!$this->addSibling->count());
+        $this->cleanUp(! $this->addSibling->count());
     }
 
     public function saveAll()

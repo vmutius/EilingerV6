@@ -388,6 +388,6 @@
         </div>
         @livewire('messages-section', ['application' => $application]);
     </div>
-   
+
     </div>
 </section>

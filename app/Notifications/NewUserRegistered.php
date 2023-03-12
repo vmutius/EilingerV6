@@ -3,7 +3,6 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -37,7 +36,7 @@ class NewUserRegistered extends Notification
     {
         return (new MailMessage)
                     ->line($this->newUserData['subject'])
-                    ->action($this>newUserData['body'], url('/'))
+                    ->action($this > newUserData['body'], url('/'))
                     ->line('Thank you for using our application!');
     }
 

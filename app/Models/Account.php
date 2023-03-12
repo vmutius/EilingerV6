@@ -20,7 +20,7 @@ class Account extends Model
         'name_bank',
         'city_bank',
         'owner',
-        'IBAN'
+        'IBAN',
     ];
 
     public function user()

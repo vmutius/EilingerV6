@@ -4,23 +4,32 @@ namespace App\Http\Livewire\Auth;
 
 use App\Http\Traits\AddressUpdateTrait;
 use App\Http\Traits\UserUpdateTrait;
-use App\Models\User;
 use App\Models\Address;
 use App\Models\Country;
-use Livewire\Component;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
-
+use Livewire\Component;
 
 class RegisterPrivat extends Component
 {
     use UserUpdateTrait, AddressUpdateTrait;
-    
+
     public $terms = false;
 
-    public function rules() {
+    protected $messages = [
+        //User
+        'username.unique' => 'Dieser Benutzername ist bereits vergeben',
+        'name_inst.unique' => 'Ihre Organisation ist bereits registriert',
+        'email_inst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
+
+        //Address
+        'plz' => 'Postleitzahl ist eine vierstellige Zahl',
+    ];
+
+    public function rules()
+    {
         return [
             'username' => 'required|unique:users,username',
             'telefon' => 'nullable',
@@ -36,7 +45,7 @@ class RegisterPrivat extends Component
                     ->mixedCase()
                     ->numbers()
                     ->symbols()
-                    ->uncompromised()
+                    ->uncompromised(),
             ],
             'password_confirmation' => 'required|same:password',
             'street' => 'required|min:3',
@@ -44,19 +53,9 @@ class RegisterPrivat extends Component
             'plz' => 'required|min:4',
             'town' => 'required|min:3',
             'country_id' => 'required',
-            'terms' =>'accepted',
+            'terms' => 'accepted',
         ];
     }
-
-    protected $messages = [
-        //User
-        'username.unique' => 'Dieser Benutzername ist bereits vergeben',
-        'name_inst.unique' => 'Ihre Organisation ist bereits registriert',
-        'email_inst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
-
-        //Address
-        'plz' => 'Postleitzahl ist eine vierstellige Zahl',
-    ];
 
     public function updated($propertyName)
     {
@@ -89,10 +88,10 @@ class RegisterPrivat extends Component
             'country_id' => $this->country_id,
         ]);
         event(new Registered($user));
-        Auth::login($user);
+        auth()->login($user);
+
         return redirect('verify-email');
     }
-
 
     public function mount()
     {
@@ -100,7 +99,7 @@ class RegisterPrivat extends Component
         request()->session()->forget('valid-username');
         request()->session()->forget('valid-name_inst');
         request()->session()->forget('valid-email_inst');
-        
+
         $this->model = Address::class;
         request()->session()->forget('valid-street');
         request()->session()->forget('valid-number');
@@ -111,8 +110,8 @@ class RegisterPrivat extends Component
     public function render()
     {
         $countries = Country::all();
+
         return view('livewire.auth.register_privat', compact('countries'))
             ->layout(\App\View\Components\Layouts\Eilinger::class);
-            
     }
 }

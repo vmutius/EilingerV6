@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 
 class Message extends Model
 {
@@ -14,10 +14,10 @@ class Message extends Model
         'application_id',
         'user_id',
         'body',
-        'mainmessage_id'
+        'mainmessage_id',
     ];
 
-    public function scopeMain (Builder $builder)
+    public function scopeMain(Builder $builder)
     {
         $builder->WhereNull('mainmessage_id');
     }
@@ -36,5 +36,4 @@ class Message extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 }

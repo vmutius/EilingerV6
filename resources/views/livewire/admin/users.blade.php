@@ -70,7 +70,7 @@
                 </tbody>
             </table>
             Showing {{ $users->firstItem() }} to {{ $users->lastItem() }}
-of total {{$users->total()}} entries {{ $users->links() }}
+of total {{ $users->total() }} entries {{ $users->links() }}
         </div>
     </div>
 </section>

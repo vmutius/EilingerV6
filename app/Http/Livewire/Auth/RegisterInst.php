@@ -4,25 +4,37 @@ namespace App\Http\Livewire\Auth;
 
 use App\Http\Traits\AddressUpdateTrait;
 use App\Http\Traits\UserUpdateTrait;
-use App\Models\User;
 use App\Models\Address;
 use App\Models\Country;
-use Livewire\Component;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use Livewire\Component;
 
 class RegisterInst extends Component
 {
     use UserUpdateTrait, AddressUpdateTrait;
-    
+
     public $terms = false;
 
-    public function rules() {
+    protected $messages = [
+        //User
+        'username.unique' => 'Dieser Benutzername ist bereits vergeben',
+        'name_inst.unique' => 'Ihre Organisation ist bereits registriert',
+        'email_inst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
+        'password.regexp' => 'Das Passwort muss mindestens 8 Zeichen lang sein und muss mindestens 1 Grossbuchstaben,
+                    einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten',
+
+        //Address
+        'plz' => 'Postleitzahl ist eine vierstellige Zahl',
+    ];
+
+    public function rules()
+    {
         return [
             'username' => 'required|unique:users,username',
-            'name_inst' =>'required|unique:users,name_inst',
+            'name_inst' => 'required|unique:users,name_inst',
             'telefon' => 'nullable',
             'telefon_inst' => 'nullable',
             'mobile' => 'nullable',
@@ -38,7 +50,7 @@ class RegisterInst extends Component
                     ->mixedCase()
                     ->numbers()
                     ->symbols()
-                    ->uncompromised()
+                    ->uncompromised(),
             ],
             'password_confirmation' => 'required|same:password',
             'street' => 'required|min:3',
@@ -46,21 +58,9 @@ class RegisterInst extends Component
             'plz' => 'required|min:4',
             'town' => 'required|min:3',
             'country_id' => 'required',
-            'terms' =>'accepted',
+            'terms' => 'accepted',
         ];
     }
-
-    protected $messages = [
-        //User
-        'username.unique' => 'Dieser Benutzername ist bereits vergeben',
-        'name_inst.unique' => 'Ihre Organisation ist bereits registriert',
-        'email_inst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
-        'password.regexp' => 'Das Passwort muss mindestens 8 Zeichen lang sein und muss mindestens 1 Grossbuchstaben, 
-                    einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten',
-
-        //Address
-        'plz' => 'Postleitzahl ist eine vierstellige Zahl',
-    ];
 
     public function updated($propertyName)
     {
@@ -74,7 +74,7 @@ class RegisterInst extends Component
         $user = User::create([
             'username' => $this->username,
             'type' => 'jur',
-            'name_inst'=> $this->name_inst,
+            'name_inst' => $this->name_inst,
             'email' => $this->email,
             'password' => Hash::make($this->password),
             'salutation' => $this->salutation,
@@ -95,12 +95,12 @@ class RegisterInst extends Component
             'town' => $this->town,
             'country_id' => $this->country_id,
         ]);
-        
+
         event(new Registered($user));
-        Auth::login($user);
+        auth()->login($user);
+
         return redirect('verify-email');
     }
-
 
     public function mount()
     {
@@ -108,7 +108,7 @@ class RegisterInst extends Component
         request()->session()->forget('valid-username');
         request()->session()->forget('valid-name_inst');
         request()->session()->forget('valid-email_inst');
-        
+
         $this->model = Address::class;
         request()->session()->forget('valid-street');
         request()->session()->forget('valid-number');
@@ -119,17 +119,16 @@ class RegisterInst extends Component
     public function render()
     {
         $countries = Country::all();
+
         return view('livewire.auth.register_inst', compact('countries'))
             ->layout(\App\View\Components\Layouts\Eilinger::class);
-            
     }
 
     public function sendNewUserData()
     {
         $newUserData = [
-            'subject' => 'Neuer Benutzer'. $this->username,
-            'body' => 'Der neue Benutzer mit '.$this->username.' und '.$this->email.' hat sich registriert.'  
+            'subject' => 'Neuer Benutzer' . $this->username,
+            'body' => 'Der neue Benutzer mit ' . $this->username . ' und ' . $this->email . ' hat sich registriert.',
         ];
-
     }
 }

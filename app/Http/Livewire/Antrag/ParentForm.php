@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
 use App\Models\Parents;
+use Livewire\Component;
 
 class ParentForm extends Component
 {
@@ -28,7 +28,7 @@ class ParentForm extends Component
         'parents.*.death' => 'nullable',
     ];
 
-    public function mount() 
+    public function mount()
     {
         $this->parents = Parents::where('user_id', auth()->user()->id)
             ->get() ?? new Collection;
@@ -36,8 +36,7 @@ class ParentForm extends Component
 
     public function saveParents()
     {
-        $this->parents->each(function($parent)
-        {
+        $this->parents->each(function ($parent) {
             $parent->user_id = auth()->user()->id;
             $parent->save();
         });
@@ -54,5 +53,4 @@ class ParentForm extends Component
     {
         return view('livewire.antrag.parent-form');
     }
-
 }

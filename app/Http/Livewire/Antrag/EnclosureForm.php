@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
 use App\Models\Enclosure;
+use Livewire\Component;
 
 class EnclosureForm extends Component
 {
@@ -26,7 +26,7 @@ class EnclosureForm extends Component
         'enclosure.has_parents_tax_factors' => 'nullable',
     ];
 
-    public function mount() 
+    public function mount()
     {
         $this->enclosure = Enclosure::where('application_id', session()->get('appl_id'))
             ->first() ?? new Enclosure;
@@ -43,5 +43,4 @@ class EnclosureForm extends Component
         $this->enclosure->save();
         session()->flash('success', 'Beilagen aktualisiert.');
     }
-
 }

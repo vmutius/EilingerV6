@@ -4,7 +4,7 @@
         <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
     </div>
     <div class="row g-3">
-        
+
         <x-notification/>
 
         <div class="col-md-6">
@@ -27,7 +27,7 @@
             <label class="form-label" for="website">Webseite der Organisation</label>
             <input wire:model.lazy="user.website" type="text" class="form-control" />
         </div>
-        
+
         <div class="col-sm-2">
             <label class="form-label" for="salutation">Anrede</label>
             <select wire:model.lazy="user.salutation" class="form-select">
@@ -41,12 +41,12 @@
             <label class="form-label" for="firstname">Vorname der Kontaktperson</label>
             <input wire:model.lazy="user.firstname" type="text" class="form-control" />
         </div>
-        <div class="col-sm-5">       
+        <div class="col-sm-5">
             <label class="form-label" for="lastname">Nachname der Kontaktperson</label>
             <input wire:model.lazy="user.lastname" type="text" class="form-control"/>
         </div>
-    
-        
+
+
         <div class="col-md-4">
             <label class="form-label" for="email">Email der Kontaktperson</label>
             <input wire:model.lazy="user.email" type="email" class="form-control" />
@@ -60,11 +60,11 @@
             <label class="form-label" for="mobile">Mobile der Kontaktperson</label>
             <input wire:model.lazy="user.mobile" type="email" class="form-control" />
         </div>
-        
 
-       
-        
-        <div class="col-md-12 text-center">        
+
+
+
+        <div class="col-md-12 text-center">
             <button type="submit"  class="btn btn-success">
                 <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
             </button>

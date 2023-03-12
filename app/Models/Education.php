@@ -8,27 +8,27 @@ use Illuminate\Database\Eloquent\Model;
 class Education extends Model
 {
     use HasFactory;
-    protected $table = 'educations';
 
     public const EDUCATION = [
-        'Matura' => 'Matura', 
+        'Matura' => 'Matura',
         'FMS' => 'FMS',
         'Berufslehre' => 'Berufslehre',
         'BM2' => 'BM2',
         'Fachschule' => 'Fachschule',
         'Fachhochschule' => 'Fachhochschule',
-        'Universität' => 'Universität'
+        'Universität' => 'Universität',
     ];
 
     public const GRADE = [
         'BA' => 'Bachelor',
-        'MA' => 'Master'
+        'MA' => 'Master',
     ];
 
     public const TIME = [
         'full' => 'Vollzeit',
-        'part' => 'Teilzeit'
+        'part' => 'Teilzeit',
     ];
+    protected $table = 'educations';
 
     /**
      * The attributes that are mass assignable.
@@ -38,16 +38,16 @@ class Education extends Model
     protected $fillable = [
         'user_id',
         'application_id',
-        'education', 
-        'name', 
-        'final', 
-        'grade', 
+        'education',
+        'name',
+        'final',
+        'grade',
         'ects_points',
-        'time', 
+        'time',
         'begin_edu',
         'duration_edu',
         'begin_appl',
-        'duration_appl'
+        'duration_appl',
     ];
 
     public function user()

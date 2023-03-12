@@ -13,7 +13,7 @@
         <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         <x-input-text-all name="password_confirmation" type="password">Neues Password bestätigen * </x-input-text-all>
         <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
-    
+
 
     </div>
 
