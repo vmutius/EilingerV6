@@ -47,7 +47,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/user/profile', [ProfileController::class, 'update'])->name('user_profile.update');
     Route::delete('/user/profile', [ProfileController::class, 'destroy'])->name('user_profile.destroy');
     Route::get('/user/dateien', App\Http\Livewire\User\Datei::class)->name('user_dateien');
-    Route::get('/logout', App\Http\Livewire\Auth\Logout::class)->name('logout');
 });
 
 Route::group(['middleware' => ['admin']], function () {
@@ -61,7 +60,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::patch('/admin/profile', [ProfileController::class, 'update'])->name('admin_profile.update');
     Route::delete('/admin/profile', [ProfileController::class, 'destroy'])->name('admin_profile.destroy');
 
-    Route::get('/logout', App\Http\Livewire\Auth\Logout::class)->name('logout');
 });
 
 Route::middleware('guest')->group(function () {
@@ -80,4 +78,5 @@ Route::middleware('auth')->group(function () {
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])->name('password.confirm');
     Route::post('confirm-password', [ConfirmablePasswordController::class, 'store']);
     Route::put('password', [PasswordController::class, 'update'])->name('password.update');
+    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });

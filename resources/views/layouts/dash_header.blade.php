@@ -7,7 +7,12 @@
                     {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
                 </button>
                 <ul class="dropdown-menu">
-                  <li><livewire:auth.logout></li>
+                  <li>
+                    <form method="POST" action="/logout">
+                        @csrf
+                        <button type="submit" type="button" class="btn btn-light">Log Out</button>
+                    </form>
+                  </li>
                 </ul>
               </div>
             

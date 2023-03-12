@@ -123,4 +123,13 @@ class RegisterInst extends Component
             ->layout(\App\View\Components\Layouts\Eilinger::class);
             
     }
+
+    public function sendNewUserData()
+    {
+        $newUserData = [
+            'subject' => 'Neuer Benutzer'. $this->username,
+            'body' => 'Der neue Benutzer mit '.$this->username.' und '.$this->email.' hat sich registriert.'  
+        ];
+
+    }
 }
