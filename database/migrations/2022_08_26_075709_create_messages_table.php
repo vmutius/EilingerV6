@@ -13,6 +13,7 @@ class CreateMessagesTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('application_id')->nullable()->onDelete('cascade');
             $table->foreignId('main_message_id')->nullable()->constrained('messages')->onDelete('cascade'); // Für Reply
+            $table->boolean('isInternal')->default(false);
             $table->text('body');
             $table->timestamps();
         });

@@ -10,11 +10,11 @@
     <div class="col-md-12">
         <h3>Nachrichten</h3>
 
-        <form wire:submit.prevent="postMessage">
+        <form wire:submit.prevent="saveMessage">
             <div class="blog-comment">
-                <textarea wire:model.defer="newMessage.body" id="textareaID" class="form-control"></textarea>
+                <textarea wire:model.defer="comment" id="textareaID" class="form-control"></textarea>
 
-                @error('newMessage.body')
+                @error('comment')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>

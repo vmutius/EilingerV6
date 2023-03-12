@@ -3,44 +3,40 @@
 namespace App\Http\Livewire;
 
 use App\Models\Application;
+use App\Models\Message;
 use Livewire\Component;
 
 class MessagesSection extends Component
 {
     public Application $application;
-    public $newMessage;
+    public $comment;
 
     protected $rules = [
-        'newMessage.body' => 'required',
+        'comment' => 'required',
     ];
 
     protected $messages = [
-        'newMessage.body' => 'Nachricht muss eingegeben werden.',
+        'comment' => 'Nachricht muss eingegeben werden.',
     ];
-
-    public function mount()
-    {
-        $this->newMessage = [
-            'body' => '',
-            'application_id' => $this->application->id,
-            'user_id' => auth()->user()->id,
-
-        ];
-    }
 
     public function render()
     {
         $messages = $this->application->messages()->main()->latest()->get();
-
         return view('livewire.messages-section', [
             'messages' => $messages,
         ]);
     }
 
-    public function postMessage()
+    public function saveMessage()
     {
         $this->validate();
-        $this->newMessage->save();
+        Message::create([
+            'user_id' => auth()->user()->id,
+            'application_id' => $this->application->id,
+            'body' => $this->comment,
+        ]);
+        
+        $this->reset('comment');
 
         session()->flash('message', 'Nachricht gespeichert');
     }

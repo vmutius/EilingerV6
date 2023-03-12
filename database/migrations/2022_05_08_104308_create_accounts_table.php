@@ -12,10 +12,10 @@ class CreateAccountsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('application_id')->nullable()->onDelete('cascade');
-            $table->string('name_bank', 100);
-            $table->string('city_bank');
-            $table->string('owner', 255);
-            $table->string('IBAN', 34);
+            $table->string('name_bank', 100)->nullable();
+            $table->string('city_bank')->nullable();
+            $table->string('owner', 255)->nullable();
+            $table->string('IBAN', 34)->nullable();
             $table->timestamps();
         });
     }

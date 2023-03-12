@@ -14,17 +14,18 @@ class Message extends Model
         'application_id',
         'user_id',
         'body',
-        'mainmessage_id',
+        'main_message_id',
+        'isInternal'
     ];
 
     public function scopeMain(Builder $builder)
     {
-        $builder->WhereNull('mainmessage_id');
+        $builder->WhereNull('main_message_id');
     }
 
     public function replies()
     {
-        return $this->hasMany(Message::class, 'mainmessage_id')->oldest();
+        return $this->hasMany(Message::class, 'main_message_id')->oldest();
     }
 
     public function application()

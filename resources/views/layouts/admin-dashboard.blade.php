@@ -64,6 +64,14 @@
                 </a>
                 <span class="tooltip">Einstellungen</span>
             </li>
+
+            <li>
+                <a href="{{ route('admin_profile.edit') }}">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Profil</span>
+                </a>
+                <span class="tooltip">Profil</span>
+            </li>
         </ul>
     </div>
 

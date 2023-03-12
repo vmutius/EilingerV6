@@ -12,16 +12,16 @@ class CreateEducationsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('application_id')->nullable()->onDelete('cascade');
-            $table->string('education');
-            $table->string('name', 255);
-            $table->string('final', 255);
-            $table->string('grade');
-            $table->integer('ects_points');
-            $table->string('time');
-            $table->date('begin_edu');
-            $table->integer('duration_edu');
-            $table->date('begin_appl');
-            $table->integer('duration_appl');
+            $table->string('education')->nullable();
+            $table->string('name', 255)->nullable();
+            $table->string('final', 255)->nullable();
+            $table->string('grade')->nullable();
+            $table->integer('ects_points')->nullable();
+            $table->string('time')->nullable();
+            $table->date('begin_edu')->nullable();
+            $table->integer('duration_edu')->nullable();
+            $table->date('begin_appl')->nullable();
+            $table->integer('duration_appl')->nullable();
             $table->timestamps();
         });
     }
