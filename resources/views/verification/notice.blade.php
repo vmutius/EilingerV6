@@ -1,17 +1,45 @@
 <x-layouts.eilinger>
-@section('title', 'Bestätigung')
+    @section('title', 'Bestätigung')
 
     <main id="main">
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section-title">
-                    <h2>Vielen Dank für die Registrieung </h2>
-                    <p>Ihr neuer Account wurde angelegt. Um die Registrierung abszuschliessen, müssen Sie Ihre Email Adresse bestätigen.</p>
-                    <p>Eine Mail ist an Ihre Email Adresse gesendet worden. Bitte klicken Sie auf den Verifikationslink.</p>
+                    <h2>Validierung Ihrer Email Adresse</h2>
+                    <p>Um Ihren Account verwenden zu können, müssen Sie Ihre Email Adresse bestätigen.</p>
+                    <p>Eine Mail ist an Ihre Email Adresse gesendet worden. Bitte klicken Sie auf den Verifikationslink.
+                    </p>
                     <p>Vielen Dank</p>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <form method="POST" action="{{ route('verification.send') }}">
+                            @csrf
+
+                            <div>
+                                <x-primary-button>
+                                    {{ __('Verifikationslink erneut senden') }}
+                                </x-primary-button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-md-6">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <div>
+                                <x-primary-button>
+                                    {{ __('Logout') }}
+                                </x-primary-button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    
+
 </x-layouts.eilinger>

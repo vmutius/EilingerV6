@@ -1,8 +1,6 @@
 import _ from 'lodash';
 window._ = _;
 
-import 'bootstrap';
-
 import Alpine from 'alpinejs'
  
 window.Alpine = Alpine

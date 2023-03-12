@@ -1,3 +1,3 @@
 <button {{ $attributes->merge(['type' => 'submit', 'class' => 'btn btn-danger']) }}>
-    {{ $slot }}
+    <span class="align-middle d-sm-inline-block d-none">{{ $slot }}</span>
 </button>

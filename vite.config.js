@@ -4,13 +4,15 @@ import path from 'path'
 
 export default defineConfig({
     plugins: [
-        laravel([
-                'resources/sass/app.scss',
-                'resources/sass/eilinger.scss',
-                'resources/sass/dashboard.scss',
-                'resources/js/app.js',
-        ]),
-            ],
+        laravel({
+            input: ['resources/sass/app.scss', 
+                    'resources/js/app.js',
+                    'resources/sass/eilinger.scss',
+                    'resources/sass/dashboard.scss'],
+            refresh: true,
+        }),
+    ],
+    
     resolve: {
         alias: {
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),

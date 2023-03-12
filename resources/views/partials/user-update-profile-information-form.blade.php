@@ -38,7 +38,7 @@
         @endif
     </div>
 
-    <div class="flex mt-5">
+    <div class="flex mt-3">
         <x-primary-button>{{ __('Save') }}</x-primary-button>
 
         @if (session('status') === 'profile-updated')
