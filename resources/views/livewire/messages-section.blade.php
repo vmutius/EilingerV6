@@ -1,5 +1,4 @@
 <div class="shadow p-3 mb-5 bg-body rounded">
-
     <div>
         @if (session()->has('message'))
             <div class="alert alert-success">
@@ -10,11 +9,11 @@
     <div class="col-md-12">
         <h3>Nachrichten</h3>
 
-        <form wire:submit.prevent="saveMessage">
+        <form wire:submit.prevent="postMessage">
             <div class="blog-comment">
-                <textarea wire:model.defer="comment" id="textareaID" class="form-control"></textarea>
+                <textarea wire:model.defer="body" id="textareaID" class="form-control"></textarea>
 
-                @error('comment')
+                @error('body')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
@@ -31,33 +30,13 @@
         <ul class="comments">
             @forelse ($messages as $message)
                 <li class="clearfix">
-                    <div class="post-comments">
-                        <p class="meta">{{ $message->created_at->diffForHumans() }} <a
-                                href="#">{{ $message->user->username }}</a> says : <i class="pull-right"><a
-                                    href="#"><small>Reply</small></a></i></p>
-                        <p>
-                            {{ $message->body }}
-                        </p>
-                    </div>
-                    @forelse ($message->replies as $reply)
-                        <ul class="comments">
-                            <li class="clearfix">
-                                <div class="post-comments">
-                                    <p class="meta">{{ $reply->created_at->diffForHumans() }}<a
-                                            href="#">{{ $reply->user->username }}</a> says :
-                                    <p>
-                                        {{ $reply->body }}
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    @empty
-                    @endforelse
+                    @livewire('message', ['message' => $message],  key('message-'.$message->id))
                 </li>
+
             @empty
                 Keine Nachrichten vorhanden
             @endforelse
-
         </ul>
     </div>
+    {{ $messages->links('pagination::bootstrap-5') }}
 </div>

@@ -18,11 +18,6 @@ class Message extends Model
         'isInternal'
     ];
 
-    public function scopeMain(Builder $builder)
-    {
-        $builder->WhereNull('main_message_id');
-    }
-
     public function replies()
     {
         return $this->hasMany(Message::class, 'main_message_id')->oldest();
@@ -33,8 +28,24 @@ class Message extends Model
         return $this->belongsTo(Application::class);
     }
 
+    public function presenter()
+    {
+        return new CommentPresenter($this);
+    }
+
+    public function isMainMessage()
+    {
+        return is_null($this->main_message_id);
+    }
+
+    public function scopeMainMessage(Builder $builder)
+    {
+        $builder->whereNull('main_message_id');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
 }
