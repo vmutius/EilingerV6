@@ -77,6 +77,7 @@ class RegisterPrivat extends Component
             'telefon' => $this->telefon,
             'mobile' => $this->mobile,
             'email' => $this->email,
+            'status_id' => 1,
         ]);
 
         $address = Address::create([
@@ -86,6 +87,7 @@ class RegisterPrivat extends Component
             'plz' => $this->plz,
             'town' => $this->town,
             'country_id' => $this->country_id,
+            'status_id' => 2,
         ]);
         event(new Registered($user));
         auth()->login($user);

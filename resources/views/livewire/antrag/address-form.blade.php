@@ -1,7 +1,14 @@
 <form wire:submit.prevent="saveAddress">
     <div class="content-header mb-3">
         <h3 class="mb-0">Anschrift</h3>
-        <small>Angaben über Wohnsitz</small>
+        <div class="d-flex justify-content-between">
+            <div>
+                <small>Angaben über den Wohnsitz</small>
+            </div>
+            <div>
+                @livewire('toogle-draft', ['model' => $address])
+            </div>
+        </div>
     </div>
     <div class="row g-3">
 

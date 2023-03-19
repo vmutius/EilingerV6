@@ -1,7 +1,14 @@
 <form wire:submit.prevent="saveFinancing">
     <div class="content-header mb-3">
         <h3 class="mb-0">Finanzierung</h3>
-        <small>Enter Your Account Details.</small>
+        <div class="d-flex justify-content-between">
+            <div>
+                <small>Angaben über die Finanzierung der Ausbildung</small>
+            </div>
+            <div>
+                @livewire('toogle-draft', ['model' => $financing])
+            </div>
+        </div>
     </div>
     <div class="row g-3">
 

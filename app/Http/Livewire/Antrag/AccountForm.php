@@ -32,6 +32,7 @@ class AccountForm extends Component
     {
         $this->account->user_id = auth()->user()->id;
         $this->account->application_id = session()->get('appl_id');
+        $this->account->status_id = 1;
         $this->account->save();
         session()->flash('success', 'Auszahlungsdaten aktualisiert.');
     }

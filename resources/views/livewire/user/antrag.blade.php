@@ -15,6 +15,10 @@
         gelesen und zur
         Kenntnis genommen haben. </p>
 
+    <p class="text-danger font-weight-bold">Sie können jederzeit unvollständige Daten zwischenspeichern. Auf jedem Formular finden
+        Sie oben rechts eine Checkbox "Entwurf". Sind die Daten auf den jeweiligen Formular vollständig, bitte die jeweilige Seite 
+        als "vollständig" markieren. Erst wenn alle Seiten vollständig sind, kann der Antrag eingereicht werden.</p>    
+
     <div class="home-content">
 
         @if (session()->has('message'))

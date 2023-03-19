@@ -1,7 +1,15 @@
 <form wire:submit.prevent="saveCost">
     <div class="content-header mb-3">
         <h3 class="mb-0">Ausbildungs- und Lebenskosten</h3>
-        <small>im bevorstehenden Ausbildungsjahr</small>
+        
+        <div class="d-flex justify-content-between">
+            <div>
+                <small>im bevorstehenden Ausbildungsjahr</small>
+            </div>
+            <div>
+                @livewire('toogle-draft', ['model' => $cost])
+            </div>
+        </div>
     </div>
     <div class="row g-3">
 

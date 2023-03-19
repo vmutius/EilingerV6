@@ -1,7 +1,14 @@
 <form wire:submit.prevent="saveEnclosure">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Bemerkungen und Beilagen</h3>
-        <small>die mit dem Stipendienantrag einzureichen sind</small>
+        <h3 class="mb-0">Bemerkungen und Beilagen</h3>>
+        <div class="d-flex justify-content-between">
+            <div>
+                <small>die mit dem Stipendienantrag einzureichen sind</small>
+            </div>
+            <div>
+                @livewire('toogle-draft', ['model' => $enclosure])
+            </div>
+        </div>
     </div>
     <div class="row g-3">
 
