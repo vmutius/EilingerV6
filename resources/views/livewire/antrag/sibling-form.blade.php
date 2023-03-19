@@ -1,14 +1,7 @@
 <form wire:submit.prevent="saveSiblings">
     <div class="content-header mb-3">
         <h3 class="mb-0">Geschwister</h3>
-        <div class="d-flex justify-content-between">
-            <div>
-                <small>Angaben über Geschwister</small>
-            </div>
-            <div>
-                {{-- @livewire('toogle-draft', ['model' => $sibling]) --}}
-            </div>
-        </div>
+        <small>Enter Your Account Details.</small>
     </div>
 
     <x-notification/>

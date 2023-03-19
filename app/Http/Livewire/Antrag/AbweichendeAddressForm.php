@@ -35,7 +35,6 @@ class AbweichendeAddressForm extends Component
     {
         $this->abweichendeAddress->user_id = auth()->user()->id;
         $this->abweichendeAddress->is_wochenaufenthalt = true;
-        $this->saveAbweichendeAddress->status_id = 1;
         $this->abweichendeAddress->save();
         session()->flash('success', 'Adresse Wochenaufenthalt aktualisiert.');
     }

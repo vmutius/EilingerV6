@@ -1,14 +1,7 @@
 <form wire:submit.prevent="saveAccount">
     <div class="content-header mb-3">
         <h3 class="mb-0">Auszahlung</h3>
-        <div class="d-flex justify-content-between">
-            <div>
-                <small>Angaben über Bank</small>
-            </div>
-            <div>
-                @livewire('toogle-draft', ['model' => $account])
-            </div>
-        </div>
+        <small>Enter Your Account Details.</small>
     </div>
     <div class="row g-3">
 

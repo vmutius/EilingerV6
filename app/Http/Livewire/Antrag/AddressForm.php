@@ -33,7 +33,7 @@ class AddressForm extends Component
 
     public function saveAddress()
     {
-        $this->address->status_id = 1;
+        //$this->emit('validated');
         $this->address->save();
         session()->flash('success', 'Adresse aktualisiert.');
     }

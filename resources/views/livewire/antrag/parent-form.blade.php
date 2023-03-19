@@ -2,14 +2,6 @@
     <div class="content-header mb-3">
         <h3 class="mb-0">Eltern</h3>
         <small>Leibliche Eltern der gesuchstellenden Person</small>
-        <div class="d-flex justify-content-between">
-            <div>
-                <small>Angaben über die leibliche Eltern der gesuchstellenden Person</small>
-            </div>
-            <div>
-                {{-- @livewire('toogle-draft', ['model' => $parents]) --}}
-            </div>
-        </div>
     </div>
 
     <x-notification/>

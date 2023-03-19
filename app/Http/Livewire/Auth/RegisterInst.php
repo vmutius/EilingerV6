@@ -85,7 +85,6 @@ class RegisterInst extends Component
             'lastname' => $this->lastname,
             'telefon' => $this->telefon,
             'mobile' => $this->mobile,
-            'status_id' => 1,
         ]);
 
         $address = Address::create([
@@ -95,7 +94,6 @@ class RegisterInst extends Component
             'plz' => $this->plz,
             'town' => $this->town,
             'country_id' => $this->country_id,
-            'status_id' => 2,
         ]);
 
         event(new Registered($user));

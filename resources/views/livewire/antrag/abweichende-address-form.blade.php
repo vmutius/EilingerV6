@@ -1,15 +1,6 @@
 <form wire:submit.prevent="saveAbweichendeAddress">
     <div class="content-header mb-3">
         <h3 class="mb-0">Anschrift</h3>
-        <div class="d-flex justify-content-between">
-            <div>
-                <small>Angaben über die Wohnadress in Falle des Wochenaufenthalts</small>
-            </div>
-            <div>
-                {{-- @livewire('toogle-draft', ['model' => $address]) --}}
-            </div>
-        </div>
-
         <small>Abweichende Adresse bei Wochenentaufhalt</small>
     </div>
     <div class="row g-3">
