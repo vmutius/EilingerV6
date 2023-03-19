@@ -23,6 +23,11 @@ class Account extends Model
         'IBAN',
     ];
     
+    public const STATUS = [
+        'draft' => 'draft',
+        'complete' => 'complete',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

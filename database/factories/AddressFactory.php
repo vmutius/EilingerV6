@@ -23,7 +23,6 @@ class AddressFactory extends Factory
             'number' => $this->faker->randomNumber(2),
             'plz' => $this->faker->randomNumber(4, true),
             'town' => $this->faker->lexify,
-            'status_id' => 1,
         ];
     }
 }
