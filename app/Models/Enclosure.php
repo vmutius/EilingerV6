@@ -27,11 +27,6 @@ class Enclosure extends Model
         'has_parents_tax_factors',
     ];
 
-    public const STATUS = [
-        'draft' => 'draft',
-        'complete' => 'complete',
-    ];
-
     public function user()
     {
         return $this->belongsTo(User::class);

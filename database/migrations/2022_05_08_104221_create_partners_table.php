@@ -17,7 +17,6 @@ class CreatePartnersTable extends Migration
             $table->string('profession', 255)->nullable();
             $table->date('begin')->nullable();
             $table->date('end')->nullable();
-            $table->string('status')->default('draft');
             $table->timestamps();
         });
     }

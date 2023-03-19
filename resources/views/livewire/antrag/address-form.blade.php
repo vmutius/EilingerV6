@@ -33,7 +33,7 @@
             <select wire:model.lazy="address.country_id" class="form-select">
                 <option disabled>Bitte auswählen...</option>
                 @foreach ($countries as $country)
-                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                    <option value="{{ $country->short_code }}">{{ $country->name }}</option>
                 @endforeach
             </select>
             <span class="text-danger">@error('address.country'){{ $message }}@enderror</span>

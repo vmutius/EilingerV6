@@ -25,11 +25,6 @@ class Financing extends Model
         'scholarship',
     ];
 
-    public const STATUS = [
-        'draft' => 'draft',
-        'complete' => 'complete',
-    ];
-
     public function user()
     {
         return $this->belongsTo(User::class);

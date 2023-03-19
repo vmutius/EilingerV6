@@ -22,7 +22,6 @@ class CreateCostsTable extends Migration
             $table->decimal('cost_of_living_single_parent', $precision = 8, $scale = 2)->nullable();
             $table->decimal('cost_of_living_with_partner', $precision = 8, $scale = 2)->nullable();
             $table->decimal('number_of_children', $precision = 8, $scale = 2)->nullable();
-            $table->string('status')->default('draft');
             $table->timestamps();
         });
     }

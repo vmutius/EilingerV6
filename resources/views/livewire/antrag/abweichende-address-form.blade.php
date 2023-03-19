@@ -29,7 +29,7 @@
             <select wire:model.lazy="abweichendeAddress.country_id" class="form-select">
                 <option disabled>Bitte auswählen...</option>
                 @foreach ($countries as $country)
-                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                    <option value="{{ $country->short_code }}">{{ $country->name }}</option>
                 @endforeach
             </select>
         </div>

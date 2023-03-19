@@ -25,7 +25,6 @@ class CreateEnclosuresTable extends Migration
             $table->boolean('has_supplementary_services')->nullable(); // Ergänzungsleistungen
             $table->boolean('has_ects_points')->nullable();
             $table->boolean('has_parents_tax_factors')->nullable(); //Steuerfaktoren der Eltern
-            $table->string('status')->default('draft');
             $table->timestamps();
         });
     }

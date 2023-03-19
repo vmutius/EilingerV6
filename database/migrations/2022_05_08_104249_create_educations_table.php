@@ -22,7 +22,6 @@ class CreateEducationsTable extends Migration
             $table->integer('duration_edu')->nullable();
             $table->date('begin_appl')->nullable();
             $table->integer('duration_appl')->nullable();
-            $table->string('status')->default('draft');
             $table->timestamps();
         });
     }
