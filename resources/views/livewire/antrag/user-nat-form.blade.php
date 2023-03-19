@@ -1,7 +1,14 @@
 <form wire:submit.prevent="saveUserNat">
     <div class="content-header mb-3">
         <h3 class="mb-0">Bewerber</h3>
-        <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
+        <div class="d-flex justify-content-between">
+            <div>
+                <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
+            </div>
+            <div>
+                {{-- @livewire('toogle-draft', ['model' => $user]) --}}
+            </div>
+        </div>
     </div>
 
     <div class="row g-3">

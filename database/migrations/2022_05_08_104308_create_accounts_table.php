@@ -16,6 +16,7 @@ class CreateAccountsTable extends Migration
             $table->string('city_bank')->nullable();
             $table->string('owner', 255)->nullable();
             $table->string('IBAN', 34)->nullable();
+            $table->boolean('is_draft')->default(true);
             $table->timestamps();
         });
     }

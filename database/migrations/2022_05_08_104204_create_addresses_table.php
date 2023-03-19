@@ -18,6 +18,7 @@ class CreateAddressesTable extends Migration
             $table->string('town', 50);
             $table->date('since')->nullable();
             $table->boolean('is_wochenaufenthalt')->default(false);
+            $table->boolean('is_draft')->default(true);
             $table->timestamps();
         });
     }

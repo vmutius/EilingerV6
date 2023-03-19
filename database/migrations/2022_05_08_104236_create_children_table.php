@@ -14,6 +14,7 @@ class CreateChildrenTable extends Migration
             $table->string('lastname', 255);
             $table->string('firstname', 255);
             $table->date('birthday');
+            $table->boolean('is_draft')->default(true);
             $table->timestamps();
         });
     }

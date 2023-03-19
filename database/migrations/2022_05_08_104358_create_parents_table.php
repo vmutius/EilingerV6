@@ -27,6 +27,7 @@ class CreateParentsTable extends Migration
             $table->date('separated_since')->nullable();
             $table->date('divorced_since')->nullable();
             $table->year('death')->nullable();
+            $table->boolean('is_draft')->default(true);
             $table->timestamps();
         });
     }

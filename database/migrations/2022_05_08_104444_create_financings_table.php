@@ -19,6 +19,7 @@ class CreateFinancingsTable extends Migration
             $table->decimal('netto_income', $precision = 8, $scale = 2)->nullable();
             $table->decimal('assets', $precision = 8, $scale = 2)->nullable();
             $table->decimal('scholarship', $precision = 8, $scale = 2)->nullable();
+            $table->boolean('is_draft')->default(true);
             $table->timestamps();
         });
     }
