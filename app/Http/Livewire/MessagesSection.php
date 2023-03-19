@@ -15,8 +15,7 @@ class MessagesSection extends Component
     protected $paginationTheme = 'bootstrap';
 
     protected $listeners = [
-        'replyAdded' => '$refresh',
-        'deleteMessage' => 'confirmDelete',
+        'refresh' => '$refresh'
     ];
 
     protected $rules = [

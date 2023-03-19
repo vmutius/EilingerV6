@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AdminDashController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -49,7 +48,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 Route::group(['middleware' => ['admin']], function () {
-    Route::get('admin/dashboard', [AdminDashController::class, 'index'])->name('admin_dashboard');
+    Route::get('admin/dashboard',  App\Http\Livewire\Admin\Uebersicht::class)->name('admin_dashboard');
     Route::get('admin/users', App\Http\Livewire\Admin\Users::class)->name('admin_users');
     Route::get('admin/antrag/{application_id}', App\Http\Livewire\Admin\Antrag::class)->name('admin_antrag');
     Route::get('admin/applications', App\Http\Livewire\Admin\Applications::class)->name('admin_applications');

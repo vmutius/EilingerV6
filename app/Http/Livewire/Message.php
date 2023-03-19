@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Livewire;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Models\Message as MessageModel;
 use Livewire\Component;
 
 class Message extends Component
 {
+    use AuthorizesRequests;
+
     public $message;
     public $body;
 
@@ -24,16 +27,15 @@ class Message extends Component
             return;
         }
 
-        $this->editState = [
-            'body' => $this->message->body
-        ];
+        $this->body = $this->message->body;
     }
 
     public function editMessage()
     {
         $this->authorize('update', $this->message);
 
-        $this->message->update($this->editState);
+        $this->message->body = $this->body;
+        $this->message->save();
 
         $this->isEditing = false;
     }
