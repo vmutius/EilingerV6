@@ -21,11 +21,6 @@ class Parents extends Model
         'angestellt' => 'angestellt',
     ];
 
-    public const STATUS = [
-        'draft' => 'draft',
-        'complete' => 'complete',
-    ];
-
     /**
      * The attributes that are mass assignable.
      *

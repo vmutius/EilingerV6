@@ -14,7 +14,7 @@ class CreateChildrenTable extends Migration
             $table->string('lastname', 255);
             $table->string('firstname', 255);
             $table->date('birthday');
-            $table->string('status')->default('draft');
+            $table->foreignId('status_id')->constrained();
             $table->timestamps();
         });
     }

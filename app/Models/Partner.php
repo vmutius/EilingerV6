@@ -23,11 +23,6 @@ class Partner extends Model
         'end',
     ];
 
-    public const STATUS = [
-        'draft' => 'draft',
-        'complete' => 'complete',
-    ];
-
     public function user()
     {
         return $this->belongsTo(User::class);

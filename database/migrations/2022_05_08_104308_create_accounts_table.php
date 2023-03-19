@@ -16,7 +16,7 @@ class CreateAccountsTable extends Migration
             $table->string('city_bank')->nullable();
             $table->string('owner', 255)->nullable();
             $table->string('IBAN', 34)->nullable();
-            $table->string('status')->default('draft');
+            $table->foreignId('status_id')->constrained();
             $table->timestamps();
         });
     }

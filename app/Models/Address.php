@@ -22,11 +22,6 @@ class Address extends Model
         'is_wochenaufenthalt',
     ];
 
-    public const STATUS = [
-        'draft' => 'draft',
-        'complete' => 'complete',
-    ];
-
     public function user()
     {
         return $this->belongsTo(User::class);

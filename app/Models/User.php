@@ -36,11 +36,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'L' => 'Ausweis L EU/EFTA',
     ];
 
-    public const STATUS = [
-        'draft' => 'draft',
-        'complete' => 'complete',
-    ];
-
     /**
      * The attributes that are mass assignable.
      *

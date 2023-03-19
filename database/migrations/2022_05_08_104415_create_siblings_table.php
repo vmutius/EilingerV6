@@ -19,7 +19,7 @@ class CreateSiblingsTable extends Migration
             $table->string('place_of_residence', 500)->nullable();
             $table->boolean('get_amount')->nullable();
             $table->string('support_site', 255)->nullable();
-            $table->string('status')->default('draft');
+            $table->foreignId('status_id')->constrained();
             $table->timestamps();
         });
     }

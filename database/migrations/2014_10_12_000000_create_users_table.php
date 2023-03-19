@@ -31,7 +31,7 @@ class CreateUsersTable extends Migration
             $table->string('civil_status')->nullable();
             $table->date('in_ch_since')->nullable();
             $table->char('bewilligung')->nullable();
-            $table->string('status')->default('draft');
+            $table->foreignId('status_id')->constrained();
             $table->index('email');
             $table->rememberToken();
             $table->timestamps();
