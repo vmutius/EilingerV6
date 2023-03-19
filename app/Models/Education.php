@@ -28,6 +28,12 @@ class Education extends Model
         'full' => 'Vollzeit',
         'part' => 'Teilzeit',
     ];
+
+    public const STATUS = [
+        'draft' => 'draft',
+        'complete' => 'complete',
+    ];
+    
     protected $table = 'educations';
 
     /**

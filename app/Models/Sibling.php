@@ -33,6 +33,11 @@ class Sibling extends Model
 
     ];
 
+    public const STATUS = [
+        'draft' => 'draft',
+        'complete' => 'complete',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

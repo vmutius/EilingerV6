@@ -22,6 +22,11 @@ class Account extends Model
         'owner',
         'IBAN',
     ];
+    
+    public const STATUS = [
+        'draft' => 'draft',
+        'complete' => 'complete',
+    ];
 
     public function user()
     {

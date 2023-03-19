@@ -29,6 +29,11 @@ class Cost extends Model
         'number_of_children',
     ];
 
+    public const STATUS = [
+        'draft' => 'draft',
+        'complete' => 'complete',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
