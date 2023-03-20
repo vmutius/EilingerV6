@@ -6,7 +6,7 @@
                 <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
             </div>
             <div>
-                {{-- @livewire('toogle-draft', ['model' => $user]) --}}
+                @livewire('toogle-draft', ['model' => $user])
             </div>
         </div>
     </div>

@@ -22,6 +22,6 @@ class ToogleDraft extends Component
 
     public function updating($value)
     {
-        $this->model->setAttribute($this->is_draft, $value)->save();
+        $this->model->setAttribute('is_draft', $value)->save();
     }
 }
