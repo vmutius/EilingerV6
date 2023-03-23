@@ -21,6 +21,7 @@ class Account extends Model
         'city_bank',
         'owner',
         'IBAN',
+        'is_draft',
     ];
 
     public function user()

@@ -1,37 +1,48 @@
 <form wire:submit.prevent="saveAbweichendeAddress">
     <div class="content-header mb-3">
         <h3 class="mb-0">Anschrift</h3>
-        <small>Abweichende Adresse bei Wochenentaufhalt</small>
+        <div class="d-flex justify-content-between">
+            <div>
+                <small>Abweichende Adresse bei Wochenentaufhalt. Wenn sie keine abweichende Adresse haben, brauchen Sie nichts einzugeben.</small>
+            </div>
+            <div>
+                @livewire('toogle-draft', ['model' => $abweichendeAddress])
+            </div>
+        </div>
     </div>
     <div class="row g-3">
 
         <x-notification/>
 
         <div class="col-md-6">
-            <label class="form-label" for="street">Strasse</label>
+            <label class="form-label" for="street">Strasse *</label>
             <input wire:model.lazy="abweichendeAddress.street" type="text" class="form-control" />
+            <span class="text-danger">@error('abweichendeAddress.street'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-6">
             <label class="form-label" for="number">Hausnummer</label>
             <input wire:model.lazy="abweichendeAddress.number" type="text" class="form-control" />
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="plz">PLZ</label>
+            <label class="form-label" for="plz">PLZ *</label>
             <input wire:model.lazy="abweichendeAddress.plz" type="text" class="form-control" />
+            <span class="text-danger">@error('abweichendeAddress.plz'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="town">Ort</label>
+            <label class="form-label" for="town">Ort *</label>
             <input wire:model.lazy="abweichendeAddress.town" type="text" class="form-control" />
+            <span class="text-danger">@error('abweichendeAddress.town'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-sm-2">
-            <label class="form-label" for="country">Land</label>
+            <label class="form-label" for="country">Land *</label>
             <select wire:model.lazy="abweichendeAddress.country_id" class="form-select">
-                <option disabled>Bitte auswählen...</option>
+                <option>Bitte auswählen...</option>
                 @foreach ($countries as $country)
-                    <option value="{{ $country->short_code }}">{{ $country->name }}</option>
+                    <option value="{{ $country->id }}">{{ $country->name }}</option>
                 @endforeach
             </select>
+            <span class="text-danger">@error('abweichendeAddress.country_id'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-12 text-center">

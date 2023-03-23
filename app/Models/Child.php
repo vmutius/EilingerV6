@@ -19,6 +19,7 @@ class Child extends Model
         'lastname',
         'firstname',
         'birthday',
+        'is_draft',
     ];
 
     public function user()

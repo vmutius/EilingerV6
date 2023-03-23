@@ -10,20 +10,18 @@ class UserNatForm extends Component
     public $user;
     public $countries;
 
+    protected $listeners = ['draftToggled' => 'draftToggled'];
+
     protected $casts = ['user.birthday' => 'date:dd.mm.YYYY'];
 
     protected $rules = [
         'user.firstname' => 'required',
         'user.lastname' => 'required',
-        'user.email' => 'required',
-        'user.birthday' => 'nullable',
-        'user.salutation' => 'nullable',
-        'user.nationality' => 'nullable',
-        'user.telefon' => 'nullable',
-        'user.mobile' => 'nullable',
-        'user.soz_vers_nr' => 'nullable',
-        'user.in_ch_since' => 'nullable',
-        'user.bewilligung' => 'nullable',
+        'user.birthday' => 'required',
+        'user.salutation' => 'required',
+        'user.nationality' => 'required',
+        'user.civil_status' => 'required', 
+        'user.is_draft' => 'required|boolean',
     ];
 
     public function mount()
@@ -39,7 +37,22 @@ class UserNatForm extends Component
 
     public function saveUserNat()
     {
+        if(!$this->user->is_draft) {
+            $this->validate();
+        }
         $this->user->save();
         session()->flash('success', 'Benutzerdaten aktualisiert.');
     }
+
+    public function draftToggled($value)
+    {
+        if(!$this->user->is_draft) {
+            $this->user->is_draft = true;
+            $this->user->save();
+            $this->validate();
+            $this->user->is_draft = false;
+            $this->user->save();
+        }
+    }
+
 }

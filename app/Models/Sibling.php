@@ -30,7 +30,7 @@ class Sibling extends Model
         'place_of_residence',
         'get_amount',
         'support_site',
-
+        'is_draft',
     ];
 
     public function user()

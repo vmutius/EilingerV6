@@ -11,9 +11,9 @@
     @method('patch')
     <div class="row">
         <x-input-text-all name="lastname" :value="old('lastname', $user->lastname)">Nachname * </x-input-text-all>
-
+        <x-input-error :messages="$errors->get('lastname')" />
         <x-input-text-all name="firstname"  :value="old('firstname', $user->firstname)">Vorname * </x-input-text-all>
-
+        <x-input-error :messages="$errors->get('firstname')" />
         <x-input-text-all name="email" type="email"  :value="old('email', $user->email)">Email * </x-input-email-all>
             <x-input-error :messages="$errors->get('email')" />
 

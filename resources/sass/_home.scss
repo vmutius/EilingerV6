@@ -42,68 +42,22 @@
       display: none;
     }
   }
-   
-  /* Switch Container */
-  .switch {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Hide the checkbox input (only needed for `:checked` property) */
-  .switch-input {
-    display: none;
-  }
-  
-  /* Switch */
-  .switch-label {
-    display: block;
-    width: 48px;
-    height: 24px;
-    text-indent: -150%;
-    clip: rect(0 0 0 0);
-    user-select: none;
-    
-    /* Switch Rail & Knob */
-    &:before,
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      cursor: pointer;
-    }
-    
-    /* Switch Rail */
-    &:before {
-      width: 100%;
-      height: 100%;
-      background-color: #dedede;
-      border-radius: 9999em;
-      transition: background-color 0.25s ease;
-    }
-    
-    /* Switch Knob */
-    &:after {
-      top: 0;
-      left: 0;
-      width: 24px;
-      height: 24px  ;
-      border-radius: 50%;
-      background-color: #fff;
-      box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
-      transition: left 0.25s ease;
-    }
-  }
-  
-  /* When input is checked */
-  .switch-input:checked + .switch-label {
-    /* Switch Rail */
-    &:before {
-      background-color: #89c12d;
-    }
-    
-    /* Switch Knob */
-    &:after {
-      left: 24px;
-    }
-  }
-  
+
+.form-check-input:checked {
+    background-color: red;
+    border-color: gray;
+}
+
+.form-check-input:after {
+  content: "off";
+  color: gray;
+  font-size: 0.75rem;
+}
+
+.form-check-input:checked:after {
+  left: 20%;
+  content: "on";
+  color:white;
+}
+
+

@@ -20,6 +20,7 @@ class Address extends Model
         'town',
         'since',
         'is_wochenaufenthalt',
+        'is_draft',
     ];
 
     public function user()

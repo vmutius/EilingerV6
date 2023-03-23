@@ -10,14 +10,14 @@ class FinancingForm extends Component
     public $financing;
 
     protected $rules = [
-        'financing.user_id' => 'nullable',
-        'financing.personal_contribution' => 'nullable',
-        'financing.other_income' => 'nullable',
-        'financing.income_where' => 'nullable',
-        'financing.income_who' => 'nullable',
-        'financing.netto_income' => 'nullable',
-        'financing.assets' => 'nullable',
-        'financing.scholarship' => 'nullable',
+        'financing.user_id' => 'required|numeric|between:0,100000',
+        'financing.personal_contribution' => 'required|numeric|between:0,100000',
+        'financing.other_income' => 'required|numeric|between:0,100000',
+        'financing.income_where' => 'required',
+        'financing.income_who' => 'required',
+        'financing.netto_income' => 'required|numeric|between:0,100000',
+        'financing.assets' => 'required|numeric|between:0,100000',
+        'financing.scholarship' => 'required|numeric|between:0,100000',
     ];
 
     public function mount()
@@ -34,6 +34,9 @@ class FinancingForm extends Component
 
     public function saveFinancing()
     {
+        if(!$this->financing->is_draft) {
+            $this->validate(); 
+        }
         $this->financing->user_id = auth()->user()->id;
         $this->financing->application_id = session()->get('appl_id');
         $this->financing->save();

@@ -63,6 +63,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'status',
         'in_ch_since',
         'bewilligung',
+        'is_draft',
     ];
 
     /**

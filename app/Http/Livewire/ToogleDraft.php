@@ -20,8 +20,9 @@ class ToogleDraft extends Component
         return view('livewire.toogle-draft');
     }
 
-    public function updating($value)
+    public function updating($name, $value)
     {
-        $this->model->setAttribute('is_draft', $value)->save();
-    }
+        $this->model->setAttribute($name, $value)->save();
+        $this->emit('draftToggled', $value);
+    } 
 }

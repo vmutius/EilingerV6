@@ -39,6 +39,9 @@ class EnclosureForm extends Component
 
     public function saveEnclosure()
     {
+        if(!$this->enclosure->is_draft) {
+            $this->validate(); 
+        }
         $this->enclosure->application_id = session()->get('appl_id');
         $this->enclosure->save();
         session()->flash('success', 'Beilagen aktualisiert.');

@@ -10,10 +10,10 @@ class AccountForm extends Component
     public $account;
 
     protected $rules = [
-        'account.name_bank' => 'nullable',
-        'account.city_bank' => 'nullable',
-        'account.owner' => 'nullable',
-        'account.IBAN' => 'nullable',
+        'account.name_bank' => 'required',
+        'account.city_bank' => 'required',
+        'account.owner' => 'required',
+        'account.IBAN' => 'required',
     ];
 
     public function mount()
@@ -30,6 +30,9 @@ class AccountForm extends Component
 
     public function saveAccount()
     {
+        if(!$this->account->is_draft) {
+            $this->validate(); 
+        }
         $this->account->user_id = auth()->user()->id;
         $this->account->application_id = session()->get('appl_id');
         $this->account->save();

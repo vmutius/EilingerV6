@@ -21,6 +21,7 @@ class Partner extends Model
         'profession',
         'begin',
         'end',
+        'is_draft',
     ];
 
     public function user()

@@ -10,12 +10,12 @@ class EducationForm extends Component
     public $education;
 
     protected $rules = [
-        'education.education' => 'nullable',
-        'education.name' => 'nullable',
-        'education.final' => 'nullable',
-        'education.grade' => 'nullable',
-        'education.ects_points' => 'nullable',
-        'education.time' => 'nullable',
+        'education.education' => 'required',
+        'education.name' => 'required',
+        'education.final' => 'required',
+        'education.grade' => 'required',
+        'education.ects_points' => 'required',
+        'education.time' => 'required',
     ];
 
     public function mount()
@@ -32,6 +32,9 @@ class EducationForm extends Component
 
     public function saveEducation()
     {
+        if(!$this->education->is_draft) {
+            $this->validate(); 
+        }
         $this->education->user_id = auth()->user()->id;
         $this->education->application_id = session()->get('appl_id');
         $this->education->save();

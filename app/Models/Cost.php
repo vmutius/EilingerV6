@@ -27,6 +27,7 @@ class Cost extends Model
         'cost_of_living_single_parent',
         'cost_of_living_with_partner',
         'number_of_children',
+        'is_draft',
     ];
 
     public function user()

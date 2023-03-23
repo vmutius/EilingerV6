@@ -25,6 +25,7 @@ class Enclosure extends Model
         'has_supplementary_services',
         'has_ects_points',
         'has_parents_tax_factors',
+        'is_draft',
     ];
 
     public function user()

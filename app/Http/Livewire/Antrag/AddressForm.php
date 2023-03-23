@@ -14,8 +14,8 @@ class AddressForm extends Component
     protected $rules = [
         'address.street' => 'required|min:3',
         'address.number' => 'nullable',
-        'address.town' => 'required',
-        'address.plz' => 'required',
+        'address.town' => 'required|min:3',
+        'address.plz' => 'required|min:4',
         'address.country_id' => 'required',
     ];
 
@@ -33,7 +33,9 @@ class AddressForm extends Component
 
     public function saveAddress()
     {
-        //$this->emit('validated');
+        if(!$this->address->is_draft) {
+            $this->validate(); 
+        }
         $this->address->save();
         session()->flash('success', 'Adresse aktualisiert.');
     }

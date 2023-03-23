@@ -16,39 +16,51 @@
         <x-notification/>
 
         <div class="col-sm-2">
-            <label class="form-label" for="salutation">Anrede</label>
+            <label class="form-label" for="salutation">Anrede *</label>
             <select wire:model.lazy="user.salutation" class="form-select">
                 <option value="" disabled>Bitte Anrede auswählen</option>
                 @foreach (App\Models\User::SALUTATION as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach
             </select>
+            <span class="text-danger">@error('user.salutation'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-5">
-            <label class="form-label" for="firstname">Vorname</label>
+            <label class="form-label" for="firstname">Vorname *</label>
             <input wire:model.lazy="user.firstname" type="text" class="form-control" />
+            <span class="text-danger">@error('user.firstname'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-5">
-            <label class="form-label" for="lastname">Nachname</label>
+            <label class="form-label" for="lastname">Nachname *</label>
             <input wire:model.lazy="user.lastname" type="text" class="form-control" />
+            <span class="text-danger">@error('user.lastname'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-sm-2">
-            <label class="form-label" for="country">Nationalität</label>
+            <label class="form-label" for="country">Nationalität *</label>
             <select wire:model.lazy="user.nationality" class="form-select">
                 <option disabled>Bitte auswählen...</option>
                 @foreach ($countries as $country)
                     <option value="{{ $country->short_code }}">{{ $country->name }}</option>
                 @endforeach
+                <span class="text-danger">@error('user.nationality'){{ $message }}@enderror</span>
             </select>
+            
         </div>
         <div class="col-sm-5">
-            <label for="birthday" class="form-label">Geburtstag</label>
+            <label for="birthday" class="form-label">Geburtsdatum *</label>
             <input wire:model.lazy="user.birthday" class="form-control" type="date" placeholder="DD.MM.YYYY" />
+            <span class="text-danger">@error('user.birthday'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="email">Email</label>
-            <input wire:model.lazy="user.email" type="email" class="form-control" />
+            <label class="form-label" for="email">Zivilstand *</label>
+            <select wire:model.lazy="user.civil_status" class="form-select">
+                <option disabled="">-- Wählen Sie eine Option --</option>
+                @foreach (App\Models\User::CIVIL_STATUS as $key => $label)
+                    <option value="{{ $key }}">{{ $label }}</option>
+                @endforeach
+                <span class="text-danger">@error('user.civil_status'){{ $message }}@enderror</span>
+            </select>
         </div>
 
         <div class="col-md-4">
@@ -70,7 +82,7 @@
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="bewilligung">Art der Bewilligung (für Ausländer)</label>
-            <select wire:model.lazy="user.bewilligung" name="bewilligung" class="form-select">
+            <select wire:model.lazy="user.bewilligung" class="form-select">
                 <option value="">-- Wählen Sie eine Option --</option>
                 @foreach (App\Models\User::BEWILLIGUNG as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>

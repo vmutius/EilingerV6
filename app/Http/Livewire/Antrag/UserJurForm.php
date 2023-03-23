@@ -37,10 +37,8 @@ class UserJurForm extends Component
 
     public function saveUserJur()
     {
-        $this->validateWithBag('userJur');
-
-        if (session($errors)) {
-            session()->flash('error', 'Bitte beachten Sie den Hinweis. Sie können jetzt fortfahren, aber hinterher den Antrag so nicht einreichen.');
+        if(!$this->user->is_draft) {
+            $this->validate(); 
         }
         $this->user->save();
         session()->flash('success', 'Benutzerdaten aktualisiert.');

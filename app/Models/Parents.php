@@ -43,6 +43,7 @@ class Parents extends Model
         'separated_since',
         'divorced_since',
         'death',
+        'is_draft',
     ];
 
     public function user()

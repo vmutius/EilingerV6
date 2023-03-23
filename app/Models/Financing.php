@@ -23,6 +23,7 @@ class Financing extends Model
         'netto_income',
         'assets',
         'scholarship',
+        'is_draft',
     ];
 
     public function user()

@@ -48,6 +48,7 @@ class Education extends Model
         'duration_edu',
         'begin_appl',
         'duration_appl',
+        'is_draft',
     ];
 
     public function user()
