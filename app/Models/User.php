@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Enums\CivilStatus;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -19,13 +20,6 @@ class User extends Authenticatable implements MustVerifyEmail
     public const SALUTATION = [
         'Herr' => 'Herr',
         'Frau' => 'Frau',
-    ];
-
-    public const CIVIL_STATUS = [
-        'ledig' => 'ledig',
-        'verheiratet' => 'verheiratet',
-        'geschieden' => 'geschieden',
-        'verwitwet' => 'verwitwet',
     ];
 
     public const BEWILLIGUNG = [
@@ -84,6 +78,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'civil_status' => CivilStatus::class
     ];
 
     public function address()

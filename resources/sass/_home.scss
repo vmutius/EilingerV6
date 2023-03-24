@@ -48,16 +48,4 @@
     border-color: gray;
 }
 
-.form-check-input:after {
-  content: "off";
-  color: gray;
-  font-size: 0.75rem;
-}
-
-.form-check-input:checked:after {
-  left: 20%;
-  content: "on";
-  color:white;
-}
-
 

@@ -33,9 +33,9 @@ class AddressForm extends Component
 
     public function saveAddress()
     {
-        if(!$this->address->is_draft) {
-            $this->validate(); 
-        }
+        
+        $this->validate(); 
+        $this->address->is_draft=false;
         $this->address->save();
         session()->flash('success', 'Adresse aktualisiert.');
     }

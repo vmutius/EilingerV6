@@ -6,7 +6,7 @@
                 <small>Angaben über die Kosten im bevorstehenden Ausbildungsjahr</small>
             </div>
             <div>
-                @livewire('toogle-draft', ['model' => $cost])
+                {{-- @livewire('toogle-draft', ['model' => $cost]) --}}
             </div>
         </div>
     </div>

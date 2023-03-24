@@ -6,7 +6,7 @@
                 <small>Angaben über den Wohnsitz</small>
             </div>
             <div>
-                @livewire('toogle-draft', ['model' => $address])
+                {{-- @livewire('toogle-draft', ['model' => $address]) --}}
             </div>
         </div>
     </div>

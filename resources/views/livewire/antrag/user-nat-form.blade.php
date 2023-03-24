@@ -6,7 +6,7 @@
                 <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
             </div>
             <div>
-                @livewire('toogle-draft', ['model' => $user])
+                {{-- @livewire('toogle-draft', ['model' => $user]) --}}
             </div>
         </div>
     </div>
@@ -53,10 +53,10 @@
             <span class="text-danger">@error('user.birthday'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="email">Zivilstand *</label>
+            <label class="form-label" for="civil_status">Zivilstand *</label>
             <select wire:model.lazy="user.civil_status" class="form-select">
-                <option disabled="">-- Wählen Sie eine Option --</option>
-                @foreach (App\Models\User::CIVIL_STATUS as $key => $label)
+                <option selected value="">-- Wählen Sie eine Option --</option>
+                @foreach (\App\Enums\CivilStatus::values() as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach
                 <span class="text-danger">@error('user.civil_status'){{ $message }}@enderror</span>

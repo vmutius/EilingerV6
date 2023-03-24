@@ -6,7 +6,7 @@
                 <small>Abweichende Adresse bei Wochenentaufhalt. Wenn sie keine abweichende Adresse haben, brauchen Sie nichts einzugeben.</small>
             </div>
             <div>
-                @livewire('toogle-draft', ['model' => $abweichendeAddress])
+                {{-- @livewire('toogle-draft', ['model' => $abweichendeAddress]) --}}
             </div>
         </div>
     </div>

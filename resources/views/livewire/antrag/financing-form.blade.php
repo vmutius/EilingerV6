@@ -6,7 +6,7 @@
                 <small>Angaben über die Finanzierung im bevorstehenden Ausbildungsjahr</small>
             </div>
             <div>
-                @livewire('toogle-draft', ['model' => $financing])
+                {{-- @livewire('toogle-draft', ['model' => $financing]) --}}
             </div>
         </div>
     </div>

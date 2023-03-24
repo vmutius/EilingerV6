@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('website', 255)->nullable();
             $table->string('mobile', 20)->nullable();
             $table->string('soz_vers_nr', 20)->nullable();
-            $table->string('civil_status')->nullable();
+            $table->string('civil_status');
             $table->date('in_ch_since')->nullable();
             $table->char('bewilligung')->nullable();
             $table->boolean('is_draft')->default(true);
