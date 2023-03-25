@@ -37,9 +37,8 @@ class UserJurForm extends Component
 
     public function saveUserJur()
     {
-        if(!$this->user->is_draft) {
-            $this->validate(); 
-        }
+        $this->validate(); 
+        $this->user->is_draft = false;
         $this->user->save();
         session()->flash('success', 'Benutzerdaten aktualisiert.');
     }

@@ -33,6 +33,8 @@ class AbweichendeAddressForm extends Component
 
     public function saveAbweichendeAddress()
     {
+        $this->validate();
+        $this->abweichendeAddress->is_draft = false;
         $this->abweichendeAddress->user_id = auth()->user()->id;
         $this->abweichendeAddress->is_wochenaufenthalt = true;
         $this->abweichendeAddress->save();

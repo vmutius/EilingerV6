@@ -28,7 +28,7 @@
                         <th>Benutzername</th>
                         <th>Vereinsname</th>
                         <th>Nachname</th>
-                        <th>Vorame</th>
+                        <th>Vorname</th>
                         <th>Email</th>
                         <th>Erstellt am</th>
                         <th>Anträge</th>
@@ -38,7 +38,7 @@
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody> 
                     @forelse ($users as $user)
                         <tr>
                             <td>{{ $user->username }}</td>

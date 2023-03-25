@@ -30,9 +30,8 @@ class AccountForm extends Component
 
     public function saveAccount()
     {
-        if(!$this->account->is_draft) {
-            $this->validate(); 
-        }
+        $this->validate(); 
+        $this->account->is_draft = false;
         $this->account->user_id = auth()->user()->id;
         $this->account->application_id = session()->get('appl_id');
         $this->account->save();

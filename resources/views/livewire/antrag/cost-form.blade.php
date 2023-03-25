@@ -69,13 +69,7 @@
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="number_of_children">Anzahl Kinder im eigenen Haushalt</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">CHF</span>
-                </div>
-                <input wire:model.lazy="cost.number_of_children" type="number" class="form-control" />
-                
-            </div>
+            <input wire:model.lazy="cost.number_of_children" type="number" class="form-control" />
             <span class="text-danger">@error('cost.number_of_children'){{ $message }}@enderror</span>
         </div>
 

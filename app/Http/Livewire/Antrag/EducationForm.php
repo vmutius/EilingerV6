@@ -32,9 +32,9 @@ class EducationForm extends Component
 
     public function saveEducation()
     {
-        if(!$this->education->is_draft) {
-            $this->validate(); 
-        }
+        
+        $this->validate(); 
+        $this->education->is_draft = false;
         $this->education->user_id = auth()->user()->id;
         $this->education->application_id = session()->get('appl_id');
         $this->education->save();

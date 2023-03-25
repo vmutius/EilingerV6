@@ -66,11 +66,13 @@
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="income_where">Auszahlende Stelle der anderweitige Einkünfte </label>
-            <input wire:model.lazy="financing.income_where" type="number" class="form-control" />
+            <input wire:model.lazy="financing.income_where" type="text" class="form-control" />
+            <span class="text-danger">@error('financing.income_where'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="incomeWho">Begünstigter der anderweitige Einkünfte</label>
-            <input wire:model.lazy="financing.income_who" type="number" class="form-control" />
+            <input wire:model.lazy="financing.income_who" type="text" class="form-control" />
+            <span class="text-danger">@error('financing.income_who'){{ $message }}@enderror</span>
         </div>
 
 

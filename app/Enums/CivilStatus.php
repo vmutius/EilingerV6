@@ -4,10 +4,10 @@ namespace App\Enums;
 
 enum CivilStatus: string
 {
-    case LEDIG ='ledig';
-    case VERHEIRATET = 'verheiratet';
-    case GESCHIEDEN = 'geschieden';
-    case VERWITWET = 'verwitwet';
+    case ledig ='ledig';
+    case verheiratet = 'verheiratet';
+    case geschieden = 'geschieden';
+    case verwitwet = 'verwitwet';
 
     public static function values(): array
     {

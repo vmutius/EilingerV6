@@ -34,9 +34,8 @@ class FinancingForm extends Component
 
     public function saveFinancing()
     {
-        if(!$this->financing->is_draft) {
-            $this->validate(); 
-        }
+        $this->validate(); 
+        $this->financing->is_draft = false;
         $this->financing->user_id = auth()->user()->id;
         $this->financing->application_id = session()->get('appl_id');
         $this->financing->save();

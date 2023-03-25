@@ -35,6 +35,7 @@ class SiblingForm extends Component
     public function saveSiblings()
     {
         $this->siblings->each(function ($sibling) {
+            $sibling->is_draft = false;
             $sibling->user_id = auth()->user()->id;
             $sibling->save();
         });

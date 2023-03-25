@@ -37,6 +37,7 @@ class ParentForm extends Component
     public function saveParents()
     {
         $this->parents->each(function ($parent) {
+            $parent->is_draft = false;
             $parent->user_id = auth()->user()->id;
             $parent->save();
         });
