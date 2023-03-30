@@ -30,7 +30,7 @@
                     <select wire:model.lazy="salutation" class="form-select @error('salutation') is-invalid @enderror @if (session('valid-salutation'))
                         is-valid @endif" id="salutation" type="text" autofocus autocomplete="off">
                         <option selected>Bitte Anrede auswählen...</option>
-                        @foreach (App\Enums\Salutation::values() as $key => $label)
+                        @foreach (App\Enums\Salutation::cases() as $key => $label)
                             <option value="{{ $key }}"
                                 {{ old('salutation', '') === (string) $key ? 'selected' : '' }}>{{ $label }}
                             </option>

@@ -19,7 +19,7 @@
             <label class="form-label" for="salutation">Anrede *</label>
             <select wire:model.lazy="user.salutation" class="form-select">
                 <option value="" disabled>Bitte Anrede auswählen</option>
-                @foreach (App\Enums\Salutation::values() as $key => $label)
+                @foreach (App\Enums\Salutation::cases() as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach
             </select>
@@ -56,7 +56,7 @@
             <label class="form-label" for="civil_status">Zivilstand *</label>
             <select wire:model.lazy="user.civil_status" class="form-select">
                 <option selected value="">-- Wählen Sie eine Option --</option>
-                @foreach (\App\Enums\CivilStatus::values() as $key => $label)
+                @foreach (\App\Enums\CivilStatus::cases() as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach
                 <span class="text-danger">@error('user.civil_status'){{ $message }}@enderror</span>
@@ -78,13 +78,13 @@
 
         <div class="col-sm-6">
             <label class="form-label" for="in_ch_since">In der Schweiz seit (für Ausländer)</label>
-            <input wire:model.lazy="user.in_ch_since" type="text" class="form-control" />
+            <input wire:model.lazy="user.in_ch_since" type="date" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="bewilligung">Art der Bewilligung (für Ausländer)</label>
             <select wire:model.lazy="user.bewilligung" class="form-select">
                 <option value="">-- Wählen Sie eine Option --</option>
-                @foreach (App\Enums\Bewilligung::values() as $key => $label)
+                @foreach (App\Enums\Bewilligung::cases() as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach
             </select>

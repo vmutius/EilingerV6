@@ -9,9 +9,4 @@ enum Bewilligung: string
     case I = 'Ausweis Ci EU/EFTA';
     case G = 'Ausweis G EU/EFTA';
     case L = 'Ausweis L EU/EFTA';
-
-    public static function values(): array
-    {
-        return array_column(self::cases(), 'name', 'value');
-    }
 }
