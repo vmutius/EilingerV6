@@ -18,7 +18,7 @@
                 <label class="form-label" for="education">Ausbildung *</label>
                 <select wire:model.lazy="education.education" name="education" class="form-select">
                     <option value="">-- Wählen Sie eine Option --</option>
-                    @foreach (App\Models\Education::EDUCATION as $key => $label)
+                    @foreach (\App\Enums\Education::values() as $key => $label)
                         <option value="{{ $key }}">{{ $label }}</option>
                     @endforeach
                     @error('education.education')
@@ -45,7 +45,7 @@
                 <label class="form-label" for="grade">Abschluss *</label>
                 <select wire:model.lazy="education.grade" name="grade" class="form-select">
                     <option selected value="">-- Wählen Sie eine Option --</option>
-                    @foreach (App\Models\Education::GRADE as $key => $label)
+                    @foreach (App\Enums\Grade::values() as $key => $label)
                         <option value="{{ $key }}">{{ $label }}</option>
                     @endforeach
                     <span class="text-danger">
@@ -68,7 +68,7 @@
                 <label class="form-label" for="time">Pensum *</label>
                 <select wire:model.lazy="education.time" id="time" name="time" class="form-select">
                     <option selected value="">-- Wählen Sie eine Option --</option>
-                    @foreach (App\Models\Education::TIME as $key => $label)
+                    @foreach (App\Enums\Time::values() as $key => $label)
                         <option value="{{ $key }}">{{ $label }}</option>
                     @endforeach
                     <span class="text-danger">

@@ -12,24 +12,6 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
-    public const TYPES = [
-        'nat' => 'nat',
-        'jur' => 'jur',
-    ];
-
-    public const SALUTATION = [
-        'Herr' => 'Herr',
-        'Frau' => 'Frau',
-    ];
-
-    public const BEWILLIGUNG = [
-        'C' => 'Ausweis C EU/EFTA',
-        'B' => 'Ausweis B EU/EFTA',
-        'I' => 'Ausweis Ci EU/EFTA',
-        'G' => 'Ausweis G EU/EFTA',
-        'L' => 'Ausweis L EU/EFTA',
-    ];
-
     /**
      * The attributes that are mass assignable.
      *

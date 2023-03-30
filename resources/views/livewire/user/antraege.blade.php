@@ -67,7 +67,7 @@
                             <br />
                             <select wire:model.lazy="bereich" class="form-select">
                                 <option selected>Bitte auswählen...</option>
-                                @foreach (App\Models\APPLICATION::BEREICH as $key => $label)
+                                @foreach (App\Enums\Bereich::values()  as $key => $label)
                                     <option value="{{ $key }}">{{ $label }}</option>
                                 @endforeach
                             </select>
@@ -79,7 +79,7 @@
                             <br />
                             <select wire:model.lazy="form" class="form-select">
                                 <option selected>Bitte auswählen...</option>
-                                @foreach (App\Models\APPLICATION::FORM as $key => $label)
+                                @foreach (App\Enums\Form::values()  as $key => $label)
                                     <option value="{{ $key }}">{{ $label }}</option>
                                 @endforeach
                             </select>

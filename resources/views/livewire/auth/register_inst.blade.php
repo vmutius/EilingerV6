@@ -66,7 +66,7 @@
                         @enderror
                         @if (session()->has('valid-number'))
                             <div class="valid-feedback">
-                                {{ session(['valid-number' => 'OK']) }}
+                                {{ session(['valid-number']) }}
                             </div>
                         @endif
                     </div>
@@ -136,7 +136,7 @@
                         @enderror
                         @if (session()->has('valid-telefon_inst'))
                             <div class="valid-feedback">
-                                {{ session(['valid-telefon_inst' => 'OK']) }}
+                                {{ session(['valid-telefon_inst']) }}
                             </div>
                         @endif
                     </div>
@@ -169,7 +169,7 @@
                         @enderror
                         @if (session()->has('valid-website'))
                             <div class="valid-feedback">
-                                {{ session(['valid-website' => 'OK']) }}
+                                {{ session(['valid-website']) }}
                             </div>
                         @endif
                     </div>
@@ -179,7 +179,7 @@
                         <select wire:model.lazy="salutation" class="form-select @error('salutation') is-invalid @enderror @if (session('valid-salutation'))
                             is-valid @endif" id="salutation" type="text" autofocus autocomplete="off">
                             <option selected>Bitte Anrede auswählen...</option>
-                            @foreach (App\Models\User::SALUTATION as $key => $label)
+                            @foreach (App\Enums\Salutation::values() as $key => $label)
                                 <option value="{{ $key }}"
                                     {{ old('salutation', '') === (string) $key ? 'selected' : '' }}>{{ $label }}
                                 </option>
@@ -192,7 +192,7 @@
                         @enderror
                         @if (session()->has('valid-salutation'))
                             <div class="valid-feedback">
-                                {{ session(['valid-salutation', 'OK']) }}
+                                {{ session(['valid-salutation']) }}
                             </div>
                         @endif
                     </div>
@@ -209,7 +209,7 @@
                         @enderror
                         @if (session()->has('valid-firstname'))
                             <div class="valid-feedback">
-                                {{ session(['valid-firstname' => 'OK']) }}
+                                {{ session(['valid-firstname']) }}
                             </div>
                         @endif
                     </div>
@@ -225,7 +225,7 @@
                         @enderror
                         @if (session()->has('valid-lastname'))
                             <div class="valid-feedback">
-                                {{ session(['valid-lastname' => 'OK']) }}
+                                {{ session(['valid-lastname']) }}
                             </div>
                         @endif
                     </div>
@@ -241,7 +241,7 @@
                         @enderror
                         @if (session()->has('valid-telefon'))
                             <div class="valid-feedback">
-                                {{ session(['valid-telefon' => 'OK']) }}
+                                {{ session(['valid-telefon']) }}
                             </div>
                         @endif
                     </div>
@@ -257,7 +257,7 @@
                         @enderror
                         @if (session()->has('valid-mobile'))
                             <div class="valid-feedback">
-                                {{ session(['valid-mobile' => 'OK']) }}
+                                {{ session(['valid-mobile']) }}
                             </div>
                         @endif
                     </div>
@@ -273,7 +273,7 @@
                         @enderror
                         @if (session()->has('valid-email'))
                             <div class="valid-feedback">
-                                {{ session(['valid-email' => 'OK']) }}
+                                {{ session(['valid-email']) }}
                             </div>
                         @endif
                     </div>
@@ -290,7 +290,7 @@
                         @enderror
                         @if (session()->has('valid-password'))
                             <div class="valid-feedback">
-                                {{ session(['valid-password' => 'OK']) }}
+                                {{ session(['valid-password']) }}
                             </div>
                         @endif
                     </div>
@@ -306,11 +306,11 @@
                         @enderror
                         @if (session()->has('valid-password_confirmation'))
                             <div class="valid-feedback">
-                                {{ session(['valid-password_confirmation' => 'OK']) }}
+                                {{ session(['valid-password_confirmation']) }}
                             </div>
                         @endif
                     </div>
-                    </br>
+                    <br/>
                     <div class="form-check">
                         <label class="form-label" for="terms">
                             <input wire:model.lazy="terms" class ="@error('terms') is-invalid @enderror @if (session('valid-terms'))
@@ -322,7 +322,7 @@
                             @enderror
                             @if (session()->has('valid-terms'))
                                 <div class="valid-feedback">
-                                    {{ session(['valid-terms' => 'OK']) }}
+                                    {{ session(['valid-terms']) }}
                                 </div>
                             @endif
                             Ich akzeptiere die Nutzungsbedingungen.

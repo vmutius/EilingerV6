@@ -9,8 +9,6 @@
     <meta name="keyword" content="">
     <title>Eilinger Stiftung - Dashboard</title>
 
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @vite(['resources/js/app.js'])
@@ -25,40 +23,40 @@
     <div class="sidebar">
         <div class="logo-details">
             <div class="logo_name">Eilinger Stiftung</div>
-            <i class='bx bx-menu' id="btn"></i>
+            <i class="bi bi-list" id="btn"></i>
         </div>
         <ul class="nav-list">
             <li>
                 <a href="{{ route('user_dashboard') }}">
-                    <i class='bx bx-grid-alt'></i>
+                    <i class="bi bi-grid"></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
                 <a href="{{ route('user_antraege') }}">
-                    <i class='bx bx-mail-send'></i>
+                    <i class="bi bi-envelope-open"></i>
                     <span class="links_name">Anträge</span>
                 </a>
                 <span class="tooltip">Stellen Sie hier ihre Anträge</span>
             </li>
             <li>
                 <a href="{{ route('user_gesuch') }}">
-                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <i class="bi bi-envelope-check"></i>
                     <span class="links_name">Gesuche</span>
                 </a>
                 <span class="tooltip">Sehen Sie hier ihre Gesuche</span>
             </li>
             <li>
                 <a href="{{ route('user_nachrichten') }}">
-                    <i class='bx bx-message-rounded-dots'></i>
+                    <i class="bi bi-chat-dots"></i>
                     <span class="links_name">Nachrichten</span>
                 </a>
                 <span class="tooltip">Ihre Nachrichten</span>
             </li>
             <li>
                 <a href="{{ route('user_profile.edit') }}">
-                    <i class='bx bx-user'></i>
+                    <i class="bi bi-person"></i>
                     <span class="links_name">Profil</span>
                 </a>
                 <span class="tooltip">Profil</span>
@@ -66,7 +64,7 @@
 
             <li>
                 <a href="{{ route('user_dateien') }}">
-                    <i class='bx bx-folder'></i>
+                    <i class="bi bi-folder-plus"></i>
                     <span class="links_name">Datei Ablage</span>
                 </a>
                 <span class="tooltip">Datei Ablage</span>

@@ -16,27 +16,25 @@
                     <div class="col-lg-6">
                         <h3>Stiftungsgedanke</h3>
                         <p>Die Walter und Gabriella Eilinger Stiftung ist eine am 28.07.2021 gegründete Schweizer
-                            Stiftung mit Domizil in 8264 Eschenz. Dem Ehepaar Ellinger war es schon immer ein
+                            Stiftung mit Domizil in 8264 Eschenz. Dem Ehepaar Eilinger war es schon immer ein
                             besonderes Anliegen, Kinder- und Jugendliche aus ärmeren Regionen eine Chance auf
                             Bildung zu geben. Darüber hinaus haben sich beide aktiv mit Menschenrechtsverletzungen,
-                            Kinderarbeit und Umweltverschmutzung auseinandergesetzt, privat waren sie im Tierschutz
+                            Kinderarbeit, Umweltverschmutzung und Nachhaltigkeit auseinandergesetzt, privat waren sie im Tierschutz
                             engagiert.
                         </p>
-
                         <p>
                             Es sollen expliziert nur kleiner Vereine und Organisationen sowie Einzelpersonen
                             unterstützt werden, die weder staatliche Hilfen, noch anderweitige finanzielle Hilfen
                             erhalten und durch Spenden und der Tätigkeit durch ehrenamtliche HelferInnen
                             agieren.
                         </p>
-
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <h3>Stiftungszweck</h3>
                         <p>
                             Die Stiftung unterstützt und fördert:
                         <ul>
-                            <li><i class="ri-check-double-line"></i>Nicht gewinnorientierte Organisationen und
+                            <li><i class="bi bi-check-all"></i>Nicht gewinnorientierte Organisationen und
                                 Institutionen, die sich für die Ausbildung
                                 und Förderung von Kindern und Jugendlichen im In- und Ausland einsetzen. Dies
                                 betrifft sowohl vorschulische und schulische Förderung sowie Massnahmen zur
@@ -44,17 +42,17 @@
                                 Einzelpersonen oder Personengruppen aus sozial- und / oder wirtschaftlich
                                 schwachen Verhältnissen finanziell unterstützt, die unverschuldet in Not geraten
                                 sind;</li>
-                            <li><i class="ri-check-double-line"></i>im In- und Ausland tätige, gemeinnützige
+                            <li><i class="bi bi-check-all"></i>im In- und Ausland tätige, gemeinnützige
                                 Organisationen, die sich mit dem Thema
                                 Tierschutz, Tierrettung und Prävention befassen und das Wohl von Tieren aller Art
                                 zum Ziel haben. Es sollen explizit auch kleinere Institutionen wie Vereine und im
                                 Einzelfall auch Personen unterstützt werden, die sich für das Tierwohl in diesem
                                 Sinne einsetzen;</li>
-                            <li><i class="ri-check-double-line"></i> gemeinnützige Institutionen im In- und Ausland, die
+                            <li><i class="bi bi-check-all"></i>gemeinnützige Institutionen im In- und Ausland, die
                                 sich mit dem Schutz und der
                                 Einhaltung von Menschenrechten befassen, insbesondere sich auch dem Thema
                                 Bekämpfung von Kinderarbeit widmen;</li>
-                            <li><i class="ri-check-double-line"></i> nicht gewinnorientierte Institutionen im In- und
+                            <li><i class="bi bi-check-all"></i>nicht gewinnorientierte Institutionen im In- und
                                 Ausland, die sich für den Schutz der
                                 Natur und für den Umweltschutz einsetzen.</li>
                         </ul>
@@ -78,17 +76,15 @@
                             <div class="card-body">
                                 <h5 class="card-title"><a href="">Bildung - Kinder & Jugendliche</a></h5>
                                 <p class="card-text">Unterstützung und Förderung von Bildung für sozial schwache Kinder
-                                    und
-                                    Jugendliche.</p>
-                                Kinder und Jugendliche sollten, egal aus welchen sozialen Verhältnissen sie
-                                kommen, eine Recht auf Bildung haben. Wir unterstützen daher nicht gewinnorientierte
-                                Organisationen und Institutionen, die sich für Vorschulförderung, schulische und
-                                berufliche
-                                Ausbildung von Kindern und Jugendlichen im In- und Ausland einsetzen. Darüber hinaus
-                                haben
-                                Jugendliche und junge Erwachsene die Chance, bei uns ein Gesuch für ein Stipendium zu
-                                stellen, um
-                                eine Ausbildung zu machen oder einen Universitätsabschluss zu erlangen.
+                                    und Jugendliche.</p>
+                                <p class="text-justify">
+                                    Kinder und Jugendliche sollten, egal aus welchen sozialen Verhältnissen sie
+                                    kommen, ein Recht auf Bildung haben. Wir unterstützen daher nicht gewinnorientierte
+                                    Organisationen und Institutionen, die sich für Vorschulförderung, schulische und
+                                    berufliche Ausbildung von Kindern und Jugendlichen im In- und Ausland einsetzen. Darüber hinaus
+                                    haben Jugendliche und junge Erwachsene die Chance, bei uns ein Gesuch für ein Stipendium zu
+                                    stellen, um  eine Ausbildung zu machen oder einen Universitätsabschluss zu erlangen.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -114,10 +110,10 @@
                         <div class="card" style='background-image: url("images/Tier_1.jpeg");'>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="">Tierschutz</a></h5>
-                                <p class="card-text">Tierschutz bedeutet die Gefühle und Bedürftigkeit von Tieren über
+                                <p class="card-text">Tierschutz bedeutet, die Gefühle und Bedürftigkeit von Tieren über
                                     die gesetzlichen
                                     Regelungen hinaus zu sehen.</p>
-                                Sowohl im In- als auch Ausland haben Tiere immer nicht genügend Schutz und
+                                Sowohl im In- als auch Ausland haben Tiere nicht immer genügend Schutz und
                                 Rechte. Daher unterstützt die Eilinger Stiftung gemeinnützige, nicht gewinnorientierte
                                 Organisationen, aber auch Einzelpersonen, die sich für den Tierschutz, die Tierrettung
                                 und
@@ -131,7 +127,7 @@
                                 <h5 class="card-title"><a href="">Umwelt- und Naturschutz</a></h5>
                                 <p class="card-text">Umwelt- und Klimaschutz beginnt im Kleinen, auch viele kleine
                                     Initiativen und Projekte
-                                    können viel/eine Menge bewirken.</p>
+                                    können viel bewirken.</p>
                                 Artenschutz, Renaturierung, Nachhaltigkeit, Wiederverwertung,
                                 Wassermanagement sowie Wald- und Gewässerschutz stehen im Fokus. Die Eilinger Stiftung
                                 unterstützt Organisationen und Privatpersonen bei kleinen Projekten, die sich für diese
@@ -153,19 +149,19 @@
                     <h2>Projekte</h2>
                     <p>Jedes Jahr unterstützt und fördert die Eilinger Stiftung Projekte, um auch dort zu helfen, wo
                         direkte
-                        und schnelle Hilfe notwendig ist oder wo Behörden, Vereine und Stiftungen nicht unterstützen. Es
+                        und schnelle Hilfe notwendig ist oder wo Behörden, Vereine und andere Stiftungen nicht unterstützen. Es
                         ist
                         dabei wichtig, dass das Geld zu 100 Prozent für das jeweilige Projekt eingesetzt wird, weder
                         Verwaltungs-, Aufwands- noch Personalkosten in Abzug gebracht werden bzw. diese landespezifisch
                         so gering wie möglich gehalten werden.
                         Im Zentrum unserer Förderung 2021 standen Tierschutz, Menschen in Not, Chancengleichheit und
                         Würde wie auch Naturkatastrophen. Da wir meist Projekte über mehrere Jahre begleiten, laufen
-                        einige Projekte auch während der neuen Förderperiode weiter. Ziel ist es, die Projekte nur so
+                        einige Projekte auch während der neuen Förderperiode weiter. Ziel ist es, die Projekte maximal nur so
                         lange
                         zu begleiten, bis sie sich selbst tragen. Das jeweilige Budget wird periodisch entsprechend
                         angepasst
-                        und vermindert, um die Ressourcen für weitere, neue Projekte einzusetzen. Daher ist uns die
-                        Initiative für das Einholen von weiteren Mitteln sehr wichtig.</p>
+                        und vermindert, um die Ressourcen für weitere, neue Projekte einzusetzen. Daher ist es uns wichtig, dass aktiv
+                        das Einholen weiterer Mitteln stattfindet.</p>
                 </div>
 
                 <div class="row">
@@ -174,11 +170,10 @@
                             <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
                             <h4 class="title"><a href="">Tierschutz Schweiz: Rehkitzrettung mit BFH-HAFL-Methode
                                     mittels einer Drohne </a></h4>
-                            <p class="description">Jedes Jahr werden 100erte von Rehkitzen im hohen Gras, das später von
-                                den Bauern abgemäht wird, geboren.
-                                Bei der Ernte werden dann diese Rehkitze, da sie nicht fliehen, lebendig mit in die
-                                Ballen gebunden und ersticken kläglich,
-                                ihre Kadaver verderben dann das Stroh, so dass die Kühe, die dieses Stroh fressen,
+                            <p class="description">Jedes Jahr werden hunderte Rehkitze im hohen Gras, das später von
+                                den Bauern abgemäht wird, geboren. Diese Rehitze werden dann bei der Ernte lebendig 
+                                in die Ballen eingebunden.
+                                Ihre Kadaver verderben das Stroh, das die Kühe fressen und dadurch
                                 elendig verenden.
 
                                 Es gibt verschiedene lokale HelferInnen, die durch den Einsatz von Drohnen vor jeder
@@ -197,23 +192,15 @@
                                 den 17. Dezember 2021 anrichtete,
                                 wurden viele Häuser in der Provinz Bohol auf den Philippinen zerstört. Die
                                 Eilinger-Stiftung hat einen Einmalbetrag für die
-                                Versorgung der Menschen mit Lebensmitteln und zum Wiederaufbau der Häuser STEPS Mission
+                                Versorgung der Menschen mit Lebensmitteln sowie zum Wiederaufbau der Häuser STEPS Mission
                                 zur Verfügung gestellt.
-                                STEPS Mission ist seit 2006 auf den Philippinen tätig und bemüht sich, die
-                                Lebensqualität der Armen und sozial
-                                Benachteiligten zu verbessern, indem sie Bildungsangebote bereitstellt, bei Bedarf
-                                Hilfsaktionen durchführt, Schulungen
-                                zur Sicherung des Lebensunterhalts anbietet und durch ökologische Gartenarbeit und
-                                Seminare Gesundheitsbewusstsein vermittelt.
-                                Seit Beginn der Pandemie bringt die STEPS Mission Lebensmittelspenden zu den Ärmsten auf
-                                der Insel Bohol.
 
-                                Die STEPS Mission konnte mit der schnellen, finanziellen Unterstützung der
-                                Eilinger-Stiftung Soforthilfe leisten und half
-                                beim Wiederaufbau von vielen Häusern, damit die Betroffenen wieder ein Dach über dem
-                                Kopf haben. Außerdem werden durch die
-                                finanzielle Unterstützung an mehreren Tagen der Woche 100erte Menschen mit warmen
-                                Mahlzeiten und Lebensmittelpaketen versorgt,
+                                So konnte durch die schnelle finanzielle Unterstützung der
+                                Eilinger-Stiftung Soforthilfe geleistet und
+                                beim Wiederaufbau von vielen Häusern geholfen werden.
+                                Außerdem konnten so
+                                an mehreren Tagen der Woche hunderte Menschen mit warmen
+                                Mahlzeiten und Lebensmittelpaketen versorgt werden,
                                 da sowohl Strom wie auch Wasser für mehrere Monate nicht zugänglich waren. </p>
                         </div>
                     </div>
@@ -233,7 +220,7 @@
                                 mehr Beschwerden kommt, hat die
                                 Deutsche Organisation Zenias Tiere e.V. aus privaten Mitteln ein Grundstück gekauft und
                                 baut dort ein Tierheim nach Deutschen
-                                Stand mit Quarantänestation auf. Die Eilinger Stiftung unterstützt das Projekt. </p>
+                                Stand mit Quarantänestation auf. Die Eilinger Stiftung unterstützte das Projekt. </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mt-4">
@@ -347,11 +334,11 @@
                         <div class="box">
                             <h3>Bildung Kinder & Jugendliche: Stipendium & Verein </h3>
                             <ul>
-                                <li><i class="bx bx-check"></i> Gesuch für ein Stipendium </li>
-                                <li><i class="bx bx-check"></i> Gesuch für Privatpersonen (ausser Stipendien) </li>
-                                <li><i class="bx bx-check"></i> Gesuch für Vereine oder Organisationen /li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für ein Stipendium </li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen (ausser Stipendien) </li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="/dashboard" class="buy-btn">Zum Gesuchsportal</a>
+                            <a href="{{ route('user_dashboard') }}" class="buy-btn">Zum Gesuchsportal</a>
                         </div>
                     </div>
 
@@ -359,11 +346,10 @@
                         <div class="box">
                             <h3>Tierschutz: Privatperson & Verein </h3>
                             <ul>
-                                <li><i class="bx bx-check"></i> Gesuch für ein Stipendium </li>
-                                <li><i class="bx bx-check"></i> Gesuch für Privatpersonen (ausser Stipendien) </li>
-                                <li><i class="bx bx-check"></i> Gesuch für Vereine oder Organisationen /li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="/dashboard" class="buy-btn">Zum Gesuchsportal</a>
+                            <a href="{{ route('user_dashboard') }}" class="buy-btn">Zum Gesuchsportal</a>
                         </div>
                     </div>
 
@@ -371,23 +357,21 @@
                         <div class="box">
                             <h3>Menschen in Not: Privatperson & Verein </h3>
                             <ul>
-                                <li><i class="bx bx-check"></i> Gesuch für ein Stipendium </li>
-                                <li><i class="bx bx-check"></i> Gesuch für Privatpersonen (ausser Stipendien) </li>
-                                <li><i class="bx bx-check"></i> Gesuch für Vereine oder Organisationen /li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="/dashboard" class="buy-btn">Zum Gesuchsportal</a>
+                            <a href="{{ route('user_dashboard') }}" class="buy-btn">Zum Gesuchsportal</a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
                         <div class="box">
-                            <h3>Umwelt & Naturschutz: Privatperson & Verein </h3>
+                            <h3>Umwelt & Naturschutz: Privatperson & Verein </h3> 
                             <ul>
-                                <li><i class="bx bx-check"></i> Gesuch für ein Stipendium </li>
-                                <li><i class="bx bx-check"></i> Gesuch für Privatpersonen (ausser Stipendien) </li>
-                                <li><i class="bx bx-check"></i> Gesuch für Vereine oder Organisationen /li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="/dashboard" class="buy-btn">Zum Gesuchsportal</a>
+                            <a href="{{ route('user_dashboard') }}" class="buy-btn">Zum Gesuchsportal</a>
                         </div>
                     </div>
 

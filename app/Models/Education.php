@@ -8,26 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Education extends Model
 {
     use HasFactory;
-
-    public const EDUCATION = [
-        'Matura' => 'Matura',
-        'FMS' => 'FMS',
-        'Berufslehre' => 'Berufslehre',
-        'BM2' => 'BM2',
-        'Fachschule' => 'Fachschule',
-        'Fachhochschule' => 'Fachhochschule',
-        'Universität' => 'Universität',
-    ];
-
-    public const GRADE = [
-        'BA' => 'Bachelor',
-        'MA' => 'Master',
-    ];
-
-    public const TIME = [
-        'full' => 'Vollzeit',
-        'part' => 'Teilzeit',
-    ];
     protected $table = 'educations';
 
     /**

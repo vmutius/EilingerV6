@@ -9,8 +9,6 @@
     <meta name="keyword" content="">
     <title>Eilinger Stiftung - Admin Dashboard</title>
 
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @vite(['resources/js/app.js'])
@@ -25,52 +23,52 @@
     <div class="sidebar">
         <div class="logo-details">
             <div class="logo_name">Eilinger Stiftung</div>
-            <i class='bx bx-menu' id="btn"></i>
+            <i class="bi bi-list" id="btn"></i>
         </div>
         <ul class="nav-list">
             <li>
                 <a href="{{ route('admin_dashboard') }}">
-                    <i class='bx bx-grid-alt'></i>
+                    <i class="bi bi-grid"></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
                 <a href="{{ route('admin_users') }}">
-                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <i class="bi bi-envelope-open"></i>
                     <span class="links_name">Benutzerübersicht</span>
                 </a>
                 <span class="tooltip">Benutzerübersich mit allen Anträgen </span>
             </li>
             <li>
                 <a href="{{ route('admin_applications') }}">
-                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <i class="bi bi-envelope-check"></i>
                     <span class="links_name">Antragsübersicht</span>
                 </a>
                 <span class="tooltip">Übersicht aller Anträge</span>
             </li>
             <li>
                 <a href="{{ route('admin_projects') }}">
-                    <i class='bx bx-chat'></i>
+                    <i class="bi bi-chat-dots"></i>
                     <span class="links_name">Projekübersicht</span>
                 </a>
                 <span class="tooltip">Übersicht aller Projekte</span>
             </li>
 
             <li>
-                <a href="{{ route('admin_settings') }}">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Einstellungen</span>
-                </a>
-                <span class="tooltip">Einstellungen</span>
-            </li>
-
-            <li>
                 <a href="{{ route('admin_profile.edit') }}">
-                    <i class='bx bx-user'></i>
+                    <i class="bi bi-person"></i>
                     <span class="links_name">Profil</span>
                 </a>
                 <span class="tooltip">Profil</span>
+            </li>
+
+            <li>
+                <a href="{{ route('admin_settings') }}">
+                    <i class="bi bi-gear"></i>
+                    <span class="links_name">Einstellungen</span>
+                </a>
+                <span class="tooltip">Einstellungen</span>
             </li>
         </ul>
     </div>

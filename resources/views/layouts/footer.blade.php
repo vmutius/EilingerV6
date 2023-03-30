@@ -19,10 +19,10 @@
         <div class="col-lg-6 col-md-6 footer-links">
             <h4>Nützliche Links</h4>
             <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('index') }}">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('disclaimer') }}">Disclaimer</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('impressum') }}">Impressum</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('datenschutz') }}">Datenschutzerklärung</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('index') }}">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('disclaimer') }}">Disclaimer</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('impressum') }}">Impressum</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('datenschutz') }}">Datenschutzerklärung</a></li>
             </ul>
         </div>
 

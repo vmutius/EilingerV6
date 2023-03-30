@@ -5,11 +5,11 @@
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section-title">
-                    <h2>Willkommen auf dem Gesuchsportal der Eilinger Stiftung Schweiz </h2>
+                    <h2>Willkommen auf dem Gesuchsportal der Eilinger Stiftung </h2>
                 </div>
                 <p> Sie brauchen für Ihr Projekt oder Ihre berufliche Ausbildung finanzielle Unterstützung? Hier können
                     Sie
-                    Ihre Förderanfrage an die Eilinger Stiftung Schweiz stellen. </p>
+                    Ihre Förderanfrage an die Eilinger Stiftung stellen. </p>
                 <p>Bitte informieren Sie sich zunächst auf unserer Website über die Kriterien einer Förderung. </p>
 
                 <strong>Hinweise zur Eingabe </strong>
@@ -60,7 +60,7 @@
                     </div>
                 </form>
                 <br/>
-                <p> Bei Vereinen und Organisationen ist der Benutzername die E-Mail-Adresse der Kontaktperson. </p>
+                <p> Vereine und Organisationen registrieren bzw. loggen sich bitte mit der E-Mail-Adresse der Kontaktperson ein. </p>
             </div>
         </section>
     </main><!-- End #main -->

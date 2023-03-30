@@ -19,7 +19,7 @@
             <label class="form-label" for="salutation">Anrede *</label>
             <select wire:model.lazy="user.salutation" class="form-select">
                 <option value="" disabled>Bitte Anrede auswählen</option>
-                @foreach (App\Models\User::SALUTATION as $key => $label)
+                @foreach (App\Enums\Salutation::values() as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach
             </select>
@@ -84,7 +84,7 @@
             <label class="form-label" for="bewilligung">Art der Bewilligung (für Ausländer)</label>
             <select wire:model.lazy="user.bewilligung" class="form-select">
                 <option value="">-- Wählen Sie eine Option --</option>
-                @foreach (App\Models\User::BEWILLIGUNG as $key => $label)
+                @foreach (App\Enums\Bewilligung::values() as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach
             </select>

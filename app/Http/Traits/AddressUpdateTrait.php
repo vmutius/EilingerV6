@@ -13,8 +13,7 @@ trait AddressUpdateTrait
     public function updatedStreet()
     {
         request()->session()->forget('valid-street');
-        $validated = $this->validateOnly('street');
-        if (! empty($validated)) {
+        if ($this->validateOnly('street')) {
             session(['valid-street' => 'OK']);
         }
     }
@@ -22,8 +21,7 @@ trait AddressUpdateTrait
     public function updatedPlz()
     {
         request()->session()->forget('valid-plz');
-        $validated = $this->validateOnly('plz');
-        if (! empty($validated)) {
+        if ($this->validateOnly('plz')) {
             session(['valid-plz' => 'OK']);
         }
     }
@@ -31,9 +29,24 @@ trait AddressUpdateTrait
     public function updatedTown()
     {
         request()->session()->forget('valid-town');
-        $validated = $this->validateOnly('town');
-        if (! empty($validated)) {
+        if ($this->validateOnly('town')) {
             session(['valid-town' => 'OK']);
+        }
+    }
+
+    public function updatedNumber()
+    {
+        request()->session()->forget('valid-number');
+        if ($this->validateOnly('number')) {
+            session(['valid-number' => 'OK']);
+        }
+    }
+
+    public function updatedCountryId()
+    {
+        request()->session()->forget('valid-country_id');
+        if ($this->validateOnly('country_id')) {
+            session(['valid-country_id' => 'OK']);
         }
     }
 }

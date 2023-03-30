@@ -30,7 +30,7 @@
                     <select wire:model.lazy="salutation" class="form-select @error('salutation') is-invalid @enderror @if (session('valid-salutation'))
                         is-valid @endif" id="salutation" type="text" autofocus autocomplete="off">
                         <option selected>Bitte Anrede auswählen...</option>
-                        @foreach (App\Models\User::SALUTATION as $key => $label)
+                        @foreach (App\Enums\Salutation::values() as $key => $label)
                             <option value="{{ $key }}"
                                 {{ old('salutation', '') === (string) $key ? 'selected' : '' }}>{{ $label }}
                             </option>
@@ -201,7 +201,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="password">Passwort *</label>
+                    <label class="form-label" for="password">Passwort * (Mindestens 8 Zeichen, einen Grossbuchstaben, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen)</label>
                     <input wire:model.lazy="password" class="form-control @error('password') is-invalid @enderror @if (session('valid-password'))
                         is-valid @endif" id="password" type="password" autofocus autocomplete="off">
                     @error('password')
@@ -231,11 +231,11 @@
                         </div>
                     @endif
                 </div>
-                </br>
+                <br/>
                 <div class="form-check">
                     <label class="form-label" for="terms">
                         <input wire:model.lazy="terms" class="@error('terms') is-invalid @enderror @if (session('valid-terms'))
-                            is-valid @endif" id="terms" type="checkbox" required>
+                            is-valid @endif" id="terms" type="checkbox">
                         @error('terms')
                             <div id="invalidFeedback" class="invalid-feedback">
                                 {{ $message }}
