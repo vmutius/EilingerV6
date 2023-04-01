@@ -2,8 +2,11 @@
 
 namespace App\Http\Livewire\User;
 
-use App\Models\Application;
+use App\Enums\Form;
+use App\Enums\Bereich;
 use Livewire\Component;
+use App\Models\Application;
+use Illuminate\Validation\Rules\Enum;
 
 class Antraege extends Component
 {
@@ -12,11 +15,14 @@ class Antraege extends Component
     public $bereich;
     public $form;
 
-    protected $rules = [
-        'name' => 'required',
-        'bereich' => 'required',
-        'form' => 'required',
-    ];
+    protected function rules() : array
+    {   
+        return([
+            'name' => 'required',
+            'bereich' => ['required',new Enum(Bereich::class)], 
+            'form' => ['required',new Enum(Form::class)],
+        ]);
+    }
 
     public function render()
     {

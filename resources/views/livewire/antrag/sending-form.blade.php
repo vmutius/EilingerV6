@@ -50,7 +50,7 @@
             </tr>
             <tr>
                 <td>5</td>
-                <td>Ausahlung</td>
+                <td>Auszahlung</td>
                 <td>
                     @if ($abweichendeAddressDraft === 1)
                         <span id="boot-icon" class="bi bi-x-circle" style="color: rgb(255, 0, 0);"></span>

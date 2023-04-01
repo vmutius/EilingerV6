@@ -39,7 +39,7 @@
             <div class="col-sm-2">
                 <label class="form-label" for="get_amount">Bezieht Ausbildungsbeiträge</label>
                 <select wire:model.lazy="siblings.{{ $index }}.get_amount" class="form-select">
-                    <option value="">-- Wählen Sie eine Option --</option>
+                    <option selected value="">-- Wählen Sie eine Option --</option>
                     @foreach (App\Models\Sibling::get_amount as $key => $label)
                         <option value="{{ $key }}">{{ $label }}</option>
                     @endforeach

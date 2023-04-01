@@ -11,7 +11,7 @@
             <div class="col-sm-2">
                 <label class="form-label" for="job_type">Elternteil</label>
                 <select wire:model.lazy="parents.{{ $index }}.parent_type" name="parent_type" class="form-select">
-                    <option value="">-- Wählen Sie eine Option --</option>
+                    <option selected value="">-- Wählen Sie eine Option --</option>
                     @foreach (App\Models\Parents::PARENT_TYPE as $key => $label)
                         <option value="{{ $key }}">{{ $label }}</option>
                     @endforeach
@@ -59,7 +59,7 @@
             <div class="col-sm-2">
                 <label class="form-label" for="job_type">Arbeitsverhältnis</label>
                 <select wire:model.lazy="parents.{{ $index }}.job_type" name="job_type" class="form-select">
-                    <option value="">-- Wählen Sie eine Option --</option>
+                    <option selected value="">-- Wählen Sie eine Option --</option>
                     @foreach (App\Models\Parents::JOB_TYPE as $key => $label)
                         <option value="{{ $key }}">{{ $label }}</option>
                     @endforeach

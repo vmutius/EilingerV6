@@ -17,14 +17,15 @@
             <div class="col-sm-6">
                 <label class="form-label" for="education">Ausbildung *</label>
                 <select wire:model.lazy="education.education" name="education" class="form-select">
-                    <option value="">-- Wählen Sie eine Option --</option>
+                    <option selected value="">-- Wählen Sie eine Option --</option>
                     @foreach (\App\Enums\Education::cases() as $education)
                         <option value="{{ $education->value }}">{{ $education->value }}</option>
                     @endforeach
-                    @error('education.education')
-                        <span class="danger">{{ $message }}</span>
-                    @enderror
                 </select>
+                @error('education.education')
+                    <div style="font-size: 11px; color: red">{{ $message }}</div>
+                @enderror
+
             </div>
             <div class="col-sm-6">
                 <label class="form-label" for="name">Bezeichnung und Ort der Ausbildungsstätte *</label>
@@ -48,12 +49,10 @@
                     @foreach (App\Enums\Grade::cases() as $grade)
                         <option value="{{ $grade->value }}">{{ $grade->value }}</option>
                     @endforeach
-                    <span class="text-danger">
-                        @error('education.grade')
-                            {{ $message }}
-                        @enderror
-                    </span>
                 </select>
+                @error('education.grade')
+                    <div style="font-size: 11px; color: red">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col-sm-6"> 
                 <label class="form-label" for="ects_points">ECTS-Punkte für das kommende Semester gemäss Beleg *</label>
@@ -71,12 +70,10 @@
                     @foreach (App\Enums\Time::cases() as $time)
                         <option value="{{ $time->value }}">{{ $time->value }}</option>
                     @endforeach
-                    <span class="text-danger">
-                        @error('education.time')
-                            {{ $message }}
-                        @enderror
-                    </span>
                 </select>
+                @error('education.time')
+                    <div style="font-size: 11px; color: red">{{ $message }}</div>
+                @enderror
             </div>
 
 

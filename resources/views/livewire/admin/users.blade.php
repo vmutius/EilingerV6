@@ -49,7 +49,7 @@
                             <td>{{ $user->created_at ? $user->created_at->format('d.m.Y H:i') :null }}</td>
                             @forelse ($user->sendApplications as $application)
                                 <td><a href="{{ route('admin_antrag', $application->id) }}">{{ $application->name }}</a></td>
-                                <td>{{ $application->bereich }}</td>
+                                <td>{{ $application->bereich->name }}</td>
                                 <td>{{ $application->created_at ? $application->created_at->format('d.m.Y H:i') : null }}</td>
                                 <td>{{ $application->updated_at ? $application->updated_at->format('d.m.Y H:i') : null }}</td>
                                 <td><span class="badge text-bg-{{ $application->appl_status_context }}">{{ $application->appl_status }}</span></td>

@@ -65,22 +65,24 @@
                             <br />
                             Bereich des Projektes:
                             <br />
+
                             <select wire:model.lazy="bereich" class="form-select">
-                                <option selected>Bitte auswählen...</option>
-                                @foreach (App\Enums\Bereich::cases()  as $key => $label)
-                                    <option value="{{ $key }}">{{ $label }}</option>
+                                <option selected value="">Bitte auswählen...</option>
+                                @foreach (App\Enums\Bereich::cases() as $bereich)
+                                    <option value="{{ $bereich }}">{{ $bereich }}</option>
                                 @endforeach
                             </select>
                             @error('bereich')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
+                           
                             <br />
                             Gewünschte Antragsform des Projektes:
                             <br />
                             <select wire:model.lazy="form" class="form-select">
-                                <option selected>Bitte auswählen...</option>
-                                @foreach (App\Enums\Form::cases()  as $key => $label)
-                                    <option value="{{ $key }}">{{ $label }}</option>
+                                <option selected value="">Bitte auswählen...</option>
+                                @foreach (App\Enums\Form::cases()  as $form)
+                                    <option value="{{ $form }}">{{ $form }}</option>
                                 @endforeach
                             </select>
                             @error('form')

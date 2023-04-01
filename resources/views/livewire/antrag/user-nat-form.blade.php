@@ -18,12 +18,14 @@
         <div class="col-sm-2">
             <label class="form-label" for="salutation">Anrede *</label>
             <select wire:model.lazy="user.salutation" class="form-select">
-                <option value="" disabled>Bitte Anrede auswählen</option>
+                <option selected value="" disabled>Bitte Anrede auswählen</option>
                 @foreach (App\Enums\Salutation::cases() as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach
             </select>
-            <span class="text-danger">@error('user.salutation'){{ $message }}@enderror</span>
+            @error('user.salutatiom')
+                <div style="font-size: 11px; color: red">{{ $message }}</div>
+            @enderror
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="firstname">Vorname *</label>
@@ -39,12 +41,14 @@
         <div class="col-sm-2">
             <label class="form-label" for="country">Nationalität *</label>
             <select wire:model.lazy="user.nationality" class="form-select">
-                <option disabled>Bitte auswählen...</option>
+                <option selected value="">Bitte auswählen...</option>
                 @foreach ($countries as $country)
                     <option value="{{ $country->short_code }}">{{ $country->name }}</option>
                 @endforeach
-                <span class="text-danger">@error('user.nationality'){{ $message }}@enderror</span>
             </select>
+            @error('user.nationality')
+                <div style="font-size: 11px; color: red">{{ $message }}</div>
+            @enderror
             
         </div>
         <div class="col-sm-5">
@@ -59,8 +63,10 @@
                 @foreach (\App\Enums\CivilStatus::cases() as $status)
                     <option value="{{ $status->value }}">{{ $status->value }}</option>
                 @endforeach
-                <span class="text-danger">@error('user.civil_status'){{ $message }}@enderror</span>
             </select>
+            @error('user.civil_status')
+                <div style="font-size: 11px; color: red">{{ $message }}</div>
+            @enderror
         </div>
 
         <div class="col-md-4">
@@ -83,9 +89,9 @@
         <div class="col-sm-6">
             <label class="form-label" for="bewilligung">Art der Bewilligung (für Ausländer)</label>
             <select wire:model.lazy="user.bewilligung" class="form-select">
-                <option value="">-- Wählen Sie eine Option --</option>
-                @foreach (App\Enums\Bewilligung::cases() as $key => $label)
-                    <option value="{{ $key }}">{{ $label }}</option>
+                <option selected value="">-- Wählen Sie eine Option --</option>
+                @foreach (App\Enums\Bewilligung::cases() as $bewilligung)
+                    <option value="{{ $bewilligung->value }}">{{ $bewilligung->value }}</option>
                 @endforeach
             </select>
         </div>

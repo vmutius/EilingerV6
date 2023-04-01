@@ -31,6 +31,6 @@ class SetStatus extends Component
 
     public function setStatus() 
     {
-
+        $application->appl_status = $this->appl_status;
     }
 }

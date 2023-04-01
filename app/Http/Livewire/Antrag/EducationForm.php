@@ -4,10 +4,10 @@ namespace App\Http\Livewire\Antrag;
 
 use Livewire\Component;
 use App\Models\Education as EducationModel;
-use Illuminate\Validation\Rules\Enum;
 use App\Enums\Education;
 use App\Enums\Grade;
 use App\Enums\Time;
+use Illuminate\Validation\Rules\Enum;
 
 class EducationForm extends Component
 {

@@ -31,7 +31,7 @@
         <div class="col-sm-2">
             <label class="form-label" for="salutation">Anrede</label>
             <select wire:model.lazy="user.salutation" class="form-select">
-                <option value="" disabled>Bitte Anrede auswählen</option>
+                <option selected value="">Bitte Anrede auswählen</option>
                 @foreach (App\Enums\Salutation::cases() as $key => $label)
                     <option value="{{ $key }}">{{ $label }}</option>
                 @endforeach

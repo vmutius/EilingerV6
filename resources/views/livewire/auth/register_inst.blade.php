@@ -107,7 +107,7 @@
                         <label class="form-label" for="country">Land *</label>
                         <select wire:model.lazy="country_id" class="form-select @error('country_id') is-invalid @enderror @if (session('valid-country_id'))
                             is-valid @endif" id="country_id" type="text" autofocus autocomplete="off">
-                            <option selected>Bitte Land auswählen...</option>
+                            <option selected value="">Bitte Land auswählen...</option>
                             @foreach ($countries as $country)
                                 <option value="{{ $country->id }}">{{ $country->name }}
                                 </option>
@@ -178,7 +178,7 @@
                         <label class="form-label" for="salutation">Anrede *</label>
                         <select wire:model.lazy="salutation" class="form-select @error('salutation') is-invalid @enderror @if (session('valid-salutation'))
                             is-valid @endif" id="salutation" type="text" autofocus autocomplete="off">
-                            <option selected>Bitte Anrede auswählen...</option>
+                            <option selected value="">Bitte Anrede auswählen...</option>
                             @foreach (App\Enums\Salutation::cases() as $key => $label)
                                 <option value="{{ $key }}"
                                     {{ old('salutation', '') === (string) $key ? 'selected' : '' }}>{{ $label }}
