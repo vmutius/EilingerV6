@@ -2,27 +2,34 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use App\Models\Education;
 use Livewire\Component;
+use App\Models\Education as EducationModel;
+use Illuminate\Validation\Rules\Enum;
+use App\Enums\Education;
+use App\Enums\Grade;
+use App\Enums\Time;
 
 class EducationForm extends Component
 {
     public $education;
 
-    protected $rules = [
-        'education.education' => 'required',
-        'education.name' => 'required',
-        'education.final' => 'required',
-        'education.grade' => 'required',
-        'education.ects_points' => 'required',
-        'education.time' => 'required',
-    ];
+    protected function rules() : array
+    {   
+        return([
+            'education.education' =>  ['required',new Enum(Education::class)], 
+            'education.name' => 'required',
+            'education.final' => 'required',
+            'education.grade' =>  ['required',new Enum(Grade::class)], 
+            'education.ects_points' => 'required',
+            'education.time' =>  ['required',new Enum(Time::class)], 
+        ]);
+    }
 
     public function mount()
     {
-        $this->education = Education::where('user_id', auth()->user()->id)
+        $this->education = EducationModel::where('user_id', auth()->user()->id)
             ->where('application_id', session()->get('appl_id'))
-            ->first() ?? new Education;
+            ->first() ?? new EducationModel;
     }
 
     public function render()

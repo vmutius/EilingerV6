@@ -56,8 +56,8 @@
             <label class="form-label" for="civil_status">Zivilstand *</label>
             <select wire:model.lazy="user.civil_status" class="form-select">
                 <option selected value="">-- Wählen Sie eine Option --</option>
-                @foreach (\App\Enums\CivilStatus::cases() as $key => $label)
-                    <option value="{{ $key }}">{{ $label }}</option>
+                @foreach (\App\Enums\CivilStatus::cases() as $status)
+                    <option value="{{ $status->value }}">{{ $status->value }}</option>
                 @endforeach
                 <span class="text-danger">@error('user.civil_status'){{ $message }}@enderror</span>
             </select>

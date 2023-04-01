@@ -39,4 +39,8 @@ class Application extends Model
             ApplStatus::BLOCKED => 'danger',
         ][$this->appl_status] ?? 'gray'; 
     }
+
+    protected $casts = [
+        'appl_status' => ApplStatus::class,
+    ];
 }

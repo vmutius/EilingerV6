@@ -4,8 +4,9 @@ namespace App\Http\Livewire\Antrag;
 
 use App\Models\Country;
 use Livewire\Component;
-use Illuminate\Validation\Rules\Enum;
+use App\Enums\Bewilligung;
 use App\Enums\CivilStatus;
+use Illuminate\Validation\Rules\Enum;
 
 class UserNatForm extends Component
 {
@@ -22,7 +23,7 @@ class UserNatForm extends Component
             'user.nationality' => 'required',
             'user.civil_status' => ['required',new Enum(CivilStatus::class)], 
             'user.in_ch_since' => 'nullable',
-            'user.bewilligung' => 'required_if:user.in_ch_since,date',
+            'user.bewilligung' => ['required_if:user.in_ch_since,date', new Enum(Bewilligung::class)],
         ]);
     }
 

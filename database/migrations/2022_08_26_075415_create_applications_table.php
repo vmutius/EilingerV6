@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Enums\ApplStatus;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateApplicationsTable extends Migration
 {
@@ -12,7 +13,7 @@ class CreateApplicationsTable extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('appl_status')->default('not_send');
+            $table->string('appl_status')->default(ApplStatus::NOT_SEND->value);
             $table->string('bereich');
             $table->string('form');
             $table->date('start_appl')->nullable();

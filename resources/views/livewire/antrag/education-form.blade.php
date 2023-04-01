@@ -18,8 +18,8 @@
                 <label class="form-label" for="education">Ausbildung *</label>
                 <select wire:model.lazy="education.education" name="education" class="form-select">
                     <option value="">-- Wählen Sie eine Option --</option>
-                    @foreach (\App\Enums\Education::cases() as $key => $label)
-                        <option value="{{ $key }}">{{ $label }}</option>
+                    @foreach (\App\Enums\Education::cases() as $education)
+                        <option value="{{ $education->value }}">{{ $education->value }}</option>
                     @endforeach
                     @error('education.education')
                         <span class="danger">{{ $message }}</span>
@@ -45,8 +45,8 @@
                 <label class="form-label" for="grade">Abschluss *</label>
                 <select wire:model.lazy="education.grade" name="grade" class="form-select">
                     <option selected value="">-- Wählen Sie eine Option --</option>
-                    @foreach (App\Enums\Grade::cases() as $key => $label)
-                        <option value="{{ $key }}">{{ $label }}</option>
+                    @foreach (App\Enums\Grade::cases() as $grade)
+                        <option value="{{ $grade->value }}">{{ $grade->value }}</option>
                     @endforeach
                     <span class="text-danger">
                         @error('education.grade')
@@ -68,8 +68,8 @@
                 <label class="form-label" for="time">Pensum *</label>
                 <select wire:model.lazy="education.time" id="time" name="time" class="form-select">
                     <option selected value="">-- Wählen Sie eine Option --</option>
-                    @foreach (App\Enums\Time::cases() as $key => $label)
-                        <option value="{{ $key }}">{{ $label }}</option>
+                    @foreach (App\Enums\Time::cases() as $time)
+                        <option value="{{ $time->value }}">{{ $time->value }}</option>
                     @endforeach
                     <span class="text-danger">
                         @error('education.time')
