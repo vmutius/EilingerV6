@@ -7,18 +7,19 @@ use App\Models\Application;
 
 class Message extends Component
 {
-    public $applications;
+    public $application;
     
-    public function mount()
+    public function mount($application_id)
     {
-        $this->applications = Application::where('user_id', auth()->user()->id)
-            ->with('messages')
+        $this->application = Application::where('id', $application_id)
+            ->with('messages')    
             ->get();
     }
+
     public function render()
     {
         return view('livewire.user.message', [
-            'applications' => $this->applications,
+            'application' => $this->application,
         ])
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }

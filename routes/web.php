@@ -40,7 +40,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('user/antraege', App\Http\Livewire\User\Antraege::class)->name('user_antraege');
     Route::get('user/antrag/{application_id}', App\Http\Livewire\User\Antrag::class)->name('user_antrag');
     Route::get('user/gesuch', App\Http\Livewire\User\Gesuch::class)->name('user_gesuch');
-    Route::get('user/nachrichten', App\Http\Livewire\User\Message::class)->name('user_nachrichten');
+    Route::get('user/nachrichten', App\Http\Livewire\User\AllMessages::class)->name('user_nachrichten');
+    Route::get('user/nachricht/{application_id}', App\Http\Livewire\User\Message::class)->name('user_nachricht');
     Route::get('user/profile', [ProfileController::class, 'edit'])->name('user_profile.edit');
     Route::patch('user/profile', [ProfileController::class, 'update'])->name('user_profile.update');
     Route::delete('user/profile', [ProfileController::class, 'destroy'])->name('user_profile.destroy');

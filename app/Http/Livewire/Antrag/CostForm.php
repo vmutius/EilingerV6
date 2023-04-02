@@ -9,18 +9,30 @@ class CostForm extends Component
 {
     public $cost;
 
-    protected $rules = [
-        'cost.semester_fees' => 'required|numeric|between:0,100000',
-        'cost.fees' => 'required|numeric|between:0,100000',
-        'cost.educational_material' => 'required|numeric|between:0,100000',
-        'cost.excursion' => 'required|numeric|between:0,100000',
-        'cost.travel_expenses' => 'required|numeric|between:0,100000',
-        //'cost.cost_of_living_with_parents' => 'required_without_all:cost_of_living_alone,cost_of_living_single_parent,cost_of_living_with_partner|numeric|between:0,100000',
-        //'cost.cost_of_living_alone' => 'required_without_all:cost_of_living_with_parents,cost_of_living_single_parent, cost_of_living_with_partner|numeric|between:0,100000',
-        //'cost.cost_of_living_single_parent' => 'required_without_all:cost_of_living_with_parents,cost_of_living_alone,cost_of_living_with_partner|numeric|between:0,100000',
-        //'cost.cost_of_living_with_partner' => 'required_without_all:cost_of_living_with_parents,cost_of_living_alone,cost_of_living_single_parent|numeric|between:0,100000',
-        'cost.number_of_children' => 'required|numeric|between:0,100000',
-    ];
+    protected function rules() : array
+    {   
+        return([
+            'cost.semester_fees' => 'required|numeric|between:0,100000',
+            'cost.fees' => 'required|numeric|between:0,100000',
+            'cost.educational_material' => 'required|numeric|between:0,100000',
+            'cost.excursion' => 'required|numeric|between:0,100000',
+            'cost.travel_expenses' => 'required|numeric|between:0,100000',
+
+            'cost.cost_of_living_with_parents' => 'nullable|required_without_all:cost.cost_of_living_alone,
+                cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric|between:0,100000',
+
+            'cost.cost_of_living_alone' => 'nullable|required_without_all:cost.cost_of_living_with_parents,
+                cost.cost_of_living_single_parent, cost.cost_of_living_with_partner|numeric|between:0,100000',
+
+            'cost.cost_of_living_single_parent' => 'nullable|required_without_all:cost.cost_of_living_with_parents,
+                cost.cost_of_living_alone,cost.cost_of_living_with_partner|numeric|between:0,100000',
+
+            'cost.cost_of_living_with_partner' => 'nullable|required_without_all:cost.cost_of_living_with_parents,
+                cost.cost_of_living_alone,cost.cost_of_living_single_parent|numeric|between:0,100000',
+
+            'cost.number_of_children' => 'required|numeric|between:0,100',
+        ]);
+    }
 
     public function mount()
     {

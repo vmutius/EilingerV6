@@ -5,9 +5,6 @@
             <div>
                 <small>Angaben über die Kontoverbindung</small>
             </div>
-            <div>
-                {{-- @livewire('toogle-draft', ['model' => $account]) --}}
-            </div>
         </div>
     </div>
     <div class="row g-3">

@@ -5,9 +5,6 @@
             <div>
                 <small>Angaben über den Wohnsitz</small>
             </div>
-            <div>
-                {{-- @livewire('toogle-draft', ['model' => $address]) --}}
-            </div>
         </div>
     </div>
     <div class="row g-3">

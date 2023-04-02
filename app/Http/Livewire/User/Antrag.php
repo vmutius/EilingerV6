@@ -13,8 +13,7 @@ class Antrag extends Component
 
     public function mount($application_id)
     {
-        $this->application = Application::where('user_id', auth()->user()->id)
-            ->first() ?? new Application;
+        $this->application = Application::where('id', $application_id)->get();
         session(['appl_id' => $application_id]);
     }
 

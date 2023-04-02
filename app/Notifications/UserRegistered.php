@@ -3,21 +3,20 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class NewMessageReceived extends Notification
+class UserRegistered extends Notification
 {
     use Queueable;
-    private $newMessageData;
+    private $newUserData;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct($newMessageData)
+    public function __construct($newUserData)
     {
-        $this->newMessageData = $newMessageData;
+        $this->newUserData = $newUserData;
     }
 
     /**
@@ -36,8 +35,8 @@ class NewMessageReceived extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->line($this->newUserData['subject'])
+                    ->action($this > newUserData['body'], url('/'))
                     ->line('Thank you for using our application!');
     }
 

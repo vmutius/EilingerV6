@@ -5,9 +5,6 @@
             <div>
                 <small>Abweichende Adresse bei Wochenentaufhalt. Wenn sie keine abweichende Adresse haben, brauchen Sie nichts einzugeben.</small>
             </div>
-            <div>
-                {{-- @livewire('toogle-draft', ['model' => $abweichendeAddress]) --}}
-            </div>
         </div>
     </div>
     <div class="row g-3">
@@ -37,7 +34,7 @@
         <div class="col-sm-2">
             <label class="form-label" for="country">Land *</label>
             <select wire:model.lazy="abweichendeAddress.country_id" class="form-select">
-                <option>Bitte auswählen...</option>
+                <option selected value="">Bitte auswählen...</option>
                 @foreach ($countries as $country)
                     <option value="{{ $country->id }}">{{ $country->name }}</option>
                 @endforeach

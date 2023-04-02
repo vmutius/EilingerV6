@@ -43,13 +43,15 @@ class MessagesSection extends Component
     public function postMessage()
     {
         $this->validate();
-        Message::create([
+        $newMessage = Message::create([
             'user_id' => auth()->user()->id,
             'application_id' => $this->application->id,
             'body' => $this->body,
         ]);
         
         $this->reset('body');
+
+        $this->application->user->notify(new MessageSend($newMessage));
 
         session()->flash('message', 'Nachricht gespeichert');
     }

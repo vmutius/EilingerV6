@@ -65,10 +65,10 @@
             </div>
             <div class="col-sm-6">
                 <label class="form-label" for="time">Pensum *</label>
-                <select wire:model.lazy="education.time" id="time" name="time" class="form-select">
+                <select wire:model.lazy="education.time" class="form-select">
                     <option selected value="">-- Wählen Sie eine Option --</option>
                     @foreach (App\Enums\Time::cases() as $time)
-                        <option value="{{ $time->value }}">{{ $time->value }}</option>
+                        <option value="{{ $time->value }}">{{ $time->name }}</option>
                     @endforeach
                 </select>
                 @error('education.time')
