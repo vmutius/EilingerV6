@@ -2,9 +2,10 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Application;
 use App\Models\Message;
 use Livewire\Component;
+use App\Models\Application;
+use App\Notifications\MessageSend;
 
 class MessagesSection extends Component
 {

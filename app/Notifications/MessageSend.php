@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\Message;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -10,14 +11,14 @@ use Illuminate\Notifications\Notification;
 class MessageSend extends Notification
 {
     use Queueable;
-    private $newMessageData;
+    public $message;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct($newMessageData)
+    public function __construct(Message $message)
     {
-        $this->newMessageData = $newMessageData;
+        $this->message = $message;
     }
 
     /**
@@ -27,7 +28,7 @@ class MessageSend extends Notification
      */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -50,7 +51,11 @@ class MessageSend extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            //
+            'message_id' => $this->message->id,
+            'message_body' => $this->message->body,
+            'user_name' => $this->message->user->name,
+            'application_id' => $this->message->application->id,
+            'application_bereich' => $this->message->application->bereich,
         ];
     }
 }

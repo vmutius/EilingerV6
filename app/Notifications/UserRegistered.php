@@ -9,14 +9,13 @@ use Illuminate\Notifications\Notification;
 class UserRegistered extends Notification
 {
     use Queueable;
-    private $newUserData;
-
+    public $user;
     /**
      * Create a new notification instance.
      */
-    public function __construct($newUserData)
+    public function __construct(User $user)
     {
-        $this->newUserData = $newUserData;
+        $this->user = $user;
     }
 
     /**
@@ -35,9 +34,9 @@ class UserRegistered extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line($this->newUserData['subject'])
-                    ->action($this > newUserData['body'], url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject('Eilinger Stiftung: Neuer Benutzer')             
+            ->line('Ein neuer Benutzer $user hat sich registiert')
+            ->line('Thank you for using our application!');
     }
 
     /**
