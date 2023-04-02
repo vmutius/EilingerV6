@@ -53,10 +53,8 @@
                             Anrede:
                             <select wire:model.lazy="salutation" class="form-select" type="text">
                             <option selected>Bitte Anrede auswählen...</option>
-                                @foreach (App\Enums\Salutation::cases() as $key => $label)
-                                    <option value="{{ $key }}"
-                                        {{ old('salutation', '') === (string) $key ? 'selected' : '' }}>{{ $label }}
-                                    </option>
+                                @foreach (App\Enums\Salutation::cases() as $salutation)
+                                    <option value="{{ $salutation->value }}">{{ $salutation->name }}</option>
                                 @endforeach
                             </select>
                             @error('salutation')

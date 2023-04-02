@@ -94,6 +94,9 @@
                     <option value="{{ $bewilligung->value }}">{{ $bewilligung->value }}</option>
                 @endforeach
             </select>
+            @error('user.bewilligung')
+                <div style="font-size: 11px; color: red">{{ $message }}</div>
+            @enderror
         </div>
 
         <div class="col-md-12 text-center">

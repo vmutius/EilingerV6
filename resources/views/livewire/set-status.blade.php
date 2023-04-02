@@ -14,7 +14,7 @@
             <div class="col-md-10">
                 @foreach (\App\Enums\ApplStatus::cases() as $status)
                     <input type="radio" wire:model.lazy="appl_status" value={{ $status->value }}>
-                    <span>{{ $status->value }}</span>
+                    <span>{{ $status->name }}</span>
                 @endforeach
                 <span class="text-danger">
                     @error('appl_status')
