@@ -88,6 +88,17 @@
                             @error('form')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
+                            <br />
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">Erstantrag
+                                    <input wire:model.lazy="is_first" class="form-check-input" type="radio" value = "1">
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">Folgeantrag
+                                    <input wire:model.lazy="is_first" class="form-check-input" type="radio" value = "0">
+                                </label>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">Speichern</button>

@@ -2,16 +2,11 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use App\Models\Country;
 use Livewire\Component;
-use App\Enums\Bewilligung;
-use App\Enums\CivilStatus;
-use Illuminate\Validation\Rules\Enum;
 
-class UserNatForm extends Component
+class UserNatDarlehenForm extends Component
 {
     public $user;
-    public $countries;
 
     protected function rules() : array
     {   
@@ -20,22 +15,20 @@ class UserNatForm extends Component
             'user.lastname' => 'required',
             'user.birthday' => 'required|date',
             'user.salutation' => 'required',
-            'user.nationality' => 'required',
-            'user.civil_status' => ['required',new Enum(CivilStatus::class)], 
-            'user.in_ch_since' => 'nullable',
-            'user.bewilligung' => ['required_with:user.in_ch_since', new Enum(Bewilligung::class)],
+            'user.telefon' => 'required',
+            'user.mobile' => 'sometimes',
+            
         ]);
     }
 
     public function mount()
     {
         $this->user = auth()->user();
-        $this->countries = Country::all();
     }
-
+    
     public function render()
     {
-        return view('livewire.antrag.user-nat-form');
+        return view('livewire.antrag.user-nat-darlehen-form');
     }
 
     public function saveUserNat()
@@ -45,5 +38,4 @@ class UserNatForm extends Component
         $this->user->save();
         session()->flash('success', 'Benutzerdaten aktualisiert.');
     }
-
 }

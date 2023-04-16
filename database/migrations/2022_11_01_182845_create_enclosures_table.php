@@ -27,6 +27,7 @@ class CreateEnclosuresTable extends Migration
             $table->boolean('has_parents_tax_factors')->nullable(); //Steuerfaktoren der Eltern
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

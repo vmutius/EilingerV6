@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class MessageSend extends Notification
+class MessageSend extends Notification implements ShouldQueue
 {
     use Queueable;
     public $message;
@@ -53,7 +53,8 @@ class MessageSend extends Notification
         return [
             'message_id' => $this->message->id,
             'message_body' => $this->message->body,
-            'user_name' => $this->message->user->name,
+            'created_by' => $this->message->user->username,
+            'appl_user' => $this->message->application->user->username,
             'application_id' => $this->message->application->id,
             'application_bereich' => $this->message->application->bereich,
         ];

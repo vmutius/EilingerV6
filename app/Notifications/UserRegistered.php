@@ -2,11 +2,13 @@
 
 namespace App\Notifications;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
 
-class UserRegistered extends Notification
+class UserRegistered extends Notification implements ShouldQueue
 {
     use Queueable;
     public $user;
@@ -35,7 +37,7 @@ class UserRegistered extends Notification
     {
         return (new MailMessage)
             ->subject('Eilinger Stiftung: Neuer Benutzer')             
-            ->line('Ein neuer Benutzer $user hat sich registiert')
+            ->line('Ein neuer Benutzer mit der Emailadresse hat sich registiert')
             ->line('Thank you for using our application!');
     }
 

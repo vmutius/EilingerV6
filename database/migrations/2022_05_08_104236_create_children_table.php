@@ -16,6 +16,7 @@ class CreateChildrenTable extends Migration
             $table->date('birthday');
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

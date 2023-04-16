@@ -21,6 +21,7 @@ class CreateSiblingsTable extends Migration
             $table->string('support_site', 255)->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

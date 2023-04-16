@@ -18,6 +18,7 @@ class CreateAccountsTable extends Migration
             $table->string('IBAN', 34)->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

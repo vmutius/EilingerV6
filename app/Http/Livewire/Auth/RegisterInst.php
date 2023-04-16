@@ -2,15 +2,17 @@
 
 namespace App\Http\Livewire\Auth;
 
-use App\Http\Traits\AddressUpdateTrait;
-use App\Http\Traits\UserUpdateTrait;
+use App\Models\User;
 use App\Models\Address;
 use App\Models\Country;
-use App\Models\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
+use App\Http\Traits\UserUpdateTrait;
+use Illuminate\Support\Facades\Hash;
+use App\Notifications\UserRegistered;
+use Illuminate\Auth\Events\Registered;
+use App\Http\Traits\AddressUpdateTrait;
+use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Notification;
 
 class RegisterInst extends Component
 {
@@ -96,8 +98,11 @@ class RegisterInst extends Component
             'country_id' => $this->country_id,
         ]);
 
-        event(new Registered($user));
+        $admins=User::where('is_admin', 1)->get();
+        Notification::send($admins, new UserRegistered($user));
+        
         auth()->login($user);
+        event(new Registered($user));
 
         return redirect('verify-email');
     }

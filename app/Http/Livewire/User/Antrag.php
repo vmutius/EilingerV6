@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\User;
 
-use App\Models\Address;
+use App\Models\Address;;
 use App\Models\Application;
 use Livewire\Component;
 use App\Enums\ApplStatus;
@@ -10,10 +10,11 @@ use App\Enums\ApplStatus;
 class Antrag extends Component
 {
     public $currentStep = 1;
+    public $application;
 
     public function mount($application_id)
     {
-        $this->application = Application::where('id', $application_id)->get();
+        $this->application = Application::where('id', $application_id)->first();
         session(['appl_id' => $application_id]);
     }
 

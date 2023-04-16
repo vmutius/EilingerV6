@@ -19,6 +19,7 @@ class CreatePartnersTable extends Migration
             $table->date('end')->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

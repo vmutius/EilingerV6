@@ -20,7 +20,9 @@ class CreateApplicationsTable extends Migration
             $table->date('end_appl')->nullable();
             $table->longText('comment');
             $table->longText('reason');
+            $table->boolean('is_first')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

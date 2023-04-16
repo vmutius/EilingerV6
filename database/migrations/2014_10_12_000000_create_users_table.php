@@ -31,10 +31,12 @@ class CreateUsersTable extends Migration
             $table->string('civil_status');
             $table->date('in_ch_since')->nullable();
             $table->char('bewilligung')->nullable();
+            $table->string('contact_partner_aboard');
             $table->boolean('is_draft')->default(true);
             $table->index('email');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

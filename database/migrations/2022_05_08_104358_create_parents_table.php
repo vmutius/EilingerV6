@@ -29,6 +29,7 @@ class CreateParentsTable extends Migration
             $table->year('death')->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

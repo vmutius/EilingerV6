@@ -24,6 +24,7 @@ class CreateEducationsTable extends Migration
             $table->integer('duration_appl')->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

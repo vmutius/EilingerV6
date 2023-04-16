@@ -24,6 +24,7 @@ class CreateCostsTable extends Migration
             $table->decimal('number_of_children', $precision = 8, $scale = 2)->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

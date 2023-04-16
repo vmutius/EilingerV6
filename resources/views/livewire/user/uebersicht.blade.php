@@ -21,8 +21,7 @@
                                     <p class="card-text">Für die Erstellung eines neuen Antrags klicken Sie den Link
                                         oder gehen Sie
                                         über das Menu auf der linken Seite. Hier können Sie auch die noch nicht
-                                        eingereichten Anträge sehen
-                                        und diese weiter bearbeiten</p>
+                                        eingereichten Anträge sehen und diese weiter bearbeiten.</p>
                                     <a href="{{ route('user_antraege') }}" class="card-link">Neuen Antrag erstellen</a>
 
                                 </div>
@@ -33,8 +32,7 @@
                             <div class="card">
                                 <h5 class="card-header">Gesuche</h5>
                                 <div class="card-body">
-                                    <p class="card-text">Alle Anträge, die Sie bereits eingesendet haben, finden Sie
-                                        hier</p>
+                                    <p class="card-text">Alle Anträge, die Sie bereits eingesendet haben, finden Sie hier.</p>
                                     <a href="{{ route('user_gesuch') }}" class="card-link">Gesuche</a>
                                 </div>
                             </div>
@@ -45,10 +43,9 @@
                                 <h5 class="card-header">Nachrichten</h5>
                                 <div class="card-body">
                                     <p class="card-text">Falls es Nachrichten zu Ihren eingesendeten Anträgen gibt,
-                                        finden Sie
-                                        diese hier:
+                                        finden Sie diese hier.
                                     </p>
-                                    <a href="{{ route('user_nachrichten') }}" class="card-link">Gesuche</a>
+                                    <a href="{{ route('user_nachrichten') }}" class="card-link">Nachrichten</a>
                                 </div>
                             </div>
                         </div>
@@ -60,12 +57,10 @@
                                 <h5 class="card-header">Profil</h5>
                                 <div class="card-body">
                                     <p class="card-text">Ihr Benutzerprofile können Sie unten dem unten angehängten Link
-                                        bearbeiten.
-                                        Ihre Email Adresse und Ihr Password können Sie ebenfalls hier anpassen. Bei
-                                        Änderung der Email Adresse
-                                        müssen Sie diese erneut verifizieren.
+                                        bearbeiten. Ihre Email Adresse und Ihr Password können Sie ebenfalls hier anpassen. Bei
+                                        Änderung der Email Adresse müssen Sie diese erneut verifizieren.
                                     </p>
-                                    <a href="{{ route('user_profile.edit') }}" class="card-link">Neuen Antrag erstellen</a>
+                                    <a href="{{ route('user_profile.edit') }}" class="card-link">Benutzerprofil</a>
 
                                 </div>
                             </div>
@@ -75,9 +70,7 @@
                             <div class="card">
                                 <h5 class="card-header">Dateien</h5>
                                 <div class="card-body">
-                                    <p class="card-text">Dateien für Anträge oder laufende Projekte können Sie hier
-                                        anhängen
-                                    </p>
+                                    <p class="card-text">Dateien für Anträge oder laufende Projekte können Sie hier anhängen</p>
                                     <a href="{{ route('user_dateien') }}" class="card-link">Dateien</a>
                                 </div>
                             </div>

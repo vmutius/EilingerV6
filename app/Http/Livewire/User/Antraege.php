@@ -14,6 +14,7 @@ class Antraege extends Component
     public $name;
     public $bereich;
     public $form;
+    public $is_first;
 
     protected function rules() : array
     {   
@@ -21,6 +22,7 @@ class Antraege extends Component
             'name' => 'required',
             'bereich' => ['required',new Enum(Bereich::class)], 
             'form' => ['required',new Enum(Form::class)],
+            'is_first' => 'required',
         ]);
     }
 
@@ -54,11 +56,13 @@ class Antraege extends Component
             'bereich' => $this->bereich,
             'user_id' => auth()->user()->id,
             'form' => $this->form,
+            'is_first' => $this->is_first,
         ]);
 
         $this->name = '';
         $this->bereich = '';
         $this->form = '';
+        $this->is_first = '';
 
         $this->showModal = false;
     }

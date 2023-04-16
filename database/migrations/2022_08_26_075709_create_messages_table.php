@@ -16,6 +16,7 @@ class CreateMessagesTable extends Migration
             $table->boolean('isInternal')->default(false);
             $table->text('body');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

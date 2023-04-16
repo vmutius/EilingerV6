@@ -18,17 +18,10 @@ class CostForm extends Component
             'cost.excursion' => 'required|numeric|between:0,100000',
             'cost.travel_expenses' => 'required|numeric|between:0,100000',
 
-            'cost.cost_of_living_with_parents' => 'nullable|required_without_all:cost.cost_of_living_alone,
-                cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric|between:0,100000',
-
-            'cost.cost_of_living_alone' => 'nullable|required_without_all:cost.cost_of_living_with_parents,
-                cost.cost_of_living_single_parent, cost.cost_of_living_with_partner|numeric|between:0,100000',
-
-            'cost.cost_of_living_single_parent' => 'nullable|required_without_all:cost.cost_of_living_with_parents,
-                cost.cost_of_living_alone,cost.cost_of_living_with_partner|numeric|between:0,100000',
-
-            'cost.cost_of_living_with_partner' => 'nullable|required_without_all:cost.cost_of_living_with_parents,
-                cost.cost_of_living_alone,cost.cost_of_living_single_parent|numeric|between:0,100000',
+            'cost.cost_of_living_with_parents' => 'nullable|required_without_all:cost.cost_of_living_alone,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric|between:0,100000',
+            'cost.cost_of_living_alone' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric|between:0,100000',
+            'cost.cost_of_living_single_parent' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_with_partner|numeric|between:0,100000',
+            'cost.cost_of_living_with_partner' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_single_parent|numeric|between:0,100000',
 
             'cost.number_of_children' => 'required|numeric|between:0,100',
         ]);

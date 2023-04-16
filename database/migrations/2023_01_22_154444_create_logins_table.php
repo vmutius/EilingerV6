@@ -13,6 +13,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('ip_adress', 50);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
