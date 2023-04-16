@@ -22,25 +22,18 @@
                         <option value="{{ $education->value }}">{{ $education->value }}</option>
                     @endforeach
                 </select>
-                @error('education.education')
-                    <div style="font-size: 11px; color: red">{{ $message }}</div>
-                @enderror
+                <span class="text-danger">@error('education.education'){{ $message }}@enderror</span>
 
             </div>
             <div class="col-sm-6">
                 <label class="form-label" for="name">Bezeichnung und Ort der Ausbildungsstätte *</label>
                 <input wire:model.lazy="education.name" type="text" class="form-control" />
-                <span class="text-danger">
-                    @error('education.name')
-                        {{ $message }}
-                    @enderror
-                </span>
+                <span class="text-danger">@error('education.name'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
                 <label class="form-label" for="final">beabsichtigter Abschluss als *</label>
                 <input wire:model.lazy="education.final" type="text" class="form-control" />
-                <span class="text-danger">@error('education.final'){{ $message }}@enderror
-                </span>
+                <span class="text-danger">@error('education.final'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
                 <label class="form-label" for="grade">Abschluss *</label>
@@ -50,18 +43,12 @@
                         <option value="{{ $grade->value }}">{{ $grade->value }}</option>
                     @endforeach
                 </select>
-                @error('education.grade')
-                    <div style="font-size: 11px; color: red">{{ $message }}</div>
-                @enderror
+                <span class="text-danger">@error('education.grade'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6"> 
                 <label class="form-label" for="ects_points">ECTS-Punkte für das kommende Semester gemäss Beleg *</label>
                 <input wire:model.lazy="education.ects_points" type="text" id="ects_points" class="form-control" />
-                <span class="text-danger">
-                    @error('education.ects_points')
-                        {{ $message }}
-                    @enderror
-                </span>
+                <span class="text-danger">@error('education.ects_points'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
                 <label class="form-label" for="time">Pensum *</label>
@@ -71,9 +58,7 @@
                         <option value="{{ $time->value }}">{{ $time->name }}</option>
                     @endforeach
                 </select>
-                @error('education.time')
-                    <div style="font-size: 11px; color: red">{{ $message }}</div>
-                @enderror
+                <span class="text-danger">@error('education.time'){{ $message }}@enderror</span>
             </div>
 
 

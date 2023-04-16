@@ -22,7 +22,7 @@ class Antraege extends Component
             'name' => 'required',
             'bereich' => ['required',new Enum(Bereich::class)], 
             'form' => ['required',new Enum(Form::class)],
-            'is_first' => 'required',
+            'is_first' => 'boolean|required',
         ]);
     }
 

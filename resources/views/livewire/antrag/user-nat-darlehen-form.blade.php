@@ -51,6 +51,12 @@
             <label class="form-label" for="mobile">Mobile</label>
             <input wire:model.lazy="user.mobile" type="text" class="form-control" />
         </div>
+
+        <div class="col-md-12">
+            <label class="form-label" for="contact_partner_aboard">Ansprechpartner im Ausland</label>
+            <input wire:model.lazy="user.contact_partner_aboard" type="text" class="form-control" />
+        </div>
+        
         
         <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-success">

@@ -12,11 +12,11 @@ class AbweichendeAddressForm extends Component
     public $countries;
 
     protected $rules = [
-        'abweichendeAddress.street' => 'nullable',
+        'abweichendeAddress.street' => 'required',
         'abweichendeAddress.number' => 'nullable',
-        'abweichendeAddress.town' => 'nullable',
-        'abweichendeAddress.plz' => 'nullable',
-        'abweichendeAddress.country_id' => 'nullable',
+        'abweichendeAddress.town' => 'required',
+        'abweichendeAddress.plz' => 'required',
+        'abweichendeAddress.country_id' => 'required',
     ];
 
     public function mount()

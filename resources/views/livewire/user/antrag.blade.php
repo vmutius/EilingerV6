@@ -17,14 +17,13 @@
 
     <div class="home-content">
         
-        {{ $application->form }}
         @if (session()->has('message'))
             <div class="alert alert-success">
                 {{ session('message') }}
             </div>
         @endif
 
-        @if ($application->form == 'Stipendium')
+        @if ($application->form->value == 'Stipendium')
             @livewire('user.stipendium')
         @elseif (auth()->user()->type == 'nat')
             @livewire('user.darlehen-privat')

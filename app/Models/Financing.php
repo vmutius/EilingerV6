@@ -23,6 +23,8 @@ class Financing extends Model
         'netto_income',
         'assets',
         'scholarship',
+        'required_amount',
+        'payout_plan',
         'is_draft',
     ];
 

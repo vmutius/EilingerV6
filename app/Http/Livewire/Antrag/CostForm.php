@@ -3,26 +3,27 @@
 namespace App\Http\Livewire\Antrag;
 
 use App\Models\Cost;
+use App\Models\Currency;
 use Livewire\Component;
 
 class CostForm extends Component
 {
     public $cost;
+    public $currencies;
 
     protected function rules() : array
     {   
         return([
+            'cost.currency_id' => 'required',
             'cost.semester_fees' => 'required|numeric|between:0,100000',
             'cost.fees' => 'required|numeric|between:0,100000',
             'cost.educational_material' => 'required|numeric|between:0,100000',
             'cost.excursion' => 'required|numeric|between:0,100000',
             'cost.travel_expenses' => 'required|numeric|between:0,100000',
-
-            'cost.cost_of_living_with_parents' => 'nullable|required_without_all:cost.cost_of_living_alone,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric|between:0,100000',
-            'cost.cost_of_living_alone' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric|between:0,100000',
-            'cost.cost_of_living_single_parent' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_with_partner|numeric|between:0,100000',
-            'cost.cost_of_living_with_partner' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_single_parent|numeric|between:0,100000',
-
+            'cost.cost_of_living_with_parents' => 'nullable|required_without_all:cost.cost_of_living_alone,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric',
+            'cost.cost_of_living_alone' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric',
+            'cost.cost_of_living_single_parent' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_with_partner|numeric',
+            'cost.cost_of_living_with_partner' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_single_parent|numeric',
             'cost.number_of_children' => 'required|numeric|between:0,100',
         ]);
     }
@@ -32,6 +33,7 @@ class CostForm extends Component
         $this->cost = Cost::where('user_id', auth()->user()->id)
             ->where('application_id', session()->get('appl_id'))
             ->first() ?? new Cost;
+        $this->currencies = Currency::all();
     }
 
     public function render()

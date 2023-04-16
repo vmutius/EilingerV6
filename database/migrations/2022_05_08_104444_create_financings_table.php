@@ -12,6 +12,7 @@ class CreateFinancingsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('application_id')->nullable()->onDelete('cascade');
+            $table->foreignId('currency_id')->constrained();
             $table->decimal('personal_contribution', $precision = 8, $scale = 2)->nullable();
             $table->decimal('other_income', $precision = 8, $scale = 2)->nullable();
             $table->string('income_where')->nullable();
@@ -20,6 +21,7 @@ class CreateFinancingsTable extends Migration
             $table->decimal('assets', $precision = 8, $scale = 2)->nullable();
             $table->decimal('scholarship', $precision = 8, $scale = 2)->nullable();
             $table->decimal('required_amount', $precision = 8, $scale = 2)->nullable();
+            $table->string('payout_plan');
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
             $table->softDeletes();

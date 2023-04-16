@@ -19,6 +19,8 @@ class Application extends Model
         'bereich',
         'appl_status',
         'form',
+        'reason',
+        'is_first',
     ];
 
     public function user()
