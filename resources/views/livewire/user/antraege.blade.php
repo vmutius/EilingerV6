@@ -99,6 +99,9 @@
                                     <input wire:model.lazy="is_first" class="form-check-input" type="radio" value = "0">
                                 </label>
                             </div>
+                            @error('is_first')
+                            <div style="font-size: 11px; color: red">{{ $message }}</div>
+                        @enderror
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">Speichern</button>

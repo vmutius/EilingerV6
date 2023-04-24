@@ -38,7 +38,7 @@
         
         <div class="col-sm-2">
             <label for="birthday" class="form-label">Geburtsdatum *</label>
-            <input wire:model.lazy="user.birthday" class="form-control" type="date" placeholder="DD.MM.YYYY" />
+            <x-input-date wire:model="user.birthday" id="birthday" placeholder="DD.MM.YYYY" />
             <span class="text-danger">@error('user.birthday'){{ $message }}@enderror</span>
         </div>
         
