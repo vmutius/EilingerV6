@@ -2,15 +2,16 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use App\Models\Financing;
 use Livewire\Component;
+use App\Models\Currency;
+use App\Models\Financing;
 
 class FinancingForm extends Component
 {
     public $financing;
+    public $currencies;
 
     protected $rules = [
-        'financing.user_id' => 'required|numeric|between:0,100000',
         'financing.personal_contribution' => 'required|numeric|between:0,100000',
         'financing.other_income' => 'required|numeric|between:0,100000',
         'financing.income_where' => 'required',
@@ -18,6 +19,7 @@ class FinancingForm extends Component
         'financing.netto_income' => 'required|numeric|between:0,100000',
         'financing.assets' => 'required|numeric|between:0,100000',
         'financing.scholarship' => 'required|numeric|between:0,100000',
+        'financing.currency_id' => 'required',
     ];
 
     public function mount()
@@ -25,6 +27,7 @@ class FinancingForm extends Component
         $this->financing = Financing::where('user_id', auth()->user()->id)
             ->where('application_id', session()->get('appl_id'))
             ->first() ?? new Financing;
+        $this->currencies = Currency::all();
     }
 
     public function render()

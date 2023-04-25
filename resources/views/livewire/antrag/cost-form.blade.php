@@ -13,10 +13,10 @@
 
         <div class="col-sm-2">
             <label class="form-label" for="currency">Währung *</label>
-            <select wire:model.lazy="cost.currency" class="form-select">
+            <select wire:model.lazy="cost.currency_id" class="form-select">
                 <option selected value="">Bitte auswählen...</option>
                 @foreach ($currencies as $currency)
-                    <option value="{{ $currency->abbreviation }}">{{ $currency->currency }}</option>
+                    <option value="{{ $currency->id }}">{{ $currency->currency }}</option>
                 @endforeach
             </select>
             <span class="text-danger">@error('cost.currency'){{ $message }}@enderror</span>

@@ -22,7 +22,10 @@
                 </form>
             </li>
             <li class="nav-item">
-                <button type="button" class="btn btn-light"> {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</button>
+                <span class="mr-2 d-none d-lg-inline text-gray-600">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span>
+                <div class="avatar avatar-md">
+                    <img src="{{ auth()->user()->avatarUrl() }}" alt="Profile Photo" class="rounded-circle">
+                </div>
             </li>
         </ul>
     </div>

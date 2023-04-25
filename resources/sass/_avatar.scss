@@ -1,0 +1,21 @@
+.avatar {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    vertical-align: middle;
+    border-radius: 50em;
+    transition: margin 0.15s;
+  }
+  
+  .avatar-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50em;
+  }
+
+  .avatar-md {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+  

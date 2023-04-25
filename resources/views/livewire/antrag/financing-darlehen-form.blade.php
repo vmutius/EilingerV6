@@ -11,17 +11,23 @@
 
         <x-notification />
 
-        <div class="col-sm-6">
+        <div class="col-sm-2">
+            <label class="form-label" for="currency">Währung *</label>
+            <select wire:model.lazy="financing.currency_id" class="form-select">
+                <option selected value="">Bitte auswählen...</option>
+                @foreach ($currencies as $currency)
+                    <option value="{{ $currency->id }}">{{ $currency->currency }}</option>
+                @endforeach
+            </select>
+            <span class="text-danger">@error('financing.currency_id'){{ $message }}@enderror</span>
+        </div>
+
+        <div class="col-sm-5">
             <label class="form-label" for="required_amount">Benötigter Betrag</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">CHF</span>
-                </div>
-                <input wire:model.lazy="financing.required_amount" type="number" class="form-control" />
-            </div>
+            <input wire:model.lazy="financing.required_amount" type="number" class="form-control" />
             <span class="text-danger">@error('financing.required_amount'){{ $message }}@enderror</span>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             <label class="form-label" for="payout_plan">Gewünschte Auszahlung</label>
             <select wire:model.lazy="financing.payout_plan" class="form-select">
                 <option selected value="">-- Wählen Sie eine Option --</option>

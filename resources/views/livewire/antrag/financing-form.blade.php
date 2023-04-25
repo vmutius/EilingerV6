@@ -11,54 +11,41 @@
 
         <x-notification/>
 
-        <div class="col-sm-6">
+        <div class="col-sm-2">
+            <label class="form-label" for="currency">Währung *</label>
+            <select wire:model.lazy="financing.currency_id" class="form-select">
+                <option selected value="">Bitte auswählen...</option>
+                @foreach ($currencies as $currency)
+                    <option value="{{ $currency->id }}">{{ $currency->currency }}</option>
+                @endforeach
+            </select>
+            <span class="text-danger">@error('financing.currency_id'){{ $message }}@enderror</span>
+        </div>
+
+
+        <div class="col-sm-5">
             <label class="form-label" for="personal_contribution">Eigenleistung vom Bewerber selbst</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">CHF</span>
-                </div>
-                <input wire:model.lazy="financing.personal_contribution" type="number" class="form-control" />               
-            </div>
+            <input wire:model.lazy="financing.personal_contribution" type="number" class="form-control" />
             <span class="text-danger">@error('financing.personal_contribution'){{ $message }}@enderror</span>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             <label class="form-label" for="netto_income">Einkommen netto des Ehe- / Lebenspartners minus Freibetrag</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">CHF</span>
-                </div>
-                <input wire:model.lazy="financing.netto_income" type="number" class="form-control" />               
-            </div>
+            <input wire:model.lazy="financing.netto_income" type="number" class="form-control" />
             <span class="text-danger">@error('financing.netto_income'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="assets">eigenes Vermögen (Vermögen bei erster Gesuchstellung) </label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">CHF</span>
-                </div>
-                <input wire:model.lazy="financing.assets" type="number" class="form-control" />               
-            </div>
+            <input wire:model.lazy="financing.assets" type="number" class="form-control" />
             <span class="text-danger">@error('financing.assets'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="scholarship">zumutbare Elternleistung gem. Berechnung </label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">CHF</span>
-                </div>
-                <input wire:model.lazy="financing.scholarship" type="number" class="form-control" />               
-            </div>
+            <input wire:model.lazy="financing.scholarship" type="number" class="form-control" />
             <span class="text-danger">@error('financing.scholarship'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="other_income">Anderweitige Einkünfte (Betrag)</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">CHF</span>
-                </div>
-                <input wire:model.lazy="financing.other_income" type="number" class="form-control" />               
-            </div>
+            <input wire:model.lazy="financing.other_income" type="number" class="form-control" />
             <span class="text-danger">@error('financing.other_income'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-6">

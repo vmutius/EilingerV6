@@ -15,6 +15,7 @@ class Financing extends Model
      */
     protected $fillable = [
         'user_id',
+        'currency_id',
         'application_id',
         'personal_contribution',
         'other_income',
