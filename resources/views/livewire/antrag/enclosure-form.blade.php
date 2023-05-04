@@ -16,16 +16,83 @@
             </div>
         <br/>
             <h4 class="mb-0">Nur für Erstantrag</h4>
-            <div class="form-check mt-3">
-                <label class="form-check-label" for="has_id">Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</label>
-                <input wire:model.lazy="enclosure.has_id" class="form-check-input" type="checkbox" />
-                <span class="text-danger">@error('enclosure.has_id'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_cv">Lebenslauf</label>
-                <input wire:model.lazy="enclosure.has_cv" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_cv'){{ $message }}@enderror</span>
-            </div>
+
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Dokument</th>
+                    <th scope="col">Datein</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</td>
+                    <td>
+                        
+                        <label for="formFileSm" class="form-label">Personalausweis hochladen</label>
+
+                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                        <span class="text-danger">@error('passport'){{ $message }}@enderror</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Lebenslauf</td>
+                    <td>
+                        <input wire:model="cv" type="file" />
+                        <span class="text-danger">@error('cv'){{ $message }}@enderror</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Kopie: Ausbildungs- oder Lehrvertrag(Für Uni/FH: ausgefülltes Zusatzformular A)</td>
+                    <td>
+                        <form action="/file-upload" class="dropzone rounded mb-4">
+                            <div class="fallback">
+                                <input name="file" type="file" />
+                            </div>
+                        </form>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Kopie: Ausweis über einen Berufsabschluss, BM, Matura bzw. andere Abschlüsse falls vorhanden</td>
+                    <td>
+                        <form action="/file-upload" class="dropzone rounded mb-4">
+                            <div class="fallback">
+                                <input name="file" type="file" />
+                            </div>
+                        </form>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Für Gesuchsteller aus getrennten oder geschiedenen Ehen: Kopie Unterhaltsvereinbarung/Scheidungsurteil</td>
+                    <td>
+                        <form action="/file-upload" class="dropzone rounded mb-4">
+                            <div class="fallback">
+                                <input name="file" type="file" />
+                            </div>
+                        </form>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Für Gesuchsteller mit auswärtigem Wohnsitz: Kopie eines Mietvertrages / Wochenaufenthaltsbestätigung</td>
+                    <td>
+                        <form action="/file-upload" class="dropzone rounded mb-4">
+                            <div class="fallback">
+                                <input name="file" type="file" />
+                            </div>
+                        </form>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+           
             <div class="form-check">
                 <label class="form-check-label" for="has_apprenticeship_contract">Kopie: Ausbildungs- oder Lehrvertrag(Für Uni/FH: ausgefülltes Zusatzformular A)</label>
                 <input wire:model.lazy="enclosure.has_apprenticeship_contract" class="form-check-input" type="checkbox" value="" />
@@ -47,6 +114,8 @@
                 <input wire:model.lazy="enclosure.has_rental_contract" class="form-check-input" type="checkbox" value="" />
                 <span class="text-danger">@error('enclosure.has_rental_contract'){{ $message }}@enderror</span>
             </div>
+
+            
 
             <br/>
             <h4 class="mb-0">Immer einreichen</h4>
@@ -87,6 +156,7 @@
                 <input wire:model.lazy="enclosure.has_parents_tax_factors" class="form-check-input" type="checkbox" value="" />
                 <span class="text-danger">@error('enclosure.has_parents_tax_factors'){{ $message }}@enderror</span>
             </div>
+            
         </div>
 
         <div class="col-md-12 text-center">

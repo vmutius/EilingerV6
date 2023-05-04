@@ -2,28 +2,31 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use App\Models\Enclosure;
 use Livewire\Component;
+use App\Models\Enclosure;
+use Livewire\WithFileUploads;
 
 class EnclosureForm extends Component
 {
+    use WithFileUploads;
     public $enclosure;
+    public $passport;
 
     protected $rules = [
         'enclosure.remark' => 'nullable',
-        'enclosure.has_id' => 'nullable',
-        'enclosure.has_cv' => 'nullable',
-        'enclosure.has_apprenticeship_contract' => 'nullable',
-        'enclosure.has_diploma' => 'nullable',
-        'enclosure.has_divorce' => 'nullable',
-        'enclosure.has_rental_contract' => 'nullable',
-        'enclosure.has_certificate_of_study' => 'nullable',
-        'enclosure.has_tax_assessment' => 'nullable',
-        'enclosure.has_expense_receipts' => 'nullable',
-        'enclosure.has_partner_tax_assessment' => 'nullable',
-        'enclosure.has_supplementary_services' => 'nullable',
-        'enclosure.has_ects_points' => 'nullable',
-        'enclosure.has_parents_tax_factors' => 'nullable',
+        'passport' => 'required|mimes:png,jpg,jpeg,pdf|max:2048', 
+        'enclosure.cv' => 'nullable',
+        'enclosure.apprenticeship_contract' => 'nullable',
+        'enclosure.diploma' => 'nullable',
+        'enclosure.divorce' => 'nullable',
+        'enclosure.rental_contract' => 'nullable',
+        'enclosure.certificate_of_study' => 'nullable',
+        'enclosure.tax_assessment' => 'nullable',
+        'enclosure.expense_receipts' => 'nullable',
+        'enclosure.partner_tax_assessment' => 'nullable',
+        'enclosure.supplementary_services' => 'nullable',
+        'enclosure.ects_points' => 'nullable',
+        'enclosure.parents_tax_factors' => 'nullable',
     ];
 
     public function mount()
@@ -40,6 +43,8 @@ class EnclosureForm extends Component
     public function saveEnclosure()
     {
         $this->validate(); 
+        $filename = $this->passport->store('/', 'uploads');
+        $this->enclosure->passport = $filename;
         $this->enclosure->is_draft = false;
         $this->enclosure->application_id = session()->get('appl_id');
         $this->enclosure->save();

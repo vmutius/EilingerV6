@@ -1,4 +1,5 @@
 <div>
+
     {{-- 1 Account Details --}}
     @if ($currentStep == 1)
         <div class="step-one">

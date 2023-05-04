@@ -50,7 +50,7 @@
         </div>
         <div class="col-sm-5">
             <label for="birthday" class="form-label">Geburtsdatum *</label>
-            <x-input-date wire:model="user.birthday" id="birthday" placeholder="DD.MM.YYYY" />
+            <input wire:model="user.birthday" type="date" class="form-control">
             <span class="text-danger">@error('user.birthday'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
@@ -81,7 +81,7 @@
 
         <div class="col-sm-6">
             <label class="form-label" for="in_ch_since">In der Schweiz seit (für Ausländer)</label>
-            <input wire:model.lazy="user.in_ch_since" type="date" class="form-control" />
+            <input wire:model="user.in_ch_since" type="date" class="form-control" />
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="bewilligung">Art der Bewilligung (für Ausländer)</label>
