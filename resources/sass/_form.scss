@@ -1,93 +1,115 @@
 .wrapper {
-    min-height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center; }
-    
-    
-    .form-group {
-    display: flex; }
-    .form-group .form-wrapper {
-      width: 50%; }
-      .form-group .form-wrapper:first-child {
-        margin-right: 20px; }
-    
-    .form-wrapper {
-    margin-bottom: 17px; }
-    .form-wrapper label {
-      margin-bottom: 9px;
-      display: block; }
-    
-    .form-control {
-    display: block;
-    width: 100%;
-    height: 40px;
-    padding:15px 20px;
-    background:rgba(255,255,255,.1);
-    }
-    .form-control:focus {
-      border: 1px solid #ae3c33; }
-    
-      button {
-        border: none;
-        min-width: 300px;
-        height: 40px;
-        margin: auto;
-        margin-top: 33px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 100;
-        background: #ae3c33;
-        font-size: 20px;
-        color: #fff;
-        text-transform: uppercase;
-        font-family: "Roboto";
-        overflow: hidden;
-        -webkit-transform: perspective(1px) translateZ(0);
-        transform: perspective(1px) translateZ(0);
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-        position: relative;
-        -webkit-transition-property: color;
-        transition-property: color;
-        -webkit-transition-duration: 0.5s;
-        transition-duration: 0.5s; }
-        button:before {
-          content: "";
-          position: absolute;
-          z-index: -1;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: #f11a09;
-          -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-          -webkit-transform-origin: 0 50%;
-          transform-origin: 0 50%;
-          -webkit-transition-property: transform;
-          transition-property: transform;
-          -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-          -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out; }
-        button:hover:before {
-          -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-          -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-          transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); }
-    
-    input::placeholder {
-    font-family: "Ubuntu", sans-serif;
-    }
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
 
-    label {
-      padding-top: 10px;
-    }
 
-    .form-check {
-      padding-left: 0em;
-    }
-    
+.form-group {
+  display: flex;
+}
+
+.form-group .form-wrapper {
+  width: 50%;
+}
+
+.form-group .form-wrapper:first-child {
+  margin-right: 20px;
+}
+
+.form-wrapper {
+  margin-bottom: 17px;
+}
+
+.form-wrapper label {
+  margin-bottom: 9px;
+  display: block;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, .1);
+}
+
+.form-control:focus {
+  border: 1px solid #ae3c33;
+}
+
+button {
+  border: none;
+  min-width: 300px;
+  height: 40px;
+  margin: auto;
+  margin-top: 33px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100;
+  background: #ae3c33;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  overflow: hidden;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f11a09;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+button:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+input::placeholder {
+  font-family: "Ubuntu", sans-serif;
+}
+
+label {
+  padding-top: 10px;
+}
+
+.form-check {
+  padding-left: 0em;
+}
+
+.hr-line {
+  width: 100%;
+  position: relative;
+  margin: 15px;
+  border-bottom: 1px solid #972b2b;
+}

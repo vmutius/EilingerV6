@@ -20,6 +20,7 @@ class CreateApplicationsTable extends Migration
             $table->date('end_appl')->nullable();
             $table->longText('comment');
             $table->longText('reason');
+            $table->decimal('req_amount', $precision = 8, $scale = 2)->nullable();
             $table->boolean('is_first')->default(true);
             $table->timestamps();
             $table->softDeletes();

@@ -13,7 +13,7 @@ class AccountForm extends Component
         'account.name_bank' => 'required',
         'account.city_bank' => 'required',
         'account.owner' => 'required',
-        'account.IBAN' => 'required',
+        'account.IBAN' => 'required|regex:/^([A-Z]{2}[ \-]?[0-9]{2})(?=(?:[ \-]?[A-Z0-9]){9,30}$)((?:[ \-]?[A-Z0-9]{3,5}){2,7})([ \-]?[A-Z0-9]{1,3})?$/',
     ];
 
     public function mount()

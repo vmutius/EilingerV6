@@ -3,7 +3,7 @@
         <h3 class="mb-0">Ausbildungs- und Lebenskosten</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Angaben über die Kosten im bevorstehenden Ausbildungsjahr</small>
+                <small>Angaben über die Kosten im bevorstehenden Ausbildungsjahr. Angaben bitte in der jeweiligen Landewährung pro Jahr</small>
             </div>
         </div>
     </div>
@@ -75,6 +75,15 @@
             <input wire:model.lazy="cost.cost_of_living_with_partner" type="number" class="form-control" />
             <span class="text-danger">@error('cost.cost_of_living_with_partner'){{ $message }}@enderror</span>
         </div>
+        <hr class="border border-dark opacity-50">
+        <div class="col-sm-6">
+            <p>Totale Kosten in Länderwährung {{ $this->getAmountCost() }}</p>
+        </div>
+        <div class="col-sm-6">
+            <p>Totale Kosten in CHF {{ $this->convertCostToCHF() }}</p>
+        </div>
+        
+
 
         <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-success">

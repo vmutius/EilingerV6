@@ -9,7 +9,7 @@
                         erstellen</button>
                 </div>
             </div>
-            <hr />
+            <hr class="border border-dark opacity-50">
             <table class="table table-striped" id="sortTable">
                 <thead>
                     <tr>

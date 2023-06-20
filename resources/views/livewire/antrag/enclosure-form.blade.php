@@ -30,41 +30,48 @@
                     <th scope="row">1</th>
                     <td>Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</td>
                     <td>
-                        
-                        <label for="formFileSm" class="form-label">Personalausweis hochladen</label>
-
-                        <input class="form-control form-control-sm" id="formFileSm" type="file">
-                        <span class="text-danger">@error('passport'){{ $message }}@enderror</span>
+                        <div class="mb-3">
+                            <input wire:model="enclosure.passport" class="form-control" type="file" id="formFile">
+                          </div>
+                        <span class="text-danger">@error('enclosure.passport'){{ $message }}@enderror</span>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
                     <td>Lebenslauf</td>
                     <td>
-                        <input wire:model="cv" type="file" />
-                        <span class="text-danger">@error('cv'){{ $message }}@enderror</span>
+                        <div class="file-upload">
+                            <div class="file-select">
+                              
+                              <div class="file-select-name" id="noFile">No file chosen...</div> 
+                              <input wire:model="enclosure.cv" type="file" name="chooseFile" id="chooseFile">
+                            </div>
+                          </div>
+                        <span class="text-danger">@error('enclosure.cv'){{ $message }}@enderror</span>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
                     <td>Kopie: Ausbildungs- oder Lehrvertrag(Für Uni/FH: ausgefülltes Zusatzformular A)</td>
                     <td>
-                        <form action="/file-upload" class="dropzone rounded mb-4">
-                            <div class="fallback">
-                                <input name="file" type="file" />
+                        <div class="file-upload">
+                            <div class="file-select">
+                              <div class="file-select-button">Choose File</div>
+                              <div class="file-select-name">No file chosen...</div> 
+                              <input wire:model="passport" type="file">
                             </div>
-                        </form>
+                          </div>
+                        <span class="text-danger">@error('passport'){{ $message }}@enderror</span>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
                     <td>Kopie: Ausweis über einen Berufsabschluss, BM, Matura bzw. andere Abschlüsse falls vorhanden</td>
                     <td>
-                        <form action="/file-upload" class="dropzone rounded mb-4">
-                            <div class="fallback">
-                                <input name="file" type="file" />
-                            </div>
-                        </form>
+                        <div class="mb-3">
+                            <input wire:model="enclosure.diploma" class="form-control" type="file" id="formFile">
+                          </div>
+                        <span class="text-danger">@error('enclosure.diploma'){{ $message }}@enderror</span>
                     </td>
                   </tr>
                   <tr>

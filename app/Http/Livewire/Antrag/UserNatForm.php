@@ -22,8 +22,8 @@ class UserNatForm extends Component
             'user.salutation' => 'required',
             'user.nationality' => 'required',
             'user.civil_status' => ['required',new Enum(CivilStatus::class)], 
-            'user.in_ch_since' => 'nullable',
-            'user.bewilligung' => ['required_with:user.in_ch_since', new Enum(Bewilligung::class)],
+            'user.in_ch_since' => 'sometimes',
+            'user.bewilligung' => ['nullable','required_with:user.in_ch_since', new Enum(Bewilligung::class)],
         ]);
     }
 

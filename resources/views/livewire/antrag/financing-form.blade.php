@@ -59,6 +59,15 @@
             <span class="text-danger">@error('financing.income_who'){{ $message }}@enderror</span>
         </div>
 
+        <hr class="border border-dark opacity-50">
+        <div class="col-sm-6">
+            <p>Totale Kosten in Länderwährung {{ $this->getAmountFinancing() }}</p>
+        </div>
+        <div class="col-sm-6">
+            <p>Totale Kosten in CHF {{ $this->convertFinancingToCHF() }}</p>
+        </div>
+        
+
 
        <div class="col-md-12 text-center">
             <button type="submit"  class="btn btn-success">

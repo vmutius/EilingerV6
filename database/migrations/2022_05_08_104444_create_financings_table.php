@@ -22,6 +22,7 @@ class CreateFinancingsTable extends Migration
             $table->decimal('scholarship', $precision = 8, $scale = 2)->nullable();
             $table->decimal('required_amount', $precision = 8, $scale = 2)->nullable();
             $table->string('payout_plan');
+            $table->decimal('total_amount_financing', $precision = 8, $scale = 2)->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
             $table->softDeletes();

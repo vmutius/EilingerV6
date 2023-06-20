@@ -55,7 +55,7 @@
                 <input wire:model.lazy="siblings.{{ $index }}.support_site" type="text" class="form-control" />
                 <span class="text-danger">@error('siblings.{{ $index }}.support_site'){{ $message }}@enderror</span>
             </div>
-            <hr class="hr" />
+            <hr class="border border-dark opacity-50">
         </div>
     @endforeach
 

@@ -10,11 +10,10 @@ class EnclosureForm extends Component
 {
     use WithFileUploads;
     public $enclosure;
-    public $passport;
 
     protected $rules = [
         'enclosure.remark' => 'nullable',
-        'passport' => 'required|mimes:png,jpg,jpeg,pdf|max:2048', 
+        'enclosure.passport' => 'required|mimes:png,jpg,jpeg,pdf|max:2048', 
         'enclosure.cv' => 'nullable',
         'enclosure.apprenticeship_contract' => 'nullable',
         'enclosure.diploma' => 'nullable',
@@ -43,7 +42,7 @@ class EnclosureForm extends Component
     public function saveEnclosure()
     {
         $this->validate(); 
-        $filename = $this->passport->store('/', 'uploads');
+        $filename = $this->enclosure.passport->store('/', 'uploads');
         $this->enclosure->passport = $filename;
         $this->enclosure->is_draft = false;
         $this->enclosure->application_id = session()->get('appl_id');

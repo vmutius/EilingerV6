@@ -4,6 +4,6 @@ namespace App\Enums;
 
 enum Time: string
 {
-    case full = 'Vollzeit';
-    case part = 'Teilzeit';
+    case Vollzeit = 'Vollzeit';
+    case Teilzeit = 'Teilzeit';
 }
