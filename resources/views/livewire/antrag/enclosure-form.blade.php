@@ -15,7 +15,13 @@
                 </div>
             </div>
         <br/>
-            <h4 class="mb-0">Nur für Erstantrag</h4>
+
+        @if ($this->isInitialAppl)
+            @livewire('antrag.enclosure-initial-form')
+        @endif         
+
+        <br/>
+            <h4 class="mb-0">Immer einreichen</h4>
 
             <table class="table table-striped">
                 <thead>
@@ -23,146 +29,118 @@
                     <th scope="col">#</th>
                     <th scope="col">Dokument</th>
                     <th scope="col">Datein</th>
+                    <th scope="col">Hochgeladen</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</td>
+                    <td>Semesterbestätigung/ Studienbescheinigung</td>
                     <td>
                         <div class="mb-3">
-                            <input wire:model="enclosure.passport" class="form-control" type="file" id="formFile">
+                            <input wire:model.defer="certificate_of_study" class="form-control" type="file">
                           </div>
-                        <span class="text-danger">@error('enclosure.passport'){{ $message }}@enderror</span>
+                        <span class="text-danger">@error('certificate_of_study'){{ $message }}@enderror</span>
                     </td>
+                    <td>
+                        @if ($enclosure->certificate_of_study)
+                          <span class="text.success">{{ $enclosure->certificate_of_study}}</span>
+                        @endif
+                      </td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>Lebenslauf</td>
+                    <td>Für Steuerpflichtige Gesuchsteller: Kopie der neuesten Steuerveranlagung(Veranlagungsprotokoll nicht
+                        Steuerrechnung)</td>
                     <td>
-                        <div class="file-upload">
-                            <div class="file-select">
-                              
-                              <div class="file-select-name" id="noFile">No file chosen...</div> 
-                              <input wire:model="enclosure.cv" type="file" name="chooseFile" id="chooseFile">
-                            </div>
-                          </div>
-                        <span class="text-danger">@error('enclosure.cv'){{ $message }}@enderror</span>
+                        <div class="mb-3">
+                            <input wire:model.defer="tax_assessment" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('tax_assessment'){{ $message }}@enderror</span>
                     </td>
+                    <td>
+                        @if ($enclosure->tax_assessment)
+                          <span class="text.success">{{ $enclosure->tax_assessment}}</span>
+                        @endif
+                      </td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>Kopie: Ausbildungs- oder Lehrvertrag(Für Uni/FH: ausgefülltes Zusatzformular A)</td>
+                    <td>Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht werden</td>
                     <td>
-                        <div class="file-upload">
-                            <div class="file-select">
-                              <div class="file-select-button">Choose File</div>
-                              <div class="file-select-name">No file chosen...</div> 
-                              <input wire:model="passport" type="file">
-                            </div>
-                          </div>
-                        <span class="text-danger">@error('passport'){{ $message }}@enderror</span>
+                        <div class="mb-3">
+                            <input wire:model.defer="expense_receipts" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('expense_receipts'){{ $message }}@enderror</span>
                     </td>
+                    <td>
+                        @if ($enclosure->expense_receipts)
+                          <span class="text.success">{{ $enclosure->expense_receipts}}</span>
+                        @endif
+                      </td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
-                    <td>Kopie: Ausweis über einen Berufsabschluss, BM, Matura bzw. andere Abschlüsse falls vorhanden</td>
+                    <td>Nur für Partner von in Partnerschaft lebenden Gesuchsteller: neueste Steuerveranlagung</td>
                     <td>
                         <div class="mb-3">
-                            <input wire:model="enclosure.diploma" class="form-control" type="file" id="formFile">
-                          </div>
-                        <span class="text-danger">@error('enclosure.diploma'){{ $message }}@enderror</span>
+                            <input wire:model.defer="partner_tax_assessment" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('partner_tax_assessment'){{ $message }}@enderror</span>
                     </td>
+                    <td>
+                        @if ($enclosure->partner_tax_assessment)
+                          <span class="text.success">{{ $enclosure->partner_tax_assessment}}</span>
+                        @endif
+                      </td>
                   </tr>
                   <tr>
                     <th scope="row">5</th>
-                    <td>Für Gesuchsteller aus getrennten oder geschiedenen Ehen: Kopie Unterhaltsvereinbarung/Scheidungsurteil</td>
+                    <td>Empfänger von IV-, Waisenrenten bzw. Ergänzungsleistungen: Kopie der Verfügung beilegen</td>
                     <td>
-                        <form action="/file-upload" class="dropzone rounded mb-4">
-                            <div class="fallback">
-                                <input name="file" type="file" />
-                            </div>
-                        </form>
+                        <div class="mb-3">
+                            <input wire:model.defer="supplementary_services" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('supplementary_services'){{ $message }}@enderror</span>
                     </td>
+                    <td>
+                        @if ($enclosure->supplementary_services)
+                          <span class="text.success">{{ $enclosure->supplementary_services}}</span>
+                        @endif
+                      </td>
                   </tr>
                   <tr>
-                    <th scope="row">5</th>
-                    <td>Für Gesuchsteller mit auswärtigem Wohnsitz: Kopie eines Mietvertrages / Wochenaufenthaltsbestätigung</td>
+                    <th scope="row">6</th>
+                    <td>Nur für Studenten an universitären Hochschulen: Beleg über die geplanten/gebuchten ECTS-Punkte</td>
                     <td>
-                        <form action="/file-upload" class="dropzone rounded mb-4">
-                            <div class="fallback">
-                                <input name="file" type="file" />
-                            </div>
-                        </form>
+                        <div class="mb-3">
+                            <input wire:model.defer="ects_points" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('ects_points'){{ $message }}@enderror</span>
                     </td>
+                    <td>
+                        @if ($enclosure->ects_points)
+                          <span class="text.success">{{ $enclosure->ects_points}}</span>
+                        @endif
+                      </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Steuerfaktoren der Eltern</td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="parents_tax_factors" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('parents_tax_factors'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->parents_tax_factors)
+                          <span class="text.success">{{ $enclosure->parents_tax_factors}}</span>
+                        @endif
+                      </td>
                   </tr>
                 </tbody>
               </table>
-
-           
-            <div class="form-check">
-                <label class="form-check-label" for="has_apprenticeship_contract">Kopie: Ausbildungs- oder Lehrvertrag(Für Uni/FH: ausgefülltes Zusatzformular A)</label>
-                <input wire:model.lazy="enclosure.has_apprenticeship_contract" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_apprenticeship_contract'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_diploma">Kopie: Ausweis über einen Berufsabschluss, BM, Matura bzw. andere Abschlüsse falls vorhanden</label>
-                <input wire:model.lazy="enclosure.has_diploma" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_diploma'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_divorce">Für Gesuchsteller aus getrennten oder geschiedenen Ehen: Kopie
-                    Unterhaltsvereinbarung/Scheidungsurteil</label>
-                <input wire:model.lazy="enclosure.has_divorce" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_divorce'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_rental_contract">Für Gesuchsteller mit auswärtigem Wohnsitz: Kopie eines Mietvertrages / Wochenaufenthaltsbestätigung</label>
-                <input wire:model.lazy="enclosure.has_rental_contract" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_rental_contract'){{ $message }}@enderror</span>
-            </div>
-
-            
-
-            <br/>
-            <h4 class="mb-0">Immer einreichen</h4>
-
-            <div class="form-check">
-                <label class="form-check-label" for="has_certificate_of_study">Semesterbestätigung/ Studienbescheinigung</label>
-                <input wire:model.lazy="enclosure.has_certificate_of_study" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_certificate_of_study'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_tax_assessment">Für Steuerpflichtige Gesuchsteller: Kopie der neuesten Steuerveranlagung(Veranlagungsprotokoll nicht
-                    Steuerrechnung)</label>
-                <input wire:model.lazy="enclosure.has_tax_assessment" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_tax_assessment'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_expense_receipts">Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht werden</label>
-                <input wire:model.lazy="enclosure.has_expense_receipts" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_expense_receipts'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_partner_tax_assessment">Nur für Partner von in Partnerschaft lebenden Gesuchsteller: neueste Steuerveranlagung</label>
-                <input wire:model.lazy="enclosure.has_partner_tax_assessment" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_partner_tax_assessment'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_supplementary_services">Empfänger von IV-, Waisenrenten bzw. Ergänzungsleistungen: Kopie der Verfügung beilegen</label>
-                <input wire:model.lazy="enclosure.has_supplementary_services" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_supplementary_services'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_ects_points">Nur für Studenten an universitären Hochschulen: Beleg über die geplanten/gebuchten ECTS-Punkte</label>
-                <input wire:model.lazy="enclosure.has_ects_points" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_ects_points'){{ $message }}@enderror</span>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label" for="has_parents_tax_factors">Steuerfaktoren der Eltern</label>
-                <input wire:model.lazy="enclosure.has_parents_tax_factors" class="form-check-input" type="checkbox" value="" />
-                <span class="text-danger">@error('enclosure.has_parents_tax_factors'){{ $message }}@enderror</span>
-            </div>
             
         </div>
 
