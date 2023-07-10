@@ -6,10 +6,6 @@ use Livewire\Component;
 
 class Uebersicht extends Component
 {
-    public function mount()
-    {
-    }
-
     public function render()
     {
         return view('livewire.user.uebersicht')

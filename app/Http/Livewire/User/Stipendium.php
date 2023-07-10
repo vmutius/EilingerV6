@@ -7,6 +7,7 @@ use Livewire\Component;
 class Stipendium extends Component
 {
     public $currentStep = 1;
+    public $showModal = false;
 
     public function render()
     {
@@ -21,5 +22,21 @@ class Stipendium extends Component
     public function decreaseStep()
     {
         $this->currentStep--;
+    }
+
+    public function saveApplication()
+    {
+        $this->showModal = true;
+    }
+
+    public function save()
+    {
+        $this->emit('sendApplication');
+        $this->showModal = false;
+    }
+
+    public function close()
+    {
+        $this->showModal = false;
     }
 }

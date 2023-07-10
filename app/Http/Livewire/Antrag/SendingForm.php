@@ -36,8 +36,8 @@ class SendingForm extends Component
         $this->educationNoDraft = (bool)Education::where('application_id', session()->get('appl_id'))->where('is_draft', false)->exists();
         $this->accountNoDraft = (bool)Account::where('id', auth()->user()->id)->where('is_draft', false)->exists();
         $this->costNoDraft = (bool)Cost::where('application_id', session()->get('appl_id'))->where('is_draft', false)->exists();
-        //$this->$parentsNoDraft = (bool)Parents::where('id', auth()->user()->id)->where('is_draft', false)->exists();
-        //$this->$siblingNoDraft = (bool)Sibling::where('id', auth()->user()->id)->where('is_draft', false)->exists();
+        $this->parentsNoDraft = (bool)Parents::where('id', auth()->user()->id)->where('is_draft', false)->exists();
+        $this->siblingNoDraft = (bool)Sibling::where('id', auth()->user()->id)->where('is_draft', false)->exists();
         $this->financingNoDraft = (bool)Financing::where('application_id', session()->get('appl_id'))->where('is_draft', false)->exists();
         $this->enclosureNoDraft = (bool)Enclosure::where('application_id', session()->get('appl_id'))->where('is_draft', false)->exists();
 

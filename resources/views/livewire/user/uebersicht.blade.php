@@ -16,13 +16,13 @@
                     <div class="row">
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">Neuen Antrag erstellen</h5>
+                                <h5 class="card-header">Anträge / Neuen Antrag stellen</h5>
                                 <div class="card-body">
                                     <p class="card-text">Für die Erstellung eines neuen Antrags klicken Sie den Link
                                         oder gehen Sie
                                         über das Menu auf der linken Seite. Hier können Sie auch die noch nicht
                                         eingereichten Anträge sehen und diese weiter bearbeiten.</p>
-                                    <a href="{{ route('user_antraege') }}" class="card-link">Neuen Antrag erstellen</a>
+                                    <a href="{{ route('user_antraege') }}" class="card-link">Anträge</a>
 
                                 </div>
                             </div>

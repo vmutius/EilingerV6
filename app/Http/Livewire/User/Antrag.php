@@ -12,28 +12,25 @@ class Antrag extends Component
     public $currentStep = 1;
     public $application;
 
+    protected $listeners = ['sendApplication' => 'sendApplication'];
+    
     public function mount($application_id)
     {
         $this->application = Application::where('id', $application_id)->first();
         session(['appl_id' => $application_id]);
     }
 
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function render()
     {
         return view('livewire.user.antrag')
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
 
-    public function SendApplication()
+    public function sendApplication()
     {
         $this->application->appl_status = ApplStatus::PENDING;
         $this->application->save();
-        session()->flash('success', 'Antrag erfolgreich eingereicht.');
+        redirect()->route('user_gesuche');
     }
 
     public function increaseStep()

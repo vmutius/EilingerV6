@@ -28,7 +28,9 @@ class Antraege extends Component
 
     public function render()
     {
-        $applications = Application::where('user_id', auth()->user()->id)->get();
+        $applications = Application::where('user_id', auth()->user()->id)
+                        ->where('appl_status', 'not send')                
+                        ->get();
 
         return view('livewire.user.antraege', [
             'applications' => $applications,
@@ -52,7 +54,7 @@ class Antraege extends Component
         $this->validate();
 
         $application = Application::create([
-            'name' => $this->name,
+            'name' => $this->name, 
             'bereich' => $this->bereich,
             'user_id' => auth()->user()->id,
             'form' => $this->form,
