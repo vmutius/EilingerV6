@@ -33,8 +33,7 @@ class CostForm extends Component
 
     public function mount()
     {
-        $this->cost = Cost::where('user_id', auth()->user()->id)
-            ->where('application_id', session()->get('appl_id'))
+        $this->cost = Cost::where('application_id', session()->get('appl_id'))
             ->first() ?? new Cost;
         $this->currencies = Currency::all();
     }

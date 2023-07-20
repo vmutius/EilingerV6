@@ -31,7 +31,7 @@
 
             <div class="col-sm-6">
                 <label class="form-label" for="birthday">Geburtstag</label>
-                <input wire:model.lazy="parents.{{ $index }}.birthday" type="text" class="form-control" />
+                <input wire:model.lazy="parents.{{ $index }}.birthday" type="date" class="form-control" />
                 <span class="text-danger">@error('parents.{{ $index }}.birthday'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">

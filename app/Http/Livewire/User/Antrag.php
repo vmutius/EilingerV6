@@ -30,7 +30,7 @@ class Antrag extends Component
     {
         $this->application->appl_status = ApplStatus::PENDING;
         $this->application->save();
-        redirect()->route('user_gesuche');
+        redirect()->route('user_gesuch');
     }
 
     public function increaseStep()

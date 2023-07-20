@@ -1,4 +1,4 @@
-<div>
+<div wire:init="completeApplication">
     <table class="table table-striped" id="sortTable">
         <thead>
             <tr>
@@ -104,7 +104,7 @@
                 <td>
                     <span id="boot-icon" {!! $enclosureNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
-                        : 'class="bi bi-x-circle" style="color: rgb(255, 0, 0);"' !!}>
+                        : 'class="bi bi-x-circle" style="color: rgb(255, 0, 0);"' !!}> 
                     </span>
                 </td>
             </tr>

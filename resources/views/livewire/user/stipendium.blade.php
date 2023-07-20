@@ -153,38 +153,44 @@
             </button>
         @endif
         @if ($currentStep == 12)
-            <button class="btn btn-danger btn-lg" wire:click="saveApplication()">
-                <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
-            </button>
+            @if (!$this->completeApp)
+                <button class="btn btn-danger btn-lg disabled" wire:click="saveApplication()">
+                    <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
+                </button>
+            @else
+                <button class="btn btn-danger btn-lg" wire:click="saveApplication()">
+                    <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
+                </button>
 
-            <div class="modal" @if ($showModal) style="display:block" @endif>
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <form wire:submit.prevent="save">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Antrag einreichem</h5>
-                                <button wire:click="close" type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                
-                                <br />
-                                Ich bestätige, dass ich alle Angaben wahrheitsmässig gemacht habe
-                                <br />
-                                
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Einreichen</button>
-                                <button wire:click="close" type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">Close
-                                </button>
-                            </div>
-                        </form>
+                <div class="modal" @if ($showModal) style="display:block" @endif>
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <form wire:submit.prevent="save">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Antrag einreichem</h5>
+                                    <button wire:click="close" type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                    <br />
+                                    Ich bestätige, dass ich alle Angaben wahrheitsmässig gemacht habe
+                                    <br />
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Einreichen</button>
+                                    <button wire:click="close" type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Close
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
         @endif
 
         @if ($currentStep < 12)
