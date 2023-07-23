@@ -15,21 +15,25 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                   </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{ __('Lang') }}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  @foreach(config('app.languages') as $langLocale => $langName)
+                    <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                  @endforeach
+                </ul>
+            </li>
             <li class="nav-item">
                 <form method="POST" action="/logout">
                     @csrf
-                    <button type="submit" type="button" class="btn btn-light">Log Out</button>
+                    <button type="submit" class="btn btn-light">Log Out</button>
                 </form>
             </li>
             <li class="nav-item">
-                <span class="mr-2 d-none d-lg-inline text-gray-600">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span>
-                <div class="avatar avatar-md">
-                    <img src="{{ auth()->user()->avatarUrl() }}" alt="Profile Photo" class="rounded-circle">
-                </div>
+                <span class="navbar-text">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span>
             </li>
         </ul>
-    </div>
-    
-    
-
+    </div>    
 </nav>

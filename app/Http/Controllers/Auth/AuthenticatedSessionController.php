@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
             ? route('admin_dashboard', app()->getLocale()) 
             : route('user_dashboard', app()->getLocale());
 
-        return redirect()->route($success_route)->with('success', 'Sie sind eingeloggt');
+        return redirect()->route($success_route, app()->getLocale())->with('success', 'Sie sind eingeloggt');
     }
 
     /**

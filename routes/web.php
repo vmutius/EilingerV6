@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::redirect('/', '/de');
-Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 Route::group(['prefix' => '{locale}'], function () {
     Route::view('/', 'home.index')->name('index');

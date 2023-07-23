@@ -30,9 +30,9 @@
                             <td>{{ $application->created_at ? $application->created_at->format('d.m.Y H:i') : null }}</td>
                             <td>{{ $application->updated_at ? $application->updated_at->format('d.m.Y H:i') : null }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="{{ route('user_antrag' , app()->getLocale(), $application->id) }}">Bearbeiten</a>
+                                <a class="btn btn-sm btn-primary" href="{{ route('user_antrag', ['application_id' => $application->id, 'locale'=> app()->getLocale()]) }}">Bearbeiten</a>
                                 <a class="btn btn-sm btn-danger" wire:click="deleteApplication({{ $application->id }})">Löschen</a>
-                                <a class="btn btn-sm btn-success" href="{{ route('user_nachricht' , app()->getLocale(), $application->id) }}">Nachrichten ansehen</a>
+                                <a class="btn btn-sm btn-success" href="{{ route('user_nachricht', ['application_id' => $application->id, 'locale'=> app()->getLocale()]) }}">Nachrichten ansehen</a>
                             </td>
                         </tr>
                     @empty
