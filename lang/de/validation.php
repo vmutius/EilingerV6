@@ -162,6 +162,8 @@ return [
         'final' => 'Abschluss',
         'ects_points' => 'ECTS Punkte',
         'grade' => 'Abschluss',
+        'currency_id' => 'Währung',
+        'personal contribution' => 'Eigenleistung vom Bewerber'
     ],
 
 ];

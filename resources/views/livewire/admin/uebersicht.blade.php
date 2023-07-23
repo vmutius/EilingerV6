@@ -18,7 +18,7 @@
                                 <div class="card-body">
                                     <p class="card-text">Liste aller User inklusive der eingesendeten Anträge</p>
                                     <p> Aktuell {{ $userCount }} Benutzer (ohne Admin)</p>
-                                    <a href="{{ route('admin_users') }}" class="card-link">Benutzerübersicht</a>
+                                    <a href="{{ route('admin_users', app()->getLocale()) }}" class="card-link">Benutzerübersicht</a>
 
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                                 <div class="card-body">
                                     <p class="card-text">Anträge für die nächste Stiftungsratssitzung</p>
                                     <p>Aktuell {{ $applicationCount }} Anträge</p>
-                                    <a href="{{ route('admin_applications') }}" class="card-link">Antragsübersicht</a>
+                                    <a href="{{ route('admin_applications', app()->getLocale()) }}" class="card-link">Antragsübersicht</a>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                 <div class="card-body">
                                     <p class="card-text">Alle laufenden Projekte</p>
                                     <p>Aktuell {{ $projectCount }} laufende Projekte</p>
-                                    <a href="{{ route('admin_projects') }}" class="card-link">Projektübersicht</a>
+                                    <a href="{{ route('admin_projects', app()->getLocale()) }}" class="card-link">Projektübersicht</a>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                     <p class="card-text">Dateien für Anträge oder laufende Projekte können Sie hier
                                         anhängen
                                     </p>
-                                    <a href="{{ route('admin_settings') }}" class="card-link">Einstellungen</a>
+                                    <a href="{{ route('admin_settings', app()->getLocale()) }}" class="card-link">Einstellungen</a>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                         Änderung der Email Adresse
                                         müssen Sie diese erneut verifizieren.
                                     </p>
-                                    <a href="{{ route('admin_profile.edit') }}" class="card-link">Benutzerprofil</a>
+                                    <a href="{{ route('admin_profile.edit', app()->getLocale()) }}" class="card-link">Benutzerprofil</a>
 
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                 <div class="card-body">
                                     <p class="card-text">Den Link zum Logout finden Sie neben Ihren Benutzernamen oben
                                         rechts oder Sie klicken den angehängten Link</p>
-                                    <a href="{{ route('logout') }}" class="card-link">Logout</a>
+                                    <a href="{{ route('logout', app()->getLocale()) }}" class="card-link">Logout</a>
                                 </div>
                             </div>
                         </div>

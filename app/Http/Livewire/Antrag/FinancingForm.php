@@ -23,6 +23,7 @@ class FinancingForm extends Component
         'financing.currency_id' => 'required',
     ];
 
+
     public function mount()
     {
         $this->financing = Financing::where('user_id', auth()->user()->id)

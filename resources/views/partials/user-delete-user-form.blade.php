@@ -5,7 +5,7 @@
 </small>
 
 
-    <form method="post" action="{{ route('user_profile.destroy') }}" class="p-6">
+    <form method="post" action="{{ route('user_profile.destroy', app()->getLocale()) }}" class="p-6">
         @csrf
         @method('delete')
 

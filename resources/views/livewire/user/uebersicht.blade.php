@@ -22,7 +22,7 @@
                                         oder gehen Sie
                                         über das Menu auf der linken Seite. Hier können Sie auch die noch nicht
                                         eingereichten Anträge sehen und diese weiter bearbeiten.</p>
-                                    <a href="{{ route('user_antraege') }}" class="card-link">Anträge</a>
+                                    <a href="{{ route('user_antraege', app()->getLocale()) }}" class="card-link">Anträge</a>
 
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                 <h5 class="card-header">Gesuche</h5>
                                 <div class="card-body">
                                     <p class="card-text">Alle Anträge, die Sie bereits eingesendet haben, finden Sie hier.</p>
-                                    <a href="{{ route('user_gesuch') }}" class="card-link">Gesuche</a>
+                                    <a href="{{ route('user_gesuch', app()->getLocale()) }}" class="card-link">Gesuche</a>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                     <p class="card-text">Falls es Nachrichten zu Ihren eingesendeten Anträgen gibt,
                                         finden Sie diese hier.
                                     </p>
-                                    <a href="{{ route('user_nachrichten') }}" class="card-link">Nachrichten</a>
+                                    <a href="{{ route('user_nachrichten', app()->getLocale()) }}" class="card-link">Nachrichten</a>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                         bearbeiten. Ihre Email Adresse und Ihr Password können Sie ebenfalls hier anpassen. Bei
                                         Änderung der Email Adresse müssen Sie diese erneut verifizieren.
                                     </p>
-                                    <a href="{{ route('user_profile.edit') }}" class="card-link">Benutzerprofil</a>
+                                    <a href="{{ route('user_profile.edit', app()->getLocale()) }}" class="card-link">Benutzerprofil</a>
 
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                 <h5 class="card-header">Dateien</h5>
                                 <div class="card-body">
                                     <p class="card-text">Dateien für Anträge oder laufende Projekte können Sie hier anhängen</p>
-                                    <a href="{{ route('user_dateien') }}" class="card-link">Dateien</a>
+                                    <a href="{{ route('user_dateien', app()->getLocale()) }}" class="card-link">Dateien</a>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                                     <p class="card-text">Den Link zum Logout finden Sie unter Ihren Benutzernamen oben
                                         rechts
                                         oder Sie klicken den angehängten Link</p>
-                                    <a href="{{ route('logout') }}" class="card-link">Logout</a>
+                                    <a href="{{ route('logout', app()->getLocale()) }}" class="card-link">Logout</a>
                                 </div>
                             </div>
                         </div>

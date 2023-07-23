@@ -12,7 +12,7 @@
         <x-notification/>
 
         <div class="col-sm-2">
-            <label class="form-label" for="currency">Währung *</label>
+            <label class="form-label" for="currency">{{ __('attributes.currency') }} *</label>
             <select wire:model.lazy="financing.currency_id" class="form-select">
                 <option selected value="">Bitte auswählen...</option>
                 @foreach ($currencies as $currency)

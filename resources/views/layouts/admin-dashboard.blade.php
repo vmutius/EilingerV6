@@ -27,28 +27,28 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="{{ route('admin_dashboard') }}">
+                <a href="{{ route('admin_dashboard', app()->getLocale()) }}">
                     <i class="bi bi-grid"></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{ route('admin_users') }}">
+                <a href="{{ route('admin_users', app()->getLocale()) }}">
                     <i class="bi bi-envelope-open"></i>
                     <span class="links_name">Benutzerübersicht</span>
                 </a>
                 <span class="tooltip">Benutzerübersich mit allen Anträgen </span>
             </li>
             <li>
-                <a href="{{ route('admin_applications') }}">
+                <a href="{{ route('admin_applications', app()->getLocale()) }}">
                     <i class="bi bi-envelope-check"></i>
                     <span class="links_name">Antragsübersicht</span>
                 </a>
                 <span class="tooltip">Übersicht aller Anträge</span>
             </li>
             <li>
-                <a href="{{ route('admin_projects') }}">
+                <a href="{{ route('admin_projects', app()->getLocale()) }}">
                     <i class="bi bi-chat-dots"></i>
                     <span class="links_name">Projekübersicht</span>
                 </a>
@@ -56,7 +56,7 @@
             </li>
 
             <li>
-                <a href="{{ route('admin_profile.edit') }}">
+                <a href="{{ route('admin_profile.edit', app()->getLocale()) }}">
                     <i class="bi bi-person"></i>
                     <span class="links_name">Profil</span>
                 </a>
@@ -64,7 +64,7 @@
             </li>
 
             <li>
-                <a href="{{ route('admin_settings') }}">
+                <a href="{{ route('admin_settings', app()->getLocale()) }}">
                     <i class="bi bi-gear"></i>
                     <span class="links_name">Einstellungen</span>
                 </a>

@@ -212,4 +212,10 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    /* Languages Settings */
+    'languages' => [
+        'en' => 'English',
+        'de' => 'German',
+    ],
+
 ];

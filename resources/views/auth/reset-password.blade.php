@@ -7,7 +7,7 @@
                     <h2>Passwort zurücksetzen</h2>
                 </div>
 
-                <form method="POST" action="{{ route('password.store') }}">
+                <form method="POST" action="{{ route('password.store', app()->getLocale()) }}">
                     @csrf
 
                     <!-- Password Reset Token -->

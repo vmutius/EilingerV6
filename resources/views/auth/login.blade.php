@@ -20,13 +20,13 @@
 
                 <h3>NEUES BENUTZERKONTO </h3>
 
-                <p> Ich erstelle ein Benutzerkonto für mich als <strong><a href="{{ route('registerPrivat') }}">Privatperson</a></strong>
+                <p> Ich erstelle ein Benutzerkonto für mich als <strong><a href="{{ route('registerPrivat', app()->getLocale()) }}">Privatperson</a></strong>
                     (für ein Stipendiengesuch bitte diese Option wählen) ODER ich erstelle das Benutzerkonto für
-                    <strong><a href="{{ route('registerInst') }}">einen Verein/eine Institution </a></strong>.</p>
+                    <strong><a href="{{ route('registerInst', app()->getLocale()) }}">einen Verein/eine Institution </a></strong>.</p>
                 <br/>
                 <h3>Ich bin bereits registriert </h3>
 
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('login', app()->getLocale()) }}">
                     <div class="row g-3">
                         @csrf
                         <div class="col-md-4">
@@ -49,7 +49,7 @@
 
 
                         <div class="col-md-4">
-                            <a class="btn btn-link" href="{{ route('password.request') }}">Passwort zurücksetzen?</a>
+                            <a class="btn btn-link" href="{{ route('password.request', app()->getLocale()) }}">Passwort zurücksetzen?</a>
                         </div>
                         <div class="col-md-4">
                             <div class="form-check form-switch">

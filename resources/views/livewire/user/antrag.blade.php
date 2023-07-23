@@ -4,7 +4,7 @@
         Förderkriterien definiert.
         Wir bitten Sie deshalb, vor dem Einreichen Ihres Gesuchs zu überprüfen, ob Ihr Projekt: </p>
 
-    <ul>
+    <ul style="padding-left: 2em">
         <li>Den inhaltlichen Schwerpunkten der Stiftung entspricht (hier wird später zurück auf einen anderen Teil der
             Webseite verlinkt) </li>
         <li>Die Fördervoraussetzungen erfüllt entspricht (hier wird später zurück auf einen anderen Teil der Webseite

@@ -1,7 +1,7 @@
 <h3 class="m-2">Password ändern</h3>
 <small>Nach Anpassung des Passworts werden Sie automatisch ausgeloggt.</small>
 
-<form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
+<form method="post" action="{{ route('password.update', app()->getLocale()) }}" class="mt-6 space-y-6">
     @csrf
     @method('put')
 

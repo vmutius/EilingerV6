@@ -27,35 +27,35 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="{{ route('user_dashboard') }}">
+                <a href="{{ route('user_dashboard', app()->getLocale()) }}">
                     <i class="bi bi-grid"></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{ route('user_antraege') }}">
+                <a href="{{ route('user_antraege', app()->getLocale()) }}">
                     <i class="bi bi-envelope-open"></i>
                     <span class="links_name">Anträge</span>
                 </a>
                 <span class="tooltip">Stellen Sie hier ihre Anträge</span>
             </li>
             <li>
-                <a href="{{ route('user_gesuch') }}">
+                <a href="{{ route('user_gesuch', app()->getLocale()) }}">
                     <i class="bi bi-envelope-check"></i>
                     <span class="links_name">Gesuche</span>
                 </a>
                 <span class="tooltip">Sehen Sie hier ihre Gesuche</span>
             </li>
             <li>
-                <a href="{{ route('user_nachrichten') }}">
+                <a href="{{ route('user_nachrichten', app()->getLocale()) }}">
                     <i class="bi bi-chat-dots"></i>
                     <span class="links_name">Nachrichten</span>
                 </a>
                 <span class="tooltip">Ihre Nachrichten</span>
             </li>
             <li>
-                <a href="{{ route('user_profile.edit') }}">
+                <a href="{{ route('user_profile.edit', app()->getLocale()) }}">
                     <i class="bi bi-person"></i>
                     <span class="links_name">Profil</span>
                 </a>
@@ -63,7 +63,7 @@
             </li>
 
             <li>
-                <a href="{{ route('user_dateien') }}">
+                <a href="{{ route('user_dateien', app()->getLocale()) }}">
                     <i class="bi bi-folder-plus"></i>
                     <span class="links_name">Datei Ablage</span>
                 </a>

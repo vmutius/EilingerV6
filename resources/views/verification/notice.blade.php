@@ -14,7 +14,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <form method="POST" action="{{ route('verification.send') }}">
+                        <form method="POST" action="{{ route('verification.send', app()->getLocale()) }}">
                             @csrf
 
                             <div>
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="{{ route('logout', app()->getLocale()) }}">
                             @csrf
 
                             <div>

@@ -338,7 +338,7 @@
                                 <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen (ausser Stipendien) </li>
                                 <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="{{ route('user_dashboard') }}" class="buy-btn">Zum Gesuchsportal</a>
+                            <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn">Zum Gesuchsportal</a>
                         </div>
                     </div>
 
@@ -349,7 +349,7 @@
                                 <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
                                 <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="{{ route('user_dashboard') }}" class="buy-btn">Zum Gesuchsportal</a>
+                            <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn">Zum Gesuchsportal</a>
                         </div>
                     </div>
 
@@ -360,7 +360,7 @@
                                 <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
                                 <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="{{ route('user_dashboard') }}" class="buy-btn">Zum Gesuchsportal</a>
+                            <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn">Zum Gesuchsportal</a>
                         </div>
                     </div>
 
@@ -371,7 +371,7 @@
                                 <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
                                 <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="{{ route('user_dashboard') }}" class="buy-btn">Zum Gesuchsportal</a>
+                            <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn">Zum Gesuchsportal</a>
                         </div>
                     </div>
 

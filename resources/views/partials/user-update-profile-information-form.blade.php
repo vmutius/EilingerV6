@@ -2,11 +2,11 @@
 <small>Wenn Sie Ihre Email Addresse ändern, müssen Sie diese erneut bestätigen.</small>
 
 
-<form id="send-verification" method="post" action="{{ route('verification.send') }}">
+<form id="send-verification" method="post" action="{{ route('verification.send', app()->getLocale()) }}">
     @csrf
 </form>
 
-<form method="post" action="{{ route('user_profile.update') }}" class="mt-6 space-y-6">
+<form method="post" action="{{ route('user_profile.update', app()->getLocale()) }}" class="mt-6 space-y-6">
     @csrf
     @method('patch')
     <div class="row">
