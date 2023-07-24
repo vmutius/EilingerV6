@@ -27,9 +27,9 @@
             <tbody>
                 <tr>
                     <td>Totale Kosten</td>
-                    @if (!is_null($cost))
-                        <td class="text-end">{{ $cost->total_amount_costs }}</td>
-                        <td>{{ $myCurrency->abbreviation }}</td>
+                    @if (!is_null($this->total_amount_costs))
+                        <td class="text-end">{{ $this->total_amount_costs }}</td>
+                        <td>{{ $this->myCurrency->abbreviation }}</td>
                     @else
                         <td></td>
                         <td></td>
@@ -37,9 +37,9 @@
                 </tr>
                 <tr>
                     <td>Totale Finanzierung</td>
-                    @if (!is_null($financing))
-                        <td class="text-end">- {{ $financing->total_amount_financing }}</td>
-                        <td>{{ $myCurrency->abbreviation }}</td>
+                    @if (!is_null($this->total_amount_financing))
+                        <td class="text-end">- {{ $this->total_amount_financing }}</td>
+                        <td>{{ $this->myCurrency->abbreviation }}</td>
                     @else
                         <td></td>
                         <td></td>
@@ -49,8 +49,8 @@
                 <tr>
                     <td>Berechneter Betrag</td>
                     @if ($diffAmount != 0)
-                        <td class="text-end">= {{ $diffAmount }}</td>
-                        <td>{{ $myCurrency->abbreviation }}</td>
+                        <td class="text-end">= {{ $this->diffAmount }}</td>
+                        <td>{{ $this->myCurrency->abbreviation }}</td>
                     @else
                         <td></td>
                         <td></td>
@@ -60,7 +60,7 @@
                     <td>Gewünschter Betrag</td>
                     @if ($diffAmount != 0)
                         <td><input wire:model.lazy="application.req_amount" type="number" class="form-control" /></td>
-                        <td>{{ $myCurrency->abbreviation }}</td>
+                        <td>{{ $this->myCurrency->abbreviation }}</td>
                     @else
                         <td></td>
                         <td></td>

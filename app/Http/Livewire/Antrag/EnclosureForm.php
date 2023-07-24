@@ -45,19 +45,6 @@ class EnclosureForm extends Component
         'enclosure.ects_points' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048', 
         'parents_tax_factors' => 'required_if:enclosure.parents_tax_factors,null',
         'enclosure.parents_tax_factors' => 'required|mimes:png,jpg,jpeg,pdf|max:2048',  
-
-        'passport' => 'required_if:enclosure.passport,null',
-        'enclosure.passport' => 'required|mimes:png,jpg,jpeg,pdf|max:2048', 
-        'cv' => 'required_if:enclosure.cv,null',
-        'enclosure.cv' => 'required|mimes:png,jpg,jpeg,pdf|max:2048',
-        'apprenticeship_contract' => 'required_if:enclosure.apprenticeship_contract,null',
-        'enclosure.apprenticeship_contract' => 'required|mimes:png,jpg,jpeg,pdf|max:2048',
-        'diploma' => 'required_if:enclosure.diploma,null',
-        'enclosure.diploma' => 'required|mimes:png,jpg,jpeg,pdf|max:2048',
-        'divorce' => 'nullable',
-        'enclosure.divorce' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'rental_contract' => 'nullable',
-        'enclosure.rental_contract' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
     ];
 
     public function messages()
@@ -93,6 +80,10 @@ class EnclosureForm extends Component
 
     public function saveEnclosure()
     {
+        if ($this->isInitialAppl) {
+            saveInitial();
+        };
+
         $this->validate(); 
         $file_certificate_of_study = $this->upload($this->certificate_of_study,'certificate_of_study');
         $this->enclosure->certificate_of_study = $file_certificate_of_study;
@@ -109,19 +100,6 @@ class EnclosureForm extends Component
         $file_parents_tax_factors = $this->upload($this->parents_tax_factors, 'parents_tax_factors');
         $this->enclosure->parents_tax_factors = $file_parents_tax_factors;
 
-        $file_passport = $this->upload($this->passport,'passport');
-        $this->enclosure->passport = $file_passport;
-        $file_cv = $this->upload($this->cv, 'cv');
-        $this->enclosure->cv = $file_cv;
-        $file_apprenticeship_contract = $this->upload($this->apprenticeship_contract,'apprenticeship_contract');
-        $this->enclosure->apprenticeship_contract = $file_apprenticeship_contract;
-        $file_diploma = $this->upload($this->diploma,'diploma');
-        $this->enclosure->diploma = $file_diploma;
-        $file_divorce = $this->upload($this->divorce,'divorce');
-        $this->enclosure->divorce = $file_divorce;
-        $file_rental_contract = $this->upload($this->rental_contract,'rental_contract');
-        $this->enclosure->rental_contract = $file_rental_contract;
-
         $this->enclosure->is_draft = false;
         $this->enclosure->application_id = session()->get('appl_id');
         $this->enclosure->save();
@@ -135,5 +113,32 @@ class EnclosureForm extends Component
             $file = $type->storeAs($this->UserName, $fileName, 'uploads');
             return $file;
         }
+    }
+
+    public function saveInitial () {
+        $this->validate (['passport' => 'required_if:enclosure.passport,null',
+                'enclosure.passport' => 'required|mimes:png,jpg,jpeg,pdf|max:2048', 
+                'cv' => 'required_if:enclosure.cv,null',
+                'enclosure.cv' => 'required|mimes:png,jpg,jpeg,pdf|max:2048',
+                'apprenticeship_contract' => 'required_if:enclosure.apprenticeship_contract,null',
+                'enclosure.apprenticeship_contract' => 'required|mimes:png,jpg,jpeg,pdf|max:2048',
+                'diploma' => 'required_if:enclosure.diploma,null',
+                'enclosure.diploma' => 'required|mimes:png,jpg,jpeg,pdf|max:2048',
+                'divorce' => 'nullable',
+                'enclosure.divorce' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
+                'rental_contract' => 'nullable',
+                'enclosure.rental_contract' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',]) ;
+            $file_passport = $this->upload($this->passport,'passport');
+            $this->enclosure->passport = $file_passport;
+            $file_cv = $this->upload($this->cv, 'cv');
+            $this->enclosure->cv = $file_cv;
+            $file_apprenticeship_contract = $this->upload($this->apprenticeship_contract,'apprenticeship_contract');
+            $this->enclosure->apprenticeship_contract = $file_apprenticeship_contract;
+            $file_diploma = $this->upload($this->diploma,'diploma');
+            $this->enclosure->diploma = $file_diploma;
+            $file_divorce = $this->upload($this->divorce,'divorce');
+            $this->enclosure->divorce = $file_divorce;
+            $file_rental_contract = $this->upload($this->rental_contract,'rental_contract');
+            $this->enclosure->rental_contract = $file_rental_contract;
     }
 }

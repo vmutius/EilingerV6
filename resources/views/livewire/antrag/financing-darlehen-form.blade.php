@@ -11,17 +11,6 @@
 
         <x-notification />
 
-        <div class="col-sm-2">
-            <label class="form-label" for="currency">Währung *</label>
-            <select wire:model.lazy="financing.currency_id" class="form-select">
-                <option selected value="">Bitte auswählen...</option>
-                @foreach ($currencies as $currency)
-                    <option value="{{ $currency->id }}">{{ $currency->currency }}</option>
-                @endforeach
-            </select>
-            <span class="text-danger">@error('financing.currency_id'){{ $message }}@enderror</span>
-        </div>
-
         <div class="col-sm-5">
             <label class="form-label" for="required_amount">Benötigter Betrag</label>
             <input wire:model.lazy="financing.required_amount" type="number" class="form-control" />

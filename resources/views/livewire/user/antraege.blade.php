@@ -89,6 +89,18 @@
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
                             <br />
+                            Gewünschte Auszahlungswährung:
+                            <br />
+                            <select wire:model.lazy="currency_id" class="form-select">
+                                <option selected value="">Bitte auswählen...</option>
+                                @foreach ($currencies as $currency)
+                                    <option value="{{ $currency->id }}">{{ $currency->currency }}</option>
+                                @endforeach
+                            </select>
+                            @error('currency_id')
+                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                            @enderror
+                            <br />
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">Erstantrag
                                     <input wire:model.lazy="is_first" class="form-check-input" type="radio" value = "1">
@@ -100,8 +112,8 @@
                                 </label>
                             </div>
                             @error('is_first')
-                            <div style="font-size: 11px; color: red">{{ $message }}</div>
-                        @enderror
+                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">Speichern</button>

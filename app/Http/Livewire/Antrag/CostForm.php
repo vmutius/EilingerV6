@@ -3,21 +3,21 @@
 namespace App\Http\Livewire\Antrag;
 
 use App\Models\Cost;
-use App\Models\Currency;
 use Livewire\Component;
+use App\Models\Currency;
+use App\Models\Application;
 use AmrShawky\LaravelCurrency\Facade\Currency as Converter;
 
 
 class CostForm extends Component
 {
     public $cost;
-    public $currencies;
+    public $currency_id;
     public $myCurrency;
 
     protected function rules() : array
     {   
         return([
-            'cost.currency_id' => 'required',
             'cost.semester_fees' => 'required|numeric|between:0,100000',
             'cost.fees' => 'required|numeric|between:0,100000',
             'cost.educational_material' => 'required|numeric|between:0,100000',
@@ -33,9 +33,9 @@ class CostForm extends Component
 
     public function mount()
     {
-        $this->cost = Cost::where('application_id', session()->get('appl_id'))
-            ->first() ?? new Cost;
-        $this->currencies = Currency::all();
+        $this->cost = Cost::where('application_id', session()->get('appl_id'))->first() ?? new Cost;
+        $this->currency_id = Application::where('id', session()->get('appl_id'))->pluck('currency_id');
+        $this->myCurrency = Currency::where('id', $this->currency_id)->first();
     }
 
     public function render()
@@ -69,20 +69,15 @@ class CostForm extends Component
 
     public function convertCostToCHF()
     {
-        $getAmountFinancing = $this->getAmountCost();
-        if (is_null($this->cost->currency_id)) {
-            return 0;
-        }
-        else {
-            $this->myCurrency = Currency::where('id', $this->cost->currency_id)->first();
-            return(
-                Converter::convert()
-                    ->from($this->myCurrency->abbreviation)
-                    ->to('CHF')
-                    ->amount($getAmountFinancing)
-                    ->round(2)
-                    ->get()
-            );
-        }
+        $getAmountCost = $this->getAmountCost();
+        
+        return(
+            Converter::convert()
+                ->from($this->myCurrency->abbreviation)
+                ->to('CHF')
+                ->amount($getAmountCost)
+                ->round(2)
+                ->get()
+        );
     }
 }

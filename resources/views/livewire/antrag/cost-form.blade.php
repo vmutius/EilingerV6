@@ -11,23 +11,12 @@
 
         <x-notification />
 
-        <div class="col-sm-2">
-            <label class="form-label" for="currency">Währung *</label>
-            <select wire:model.lazy="cost.currency_id" class="form-select">
-                <option selected value="">Bitte auswählen...</option>
-                @foreach ($currencies as $currency)
-                    <option value="{{ $currency->id }}">{{ $currency->currency }}</option>
-                @endforeach
-            </select>
-            <span class="text-danger">@error('cost.currency'){{ $message }}@enderror</span>
-        </div>
-
-        <div class="col-sm-5">
+        <div class="col-sm-4">
             <label class="form-label" for="cost.semester_fees">Semestergebühren</label>
             <input wire:model.lazy="cost.semester_fees" type="number" class="form-control" />
             <span class="text-danger">@error('cost.semester_fees'){{ $message }}@enderror</span>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-4">
             <label class="form-label" for="cost.fees">Übrige Gebühren</label>
             <input wire:model.lazy="cost.fees" type="number" class="form-control" />
             <span class="text-danger">@error('cost.fees'){{ $message }}@enderror</span>
@@ -77,7 +66,7 @@
         </div>
         <hr class="border border-dark opacity-50">
         <div class="col-sm-6">
-            <p>Totale Kosten in Länderwährung {{ $this->getAmountCost() }}</p>
+            <p>Totale Kosten in {{ $this->myCurrency->abbreviation }} {{ $this->getAmountCost() }}</p>
         </div>
         <div class="col-sm-6">
             <p>Totale Kosten in CHF {{ $this->convertCostToCHF() }}</p>

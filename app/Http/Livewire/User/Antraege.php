@@ -5,6 +5,7 @@ namespace App\Http\Livewire\User;
 use App\Enums\Form;
 use App\Enums\Bereich;
 use Livewire\Component;
+use App\Models\Currency;
 use App\Models\Application;
 use Illuminate\Validation\Rules\Enum;
 
@@ -15,6 +16,8 @@ class Antraege extends Component
     public $bereich;
     public $form;
     public $is_first;
+    public $currency_id;
+
 
     protected function rules() : array
     {   
@@ -23,6 +26,7 @@ class Antraege extends Component
             'bereich' => ['required',new Enum(Bereich::class)], 
             'form' => ['required',new Enum(Form::class)],
             'is_first' => 'boolean|required',
+            'currency_id' => 'required',
         ]);
     }
 
@@ -31,9 +35,11 @@ class Antraege extends Component
         $applications = Application::where('user_id', auth()->user()->id)
                         ->where('appl_status', 'not send')                
                         ->get();
+        $currencies = Currency::all();
 
         return view('livewire.user.antraege', [
             'applications' => $applications,
+            'currencies' => $currencies,
         ])
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
@@ -59,12 +65,14 @@ class Antraege extends Component
             'user_id' => auth()->user()->id,
             'form' => $this->form,
             'is_first' => $this->is_first,
+            'currency_id' => $this->currency_id,
         ]);
 
         $this->name = '';
         $this->bereich = '';
         $this->form = '';
         $this->is_first = '';
+        $this->currency_id ='';
 
         $this->showModal = false;
     }

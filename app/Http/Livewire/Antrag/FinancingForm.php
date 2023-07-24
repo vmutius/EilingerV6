@@ -5,12 +5,14 @@ namespace App\Http\Livewire\Antrag;
 use Livewire\Component;
 use App\Models\Currency;
 use App\Models\Financing;
+use App\Models\Application;
 use AmrShawky\LaravelCurrency\Facade\Currency as Converter;
 
 class FinancingForm extends Component
 {
     public $financing;
-    public $currencies;
+    public $currency_id;
+    public $myCurrency;
 
     protected $rules = [
         'financing.personal_contribution' => 'required|numeric|between:0,100000',
@@ -20,16 +22,15 @@ class FinancingForm extends Component
         'financing.netto_income' => 'required|numeric|between:0,100000',
         'financing.assets' => 'required|numeric|between:0,100000',
         'financing.scholarship' => 'required|numeric|between:0,100000',
-        'financing.currency_id' => 'required',
     ];
 
 
     public function mount()
     {
-        $this->financing = Financing::where('user_id', auth()->user()->id)
-            ->where('application_id', session()->get('appl_id'))
+        $this->financing = Financing::where('application_id', session()->get('appl_id'))
             ->first() ?? new Financing;
-        $this->currencies = Currency::all();
+        $this->currency_id = Application::where('id', session()->get('appl_id'))->pluck('currency_id');
+        $this->myCurrency = Currency::where('id', $this->currency_id)->first();
     }
 
     public function render()
@@ -60,19 +61,13 @@ class FinancingForm extends Component
     public function convertFinancingToCHF()
     {
         $getAmountFinancing = $this->getAmountFinancing();
-        if (is_null($this->financing->currency_id)) {
-            return 0;
-        }
-        else {
-            $this->myCurrency = Currency::where('id', $this->financing->currency_id)->first();
-            return(
-                Converter::convert()
-                    ->from($this->myCurrency->abbreviation)
-                    ->to('CHF')
-                    ->amount($getAmountFinancing)
-                    ->round(2)
-                    ->get()
-            );
-        }
+        return(
+            Converter::convert()
+                ->from($this->myCurrency->abbreviation)
+                ->to('CHF')
+                ->amount($getAmountFinancing)
+                ->round(2)
+                ->get()
+        );
     }
 }

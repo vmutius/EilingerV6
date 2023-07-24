@@ -20,8 +20,11 @@ class CreateApplicationsTable extends Migration
             $table->date('end_appl')->nullable();
             $table->longText('comment');
             $table->longText('reason');
+            $table->decimal('calc_amount', $precision = 8, $scale = 2)->nullable();
             $table->decimal('req_amount', $precision = 8, $scale = 2)->nullable();
+            $table->foreignId('currency_id')->constrained();
             $table->boolean('is_first')->default(true);
+            $table->foreignId('main_application_id')->nullable()->constrained('applications'); // Link zum Erst Antrag, wenn dies ein Folge Antrag ist
             $table->timestamps();
             $table->softDeletes();
         });

@@ -12,6 +12,10 @@ class ReqAmountForm extends Component
 {
     public $application;
     public $reqAmount;
+    public $myCurrency;
+    public $total_amount_financing;
+    public $total_amount_costs;
+    public $diffAmount;
 
     protected function rules() : array
     {   
@@ -23,37 +27,30 @@ class ReqAmountForm extends Component
     public function mount()
     {
         $this->application = Application::where('id', session()->get('appl_id'))->first();
+        $this->myCurrency = Currency::where('id', $this->application->currency_id)->first();
+        $this->total_amount_financing = Financing::where('application_id', session()->get('appl_id'))
+            ->sum('total_amount_financing');
+
+        $this->total_amount_costs = Cost::where('application_id', session()->get('appl_id'))
+            ->sum('total_amount_costs');
     }
     
     
     public function render()
     {
-        $financing = Financing::where('user_id', auth()->user()->id)
-            ->where('application_id', session()->get('appl_id'))
-            ->first(['currency_id', 'total_amount_financing']);
-
-        $cost = Cost::where('user_id', auth()->user()->id)
-            ->where('application_id', session()->get('appl_id'))
-            ->first(['currency_id', 'total_amount_costs']);
-        
-        if(!is_null($cost) && !is_null($financing)){
-            $diffAmount = $cost->total_amount_costs - $financing->total_amount_financing;
-            $myCurrency = Currency::where('id', $cost->currency_id)->first();
+        if(!is_null($this->total_amount_financing) && !is_null($this->total_amount_costs)){
+            $this->diffAmount = $this->total_amount_costs - $this->total_amount_financing;
         } else {
-            $diffAmount = 0.00;
-            $myCurrency = 'XXX';
+            $this->diffAmount = 0.00;
+            $this->myCurrency = 'XXX';
         }
 
-        return view('livewire.antrag.req-amount-form', [
-            'financing' => $financing,
-            'cost' => $cost,
-            'diffAmount' => $diffAmount,
-            'myCurrency' => $myCurrency,
-        ]);
+        return view('livewire.antrag.req-amount-form');
     }
 
     public function saveReqAmount() 
     {
+        $this->application->calc_amount = $this->diffAmount;
         $this->application->save();
         session()->flash('success', 'Gewünschter Betrag aktualisiert.');
     }

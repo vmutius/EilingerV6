@@ -21,6 +21,10 @@ class Application extends Model
         'form',
         'reason',
         'is_first',
+        'req_amount',
+        'calc_amount',
+        'currency_id',
+        'main_application_id'
     ];
 
     public function user()
