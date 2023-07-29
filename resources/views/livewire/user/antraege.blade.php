@@ -114,12 +114,26 @@
                             @error('is_first')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
+                            <br />
+                            @if ($this->visible)
+                                ErstAntrag:
+                                <br />
+                                <select wire:model.lazy="main_appl_id" class="form-select">
+                                    <option selected value="">Bitte auswählen...</option>
+                                    @foreach ($first_applications as $first_application)
+                                        <option value="{{ $first_application->id }}">{{ $first_application->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('first_applications')
+                                    <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                @enderror
+                            @endif
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">Speichern</button>
                             <button wire:click="close" type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
-                            </button>
+                            </button> 
                         </div>
                     </form>
                 </div>

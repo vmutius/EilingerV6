@@ -17,6 +17,10 @@ class Antraege extends Component
     public $form;
     public $is_first;
     public $currency_id;
+    public $main_application_id;
+    public $first_applications;
+    public $visible;
+    public $main_appl_id;
 
 
     protected function rules() : array
@@ -27,6 +31,7 @@ class Antraege extends Component
             'form' => ['required',new Enum(Form::class)],
             'is_first' => 'boolean|required',
             'currency_id' => 'required',
+            'main_appl_id' => 'sometimes',
         ]);
     }
 
@@ -66,6 +71,7 @@ class Antraege extends Component
             'form' => $this->form,
             'is_first' => $this->is_first,
             'currency_id' => $this->currency_id,
+            'main_application_id' => $this->main_appl_id,
         ]);
 
         $this->name = '';
@@ -73,12 +79,26 @@ class Antraege extends Component
         $this->form = '';
         $this->is_first = '';
         $this->currency_id ='';
-
+        $this->main_appl_id='';
+        
+        $this->visible = false;
         $this->showModal = false;
     }
 
     public function close()
     {
         $this->showModal = false;
+    }
+
+    public function updatedIsFirst() 
+    {
+       
+        if (!$this->is_first){
+            $this->visible = true;
+            $this->first_applications = Application::where('user_id', auth()->user()->id)
+                    ->where('bereich', $this->bereich)        
+                    ->where('form', $this->form)        
+                    ->get();
+        }
     }
 }
