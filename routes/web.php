@@ -22,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::redirect('/', '/de');
+Route::get('/', function () {
+    return redirect(app()->getLocale());
+});
 
 Route::group(['prefix' => '{locale}'], function () {
     Route::view('/', 'home.index')->name('index');
@@ -78,6 +80,6 @@ Route::group(['prefix' => '{locale}'], function () {
         Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])->name('password.confirm');
         Route::post('confirm-password', [ConfirmablePasswordController::class, 'store']);
         Route::put('password', [PasswordController::class, 'update'])->name('password.update');
-        Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+        Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
     });
 });

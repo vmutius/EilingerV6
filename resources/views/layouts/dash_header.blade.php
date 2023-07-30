@@ -26,7 +26,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <form method="POST" action="/logout">
+                <form method="GET" action="{{ route('logout', app()->getLocale()) }}">
                     @csrf
                     <button type="submit" class="btn btn-light">Log Out</button>
                 </form>

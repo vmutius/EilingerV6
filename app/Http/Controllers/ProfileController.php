@@ -44,7 +44,7 @@ class ProfileController extends Controller
             ? route('admin_dashboard', app()->getLocale()) 
             : route('user_dashboard', app()->getLocale());
 
-        return redirect()->route($success_route, app()->getLocale())->with('success', 'Profil wurde aktualisiert');
+        return redirect()->route($success_route)->with('success', 'Profil wurde aktualisiert');
     }
 
     /**
