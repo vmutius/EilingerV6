@@ -4,9 +4,11 @@ namespace App\Http\Livewire\Antrag;
 
 use Livewire\Component;
 use App\Models\Enclosure;
+use Livewire\WithFileUploads;
 
 class EnclosureFormDarlehen extends Component
 {
+    use WithFileUploads;
     public $enclosure;
     public $activity;
     public $activity_report;
