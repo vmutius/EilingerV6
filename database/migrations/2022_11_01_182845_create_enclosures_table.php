@@ -25,6 +25,11 @@ class CreateEnclosuresTable extends Migration
             $table->string('supplementary_services')->nullable();
             $table->string('ects_points')->nullable();
             $table->string('parents_tax_factors')->nullable();
+            $table->string('activity')->nullable();
+            $table->string('activity_report')->nullable();
+            $table->string('balance_sheet')->nullable();
+            $table->string('cost_receipts')->nullable();
+            $table->string('open_invoice')->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
             $table->softDeletes();

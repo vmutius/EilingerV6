@@ -1,6 +1,6 @@
 <form wire:submit.prevent="saveEnclosure">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Bemerkungen und Beilagen</h3>
+        <h3 class="mb-0">Ergänzende Angaben und Beilagen</h3>
         <small>die mit dem Stipendienantrag einzureichen sind</small>
     </div>
     <div class="row g-3">
@@ -28,7 +28,6 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @if ($this->isInitialAppl)
                   <tr>
                     <th scope="row">1</th>
                     <td>Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</td>
@@ -119,10 +118,6 @@
                       @endif
                     </td>
                   </tr>
-
-                  @endif
-
-
                   <tr>
                     <th scope="row">1</th>
                     <td>Semesterbestätigung/ Studienbescheinigung</td>

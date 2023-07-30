@@ -6,9 +6,6 @@
                 <p><small>Bitte geben sie die gewünsche Höhe des Stipendiums bzw. des Darlehens ein. Angezeigt ist der errechnete Betrag </small></p>
                 <p><small>Der gewünschte Betrag kann erst eingegeben werden, wenn Ausbildungs- und Lebenskosten und Finanzierung eingegeben sind </small></p> 
             </div>
-            <div>
-                
-            </div>
         </div>
     </div>
     <div class="row g-3">
@@ -26,7 +23,7 @@
         
             <tbody>
                 <tr>
-                    <td>Totale Kosten</td>
+                    <td>Totale Kosten </td>
                     @if (!is_null($this->total_amount_costs))
                         <td class="text-end">{{ $this->total_amount_costs }}</td>
                         <td>{{ $this->myCurrency->abbreviation }}</td>
@@ -66,8 +63,27 @@
                         <td></td>
                     @endif
                 </tr>
+                @if ($this->application->form->name == "Darlehen")
+                    <tr>
+                        <td>Auszahlungsplan</td> 
+                        <td> 
+                        <select wire:model.lazy="application.payout_plan" class="form-select">
+                            <option selected value="" disabled>-- Wählen Sie eine Option --</option>
+                            @foreach (App\Enums\PayoutPlan::cases() as $payoutplan)
+                                <option value="{{ $payoutplan }}">{{ $payoutplan }}</option>
+                            @endforeach
+                        </select>
+                        @error('payout_plan')
+                            <div style="font-size: 11px; color: red">{{ $message }}</div>
+                        @enderror
+                        </td>
+                        <td></td>
+                    </tr>    
+                @endif
+
             </tbody>
         </table>
+       
 
         <div class="col-md-12 text-center">
             <button type="submit"  class="btn btn-success">

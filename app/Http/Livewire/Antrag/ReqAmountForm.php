@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\Currency;
 use App\Models\Financing;
 use App\Models\Application;
+use App\Models\CostDarlehen;
 
 class ReqAmountForm extends Component
 {
@@ -21,6 +22,7 @@ class ReqAmountForm extends Component
     {   
         return([
             'application.req_amount' => 'required|numeric',
+            'application.payout_plan' => 'sometimes',
         ]);
     }
 
@@ -31,8 +33,14 @@ class ReqAmountForm extends Component
         $this->total_amount_financing = Financing::where('application_id', session()->get('appl_id'))
             ->sum('total_amount_financing');
 
-        $this->total_amount_costs = Cost::where('application_id', session()->get('appl_id'))
+        if ($this->application->form == 'Stipendium') {
+            $this->total_amount_costs = Cost::where('application_id', session()->get('appl_id'))
             ->sum('total_amount_costs');
+        }
+        else {
+            $this->total_amount_costs = CostDarlehen::where('application_id', session()->get('appl_id'))
+            ->sum('cost_amount');
+        }
     }
     
     

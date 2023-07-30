@@ -80,14 +80,16 @@
     @endforeach
 
     <br/>
+
+    <div class="row">
+        <div class="col-md-12 mt-4">
+            <button class="btn btn-sm btn-secondary" wire:click.prevent="addParent">+ Weitere Elternteile</button>
+        </div>
+    </div>
     <div class="col-md-12 text-center">
         <button type="submit" class="btn btn-success">
             <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
         </button>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <button class="btn btn-sm btn-secondary" wire:click.prevent="addParent">+ Weitere Elternteile</button>
-        </div>
-    </div>
+    
 </form>

@@ -25,6 +25,11 @@ class Enclosure extends Model
         'supplementary_services',
         'ects_points',
         'parents_tax_factors',
+        'activity',
+        'activity_report',
+        'balance_sheet',
+        'cost_receipts',
+        'open_invoice',
         'is_draft',
     ];
 
