@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\Form;
 use App\Enums\Bereich;
+use App\Models\Currency;
 use App\Enums\ApplStatus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -45,6 +46,7 @@ class Application extends Model
             ApplStatus::COMPLETE->value => 'dark', //Angaben im Antrag vollständig. Wartet auf nächste Stiftungsratssitzung
             ApplStatus::APPROVED->value => 'success',
             ApplStatus::BLOCKED->value => 'danger',
+            ApplStatus::NOT_SEND->value => 'secondary',
         ][$this->appl_status->value] ?? 'gray'; 
     }
 
@@ -53,4 +55,9 @@ class Application extends Model
         'bereich' => Bereich::class,
         'form' => Form::class,
     ];
+
+    public function currency()
+    {
+        return $this->belongsTo(Currency::class);
+    }
 }

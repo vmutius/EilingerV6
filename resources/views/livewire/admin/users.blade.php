@@ -48,7 +48,7 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->created_at ? $user->created_at->format('d.m.Y H:i') :null }}</td>
                             @forelse ($user->sendApplications as $application)
-                                <td><a href="{{ route('admin_antrag' , app()->getLocale(), $application->id) }}">{{ $application->name }}</a></td>
+                                <td><a href="{{ route('admin_antrag', ['application_id' => $application->id, 'locale'=> app()->getLocale()]) }}">{{ $application->name }}</a></td>
                                 <td>{{ $application->bereich->name }}</td>
                                 <td>{{ $application->created_at ? $application->created_at->format('d.m.Y H:i') : null }}</td>
                                 <td>{{ $application->updated_at ? $application->updated_at->format('d.m.Y H:i') : null }}</td>
