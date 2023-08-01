@@ -21,7 +21,7 @@ class UserJurForm extends Component
         'user.salutation' => 'nullable',
         'user.telefon' => 'nullable',
         'user.mobile' => 'nullable',
-
+        'user.contact_partner_aboard' => 'sometimes',
     ];
 
     public function mount()

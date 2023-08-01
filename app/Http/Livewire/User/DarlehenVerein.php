@@ -7,6 +7,15 @@ use Livewire\Component;
 class DarlehenVerein extends Component
 {
     public $currentStep = 1;
+    public $showModal = false;
+    public $completeApp;
+
+    protected $listeners = ['completeApp' => 'completeApp'];
+
+    public function completeApp() 
+    {
+        $this->completeApp = true;
+    }
     
     public function render()
     {
@@ -21,5 +30,21 @@ class DarlehenVerein extends Component
     public function decreaseStep()
     {
         $this->currentStep--;
+    }
+
+    public function saveApplication()
+    {
+        $this->showModal = true;
+    }
+
+    public function save()
+    {
+        $this->emit('sendApplication');
+        $this->showModal = false;
+    }
+
+    public function close()
+    {
+        $this->showModal = false;
     }
 }

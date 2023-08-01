@@ -1,7 +1,7 @@
 <form wire:submit.prevent="saveUserJur">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Bewerber</h3>
-        <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
+        <h3 class="mb-0">Gesuchssteller</h3>
+        <small>Angaben über die Organisation</small>
     </div>
     <div class="row g-3">
 
@@ -35,8 +35,8 @@
             <label class="form-label" for="salutation">Anrede</label>
             <select wire:model.lazy="user.salutation" class="form-select">
                 <option selected value="">Bitte Anrede auswählen</option>
-                @foreach (App\Enums\Salutation::cases() as $key => $label)
-                    <option value="{{ $key }}">{{ $label }}</option>
+                @foreach (App\Enums\Salutation::cases() as $salutation)
+                    <option value="{{ $salutation }}">{{ $salutation }}</option>
                 @endforeach
             </select>
             <span class="text-danger">@error('user.salutation'){{ $message }}@enderror</span>
@@ -68,6 +68,11 @@
             <label class="form-label" for="mobile">Mobile der Kontaktperson</label>
             <input wire:model.lazy="user.mobile" type="text" class="form-control" />
             <span class="text-danger">@error('user.mobile'){{ $message }}@enderror</span>
+        </div>
+
+        <div class="col-md-12">
+            <label class="form-label" for="contact_partner_aboard">Ansprechpartner im Ausland</label>
+            <input wire:model.lazy="user.contact_partner_aboard" type="text" class="form-control" />
         </div>
 
 

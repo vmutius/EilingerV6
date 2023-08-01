@@ -3,7 +3,7 @@
         <h3 class="mb-0">Finanzierung</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Angaben über die Finanzierung im bevorstehenden Ausbildungsjahr</small>
+                <small>Angaben über die Einnahmen pro Jahr</small>
             </div>
         </div>
     </div>
@@ -11,7 +11,7 @@
 
         <x-notification/>
 
-        <div class="col-sm-4>
+        <div class="col-sm-4">
             <label class="form-label" for="personal_contribution">Eigenleistung vom Bewerber selbst</label>
             <input wire:model.lazy="financing.personal_contribution" type="number" class="form-control" />
             <span class="text-danger">@error('financing.personal_contribution'){{ $message }}@enderror</span>

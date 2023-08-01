@@ -48,64 +48,19 @@
                 <td>Alle Tätigkeitsberichte </td>
                 <td>
                     <div class="mb-3">
-                        <input wire:model.defer="cv" class="form-control" type="file" id="formFile">
+                        <input wire:model.defer="activity_report" class="form-control" type="file" id="formFile">
                     </div>
-                    <span class="text-danger">@error('cv'){{ $message }}@enderror</span>
+                    <span class="text-danger">@error('activity_report'){{ $message }}@enderror</span>
                 </td>
                 <td>
-                    @if ($enclosure->cv)
-                        <span class="text.success">{{ $enclosure->cv}}</span>
+                    @if ($enclosure->activity_report)
+                        <span class="text.success">{{ $enclosure->activity_report}}</span>
                     @endif
                     </td>
                 </tr>
                 <tr>
                 <th scope="row">3</th>
                 <td>Kopie eines Mietvertrages </td>
-                <td>
-                    <div class="mb-3">
-                        <input wire:model.defer="apprenticeship_contract" class="form-control" type="file" id="formFile">
-                    </div>
-                    <span class="text-danger">@error('apprenticeship_contract'){{ $message }}@enderror</span>
-                </td>
-                <td>
-                    @if ($enclosure->apprenticeship_contract)
-                    <span class="text.success">{{ $enclosure->apprenticeship_contract}}</span>
-                    @endif
-                </td>
-                </tr>
-                <tr>
-                <th scope="row">4</th>
-                <td>Ein- und Ausgabenaufstellung detailliert (Bilanz, Jahresbilanz) </td>
-                <td>
-                    <div class="mb-3">
-                        <input wire:model.defer="diploma" class="form-control" type="file" id="formFile">
-                    </div>
-                    <span class="text-danger">@error('diploma'){{ $message }}@enderror</span>
-                </td>
-                <td>
-                    @if ($enclosure->diploma)
-                    <span class="text.success">{{ $enclosure->diploma}}</span>
-                    @endif
-                </td>
-                </tr>
-                <tr>
-                <th scope="row">5</th>
-                <td>Kopie der neuesten Steuerveranlagung, Steuerbefreiung </td>
-                <td>
-                    <div class="mb-3">
-                        <input wire:model.defer="divorce" class="form-control" type="file" id="formFile">
-                    </div>
-                    <span class="text-danger">@error('divorce'){{ $message }}@enderror</span>
-                </td>
-                <td>
-                    @if ($enclosure->divorce)
-                    <span class="text.success">{{ $enclosure->divorce}}</span>
-                    @endif
-                </td>
-                </tr>
-                <tr>
-                <th scope="row">6</th>
-                <td>Kopie Kostenbelege für Verwendung des/r genehmigten Betrages/Beträge</td>
                 <td>
                     <div class="mb-3">
                         <input wire:model.defer="rental_contract" class="form-control" type="file" id="formFile">
@@ -119,17 +74,62 @@
                 </td>
                 </tr>
                 <tr>
-                <th scope="row">1</th>
+                <th scope="row">4</th>
+                <td>Ein- und Ausgabenaufstellung detailliert (Bilanz, Jahresbilanz) </td>
+                <td>
+                    <div class="mb-3">
+                        <input wire:model.defer="balance_sheet" class="form-control" type="file" id="formFile">
+                    </div>
+                    <span class="text-danger">@error('balance_sheet'){{ $message }}@enderror</span>
+                </td>
+                <td>
+                    @if ($enclosure->balance_sheet)
+                    <span class="text.success">{{ $enclosure->balance_sheet}}</span>
+                    @endif
+                </td>
+                </tr>
+                <tr>
+                <th scope="row">5</th>
+                <td>Kopie der neuesten Steuerveranlagung, Steuerbefreiung </td>
+                <td>
+                    <div class="mb-3">
+                        <input wire:model.defer="tax_assessment" class="form-control" type="file" id="formFile">
+                    </div>
+                    <span class="text-danger">@error('tax_assessment'){{ $message }}@enderror</span>
+                </td>
+                <td>
+                    @if ($enclosure->tax_assessment)
+                    <span class="text.success">{{ $enclosure->tax_assessment}}</span>
+                    @endif
+                </td>
+                </tr>
+                <tr>
+                <th scope="row">6</th>
+                <td>Kopie Kostenbelege für Verwendung des/r genehmigten Betrages/Beträge</td>
+                <td>
+                    <div class="mb-3">
+                        <input wire:model.defer="cost_receipts" class="form-control" type="file" id="formFile">
+                    </div>
+                    <span class="text-danger">@error('cost_receipts'){{ $message }}@enderror</span>
+                </td>
+                <td>
+                    @if ($enclosure->cost_receipts)
+                    <span class="text.success">{{ $enclosure->cost_receipts}}</span>
+                    @endif
+                </td>
+                </tr>
+                <tr>
+                <th scope="row">7</th>
                 <td>Kopie offene Rechnung/en (z. B. Arzt, Krankenhaus, Tierarzt, Pflegestelle, Sonstiges) </td>
                 <td>
                     <div class="mb-3">
-                        <input wire:model.defer="certificate_of_study" class="form-control" type="file">
+                        <input wire:model.defer="open_invoice" class="form-control" type="file">
                         </div>
-                    <span class="text-danger">@error('certificate_of_study'){{ $message }}@enderror</span>
+                    <span class="text-danger">@error('open_invoice'){{ $message }}@enderror</span>
                 </td>
                 <td>
-                    @if ($enclosure->certificate_of_study)
-                        <span class="text.success">{{ $enclosure->certificate_of_study}}</span>
+                    @if ($enclosure->open_invoice)
+                        <span class="text.success">{{ $enclosure->open_invoice}}</span>
                     @endif
                     </td>
                 </tr>

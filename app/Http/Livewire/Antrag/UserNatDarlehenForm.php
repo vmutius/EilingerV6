@@ -18,7 +18,6 @@ class UserNatDarlehenForm extends Component
             'user.telefon' => 'required',
             'user.mobile' => 'sometimes',
             'user.contact_partner_aboard' => 'sometimes',
-            
         ]);
     }
 

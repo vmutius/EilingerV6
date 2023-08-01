@@ -19,7 +19,7 @@ class CreateAddressesTable extends Migration
             $table->date('since')->nullable();
             $table->boolean('is_wochenaufenthalt')->default(false);
             $table->boolean('is_aboard')->default(false);
-            $table->boolean('is_draft')->default(true);
+            $table->boolean('is_draft')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });
