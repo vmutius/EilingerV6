@@ -13,14 +13,12 @@ class Message extends Component
     {
         $this->application = Application::where('id', $application_id)
             ->with('messages')    
-            ->get();
+            ->first();
     }
 
     public function render()
     {
-        return view('livewire.user.message', [
-            'application' => $this->application,
-        ])
+        return view('livewire.user.message')
             ->layout(\App\View\Components\Layouts\UserDashboard::class);
     }
 }

@@ -18,7 +18,7 @@
                     @forelse ($applications as $application)
                         <tr>
                             <td>
-                                <a href="{{ route('admin_antrag' , app()->getLocale(), $application->id) }}">{{ $application->name }} ({{ $application->appl_status }})</a>
+                                <a href="{{ route('admin_antrag' , ['application_id' => $application->id, 'locale'=> app()->getLocale()]) }}">{{ $application->name }} ({{ $application->appl_status }})</a>
                             </td>
                             <td>{{ $application->bereich }}</td>
                             <td>{{ $application->user->lastname }}</td>

@@ -1,5 +1,5 @@
 <section class="home-section">
-    <div class="text">Antrag {{ $application->name }} (Bereich: {{ $application->bereich }})</div>
+    <div class="text">Antrag {{ $application->name }} (Bereich: {{ $application->bereich }})</div> 
 
     <div class="content">
         <div class="shadow p-3 mb-5 bg-body rounded">
@@ -21,8 +21,8 @@
                 @include('partials.accRemarks')
             </div>
         </div>
-        @livewire('set-status', ['application' => $application]);
-        @livewire('messages-section', ['application' => $application]);
+        @livewire('set-status', ['application' => $application])
+        @livewire('messages-section', ['application' => $application])
     </div>
 
     </div>

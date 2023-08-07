@@ -7,17 +7,17 @@
         @endif
     </div>
     <h3>Status des Antrags</h3>
-    {{ $appl_status }}
+    {{ $application->appl_status }}
 
     <form wire:submit.prevent="setStatus">
         <div class="row">
             <div class="col-md-10">
                 @foreach (\App\Enums\ApplStatus::cases() as $status)
-                    <input type="radio" wire:model.lazy="appl_status" value={{ $status->value }}>
+                    <input type="radio" wire:model.lazy="application.appl_status" value={{ $status->value }}>
                     <span>{{ $status->name }}</span>
                 @endforeach
                 <span class="text-danger">
-                    @error('appl_status')
+                    @error('application.appl_status')
                         {{ $message }}
                     @enderror
                 </span>

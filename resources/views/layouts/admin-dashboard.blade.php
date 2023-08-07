@@ -18,7 +18,7 @@
 
 <body>
     <!-- ======= Header ======= -->
-    @include('layouts.dash_header')
+    @include('layouts.dash-header')
 
     <div class="sidebar">
         <div class="logo-details">

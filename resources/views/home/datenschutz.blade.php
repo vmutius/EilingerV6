@@ -14,29 +14,14 @@
                     8264 Eschenz
                     EilingerStiftung@gmx.net
 
-                    <h4>Datenschutzerklärung</h4>
-                    <p>{{ __('home.data-protection-text') }} </p>
+                    <h4>{{ __('home.data-protection') }}</h4>
+                    <p>{{ __('home.data-protection-text') }}</p>
 
-                    <h4>Auskunft, Löschung, Sperrung </h4>
-                    <p>Sie erhalten jederzeit unentgeltlich Auskunft über die von uns gespeicherten personenbezogenen Daten zu Ihrer Person sowie zur Herkunft,
-                        dem Empfänger und dem Zweck von Datenerhebung sowie Datenverarbeitung. Außerdem haben Sie das Recht, die Berichtigung, die Sperrung oder
-                        Löschung Ihrer Daten zu verlangen. Ausgenommen davon sind Daten, die aufgrund gesetzlicher Vorschriften aufbewahrt oder zur
-                        ordnungsgemäßen Geschäftsabwicklung benötigt werden. Damit eine Datensperre jederzeit realisiert werden kann, werden Daten zu
-                        Kontrollzwecken in einer Sperrdatei vorgehalten. Werden Daten nicht von einer gesetzlichen Archivierungspflicht erfasst, löschen wir
-                        Ihre Daten auf Ihren Wunsch. Greift die Archivierungspflicht, sperren wir Ihre Daten. Für alle Fragen und Anliegen zur Berichtigung,
-                        Sperrung oder Löschung von personenbezogenen Daten wenden Sie sich bitte an unseren Datenschutzbeauftragten unter den Kontaktdaten in
-                        dieser Datenschutzerklärung bzw. an die im Impressum genannte Adresse. </p>
+                    <h4>{{ __('home.deletion') }}</h4>
+                    <p>{{ __('home.deletion-text')}}</p>
 
-                    <h4>Cookies</h4>
-                    <p>Wir verwenden auf unserer Webseite Cookies. Diese kleinen Textdateien werden von unserem Server aus auf Ihrem PC gespeichert. Sie
-                        unterstützen die Darstellung unserer Webseite und helfen Ihnen, sich auf unserer Webseite zu bewegen. Cookies erfassen Daten zu Ihrer
-                        IP-Adresse, zu Ihrem Browser, Ihrem Betriebssystem und Ihrer Internetverbindung. Diese Informationen verbinden wir nicht mit
-                        personenbezogenen Daten und geben sie nicht an Dritte weiter. Keinesfalls werden Cookies von uns dazu benutzt, Schad- oder
-                        Spionageprogramme auf Ihren Rechner zu bringen. Sie können unsere Webseite auch ohne den Einsatz von Cookies nutzen, wodurch
-                        möglicherweise einige Darstellungen und Funktionen unseres Angebots nur eingeschränkt arbeiten. Wenn Sie die Cookies deaktivieren
-                        möchten, können Sie das über spezielle Einstellungen Ihres Browsers erreichen. Nutzen Sie bitte dessen Hilfsfunktion, um die
-                        entsprechenden Änderungen vornehmen zu können. Online-Anzeigen-Cookies können Sie über folgende Links verwalten:
-                        http://www.aboutads.info/choices für die USA http://www.youronlinechoices.com/uk/your-ad-choice... für Europa. </p>
+                    <h4>{{ __('home.cookies') }}</h4>
+                    <p>{{ __('home.cookies-text') }}</p>
 
                     <h4>Erbringung kostenpflichtiger Dienste </h4>
                     <p>Sollten Sie die auf unserer Webseite angebotenen kostenpflichtigen Leistungen und Dienste nutzen wollen, müssen wir zu Abrechnungszwecken

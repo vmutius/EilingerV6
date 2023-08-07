@@ -7,7 +7,7 @@
         @endif
     </div>
     <div class="col-md-12">
-        <h3>Nachrichten</h3>
+        <h3>Nachrichten zu {{ $application->name }}</h3>
 
         <form wire:submit.prevent="postMessage">
             <div class="blog-comment">
