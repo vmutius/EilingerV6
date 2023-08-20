@@ -3,6 +3,7 @@
 namespace App\View\Components\Layouts;
 
 use Closure;
+use App\Models\Message;
 use Illuminate\View\Component;
 
 class UserDashboard extends Component
