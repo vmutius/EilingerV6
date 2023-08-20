@@ -3,10 +3,14 @@
 namespace App\View\Components\Layouts;
 
 use Closure;
+use App\Models\Message;
 use Illuminate\View\Component;
 
 class AdminDashboard extends Component
 {
+   
+    public $messages;
+
     /**
      * Create a new component instance.
      *
@@ -14,7 +18,7 @@ class AdminDashboard extends Component
      */
     public function __construct()
     {
-        //
+        $this->messages = Message::all();
     }
 
     /**
@@ -24,6 +28,8 @@ class AdminDashboard extends Component
      */
     public function render()
     {
-        return view('layouts.admin-dashboard');
+        return view('layouts.admin-dashboard', [
+            'messages' => $this->messages,
+        ]);
     }
 }

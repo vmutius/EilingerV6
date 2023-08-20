@@ -7,6 +7,8 @@ use Illuminate\View\Component;
 
 class UserDashboard extends Component
 {
+    public $messages;
+
     /**
      * Create a new component instance.
      *
@@ -14,7 +16,7 @@ class UserDashboard extends Component
      */
     public function __construct()
     {
-        //
+        $this->messages = Message::all();
     }
 
     /**
@@ -24,6 +26,8 @@ class UserDashboard extends Component
      */
     public function render()
     {
-        return view('layouts.user-dashboard');
+        return view('layouts.user-dashboard', [
+            'messages' => $this->messages,
+        ]);
     }
 }
