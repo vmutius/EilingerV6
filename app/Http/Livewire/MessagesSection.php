@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Message;
 use Livewire\Component;
 use App\Models\Application;
-use App\Notifications\MessageSend;
+use App\Notifications\MessageAdded;
 
 class MessagesSection extends Component
 {
@@ -52,7 +52,7 @@ class MessagesSection extends Component
         
         $this->reset('body');
 
-        $this->application->user->notify(new MessageSend($newMessage));
+        $this->application->user->notify(new MessageAdded($newMessage));
 
         session()->flash('message', 'Nachricht gespeichert');
     }

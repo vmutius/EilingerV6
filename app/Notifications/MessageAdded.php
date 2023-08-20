@@ -4,11 +4,11 @@ namespace App\Notifications;
 
 use App\Models\Message;
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 
-class MessageSend extends Notification implements ShouldQueue
+class MessageAdded extends Notification
 {
     use Queueable;
     public $message;
@@ -37,10 +37,10 @@ class MessageSend extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->greeting('Hello!')
-            ->line('Sie haben eine neue Nachricht bzgl Ihres Antrags.')
-            ->action('Notification Action', url('/'))
-            ->line('Thank you for using our application!');
+            ->subject('Neue Nachricht zu Ihrem Antrag')
+            ->markdown('email.message-added', [
+                'message' => $this->message,
+            ]);
     }
 
     /**
@@ -53,10 +53,9 @@ class MessageSend extends Notification implements ShouldQueue
         return [
             'message_id' => $this->message->id,
             'message_body' => $this->message->body,
-            'created_by' => $this->message->user->username,
-            'appl_user' => $this->message->application->user->username,
-            'application_id' => $this->message->application->id,
-            'application_bereich' => $this->message->application->bereich,
+            'username' => $this->message->user->username,
+            'appl_name' => $this->message->application->name,
+            'appl_id' => $this->message->application->id,
         ];
     }
 }

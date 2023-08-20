@@ -8,13 +8,8 @@
                         <i class="bi bi-bell"></i>
                         <span class="unread-notification"></span>
                     </a>
-                    
-                        <ul class="dropdown-menu">
-                            @foreach ($messages as $message)
-                                <li>{{ $message->user->username }}: {{ $message->body }}</li>
-                            @endforeach
-                        </ul>
-                        
+                          
+                @livewire('message-notification')
                     
                 </li>
                 <li class="nav-item dropdown">

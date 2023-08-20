@@ -2,22 +2,21 @@
 
 namespace App\Notifications;
 
-use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
 
-class UserRegistered extends Notification implements ShouldQueue
+class NewUser extends Notification
 {
     use Queueable;
-    public $user;
+
     /**
      * Create a new notification instance.
      */
-    public function __construct(User $user)
+    public function __construct()
     {
-        $this->user = $user;
+        //
     }
 
     /**
@@ -35,10 +34,7 @@ class UserRegistered extends Notification implements ShouldQueue
      */
     public function toMail(object $notifiable): MailMessage
     {
-        return (new MailMessage)
-            ->subject('Eilinger Stiftung: Neuer Benutzer')             
-            ->line('Ein neuer Benutzer mit der Emailadresse hat sich registiert')
-            ->line('Thank you for using our application!');
+        return (new MailMessage)->markdown('email.new_user');
     }
 
     /**

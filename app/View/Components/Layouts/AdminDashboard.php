@@ -8,9 +8,6 @@ use Illuminate\View\Component;
 
 class AdminDashboard extends Component
 {
-   
-    public $messages;
-
     /**
      * Create a new component instance.
      *
@@ -18,7 +15,7 @@ class AdminDashboard extends Component
      */
     public function __construct()
     {
-        $this->messages = Message::all();
+        //
     }
 
     /**
@@ -28,8 +25,6 @@ class AdminDashboard extends Component
      */
     public function render()
     {
-        return view('layouts.admin-dashboard', [
-            'messages' => $this->messages,
-        ]);
+        return view('layouts.admin-dashboard');
     }
 }

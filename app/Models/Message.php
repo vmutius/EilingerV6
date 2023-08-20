@@ -28,11 +28,6 @@ class Message extends Model
         return $this->belongsTo(Application::class);
     }
 
-    public function presenter()
-    {
-        return new CommentPresenter($this);
-    }
-
     public function isMainMessage()
     {
         return is_null($this->main_message_id);

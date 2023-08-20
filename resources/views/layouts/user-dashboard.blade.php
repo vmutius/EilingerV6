@@ -18,7 +18,7 @@
 
 <body>
     <!-- ======= Header ======= -->
-    @include('layouts.dash-header', ['messages' => $messages])
+    @include('layouts.dash-header')
 
     <div class="sidebar">
         <div class="logo-details">
