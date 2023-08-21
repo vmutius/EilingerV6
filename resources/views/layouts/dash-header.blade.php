@@ -2,16 +2,8 @@
     <div class="container">
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown notification-ui show">
-                    <a class="nav-link dropdown-toggle notification-ui_icon" href="#" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="bi bi-bell"></i>
-                        <span class="unread-notification"></span>
-                    </a>
-                          
                 @livewire('message-notification')
-                    
-                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -21,7 +13,8 @@
                         @foreach (config('app.languages') as $langLocale => $langName)
                             <a class="dropdown-item"
                                 href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
-                                ({{ $langName }})</a>
+                                ({{ $langName }})
+                            </a>
                         @endforeach
                     </ul>
                 </li>

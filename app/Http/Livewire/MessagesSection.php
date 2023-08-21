@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\User;
 use App\Models\Message;
 use Livewire\Component;
 use App\Models\Application;
@@ -13,11 +14,7 @@ class MessagesSection extends Component
     public $body;
     public $message;
 
-    protected $paginationTheme = 'bootstrap';
-
-    protected $listeners = [
-        'refresh' => '$refresh'
-    ];
+    protected $paginationTheme = 'bootstrap'; 
 
     protected $rules = [
         'body' => 'required',
@@ -52,8 +49,13 @@ class MessagesSection extends Component
         
         $this->reset('body');
 
-        $this->application->user->notify(new MessageAdded($newMessage));
-
-        session()->flash('message', 'Nachricht gespeichert');
+        if (auth()->user()->is_admin) {
+            $this->message->application->user->notify(new MessageAdded($newMessage));
+        } else {
+            $admins = User::where('is_admin', 1)->get();
+            foreach ($admins as $admin) {
+                $admin->notify(new MessageAdded($newMessage));
+            }
+        }
     }
 }

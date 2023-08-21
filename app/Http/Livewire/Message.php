@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Livewire;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use App\Models\Message as MessageModel;
+use App\Models\User;
 use Livewire\Component;
+use App\Notifications\MessageAdded;
+use App\Models\Message as MessageModel;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Message extends Component
 {
@@ -11,10 +13,6 @@ class Message extends Component
 
     public $message;
     public $body;
-
-    protected $listeners = [
-        'refresh' => '$refresh'
-    ];
 
     public $isReplying = false;
 
@@ -59,7 +57,7 @@ class Message extends Component
             'body' => 'required'
         ]);
         
-        MessageModel::create([
+        $newReply=MessageModel::create([
             'user_id' => auth()->user()->id,
             'application_id' => $this->message->application_id,
             'body' => $this->body,
@@ -70,7 +68,14 @@ class Message extends Component
 
         $this->isReplying = false;
 
-        $this->emitSelf('refresh');
+        if (auth()->user()->is_admin) {
+            $this->message->application->user->notify(new MessageAdded($newReply));
+        } else {
+            $admins = User::where('is_admin', 1)->get();
+            foreach ($admins as $admin) {
+                $admin->notify(new MessageAdded($newReply));
+            }
+        }
     }
 
     public function render()
