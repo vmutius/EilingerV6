@@ -86,6 +86,7 @@ class RegisterPrivat extends Component
             'plz' => $this->plz,
             'town' => $this->town,
             'country_id' => $this->country_id,
+            'is_draft' => false,
         ]);
         event(new Registered($user));
         auth()->login($user);

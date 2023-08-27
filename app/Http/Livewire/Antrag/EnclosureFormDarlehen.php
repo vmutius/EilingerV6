@@ -59,7 +59,7 @@ class EnclosureFormDarlehen extends Component
         $this->enclosure->activity = $file_activity;
         $file_activity_report = $this->upload($this->activity_report,'activity_report');
         $this->enclosure->activity_report = $file_activity_report;
-        $file_balance_sheet = $this->upload($this->balance_sheet,'balance_sheet');
+        $file_balance_sheet = $this->upload($this->balance_sheet,'balance_sheet'); 
         $this->enclosure->balance_sheet = $file_balance_sheet;
         $file_cost_receipts = $this->upload($this->cost_receipts,'cost_receipts');
         $this->enclosure->cost_receipts = $file_cost_receipts;

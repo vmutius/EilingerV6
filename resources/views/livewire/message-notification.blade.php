@@ -9,7 +9,7 @@
         </a>
         <div class="dropdown-menu notification-ui_dd" aria-labelledby="navbarDropdown">
             <div class="notification-ui_dd-header">
-                <h3 class="text-center">Nachrichten {{ $this->getNotificationCount() }}</h3>
+                <h3 class="text-center">Nachrichten</h3>
             </div>
             <div class="notification-ui_dd-content">
 

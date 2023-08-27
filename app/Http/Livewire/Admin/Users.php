@@ -26,7 +26,7 @@ class Users extends Component
 
     public function render()
     {
-        $users = User::with('sendApplications')->orderBy('lastname')
+        $users = User::where('is_admin', 0)->with('sendApplications')->orderBy('lastname')
             ->when($this->searchUsername != '', function ($query) {
                 $query->where('username', 'like', '%' . $this->searchUsername . '%');
             })

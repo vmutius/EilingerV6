@@ -35,7 +35,7 @@
             </li>
             <li>
                 <a href="{{ route('admin_users', app()->getLocale()) }}">
-                    <i class="bi bi-envelope-open"></i>
+                    <i class="bi bi-people-fill"></i>
                     <span class="links_name">Benutzerübersicht</span>
                 </a>
                 <span class="tooltip">Benutzerübersich mit allen Anträgen </span>
@@ -57,7 +57,7 @@
 
             <li>
                 <a href="{{ route('admin_profile.edit', app()->getLocale()) }}">
-                    <i class="bi bi-person"></i>
+                    <i class="bi bi-list-check"></i>
                     <span class="links_name">Profil</span>
                 </a>
                 <span class="tooltip">Profil</span>

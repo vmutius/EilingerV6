@@ -96,6 +96,7 @@ class RegisterInst extends Component
             'plz' => $this->plz,
             'town' => $this->town,
             'country_id' => $this->country_id,
+            'is_draft' => false,
         ]);
 
         $admins=User::where('is_admin', 1)->get();

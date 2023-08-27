@@ -58,7 +58,7 @@
                         <div class="modal-body">
                             Name des Projektes:
                             <br />
-                            <input wire:model="name" class="form-control" />
+                            <input wire:model="name" type="text" class="form-control" />
                             @error('name')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
@@ -98,6 +98,20 @@
                                 @endforeach
                             </select>
                             @error('currency_id')
+                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                            @enderror
+                            <br />
+                            Startdatum:
+                            <br />
+                            <input wire:model="start_appl" type="date"  class="form-control" />
+                            @error('start_appl')
+                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                            @enderror
+                            <br />
+                            Enddatum:
+                            <br />
+                            <input wire:model="end_appl" type="date" class="form-control" />
+                            @error('end_appl')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
                             <br />

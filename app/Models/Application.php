@@ -26,7 +26,9 @@ class Application extends Model
         'req_amount',
         'calc_amount',
         'currency_id',
-        'main_application_id'
+        'main_application_id',
+        'start_appl',
+        'end_appl',
     ];
 
     public function user()

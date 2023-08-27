@@ -11,7 +11,7 @@ use Illuminate\Validation\Rules\Enum;
 
 class Antraege extends Component
 {
-    public $showModal = false;
+    public $showModal = false; 
     public $name;
     public $bereich;
     public $form;
@@ -21,6 +21,8 @@ class Antraege extends Component
     public $first_applications;
     public $visible;
     public $main_appl_id;
+    public $start_appl;
+    public $end_appl;
 
 
     protected function rules() : array
@@ -32,6 +34,8 @@ class Antraege extends Component
             'is_first' => 'boolean|required',
             'currency_id' => 'required',
             'main_appl_id' => 'sometimes',
+            'start_appl' => 'required',
+            'end_appl' => 'required',
         ]);
     }
 
@@ -72,6 +76,8 @@ class Antraege extends Component
             'is_first' => $this->is_first,
             'currency_id' => $this->currency_id,
             'main_application_id' => $this->main_appl_id,
+            'start_appl' => $this->start_appl,
+            'end_appl' => $this->end_appl,
         ]);
 
         $this->name = '';
@@ -80,6 +86,8 @@ class Antraege extends Component
         $this->is_first = '';
         $this->currency_id ='';
         $this->main_appl_id='';
+        $this->start_appl='';
+        $this->end_appl='';
         
         $this->visible = false;
         $this->showModal = false;
