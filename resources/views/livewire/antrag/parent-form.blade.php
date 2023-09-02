@@ -16,55 +16,55 @@
                         <option value="{{ $key }}">{{ $label }}</option>
                     @endforeach
                 </select>
-                <span class="text-danger">@error('parents.{{ $index }}.parent_type'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.parent_type'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-5">
                 <label class="form-label" for="lastname">Nachname</label>
                 <input wire:model.lazy="parents.{{ $index }}.lastname" type="text" class="form-control" />
-                <span class="text-danger">@error('parents.{{ $index }}.lastname'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.lastname'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-5">
                 <label class="form-label" for="firstname">Vorname</label>
                 <input wire:model.lazy="parents.{{ $index }}.firstname" type="text" class="form-control" />
-                <span class="text-danger">@error('parents.{{ $index }}.firstname'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.firstname'){{ $message }}@enderror</span>
             </div>
 
             <div class="col-sm-6">
                 <label class="form-label" for="birthday">Geburtstag</label>
                 <input wire:model.lazy="parents.{{ $index }}.birthday" type="date" class="form-control" />
-                <span class="text-danger">@error('parents.{{ $index }}.birthday'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.birthday'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
                 <label class="form-label" for="telefon">Telefon</label>
                 <input wire:model.lazy="parents.{{ $index }}.telefon" type="text" class="form-control" />
-                <span class="text-danger">@error('parents.{{ $index }}.telefon'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.telefon'){{ $message }}@enderror</span>
             </div>
 
             <div class="col-sm-5">
                 <label class="form-label" for="address">Strasse und Hausnummer</label>
                 <input wire:model.lazy="parents.{{ $index }}.address" type="text" class="form-control" />
-                <span class="text-danger">@error('parents.{{ $index }}.address'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.address'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-5">
                 <label class="form-label" for="plz_ort">PLZ und Ort</label>
                 <input wire:model.lazy="parents.{{ $index }}.plz_ort" type="text" class="form-control" />
-                <span class="text-danger">@error('parents.{{ $index }}.plz_ort'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.plz_ort'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-2">
                 <label class="form-label" for="since">Wohnhaft seit</label>
                 <input wire:model.lazy="parents.{{ $index }}.since" type="text" class="form-control" />
-                <span class="text-danger">@error('parents.{{ $index }}.since'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.since'){{ $message }}@enderror</span>
             </div>
 
             <div class="col-sm-5">
                 <label class="form-label" for="job">Beruf</label>
                 <input wire:model.lazy="parents.{{ $index }}.job" type="text" class="form-control" />
-                <span class="text-danger">@error('parents.{{ $index }}.job'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.job'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-5">
                 <label class="form-label" for="employer">Arbeitgeber</label>
                 <input wire:model.lazy="parents.{{ $index }}.employer" type="text" class="form-control" />
-                <span class="text-danger">@error('parents.{{ $index }}.employer'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.employer'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-2">
                 <label class="form-label" for="job_type">Arbeitsverhältnis</label>
@@ -74,7 +74,7 @@
                         <option value="{{ $key }}">{{ $label }}</option>
                     @endforeach
                 </select>
-                <span class="text-danger">@error('parents.{{ $index }}.job_type'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('parents.'. $index .'.job_type'){{ $message }}@enderror</span>
             </div>
         </div>
     @endforeach

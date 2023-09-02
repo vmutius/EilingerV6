@@ -14,12 +14,12 @@
         <div class="col-sm-7">
             <label class="form-label" for="cost_name">Ausgabe</label>
             <input wire:model.lazy="costs.{{ $index }}.cost_name" type="text" class="form-control" />
-            <span class="text-danger">@error('costs.{{ $index }}.cost_name'){{ $message }}@enderror</span>
+            <span class="text-danger">@error('costs.'. $index .'.cost_name'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="cost_amount">Betrag</label>
             <input wire:model.lazy="costs.{{ $index }}.cost_amount" type="number" class="form-control" />
-            <span class="text-danger">@error('costs.{{ $index }}.cost_amount'){{ $message }}@enderror</span>
+            <span class="text-danger">@error('costs.'. $index .'.cost_amount'){{ $message }}@enderror</span>
         </div>
         <br/>
     @endforeach

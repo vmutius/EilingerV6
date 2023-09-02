@@ -181,6 +181,24 @@ return [
 
     'attributes' => [
         'currency_id' => 'currency',
+        'name_inst' => 'Name of the organisation',
+        'telefon_inst' => 'Phonenumber of the organisation',
+        'email_inst' => 'Email of the organisation',
+        'contact' => 'of the contact',
+        'website' => 'Website',
+        'salutation' => 'Salutation',
+        'name_bank' => 'Name of the bank',
+        'city_bank' => 'City of the bank',
+        'owner' => 'Account owner',
+        'nationality' => 'Nationality',
+        'birthday' => 'Birthday',
+        'civil_status' => 'Civil State',
+        'education' => 'Education',
+        'final' => 'Abschluss',
+        'ects_points' => 'ECTS Punkte',
+        'grade' => 'Abschluss',
+        'currency_id' => 'Währung',
+        'personal contribution' => 'Eigenleistung vom Bewerber',
     ],
 
 ];

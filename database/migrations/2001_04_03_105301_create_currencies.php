@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('abbreviation');
             $table->string('symbol');
             $table->index('currency');
+            $table->boolean('is_pinned');
         });
     }
 

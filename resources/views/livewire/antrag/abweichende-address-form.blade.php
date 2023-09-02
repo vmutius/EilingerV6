@@ -12,29 +12,29 @@
         <x-notification/>
 
         <div class="col-md-6">
-            <label class="form-label" for="street">Strasse *</label>
+            <label class="form-label" for="street">{{  __('attributes.street')  }} *</label>
             <input wire:model.lazy="abweichendeAddress.street" type="text" class="form-control" />
             <span class="text-danger">@error('abweichendeAddress.street'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-6">
-            <label class="form-label" for="number">Hausnummer</label>
+            <label class="form-label" for="number">{{  __('attributes.number')  }}</label>
             <input wire:model.lazy="abweichendeAddress.number" type="text" class="form-control" />
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="plz">PLZ *</label>
+            <label class="form-label" for="plz">{{  __('attributes.plz')  }} *</label>
             <input wire:model.lazy="abweichendeAddress.plz" type="text" class="form-control" />
             <span class="text-danger">@error('abweichendeAddress.plz'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="town">Ort *</label>
+            <label class="form-label" for="town">{{  __('attributes.town')  }} *</label>
             <input wire:model.lazy="abweichendeAddress.town" type="text" class="form-control" />
             <span class="text-danger">@error('abweichendeAddress.town'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-sm-2">
-            <label class="form-label" for="country">Land *</label>
+            <label class="form-label" for="country">{{  __('attributes.country')  }} *</label>
             <select wire:model.lazy="abweichendeAddress.country_id" class="form-select">
-                <option selected value="">Bitte auswählen...</option>
+                <option selected value="">{{  __('attributes.please_select')  }}</option>
                 @foreach ($countries as $country)
                     <option value="{{ $country->id }}">{{ $country->name }}</option>
                 @endforeach

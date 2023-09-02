@@ -26,6 +26,7 @@ class CreateApplicationsTable extends Migration
             $table->foreignId('currency_id')->constrained();
             $table->boolean('is_first')->default(true);
             $table->foreignId('main_application_id')->nullable()->constrained('applications'); // Link zum Erst Antrag, wenn dies ein Folge Antrag ist
+            $table->string('reason_rejected')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

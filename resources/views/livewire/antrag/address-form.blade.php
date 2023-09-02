@@ -12,22 +12,22 @@
         <x-notification/>
 
         <div class="col-md-6">
-            <label class="form-label" for="street">Strasse *</label>
+            <label class="form-label" for="street">{{  __('attributes.street')  }} *</label>
             <input wire:model.lazy="address.street" type="text" class="form-control" />
             <span class="text-danger">@error('address.street'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-6">
-            <label class="form-label" for="number">Hausnummer</label>
+            <label class="form-label" for="number">{{  __('attributes.number')  }}</label>
             <input wire:model.lazy="address.number" type="text" class="form-control" />
             <span class="text-danger">@error('address.number'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="plz">PLZ *</label>
+            <label class="form-label" for="plz">{{  __('attributes.plz')  }} *</label>
             <input wire:model.lazy="address.plz" type="text" class="form-control" />
             <span class="text-danger">@error('address.plz'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="town">Ort *</label>
+            <label class="form-label" for="town">{{  __('attributes.town')  }} *</label>
             <input wire:model.lazy="address.town" type="text" class="form-control" />
             <span class="text-danger">@error('address.town'){{ $message }}@enderror</span>
         </div>

@@ -79,15 +79,22 @@
                             <br />
                             Gewünschte Antragsform des Projektes:
                             <br />
-                            <select wire:model.lazy="form" class="form-select">
-                                <option selected value="">Bitte auswählen...</option>
-                                @foreach (App\Enums\Form::cases()  as $form)
-                                    <option value="{{ $form }}">{{ $form }}</option>
-                                @endforeach
-                            </select>
+                            @if(auth()->user()->type == 'nat' && $bereich == 'Bildung')
+                                <select wire:model.lazy="form" class="form-select">
+                                    <option selected value="">Bitte auswählen...</option>
+                                    @foreach (App\Enums\Form::cases()  as $form)
+                                        <option value="{{ $form }}">{{ $form }}</option>
+                                    @endforeach
+                                </select>
+                            @else
+                                <select wire:model.lazy="form" class="form-select">
+                                    <option selected value="">Bitte auswählen...</option>
+                                        <option value="{{ App\Enums\Form::Spende }}">{{ App\Enums\Form::Spende }}</option>
+                                </select>
                             @error('form')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
+                            @endif
                             <br />
                             Gewünschte Auszahlungswährung:
                             <br />

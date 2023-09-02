@@ -8,31 +8,31 @@
         <x-notification/>
 
         <div class="col-md-6">
-            <label class="form-label" for="name_inst">Name der Organisation</label>
+            <label class="form-label" for="name_inst">{{  __('attributes.name_inst')  }}</label>
             <input wire:model.lazy="user.name_inst" type="text" class="form-control" />
             <span class="text-danger">@error('user.name_inst'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-6">
-            <label class="form-label" for="telefon_inst">Telefonnummer der Organisation</label>
+            <label class="form-label" for="telefon_inst">{{  __('attributes.telefon_inst')  }}</label>
             <input wire:model.lazy="user.telefon_inst" type="text" class="form-control" />
             <span class="text-danger">@error('user.telefon_inst'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-6">
-            <label class="form-label" for="email_inst">Email der Organisation</label>
+            <label class="form-label" for="email_inst">{{  __('attributes.email_inst')  }}</label>
             <input wire:model.lazy="user.email_inst" type="text" class="form-control" />
             <span class="text-danger">@error('user.email_inst'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-6">
-            <label class="form-label" for="website">Webseite der Organisation</label>
+            <label class="form-label" for="website">{{  __('attributes.website')  }}</label>
             <input wire:model.lazy="user.website" type="text" class="form-control" />
             <span class="text-danger">@error('user.website'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-sm-2">
-            <label class="form-label" for="salutation">Anrede</label>
+            <label class="form-label" for="salutation">{{  __('attributes.salutation')  }}</label>
             <select wire:model.lazy="user.salutation" class="form-select">
                 <option selected value="">Bitte Anrede auswählen</option>
                 @foreach (App\Enums\Salutation::cases() as $salutation)

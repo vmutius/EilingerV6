@@ -35,7 +35,7 @@ class Antraege extends Component
             'currency_id' => 'required',
             'main_appl_id' => 'sometimes',
             'start_appl' => 'required',
-            'end_appl' => 'required',
+            'end_appl' => 'sometimes',
         ]);
     }
 
@@ -44,7 +44,7 @@ class Antraege extends Component
         $applications = Application::where('user_id', auth()->user()->id)
                         ->where('appl_status', 'not send')                
                         ->get();
-        $currencies = Currency::all();
+        $currencies = Currency::orderBy('is_pinned', 'DESC')->orderBy('currency')->get();
 
         return view('livewire.user.antraege', [
             'applications' => $applications,

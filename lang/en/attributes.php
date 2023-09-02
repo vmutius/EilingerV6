@@ -31,8 +31,7 @@ return [
     'time' => 'Pensum',
     'available' => 'verfügbar',
     'size' => 'Größe',
-    'salutation' => 'Anrede',
-    'name_bank' => 'Name der Bank',
+    'name_bank' => 'Name of the bank',
     'city_bank' => 'Ort der Bank',
     'owner' => 'Kontoinhaber',
     'nationality' => 'Nationalität',
@@ -45,11 +44,9 @@ return [
     'currency_id' => 'Währung',
     'personal contribution' => 'Eigenleistung vom Bewerber',
     'name_inst' => 'Name of the organisation',
-    'phone_inst' => 'Phonenumber of the organisation',
+    'telefon_inst' => 'Phonenumber of the organisation',
     'email_inst' => 'Email of the organisation',
     'contact' => 'of the contact',
     'website' => 'Website',
     'salutation' => 'Salutation',
-
-
 ];
