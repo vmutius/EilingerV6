@@ -13,7 +13,7 @@
     <title>Eilinger Stiftung - @yield('title')</title>
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/js/app.js'])
     @vite(['resources/sass/eilinger.scss'])
     @livewireStyles()
 
