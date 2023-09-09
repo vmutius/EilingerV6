@@ -182,7 +182,7 @@ return [
     'attributes' => [
         'currency_id' => 'currency',
         'name_inst' => 'Name of the organisation',
-        'telefon_inst' => 'Phonenumber of the organisation',
+        'phone_inst' => 'Phonenumber of the organisation',
         'email_inst' => 'Email of the organisation',
         'contact' => 'of the contact',
         'website' => 'Website',

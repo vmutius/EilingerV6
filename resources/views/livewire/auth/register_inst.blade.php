@@ -126,17 +126,17 @@
                     </div>
 
                     <div class="group">
-                        <label class="form-label" for="telefon_inst">Telefonnummer der Organisation</label>
-                        <input wire:model.lazy="telefon_inst" class="form-control @error('telefon_inst') is-invalid @enderror @if (session('valid-telefon_inst'))
-                            is-valid @endif" id="telefon_inst" type="text" placeholder="+41 81 123 4567"  autofocus autocomplete="off">
-                        @error('telefon_inst')
+                        <label class="form-label" for="phone_inst">Telefonnummer der Organisation</label>
+                        <input wire:model.lazy="phone_inst" class="form-control @error('phone_inst') is-invalid @enderror @if (session('valid-phone_inst'))
+                            is-valid @endif" id="phone_inst" type="text" placeholder="+41 81 123 4567"  autofocus autocomplete="off">
+                        @error('phone_inst')
                             <div id="invalidFeedback" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        @if (session()->has('valid-telefon_inst'))
+                        @if (session()->has('valid-phone_inst'))
                             <div class="valid-feedback">
-                                {{ session(['valid-telefon_inst']) }}
+                                {{ session(['valid-phone_inst']) }}
                             </div>
                         @endif
                     </div>
@@ -231,17 +231,17 @@
                     </div>
 
                     <div class="group">
-                        <label class="form-label" for="telefon">Telefonnummer der Kontaktperson *</label>
-                        <input wire:model.lazy="telefon" class="form-control @error('telefon') is-invalid @enderror @if (session('valid-telefon'))
-                            is-valid @endif" id="telefon" type="text" placeholder="+41 81 123 4567"  autofocus autocomplete="off">
-                        @error('telefon')
+                        <label class="form-label" for="phone">Telefonnummer der Kontaktperson *</label>
+                        <input wire:model.lazy="phone" class="form-control @error('phone') is-invalid @enderror @if (session('valid-phone'))
+                            is-valid @endif" id="phone" type="text" placeholder="+41 81 123 4567"  autofocus autocomplete="off">
+                        @error('phone')
                             <div id="invalidFeedback" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        @if (session()->has('valid-telefon'))
+                        @if (session()->has('valid-phone'))
                             <div class="valid-feedback">
-                                {{ session(['valid-telefon']) }}
+                                {{ session(['valid-phone']) }}
                             </div>
                         @endif
                     </div>

@@ -12,29 +12,29 @@
         <x-notification/>
 
         <div class="col-md-6">
-            <label class="form-label" for="street">{{  __('attributes.street')  }} *</label>
-            <input wire:model.lazy="address.street" type="text" class="form-control" />
+            <label class="form-label" for="address.street">{{  __('address.street')  }} *</label>
+            <input wire:model.lazy="address.street" type="text" class="form-control" id="address.street"/>
             <span class="text-danger">@error('address.street'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-6">
-            <label class="form-label" for="number">{{  __('attributes.number')  }}</label>
-            <input wire:model.lazy="address.number" type="text" class="form-control" />
+            <label class="form-label" for="address.number">{{  __('address.number')  }}</label>
+            <input wire:model.lazy="address.number" type="text" class="form-control" id="address.number"/>
             <span class="text-danger">@error('address.number'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="plz">{{  __('attributes.plz')  }} *</label>
-            <input wire:model.lazy="address.plz" type="text" class="form-control" />
+            <label class="form-label" for="address.plz">{{  __('address.plz')  }} *</label>
+            <input wire:model.lazy="address.plz" type="text" class="form-control" id="address.plz"/>
             <span class="text-danger">@error('address.plz'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="town">{{  __('attributes.town')  }} *</label>
-            <input wire:model.lazy="address.town" type="text" class="form-control" />
+            <label class="form-label" for="address.town">{{  __('address.town')  }} *</label>
+            <input wire:model.lazy="address.town" type="text" class="form-control" id="address.town"/>
             <span class="text-danger">@error('address.town'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-sm-2">
-            <label class="form-label" for="country">Land *</label>
-            <select wire:model.lazy="address.country_id" class="form-select">
+            <label class="form-label" for="address.country">{{  __('attributes.country')  }} *</label>
+            <select wire:model.lazy="address.country_id" class="form-select" id="address.country">
                 <option selected value="">Bitte auswählen...</option>
                 @foreach ($countries as $country)
                     <option value="{{ $country->id }}">{{ $country->name }}</option>

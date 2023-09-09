@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Parents extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     public const PARENT_TYPE = [
         'mother' => 'Mutter',

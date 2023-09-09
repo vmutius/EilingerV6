@@ -13,7 +13,7 @@ class Settings extends Component
     public $username;
     public $lastname;
     public $firstname;
-    public $telefon;
+    public $phone;
     public $email;
     public $password;
 
@@ -22,7 +22,7 @@ class Settings extends Component
         'lastname' => 'required',
         'firstname' => 'required',
         'email' => 'required|email|unique:users,email',
-        'telefon' => 'required',
+        'phone' => 'required',
         'password' => 'required',
     ];
 
@@ -48,7 +48,7 @@ class Settings extends Component
         $user = User::create([
             'type' => 'nat',
             'salutation' => $this->salutation,
-            'telefon' => $this->telefon,
+            'phone' => $this->phone,
             'username' => $this->username,
             'lastname' => $this->lastname,
             'firstname' => $this->firstname,
@@ -59,7 +59,7 @@ class Settings extends Component
         ]);
         $user->is_admin = 1;
         $user->save();
-        $this->reset(['salutation', 'username', 'email', 'lastname', 'firstname', 'telefon', 'password']);
+        $this->reset(['salutation', 'username', 'email', 'lastname', 'firstname', 'phone', 'password']);
         $this->showModal = false;
     }
 

@@ -12,7 +12,7 @@
             Schweiz <br><br>
             <strong>Email:</strong> EilingerStiftung@gmx.net <br>
             <br>
-            <strong>Keine postalische und telefonische Kontaktaufnahme erwünscht. Für Kontaktaufnahmen soll die angegebene Emailadresse oder das Formular auf der Webseite (bevorzugte Variante) verwendet werden.</strong>
+            <strong>Keine postalische und phoneische Kontaktaufnahme erwünscht. Für Kontaktaufnahmen soll die angegebene Emailadresse oder das Formular auf der Webseite (bevorzugte Variante) verwendet werden.</strong>
             </p>
         </div>
 

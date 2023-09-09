@@ -20,7 +20,7 @@
                         <p>Geburtstag: {{ $parent->birthday }}</p>
                     </div>
                     <div class="col-sm-3">
-                        <p>Telefon: {{ $parent->telefon }}</p>
+                        <p>Telefon: {{ $parent->phone }}</p>
                     </div>
                     <div class="col-sm-3">
                         <p>Anschrift: {{ $parent->address }}</p>

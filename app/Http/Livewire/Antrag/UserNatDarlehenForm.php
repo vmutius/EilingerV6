@@ -15,9 +15,9 @@ class UserNatDarlehenForm extends Component
             'user.lastname' => 'required',
             'user.birthday' => 'required|date',
             'user.salutation' => 'required',
-            'user.telefon' => 'required',
+            'user.phone' => 'required',
             'user.mobile' => 'sometimes',
-            'user.contact_partner_aboard' => 'sometimes',
+            'user.contact_aboard' => 'sometimes',
         ]);
     }
 

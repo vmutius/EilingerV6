@@ -13,7 +13,7 @@
         <x-notification/>
 
         <div class="col-sm-2">
-            <label class="form-label" for="salutation">Anrede *</label>
+            <label for="salutation" id="salutation" class="form-label">Anrede *</label>
             <select wire:model.lazy="user.salutation" class="form-select">
                 <option selected value="" disabled>Bitte Anrede auswählen</option>
                 @foreach (App\Enums\Salutation::cases() as $salutation)
@@ -67,8 +67,8 @@
         </div>
 
         <div class="col-md-4">
-            <label class="form-label" for="telefon">Telefon</label>
-            <input wire:model.lazy="user.telefon" type="text" class="form-control" />
+            <label class="form-label" for="phone">Telefon</label>
+            <input wire:model.lazy="user.phone" type="text" class="form-control" />
         </div>
         <div class="col-md-4">
             <label class="form-label" for="mobile">Mobile</label>
@@ -84,14 +84,14 @@
             <input wire:model="user.in_ch_since" type="date" class="form-control" />
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="bewilligung">Art der Bewilligung (für Ausländer)</label>
-            <select wire:model.lazy="user.bewilligung" class="form-select">
+            <label class="form-label" for="granting">Art der Bewilligung (für Ausländer)</label>
+            <select wire:model.lazy="user.granting" class="form-select">
                 <option selected value="">-- Wählen Sie eine Option --</option>
-                @foreach (App\Enums\Bewilligung::cases() as $bewilligung)
-                    <option value="{{ $bewilligung->value }}">{{ $bewilligung->value }}</option>
+                @foreach (App\Enums\Bewilligung::cases() as $granting)
+                    <option value="{{ $granting->value }}">{{ $granting->value }}</option>
                 @endforeach
             </select>
-            @error('user.bewilligung')
+            @error('user.granting')
                 <div style="font-size: 11px; color: red">{{ $message }}</div>
             @enderror
         </div>

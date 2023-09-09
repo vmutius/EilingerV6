@@ -14,7 +14,7 @@ class ParentForm extends Component
         'parents.*.parent_type' => 'nullable',
         'parents.*.lastname' => 'nullable',
         'parents.*.birthday' => 'nullable',
-        'parents.*.telefon' => 'nullable',
+        'parents.*.phone' => 'nullable',
         'parents.*.address' => 'nullable',
         'parents.*.plz_ort' => 'nullable',
         'parents.*.since' => 'nullable',

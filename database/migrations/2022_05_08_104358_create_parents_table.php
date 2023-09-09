@@ -15,7 +15,7 @@ class CreateParentsTable extends Migration
             $table->string('lastname', 255)->nullable();
             $table->string('firstname', 255)->nullable();
             $table->date('birthday')->nullable();
-            $table->string('telefon', 20)->nullable();
+            $table->string('phone', 20)->nullable();
             $table->string('address', 255)->nullable();
             $table->string('plz_ort', 255)->nullable();
             $table->date('since')->nullable();

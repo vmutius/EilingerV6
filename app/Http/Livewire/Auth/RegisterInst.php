@@ -37,8 +37,8 @@ class RegisterInst extends Component
         return [
             'username' => 'required|unique:users,username',
             'name_inst' => 'required|unique:users,name_inst',
-            'telefon' => 'nullable',
-            'telefon_inst' => 'nullable',
+            'phone' => 'nullable',
+            'phone_inst' => 'nullable',
             'mobile' => 'nullable',
             'salutation' => 'required',
             'firstname' => 'required|min:2',
@@ -80,12 +80,12 @@ class RegisterInst extends Component
             'email' => $this->email,
             'password' => Hash::make($this->password),
             'salutation' => $this->salutation,
-            'telefon_inst' => $this->telefon_inst,
+            'phone_inst' => $this->phone_inst,
             'email_inst' => $this->email_inst,
             'website' => $this->website,
             'firstname' => $this->firstname,
             'lastname' => $this->lastname,
-            'telefon' => $this->telefon,
+            'phone' => $this->phone,
             'mobile' => $this->mobile,
         ]);
 

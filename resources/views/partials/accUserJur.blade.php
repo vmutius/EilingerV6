@@ -10,7 +10,7 @@
                     <p>{{  __('attributes.name_inst')  }}: {{ $user->name_inst }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.phone_inst')  }}: {{ $user->telefon_inst }}</p>
+                    <p>{{  __('attributes.phone_inst')  }}: {{ $user->phone_inst }}</p>
                 </div>
                 <div class="col-sm-3">
                     <p>{{  __('attributes.email_inst')  }}: {{ $user->email_inst }}</p>
@@ -31,7 +31,7 @@
                     <p>{{  __('attributes.email')  }} {{ __('attributes.contact') }}: {{ $user->email }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.phone')  }} {{ __('attributes.contact') }}: {{ $user->telefon }}</p>
+                    <p>{{  __('attributes.phone')  }} {{ __('attributes.contact') }}: {{ $user->phone }}</p>
                 </div>
                 <div class="col-sm-3">
                     <p>{{  __('attributes.mobile')  }} {{ __('attributes.contact') }}: {{ $user->mobile }}</p>

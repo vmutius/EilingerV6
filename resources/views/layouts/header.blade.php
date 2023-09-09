@@ -20,15 +20,16 @@
               @endif
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  {{ __('Lang') }}
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    {{ strtoupper(app()->getLocale()) }}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  @foreach(config('app.languages') as $langLocale => $langName)
-                    <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
-                  @endforeach
+                    @foreach (config('app.languages') as $langLocale => $langName)
+                        <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                    @endforeach
                 </ul>
-              </li>
+            </li>
 
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>

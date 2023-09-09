@@ -32,7 +32,7 @@ class RegisterPrivat extends Component
     {
         return [
             'username' => 'required|unique:users,username',
-            'telefon' => 'nullable',
+            'phone' => 'nullable',
             'mobile' => 'nullable',
             'salutation' => 'required',
             'firstname' => 'required|min:2',
@@ -74,7 +74,7 @@ class RegisterPrivat extends Component
             'website' => $this->website,
             'firstname' => $this->firstname,
             'lastname' => $this->lastname,
-            'telefon' => $this->telefon,
+            'phone' => $this->phone,
             'mobile' => $this->mobile,
             'email' => $this->email,
         ]);

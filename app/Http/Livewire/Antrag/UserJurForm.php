@@ -12,16 +12,16 @@ class UserJurForm extends Component
 
     protected $rules = [
         'user.name_inst' => 'required',
-        'user.telefon_inst' => 'required',
+        'user.phone_inst' => 'required',
         'user.email_inst' => 'required',
         'user.website' => 'required',
         'user.firstname' => 'required',
         'user.lastname' => 'required',
-        'user.email' => 'required|email:strict',
+        'user.email' => 'required|email|unique:users,email',
         'user.salutation' => 'nullable',
-        'user.telefon' => 'nullable',
+        'user.phone' => 'nullable',
         'user.mobile' => 'nullable',
-        'user.contact_partner_aboard' => 'sometimes',
+        'user.contact_aboard' => 'sometimes',
     ];
 
     public function mount()

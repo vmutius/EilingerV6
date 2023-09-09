@@ -74,8 +74,8 @@
                             @enderror
 
                             Telefon:
-                            <input wire:model="telefon" class="form-control" />
-                            @error('telefon')
+                            <input wire:model="phone" class="form-control" />
+                            @error('phone')
                                 <div style="font-size: 11px; color: red">{{ $message }}</div>
                             @enderror
 

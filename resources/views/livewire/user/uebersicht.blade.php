@@ -22,8 +22,9 @@
                                         oder gehen Sie
                                         über das Menu auf der linken Seite. Hier können Sie auch die noch nicht
                                         eingereichten Anträge sehen und diese weiter bearbeiten.</p>
-                                    <a href="{{ route('user_antraege', app()->getLocale()) }}" class="btn btn-colour-1">Anträge</a>
-
+                                </div>
+                                <div class="card-footer p-3">
+                                    <a href="{{ route('user_antraege', app()->getLocale()) }}" class="btn btn-colour-1">Anträge</a> 
                                 </div>
                             </div>
                         </div>
@@ -33,6 +34,8 @@
                                 <h5 class="card-header">Gesuche</h5>
                                 <div class="card-body">
                                     <p class="card-text">Alle Anträge, die Sie bereits eingesendet haben, finden Sie hier.</p>
+                                </div>
+                                <div class="card-footer p-3">
                                     <a href="{{ route('user_gesuch', app()->getLocale()) }}" class="btn btn-colour-1">Gesuche</a>
                                 </div>
                             </div>
@@ -45,6 +48,8 @@
                                     <p class="card-text">Falls es Nachrichten zu Ihren eingesendeten Anträgen gibt,
                                         finden Sie diese hier.
                                     </p>
+                                </div>
+                                <div class="card-footer p-3">
                                     <a href="{{ route('user_nachrichten', app()->getLocale()) }}" class="btn btn-colour-1">Nachrichten</a>
                                 </div>
                             </div>
@@ -60,8 +65,9 @@
                                         bearbeiten. Ihre Email Adresse und Ihr Password können Sie ebenfalls hier anpassen. Bei
                                         Änderung der Email Adresse müssen Sie diese erneut verifizieren.
                                     </p>
+                                </div>
+                                <div class="card-footer p-3">
                                     <a href="{{ route('user_profile.edit', app()->getLocale()) }}" class="btn btn-colour-1">Benutzerprofil</a>
-
                                 </div>
                             </div>
                         </div>
@@ -71,6 +77,8 @@
                                 <h5 class="card-header">Dateien</h5>
                                 <div class="card-body">
                                     <p class="card-text">Dateien für Anträge oder laufende Projekte können Sie hier anhängen</p>
+                                </div>
+                                <div class="card-footer p-3">
                                     <a href="{{ route('user_dateien', app()->getLocale()) }}" class="btn btn-colour-1">Dateien</a>
                                 </div>
                             </div>
@@ -83,8 +91,10 @@
                                     <p class="card-text">Den Link zum Logout finden Sie unter Ihren Benutzernamen oben
                                         rechts
                                         oder Sie klicken den angehängten Link</p>
-                                    <a href="{{ route('logout', app()->getLocale()) }}" class="btn btn-colour-1">Logout</a>
                                 </div>
+                                <div class="card-footer p-3">
+                                    <a href="{{ route('logout', app()->getLocale()) }}" class="btn btn-colour-1">Logout</a>
+                                </div>  
                             </div>
                         </div>
                     </div>

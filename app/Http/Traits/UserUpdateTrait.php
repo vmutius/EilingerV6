@@ -12,11 +12,11 @@ trait UserUpdateTrait
     public $password = '';
     public $password_confirmation = '';
     public $user_id = '';
-    public $telefon_inst = '';
+    public $phone_inst = '';
     public $website = '';
     public $firstname = '';
     public $lastname = '';
-    public $telefon = '';
+    public $phone = '';
     public $mobile = '';
 
     public function updatedUsername()
@@ -54,9 +54,9 @@ trait UserUpdateTrait
 
     public function updatedTelefonInst()
     {
-        request()->session()->forget('valid-telefon_inst');
-        if ($this->validateOnly('telefon_inst')) {
-            session(['valid-telefon_inst' => 'OK']);
+        request()->session()->forget('valid-phone_inst');
+        if ($this->validateOnly('phone_inst')) {
+            session(['valid-phone_inst' => 'OK']);
         }
     }
 
@@ -94,9 +94,9 @@ trait UserUpdateTrait
 
     public function updatedTelefon()
     {
-        request()->session()->forget('valid-telefon');
-        if ($this->validateOnly('telefon')) {
-            session(['valid-telefon' => 'OK']);
+        request()->session()->forget('valid-phone');
+        if ($this->validateOnly('phone')) {
+            session(['valid-phone' => 'OK']);
         }
     }
 

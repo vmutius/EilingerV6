@@ -10,6 +10,7 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+    public $showModal = false;
     /**
      * Display the user's profile form.
      */

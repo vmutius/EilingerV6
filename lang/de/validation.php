@@ -119,7 +119,7 @@ return [
 
     'attributes' => [
         'name_inst' => 'Name der Organisation',
-        'telefon_inst' => 'Telefon der Organisation',
+        'phone_inst' => 'Telefon der Organisation',
         'email_inst' => 'Email der Organisation',
         'contact' => 'der Kontaktperson',
         'website' => 'Webseite',

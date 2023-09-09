@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('running_costs_name');
             $table->decimal('running_costs_amount', $precision = 8, $scale = 2)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

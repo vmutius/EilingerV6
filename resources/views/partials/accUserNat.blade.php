@@ -22,7 +22,7 @@
                     <p>{{ __('attributes.email') }}: {{ $user->email }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{ __('attributes.phone') }}: {{ $user->telefon }}</p>
+                    <p>{{ __('attributes.phone') }}: {{ $user->phone }}</p>
                 </div>
                 <div class="col-sm-3">
                     <p>{{ __('attributes.mobile') }}: {{ $user->mobile }}</p>
@@ -34,7 +34,7 @@
                     <p>{{ __('attributes.in_ch_since') }}: {{ $user->in_ch_since }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{ __('attributes.bewilligung') }}: {{ $user->bewilligung }}</p>
+                    <p>{{ __('attributes.granting') }}: {{ $user->granting }}</p>
                 </div>
             </div>
         </div>

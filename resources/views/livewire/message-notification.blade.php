@@ -24,7 +24,7 @@
                     </a>
                 @endforeach
             </div>
-            <div class="notification-ui_dd-footer text-center">
+            <div class="notification-ui_dd-footer text-center p-3">
                 <a wire:click.prevent="markAllAsRead" class="btn btn-success btn-block">Alle als gelesen markieren</a>
             </div>
 

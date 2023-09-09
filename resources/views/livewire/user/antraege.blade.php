@@ -79,7 +79,7 @@
                             <br />
                             Gewünschte Antragsform des Projektes:
                             <br />
-                            @if(auth()->user()->type == 'nat' && $bereich == 'Bildung')
+                            @if(auth()->user()->type == 'nat' && $this->bereich == "Bildung")
                                 <select wire:model.lazy="form" class="form-select">
                                     <option selected value="">Bitte auswählen...</option>
                                     @foreach (App\Enums\Form::cases()  as $form)

@@ -168,17 +168,17 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="telefon">Telefonnummer *</label>
-                    <input wire:model.lazy="telefon" class="form-control @error('telefon') is-invalid @enderror @if (session('valid-telefon'))
-                        is-valid @endif" id="telefon" type="text" placeholder="+41 81 123 4567"  autofocus autocomplete="off">
-                    @error('telefon')
+                    <label class="form-label" for="phone">Telefonnummer *</label>
+                    <input wire:model.lazy="phone" class="form-control @error('phone') is-invalid @enderror @if (session('valid-phone'))
+                        is-valid @endif" id="phone" type="text" placeholder="+41 81 123 4567"  autofocus autocomplete="off">
+                    @error('phone')
                         <div id="invalidFeedback" class="invalid-feedback">
                             {{ $message }}
                         </div>
                     @enderror
-                    @if (session()->has('valid-telefon'))
+                    @if (session()->has('valid-phone'))
                         <div class="valid-feedback">
-                            {{ session(['valid-telefon' => 'OK']) }}
+                            {{ session(['valid-phone' => 'OK']) }}
                         </div>
                     @endif
                 </div>

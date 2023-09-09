@@ -4,13 +4,14 @@ namespace App\Models;
 
 use App\Notifications\VerifyEmail;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -26,19 +27,19 @@ class User extends Authenticatable implements MustVerifyEmail
         'firstname',
         'birthday',
         'nationality',
-        'telefon',
+        'phone',
         'email',
         'password',
         'name_inst',
         'email_inst',
-        'telefon_inst',
+        'phone_inst',
         'website',
         'mobile',
         'soz_vers_nr',
         'civil_status',
         'status',
         'in_ch_since',
-        'bewilligung',
+        'granting',
         'is_draft',
     ];
 

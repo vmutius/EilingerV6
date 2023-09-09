@@ -14,9 +14,9 @@
         </div>
 
         <div class="col-md-6">
-            <label class="form-label" for="telefon_inst">{{  __('attributes.telefon_inst')  }}</label>
-            <input wire:model.lazy="user.telefon_inst" type="text" class="form-control" />
-            <span class="text-danger">@error('user.telefon_inst'){{ $message }}@enderror</span>
+            <label class="form-label" for="phone_inst">{{  __('attributes.phone_inst')  }}</label>
+            <input wire:model.lazy="user.phone_inst" type="text" class="form-control" />
+            <span class="text-danger">@error('user.phone_inst'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-6">
@@ -60,9 +60,9 @@
         </div>
 
         <div class="col-md-4">
-            <label class="form-label" for="telefon">Telefon der Kontaktperson</label>
-            <input wire:model.lazy="user.telefon" type="text" class="form-control" />
-            <span class="text-danger">@error('user.telefon'){{ $message }}@enderror</span>
+            <label class="form-label" for="phone">Telefon der Kontaktperson</label>
+            <input wire:model.lazy="user.phone" type="text" class="form-control" />
+            <span class="text-danger">@error('user.phone'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-4">
             <label class="form-label" for="mobile">Mobile der Kontaktperson</label>
@@ -71,8 +71,8 @@
         </div>
 
         <div class="col-md-12">
-            <label class="form-label" for="contact_partner_aboard">Ansprechpartner im Ausland</label>
-            <input wire:model.lazy="user.contact_partner_aboard" type="text" class="form-control" />
+            <label class="form-label" for="contact_aboard">Ansprechpartner im Ausland</label>
+            <input wire:model.lazy="user.contact_aboard" type="text" class="form-control" />
         </div>
 
 
