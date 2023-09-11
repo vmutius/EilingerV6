@@ -55,7 +55,7 @@
                             <br />
                             <input wire:model="name" type="text" class="form-control" />
                             @error('name')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
                             Bereich des Projektes:
@@ -68,7 +68,7 @@
                                 @endforeach
                             </select>
                             @error('bereich')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                            
                             <br />
@@ -81,7 +81,7 @@
                                 @endforeach
                             </select>
                             @error('form')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
                         </div>

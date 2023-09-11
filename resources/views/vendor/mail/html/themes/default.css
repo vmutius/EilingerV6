@@ -39,35 +39,35 @@ a img {
 
 h1 {
     color: #3d4852;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     margin-top: 0;
     text-align: left;
 }
 
 h2 {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     margin-top: 0;
     text-align: left;
 }
 
 h3 {
-    font-size: 14px;
+    font-size: 0.875 rem;
     font-weight: bold;
     margin-top: 0;
     text-align: left;
 }
 
 p {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5em;
     margin-top: 0;
     text-align: left;
 }
 
 p.sub {
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 img {
@@ -154,7 +154,7 @@ img {
 }
 
 .subcopy p {
-    font-size: 14px;
+    font-size: 0.875 rem;
 }
 
 /* Footer */
@@ -171,7 +171,7 @@ img {
 
 .footer p {
     color: #b0adc5;
-    font-size: 12px;
+    font-size: 0.75rem;
     text-align: center;
 }
 

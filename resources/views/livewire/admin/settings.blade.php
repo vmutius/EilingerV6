@@ -47,7 +47,7 @@
                             Benutzername:
                             <input wire:model="username" class="form-control" />
                             @error('username')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Anrede:
@@ -58,37 +58,37 @@
                                 @endforeach
                             </select>
                             @error('salutation')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Nachname:
                             <input wire:model="lastname" class="form-control" />
                             @error('lastname')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Vorname:
                             <input wire:model="firstname" class="form-control" />
                             @error('firstname')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Telefon:
                             <input wire:model="phone" class="form-control" />
                             @error('phone')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Email:
                             <input wire:model="email" class="form-control" />
                             @error('email')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
                             Password:
                             <input wire:model="password" class="form-control" />
                             @error('password')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
 
 

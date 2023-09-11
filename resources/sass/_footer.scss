@@ -3,7 +3,7 @@
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    font-size: 14px;
+    font-size: 0.875 rem;
     background: #37517e;
     }
     
@@ -17,7 +17,7 @@
     }
     
     #footer .footer-top .footer-contact h3 {
-    font-size: 28px;
+    font-size: 1.75rem;
     margin: 0 0 10px 0;
     padding: 2px 0 2px 0;
     line-height: 1;
@@ -27,7 +27,7 @@
     }
     
     #footer .footer-top .footer-contact p {
-    font-size: 14px;
+    font-size: 0.875 rem;
     line-height: 24px;
     margin-bottom: 0;
     font-family: "Jost", sans-serif;
@@ -35,13 +35,13 @@
     }
     
     #footer .footer-top h4 {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     color: #37517e;
     position: relative;
     padding-bottom: 12px;
     }
-    
+        
     #footer .footer-top .footer-links {
     margin-bottom: 30px;
     }
@@ -55,7 +55,7 @@
     #footer .footer-top .footer-links ul i {
     padding-right: 2px;
     color: #47b2e4;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1;
     }
     
@@ -80,28 +80,7 @@
     text-decoration: none;
     color: #47b2e4;
     }
-    
-    #footer .footer-top .social-links a {
-    font-size: 18px;
-    display: inline-block;
-    background: #47b2e4;
-    color: #fff;
-    line-height: 1;
-    padding: 8px 0;
-    margin-right: 4px;
-    border-radius: 50%;
-    text-align: center;
-    width: 36px;
-    height: 36px;
-    transition: 0.3s;
-    }
-    
-    #footer .footer-top .social-links a:hover {
-    background: #209dd8;
-    color: #fff;
-    text-decoration: none;
-    }
-    
+        
     #footer .footer-bottom {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -112,25 +91,16 @@
     float: left;
     }
     
-    #footer .credits {
-    float: right;
-    font-size: 13px;
-    }
-    
-    #footer .credits a {
-    transition: 0.3s;
-    }
-    
     @media (max-width: 768px) {
-    #footer .footer-bottom {
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-    #footer .copyright, #footer .credits {
-      text-align: center;
-      float: none;
-    }
-    #footer .credits {
-      padding-top: 4px;
-    }
+      #footer .footer-bottom {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      #footer .copyright, #footer .credits {
+        text-align: center;
+        float: none;
+      }
+      #footer .credits {
+        padding-top: 4px;
+      }
     }

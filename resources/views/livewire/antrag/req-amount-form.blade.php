@@ -74,7 +74,7 @@
                             @endforeach
                         </select>
                         @error('payout_plan')
-                            <div style="font-size: 11px; color: red">{{ $message }}</div>
+                            <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                         @enderror
                         </td>
                         <td></td>

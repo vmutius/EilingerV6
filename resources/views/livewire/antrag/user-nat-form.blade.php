@@ -21,7 +21,7 @@
                 @endforeach
             </select>
             @error('user.salutatiom')
-                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
             @enderror
         </div>
         <div class="col-sm-5">
@@ -44,7 +44,7 @@
                 @endforeach
             </select>
             @error('user.nationality')
-                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
             @enderror
             
         </div>
@@ -62,7 +62,7 @@
                 @endforeach
             </select>
             @error('user.civil_status')
-                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
             @enderror
         </div>
 
@@ -92,7 +92,7 @@
                 @endforeach
             </select>
             @error('user.granting')
-                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
             @enderror
         </div>
 

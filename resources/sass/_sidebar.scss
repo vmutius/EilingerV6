@@ -31,7 +31,7 @@ ul {
   
   .sidebar .logo-details .logo_name{
     color: #fff;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
     opacity: 0;
     transition: all 0.5s ease;
@@ -45,9 +45,9 @@ ul {
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    font-size: 22px;
+    font-size: 1.375rem;
     transition: all 0.4s ease;
-    font-size: 23px;
+    font-size: 1.4375rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.5s ease;
@@ -59,7 +59,7 @@ ul {
     color: #fff;
     height: 60px;
     min-width: 50px;
-    font-size: 28px;
+    font-size: 1.75rem;
     text-align: center;
     line-height: 60px;
   }
@@ -81,7 +81,7 @@ ul {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     padding: 6px 12px;
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 400;
     opacity: 0;
     white-space: nowrap;
@@ -99,7 +99,7 @@ ul {
     display: none;
   }
   .sidebar input{
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: #FFF;
     font-weight: 400;
     outline: none;
@@ -120,7 +120,7 @@ ul {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    font-size: 22px;
+    font-size: 1.375rem;
     background: #1d1b31;
     color: #FFF;
   }
@@ -147,7 +147,7 @@ ul {
   }
   .sidebar li a .links_name{
     color: #fff;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 400;
     white-space: nowrap;
     opacity: 0;
@@ -166,7 +166,7 @@ ul {
   .sidebar li i{
     height: 50px;
     line-height: 50px;
-    font-size: 18px;
+    font-size: 1.125rem;
     border-radius: 12px;
   }
   .sidebar li.profile{
@@ -197,13 +197,13 @@ ul {
   }
   .sidebar li.profile .name,
   .sidebar li.profile .job{
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 400;
     color: #fff;
     white-space: nowrap;
   }
   .sidebar li.profile .job{
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .sidebar .profile #log_out{
     position: absolute;

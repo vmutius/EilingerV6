@@ -60,7 +60,7 @@
                             <br />
                             <input wire:model="name" type="text" class="form-control" />
                             @error('name')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
                             Bereich des Projektes:
@@ -73,7 +73,7 @@
                                 @endforeach
                             </select>
                             @error('bereich')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                            
                             <br />
@@ -92,7 +92,7 @@
                                         <option value="{{ App\Enums\Form::Spende }}">{{ App\Enums\Form::Spende }}</option>
                                 </select>
                             @error('form')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             @endif
                             <br />
@@ -105,21 +105,21 @@
                                 @endforeach
                             </select>
                             @error('currency_id')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
                             Startdatum:
                             <br />
                             <input wire:model="start_appl" type="date"  class="form-control" />
                             @error('start_appl')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
                             Enddatum:
                             <br />
                             <input wire:model="end_appl" type="date" class="form-control" />
                             @error('end_appl')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
                             <div class="form-check form-check-inline">
@@ -133,7 +133,7 @@
                                 </label>
                             </div>
                             @error('is_first')
-                                <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
                             @if ($this->visible)
@@ -146,7 +146,7 @@
                                     @endforeach
                                 </select>
                                 @error('first_applications')
-                                    <div style="font-size: 11px; color: red">{{ $message }}</div>
+                                    <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                                 @enderror
                             @endif
                         </div>
