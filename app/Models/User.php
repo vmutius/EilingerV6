@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Notifications\VerifyEmail;
+use App\Notifications\ResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -101,10 +102,15 @@ class User extends Authenticatable implements MustVerifyEmail
 
     // OVERRIDE
     /**
-     * Send email verification.
+     * Send email verification und Send change Password Request
      * @call function
      */
     public function sendEmailVerificationNotification() {
         $this->notify(new VerifyEmail);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
     }
 }
