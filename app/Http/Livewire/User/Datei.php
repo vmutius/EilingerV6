@@ -26,7 +26,7 @@ class Datei extends Component
     public function render()
     {
         return view('livewire.user.datei')
-            ->layout(\App\View\Components\Layouts\UserDashboard::class);
+            ->layout(\App\View\Components\Layout\UserDashboard::class);
     }
 
     public function addEnclosure()

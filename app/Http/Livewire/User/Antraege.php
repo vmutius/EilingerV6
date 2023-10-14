@@ -50,7 +50,7 @@ class Antraege extends Component
             'applications' => $applications,
             'currencies' => $currencies,
         ])
-            ->layout(\App\View\Components\Layouts\UserDashboard::class);
+            ->layout(\App\View\Components\Layout\UserDashboard::class);
     }
 
     public function addApplication()

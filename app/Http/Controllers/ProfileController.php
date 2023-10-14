@@ -11,6 +11,7 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     public $showModal = false;
+
     /**
      * Display the user's profile form.
      */
@@ -51,7 +52,7 @@ class ProfileController extends Controller
     /**
      * Delete the user's account.
      */
-    public function destroy(Request $request): RedirectResponse
+    public function delete(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current-password'],
@@ -67,5 +68,15 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function destroy()
+    {
+        $this->showModal = true;
+    }
+
+    public function close()
+    {
+        $this->showModal = false;
     }
 }

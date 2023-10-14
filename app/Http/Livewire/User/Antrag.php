@@ -23,7 +23,7 @@ class Antrag extends Component
     public function render()
     {
         return view('livewire.user.antrag')
-            ->layout(\App\View\Components\Layouts\UserDashboard::class);
+            ->layout(\App\View\Components\Layout\UserDashboard::class);
     }
 
     public function sendApplication()

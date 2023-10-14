@@ -16,6 +16,6 @@ class Gesuch extends Component
         return view('livewire.user.gesuch', [
             'applications' => $applications,
         ])
-            ->layout(\App\View\Components\Layouts\UserDashboard::class);
+            ->layout(\App\View\Components\Layout\UserDashboard::class);
     }
 }

@@ -19,6 +19,6 @@ class Message extends Component
     public function render()
     {
         return view('livewire.user.message')
-            ->layout(\App\View\Components\Layouts\UserDashboard::class);
+            ->layout(\App\View\Components\Layout\UserDashboard::class);
     }
 }

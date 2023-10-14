@@ -9,6 +9,6 @@ class Uebersicht extends Component
     public function render()
     {
         return view('livewire.user.uebersicht')
-            ->layout(\App\View\Components\Layouts\UserDashboard::class);
+            ->layout(\App\View\Components\Layout\UserDashboard::class);
     }
 }

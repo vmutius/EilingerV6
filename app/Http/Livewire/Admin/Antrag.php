@@ -43,7 +43,7 @@ class Antrag extends Component
     public function render()
     {
         return view('livewire.admin.antrag')
-            ->layout(\App\View\Components\Layouts\AdminDashboard::class);
+            ->layout(\App\View\Components\Layout\AdminDashboard::class);
     }
 
 }

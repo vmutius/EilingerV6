@@ -19,6 +19,6 @@ class Uebersicht extends Component
             'applicationCount' => $applicationCount,
             'projectCount' => $projectCount,
         ])
-         ->layout(\App\View\Components\Layouts\AdminDashboard::class);;
+         ->layout(\App\View\Components\Layout\AdminDashboard::class);;
     }
 }

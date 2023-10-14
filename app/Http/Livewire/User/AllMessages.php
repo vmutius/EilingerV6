@@ -16,6 +16,6 @@ class AllMessages extends Component
         return view('livewire.user.all-messages',[
             'applications' => $applications,
             ])
-            ->layout(\App\View\Components\Layouts\UserDashboard::class); 
+            ->layout(\App\View\Components\Layout\UserDashboard::class); 
     }
 }

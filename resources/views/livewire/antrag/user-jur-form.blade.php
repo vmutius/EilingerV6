@@ -8,25 +8,25 @@
         <x-notification/>
 
         <div class="col-md-6">
-            <label class="form-label" for="name_inst">{{  __('attributes.name_inst')  }}</label>
+            <label class="form-label" for="name_inst">{{  __('user.name_inst')  }}</label>
             <input wire:model.lazy="user.name_inst" type="text" class="form-control" />
             <span class="text-danger">@error('user.name_inst'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-6">
-            <label class="form-label" for="phone_inst">{{  __('attributes.phone_inst')  }}</label>
+            <label class="form-label" for="phone_inst">{{  __('user.phone_inst')  }}</label>
             <input wire:model.lazy="user.phone_inst" type="text" class="form-control" />
             <span class="text-danger">@error('user.phone_inst'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-6">
-            <label class="form-label" for="email_inst">{{  __('attributes.email_inst')  }}</label>
+            <label class="form-label" for="email_inst">{{  __('user.email_inst')  }}</label>
             <input wire:model.lazy="user.email_inst" type="text" class="form-control" />
             <span class="text-danger">@error('user.email_inst'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-6">
-            <label class="form-label" for="website">{{  __('attributes.website')  }}</label>
+            <label class="form-label" for="website">{{  __('user.website')  }}</label>
             <input wire:model.lazy="user.website" type="text" class="form-control" />
             <span class="text-danger">@error('user.website'){{ $message }}@enderror</span>
         </div>

@@ -17,6 +17,6 @@ class Projects extends Component
 
         return view('livewire.admin.projects', [
             'applications' => $applications,
-        ])->layout(\App\View\Components\Layouts\AdminDashboard::class);
+        ])->layout(\App\View\Components\Layout\AdminDashboard::class);
     }
 }

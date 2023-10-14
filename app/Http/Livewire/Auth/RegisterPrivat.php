@@ -113,6 +113,6 @@ class RegisterPrivat extends Component
         $countries = Country::all();
 
         return view('livewire.auth.register_privat', compact('countries'))
-            ->layout(\App\View\Components\Layouts\Eilinger::class);
+            ->layout(\App\View\Components\Layout\Eilinger::class);
     }
 }
