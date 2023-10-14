@@ -1,7 +1,7 @@
 <?php
 
 return [
-   'country_id' => 'Land',
+   'country' => 'Land',
    'street' => 'Strasse',
    'number' => 'Hausnummer',
    'plz' => 'PLZ',

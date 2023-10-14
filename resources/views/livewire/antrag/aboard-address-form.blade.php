@@ -26,7 +26,7 @@
             <span class="text-danger">@error('aboardAddress.plz'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="town">{{  __('address.own')  }} *</label>
+            <label class="form-label" for="town">{{  __('address.town')  }} *</label>
             <input wire:model.lazy="aboardAddress.town" type="text" class="form-control" id="town"/>
             <span class="text-danger">@error('aboardAddress.town'){{ $message }}@enderror</span>
         </div>

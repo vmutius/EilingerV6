@@ -5,9 +5,6 @@
             <div>
                 <small>für welche Beiträge verlangt werden</small>
             </div>
-            <div>
-                {{-- @livewire('toogle-draft', ['model' => $education]) --}}
-            </div>
 
         </div>
         <div class="row g-3">

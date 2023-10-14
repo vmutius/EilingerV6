@@ -20,7 +20,7 @@ class Datei extends Component
 
     public function mount() 
     {
-        $this->applications = Application::where('user_id', auth()->user()->id)->get();
+        $this->applications = Application::LoggedInUser()->get();
     }
 
     public function render()

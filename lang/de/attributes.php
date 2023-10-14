@@ -6,4 +6,5 @@ return [
     'birthday' => 'Geburtsdatum',
     'salutation' => 'Anrede',
     'country' => 'Land',
+    'please_select' => 'Bitte auswählen ...'
 ];

@@ -9,7 +9,7 @@ class AllMessages extends Component
 {
     public function render()
     {
-        $applications = Application::where('user_id', auth()->user()->id)
+        $applications = Application::LoggedInUser()
         ->where('appl_status','!=', 'not send')                
         ->get();
 

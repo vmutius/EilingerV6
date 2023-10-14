@@ -19,6 +19,7 @@ return new class extends Migration
             $table->decimal('cost_amount', $precision = 8, $scale = 2)->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

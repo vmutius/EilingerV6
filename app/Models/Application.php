@@ -64,4 +64,9 @@ class Application extends Model
     {
         return $this->belongsTo(Currency::class);
     }
+
+    public function scopeLoggedInUser($query)
+    {
+        return $query->where('user_id', auth()->user()->id);
+    }
 }

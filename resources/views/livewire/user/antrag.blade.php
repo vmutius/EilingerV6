@@ -14,6 +14,8 @@
     <p>Durch Einreichen des Antrag bestätigen Sie, dass Sie die Fördervoraussetzungen sowie die Ausschlusskriterien
         gelesen und zur Kenntnis genommen haben. </p>
 
+    <p class="text-danger fw-bolder">Bitte speichern Sie die Daten bei jedem Schritt.</p>
+
 
     <div class="home-content">
         

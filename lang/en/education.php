@@ -1,12 +1,12 @@
 <?php
 
 return [
-   'education' => 'Ausbildung',
+   'education' => 'Education',
    'name' => 'Name',
    'final' => 'Beabsichtigter Abschluss als',
    'grade' => 'Abschluss',
    'ects_points' => 'ECTS Punkte',
    'time' => 'Pensum',
-   'begin_edu' => 'Beginn der Ausbildung',
-   'duration_appl' => 'Dauer der Ausbildung',
+   'begin_edu' => 'Begin of the education',
+   'duration_appl' => 'Duration of the education',
 ];

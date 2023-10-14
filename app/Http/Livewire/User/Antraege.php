@@ -41,7 +41,7 @@ class Antraege extends Component
 
     public function render()
     {
-        $applications = Application::where('user_id', auth()->user()->id)
+        $applications = Application::LoggedInUser()
                         ->where('appl_status', 'not send')                
                         ->get();
         $currencies = Currency::orderBy('is_pinned', 'DESC')->orderBy('currency')->get();

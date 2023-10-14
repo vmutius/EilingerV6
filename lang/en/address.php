@@ -1,7 +1,7 @@
 <?php
 
 return [
-   'country_id' => 'Country',
+   'country' => 'Country',
    'street' => 'Street',
    'number' => 'Number',
    'plz' => 'PLZ',
