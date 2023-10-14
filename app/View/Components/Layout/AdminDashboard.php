@@ -1,11 +1,12 @@
 <?php
 
-namespace App\View\Components\Layouts;
+namespace App\View\Components\Layout;
 
 use Closure;
+use App\Models\Message;
 use Illuminate\View\Component;
 
-class Header extends Component
+class AdminDashboard extends Component
 {
     /**
      * Create a new component instance.
@@ -24,6 +25,6 @@ class Header extends Component
      */
     public function render()
     {
-        return view('layouts.header');
+        return view('components.layout.admin-dashboard');
     }
 }

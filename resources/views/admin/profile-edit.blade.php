@@ -1,4 +1,4 @@
-<x-layouts.admin_dashboard>
+<x-layout.admin_dashboard>
     <section class="home-section">
         <div class="text">Benutzerprofil</div>
         <div class="home-content">
@@ -21,4 +21,4 @@
             </div>
         </div>
     </section>
-</x-layouts.admin_dashboard>
+</x-layout.admin_dashboard>

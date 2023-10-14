@@ -1,11 +1,11 @@
 <?php
 
-namespace App\View\Components\Layouts;
+namespace App\View\Components\Layout;
 
 use Closure;
 use Illuminate\View\Component;
 
-class Footer extends Component
+class Eilinger extends Component
 {
     /**
      * Create a new component instance.
@@ -24,6 +24,6 @@ class Footer extends Component
      */
     public function render()
     {
-        return view('layouts.footer');
+        return view('components.layout.eilinger');
     }
 }

@@ -1,4 +1,4 @@
-<x-layouts.user_dashboard>
+<x-layout.user_dashboard>
     <section class="home-section">
         <div class="text">Benutzerprofil</div>
         <div class="home-content">
@@ -23,4 +23,4 @@
             </div>
         </div>
     </section>
-</x-layouts.user_dashboard>
+</x-layout.user_dashboard>

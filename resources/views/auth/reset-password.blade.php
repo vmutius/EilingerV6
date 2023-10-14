@@ -1,4 +1,4 @@
-<x-layouts.eilinger>
+<x-layout.eilinger>
     <main id="main">
 
         <section>
@@ -63,4 +63,4 @@
             </div>
         </section>
     </main>
-</x-layouts.eilinger>
+</x-layout.eilinger>

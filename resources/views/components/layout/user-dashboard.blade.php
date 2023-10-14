@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keyword" content="">
-    <title>Eilinger Stiftung - Admin Dashboard</title>
+    <title>Eilinger Stiftung - Dashboard</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,7 +18,7 @@
 
 <body>
     <!-- ======= Header ======= -->
-    @include('layouts.dash-header')
+    @include('components.layout.dash-header')
 
     <div class="sidebar">
         <div class="logo-details">
@@ -27,48 +27,47 @@
         </div>
         <ul class="nav-list">
             <li>
-                <a href="{{ route('admin_dashboard', app()->getLocale()) }}">
+                <a href="{{ route('user_dashboard', app()->getLocale()) }}">
                     <i class="bi bi-grid"></i>
                     <span class="links_name">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="{{ route('admin_users', app()->getLocale()) }}">
-                    <i class="bi bi-people-fill"></i>
-                    <span class="links_name">Benutzerübersicht</span>
+                <a href="{{ route('user_antraege', app()->getLocale()) }}">
+                    <i class="bi bi-envelope-open"></i>
+                    <span class="links_name">Anträge</span>
                 </a>
-                <span class="tooltip">Benutzerübersich mit allen Anträgen </span>
+                <span class="tooltip">Stellen Sie hier ihre Anträge</span>
             </li>
             <li>
-                <a href="{{ route('admin_applications', app()->getLocale()) }}">
+                <a href="{{ route('user_gesuch', app()->getLocale()) }}">
                     <i class="bi bi-envelope-check"></i>
-                    <span class="links_name">Antragsübersicht</span>
+                    <span class="links_name">Gesuche</span>
                 </a>
-                <span class="tooltip">Übersicht aller Anträge</span>
+                <span class="tooltip">Sehen Sie hier ihre Gesuche</span>
             </li>
             <li>
-                <a href="{{ route('admin_projects', app()->getLocale()) }}">
+                <a href="{{ route('user_nachrichten', app()->getLocale()) }}">
                     <i class="bi bi-chat-dots"></i>
-                    <span class="links_name">Projekübersicht</span>
+                    <span class="links_name">Nachrichten</span>
                 </a>
-                <span class="tooltip">Übersicht aller Projekte</span>
+                <span class="tooltip">Ihre Nachrichten</span>
             </li>
-
             <li>
-                <a href="{{ route('admin_profile.edit', app()->getLocale()) }}">
-                    <i class="bi bi-list-check"></i>
+                <a href="{{ route('user_profile.edit', app()->getLocale()) }}">
+                    <i class="bi bi-person"></i>
                     <span class="links_name">Profil</span>
                 </a>
                 <span class="tooltip">Profil</span>
             </li>
 
             <li>
-                <a href="{{ route('admin_settings', app()->getLocale()) }}">
-                    <i class="bi bi-gear"></i>
-                    <span class="links_name">Einstellungen</span>
+                <a href="{{ route('user_dateien', app()->getLocale()) }}">
+                    <i class="bi bi-folder-plus"></i>
+                    <span class="links_name">Datei Ablage</span>
                 </a>
-                <span class="tooltip">Einstellungen</span>
+                <span class="tooltip">Datei Ablage</span>
             </li>
         </ul>
     </div>

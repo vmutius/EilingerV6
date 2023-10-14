@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Layouts;
+namespace App\View\Components\Layout;
 
 use Closure;
 use App\Models\Message;
@@ -25,6 +25,6 @@ class UserDashboard extends Component
      */
     public function render()
     {
-        return view('layouts.user-dashboard');
+        return view('components.layout.user-dashboard');
     }
 }

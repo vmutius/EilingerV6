@@ -1,4 +1,4 @@
-<x-layouts.eilinger>
+<x-layout.eilinger>
 
     @section('title', 'Homepage')
 
@@ -383,4 +383,4 @@
 
     </main><!-- End #main -->
 
-</x-layouts.eilinger>
+</x-layout.eilinger>

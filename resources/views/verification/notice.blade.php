@@ -1,4 +1,4 @@
-<x-layouts.eilinger>
+<x-layout.eilinger>
     @section('title', 'Bestätigung')
 
     <main id="main">
@@ -41,4 +41,4 @@
         </section>
     </main>
 
-</x-layouts.eilinger>
+</x-layout.eilinger>

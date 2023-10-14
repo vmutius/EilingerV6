@@ -1,4 +1,4 @@
-<x-layouts.admin_dashboard>
+<x-layout.admin_dashboard>
 
     <section class="home-section">
         <div class="text">Dashboard</div>
@@ -10,4 +10,4 @@
         </div>
     </section>
 
-</x-layouts.admin_dashboard>
+</x-layout.admin_dashboard>

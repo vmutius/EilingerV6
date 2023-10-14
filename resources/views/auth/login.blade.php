@@ -1,4 +1,4 @@
-<x-layouts.eilinger>
+<x-layout.eilinger>
 
     @section('title', 'Registrieren/Einloggen')
     <main id="main">
@@ -64,4 +64,4 @@
             </div>
         </section>
     </main><!-- End #main -->
-</x-layouts.eilinger>
+</x-layout.eilinger>

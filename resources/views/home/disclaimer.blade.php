@@ -1,17 +1,17 @@
-<x-layouts.eilinger>
+<x-layout.eilinger>
 
-    @section('title', 'Disclaimer')
+@section('title', 'Disclaimer')
 
-    <main id="main">
-        <section id="gesuche" class="pricing section-bg">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Disclaimer</h2>
+<main id="main">
+    <section id="gesuche" class="pricing section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Disclaimer</h2>
 
 
 
-                </div>
             </div>
-        </section>
-    </main><!-- End #main -->
-    </x-layouts.eilinger>
+        </div>
+    </section>
+</main><!-- End #main -->
+</x-layout.eilinger>

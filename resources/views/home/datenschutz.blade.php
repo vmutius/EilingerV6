@@ -1,4 +1,4 @@
-<x-layouts.eilinger>
+<x-layout.eilinger>
 
 @section('title', 'Datenschutzerklärung')
 
@@ -121,4 +121,4 @@
 
 </main><!-- End #main -->
 
-</x-layouts.eilinger>
+</x-layout.eilinger>
