@@ -55,6 +55,13 @@
                 <span class="tooltip">Ihre Nachrichten</span>
             </li>
             <li>
+                <a href="{{ route('user_dateien', app()->getLocale()) }}">
+                    <i class="bi bi-folder-plus"></i>
+                    <span class="links_name">Datei Ablage</span>
+                </a>
+                <span class="tooltip">Datei Ablage</span>
+            </li>
+            <li>
                 <a href="{{ route('user_profile.edit', app()->getLocale()) }}">
                     <i class="bi bi-person"></i>
                     <span class="links_name">Profil</span>
@@ -63,12 +70,14 @@
             </li>
 
             <li>
-                <a href="{{ route('user_dateien', app()->getLocale()) }}">
-                    <i class="bi bi-folder-plus"></i>
-                    <span class="links_name">Datei Ablage</span>
+                <a href="{{ route('user_delete', app()->getLocale()) }}">
+                    <i class="bi bi-person-x"></i>
+                    <span class="links_name">Account löschen</span>
                 </a>
-                <span class="tooltip">Datei Ablage</span>
+                <span class="tooltip">Account löschen</span>
             </li>
+
+            
         </ul>
     </div>
 

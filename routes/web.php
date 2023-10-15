@@ -48,8 +48,9 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale' ], function ()
         Route::get('user/nachricht/{application_id}', App\Http\Livewire\User\Message::class)->name('user_nachricht');
         Route::get('user/profile', [ProfileController::class, 'edit'])->name('user_profile.edit');
         Route::patch('user/profile', [ProfileController::class, 'update'])->name('user_profile.update');
-        Route::delete('user/profile', [ProfileController::class, 'destroy'])->name('user_profile.destroy');
         Route::get('user/dateien', App\Http\Livewire\User\Datei::class)->name('user_dateien');
+        Route::get('user/delete', App\Http\Livewire\User\DeleteAccount::class)->name('user_delete');
+        //Route::delete('user/delete', App\Http\Livewire\User\DeleteAccount::class)->name('user_delete');
     });
 
     Route::group(['middleware' => ['admin']], function () {

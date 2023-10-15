@@ -10,7 +10,6 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public $showModal = false;
 
     /**
      * Display the user's profile form.
@@ -47,36 +46,5 @@ class ProfileController extends Controller
             : route('user_dashboard', app()->getLocale());
 
         return redirect()->route($success_route)->with('success', 'Profil wurde aktualisiert');
-    }
-
-    /**
-     * Delete the user's account.
-     */
-    public function delete(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current-password'],
-        ]);
-
-        $user = $request->user();
-
-        auth()->logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
-    }
-
-    public function destroy()
-    {
-        $this->showModal = true;
-    }
-
-    public function close()
-    {
-        $this->showModal = false;
     }
 }
