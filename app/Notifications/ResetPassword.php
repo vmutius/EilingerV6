@@ -2,39 +2,20 @@
 
 namespace App\Notifications;
 
-use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
+use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Notifications\Notification;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
 
-class ResetPassword extends Notification
+class ResetPassword extends Notification implements ShouldQueue
 {
-    /**
-     * The password reset token.
-     *
-     * @var string
-     */
+    use Queueable;
+    
     public $token;
-
-    /**
-     * The callback that should be used to create the reset password URL.
-     *
-     * @var (\Closure(mixed, string): string)|null
-     */
     public static $createUrlCallback;
-
-    /**
-     * The callback that should be used to build the mail message.
-     *
-     * @var (\Closure(mixed, string): \Illuminate\Notifications\Messages\MailMessage)|null
-     */
     public static $toMailCallback;
 
-    /**
-     * Create a notification instance.
-     *
-     * @param  string  $token
-     * @return void
-     */
     public function __construct($token)
     {
         $this->token = $token;

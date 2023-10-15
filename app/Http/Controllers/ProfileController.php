@@ -41,10 +41,10 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        $success_route = auth()->user()->is_admin 
-            ? route('admin_dashboard', app()->getLocale()) 
-            : route('user_dashboard', app()->getLocale());
+        if (auth()->user()->is_admin)
+            return redirect()->route('admin_dashboard', app()->getLocale()) ->with('success', 'Profil wurde aktualisiert'); 
+        else
+            return redirect()->route('user_dashboard', app()->getLocale()) ->with('success', 'Profil wurde aktualisiert'); 
 
-        return redirect()->route($success_route)->with('success', 'Profil wurde aktualisiert');
     }
 }
