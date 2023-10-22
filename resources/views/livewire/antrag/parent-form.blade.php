@@ -83,7 +83,7 @@
 
     <div class="row">
         <div class="col-md-12 mt-4">
-            <button class="btn btn-sm btn-secondary" wire:click.prevent="addParent">+ Weitere Elternteile</button>
+            <button class="btn btn-secondary" wire:click.prevent="addParent">+ Weitere Elternteile</button>
         </div>
     </div>
     <div class="col-md-12 text-center">

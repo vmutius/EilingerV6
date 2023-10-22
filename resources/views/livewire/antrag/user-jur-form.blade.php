@@ -52,13 +52,6 @@
             <span class="text-danger">@error('user.lastname'){{ $message }}@enderror</span>
         </div>
 
-
-        <div class="col-md-4">
-            <label class="form-label" for="email">Email der Kontaktperson</label>
-            <input wire:model.lazy="user.email" type="email" class="form-control" />
-            <span class="text-danger">@error('user.email'){{ $message }}@enderror</span>
-        </div>
-
         <div class="col-md-4">
             <label class="form-label" for="phone">Telefon der Kontaktperson</label>
             <input wire:model.lazy="user.phone" type="text" class="form-control" />

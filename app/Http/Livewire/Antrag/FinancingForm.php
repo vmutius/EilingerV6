@@ -6,7 +6,6 @@ use Livewire\Component;
 use App\Models\Currency;
 use App\Models\Financing;
 use App\Models\Application;
-use AmrShawky\LaravelCurrency\Facade\Currency as Converter;
 
 class FinancingForm extends Component
 {
@@ -15,13 +14,13 @@ class FinancingForm extends Component
     public $myCurrency;
 
     protected $rules = [
-        'financing.personal_contribution' => 'required|numeric|between:0,100000',
-        'financing.other_income' => 'nullable|numeric|between:0,100000',
-        'financing.income_where' => 'required_with:financing.other_income',
-        'financing.income_who' => 'required_with:financing.other_income',
-        'financing.netto_income' => 'required|numeric|between:0,100000',
-        'financing.assets' => 'required|numeric|between:0,100000',
-        'financing.scholarship' => 'required|numeric|between:0,100000',
+        'financing.personal_contribution' => 'required|numeric',
+        'financing.other_income' => 'nullable|numeric',
+        'financing.income_where' => 'required_unless:financing.other_income,0,1',
+        'financing.income_who' => 'required_unless:financing.other_income,0,1',
+        'financing.netto_income' => 'required|numeric',
+        'financing.assets' => 'required|numeric',
+        'financing.scholarship' => 'required|numeric',
     ];
 
 
@@ -58,16 +57,4 @@ class FinancingForm extends Component
             $this->financing->scholarship);       
     }
 
-    public function convertFinancingToCHF()
-    {
-        $getAmountFinancing = $this->getAmountFinancing();
-        return(
-            Converter::convert()
-                ->from($this->myCurrency->abbreviation)
-                ->to('CHF')
-                ->amount($getAmountFinancing)
-                ->round(2)
-                ->get()
-        );
-    }
 }

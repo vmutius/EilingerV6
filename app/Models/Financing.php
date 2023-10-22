@@ -29,6 +29,14 @@ class Financing extends Model
         'is_draft',
     ];
 
+    protected $casts = [
+        'personal_contribution' => 'integer',
+        'other_income' => 'integer',
+        'netto_income' => 'integer',
+        'assets' => 'integer',
+        'scholarship' => 'integer',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

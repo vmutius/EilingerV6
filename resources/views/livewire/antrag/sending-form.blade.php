@@ -1,4 +1,5 @@
 <div wire:init="completeApplication">
+    <p>Der Antrag kann eingereicht werden, wenn alle Pflichtangaben gemacht sind.</p>
     <table class="table table-striped" id="sortTable">
         <thead>
             <tr>
@@ -9,8 +10,8 @@
         </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td>Bewerber</td>
+                <td><b>1</b></td>
+                <td><b>Bewerber *</b></td>
                 <td>
                     <span id="boot-icon" {!! $userNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -19,8 +20,8 @@
                 </td>
             </tr>
             <tr>
-                <td>2</td>
-                <td>Adresse</td>
+                <td><b>2</b></td>
+                <td><b>Adresse *</b></td>
                 <td>
                     <span id="boot-icon" {!! $addressNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -39,8 +40,8 @@
                 </td>
             </tr>
             <tr>
-                <td>4</td>
-                <td>Ausbildung</td>
+                <td><b>4</b></td>
+                <td><b>Ausbildung *</b></td>
                 <td>
                     <span id="boot-icon" {!! $educationNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -49,8 +50,8 @@
                 </td>
             </tr>
             <tr>
-                <td>5</td>
-                <td>Auszahlung</td>
+                <td><b>5</b></td>
+                <td><b>Auszahlung *</b></td>
                 <td>
                     <span id="boot-icon" {!! $accountNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -79,8 +80,8 @@
                 </td>
             </tr>
             <tr>
-                <td>8</td>
-                <td>Kosten</td>
+                <td><b>8</b></td>
+                <td><b>Kosten *</b></td>
                 <td>
                     <span id="boot-icon" {!! $costNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -89,8 +90,8 @@
                 </td>
             </tr>
             <tr>
-                <td>9</td>
-                <td>Finanzierung</td>
+                <td><b>9</b></td>
+                <td><b>Finanzierung *</b></td>
                 <td>
                     <span id="boot-icon" {!! $financingNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -99,8 +100,8 @@
                 </td>
             </tr>
             <tr>
-                <td>10</td>
-                <td>Bemerkung und Beilagen</td>
+                <td><b>10</b></td>
+                <td><b>Bemerkung und Beilagen *</b></td>
                 <td>
                     <span id="boot-icon" {!! $enclosureNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'

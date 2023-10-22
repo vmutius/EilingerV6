@@ -31,6 +31,20 @@ class Cost extends Model
         'is_draft',
     ];
 
+    protected $casts = [
+        'semester_fees' => 'integer',
+        'fees' => 'integer',
+        'educational_material' => 'integer',
+        'excursion' => 'integer',
+        'travel_expenses' => 'integer',
+        'cost_of_living_with_parents' => 'integer',
+        'cost_of_living_alone' => 'integer',
+        'cost_of_living_single_parent' => 'integer',
+        'cost_of_living_with_partner' => 'integer',
+        'number_of_children' => 'integer',
+    ];
+
+
     public function user()
     {
         return $this->belongsTo(User::class);

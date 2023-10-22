@@ -32,6 +32,14 @@ class Application extends Model
         'end_appl',
     ];
 
+    protected $casts = [
+        'req_amount' => 'integer',
+        'calc_amount' => 'integer',
+        'appl_status' => ApplStatus::class,
+        'bereich' => Bereich::class,
+        'form' => Form::class,
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -53,12 +61,6 @@ class Application extends Model
             ApplStatus::NOT_SEND->value => 'secondary',
         ][$this->appl_status->value] ?? 'gray'; 
     }
-
-    protected $casts = [
-        'appl_status' => ApplStatus::class,
-        'bereich' => Bereich::class,
-        'form' => Form::class,
-    ];
 
     public function currency()
     {

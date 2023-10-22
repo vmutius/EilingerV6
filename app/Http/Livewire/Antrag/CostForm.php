@@ -6,7 +6,6 @@ use App\Models\Cost;
 use Livewire\Component;
 use App\Models\Currency;
 use App\Models\Application;
-use AmrShawky\LaravelCurrency\Facade\Currency as Converter;
 
 
 class CostForm extends Component
@@ -18,11 +17,11 @@ class CostForm extends Component
     protected function rules() : array
     {   
         return([
-            'cost.semester_fees' => 'required|numeric|between:0,100000',
-            'cost.fees' => 'required|numeric|between:0,100000',
-            'cost.educational_material' => 'required|numeric|between:0,100000',
-            'cost.excursion' => 'required|numeric|between:0,100000',
-            'cost.travel_expenses' => 'required|numeric|between:0,100000',
+            'cost.semester_fees' => 'required|numeric',
+            'cost.fees' => 'required|numeric',
+            'cost.educational_material' => 'required|numeric',
+            'cost.excursion' => 'required|numeric',
+            'cost.travel_expenses' => 'required|numeric',
             'cost.cost_of_living_with_parents' => 'nullable|required_without_all:cost.cost_of_living_alone,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric',
             'cost.cost_of_living_alone' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric',
             'cost.cost_of_living_single_parent' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_with_partner|numeric',
@@ -65,19 +64,5 @@ class CostForm extends Component
             $this->cost->cost_of_living_alone +
             $this->cost->cost_of_living_single_parent +
             $this->cost->cost_of_living_with_partner);           
-    }
-
-    public function convertCostToCHF()
-    {
-        $getAmountCost = $this->getAmountCost();
-        
-        return(
-            Converter::convert()
-                ->from($this->myCurrency->abbreviation)
-                ->to('CHF')
-                ->amount($getAmountCost)
-                ->round(2)
-                ->get()
-        );
     }
 }

@@ -7,18 +7,16 @@ use App\Models\Currency;
 use App\Models\Application;
 use App\Models\CostDarlehen;
 use Illuminate\Database\Eloquent\Collection;
-use AmrShawky\LaravelCurrency\Facade\Currency as Converter;
 
 class CostFormDarlehen extends Component
 {
     public $costs;
     public $currency_id;
     public $myCurrency;
-    public $getAmountCostDarlehen;
 
     protected $rules = [
         'costs.*.cost_name' => 'required',
-        'costs.*.cost_amount' => 'required|numeric|between:0,100000',
+        'costs.*.cost_amount' => 'required|numeric',
     ];
 
     public function mount()
@@ -58,23 +56,14 @@ class CostFormDarlehen extends Component
         return $this->getAmountCostDarlehen;
     }
 
-    public function convertCostToCHF()
-    {
-        $this->getAmountCostDarlehen = $this->getAmountCostDarlehen();
-        return(
-            Converter::convert()
-                ->from($this->myCurrency->abbreviation)
-                ->to('CHF')
-                ->amount($this->getAmountCostDarlehen)
-                ->round(2)
-                ->get()
-        );
-    }
-
     public function addCostDarlehen()
     {
         $this->costs->push(new CostDarlehen);
     }
 
+    public function delCostDarlehen ($key)
+    {
+        $this->costs->forget($key);
+    }
 
 }

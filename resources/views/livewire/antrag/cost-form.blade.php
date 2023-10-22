@@ -68,11 +68,6 @@
         <div class="col-sm-6">
             <p>Totale Kosten in {{ $this->myCurrency->abbreviation }} {{ $this->getAmountCost() }}</p>
         </div>
-        <div class="col-sm-6">
-            <p>Totale Kosten in CHF {{ $this->convertCostToCHF() }}</p>
-        </div>
-        
-
 
         <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-success">
