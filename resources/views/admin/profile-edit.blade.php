@@ -13,12 +13,6 @@
                     @include('partials.user-update-password-form')
                 </div>
             </div>
-
-            <div class="shadow p-3 mb-5 bg-body rounded">
-                <div class="col-md-12">
-                    @include('partials.user-delete-user-form')
-                </div>
-            </div>
         </div>
     </section>
 </x-layout.admin_dashboard>

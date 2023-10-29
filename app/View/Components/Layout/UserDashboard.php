@@ -3,7 +3,6 @@
 namespace App\View\Components\Layout;
 
 use Closure;
-use App\Models\Message;
 use Illuminate\View\Component;
 
 class UserDashboard extends Component

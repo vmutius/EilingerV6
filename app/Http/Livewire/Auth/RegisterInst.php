@@ -19,6 +19,7 @@ class RegisterInst extends Component
     use UserUpdateTrait, AddressUpdateTrait;
 
     public $terms = false;
+    public $model;
 
     protected $messages = [
         //User

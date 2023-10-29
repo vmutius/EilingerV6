@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Antrag;
 
 use App\Models\Parents;
 use Livewire\Component;
+use Illuminate\Database\Eloquent\Collection;
 
 class ParentForm extends Component
 {

@@ -62,7 +62,6 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale' ], function ()
         Route::get('admin/settings', App\Http\Livewire\Admin\Settings::class)->name('admin_settings');
         Route::get('admin/profile', [ProfileController::class, 'edit'])->name('admin_profile.edit');
         Route::patch('admin/profile', [ProfileController::class, 'update'])->name('admin_profile.update');
-        Route::delete('admin/profile', [ProfileController::class, 'destroy'])->name('admin_profile.destroy');
     });
 
     Route::middleware('guest')->group(function () {

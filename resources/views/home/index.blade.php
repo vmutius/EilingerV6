@@ -329,54 +329,56 @@
                 </div>
 
                 <div class="row">
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="box">
-                            <h3>Bildung Kinder & Jugendliche: Stipendium & Verein </h3>
-                            <ul>
-                                <li><i class="bi bi-check-all"></i> Gesuch für ein Stipendium </li>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen (ausser Stipendien) </li>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
-                            </ul>
-                            <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn">Zum Gesuchsportal</a>
+                    <div class="col-sm-3 mb-3 d-flex align-items-stretch">
+                      <div class="card border-light">
+                        <div class="card-body d-flex flex-column">
+                          <h3 class="card-title">Bildung Kinder & Jugendliche: Stipendium & Verein</h3>
+                          <ul>
+                            <li><i class="bi bi-check-all"></i> Gesuch für ein Stipendium </li>
+                            <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen (ausser Stipendien) </li>
+                            <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
+                        </ul>
+                        <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum Gesuchsportal</a>
                         </div>
+                      </div>
                     </div>
-
-                    <div class="col-lg-3 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
-                        <div class="box">
-                            <h3>Tierschutz: Privatperson & Verein </h3>
-                            <ul>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
-                            </ul>
-                            <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn">Zum Gesuchsportal</a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                        <div class="box">
-                            <h3>Menschen in Not: Privatperson & Verein </h3>
+                    <div class="col-sm-3 mb-3 d-flex align-items-stretch">
+                        <div class="card border-light">
+                          <div class="card-body d-flex flex-column">
+                            <h3 class="card-title">Tierschutz: Privatperson & Verein </h3>
                             <ul>
                                 <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
                                 <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn">Zum Gesuchsportal</a>
+                          <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum Gesuchsportal</a>
+                          </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-3 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                        <div class="box">
-                            <h3>Umwelt & Naturschutz: Privatperson & Verein </h3> 
+                      </div>
+                      <div class="col-sm-3 mb-3 d-flex align-items-stretch">
+                        <div class="card border-light">
+                          <div class="card-body d-flex flex-column">
+                            <h3 class="card-title">Menschen in Not: Privatperson & Verein </h3>
                             <ul>
                                 <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
                                 <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
                             </ul>
-                            <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn">Zum Gesuchsportal</a>
+                          <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum Gesuchsportal</a>
+                          </div>
                         </div>
-                    </div>
-
-                </div>
-
+                      </div>
+                      <div class="col-sm-3 mb-3 d-flex align-items-stretch">
+                        <div class="card border-light">
+                          <div class="card-body d-flex flex-column">
+                            <h3 class="card-title">Umwelt & Naturschutz: Privatperson & Verein </h3>
+                            <ul>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
+                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
+                            </ul>
+                          <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum Gesuchsportal</a>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
             </div>
         </section><!-- End Pricing Section -->
 
