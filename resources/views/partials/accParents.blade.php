@@ -1,7 +1,8 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingParents">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-            data-bs-target="#collapseParents">Eltern</button>
+                data-bs-target="#collapseParents">Eltern
+        </button>
     </h2>
     <div id="collapseParents" class="accordion-collapse collapse">
         @forelse ($parents as $parent)

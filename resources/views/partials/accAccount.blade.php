@@ -1,7 +1,8 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingAccount">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-            data-bs-target="#collapseAccount">Auszahlung</button>
+                data-bs-target="#collapseAccount">Auszahlung
+        </button>
     </h2>
     <div id="collapseAccount" class="accordion-collapse collapse">
         @if ($account)

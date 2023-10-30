@@ -2,9 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Enums\ApplStatus;
+use App\Enums\Bereich;
+use App\Enums\Form;
 use App\Models\Application;
-use App\Models\Currency;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ApplicationFactory extends Factory
@@ -15,16 +16,17 @@ class ApplicationFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'appl_status' => $this->faker->word(),
-            'bereich' => $this->faker->word(),
-            'form' => $this->faker->word(),
+            'appl_status' => $this->faker->randomElement(ApplStatus::class),
+            'bereich' => $this->faker->randomElement(Bereich::class),
+            'form' => $this->faker->randomElement(Form::class),
             'comment' => $this->faker->word(),
             'reason' => $this->faker->word(),
             'payout_plan' => $this->faker->word(),
             'is_first' => $this->faker->boolean(),
 
-            'user_id' => User::factory(),
-            'currency_id' => Currency::factory(),
+            'user_id' => $this->faker->randomNumber(1, 30),
+            'currency_id' => $this->faker->randomNumber(1, 115),
+
         ];
     }
 }

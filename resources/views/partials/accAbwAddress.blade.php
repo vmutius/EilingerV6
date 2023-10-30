@@ -1,7 +1,8 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingAbwAddress">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-            data-bs-target="#collapseAbwAddress">Abweichende Adresse</button>
+                data-bs-target="#collapseAbwAddress">Abweichende Adresse
+        </button>
     </h2>
     <div id="collapseAbwAddress" class="accordion-collapse collapse">
         @if ($abweichendeAddress)

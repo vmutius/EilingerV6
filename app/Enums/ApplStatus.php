@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum ApplStatus: string 
+enum ApplStatus: string
 {
     case NOT_SEND = 'Not Send'; // Antrag noch nicht eingereicht
     case PENDING = 'Pending'; // Antrag liegt bei Eilinger zur Bearbeitung

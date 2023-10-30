@@ -1,7 +1,8 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingRemarks">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-            data-bs-target="#collapseRemarks">Bemerkungen und Beilagen</button>
+                data-bs-target="#collapseRemarks">Bemerkungen und Beilagen
+        </button>
     </h2>
     <div id="collapseRemarks" class="accordion-collapse collapse">
         @if ($education)

@@ -1,7 +1,8 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingCost">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-            data-bs-target="#collapseCost">Kosten</button>
+                data-bs-target="#collapseCost">Kosten
+        </button>
     </h2>
     <div id="collapseCost" class="accordion-collapse collapse">
         @if ($education)

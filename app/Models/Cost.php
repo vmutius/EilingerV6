@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Cost extends Model
 {
@@ -29,6 +29,7 @@ class Cost extends Model
         'cost_of_living_with_partner',
         'number_of_children',
         'is_draft',
+        'total_amount_costs',
     ];
 
     protected $casts = [
@@ -42,8 +43,8 @@ class Cost extends Model
         'cost_of_living_single_parent' => 'integer',
         'cost_of_living_with_partner' => 'integer',
         'number_of_children' => 'integer',
+        'total_amount_costs' => 'integer',
     ];
-
 
     public function user()
     {

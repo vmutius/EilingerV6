@@ -1,9 +1,10 @@
 <div iv class="accordion-item">
     <h2 class="accordion-header" id="headingUserJur">
         <button type="button" class="accordion-button" data-bs-toggle="collapse"
-            data-bs-target="#collapseUser">Gesuchssteller</button>
+                data-bs-target="#collapseUserJur">Gesuchssteller
+        </button>
     </h2>
-    <div id="collapseUser" class="accordion-collapse collapse show">
+    <div id="collapseUserJur" class="accordion-collapse collapse show">
         <div class="card-body">
             <div class=row>
                 <div class="col-sm-3">

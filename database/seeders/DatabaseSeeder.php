@@ -9,15 +9,14 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         $this->call([
             CurrencySeeder::class,
             CountrySeeder::class,
             AddressSeeder::class,
+            //ApplicationSeeder::class,
         ]);
     }
 }

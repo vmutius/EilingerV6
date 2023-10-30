@@ -1,7 +1,8 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingAddress">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-            data-bs-target="#collapseAddress">Adresse</button>
+                data-bs-target="#collapseAddress">Adresse
+        </button>
     </h2>
     <div id="collapseAddress" class="accordion-collapse collapse">
         <div class="card-body">

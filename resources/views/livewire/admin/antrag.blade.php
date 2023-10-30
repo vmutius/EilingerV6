@@ -1,9 +1,9 @@
 <section class="home-section">
-    <div class="text">Antrag {{ $application->name }} (Bereich: {{ $application->bereich }})</div> 
+    <div class="text">Antrag {{ $application->name }} (Bereich: {{ $application->bereich }})</div>
 
     <div class="content">
         <div class="shadow p-3 mb-5 bg-body rounded">
-            <div class="accordion" id="myAccordion">
+            <div class="accordion" id="AntragAdmin">
                 @include('partials.accAppl')
                 @if($user->type == 'nat')
                     @include('partials.accUserNat')
