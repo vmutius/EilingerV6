@@ -15,14 +15,20 @@ use Livewire\Component;
 class Antrag extends Component
 {
     public $application;
-    public $user;
-    public $address;
-    public $abweichendeAddress;
-    public $education;
-    public $account;
-    public $parents;
-    public $siblings;
 
+    public $user;
+
+    public $address;
+
+    public $abweichendeAddress;
+
+    public $education;
+
+    public $account;
+
+    public $parents;
+
+    public $siblings;
 
     public function mount($application_id): void
     {
@@ -45,5 +51,4 @@ class Antrag extends Component
         return view('livewire.admin.antrag')
             ->layout(AdminDashboard::class);
     }
-
 }

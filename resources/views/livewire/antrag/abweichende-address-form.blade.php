@@ -12,21 +12,21 @@
         <x-notification/>
 
         <div class="col-md-6">
-            <label class="form-label" for="street">{{  __('attributes.street')  }} *</label>
+            <label class="form-label" for="street">{{  __('address.street')  }} *</label>
             <input wire:model.lazy="abweichendeAddress.street" type="text" class="form-control" />
             <span class="text-danger">@error('abweichendeAddress.street'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-6">
-            <label class="form-label" for="number">{{  __('attributes.number')  }}</label>
+            <label class="form-label" for="number">{{  __('address.number')  }}</label>
             <input wire:model.lazy="abweichendeAddress.number" type="text" class="form-control" />
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="plz">{{  __('attributes.plz')  }} *</label>
+            <label class="form-label" for="plz">{{  __('address.plz')  }} *</label>
             <input wire:model.lazy="abweichendeAddress.plz" type="text" class="form-control" />
             <span class="text-danger">@error('abweichendeAddress.plz'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="town">{{  __('attributes.town')  }} *</label>
+            <label class="form-label" for="town">{{  __('address.town')  }} *</label>
             <input wire:model.lazy="abweichendeAddress.town" type="text" class="form-control" />
             <span class="text-danger">@error('abweichendeAddress.town'){{ $message }}@enderror</span>
         </div>

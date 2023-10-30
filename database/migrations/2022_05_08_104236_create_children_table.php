@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateChildrenTable extends Migration
 {
-    public function up()
+    public function up(): void
     {
         Schema::create('children', function (Blueprint $table) {
             $table->id();
@@ -20,7 +20,7 @@ class CreateChildrenTable extends Migration
         });
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('children');
     }

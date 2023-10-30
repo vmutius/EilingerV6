@@ -255,10 +255,7 @@
                     </x-primary-button>
                 </div>
             </form>
-            </form>
         </div>
-        </div>
-
     </section>
 
 </main><!-- End #main -->

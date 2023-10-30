@@ -10,8 +10,11 @@ use Livewire\Component;
 class Profile extends Component
 {
     public User $user;
+
     public $successUser = false;
+
     public $successPassword = false;
+
     public $password_confirmation;
 
     protected $rules = [
@@ -24,19 +27,18 @@ class Profile extends Component
         'user.phone' => 'nullable',
         'user.mobile' => 'nullable',
         'user.soz_vers_nr' => 'nullable',
-        'user.birthday' => 'nullable',
         'user.in_ch_since' => 'nullable',
         'user.granting' => 'nullable',
         'user.password' => 'nullable',
         'password_confirmation' => 'nullable',
     ];
 
-    public function mount()
+    public function mount(): void
     {
         $this->user = auth()->user();
     }
 
-    public function updateUser()
+    public function updateUser(): void
     {
         $this->validate();
         $this->user->save();
