@@ -6,7 +6,7 @@ color: $main_color;
 }
 
 ul {
-    padding-left: 0rem;
+    padding-left: 0;
 }
 .sidebar{
     position: fixed;
@@ -28,7 +28,7 @@ ul {
     align-items: center;
     position: relative;
   }
-  
+
   .sidebar .logo-details .logo_name{
     color: #fff;
     font-size: 1.25rem;
@@ -214,7 +214,7 @@ ul {
     width: 100%;
     height: 60px;
     line-height: 60px;
-    border-radius: 0px;
+    border-radius: 0;
     transition: all 0.5s ease;
   }
   .sidebar.open .profile #log_out{

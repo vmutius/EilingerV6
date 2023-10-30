@@ -1,3 +1,4 @@
+@php use App\Enums\CivilStatus; @endphp
 <form wire:submit.prevent="saveUserNat">
     <div class="content-header mb-3">
         <h3 class="mb-0">Bewerber</h3>
@@ -21,17 +22,17 @@
                 @endforeach
             </select>
             @error('user.salutatiom')
-                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
+            <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
             @enderror
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="firstname">Vorname *</label>
-            <input wire:model.lazy="user.firstname" type="text" class="form-control" />
+            <input wire:model.lazy="user.firstname" type="text" class="form-control"/>
             <span class="text-danger">@error('user.firstname'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-5">
             <label class="form-label" for="lastname">Nachname *</label>
-            <input wire:model.lazy="user.lastname" type="text" class="form-control" />
+            <input wire:model.lazy="user.lastname" type="text" class="form-control"/>
             <span class="text-danger">@error('user.lastname'){{ $message }}@enderror</span>
         </div>
 
@@ -44,9 +45,9 @@
                 @endforeach
             </select>
             @error('user.nationality')
-                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
+            <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
             @enderror
-            
+
         </div>
         <div class="col-sm-5">
             <label for="birthday" class="form-label">Geburtsdatum *</label>
@@ -57,31 +58,31 @@
             <label class="form-label" for="civil_status">Zivilstand *</label>
             <select wire:model.lazy="user.civil_status" class="form-select">
                 <option selected value="">-- Wählen Sie eine Option --</option>
-                @foreach (\App\Enums\CivilStatus::cases() as $status)
+                @foreach (CivilStatus::cases() as $status)
                     <option value="{{ $status->value }}">{{ $status->value }}</option>
                 @endforeach
             </select>
             @error('user.civil_status')
-                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
+            <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
             @enderror
         </div>
 
         <div class="col-md-4">
             <label class="form-label" for="phone">Telefon</label>
-            <input wire:model.lazy="user.phone" type="text" class="form-control" />
+            <input wire:model.lazy="user.phone" type="text" class="form-control"/>
         </div>
         <div class="col-md-4">
             <label class="form-label" for="mobile">Mobile</label>
-            <input wire:model.lazy="user.mobile" type="text" class="form-control" />
+            <input wire:model.lazy="user.mobile" type="text" class="form-control"/>
         </div>
         <div class="col-md-4">
             <label class="form-label" for="soz_vers_nr">Sozialversicherungsnummer</label>
-            <input wire:model.lazy="user.soz_vers_nr" type="text" class="form-control" />
+            <input wire:model.lazy="user.soz_vers_nr" type="text" class="form-control"/>
         </div>
 
         <div class="col-sm-6">
             <label class="form-label" for="in_ch_since">In der Schweiz seit (für Ausländer)</label>
-            <input wire:model="user.in_ch_since" type="date" class="form-control" />
+            <input wire:model="user.in_ch_since" type="date" class="form-control"/>
         </div>
         <div class="col-sm-6">
             <label class="form-label" for="granting">Art der Bewilligung (für Ausländer)</label>
@@ -92,7 +93,7 @@
                 @endforeach
             </select>
             @error('user.granting')
-                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
+            <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
             @enderror
         </div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\User;
+use App\View\Components\Layout\AdminDashboard;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -41,6 +42,6 @@ class Users extends Component
         return view('livewire.admin.users', [
             'users' => $users,
         ])
-            ->layout(\App\View\Components\Layout\AdminDashboard::class);
+            ->layout(AdminDashboard::class);
     }
 }

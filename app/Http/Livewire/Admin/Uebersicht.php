@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\View\Components\Layout\AdminDashboard;
 use Livewire\Component;
 use App\Models\User;
 use App\Models\Application;
@@ -9,7 +10,7 @@ use App\Models\Application;
 class Uebersicht extends Component
 {
     public function render()
-    {   
+    {
         $userCount = User::where('is_admin', 0)->count();
         $applicationCount = Application::whereIn('appl_status', ['pending', 'waiting', 'complete'])->count();
         $projectCount = Application::where('appl_status', 'approved')->paginate(10);
@@ -19,6 +20,6 @@ class Uebersicht extends Component
             'applicationCount' => $applicationCount,
             'projectCount' => $projectCount,
         ])
-         ->layout(\App\View\Components\Layout\AdminDashboard::class);;
+         ->layout(AdminDashboard::class);
     }
 }

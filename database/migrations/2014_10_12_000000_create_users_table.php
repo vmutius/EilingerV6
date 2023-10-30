@@ -28,10 +28,10 @@ class CreateUsersTable extends Migration
             $table->string('website', 255)->nullable();
             $table->string('mobile', 20)->nullable();
             $table->string('soz_vers_nr', 20)->nullable();
-            $table->string('civil_status');
+            $table->string('civil_status')->nullable();
             $table->date('in_ch_since')->nullable();
             $table->char('granting')->nullable();
-            $table->string('contact_aboard');
+            $table->string('contact_aboard')->nullable();
             $table->boolean('is_draft')->default(true);
             $table->index('email');
             $table->rememberToken();

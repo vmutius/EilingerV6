@@ -10,31 +10,31 @@
     background-repeat: no-repeat;
     background-position: center center;
     }
-    
+
     .our-values .card-body {
     z-index: 10;
     background: rgba(255, 255, 255, 0.9);
     padding: 15px 30px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     transition: ease-in-out 0.4s;
     border-radius: 5px;
     }
-    
+
     .our-values .card-title {
     font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
     }
-    
+
     .our-values .card-title a {
     color: #150517;
     }
-    
+
     .our-values .card-text {
     color: #5e5e5e;
     }
-    
+
     .our-values .read-more a {
     color: #777777;
     text-transform: uppercase;
@@ -42,16 +42,15 @@
     font-size: 0.75rem;
     transition: 0.4s;
     }
-    
+
     .our-values .read-more a:hover {
     text-decoration: underline;
     }
-    
+
     .our-values .card:hover .card-body {
     background: #4260a6;
     }
-    
+
     .our-values .card:hover .read-more a, .our-values .card:hover .card-title, .our-values .card:hover .card-title a, .our-values .card:hover .card-text {
     color: #fff;
     }
-    

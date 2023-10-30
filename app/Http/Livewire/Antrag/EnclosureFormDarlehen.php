@@ -18,7 +18,7 @@ class EnclosureFormDarlehen extends Component
     public $open_invoice;
     public $rental_contract;
     public $tax_assessment;
-    
+
     protected $rules = [
         'enclosure.remark' => 'nullable',
         'activity' => 'required_if:enclosure.activity,null|mimes:png,jpg,jpeg,pdf|max:2048',
@@ -26,7 +26,7 @@ class EnclosureFormDarlehen extends Component
         'activity_report' => 'required_if:enclosure.activity_report,null|mimes:png,jpg,jpeg,pdf|max:2048',
         'enclosure.activity_report' =>  'sometimes',
         'rental_contract' => 'required_if:enclosure.rental_contract,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.rental_contract' =>  'sometimes', 
+        'enclosure.rental_contract' =>  'sometimes',
         'balance_sheet' => 'required_if:enclosure.balance_sheet,null|mimes:png,jpg,jpeg,pdf|max:2048',
         'enclosure.balance_sheet' =>  'sometimes',
         'tax_assessment' => 'required_if:enclosure.tax_assessment,null|mimes:png,jpg,jpeg,pdf|max:2048',
@@ -35,7 +35,7 @@ class EnclosureFormDarlehen extends Component
         'enclosure.cost_receipts' =>  'sometimes',
         'open_invoice' => 'required_if:enclosure.open_invoice,null|mimes:png,jpg,jpeg,pdf|max:2048',
         'enclosure.open_invoice' =>  'sometimes',
-         
+
     ];
 
     public function mount()
@@ -54,12 +54,12 @@ class EnclosureFormDarlehen extends Component
 
     public function saveEnclosureDarlehen()
     {
-        $this->validate(); 
+        $this->validate();
         $file_activity = $this->upload($this->activity,'activity');
         $this->enclosure->activity = $file_activity;
         $file_activity_report = $this->upload($this->activity_report,'activity_report');
         $this->enclosure->activity_report = $file_activity_report;
-        $file_balance_sheet = $this->upload($this->balance_sheet,'balance_sheet'); 
+        $file_balance_sheet = $this->upload($this->balance_sheet,'balance_sheet');
         $this->enclosure->balance_sheet = $file_balance_sheet;
         $file_cost_receipts = $this->upload($this->cost_receipts,'cost_receipts');
         $this->enclosure->cost_receipts = $file_cost_receipts;
@@ -79,7 +79,7 @@ class EnclosureFormDarlehen extends Component
     public function upload($type,$text) {
         if(!is_null($type)) {
             $appl_id = session()->get('appl_id');
-            $fileName = "Appl" . $appl_id . '_' . $text . '.' . $type->getClientOriginalExtension();;
+            $fileName = "Appl" . $appl_id . '_' . $text . '.' . $type->getClientOriginalExtension();
             $file = $type->storeAs($this->UserName, $fileName, 'uploads');
             return $file;
         }

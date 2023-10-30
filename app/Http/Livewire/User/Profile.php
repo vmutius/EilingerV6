@@ -4,6 +4,7 @@ namespace App\Http\Livewire\User;
 
 use App\Models\Country;
 use App\Models\User;
+use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
 
 class Profile extends Component
@@ -47,6 +48,6 @@ class Profile extends Component
         $countries = Country::all();
 
         return view('livewire.user.profile', compact('countries'))
-            ->layout(\App\View\Components\Layout\UserDashboard::class);
+            ->layout(UserDashboard::class);
     }
 }

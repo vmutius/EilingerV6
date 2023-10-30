@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\User;
+use App\View\Components\Layout\AdminDashboard;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
@@ -33,7 +34,7 @@ class Settings extends Component
         return view('livewire.admin.settings', [
             'users' => $users,
         ])
-            ->layout(\App\View\Components\Layout\AdminDashboard::class);
+            ->layout(AdminDashboard::class);
     }
 
     public function addAdmin()

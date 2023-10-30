@@ -9,6 +9,7 @@ use App\Models\Education;
 use App\Models\Parents;
 use App\Models\Sibling;
 use App\Models\User;
+use App\View\Components\Layout\AdminDashboard;
 use Livewire\Component;
 
 class Antrag extends Component
@@ -23,7 +24,7 @@ class Antrag extends Component
     public $siblings;
 
 
-    public function mount($application_id)
+    public function mount($application_id): void
     {
         $this->application = Application::find($application_id);
         $this->user = User::where('id', $this->application->user_id)->first();
@@ -42,7 +43,7 @@ class Antrag extends Component
     public function render()
     {
         return view('livewire.admin.antrag')
-            ->layout(\App\View\Components\Layout\AdminDashboard::class);
+            ->layout(AdminDashboard::class);
     }
 
 }

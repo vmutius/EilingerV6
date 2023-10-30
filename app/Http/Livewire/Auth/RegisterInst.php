@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Auth;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Country;
+use App\View\Components\Layout\Eilinger;
 use Livewire\Component;
 use App\Http\Traits\UserUpdateTrait;
 use Illuminate\Support\Facades\Hash;
@@ -102,7 +103,7 @@ class RegisterInst extends Component
 
         $admins=User::where('is_admin', 1)->get();
         Notification::send($admins, new UserRegistered($user));
-        
+
         auth()->login($user);
         event(new Registered($user));
 
@@ -128,7 +129,7 @@ class RegisterInst extends Component
         $countries = Country::all();
 
         return view('livewire.auth.register_inst', compact('countries'))
-            ->layout(\App\View\Components\Layout\Eilinger::class);
+            ->layout(Eilinger::class);
     }
 
     public function sendNewUserData()

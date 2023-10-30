@@ -1,3 +1,4 @@
+@php use App\Enums\Education; @endphp
 <form wire:submit.prevent="saveEducation">
     <div class="content-header mb-3">
         <h3 class="mb-0">Ausbildung</h3>
@@ -9,13 +10,13 @@
         </div>
         <div class="row g-3">
 
-            <x-notification />
+            <x-notification/>
 
             <div class="col-sm-6">
                 <label class="form-label" for="education">Ausbildung *</label>
                 <select wire:model.lazy="education.education" name="education" class="form-select">
                     <option selected value="">-- Wählen Sie eine Option --</option>
-                    @foreach (\App\Enums\Education::cases() as $education)
+                    @foreach (Education::cases() as $education)
                         <option value="{{ $education->value }}">{{ $education->value }}</option>
                     @endforeach
                 </select>
@@ -24,12 +25,12 @@
             </div>
             <div class="col-sm-6">
                 <label class="form-label" for="name">Bezeichnung und Ort der Ausbildungsstätte *</label>
-                <input wire:model.lazy="education.name" type="text" class="form-control" />
+                <input wire:model.lazy="education.name" type="text" class="form-control"/>
                 <span class="text-danger">@error('education.name'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
                 <label class="form-label" for="final">beabsichtigter Abschluss als *</label>
-                <input wire:model.lazy="education.final" type="text" class="form-control" />
+                <input wire:model.lazy="education.final" type="text" class="form-control"/>
                 <span class="text-danger">@error('education.final'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
@@ -42,9 +43,9 @@
                 </select>
                 <span class="text-danger">@error('education.grade'){{ $message }}@enderror</span>
             </div>
-            <div class="col-sm-6"> 
+            <div class="col-sm-6">
                 <label class="form-label" for="ects_points">ECTS-Punkte für das kommende Semester gemäss Beleg *</label>
-                <input wire:model.lazy="education.ects_points" type="text" id="ects_points" class="form-control" />
+                <input wire:model.lazy="education.ects_points" type="text" id="ects_points" class="form-control"/>
                 <span class="text-danger">@error('education.ects_points'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Application;
+use App\View\Components\Layout\AdminDashboard;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -17,6 +18,6 @@ class Projects extends Component
 
         return view('livewire.admin.projects', [
             'applications' => $applications,
-        ])->layout(\App\View\Components\Layout\AdminDashboard::class);
+        ])->layout(AdminDashboard::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Livewire\User;
 
 use App\Enums\Form;
 use App\Enums\Bereich;
+use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
 use App\Models\Currency;
 use App\Models\Application;
@@ -11,7 +12,7 @@ use Illuminate\Validation\Rules\Enum;
 
 class Antraege extends Component
 {
-    public $showModal = false; 
+    public $showModal = false;
     public $name;
     public $bereich;
     public $form;
@@ -26,10 +27,10 @@ class Antraege extends Component
 
 
     protected function rules() : array
-    {   
+    {
         return([
             'name' => 'required',
-            'bereich' => ['required',new Enum(Bereich::class)], 
+            'bereich' => ['required',new Enum(Bereich::class)],
             'form' => ['required',new Enum(Form::class)],
             'is_first' => 'boolean|required',
             'currency_id' => 'required',
@@ -42,7 +43,7 @@ class Antraege extends Component
     public function render()
     {
         $applications = Application::LoggedInUser()
-                        ->where('appl_status', 'not send')                
+                        ->where('appl_status', 'not send')
                         ->get();
         $currencies = Currency::orderBy('is_pinned', 'DESC')->orderBy('currency')->get();
 
@@ -50,7 +51,7 @@ class Antraege extends Component
             'applications' => $applications,
             'currencies' => $currencies,
         ])
-            ->layout(\App\View\Components\Layout\UserDashboard::class);
+            ->layout(UserDashboard::class);
     }
 
     public function addApplication()
@@ -69,7 +70,7 @@ class Antraege extends Component
         $this->validate();
 
         $application = Application::create([
-            'name' => $this->name, 
+            'name' => $this->name,
             'bereich' => $this->bereich,
             'user_id' => auth()->user()->id,
             'form' => $this->form,
@@ -88,7 +89,7 @@ class Antraege extends Component
         $this->main_appl_id='';
         $this->start_appl='';
         $this->end_appl='';
-        
+
         $this->visible = false;
         $this->showModal = false;
     }
@@ -98,14 +99,14 @@ class Antraege extends Component
         $this->showModal = false;
     }
 
-    public function updatedIsFirst() 
+    public function updatedIsFirst()
     {
-       
+
         if (!$this->is_first){
             $this->visible = true;
             $this->first_applications = Application::where('user_id', auth()->user()->id)
-                    ->where('bereich', $this->bereich)        
-                    ->where('form', $this->form)        
+                    ->where('bereich', $this->bereich)
+                    ->where('form', $this->form)
                     ->get();
         }
     }

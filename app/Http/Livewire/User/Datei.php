@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\User;
 
+use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
 use App\Models\Application;
 
@@ -12,13 +13,13 @@ class Datei extends Component
     public $applications;
 
     protected function rules() : array
-    {   
+    {
         return([
-            
+
         ]);
     }
 
-    public function mount() 
+    public function mount()
     {
         $this->applications = Application::LoggedInUser()->get();
     }
@@ -26,7 +27,7 @@ class Datei extends Component
     public function render()
     {
         return view('livewire.user.datei')
-            ->layout(\App\View\Components\Layout\UserDashboard::class);
+            ->layout(UserDashboard::class);
     }
 
     public function addEnclosure()

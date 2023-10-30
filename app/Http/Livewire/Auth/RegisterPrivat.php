@@ -7,6 +7,7 @@ use App\Http\Traits\UserUpdateTrait;
 use App\Models\Address;
 use App\Models\Country;
 use App\Models\User;
+use App\View\Components\Layout\Eilinger;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
@@ -114,6 +115,6 @@ class RegisterPrivat extends Component
         $countries = Country::all();
 
         return view('livewire.auth.register_privat', compact('countries'))
-            ->layout(\App\View\Components\Layout\Eilinger::class);
+            ->layout(Eilinger::class);
     }
 }

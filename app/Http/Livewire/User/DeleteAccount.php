@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\User;
 
+use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
 use Illuminate\Http\Request;
 
@@ -13,11 +14,11 @@ class DeleteAccount extends Component
     protected $rules = [
         'current_password' => 'required|current-password',
     ];
-    
+
     public function render()
     {
         return view('livewire.user.delete-account')
-            ->layout(\App\View\Components\Layout\UserDashboard::class);
+            ->layout(UserDashboard::class);
     }
 
     /**

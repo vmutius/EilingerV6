@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\User;
 
 use App\Models\Application;
+use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
 use App\Enums\ApplStatus;
 
@@ -12,7 +13,7 @@ class Antrag extends Component
     public $application;
 
     protected $listeners = ['sendApplication' => 'sendApplication'];
-    
+
     public function mount($application_id)
     {
         $this->application = Application::where('id', $application_id)->first();
@@ -22,7 +23,7 @@ class Antrag extends Component
     public function render()
     {
         return view('livewire.user.antrag')
-            ->layout(\App\View\Components\Layout\UserDashboard::class);
+            ->layout(UserDashboard::class);
     }
 
     public function sendApplication()
