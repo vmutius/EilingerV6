@@ -1,15 +1,15 @@
 <div class="accordion-item">
-    <h2 class="accordion-header" id="headingCost">
+    <h2 class="accordion-header" id="headingEnclosure">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                data-bs-target="#collapseCost">Kosten
+                data-bs-target="#collapseEnclosure">Bemerkungen und Beilagen
         </button>
     </h2>
-    <div id="collapseCost" class="accordion-collapse collapse">
+    <div id="collapseEnclosure" class="accordion-collapse collapse">
         @if ($education)
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-3">
-                        <p>{{ __('cost.semester_fees') }}: {{ $cost->semester_fees }}</p>
+                        <p>Ausbildung: {{ $education->education }}</p>
                     </div>
                     <div class="col-sm-3">
                         <p>Name: {{ $education->name }}</p>
@@ -29,7 +29,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Ausbildungsdaten eingetragen</p>
+                        <p>Keine Auszahlungsdaten eingetragen</p>
                     </div>
                 </div>
             </div>

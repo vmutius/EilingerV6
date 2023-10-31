@@ -1,11 +1,11 @@
 <div class="accordion-item">
-    <h2 class="accordion-header" id="headingRemarks">
+    <h2 class="accordion-header" id="headingCostDarlehen">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                data-bs-target="#collapseRemarks">Bemerkungen und Beilagen
+                data-bs-target="#collapseCostDarlehen">Kosten Darlehen
         </button>
     </h2>
-    <div id="collapseRemarks" class="accordion-collapse collapse">
-        @if ($education)
+    <div id="collapseCostDarlehen" class="accordion-collapse collapse">
+        @if ($costDarlehen)
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-3">
@@ -29,7 +29,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Auszahlungsdaten eingetragen</p>
+                        <p>Keine Darlehenskosten eingetragen</p>
                     </div>
                 </div>
             </div>

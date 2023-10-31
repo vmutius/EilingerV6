@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Livewire\Antrag;
+
 use App\Models\Address;
 use App\Models\Country;
-
 use Livewire\Component;
 
 class AboardAddressForm extends Component
 {
     public $aboardAddress;
+
     public $countries;
 
     protected $rules = [
@@ -22,11 +23,10 @@ class AboardAddressForm extends Component
     public function mount()
     {
         $this->countries = Country::all();
-        $this->aboardAddress = Address::where('user_id', auth()->user()->id)
+        $this->aboardAddress = Address::loggedInUser()
             ->where('is_aboard', 1)->first() ?? new Address;
     }
 
-    
     public function render()
     {
         return view('livewire.antrag.aboard-address-form');

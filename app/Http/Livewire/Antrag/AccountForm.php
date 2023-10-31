@@ -18,7 +18,7 @@ class AccountForm extends Component
 
     public function mount()
     {
-        $this->account = Account::where('user_id', auth()->user()->id)
+        $this->account = Account::loggedInUser()
             ->where('application_id', session()->get('appl_id'))
             ->first() ?? new Account;
     }
@@ -30,7 +30,7 @@ class AccountForm extends Component
 
     public function saveAccount()
     {
-        $this->validate(); 
+        $this->validate();
         $this->account->is_draft = false;
         $this->account->user_id = auth()->user()->id;
         $this->account->application_id = session()->get('appl_id');

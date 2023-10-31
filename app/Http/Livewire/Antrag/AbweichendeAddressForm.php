@@ -9,6 +9,7 @@ use Livewire\Component;
 class AbweichendeAddressForm extends Component
 {
     public $abweichendeAddress;
+
     public $countries;
 
     protected $rules = [
@@ -22,7 +23,7 @@ class AbweichendeAddressForm extends Component
     public function mount()
     {
         $this->countries = Country::all();
-        $this->abweichendeAddress = Address::where('user_id', auth()->user()->id)
+        $this->abweichendeAddress = Address::loggedInUser()
             ->where('is_wochenaufenthalt', 1)->first() ?? new Address;
     }
 

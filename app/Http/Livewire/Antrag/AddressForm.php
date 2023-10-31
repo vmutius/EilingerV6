@@ -9,6 +9,7 @@ use Livewire\Component;
 class AddressForm extends Component
 {
     public $address;
+
     public $countries;
 
     protected $rules = [
@@ -22,8 +23,7 @@ class AddressForm extends Component
     public function mount(Address $address)
     {
         $this->countries = Country::all();
-        $this->address = Address::where('user_id', auth()->user()->id)
-            ->first();
+        $this->address = Address::loggedInUser()->first();
     }
 
     public function render()
@@ -33,8 +33,8 @@ class AddressForm extends Component
 
     public function saveAddress()
     {
-        
-        $this->validate(); 
+
+        $this->validate();
         $this->address->is_draft = false;
         $this->address->save();
         session()->flash('success', 'Adresse aktualisiert.');

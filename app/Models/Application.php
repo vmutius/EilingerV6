@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
-use App\Enums\Form;
-use App\Enums\Bereich;
-use App\Models\Currency;
 use App\Enums\ApplStatus;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Enums\Bereich;
+use App\Enums\Form;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 
 class Application extends Model
 {
@@ -30,6 +29,7 @@ class Application extends Model
         'main_application_id',
         'start_appl',
         'end_appl',
+        'payout_plan',
     ];
 
     protected $casts = [
@@ -39,11 +39,6 @@ class Application extends Model
         'bereich' => Bereich::class,
         'form' => Form::class,
     ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
     public function messages()
     {
@@ -59,7 +54,7 @@ class Application extends Model
             ApplStatus::APPROVED->value => 'success',
             ApplStatus::BLOCKED->value => 'danger',
             ApplStatus::NOT_SEND->value => 'secondary',
-        ][$this->appl_status->value] ?? 'gray'; 
+        ][$this->appl_status->value] ?? 'gray';
     }
 
     public function currency()
@@ -70,5 +65,10 @@ class Application extends Model
     public function scopeLoggedInUser($query)
     {
         return $query->where('user_id', auth()->user()->id);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

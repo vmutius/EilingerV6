@@ -11,14 +11,28 @@
                     @include('partials.accUserJur')
                 @endif
                 @include('partials.accAddress')
-                @include('partials.accAbwAddress')
-                @include('partials.accEducation')
+                @if($user->type == 'nat')
+                    @include('partials.accAbwAddress')
+                @endif
+                @if($application->form==App\Enums\Form::Stipendium)
+                    @include('partials.accEducation')
+                @endif
                 @include('partials.accAccount')
-                @include('partials.accParents')
-                @include('partials.accSiblings')
-                @include('partials.accCost')
+                @if($application->form==App\Enums\Form::Stipendium)
+                    @include('partials.accParents')
+                    @include('partials.accSiblings')
+                @endif
+                @if($application->form==App\Enums\Form::Stipendium)
+                    @include('partials.accCost')
+                @else
+                    @include('partials.accCostDarlehen')
+                @endif
                 @include('partials.accFinancing')
-                @include('partials.accRemarks')
+                @if($application->form==App\Enums\Form::Stipendium)
+                    @include('partials.accEnclosure')
+                @else
+                    @include('partials.accEnclosureDarlehen')
+                @endif
             </div>
         </div>
         @livewire('set-status', ['application' => $application])

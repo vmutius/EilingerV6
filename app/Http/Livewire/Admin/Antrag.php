@@ -5,7 +5,9 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Account;
 use App\Models\Address;
 use App\Models\Application;
+use App\Models\Cost;
 use App\Models\Education;
+use App\Models\Enclosure;
 use App\Models\Parents;
 use App\Models\Sibling;
 use App\Models\User;
@@ -30,6 +32,10 @@ class Antrag extends Component
 
     public $siblings;
 
+    public $enclosure;
+
+    public $cost;
+
     public function mount($application_id): void
     {
         $this->application = Application::find($application_id);
@@ -44,6 +50,8 @@ class Antrag extends Component
         $this->account = Account::where('application_id', $application_id)->first();
         $this->parents = Parents::where('user_id', $this->user->id)->get();
         $this->siblings = Sibling::where('user_id', $this->user->id)->get();
+        $this->enclosure = Enclosure::where('application_id', $application_id)->first();
+        $this->cost = Cost::where('application_id', $application_id)->first();
     }
 
     public function render()

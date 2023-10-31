@@ -4,7 +4,6 @@ namespace App\Http\Livewire\Antrag;
 
 use App\Models\Parents;
 use Livewire\Component;
-use Illuminate\Database\Eloquent\Collection;
 
 class ParentForm extends Component
 {
@@ -32,7 +31,7 @@ class ParentForm extends Component
     public function mount()
     {
         $this->parents = Parents::where('user_id', auth()->user()->id)
-            ->get() ?? new Collection;
+            ->get() ?? new Parents();
     }
 
     public function saveParents()

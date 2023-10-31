@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Account extends Model
 {
@@ -25,13 +25,18 @@ class Account extends Model
         'is_draft',
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
     public function application()
     {
         return $this->belongsTo(Application::class);
+    }
+
+    public function scopeLoggedInUser($query)
+    {
+        return $query->where('user_id', auth()->user()->id);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
