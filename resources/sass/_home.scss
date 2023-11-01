@@ -1,4 +1,4 @@
-.home-section{
+.home-section {
     position: relative;
     min-height: 100vh;
     top: 0;
@@ -6,46 +6,55 @@
     width: calc(100% - 78px);
     z-index: 2;
     background-color: #E7EBF1;
-  }
+}
 
-  .home-content{
+.home-content {
     padding: 0.625rem;
-  }
-  .sidebar.open ~ .home-section{
+}
+
+.sidebar.open ~ .home-section {
     left: 250px;
     width: calc(100% - 250px);
-  }
-  .home-section {
-    .text{
-      display: inline-block;
-      color: #11101d;
-      font-size: 1.625rem;
-      font-weight: 500;
-      margin: 1.125rem;
-    }
-    p, ul{
-      font-size: 1rem;
-      font-weight: 500;
-      margin: 1.125rem;
-    }
-    .td.alert{
-      font-weight: 600;
-      padding: 1px 10px;
-      border-radius: 15px;
-      font-size: 0.9rem;
+}
+
+.home-section {
+    .text {
+        display: inline-block;
+        color: #11101d;
+        font-size: 1.625rem;
+        font-weight: 500;
+        margin: 1.125rem;
     }
 
-  }
-
-  @media (max-width: 420px) {
-    .sidebar li .tooltip{
-      display: none;
+    p, ul {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 1.125rem;
     }
-  }
+
+    .td.alert {
+        font-weight: 600;
+        padding: 1px 10px;
+        border-radius: 15px;
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 420px) {
+    .sidebar li .tooltip {
+        display: none;
+    }
+}
 
 .form-check-input:checked {
     background-color: red;
     border-color: gray;
+}
+
+.accordion-button {
+    font-size: 1.2rem;
+    font-style: italic;
 }
 
 

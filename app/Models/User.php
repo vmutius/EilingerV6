@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use App\Notifications\VerifyEmail;
 use App\Notifications\ResetPassword;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Notifications\VerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -62,8 +62,8 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'birthday' => 'date',
     ];
-
 
     public function address()
     {
@@ -103,9 +103,11 @@ class User extends Authenticatable implements MustVerifyEmail
     // OVERRIDE
     /**
      * Send email verification und Send change Password Request
+     *
      * @call function
      */
-    public function sendEmailVerificationNotification() {
+    public function sendEmailVerificationNotification()
+    {
         $this->notify(new VerifyEmail);
     }
 

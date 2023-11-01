@@ -7,20 +7,20 @@
     <div id="collapseAddress" class="accordion-collapse collapse">
         <div class="card-body">
             <div class=row>
-                <div class="col-sm-3">
-                    <p>Strasse: {{ $address->street }}</p>
+                <div class="col-sm-4">
+                    <p>{{  __('address.street')  }}: {{ $address->street }}</p>
                 </div>
-                <div class="col-sm-3">
-                    <p>Hausnummer: {{ $address->number }}</p>
+                <div class="col-sm-4">
+                    <p>{{  __('address.number')  }}: {{ $address->number }}</p>
                 </div>
-                <div class="col-sm-3">
-                    <p>PLZ: {{ $address->plz }}</p>
+                <div class="col-sm-4">
+                    <p>{{  __('address.plz')  }}: {{ $address->plz }}</p>
                 </div>
-                <div class="col-sm-3">
-                    <p>Stadt: {{ $address->town }}</p>
+                <div class="col-sm-4">
+                    <p>{{  __('address.town')  }}: {{ $address->town }}</p>
                 </div>
-                <div class="col-sm-3">
-                    <p>Land: {{ $address->_id }}</p>
+                <div class="col-sm-4">
+                    <p>{{  __('address.country')  }}: {{ $address->country->name }}</p>
                 </div>
             </div>
         </div>

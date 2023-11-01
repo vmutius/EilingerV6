@@ -8,37 +8,37 @@
         @forelse ($parents as $parent)
             <div class="card-body">
                 <div class=row>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Elternteil: {{ $parent->parent_type }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Nachname: {{ $parent->lastname }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Vorname: {{ $parent->firstname }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Geburtstag: {{ $parent->birthday }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Telefon: {{ $parent->phone }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Anschrift: {{ $parent->address }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>PLZ und Ort: {{ $parent->plz_ort }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Wohnhaft seit: {{ $parent->since }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Beruf: {{ $parent->job }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Arbeitgeber: {{ $parent->employer }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>Arbeitsverhältnis: {{ $parent->job_type }}</p>
                     </div>
                 </div>

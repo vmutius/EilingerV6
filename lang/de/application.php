@@ -13,6 +13,8 @@ return [
     'calc_amount' => 'Errechneter Betrag',
     'req_amount' => 'Gewünschter Betrag',
     'payout_plan' => 'Auszahlungsform',
+    'start_appl' => 'Startdatum',
+    'end_appl' => 'Enddatum',
 
     'status' => [
         ApplStatus::NOT_SEND->name => 'Nicht eingereicht',

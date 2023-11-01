@@ -38,6 +38,8 @@ class Application extends Model
         'appl_status' => ApplStatus::class,
         'bereich' => Bereich::class,
         'form' => Form::class,
+        'start_appl' => 'date',
+        'end_appl' => 'date',
     ];
 
     public function messages()
@@ -48,13 +50,13 @@ class Application extends Model
     public function getApplStatusContextAttribute($key)
     {
         return [
-            ApplStatus::PENDING->value => 'warning', // Antrag liegt bei Eilinger zur Bearbeitung
-            ApplStatus::WAITING->value => 'info', //Antrag liegt wieder beim Benutzer zur Beantwortung der Fragen
-            ApplStatus::COMPLETE->value => 'dark', //Angaben im Antrag vollständig. Wartet auf nächste Stiftungsratssitzung
-            ApplStatus::APPROVED->value => 'success',
-            ApplStatus::BLOCKED->value => 'danger',
-            ApplStatus::NOT_SEND->value => 'secondary',
-        ][$this->appl_status->value] ?? 'gray';
+            ApplStatus::PENDING->name => 'warning', // Antrag liegt bei Eilinger zur Bearbeitung
+            ApplStatus::WAITING->name => 'info', //Antrag liegt wieder beim Benutzer zur Beantwortung der Fragen
+            ApplStatus::COMPLETE->name => 'dark', //Angaben im Antrag vollständig. Wartet auf nächste Stiftungsratssitzung
+            ApplStatus::APPROVED->name => 'success',
+            ApplStatus::BLOCKED->name => 'danger',
+            ApplStatus::NOT_SEND->name => 'secondary',
+        ][$this->appl_status->name] ?? 'gray';
     }
 
     public function currency()

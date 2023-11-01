@@ -8,20 +8,20 @@
         @if ($education)
             <div class="card-body">
                 <div class=row>
-                    <div class="col-sm-3">
-                        <p>Ausbildung: {{ $education->education }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('education.education') }}: {{ $education->education }}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>Name: {{ $education->name }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('education.name') }}: {{ $education->name }}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>Beabsichtigter Abschluss als: {{ $education->final }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('education.final') }}: {{ $education->final }}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>Abschluss: {{ $education->grade }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('education.grade') }}: {{ $education->grade }}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ects_points }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('education.ects_points') }}: {{ $education->ects_points }}</p>
                     </div>
                 </div>
             </div>

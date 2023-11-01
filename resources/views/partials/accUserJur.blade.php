@@ -8,16 +8,16 @@
         <div class="card-body">
             <div class=row>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.name_inst')  }}: {{ $user->name_inst }}</p>
+                    <p>{{  __('user.name_inst')  }}: {{ $user->name_inst }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.phone_inst')  }}: {{ $user->phone_inst }}</p>
+                    <p>{{  __('user.phone_inst')  }}: {{ $user->phone_inst }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.email_inst')  }}: {{ $user->email_inst }}</p>
+                    <p>{{  __('user.email_inst')  }}: {{ $user->email_inst }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.website')  }}: {{ $user->website }}</p>
+                    <p>{{  __('user.website')  }}: {{ $user->website }}</p>
                 </div>
                 <div class="col-sm-3">
                     <p>{{  __('attributes.salutation')  }}: {{ $user->salutation }}</p>
@@ -29,13 +29,13 @@
                     <p>{{ __('attributes.firstname') }} {{ __('attributes.contact') }}: {{ $user->firstname }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.email')  }} {{ __('attributes.contact') }}: {{ $user->email }}</p>
+                    <p>{{  __('user.email')  }} {{ __('attributes.contact') }}: {{ $user->email }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.phone')  }} {{ __('attributes.contact') }}: {{ $user->phone }}</p>
+                    <p>{{  __('user.phone')  }} {{ __('attributes.contact') }}: {{ $user->phone }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.mobile')  }} {{ __('attributes.contact') }}: {{ $user->mobile }}</p>
+                    <p>{{  __('user.mobile')  }} {{ __('attributes.contact') }}: {{ $user->mobile }}</p>
                 </div>
             </div>
         </div>

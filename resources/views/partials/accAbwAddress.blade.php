@@ -8,27 +8,27 @@
         @if ($abweichendeAddress)
             <div class="card-body">
                 <div class=row>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>{{ __('address.street') }}: {{ $abweichendeAddress->street }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>{{ __('address.number') }}: {{ $abweichendeAddress->number }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>{{ __('address.plz') }}: {{ $abweichendeAddress->plz }}</p>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p>{{ __('address.town') }}: {{ $abweichendeAddress->town }}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>{{ __('address.country') }}: {{ $abweichendeAddress->country }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('address.country') }}: {{ $abweichendeAddress->country->name }}</p>
                     </div>
                 </div>
             </div>
         @else
             <div class="card-body">
                 <div class=row>
-                    <div class="col-sm-3">
+                    <div class="col-sm-12">
                         <p>Keine abweichende Adresse eingetragen</p>
                     </div>
                 </div>
