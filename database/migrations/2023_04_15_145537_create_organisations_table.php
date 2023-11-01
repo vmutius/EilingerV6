@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('satzung');
-            $table->decimal('bilanz', $precision = 8, $scale = 2)->nullable();
+            $table->decimal('bilanz', $precision = 19, $scale = 2)->nullable();
             $table->boolean('is_gemeinnuetzig')->default(false);
             $table->string('register');
             $table->string('paragraph_11');

@@ -5,23 +5,29 @@
         </button>
     </h2>
     <div id="collapseFinancing" class="accordion-collapse collapse">
-        @if ($education)
+        @if ($financing)
             <div class="card-body">
                 <div class=row>
-                    <div class="col-sm-3">
-                        <p>Ausbildung: {{ $education->education }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('financing.personal_contribution') }}: {{ $financing->personal_contribution }}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>Name: {{ $education->name }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('financing.netto_income') }}: {{ $financing->netto_income }}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>Beabsichtigter Abschluss als: {{ $education->final }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('financing.assets') }}: {{ $financing->assets }}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>Abschluss: {{ $education->grade }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('financing.scholarship') }}: {{ $financing->scholarship }}</p>
                     </div>
-                    <div class="col-sm-3">
-                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ects_points }}</p>
+                    <div class="col-sm-4">
+                        <p>{{ __('financing.other_income') }}: {{ $financing->other_income }}</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>{{ __('financing.income_where') }}: {{ $financing->income_where }}</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>{{ __('financing.incomeWho') }}: {{ $financing->incomeWho }}</p>
                     </div>
                 </div>
             </div>
@@ -29,7 +35,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Ausbildungsdaten eingetragen</p>
+                        <p>Keine Finanzierungsdaten eingetragen</p>
                     </div>
                 </div>
             </div>

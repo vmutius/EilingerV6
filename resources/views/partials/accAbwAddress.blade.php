@@ -9,19 +9,19 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-3">
-                        <p>Strasse: {{ $abweichendeAddress->street }}</p>
+                        <p>{{ __('address.street') }}: {{ $abweichendeAddress->street }}</p>
                     </div>
                     <div class="col-sm-3">
-                        <p>Hausnummer: {{ $abweichendeAddress->number }}</p>
+                        <p>{{ __('address.number') }}: {{ $abweichendeAddress->number }}</p>
                     </div>
                     <div class="col-sm-3">
-                        <p>PLZ: {{ $abweichendeAddress->plz }}</p>
+                        <p>{{ __('address.plz') }}: {{ $abweichendeAddress->plz }}</p>
                     </div>
                     <div class="col-sm-3">
-                        <p>Stadt: {{ $abweichendeAddress->town }}</p>
+                        <p>{{ __('address.town') }}: {{ $abweichendeAddress->town }}</p>
                     </div>
                     <div class="col-sm-3">
-                        <p>Land: {{ $abweichendeAddress->country }}</p>
+                        <p>{{ __('address.country') }}: {{ $abweichendeAddress->country }}</p>
                     </div>
                 </div>
             </div>

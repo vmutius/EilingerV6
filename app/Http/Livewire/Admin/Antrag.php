@@ -8,6 +8,7 @@ use App\Models\Application;
 use App\Models\Cost;
 use App\Models\Education;
 use App\Models\Enclosure;
+use App\Models\Financing;
 use App\Models\Parents;
 use App\Models\Sibling;
 use App\Models\User;
@@ -36,6 +37,8 @@ class Antrag extends Component
 
     public $cost;
 
+    public $financing;
+
     public function mount($application_id): void
     {
         $this->application = Application::find($application_id);
@@ -52,6 +55,7 @@ class Antrag extends Component
         $this->siblings = Sibling::where('user_id', $this->user->id)->get();
         $this->enclosure = Enclosure::where('application_id', $application_id)->first();
         $this->cost = Cost::where('application_id', $application_id)->first();
+        $this->financing = Financing::where('application_id', $application_id)->first();
     }
 
     public function render()
