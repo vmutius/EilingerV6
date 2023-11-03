@@ -66,6 +66,9 @@
             <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
             @enderror
         </div>
+        @if($this->partnerVisible)
+            @livewire('antrag.parent-form')
+        @endif
 
         <div class="col-md-4">
             <label class="form-label" for="phone">Telefon</label>

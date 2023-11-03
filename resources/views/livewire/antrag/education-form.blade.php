@@ -59,6 +59,25 @@
                 <span class="text-danger">@error('education.time'){{ $message }}@enderror</span>
             </div>
 
+            <div class="col-sm-4">
+                <label class="form-label" for="begin_edu">Begin der Ausbildung *</label>
+                <input wire:model.lazy="education.begin_edu" type="date" id="begin_edu" class="form-control"/>
+                <span class="text-danger">@error('education.begin_edu'){{ $message }}@enderror</span>
+            </div>
+
+            <div class="col-sm-4">
+                <label class="form-label" for="duration_edu">Dauer der Ausbildung *</label>
+                <input wire:model.lazy="education.duration_edu" type="number" id="duration_edu" class="form-control"/>
+                <span class="text-danger">@error('education.duration_edu'){{ $message }}@enderror</span>
+            </div>
+
+            <div class="col-sm-4">
+                <label class="form-label" for="start_semester">Ab Ausbildungsjahr/Semester *</label>
+                <input wire:model.lazy="education.start_semester" type="number" id="start_semester"
+                       class="form-control"/>
+                <span class="text-danger">@error('education.start_semester'){{ $message }}@enderror</span>
+            </div>
+
 
             <div class="col-md-12 text-center">
                 <button type="submit" class="btn btn-success">

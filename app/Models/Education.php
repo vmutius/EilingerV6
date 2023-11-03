@@ -28,9 +28,12 @@ class Education extends Model
         'time',
         'begin_edu',
         'duration_edu',
-        'begin_appl',
-        'duration_appl',
+        'start_semester',
         'is_draft',
+    ];
+
+    protected $casts = [
+        'begin_edu' => 'date',
     ];
 
     public function application()

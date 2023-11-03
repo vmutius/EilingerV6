@@ -43,7 +43,7 @@
             <span class="text-danger">@error('cost.number_of_children'){{ $message }}@enderror</span>
         </div>
 
-        <h4 class="mb-0">{{ __('cost.semester_fees') }}</h4>
+        <h4 class="mb-0">{{ __('cost.other_standard_of_living') }}</h4>
         <small>Bitte nur das Zutreffende ausfüllen</small>
         <div class="col-sm-6">
             <label class="form-label"
@@ -69,7 +69,7 @@
             <span class="text-danger">@error('cost.cost_of_living_with_partner'){{ $message }}@enderror</span>
         </div>
         <hr class="border border-dark opacity-50">
-        <div class="col-sm-6">
+        <div class="col-sm-12 text-end">
             <p>Totale Kosten in {{ $this->myCurrency->abbreviation }} {{ $this->getAmountCost() }}</p>
         </div>
 

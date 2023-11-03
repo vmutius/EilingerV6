@@ -45,6 +45,9 @@ class EducationForm extends Component
             'education.grade' => ['required', new Enum(Grade::class)],
             'education.ects_points' => 'required',
             'education.time' => ['required', new Enum(Time::class)],
+            'education.begin_edu' => 'required|date',
+            'education.duration_edu' => 'required',
+            'education.start_semester' => 'required',
         ];
     }
 }

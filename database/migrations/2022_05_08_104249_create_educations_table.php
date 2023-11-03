@@ -19,9 +19,8 @@ class CreateEducationsTable extends Migration
             $table->integer('ects_points')->nullable();
             $table->string('time')->nullable();
             $table->date('begin_edu')->nullable();
-            $table->integer('duration_edu')->nullable();
-            $table->date('begin_appl')->nullable();
-            $table->integer('duration_appl')->nullable();
+            $table->integer('duration_edu')->nullable(); // in Jahren
+            $table->integer('start_semester')->nullable(); // Gesuch gestellt ab start_semester
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
             $table->softDeletes();

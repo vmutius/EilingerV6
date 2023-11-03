@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('mobile', 20)->nullable();
             $table->string('soz_vers_nr', 20)->nullable();
             $table->string('civil_status')->nullable();
+            $table->date('married_since')->nullable();
             $table->date('in_ch_since')->nullable();
             $table->char('granting')->nullable();
             $table->string('contact_aboard')->nullable();

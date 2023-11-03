@@ -3,7 +3,7 @@
         <h3 class="mb-0">Finanzierung</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Angaben über die Einnahmen pro Jahr</small>
+                <small>Angaben über die Einnahmen im bevorstehenden Ausbildungsjahr</small>
             </div>
         </div>
     </div>
@@ -48,7 +48,7 @@
         </div>
 
         <hr class="border border-dark opacity-50">
-        <div class="col-sm-6">
+        <div class="col-sm-12 text-end">
             <p>Totale Kosten in {{ $this->myCurrency->abbreviation }} {{ $this->getAmountFinancing() }}</p>
         </div>
 

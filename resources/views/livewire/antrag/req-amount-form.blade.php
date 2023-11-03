@@ -57,13 +57,9 @@
             </tr>
             <tr>
                 <td>Gewünschter Betrag</td>
-                @if ($diffAmount != 0)
-                    <td><input wire:model.lazy="application.req_amount" type="number" class="form-control"/></td>
-                    <td>{{ $this->application->currency->abbreviation }}</td>
-                @else
-                    <td></td>
-                    <td></td>
-                @endif
+                <td><input wire:model.lazy="application.req_amount" type="number" class="form-control"/></td>
+                <td>{{ $this->application->currency->abbreviation }}</td>
+
             </tr>
             @if ($this->application->form->name == "Darlehen")
                 <tr>
