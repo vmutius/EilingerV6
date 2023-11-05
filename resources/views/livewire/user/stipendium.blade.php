@@ -108,17 +108,17 @@
         </div>
     @endif
 
-     {{-- 10 Gewünschter Betrag --}}
-     @if ($currentStep == 10)
-     <div class="step-ten">
-         <div class="card">
-             <div class="card-header bg-secondary text-white">Schritt 10/12 - Gewünschter Betrag</div>
-             <div class="card-body">
-                 @livewire('antrag.req-amount-form')
-             </div>
-         </div>
-     </div>
- @endif
+    {{-- 10 Gewünschter Betrag --}}
+    @if ($currentStep == 10)
+        <div class="step-ten">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">Schritt 10/12 - Gewünschter Betrag</div>
+                <div class="card-body">
+                    @livewire('antrag.req-amount-form')
+                </div>
+            </div>
+        </div>
+    @endif
 
 
     {{-- 10 Beilagen --}}
@@ -127,7 +127,11 @@
             <div class="card">
                 <div class="card-header bg-secondary text-white">Schritt 11/12 - Bemerkungen und Beilagen</div>
                 <div class="card-body">
-                    @livewire('antrag.enclosure-form')
+                    @if($isInitialAppl)
+                        @livewire('antrag.enclosure-form-stipendium-erst')
+                    @else
+                        @livewire('antrag.enclosure-form-stipendium-folge')
+                    @endif
                 </div>
             </div>
         </div>
@@ -169,21 +173,21 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title">Antrag einreichem</h5>
                                     <button wire:click="close" type="button" class="close" data-dismiss="modal"
-                                        aria-label="Close">
+                                            aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    
-                                    <br />
+
+                                    <br/>
                                     Ich bestätige, dass ich alle Angaben wahrheitsmässig gemacht habe
-                                    <br />
-                                    
+                                    <br/>
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary">Einreichen</button>
                                     <button wire:click="close" type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">Close
+                                            data-dismiss="modal">Close
                                     </button>
                                 </div>
                             </form>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\Application;
 use Livewire\Component;
 
 class Stipendium extends Component
@@ -12,7 +13,14 @@ class Stipendium extends Component
 
     public $completeApp;
 
+    public $isInitialAppl;
+
     protected $listeners = ['completeApp' => 'completeApp'];
+
+    public function mount()
+    {
+        $this->isInitialAppl = Application::where('id', session()->get('appl_id'))->first(['is_first'])->is_first;
+    }
 
     public function completeApp()
     {
