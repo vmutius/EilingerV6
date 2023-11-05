@@ -49,4 +49,5 @@
                 <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
             </button>
         </div>
+    </div>
 </form>

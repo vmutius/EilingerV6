@@ -11,7 +11,7 @@ class SetLocale
     /**
      * Handle an incoming request.
      *
-     * @param Closure(Request): (Response) $next
+     * @param  Closure(Request): (Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
@@ -24,7 +24,7 @@ class SetLocale
             $language = config('app.locale');
         }
 
-        if (isset($language) && config('app.languages.' . $language)) {
+        if (isset($language) && config('app.languages.'.$language)) {
             app()->setLocale($language);
         }
 

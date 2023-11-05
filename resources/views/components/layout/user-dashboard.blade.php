@@ -14,101 +14,99 @@
     @vite(['resources/js/app.js'])
     @vite(['resources/sass/dashboard.scss'])
     @livewireStyles()
-
+</head>
 
 <body>
-    <!-- ======= Header ======= -->
-    @include('components.layout.dash-header')
+<!-- ======= Header ======= -->
+@include('components.layout.dash-header')
 
-    <div class="sidebar">
-        <div class="logo-details">
-            <div class="logo_name">Eilinger Stiftung</div>
-            <i class="bi bi-list" id="btn"></i>
-        </div>
-        <ul class="nav-list">
-            <li>
-                <a href="{{ route('user_dashboard', app()->getLocale()) }}">
-                    <i class="bi bi-grid"></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-                <span class="tooltip">Dashboard</span>
-            </li>
-            <li>
-                <a href="{{ route('user_antraege', app()->getLocale()) }}">
-                    <i class="bi bi-envelope-open"></i>
-                    <span class="links_name">Anträge</span>
-                </a>
-                <span class="tooltip">Stellen Sie hier ihre Anträge</span>
-            </li>
-            <li>
-                <a href="{{ route('user_gesuch', app()->getLocale()) }}">
-                    <i class="bi bi-envelope-check"></i>
-                    <span class="links_name">Gesuche</span>
-                </a>
-                <span class="tooltip">Sehen Sie hier ihre Gesuche</span>
-            </li>
-            <li>
-                <a href="{{ route('user_nachrichten', app()->getLocale()) }}">
-                    <i class="bi bi-chat-dots"></i>
-                    <span class="links_name">Nachrichten</span>
-                </a>
-                <span class="tooltip">Ihre Nachrichten</span>
-            </li>
-            <li>
-                <a href="{{ route('user_dateien', app()->getLocale()) }}">
-                    <i class="bi bi-folder-plus"></i>
-                    <span class="links_name">Datei Ablage</span>
-                </a>
-                <span class="tooltip">Datei Ablage</span>
-            </li>
-            <li>
-                <a href="{{ route('user_profile.edit', app()->getLocale()) }}">
-                    <i class="bi bi-person"></i>
-                    <span class="links_name">Profil</span>
-                </a>
-                <span class="tooltip">Profil</span>
-            </li>
-
-            <li>
-                <a href="{{ route('user_delete', app()->getLocale()) }}">
-                    <i class="bi bi-person-x"></i>
-                    <span class="links_name">Account löschen</span>
-                </a>
-                <span class="tooltip">Account löschen</span>
-            </li>
-
-            
-        </ul>
+<div class="sidebar">
+    <div class="logo-details">
+        <div class="logo_name">Eilinger Stiftung</div>
+        <i class="bi bi-list" id="btn"></i>
     </div>
+    <ul class="nav-list">
+        <li>
+            <a href="{{ route('user_dashboard', app()->getLocale()) }}">
+                <i class="bi bi-grid"></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+            <a href="{{ route('user_antraege', app()->getLocale()) }}">
+                <i class="bi bi-envelope-open"></i>
+                <span class="links_name">Anträge</span>
+            </a>
+            <span class="tooltip">Stellen Sie hier ihre Anträge</span>
+        </li>
+        <li>
+            <a href="{{ route('user_gesuch', app()->getLocale()) }}">
+                <i class="bi bi-envelope-check"></i>
+                <span class="links_name">Gesuche</span>
+            </a>
+            <span class="tooltip">Sehen Sie hier ihre Gesuche</span>
+        </li>
+        <li>
+            <a href="{{ route('user_nachrichten', app()->getLocale()) }}">
+                <i class="bi bi-chat-dots"></i>
+                <span class="links_name">Nachrichten</span>
+            </a>
+            <span class="tooltip">Ihre Nachrichten</span>
+        </li>
+        <li>
+            <a href="{{ route('user_dateien', app()->getLocale()) }}">
+                <i class="bi bi-folder-plus"></i>
+                <span class="links_name">Datei Ablage</span>
+            </a>
+            <span class="tooltip">Datei Ablage</span>
+        </li>
+        <li>
+            <a href="{{ route('user_profile.edit', app()->getLocale()) }}">
+                <i class="bi bi-person"></i>
+                <span class="links_name">Profil</span>
+            </a>
+            <span class="tooltip">Profil</span>
+        </li>
 
-    {{ $slot }}
+        <li>
+            <a href="{{ route('user_delete', app()->getLocale()) }}">
+                <i class="bi bi-person-x"></i>
+                <span class="links_name">Account löschen</span>
+            </a>
+            <span class="tooltip">Account löschen</span>
+        </li>
 
 
-    <script>
-        let sidebar = document.querySelector(".sidebar");
-        let closeBtn = document.querySelector("#btn");
-        let searchBtn = document.querySelector(".bx-search");
+    </ul>
+</div>
 
-        closeBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("open");
-            menuBtnChange(); //calling the function(optional)
-        });
+{{ $slot }}
 
-        // following are the code to change sidebar button(optional)
-        function menuBtnChange() {
-            if (sidebar.classList.contains("open")) {
-                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
-            } else {
-                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
-            }
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
+
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange(); //calling the function(optional)
+    });
+
+    // following are the code to change sidebar button(optional)
+    function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+            closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+        } else {
+            closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
         }
-    </script>
+    }
+</script>
 
-    @livewireScripts()
+@livewireScripts()
 
 </body>
 
 </html>
 
-
-</html>

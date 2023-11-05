@@ -20,7 +20,7 @@ class AddressForm extends Component
         'address.country_id' => 'required',
     ];
 
-    public function mount(Address $address)
+    public function mount()
     {
         $this->countries = Country::all();
         $this->address = Address::loggedInUser()->first();

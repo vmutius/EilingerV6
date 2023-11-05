@@ -13,7 +13,6 @@ class MessageNotification extends Component
         $this->getNotificationCount();
     }
 
-
     public function getNotificationCount()
     {
         $this->notificationCount = auth()->user()->unreadNotifications()->count();
@@ -25,7 +24,6 @@ class MessageNotification extends Component
         $this->getNotificationCount();
     }
 
-    
     public function render()
     {
         return view('livewire.message-notification', [

@@ -2,19 +2,21 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\User;
-use App\Models\Message;
-use Livewire\Component;
 use App\Models\Application;
+use App\Models\Message;
+use App\Models\User;
 use App\Notifications\MessageAdded;
+use Livewire\Component;
 
 class MessagesSection extends Component
 {
     public Application $application;
+
     public $body;
+
     public $message;
 
-    protected $paginationTheme = 'bootstrap'; 
+    protected $paginationTheme = 'bootstrap';
 
     protected $rules = [
         'body' => 'required',
@@ -46,7 +48,7 @@ class MessagesSection extends Component
             'application_id' => $this->application->id,
             'body' => $this->body,
         ]);
-        
+
         $this->reset('body');
 
         if (auth()->user()->is_admin) {

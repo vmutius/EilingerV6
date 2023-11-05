@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Message extends Model
 {
@@ -16,7 +16,7 @@ class Message extends Model
         'user_id',
         'body',
         'main_message_id',
-        'isInternal'
+        'isInternal',
     ];
 
     public function replies()
@@ -43,5 +43,4 @@ class Message extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 }

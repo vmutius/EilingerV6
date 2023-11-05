@@ -2,49 +2,59 @@
 
 namespace App\Http\Livewire\User;
 
-use App\Enums\Form;
 use App\Enums\Bereich;
-use App\View\Components\Layout\UserDashboard;
-use Livewire\Component;
-use App\Models\Currency;
+use App\Enums\Form;
 use App\Models\Application;
+use App\Models\Currency;
+use App\View\Components\Layout\UserDashboard;
 use Illuminate\Validation\Rules\Enum;
+use Livewire\Component;
 
 class Antraege extends Component
 {
     public $showModal = false;
+
     public $name;
+
     public $bereich;
+
     public $form;
+
     public $is_first;
+
     public $currency_id;
+
     public $main_application_id;
+
     public $first_applications;
+
     public $visible;
+
     public $main_appl_id;
+
     public $start_appl;
+
     public $end_appl;
 
-
-    protected function rules() : array
+    protected function rules(): array
     {
-        return([
+        return [
             'name' => 'required',
-            'bereich' => ['required',new Enum(Bereich::class)],
-            'form' => ['required',new Enum(Form::class)],
+            'bereich' => ['required', new Enum(Bereich::class)],
+            'form' => ['required', new Enum(Form::class)],
             'is_first' => 'boolean|required',
             'currency_id' => 'required',
             'main_appl_id' => 'sometimes',
             'start_appl' => 'required',
             'end_appl' => 'sometimes',
-        ]);
+        ];
     }
 
     public function render()
     {
         $applications = Application::LoggedInUser()
-                        ->where('appl_status', 'not send')
-                        ->get();
+            ->where('appl_status', 'not send')
+            ->get();
         $currencies = Currency::orderBy('is_pinned', 'DESC')->orderBy('currency')->get();
 
         return view('livewire.user.antraege', [
@@ -85,10 +95,10 @@ class Antraege extends Component
         $this->bereich = '';
         $this->form = '';
         $this->is_first = '';
-        $this->currency_id ='';
-        $this->main_appl_id='';
-        $this->start_appl='';
-        $this->end_appl='';
+        $this->currency_id = '';
+        $this->main_appl_id = '';
+        $this->start_appl = '';
+        $this->end_appl = '';
 
         $this->visible = false;
         $this->showModal = false;
@@ -102,12 +112,12 @@ class Antraege extends Component
     public function updatedIsFirst()
     {
 
-        if (!$this->is_first){
+        if (! $this->is_first) {
             $this->visible = true;
             $this->first_applications = Application::where('user_id', auth()->user()->id)
-                    ->where('bereich', $this->bereich)
-                    ->where('form', $this->form)
-                    ->get();
+                ->where('bereich', $this->bereich)
+                ->where('form', $this->form)
+                ->get();
         }
     }
 }

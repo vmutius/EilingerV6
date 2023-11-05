@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 class Projects extends Component
 {
     use WithPagination;
+
     protected $paginationTheme = 'bootstrap';
 
     public function render()

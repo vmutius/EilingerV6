@@ -38,6 +38,4 @@
         @livewire('set-status', ['application' => $application])
         @livewire('messages-section', ['application' => $application])
     </div>
-
-    </div>
 </section>

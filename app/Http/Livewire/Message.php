@@ -1,27 +1,28 @@
 <?php
 
 namespace App\Http\Livewire;
-use App\Models\User;
-use Livewire\Component;
-use App\Notifications\MessageAdded;
+
 use App\Models\Message as MessageModel;
+use App\Models\User;
+use App\Notifications\MessageAdded;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Livewire\Component;
 
 class Message extends Component
 {
     use AuthorizesRequests;
 
     public $message;
+
     public $body;
 
     public $isReplying = false;
 
     public $isEditing = false;
 
-
     public function updatedIsEditing($isEditing)
     {
-        if (!$isEditing) {
+        if (! $isEditing) {
             return;
         }
 
@@ -49,21 +50,21 @@ class Message extends Component
 
     public function postReply()
     {
-        if (!$this->message->isMainMessage()) {
+        if (! $this->message->isMainMessage()) {
             return;
         }
 
         $this->validate([
-            'body' => 'required'
+            'body' => 'required',
         ]);
-        
-        $newReply=MessageModel::create([
+
+        $newReply = MessageModel::create([
             'user_id' => auth()->user()->id,
             'application_id' => $this->message->application_id,
             'body' => $this->body,
             'main_message_id' => $this->message->id,
         ]);
-        
+
         $this->reset('body');
 
         $this->isReplying = false;

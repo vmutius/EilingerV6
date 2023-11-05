@@ -8,6 +8,7 @@ use Livewire\Component;
 class UserJurForm extends Component
 {
     public $user;
+
     public $countries;
 
     protected $rules = [
@@ -36,7 +37,7 @@ class UserJurForm extends Component
 
     public function saveUserJur()
     {
-        $this->validate(); 
+        $this->validate();
         $this->user->is_draft = false;
         $this->user->save();
         session()->flash('success', 'Benutzerdaten aktualisiert.');

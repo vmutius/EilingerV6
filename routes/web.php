@@ -26,7 +26,7 @@ Route::get('/', function () {
     return redirect(app()->getLocale());
 });
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale' ], function () {
+Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () {
     Route::view('/', 'home.index')->name('index');
     Route::view('disclaimer', 'home.disclaimer')->name('disclaimer');
     Route::view('impressum', 'home.impressum')->name('impressum');
@@ -54,7 +54,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale' ], function ()
     });
 
     Route::group(['middleware' => ['admin']], function () {
-        Route::get('admin/dashboard',  App\Http\Livewire\Admin\Uebersicht::class)->name('admin_dashboard');
+        Route::get('admin/dashboard', App\Http\Livewire\Admin\Uebersicht::class)->name('admin_dashboard');
         Route::get('admin/users', App\Http\Livewire\Admin\Users::class)->name('admin_users');
         Route::get('admin/antrag/{application_id}', App\Http\Livewire\Admin\Antrag::class)->name('admin_antrag');
         Route::get('admin/applications', App\Http\Livewire\Admin\Applications::class)->name('admin_applications');

@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\Application;
 use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
-use App\Models\Application;
 
 class Message extends Component
 {

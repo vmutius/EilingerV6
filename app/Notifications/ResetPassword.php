@@ -4,17 +4,19 @@ namespace App\Notifications;
 
 use Closure;
 use Illuminate\Bus\Queueable;
-use Illuminate\Support\Facades\Lang;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Lang;
 
 class ResetPassword extends Notification implements ShouldQueue
 {
     use Queueable;
 
     public $token;
+
     public static $createUrlCallback;
+
     public static $toMailCallback;
 
     public function __construct($token)
@@ -82,7 +84,7 @@ class ResetPassword extends Notification implements ShouldQueue
     /**
      * Set a callback that should be used when building the notification mail message.
      *
-     * @param  Closure(mixed, string): MailMessage $callback
+     * @param  Closure(mixed, string): MailMessage  $callback
      * @return void
      */
     public static function toMailUsing($callback)

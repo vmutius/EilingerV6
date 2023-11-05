@@ -10,9 +10,13 @@ use Livewire\WithPagination;
 class Users extends Component
 {
     use WithPagination;
+
     public $searchUsername;
+
     public $searchUserEmail;
+
     public $searchStatusProject;
+
     public $searchname_inst;
 
     protected $paginationTheme = 'bootstrap';
@@ -29,15 +33,15 @@ class Users extends Component
     {
         $users = User::where('is_admin', 0)->with('sendApplications')->orderBy('lastname')
             ->when($this->searchUsername != '', function ($query) {
-                $query->where('username', 'like', '%' . $this->searchUsername . '%');
+                $query->where('username', 'like', '%'.$this->searchUsername.'%');
             })
             ->when($this->searchUserEmail != '', function ($query) {
-                $query->where('email', 'like', '%' . $this->searchUserEmail . '%');
+                $query->where('email', 'like', '%'.$this->searchUserEmail.'%');
             })
             ->when($this->searchname_inst != '', function ($query) {
-                $query->where('name_inst', 'like', '%' . $this->searchname_inst . '%');
+                $query->where('name_inst', 'like', '%'.$this->searchname_inst.'%');
             })
-        ->paginate(20);
+            ->paginate(20);
 
         return view('livewire.admin.users', [
             'users' => $users,

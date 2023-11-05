@@ -1,7 +1,7 @@
 <?php
 
 return [
-   'profession' => 'Profession',
-   'begin' => 'Start',
-   'end' => 'End',
+    'profession' => 'Profession',
+    'begin' => 'Start',
+    'end' => 'End',
 ];

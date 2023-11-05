@@ -15,9 +15,10 @@ use Livewire\Component;
 
 class RegisterPrivat extends Component
 {
-    use UserUpdateTrait, AddressUpdateTrait;
+    use AddressUpdateTrait, UserUpdateTrait;
 
     public $terms = false;
+
     public $model;
 
     protected $messages = [

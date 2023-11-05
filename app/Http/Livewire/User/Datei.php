@@ -2,21 +2,23 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\Application;
 use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
-use App\Models\Application;
 
 class Datei extends Component
 {
     public $showModal = false;
+
     public $enclosure;
+
     public $applications;
 
-    protected function rules() : array
+    protected function rules(): array
     {
-        return([
+        return [
 
-        ]);
+        ];
     }
 
     public function mount()
@@ -39,5 +41,4 @@ class Datei extends Component
     {
         $this->showModal = false;
     }
-
 }

@@ -9,7 +9,6 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-
     /**
      * Display the user's profile form.
      */
@@ -40,10 +39,11 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        if (auth()->user()->is_admin)
-            return redirect()->route('admin_dashboard', app()->getLocale()) ->with('success', 'Profil wurde aktualisiert'); 
-        else
-            return redirect()->route('user_dashboard', app()->getLocale()) ->with('success', 'Profil wurde aktualisiert'); 
+        if (auth()->user()->is_admin) {
+            return redirect()->route('admin_dashboard', app()->getLocale())->with('success', 'Profil wurde aktualisiert');
+        } else {
+            return redirect()->route('user_dashboard', app()->getLocale())->with('success', 'Profil wurde aktualisiert');
+        }
 
     }
 }

@@ -2,11 +2,14 @@
 
 namespace App\Http\Livewire\Antrag;
 
+use App\Enums\Form;
 use App\Models\Application;
 use App\Models\Cost;
 use App\Models\CostDarlehen;
 use App\Models\Financing;
 use Livewire\Component;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class ReqAmountForm extends Component
 {
@@ -20,20 +23,23 @@ class ReqAmountForm extends Component
 
     public $diffAmount;
 
+    /**
+     * @throws NotFoundExceptionInterface
+     * @throws ContainerExceptionInterface
+     */
     public function mount(): void
     {
         $this->application = Application::where('id', session()->get('appl_id'))->first();
         $this->total_amount_financing = Financing::where('application_id', session()->get('appl_id'))
-            ->first('total_amount_financing');
-
-        if ($this->application->form == 'Stipendium') {
+            ->sum('total_amount_financing');
+        if ($this->application->form == Form::Stipendium) {
             $this->total_amount_costs = Cost::where('application_id', session()->get('appl_id'))
-                ->first('total_amount_costs');
-
+                ->sum('total_amount_costs');
         } else {
             $this->total_amount_costs = CostDarlehen::where('application_id', session()->get('appl_id'))
-                ->first('cost_amount');
+                ->sum('cost_amount');
         }
+
     }
 
     public function render()

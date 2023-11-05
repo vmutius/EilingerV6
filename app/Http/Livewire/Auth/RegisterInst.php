@@ -2,24 +2,25 @@
 
 namespace App\Http\Livewire\Auth;
 
-use App\Models\User;
+use App\Http\Traits\AddressUpdateTrait;
+use App\Http\Traits\UserUpdateTrait;
 use App\Models\Address;
 use App\Models\Country;
-use App\View\Components\Layout\Eilinger;
-use Livewire\Component;
-use App\Http\Traits\UserUpdateTrait;
-use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 use App\Notifications\UserRegistered;
+use App\View\Components\Layout\Eilinger;
 use Illuminate\Auth\Events\Registered;
-use App\Http\Traits\AddressUpdateTrait;
-use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Validation\Rules\Password;
+use Livewire\Component;
 
 class RegisterInst extends Component
 {
-    use UserUpdateTrait, AddressUpdateTrait;
+    use AddressUpdateTrait, UserUpdateTrait;
 
     public $terms = false;
+
     public $model;
 
     protected $messages = [
@@ -101,7 +102,7 @@ class RegisterInst extends Component
             'is_draft' => false,
         ]);
 
-        $admins=User::where('is_admin', 1)->get();
+        $admins = User::where('is_admin', 1)->get();
         Notification::send($admins, new UserRegistered($user));
 
         auth()->login($user);
@@ -135,8 +136,8 @@ class RegisterInst extends Component
     public function sendNewUserData()
     {
         $newUserData = [
-            'subject' => 'Neuer Benutzer' . $this->username,
-            'body' => 'Der neue Benutzer mit ' . $this->username . ' und ' . $this->email . ' hat sich registriert.',
+            'subject' => 'Neuer Benutzer'.$this->username,
+            'body' => 'Der neue Benutzer mit '.$this->username.' und '.$this->email.' hat sich registriert.',
         ];
     }
 }

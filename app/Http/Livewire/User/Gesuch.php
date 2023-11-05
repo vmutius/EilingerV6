@@ -2,17 +2,17 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\Application;
 use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
-use App\Models\Application;
 
 class Gesuch extends Component
 {
     public function render()
     {
         $applications = Application::LoggedInUser()
-        ->where('appl_status','!=', 'not send')
-        ->get();
+            ->where('appl_status', '!=', 'not send')
+            ->get();
 
         return view('livewire.user.gesuch', [
             'applications' => $applications,

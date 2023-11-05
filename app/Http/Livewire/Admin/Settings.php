@@ -10,12 +10,19 @@ use Livewire\Component;
 class Settings extends Component
 {
     public $showModal = false;
+
     public $salutation;
+
     public $username;
+
     public $lastname;
+
     public $firstname;
+
     public $phone;
+
     public $email;
+
     public $password;
 
     protected $rules = [

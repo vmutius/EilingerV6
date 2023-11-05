@@ -33,7 +33,8 @@
                                     <p>Aktuell {{ $applicationCount }} Anträge</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('admin_applications', app()->getLocale()) }}" class="btn btn-colour-1">Antragsübersicht</a>
+                                    <a href="{{ route('admin_applications', app()->getLocale()) }}"
+                                       class="btn btn-colour-1">Antragsübersicht</a>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +47,8 @@
                                     <p>Aktuell {{ $projectCount }} laufende Projekte</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('admin_projects', app()->getLocale()) }}" class="btn btn-colour-1">Projektübersicht</a>
+                                    <a href="{{ route('admin_projects', app()->getLocale()) }}"
+                                       class="btn btn-colour-1">Projektübersicht</a>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +62,8 @@
                                     </p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('admin_settings', app()->getLocale()) }}" class="btn btn-colour-1">Einstellungen</a>
+                                    <a href="{{ route('admin_settings', app()->getLocale()) }}"
+                                       class="btn btn-colour-1">Einstellungen</a>
                                 </div>
                             </div>
                         </div>
@@ -76,9 +79,10 @@
                                         Änderung der Email Adresse
                                         müssen Sie diese erneut verifizieren.
                                     </p>
-                               </div>
+                                </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('admin_profile.edit', app()->getLocale()) }}" class="btn btn-colour-1">Benutzerprofil</a>
+                                    <a href="{{ route('admin_profile.edit', app()->getLocale()) }}"
+                                       class="btn btn-colour-1">Benutzerprofil</a>
                                 </div>
                             </div>
                         </div>
@@ -91,11 +95,13 @@
                                         rechts oder Sie klicken den angehängten Link</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('logout', app()->getLocale()) }}" class="btn btn-colour-1">Logout</a>
+                                    <a href="{{ route('logout', app()->getLocale()) }}"
+                                       class="btn btn-colour-1">Logout</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </section>
 
         </div>

@@ -32,10 +32,6 @@ class Education extends Model
         'is_draft',
     ];
 
-    protected $casts = [
-        'begin_edu' => 'date',
-    ];
-
     public function application()
     {
         return $this->belongsTo(Application::class);

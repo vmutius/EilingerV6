@@ -2,16 +2,18 @@
 
 namespace App\Http\Livewire\Antrag;
 
-use Livewire\Component;
-use App\Models\Currency;
 use App\Models\Application;
 use App\Models\CostDarlehen;
+use App\Models\Currency;
 use Illuminate\Database\Eloquent\Collection;
+use Livewire\Component;
 
 class CostFormDarlehen extends Component
 {
     public $costs;
+
     public $currency_id;
+
     public $myCurrency;
 
     protected $rules = [
@@ -26,7 +28,6 @@ class CostFormDarlehen extends Component
         $this->myCurrency = Currency::where('id', $this->currency_id)->first();
     }
 
-
     public function render()
     {
         return view('livewire.antrag.cost-form-darlehen');
@@ -34,7 +35,7 @@ class CostFormDarlehen extends Component
 
     public function saveCostDarlehen()
     {
-        $this->validate(); 
+        $this->validate();
 
         $this->costs->each(function ($cost) {
             $cost->is_draft = false;
@@ -42,11 +43,11 @@ class CostFormDarlehen extends Component
             $cost->application_id = session()->get('appl_id');
             $cost->save();
         });
-        
+
         session()->flash('success', 'Kosten aktualisiert.');
     }
 
-    public function getAmountCostDarlehen() 
+    public function getAmountCostDarlehen()
     {
         $this->getAmountCostDarlehen = '0.00';
         $this->costs->each(function ($cost) {
@@ -61,9 +62,8 @@ class CostFormDarlehen extends Component
         $this->costs->push(new CostDarlehen);
     }
 
-    public function delCostDarlehen ($key)
+    public function delCostDarlehen($key)
     {
         $this->costs->forget($key);
     }
-
 }

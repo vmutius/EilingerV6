@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Application;
+use App\Models\User;
 use App\View\Components\Layout\AdminDashboard;
 use Livewire\Component;
-use App\Models\User;
-use App\Models\Application;
 
 class Uebersicht extends Component
 {
@@ -20,6 +20,6 @@ class Uebersicht extends Component
             'applicationCount' => $applicationCount,
             'projectCount' => $projectCount,
         ])
-         ->layout(AdminDashboard::class);
+            ->layout(AdminDashboard::class);
     }
 }

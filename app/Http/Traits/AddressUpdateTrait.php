@@ -5,9 +5,13 @@ namespace App\Http\Traits;
 trait AddressUpdateTrait
 {
     public $street = '';
+
     public $number = '';
+
     public $plz = '';
+
     public $town = '';
+
     public $country_id = '';
 
     public function updatedStreet()

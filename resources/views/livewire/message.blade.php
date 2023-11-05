@@ -6,56 +6,55 @@
             @endif
 
             @can ('update', $message)
-                <button wire:click="$toggle('isEditing')" type="button" class="btn btn-primary btn-sm">Bearbeiten</button>
+                <button wire:click="$toggle('isEditing')" type="button" class="btn btn-primary btn-sm">Bearbeiten
+                </button>
             @endcan
 
             @can ('destroy', $message)
-            <button type="button" 
-                class="btn btn-danger btn-sm"
-                x-on:click="confirmMessageDeletion"
-                x-data="{
+                <button type="button"
+                        class="btn btn-danger btn-sm"
+                        x-on:click="confirmMessageDeletion"
+                        x-data="{
                     confirmMessageDeletion () {
                         if (window.confirm('Wollen Sie die Nachricht wirklich löschen?')) {
                             @this.call('deleteMessage')
                         }
                     }
                 }"
-                >Löschen</button>
+                >Löschen
+                </button>
             @endcan
         </i>
     </p>
-    <p>
-        @if ($isEditing)
-            <form wire:submit.prevent="editMessage">
-                <div class="blog-comment">
-                    <textarea wire:model.defer="body" id="textareaID" class="form-control"></textarea>
+    @if ($isEditing)
+        <form wire:submit.prevent="editMessage">
+            <div class="blog-comment">
+                <textarea wire:model.defer="body" id="textareaID" class="form-control"></textarea>
 
-                    @error('body')
-                        <p class="text-danger">{{ $message }}</p>
-                    @enderror
-                </div>
-                <br />
-                <div class="col-md-12 text-end">
-                    <button class="btn btn-colour-1" type="submit">
-                        <span class="align-middle d-sm-inline-block d-none">Nachricht ändern</span>
-                    </button>
-                </div>
-            </form>
-        @else
+                @error('body')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
+            </div>
+            <br/>
+            <div class="col-md-12 text-end">
+                <button class="btn btn-colour-1" type="submit">
+                    <span class="align-middle d-sm-inline-block d-none">Nachricht ändern</span>
+                </button>
+            </div>
+        </form>
+    @else
         {{ $message->body }}
-        @endif
-        
-    </p>
+    @endif
     @if ($isReplying)
         <form wire:submit.prevent="postReply">
             <div class="blog-comment">
                 <textarea wire:model.defer="body" id="textareaID" class="form-control"></textarea>
 
                 @error('body')
-                    <p class="text-danger">{{ $message }}</p>
+                <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
-            <br />
+            <br/>
             <div class="col-md-12 text-end">
                 <button class="btn btn-colour-1" type="submit">
                     <span class="align-middle d-sm-inline-block d-none">Reply speichern</span>

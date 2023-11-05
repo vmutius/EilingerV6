@@ -2,14 +2,15 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Enums\ApplStatus;
 use App\Models\Application;
 use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
-use App\Enums\ApplStatus;
 
 class Antrag extends Component
 {
     public $currentStep = 1;
+
     public $application;
 
     protected $listeners = ['sendApplication' => 'sendApplication'];

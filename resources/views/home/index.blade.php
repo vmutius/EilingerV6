@@ -19,7 +19,8 @@
                             Stiftung mit Domizil in 8264 Eschenz. Dem Ehepaar Eilinger war es schon immer ein
                             besonderes Anliegen, Kinder- und Jugendliche aus ärmeren Regionen eine Chance auf
                             Bildung zu geben. Darüber hinaus haben sich beide aktiv mit Menschenrechtsverletzungen,
-                            Kinderarbeit, Umweltverschmutzung und Nachhaltigkeit auseinandergesetzt, privat waren sie im Tierschutz
+                            Kinderarbeit, Umweltverschmutzung und Nachhaltigkeit auseinandergesetzt, privat waren sie im
+                            Tierschutz
                             engagiert.
                         </p>
                         <p>
@@ -31,8 +32,7 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <h3>Stiftungszweck</h3>
-                        <p>
-                            Die Stiftung unterstützt und fördert:
+                        <p>Die Stiftung unterstützt und fördert: </p>
                         <ul>
                             <li><i class="bi bi-check-all"></i>Nicht gewinnorientierte Organisationen und
                                 Institutionen, die sich für die Ausbildung
@@ -41,22 +41,25 @@
                                 beruflichen Ausbildung oder eines Studiums. Im Einzelfall werden auch
                                 Einzelpersonen oder Personengruppen aus sozial- und / oder wirtschaftlich
                                 schwachen Verhältnissen finanziell unterstützt, die unverschuldet in Not geraten
-                                sind;</li>
+                                sind;
+                            </li>
                             <li><i class="bi bi-check-all"></i>im In- und Ausland tätige, gemeinnützige
                                 Organisationen, die sich mit dem Thema
                                 Tierschutz, Tierrettung und Prävention befassen und das Wohl von Tieren aller Art
                                 zum Ziel haben. Es sollen explizit auch kleinere Institutionen wie Vereine und im
                                 Einzelfall auch Personen unterstützt werden, die sich für das Tierwohl in diesem
-                                Sinne einsetzen;</li>
+                                Sinne einsetzen;
+                            </li>
                             <li><i class="bi bi-check-all"></i>gemeinnützige Institutionen im In- und Ausland, die
                                 sich mit dem Schutz und der
                                 Einhaltung von Menschenrechten befassen, insbesondere sich auch dem Thema
-                                Bekämpfung von Kinderarbeit widmen;</li>
+                                Bekämpfung von Kinderarbeit widmen;
+                            </li>
                             <li><i class="bi bi-check-all"></i>nicht gewinnorientierte Institutionen im In- und
                                 Ausland, die sich für den Schutz der
-                                Natur und für den Umweltschutz einsetzen.</li>
+                                Natur und für den Umweltschutz einsetzen.
+                            </li>
                         </ul>
-                        </p>
                     </div>
                 </div>
 
@@ -81,9 +84,11 @@
                                     Kinder und Jugendliche sollten, egal aus welchen sozialen Verhältnissen sie
                                     kommen, ein Recht auf Bildung haben. Wir unterstützen daher nicht gewinnorientierte
                                     Organisationen und Institutionen, die sich für Vorschulförderung, schulische und
-                                    berufliche Ausbildung von Kindern und Jugendlichen im In- und Ausland einsetzen. Darüber hinaus
-                                    haben Jugendliche und junge Erwachsene die Chance, bei uns ein Gesuch für ein Stipendium zu
-                                    stellen, um  eine Ausbildung zu machen oder einen Universitätsabschluss zu erlangen.
+                                    berufliche Ausbildung von Kindern und Jugendlichen im In- und Ausland einsetzen.
+                                    Darüber hinaus
+                                    haben Jugendliche und junge Erwachsene die Chance, bei uns ein Gesuch für ein
+                                    Stipendium zu
+                                    stellen, um eine Ausbildung zu machen oder einen Universitätsabschluss zu erlangen.
                                 </p>
                             </div>
                         </div>
@@ -149,18 +154,21 @@
                     <h2>Projekte</h2>
                     <p>Jedes Jahr unterstützt und fördert die Eilinger Stiftung Projekte, um auch dort zu helfen, wo
                         direkte
-                        und schnelle Hilfe notwendig ist oder wo Behörden, Vereine und andere Stiftungen nicht unterstützen. Es
+                        und schnelle Hilfe notwendig ist oder wo Behörden, Vereine und andere Stiftungen nicht
+                        unterstützen. Es
                         ist
                         dabei wichtig, dass das Geld zu 100 Prozent für das jeweilige Projekt eingesetzt wird, weder
                         Verwaltungs-, Aufwands- noch Personalkosten in Abzug gebracht werden bzw. diese landespezifisch
                         so gering wie möglich gehalten werden.
                         Im Zentrum unserer Förderung 2021 standen Tierschutz, Menschen in Not, Chancengleichheit und
                         Würde wie auch Naturkatastrophen. Da wir meist Projekte über mehrere Jahre begleiten, laufen
-                        einige Projekte auch während der neuen Förderperiode weiter. Ziel ist es, die Projekte maximal nur so
+                        einige Projekte auch während der neuen Förderperiode weiter. Ziel ist es, die Projekte maximal
+                        nur so
                         lange
                         zu begleiten, bis sie sich selbst tragen. Das jeweilige Budget wird periodisch entsprechend
                         angepasst
-                        und vermindert, um die Ressourcen für weitere, neue Projekte einzusetzen. Daher ist es uns wichtig, dass aktiv
+                        und vermindert, um die Ressourcen für weitere, neue Projekte einzusetzen. Daher ist es uns
+                        wichtig, dass aktiv
                         das Einholen weiterer Mitteln stattfindet.</p>
                 </div>
 
@@ -171,7 +179,7 @@
                             <h4 class="title"><a href="">Tierschutz Schweiz: Rehkitzrettung mit BFH-HAFL-Methode
                                     mittels einer Drohne </a></h4>
                             <p class="description">Jedes Jahr werden hunderte Rehkitze im hohen Gras, das später von
-                                den Bauern abgemäht wird, geboren. Diese Rehitze werden dann bei der Ernte lebendig 
+                                den Bauern abgemäht wird, geboren. Diese Rehitze werden dann bei der Ernte lebendig
                                 in die Ballen eingebunden.
                                 Ihre Kadaver verderben das Stroh, das die Kühe fressen und dadurch
                                 elendig verenden.
@@ -192,7 +200,8 @@
                                 den 17. Dezember 2021 anrichtete,
                                 wurden viele Häuser in der Provinz Bohol auf den Philippinen zerstört. Die
                                 Eilinger-Stiftung hat einen Einmalbetrag für die
-                                Versorgung der Menschen mit Lebensmitteln sowie zum Wiederaufbau der Häuser STEPS Mission
+                                Versorgung der Menschen mit Lebensmitteln sowie zum Wiederaufbau der Häuser STEPS
+                                Mission
                                 zur Verfügung gestellt.
 
                                 So konnte durch die schnelle finanzielle Unterstützung der
@@ -295,19 +304,24 @@
                         <li>Nicht Profit orientierte Institutionen, die sich für die Ausbildung und Förderung von
                             Kindern und Jugendlichen im In- und Ausland einsetzen, gewährt.
                             Dies betrifft sowohl vorschulische und schulische Förderung sowie Massnahmen zur beruflichen
-                            Ausbildung oder eines Studiums.</li>
+                            Ausbildung oder eines Studiums.
+                        </li>
                         <li>Im Einzelfall werden auch Einzelpersonen oder Personengruppen aus sozial- und/oder
                             wirtschaftlich schwachen Verhältnissen finanziell unterstützt,
-                            so auch Einzelpersonen, die unverschuldet wirtschaftlich in Not geraten sind.</li>
+                            so auch Einzelpersonen, die unverschuldet wirtschaftlich in Not geraten sind.
+                        </li>
                         <li>Im In- und Ausland tätige Organisationen, die sich mit dem Thema Tierschutz, Tierrettung
                             befassen und das Wohl von Tieren aller Art zum Ziel haben.
                             Unterstützt werden nur kleinere Institutionen, Vereine und Einzelpersonen, die ehrenamtlich,
-                            nicht Profit orientiert arbeiten.</li>
+                            nicht Profit orientiert arbeiten.
+                        </li>
                         <li>Gemeinnützige Institutionen im In- und Ausland, die sich mit dem Schutz und der Einhaltung
                             von Menschenrechten befassen und sich insbesondere dem Thema
-                            der Bekämpfung von Kinderarbeit widmen, werden finanziell unterstützt.</li>
+                            der Bekämpfung von Kinderarbeit widmen, werden finanziell unterstützt.
+                        </li>
                         <li>Gemeinnützige Institutionen im In- und Ausland, die sich für den Schutz der Natur und für
-                            den Umweltschutz einsetzen.</li>
+                            den Umweltschutz einsetzen.
+                        </li>
                     </ol>
                     <p>In Anwendung der Regeln des Stiftungsreglements erlässt der Stiftungsrat folgende Richtlinien zur
                         Erfüllung des Stiftungszwecks nach Art. 2 der Stiftungsstatuten:</p>
@@ -316,69 +330,78 @@
                             ist der Stiftungsrat nicht verpflichtet, alle vier Zweckrichtungen gleichmässig zu fördern.
                             Er kann vielmehr nach freiem Ermessen auf einzelne Zweckrichtungen das Hauptgewicht legen
                             und die Stiftungsleistungen im Rahmen des Stiftungszweckes in weitester Freiheit endgültig
-                            festsetzen.</li>
+                            festsetzen.
+                        </li>
                         <li>Der/die Destinatär/innen haben keine Rechtsansprüche auf Stiftungs-leistungen. Die Höhe der
                             Unterstützung richtet sich nach dem tatsächlichen Bedarf und den vorhandenen
-                            Stiftungsmitteln.</li>
+                            Stiftungsmitteln.
+                        </li>
                         <li>Die Unterstützungen werden in der Regel in Form einer direkten oder indirekten finanziellen
-                            Leistung gewährt.</li>
+                            Leistung gewährt.
+                        </li>
                         <li>Die Bedürftigkeit ist nachzuweisen.</li>
                         <li>Beiträge der Eilinger-Stiftung sollen nicht zu einer Entlastung der öffentlichen Hand
-                            führen.</li>
+                            führen.
+                        </li>
                     </ol>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-3 mb-3 d-flex align-items-stretch">
-                      <div class="card border-light">
-                        <div class="card-body d-flex flex-column">
-                          <h3 class="card-title">Bildung Kinder & Jugendliche: Stipendium & Verein</h3>
-                          <ul>
-                            <li><i class="bi bi-check-all"></i> Gesuch für ein Stipendium </li>
-                            <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen (ausser Stipendien) </li>
-                            <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
-                        </ul>
-                        <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum Gesuchsportal</a>
+                        <div class="card border-light">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Bildung Kinder & Jugendliche: Stipendium & Verein</h3>
+                                <ul>
+                                    <li><i class="bi bi-check-all"></i> Gesuch für ein Stipendium</li>
+                                    <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen (ausser Stipendien)
+                                    </li>
+                                    <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen</li>
+                                </ul>
+                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum
+                                    Gesuchsportal</a>
+                            </div>
                         </div>
-                      </div>
                     </div>
                     <div class="col-sm-3 mb-3 d-flex align-items-stretch">
                         <div class="card border-light">
-                          <div class="card-body d-flex flex-column">
-                            <h3 class="card-title">Tierschutz: Privatperson & Verein </h3>
-                            <ul>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
-                            </ul>
-                          <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum Gesuchsportal</a>
-                          </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Tierschutz: Privatperson & Verein </h3>
+                                <ul>
+                                    <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen</li>
+                                    <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen</li>
+                                </ul>
+                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum
+                                    Gesuchsportal</a>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-sm-3 mb-3 d-flex align-items-stretch">
+                    </div>
+                    <div class="col-sm-3 mb-3 d-flex align-items-stretch">
                         <div class="card border-light">
-                          <div class="card-body d-flex flex-column">
-                            <h3 class="card-title">Menschen in Not: Privatperson & Verein </h3>
-                            <ul>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
-                            </ul>
-                          <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum Gesuchsportal</a>
-                          </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Menschen in Not: Privatperson & Verein </h3>
+                                <ul>
+                                    <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen</li>
+                                    <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen</li>
+                                </ul>
+                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum
+                                    Gesuchsportal</a>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-sm-3 mb-3 d-flex align-items-stretch">
+                    </div>
+                    <div class="col-sm-3 mb-3 d-flex align-items-stretch">
                         <div class="card border-light">
-                          <div class="card-body d-flex flex-column">
-                            <h3 class="card-title">Umwelt & Naturschutz: Privatperson & Verein </h3>
-                            <ul>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen </li>
-                                <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen </li>
-                            </ul>
-                          <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum Gesuchsportal</a>
-                          </div>
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Umwelt & Naturschutz: Privatperson & Verein </h3>
+                                <ul>
+                                    <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen</li>
+                                    <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen</li>
+                                </ul>
+                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum
+                                    Gesuchsportal</a>
+                            </div>
                         </div>
-                      </div>
-                  </div>
+                    </div>
+                </div>
             </div>
         </section><!-- End Pricing Section -->
 

@@ -41,7 +41,8 @@
                     </td>
                     <td>
                         @if ($enclosure->certificate_of_study)
-                            <span class="text.success">{{ $enclosure->certificate_of_study}}</span>
+                            <a href="{{ asset('uploads/'.$enclosure->certificate_of_study) }}"
+                               target="_blank">{{ $enclosure->certificate_of_study }}</a>
                         @endif
                     </td>
                 </tr>

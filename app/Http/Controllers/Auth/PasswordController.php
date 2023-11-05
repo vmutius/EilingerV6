@@ -28,6 +28,6 @@ class PasswordController extends Controller
 
         Auth::logout();
 
-        return redirect()->intended(app()->getLocale() . RouteServiceProvider::HOME);
+        return redirect()->intended(app()->getLocale().RouteServiceProvider::HOME);
     }
 }

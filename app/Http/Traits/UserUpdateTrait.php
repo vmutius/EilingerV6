@@ -5,18 +5,31 @@ namespace App\Http\Traits;
 trait UserUpdateTrait
 {
     public $username = '';
+
     public $salutation = '';
+
     public $name_inst = '';
+
     public $email_inst = '';
+
     public $email = '';
+
     public $password = '';
+
     public $password_confirmation = '';
+
     public $user_id = '';
+
     public $phone_inst = '';
+
     public $website = '';
+
     public $firstname = '';
+
     public $lastname = '';
+
     public $phone = '';
+
     public $mobile = '';
 
     public function updatedUsername()

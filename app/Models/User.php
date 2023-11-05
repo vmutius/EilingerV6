@@ -62,7 +62,6 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'birthday' => 'date',
     ];
 
     public function address()
@@ -93,11 +92,6 @@ class User extends Authenticatable implements MustVerifyEmail
     public function messages()
     {
         return $this->hasMany(Message::class);
-    }
-
-    public function avatarUrl()
-    {
-        return 'https://www.gravatar.com/avatar/'.md5(strtolower(trim($this->email)));
     }
 
     // OVERRIDE

@@ -27,7 +27,6 @@ class EnsureEmailIsVerified
      * Handle an incoming request.
      *
      * @param  Request  $request
-     * @param Closure $next
      * @param  string|null  $redirectToRoute
      * @return Response|RedirectResponse|null
      */
@@ -44,4 +43,3 @@ class EnsureEmailIsVerified
         return $next($request);
     }
 }
-

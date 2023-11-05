@@ -16,13 +16,15 @@
                 <p>Ihre Eingaben auf dem Gesuchsportal können Sie jederzeit zwischenspeichern und später ergänzen. Bitte
                     vermeiden Sie es, mehrere Sitzungen im Gesuchsportal zu öffnen.
                     Andersfalls besteht die Gefahr, dass Daten verlorengehen.</p>
-                </br>
+                <br/>
 
                 <h3>NEUES BENUTZERKONTO </h3>
 
-                <p> Ich erstelle ein Benutzerkonto für mich als <strong><a href="{{ route('registerPrivat', app()->getLocale()) }}">Privatperson</a></strong>
+                <p> Ich erstelle ein Benutzerkonto für mich als <strong><a
+                            href="{{ route('registerPrivat', app()->getLocale()) }}">Privatperson</a></strong>
                     (für ein Stipendiengesuch bitte diese Option wählen) ODER ich erstelle das Benutzerkonto für
-                    <strong><a href="{{ route('registerInst', app()->getLocale()) }}">einen Verein/eine Institution </a></strong>.</p>
+                    <strong><a href="{{ route('registerInst', app()->getLocale()) }}">einen Verein/eine Institution </a></strong>.
+                </p>
                 <br/>
                 <h3>Ich bin bereits registriert </h3>
 
@@ -32,8 +34,8 @@
                         <div class="col-md-4">
                             <label for="">{{ __('Email Address') }}</label>
                             <input name="email" id="email" type="email" class="form-control"
-                                placeholder="name@example.com">
-                            <x-input-error :messages="$errors->get('email')" />
+                                   placeholder="name@example.com">
+                            <x-input-error :messages="$errors->get('email')"/>
                         </div>
 
 
@@ -47,9 +49,9 @@
                         </div>
 
 
-
                         <div class="col-md-4">
-                            <a class="btn btn-link" href="{{ route('password.request', app()->getLocale()) }}">Passwort zurücksetzen?</a>
+                            <a class="btn btn-link" href="{{ route('password.request', app()->getLocale()) }}">Passwort
+                                zurücksetzen?</a>
                         </div>
                         <div class="col-md-4">
                             <div class="form-check form-switch">
@@ -60,7 +62,8 @@
                     </div>
                 </form>
                 <br/>
-                <p> Vereine und Organisationen registrieren bzw. loggen sich bitte mit der E-Mail-Adresse der Kontaktperson ein. </p>
+                <p> Vereine und Organisationen registrieren bzw. loggen sich bitte mit der E-Mail-Adresse der
+                    Kontaktperson ein. </p>
             </div>
         </section>
     </main><!-- End #main -->

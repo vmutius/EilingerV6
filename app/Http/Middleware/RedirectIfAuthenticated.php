@@ -14,7 +14,7 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param Closure(Request): (Response|RedirectResponse) $next
+     * @param  Closure(Request): (Response|RedirectResponse)  $next
      * @param  string|null  ...$guards
      * @return Response|RedirectResponse
      */
@@ -24,7 +24,7 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(app()->getLocale() . RouteServiceProvider::HOME);
+                return redirect(app()->getLocale().RouteServiceProvider::HOME);
             }
         }
 

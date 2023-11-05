@@ -3,12 +3,13 @@
 namespace App\Http\Livewire\User;
 
 use App\View\Components\Layout\UserDashboard;
-use Livewire\Component;
 use Illuminate\Http\Request;
+use Livewire\Component;
 
 class DeleteAccount extends Component
 {
     public $showModal;
+
     public $current_password;
 
     protected $rules = [

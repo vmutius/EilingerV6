@@ -7,12 +7,14 @@ use Livewire\Component;
 class DarlehenPrivat extends Component
 {
     public $currentStep = 1;
+
     public $showModal = false;
+
     public $completeApp;
 
     protected $listeners = ['completeApp' => 'completeApp'];
 
-    public function completeApp() 
+    public function completeApp()
     {
         $this->completeApp = true;
     }
@@ -31,7 +33,7 @@ class DarlehenPrivat extends Component
     {
         $this->currentStep--;
     }
-    
+
     public function saveApplication()
     {
         $this->showModal = true;
