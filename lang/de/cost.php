@@ -12,4 +12,6 @@ return [
     'cost_of_living_single_parent' => 'im eigenen Haushalt Alleinerziehend',
     'cost_of_living_with_partner' => 'im eigenen Haushalt mit Partner',
     'other_standard_of_living' => 'Übrige Lebenshaltung',
+    'cost_name' => 'Ausgabe',
+    'cost_amount' => 'Betrag',
 ];

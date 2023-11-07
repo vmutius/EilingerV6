@@ -1,27 +1,27 @@
 <div class="accordion-item">
-    <h2 class="accordion-header" id="headingEnclosureDarlehen">
+    <h2 class="accordion-header" id="headingAbwAddress">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                data-bs-target="#collapseEnclosureDarlehen">Bemerkungen und Beilagen (Darlehen)
+                data-bs-target="#collapseAbwAddress">Addresse im Ausland
         </button>
     </h2>
-    <div id="collapseEnclosureDarehen" class="accordion-collapse collapse">
-        @if ($education)
+    <div id="collapseAbwAddress" class="accordion-collapse collapse">
+        @if ($aboardAddress)
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-4">
-                        <p>Ausbildung: {{ $education->education }}</p>
+                        <p>{{ __('address.street') }}: {{ $aboardAddress->street }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Name: {{ $education->name }}</p>
+                        <p>{{ __('address.number') }}: {{ $aboardAddress->number }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Beabsichtigter Abschluss als: {{ $education->final }}</p>
+                        <p>{{ __('address.plz') }}: {{ $aboardAddress->plz }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Abschluss: {{ $education->grade }}</p>
+                        <p>{{ __('address.town') }}: {{ $aboardAddress->town }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>ECTS-Punkte für das kommende Semester: {{ $education->ects_points }}</p>
+                        <p>{{ __('address.country') }}: {{ $aboardAddress->country->name }}</p>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Auszahlungsdaten eingetragen</p>
+                        <p>Keine Adresse im Ausland eingetragen</p>
                     </div>
                 </div>
             </div>

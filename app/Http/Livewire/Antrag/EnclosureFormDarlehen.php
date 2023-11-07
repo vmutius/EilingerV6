@@ -58,7 +58,7 @@ class EnclosureFormDarlehen extends Component
 
     public function render()
     {
-        return view('livewire.antrag.enclosure-form-darlehen');
+        return view('livewire.antrag.enclosure-form-darlehen_privat');
     }
 
     public function saveEnclosureDarlehen()

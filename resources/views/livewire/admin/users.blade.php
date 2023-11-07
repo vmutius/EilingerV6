@@ -97,7 +97,6 @@
                                         <td colspan="6">Keine Benutzer gefunden</td>
                                     </tr>
                                 @endforelse
-                                @endforelse
                 </tbody>
             </table>
             Showing {{ $users->firstItem() }} to {{ $users->lastItem() }}

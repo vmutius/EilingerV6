@@ -6,6 +6,7 @@ use App\Models\Account;
 use App\Models\Address;
 use App\Models\Application;
 use App\Models\Cost;
+use App\Models\CostDarlehen;
 use App\Models\Education;
 use App\Models\Enclosure;
 use App\Models\Financing;
@@ -25,6 +26,8 @@ class Antrag extends Component
 
     public $abweichendeAddress;
 
+    public $aboardAddress;
+
     public $education;
 
     public $account;
@@ -36,6 +39,8 @@ class Antrag extends Component
     public $enclosure;
 
     public $cost;
+
+    public $costDarlehen;
 
     public $financing;
 
@@ -49,12 +54,16 @@ class Antrag extends Component
         $this->abweichendeAddress = Address::where('user_id', $this->user->id)
             ->where('is_wochenaufenthalt', 1)
             ->first();
+        $this->aboardAddress = Address::where('user_id', $this->user->id)
+            ->where('is_aboard', 1)
+            ->first();
         $this->education = Education::where('application_id', $application_id)->first();
         $this->account = Account::where('application_id', $application_id)->first();
         $this->parents = Parents::where('user_id', $this->user->id)->get();
         $this->siblings = Sibling::where('user_id', $this->user->id)->get();
         $this->enclosure = Enclosure::where('application_id', $application_id)->first();
         $this->cost = Cost::where('application_id', $application_id)->first();
+        $this->costDarlehen = CostDarlehen::where('application_id', $application_id)->get();
         $this->financing = Financing::where('application_id', $application_id)->first();
     }
 

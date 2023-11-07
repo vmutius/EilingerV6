@@ -6,12 +6,18 @@
             <div class="accordion" id="AntragAdmin">
                 @include('partials.accAppl')
                 @if($user->type == 'nat')
-                    @include('partials.accUserNat')
+                    @if($application->form==App\Enums\Form::Darlehen)
+                        @include('partials.accUserNatDarlehen')
+                    @else
+                        @include('partials.accUserNat')
+                    @endif
                 @else
                     @include('partials.accUserJur')
                 @endif
                 @include('partials.accAddress')
-                @if($user->type == 'nat')
+                @if($application->form==App\Enums\Form::Darlehen)
+                    @include('partials.accAboardAddress')
+                @else
                     @include('partials.accAbwAddress')
                 @endif
                 @if($application->form==App\Enums\Form::Stipendium)
@@ -31,7 +37,11 @@
                 @if($application->form==App\Enums\Form::Stipendium)
                     @include('partials.accEnclosure')
                 @else
-                    @include('partials.accEnclosureDarlehen')
+                    @if($user->type == 'nat')
+                        @include('partials.accEnclosureDarlehenPrivat')
+                    @else
+                        @include('partials.accEnclosureDarlehenVerein')
+                    @endif
                 @endif
             </div>
         </div>

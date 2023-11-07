@@ -11,25 +11,25 @@
                     <div class="col-sm-12">
                         <p>{{ __('enclosure.remark') }}: {{ $enclosure->remark }}</p>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <p>{{ __('enclosure.passport') }}:
                             <a href="{{ asset('uploads/'.$enclosure->passport) }}"
                                target="_blank">{{ $enclosure->passport }}</a>
                         </p>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <p>{{ __('enclosure.cv') }}:
                             <a href="{{ asset('uploads/'.$enclosure->cv) }}"
                                target="_blank">{{ $enclosure->cv }}</a>
                         </p>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <p>{{ __('enclosure.apprenticeship_contract') }}:
                             <a href="{{ asset('uploads/'.$enclosure->apprenticeship_contract) }}"
                                target="_blank">{{ $enclosure->apprenticeship_contract }}</a>
                         </p>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <p>{{ __('enclosure.diploma') }}:
                             <a href="{{ asset('uploads/'.$enclosure->diploma) }}"
                                target="_blank">{{ $enclosure->diploma }}</a>
