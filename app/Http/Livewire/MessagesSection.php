@@ -5,7 +5,8 @@ namespace App\Http\Livewire;
 use App\Models\Application;
 use App\Models\Message;
 use App\Models\User;
-use App\Notifications\MessageAdded;
+use App\Notifications\MessageAddedAdmin;
+use App\Notifications\MessageAddedUser;
 use Livewire\Component;
 
 class MessagesSection extends Component
@@ -52,11 +53,11 @@ class MessagesSection extends Component
         $this->reset('body');
 
         if (auth()->user()->is_admin) {
-            $this->message->application->user->notify(new MessageAdded($newMessage));
+            $this->application->user->notify(new MessageAddedAdmin($newMessage));
         } else {
             $admins = User::where('is_admin', 1)->get();
             foreach ($admins as $admin) {
-                $admin->notify(new MessageAdded($newMessage));
+                $admin->notify(new MessageAddedUser($newMessage));
             }
         }
     }

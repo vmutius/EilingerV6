@@ -4,7 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\Message as MessageModel;
 use App\Models\User;
-use App\Notifications\MessageAdded;
+use App\Notifications\MessageAddedAdmin;
+use App\Notifications\MessageAddedUser;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 
@@ -70,11 +71,11 @@ class Message extends Component
         $this->isReplying = false;
 
         if (auth()->user()->is_admin) {
-            $this->message->application->user->notify(new MessageAdded($newReply));
+            $this->message->application->user->notify(new MessageAddedAdmin($newReply));
         } else {
             $admins = User::where('is_admin', 1)->get();
             foreach ($admins as $admin) {
-                $admin->notify(new MessageAdded($newReply));
+                $admin->notify(new MessageAddedUser($newReply));
             }
         }
     }

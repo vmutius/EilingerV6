@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class MessageAdded extends Notification implements ShouldQueue
+class MessageAddedUser extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -39,9 +39,12 @@ class MessageAdded extends Notification implements ShouldQueue
     {
         return (new MailMessage)
             ->subject('Neue Nachricht zu Ihrem Antrag')
-            ->markdown('email.message-added', [
-                'message' => $this->message,
-            ]);
+            ->greeting('Guten Tag ')
+            ->line("Sie haben eine neue Nachricht zum ihren Antrag {$this->message->application->name}")
+            ->line("{$this->message->user->username} hat folgende Nachricht hinterlassen")
+            ->line("Nachricht: {$this->message->body}")
+            ->action('Zur Nachricht', route('admin_antrag', ['application_id' => $this->message->application->id, 'locale' => app()->getLocale()]))
+            ->line('Thank you for using our application!');
     }
 
     /**
@@ -57,6 +60,7 @@ class MessageAdded extends Notification implements ShouldQueue
             'username' => $this->message->user->username,
             'appl_name' => $this->message->application->name,
             'appl_id' => $this->message->application->id,
+            'url' => route('admin_antrag', ['application_id' => $this->message->application->id, 'locale' => app()->getLocale()]),
         ];
     }
 }

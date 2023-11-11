@@ -10,6 +10,7 @@ class MessageNotification extends Component
 
     public function mount()
     {
+        $this->notificationCount = auth()->user()->unreadNotifications();
         $this->getNotificationCount();
     }
 
