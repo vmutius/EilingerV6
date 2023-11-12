@@ -19,7 +19,7 @@
                         <td>{{ $application->name }}</td>
                         <td>{{ $application->bereich }}</td>
                         <td>{{ $application->form }}</td>
-                        <td>{{ $application->appl_status }}</td>
+                        <td>{{ __('application.status.' .$application->appl_status->name) }}</td>
                         <td>{{ $application->created_at ? $application->created_at->format('d.m.Y H:i') : null }}</td>
                         <td>{{ $application->updated_at ? $application->updated_at->format('d.m.Y H:i') : null }}</td>
                         <td>

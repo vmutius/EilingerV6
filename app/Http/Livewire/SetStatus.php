@@ -4,19 +4,13 @@ namespace App\Http\Livewire;
 
 use App\Enums\ApplStatus;
 use App\Models\Application;
+use App\Notifications\StatusUpdated;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
 class SetStatus extends Component
 {
     public Application $application;
-
-    protected function rules(): array
-    {
-        return [
-            'application.appl_status' => ['required', new Enum(ApplStatus::class)],
-        ];
-    }
 
     public function render()
     {
@@ -27,5 +21,14 @@ class SetStatus extends Component
     {
         $this->application->save();
         session()->flash('message', 'Status des Antrags gespeichert');
+
+        $this->application->user->notify(new StatusUpdated($this->application));
+    }
+
+    protected function rules(): array
+    {
+        return [
+            'application.appl_status' => ['required', new Enum(ApplStatus::class)],
+        ];
     }
 }
