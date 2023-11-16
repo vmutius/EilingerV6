@@ -30,6 +30,8 @@ class CreateEnclosuresTable extends Migration
             $table->string('balance_sheet')->nullable();
             $table->string('cost_receipts')->nullable();
             $table->string('open_invoice')->nullable();
+            $table->string('commercial_register_extract')->nullable();
+            $table->string('statute')->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
             $table->softDeletes();

@@ -7,6 +7,7 @@ use App\Models\Application;
 use App\Models\Cost;
 use App\Models\CostDarlehen;
 use App\Models\Financing;
+use App\Models\FinancingOrganisation;
 use Livewire\Component;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -30,8 +31,13 @@ class ReqAmountForm extends Component
     public function mount(): void
     {
         $this->application = Application::where('id', session()->get('appl_id'))->first();
-        $this->total_amount_financing = Financing::where('application_id', session()->get('appl_id'))
-            ->sum('total_amount_financing');
+        if ($this->application->form == Form::Spende) {
+            $this->total_amount_financing = FinancingOrganisation::where('application_id', session()->get('appl_id'))
+                ->sum('financing_amount');
+        } else {
+            $this->total_amount_financing = Financing::where('application_id', session()->get('appl_id'))
+                ->sum('total_amount_financing');
+        }
         if ($this->application->form == Form::Stipendium) {
             $this->total_amount_costs = Cost::where('application_id', session()->get('appl_id'))
                 ->sum('total_amount_costs');

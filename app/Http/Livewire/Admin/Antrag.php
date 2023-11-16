@@ -44,6 +44,8 @@ class Antrag extends Component
 
     public $financing;
 
+    public $getAmountCostDarlehen = 0;
+
     public function mount($application_id): void
     {
         $this->application = Application::find($application_id);
@@ -71,5 +73,14 @@ class Antrag extends Component
     {
         return view('livewire.admin.antrag')
             ->layout(AdminDashboard::class);
+    }
+
+    public function getTotalCostDarlehen()
+    {
+        $this->costDarlehen->each(function ($costDarlehen) {
+            $this->getAmountCostDarlehen += $costDarlehen->cost_amount;
+        });
+
+        return $this->getAmountCostDarlehen;
     }
 }

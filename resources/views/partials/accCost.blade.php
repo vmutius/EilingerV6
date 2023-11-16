@@ -39,6 +39,10 @@
                     <div class="col-sm-4">
                         <p>{{ __('cost.cost_of_living_with_partner') }}: {{ $cost->cost_of_living_with_partner }}</p>
                     </div>
+
+                    <div class="col-12 text-end">
+                        <p>Gesamtkosten {{ $cost->total_amount_costs}}</p>
+                    </div>
                 </div>
             </div>
         @else

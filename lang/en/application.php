@@ -7,39 +7,41 @@ use App\Enums\PayoutPlan;
 
 return [
     'name' => 'Name of the application',
-    'bereich' => 'Bereich',
+    'bereich' => 'Arrea',
     'form' => 'Form',
-    'currency' => 'Länderwährung',
-    'calc_amount' => 'Errechneter Betrag',
-    'req_amount' => 'Gewünschter Betrag',
-    'payout_plan' => 'Auszahlungsform',
+    'currency' => 'Curreny',
+    'calc_amount' => 'Calculated Amount',
+    'req_amount' => 'Required Amount',
+    'payout_plan' => 'Payout Plan',
+    'start_appl' => 'Start of the application',
+    'end_appl' => 'End of the application',
 
     'status' => [
-        ApplStatus::NOT_SEND->name => 'Nicht eingereicht',
-        ApplStatus::PENDING->name => 'Ausstehend',
-        ApplStatus::WAITING->name => 'Warten auf Benutzer',
-        ApplStatus::COMPLETE->name => 'Warten auf Ratssitzung',
-        ApplStatus::APPROVED->name => 'Genehmigt',
-        ApplStatus::BLOCKED->name => 'Abgelehnt',
-        ApplStatus::FINISHED->name => 'Beendet',
+        ApplStatus::NOT_SEND->name => 'Not send',
+        ApplStatus::PENDING->name => 'Pending',
+        ApplStatus::WAITING->name => 'Waiting for the user',
+        ApplStatus::COMPLETE->name => 'Waiting for the foundation meeting',
+        ApplStatus::APPROVED->name => 'Approved',
+        ApplStatus::BLOCKED->name => 'Declined',
+        ApplStatus::FINISHED->name => 'Finished',
     ],
 
     'bereichs_name' => [
-        Bereich::Bildung->name => 'Bildung',
-        Bereich::Menschen->name => 'Menschen in Not',
-        Bereich::Menschenrecht->name => 'Menschenrecht',
-        Bereich::Tierschutz->name => 'Tierschutz',
-        Bereich::Umwelt->name => 'Umwelt',
+        Bereich::Bildung->name => 'Education',
+        Bereich::Menschen->name => 'People in need',
+        Bereich::Menschenrecht->name => 'Human right',
+        Bereich::Tierschutz->name => 'Animal welfare',
+        Bereich::Umwelt->name => 'Environment',
     ],
 
     'form_name' => [
         Form::Stipendium->name => 'Stipendium',
-        Form::Darlehen->name => 'Darlehen',
-        Form::Spende->name => 'Spende',
+        Form::Darlehen->name => 'Loan',
+        Form::Spende->name => 'Donation',
     ],
 
     'payoutplan_name' => [
-        PayoutPlan::monthly->name => 'monatlich',
-        PayoutPlan::oneTime->name => 'einmalig',
+        PayoutPlan::monthly->name => 'monthly',
+        PayoutPlan::oneTime->name => 'one time',
     ],
 ];

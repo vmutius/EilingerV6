@@ -6,7 +6,7 @@ use App\Models\Enclosure;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class EnclosureFormDarlehen extends Component
+class EnclosureFormDarlehenPrivat extends Component
 {
     use WithFileUploads;
 

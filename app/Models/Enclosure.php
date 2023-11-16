@@ -31,6 +31,8 @@ class Enclosure extends Model
         'balance_sheet',
         'cost_receipts',
         'open_invoice',
+        'commercial_register_extract',
+        'statute',
         'is_draft',
     ];
 

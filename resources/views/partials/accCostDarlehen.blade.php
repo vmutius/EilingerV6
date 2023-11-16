@@ -16,6 +16,9 @@
                             <p>{{  __('cost.cost_amount')  }}: {{ $cost->cost_amount }}</p>
                         </div>
                     @endforeach
+                    <div class="col-12 text-end">
+                        <p>Gesamtkosten {{ $this->getTotalCostDarlehen()}}</p>
+                    </div>
                 </div>
             </div>
         @else

@@ -29,6 +29,10 @@
                     <div class="col-sm-4">
                         <p>{{ __('financing.incomeWho') }}: {{ $financing->incomeWho }}</p>
                     </div>
+
+                    <div class="col-12 text-end">
+                        <p>Gesamtkosten {{ $financing->total_amount_financing}}</p>
+                    </div>
                 </div>
             </div>
         @else

@@ -1,13 +1,13 @@
 <form wire:submit.prevent="saveEnclosure">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Ergänzende Angaben und Beilagen</h3>
-        <small>die mit dem Stipendienantrag einzureichen sind</small>
+        <h3 class="mb-0">{{  __('enclosure.title')  }}</h3>
+        <small>{{  __('enclosure.subtitle_stip')  }}</small>
     </div>
     <div class="row g-3">
 
         <x-notification/>
 
-        <h4 class="mb-0">Bemerkungen</h4>
+        <h4 class="mb-0">{{  __('enclosure.remark')  }}</h4>
         <div class="col-sm-12">
             <div class="row g-3">
                 <div class="col-sm-12">
@@ -16,20 +16,18 @@
             </div>
             <br/>
             <br/>
-            <h4 class="mb-0">Notwendige Dokumente</h4>
+            <h4 class="mb-0">{{  __('enclosure.reqDocs')  }}</h4>
 
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Dokument</th>
-                    <th scope="col">Datein</th>
-                    <th scope="col">Hochgeladen</th>
+                    <th scope="col">{{  __('enclosure.doc')  }}</th>
+                    <th scope="col">{{  __('enclosure.file')  }}</th>
+                    <th scope="col">{{  __('enclosure.upload')  }}</th>
                 </tr>
                 </thead>
                 <tbody>
-
-
                 <tr>
                     <th scope="row">1</th>
                     <td>Semesterbestätigung/ Studienbescheinigung</td>

@@ -1,4 +1,4 @@
-<form wire:submit.prevent="saveEnclosureDarlehen">
+<form wire:submit.prevent="saveEnclosureOrg">
     <div class="content-header mb-3">
         <h3 class="mb-0">{{  __('enclosure.title')  }}</h3>
         <small>{{  __('enclosure.subtitle')  }}</small>
@@ -30,10 +30,42 @@
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>{{  __('enclosure.activity')  }}*</td>
+                    <td>{{  __('enclosure.commercial_register_extract')  }}*</td>
                     <td>
                         <div class="mb-3">
-                            <input wire:model.defer="activity" class="form-control" type="file">
+                            <input wire:model.defer="commercial_register_extract" class="form-control" type="file">
+                        </div>
+                        <span class="text-danger">@error('commercial_register_extract'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->commercial_register_extract)
+                            <a href="{{ asset('uploads/'.$enclosure->commercial_register_extract) }}"
+                               target="_blank">{{ $enclosure->commercial_register_extract }}</a>
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>{{  __('enclosure.statute')  }}</td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="statute" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('statute'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->statute)
+                            <a href="{{ asset('uploads/'.$enclosure->statute) }}"
+                               target="_blank">{{ $enclosure->statute }}</a>
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>{{  __('enclosure.activity')  }}</td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="activity" class="form-control" type="file" id="formFile">
                         </div>
                         <span class="text-danger">@error('activity'){{ $message }}@enderror</span>
                     </td>
@@ -41,38 +73,6 @@
                         @if ($enclosure->activity)
                             <a href="{{ asset('uploads/'.$enclosure->activity) }}"
                                target="_blank">{{ $enclosure->activity }}</a>
-                        @endif
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>{{  __('enclosure.activity_report')  }}</td>
-                    <td>
-                        <div class="mb-3">
-                            <input wire:model.defer="activity_report" class="form-control" type="file" id="formFile">
-                        </div>
-                        <span class="text-danger">@error('activity_report'){{ $message }}@enderror</span>
-                    </td>
-                    <td>
-                        @if ($enclosure->activity_report)
-                            <a href="{{ asset('uploads/'.$enclosure->activity_report) }}"
-                               target="_blank">{{ $enclosure->activity_report }}</a>
-                        @endif
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>{{  __('enclosure.rental_contract')  }}</td>
-                    <td>
-                        <div class="mb-3">
-                            <input wire:model.defer="rental_contract" class="form-control" type="file" id="formFile">
-                        </div>
-                        <span class="text-danger">@error('rental_contract'){{ $message }}@enderror</span>
-                    </td>
-                    <td>
-                        @if ($enclosure->rental_contract)
-                            <a href="{{ asset('uploads/'.$enclosure->rental_contract) }}"
-                               target="_blank">{{ $enclosure->rental_contract }}</a>
                         @endif
                     </td>
                 </tr>
@@ -121,22 +121,6 @@
                         @if ($enclosure->cost_receipts)
                             <a href="{{ asset('uploads/'.$enclosure->cost_receipts) }}"
                                target="_blank">{{ $enclosure->cost_receipts }}</a>
-                        @endif
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">7</th>
-                    <td>{{  __('enclosure.open_invoice')  }}</td>
-                    <td>
-                        <div class="mb-3">
-                            <input wire:model.defer="open_invoice" class="form-control" type="file">
-                        </div>
-                        <span class="text-danger">@error('open_invoice'){{ $message }}@enderror</span>
-                    </td>
-                    <td>
-                        @if ($enclosure->open_invoice)
-                            <a href="{{ asset('uploads/'.$enclosure->open_invoice) }}"
-                               target="_blank">{{ $enclosure->open_invoice }}</a>
                         @endif
                     </td>
                 </tr>
