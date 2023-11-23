@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Antrag;
 
 use App\Models\Application;
 use App\Models\Enclosure;
+use App\Rules\FileUploadRule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Psr\Container\ContainerExceptionInterface;
@@ -33,21 +34,25 @@ class EnclosureOrganisationForm extends Component
 
     public $cost_receipts;
 
-    protected $rules = [
-        'enclosure.remark' => 'nullable',
-        'commercial_register_extract' => 'required_if:enclosure.commercial_register_extract,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.commercial_register_extract' => 'sometimes',
-        'statute' => 'required_if:enclosure.statute,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.statute' => 'sometimes',
-        'activity' => 'required_if:enclosure.expense_receipts,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.activity' => 'sometimes',
-        'balance_sheet' => 'required_if:enclosure.balance_sheet,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.balance_sheet' => 'sometimes',
-        'tax_assessment' => 'required_if:enclosure.tax_assessment,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.tax_assessment' => 'sometimes',
-        'cost_receipts' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.cost_receipts' => 'sometimes',
-    ];
+    public function rules()
+    {
+        $commercial_register_extract = is_null($this->enclosure->commercial_register_extract);
+        $statute = is_null($this->enclosure->statute);
+        $activity = is_null($this->enclosure->activity);
+        $balance_sheet = is_null($this->enclosure->balance_sheet);
+        $tax_assessment = is_null($this->enclosure->tax_assessment);
+        $cost_receipts = is_null($this->enclosure->cost_receipts);
+
+        return [
+            'enclosure.remark' => 'nullable',
+            'enclosure.commercial_register_extract' => new FileUploadRule($commercial_register_extract),
+            'enclosure.statute' => [new FileUploadRule($statute)],
+            'enclosure.activity' => [new FileUploadRule($activity)],
+            'enclosure.balance_sheet' => [new FileUploadRule($balance_sheet)],
+            'enclosure.tax_assessment' => [new FileUploadRule($tax_assessment)],
+            'enclosure.cost_receipts' => [new FileUploadRule($cost_receipts)],
+        ];
+    }
 
     /**
      * @throws ContainerExceptionInterface
