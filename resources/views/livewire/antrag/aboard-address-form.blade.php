@@ -1,9 +1,9 @@
 <form wire:submit.prevent="saveaboardAddress">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Anschrift im Ausland</h3>
+        <h3 class="mb-0">{{  __('address.titleAboard')  }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Wenn sie keine Adresse im Ausland haben, brauchen Sie nichts einzugeben.</small>
+                <small>{{  __('address.subTitleAboard')  }}</small>
             </div>
         </div>
     </div>
@@ -13,7 +13,7 @@
 
         <div class="col-md-6">
             <label class="form-label" for="street">{{  __('address.street')  }}*</label>
-            <input wire:model.lazy="aboardAddress.street" type="text" class="form-control" id="street" />
+            <input wire:model.lazy="aboardAddress.street" type="text" class="form-control" id="street"/>
             <span class="text-danger">@error('aboardAddress.street'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-6">
@@ -44,7 +44,7 @@
 
         <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-success">
-                <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
+                <span class="align-middle d-sm-inline-block d-none">{{ __('attributes.save') }}</span>
             </button>
         </div>
     </div>

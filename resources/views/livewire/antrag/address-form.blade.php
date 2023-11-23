@@ -1,9 +1,9 @@
 <form wire:submit.prevent="saveAddress">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Anschrift</h3>
+        <h3 class="mb-0">{{  __('address.title')  }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Angaben über den Wohnsitz</small>
+                <small>{{  __('address.subTitle')  }}</small>
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
 
         <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-success">
-                <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
+                <span class="align-middle d-sm-inline-block d-none">{{ __('attributes.save') }}</span>
             </button>
         </div>
     </div>

@@ -10,6 +10,7 @@ use App\Models\CostDarlehen;
 use App\Models\Education;
 use App\Models\Enclosure;
 use App\Models\Financing;
+use App\Models\FinancingOrganisation;
 use App\Models\Parents;
 use App\Models\Sibling;
 use App\Models\User;
@@ -44,7 +45,11 @@ class Antrag extends Component
 
     public $financing;
 
+    public $financingOrganisation;
+
     public $getAmountCostDarlehen = 0;
+
+    public $getAmountFinancingOrganisation = 0;
 
     public function mount($application_id): void
     {
@@ -67,6 +72,7 @@ class Antrag extends Component
         $this->cost = Cost::where('application_id', $application_id)->first();
         $this->costDarlehen = CostDarlehen::where('application_id', $application_id)->get();
         $this->financing = Financing::where('application_id', $application_id)->first();
+        $this->financingOrganisation = FinancingOrganisation::where('application_id', $application_id)->get();
     }
 
     public function render()
@@ -82,5 +88,14 @@ class Antrag extends Component
         });
 
         return $this->getAmountCostDarlehen;
+    }
+
+    public function getTotalFinancingOrganisation()
+    {
+        $this->financingOrganisation->each(function ($financingOrganisation) {
+            $this->getAmountFinancingOrganisation += $financingOrganisation->financing_amount;
+        });
+
+        return $this->getAmountFinancingOrganisation;
     }
 }

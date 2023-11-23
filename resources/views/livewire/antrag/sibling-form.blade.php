@@ -67,7 +67,7 @@
     </div>
     <div class="col-md-12 text-center">
         <button type="submit" class="btn btn-success">
-            <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
+            <span class="align-middle d-sm-inline-block d-none">{{ __('attributes.save') }}</span>
         </button>
     </div>
 

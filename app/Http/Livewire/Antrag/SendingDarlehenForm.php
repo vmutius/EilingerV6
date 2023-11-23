@@ -29,6 +29,11 @@ class SendingDarlehenForm extends Component
 
     public $enclosureNoDraft;
 
+    /**
+     * @var true
+     */
+    private bool $completeApp;
+
     public function mount()
     {
         //wenn alle Tabellen is_draft = false zurückliefern, ist alles abgefüllt und der Antrag kann eingereicht werden.

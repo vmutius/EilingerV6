@@ -7,7 +7,7 @@ use App\Enums\PayoutPlan;
 
 return [
     'name' => 'Name of the application',
-    'bereich' => 'Arrea',
+    'bereich' => 'Area',
     'form' => 'Form',
     'currency' => 'Curreny',
     'calc_amount' => 'Calculated Amount',

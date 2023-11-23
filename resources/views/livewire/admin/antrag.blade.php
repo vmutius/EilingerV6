@@ -33,7 +33,11 @@
                 @else
                     @include('partials.accCostDarlehen')
                 @endif
-                @include('partials.accFinancing')
+                @if($user->type == 'nat')
+                    @include('partials.accFinancing')
+                @else
+                    @include('partials.accFinancingOrganisation')
+                @endif
                 @if($application->form==App\Enums\Form::Stipendium)
                     @include('partials.accEnclosure')
                 @else

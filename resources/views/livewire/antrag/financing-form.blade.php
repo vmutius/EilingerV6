@@ -1,9 +1,9 @@
 <form wire:submit.prevent="saveFinancing">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Finanzierung</h3>
+        <h3 class="mb-0">{{ __('financing.title') }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Angaben über die Einnahmen im bevorstehenden Ausbildungsjahr</small>
+                <small>{{ __('financing.subTitle') }}</small>
             </div>
         </div>
     </div>
@@ -49,12 +49,12 @@
 
         <hr class="border border-dark opacity-50">
         <div class="col-sm-12 text-end">
-            <p>Totale Kosten in {{ $this->myCurrency->abbreviation }} {{ $this->getAmountFinancing() }}</p>
+            <p>{{  __('financing.total')  }} {{ $this->myCurrency->abbreviation }} {{ $this->getAmountFinancing() }}</p>
         </div>
 
         <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-success">
-                <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
+                <span class="align-middle d-sm-inline-block d-none">{{  __('attributes.save')  }}</span>
             </button>
         </div>
     </div>

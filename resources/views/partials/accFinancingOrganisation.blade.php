@@ -1,23 +1,23 @@
 <div class="accordion-item">
-    <h2 class="accordion-header" id="headingACostDarlehen">
+    <h2 class="accordion-header" id="headingFinancingOrganisation">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                data-bs-target="#collapseCostDarlehen">Kosten
+                data-bs-target="#collapseFinancingOrganisation">Finanzierung
         </button>
     </h2>
-    <div id="collapseCostDarlehen" class="accordion-collapse collapse">
-        @if ($costDarlehen)
+    <div id="collapseFinancingOrganisation" class="accordion-collapse collapse">
+        @if ($financingOrganisation)
             <div class="card-body">
                 <div class=row>
-                    @foreach ($costDarlehen as $cost)
+                    @foreach ($financingOrganisation as $financing)
                         <div class="col-sm-6">
-                            <p>{{  __('cost.cost_name')  }}: {{ $cost->cost_name }}</p>
+                            <p>{{  __('financing.financing_name')  }}: {{ $financing->financing_name }}</p>
                         </div>
                         <div class="col-sm-6">
-                            <p>{{  __('cost.cost_amount')  }}: {{ $cost->cost_amount }}</p>
+                            <p>{{  __('financing.financing_amount')  }}: {{ $financing->financing_amount }}</p>
                         </div>
                     @endforeach
                     <div class="col-12 text-end">
-                        <p>{{  __('cost.totalCosts')  }} {{ $this->getTotalCostDarlehen()}}</p>
+                        <p>Gesamtkosten {{ $this->getTotalFinancingOrganisation()}}</p>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>{{  __('cost.noCost')  }}</p>
+                        <p>Keine Finanzierung eingetragen</p>
                     </div>
                 </div>
             </div>

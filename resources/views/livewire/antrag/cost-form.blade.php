@@ -1,10 +1,9 @@
 <form wire:submit.prevent="saveCost">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Ausbildungs- und Lebenskosten</h3>
+        <h3 class="mb-0">{{ __('cost.title') }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Angaben über die Kosten im bevorstehenden Ausbildungsjahr. Angaben bitte in der jeweiligen
-                    Landewährung pro Jahr</small>
+                <small>{{ __('cost.subtitle') }}</small>
             </div>
         </div>
     </div>
@@ -44,7 +43,7 @@
         </div>
 
         <h4 class="mb-0">{{ __('cost.other_standard_of_living') }}</h4>
-        <small>Bitte nur das Zutreffende ausfüllen</small>
+        <small>{{ __('attributes.fillSelected') }}</small>
         <div class="col-sm-6">
             <label class="form-label"
                    for="cost_of_living_with_parents">{{ __('cost.cost_of_living_with_parents') }}</label>
@@ -75,7 +74,7 @@
 
         <div class="col-md-12 text-center">
             <button type="submit" class="btn btn-success">
-                <span class="align-middle d-sm-inline-block d-none">Zwischenspeichern</span>
+                <span class="align-middle d-sm-inline-block d-none">{{ __('attributes.save') }}</span>
             </button>
         </div>
     </div>

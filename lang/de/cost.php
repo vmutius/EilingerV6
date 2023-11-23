@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'title' => 'Ausbildungs- und Lebenskosten',
+    'subtitle' => 'Angaben über die Kosten im bevorstehenden Ausbildungsjahr. Angaben bitte in der jeweiligen Landewährung pro Jahr',
     'cost' => 'Kosten',
     'semester_fees' => 'Semestergebühren',
     'fees' => 'Übrige Gebühren',
@@ -15,4 +17,6 @@ return [
     'other_standard_of_living' => 'Übrige Lebenshaltung',
     'cost_name' => 'Ausgabe',
     'cost_amount' => 'Betrag',
+    'noCost' => 'Keine Kosten eingetragen',
+    'totalCosts' => 'Gesamtkosten',
 ];
