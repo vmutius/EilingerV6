@@ -151,7 +151,7 @@
 
     <div class="col-12 pt-2 d-flex justify-content-between">
         @if ($currentStep > 1)
-            <button class="btn btn-colour-1 btn-prev pull-left" wire:click="decreaseStep()">
+            <button class="btn btn-colour-1 btn-prev pull-start" wire:click="decreaseStep()">
                 <i class="bx bx-chevron-left bx-sm ms-sm-n2 align-middle"></i>
                 <span class="align-middle d-sm-inline-block d-none">Zurück</span>
             </button>
@@ -198,7 +198,7 @@
         @endif
 
         @if ($currentStep < 12)
-            <button class="btn btn-colour-1  btn-next pull-right" wire:click="increaseStep()">
+            <button class="btn btn-colour-1  btn-next pull-end" wire:click="increaseStep()">
                 <span class="align-middle d-sm-inline-block d-none me-sm-1 align-middle">Weiter</span>
                 <i class="bx bx-chevron-right bx-sm me-sm-n2 align-middle"></i>
             </button>

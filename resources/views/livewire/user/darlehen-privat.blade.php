@@ -73,17 +73,17 @@
 
     {{-- 7 Gewünschter Betrag --}}
     @if ($currentStep == 7)
-    <div class="step-seven">
-        <div class="card">
-            <div class="card-header bg-secondary text-white">Schritt 7/9 - Gewünschter Betrag</div>
-            <div class="card-body">
-                @livewire('antrag.req-amount-form')
+        <div class="step-seven">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">Schritt 7/9 - Gewünschter Betrag</div>
+                <div class="card-body">
+                    @livewire('antrag.req-amount-form')
+                </div>
             </div>
         </div>
-    </div>
-   @endif
+    @endif
 
-    
+
     {{-- 8 Bemerkungen und Beilagen --}}
     @if ($currentStep == 8)
         <div class="step-eight">
@@ -110,54 +110,54 @@
 
     <div class="col-12 pt-2 d-flex justify-content-between">
         @if ($currentStep > 1)
-            <button class="btn btn-colour-1 btn-prev pull-left" wire:click="decreaseStep()">
+            <button class="btn btn-colour-1 btn-prev pull-start" wire:click="decreaseStep()">
                 <i class="bx bx-chevron-left bx-sm ms-sm-n2 align-middle"></i>
                 <span class="align-middle d-sm-inline-block d-none">Zurück</span>
             </button>
         @endif
         @if ($currentStep == 9)
-        @if (!$this->completeApp)
-        <button class="btn btn-danger btn-lg disabled" wire:click="saveApplication()">
-            <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
-        </button>
-    @else
-        <button class="btn btn-danger btn-lg" wire:click="saveApplication()">
-            <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
-        </button>
+            @if (!$this->completeApp)
+                <button class="btn btn-danger btn-lg disabled" wire:click="saveApplication()">
+                    <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
+                </button>
+            @else
+                <button class="btn btn-danger btn-lg" wire:click="saveApplication()">
+                    <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
+                </button>
 
-        <div class="modal" @if ($showModal) style="display:block" @endif>
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form wire:submit.prevent="save">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Antrag einreichem</h5>
-                            <button wire:click="close" type="button" class="close" data-dismiss="modal"
-                                aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                <div class="modal" @if ($showModal) style="display:block" @endif>
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <form wire:submit.prevent="save">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Antrag einreichem</h5>
+                                    <button wire:click="close" type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <br/>
+                                    Ich bestätige, dass ich alle Angaben wahrheitsmässig gemacht habe
+                                    <br/>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Einreichen</button>
+                                    <button wire:click="close" type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="modal-body">
-                            
-                            <br />
-                            Ich bestätige, dass ich alle Angaben wahrheitsmässig gemacht habe
-                            <br />
-                            
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Einreichen</button>
-                            <button wire:click="close" type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                            </button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-    @endif
-@endif
+            @endif
+        @endif
 
         @if ($currentStep < 9)
-            <button class="btn btn-colour-1  btn-next pull-right" wire:click="increaseStep()">
+            <button class="btn btn-colour-1  btn-next pull-end" wire:click="increaseStep()">
                 <span class="align-middle d-sm-inline-block d-none me-sm-1 align-middle">Weiter</span>
                 <i class="bx bx-chevron-right bx-sm me-sm-n2 align-middle"></i>
             </button>

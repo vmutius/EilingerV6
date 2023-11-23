@@ -35,8 +35,8 @@ class EnclosureOrganisationForm extends Component
 
     protected $rules = [
         'enclosure.remark' => 'nullable',
-        'commercial_register_extract' => 'required_if:enclosure.commercial register extract,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.commercial register extract' => 'sometimes',
+        'commercial_register_extract' => 'required_if:enclosure.commercial_register_extract,null|mimes:png,jpg,jpeg,pdf|max:2048',
+        'enclosure.commercial_register_extract' => 'sometimes',
         'statute' => 'required_if:enclosure.statute,null|mimes:png,jpg,jpeg,pdf|max:2048',
         'enclosure.statute' => 'sometimes',
         'activity' => 'required_if:enclosure.expense_receipts,null|mimes:png,jpg,jpeg,pdf|max:2048',

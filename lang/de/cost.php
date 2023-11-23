@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'cost' => 'Kosten',
     'semester_fees' => 'Semestergebühren',
     'fees' => 'Übrige Gebühren',
     'educational_material' => 'Schulmaterialien/Lehrmittel',

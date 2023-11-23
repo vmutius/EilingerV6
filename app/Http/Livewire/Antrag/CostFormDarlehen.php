@@ -21,10 +21,10 @@ class CostFormDarlehen extends Component
         'costs.*.cost_amount' => 'required|numeric',
     ];
 
-    public function attributes(): array
+    public function messages(): array
     {
         return [
-            'costs.*.cost_name' => __('cost :position cost_name'),
+            'costs.*.cost_name' => __('cost.cost :position cost.cost_name'),
             'costs.*.cost_amount' => __('cost :position cost_amount'),
 
         ];

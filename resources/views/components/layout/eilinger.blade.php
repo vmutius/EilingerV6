@@ -17,38 +17,38 @@
     @vite(['resources/sass/eilinger.scss'])
     @livewireStyles()
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-    <!-- ======= Header ======= -->
-    @include('components.layout.header')
+<!-- ======= Header ======= -->
+@include('components.layout.header')
 
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
 
-      <div class="container">
+    <div class="container">
         <div class="row">
-          <div class="col-lg-2 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"></div>
-          <div class="col-lg-8 order-1 order-lg-2 hero-img">
-            <img src="images/logo_white.png" class="img-fluid" alt="">
-          </div>
+            <div class="col-lg-2 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"></div>
+            <div class="col-lg-8 order-1 order-lg-2 hero-img">
+                <img src="{{url('/images/logo_white.png')}}" class="img-fluid" alt="">
+            </div>
         </div>
-      </div>
+    </div>
 
-    </section><!-- End Hero -->
+</section><!-- End Hero -->
 
-    {{ $slot }}
+{{ $slot }}
 
-    @if (session()->has('success'))
-      <div class="position-absolute top-0 start-100 translate-middle p-3 mb-2 bg-success text-white">
+@if (session()->has('success'))
+    <div class="position-absolute top-0 start-100 translate-middle p-3 mb-2 bg-success text-white">
         <p>{{ session('success') }}</p>
-      </div>
-    @endif
-    <!-- ======= Footer ======= -->
-    @include('components.layout.footer')
+    </div>
+@endif
+<!-- ======= Footer ======= -->
+@include('components.layout.footer')
 
-    @livewireScripts()
-    </body>
+@livewireScripts()
+</body>
 </html>

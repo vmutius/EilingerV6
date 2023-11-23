@@ -10,20 +10,22 @@
     <div class="row g-3">
 
         <x-notification/>
+
         @foreach ($financings as $index => $financing)
+
             <div class="row g-3">
                 <div class="col-sm-5">
                     <label class="form-label" for="financing_name">Einnahme</label>
                     <input wire:model.lazy="financings.{{ $index }}.financing_name" type="text" class="form-control"/>
                     <span
-                        class="text-danger">@error('$financings.'. $index .'.financing_name'){{ $message }}@enderror</span>
+                        class="text-danger">@error("financings.$index.financing_name"){{ $message }}@enderror</span>
                 </div>
                 <div class="col-sm-5">
                     <label class="form-label" for="financing_amount">Betrag</label>
                     <input wire:model.lazy="financings.{{ $index }}.financing_amount" type="number"
                            class="form-control"/>
                     <span
-                        class="text-danger">@error('$financings.'. $index .'.financing_amount'){{ $message }}@enderror</span>
+                        class="text-danger">@error("financings.$index.financing_amount"){{ $message }}@enderror</span>
                 </div>
                 <div class="col-sm-2">
                     <button class="btn btn-danger btn-xs mt-4"

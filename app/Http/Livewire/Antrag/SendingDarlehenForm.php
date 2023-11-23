@@ -7,6 +7,7 @@ use App\Models\Address;
 use App\Models\CostDarlehen;
 use App\Models\Enclosure;
 use App\Models\Financing;
+use App\Models\FinancingOrganisation;
 use App\Models\User;
 use Livewire\Component;
 
@@ -24,6 +25,8 @@ class SendingDarlehenForm extends Component
 
     public $financingNoDraft;
 
+    public $financingOrganisationNoDraft;
+
     public $enclosureNoDraft;
 
     public function mount()
@@ -35,6 +38,7 @@ class SendingDarlehenForm extends Component
         $this->accountNoDraft = (bool) Account::where('application_id', session()->get('appl_id'))->where('is_draft', false)->exists();
         $this->costNoDraft = (bool) CostDarlehen::where('application_id', session()->get('appl_id'))->where('is_draft', false)->exists();
         $this->financingNoDraft = (bool) Financing::where('application_id', session()->get('appl_id'))->where('is_draft', false)->exists();
+        $this->financingOrganisationNoDraft = (bool) FinancingOrganisation::where('application_id', session()->get('appl_id'))->where('is_draft', false)->exists();
         $this->enclosureNoDraft = (bool) Enclosure::where('application_id', session()->get('appl_id'))->where('is_draft', false)->exists();
     }
 
@@ -48,8 +52,7 @@ class SendingDarlehenForm extends Component
         if ($this->userNoDraft &&
         $this->addressNoDraft &&
         $this->accountNoDraft &&
-        $this->costNoDraft &&
-        $this->financingNoDraft &&
+        $this->costNoDraft && ($this->financingNoDraft || $this->financingOrganisationNoDraft) &&
         $this->enclosureNoDraft) {
             $this->completeApp = true;
             $this->emit('completeApp');

@@ -21,6 +21,15 @@ class FinancingOrganisationForm extends Component
         'financings.*.financing_amount' => 'required|numeric',
     ];
 
+    public function messages(): array
+    {
+        return [
+            'financings.*.financing_name' => __('financing :position financing_name'),
+            'financings.*.financing_amount' => __('financing :position financing_amount'),
+
+        ];
+    }
+
     public function mount()
     {
         $this->financings = FinancingOrganisation::where('application_id', session()->get('appl_id'))->get() ?? new Collection;
@@ -33,7 +42,7 @@ class FinancingOrganisationForm extends Component
         return view('livewire.antrag.financing-organisation-form');
     }
 
-    public function saveFinancingOrganisation()
+    public function saveFinancingOrganisation(): void
     {
         $this->validate();
 
