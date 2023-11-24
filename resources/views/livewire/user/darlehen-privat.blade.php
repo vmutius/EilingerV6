@@ -90,7 +90,7 @@
             <div class="card">
                 <div class="card-header bg-secondary text-white">Schritt 8/9 - Bemerkungen und Beilagen</div>
                 <div class="card-body">
-                    @livewire('antrag.enclosure-form-darlehen')
+                    @livewire('antrag.enclosure-form-darlehen-privat')
                 </div>
             </div>
         </div>

@@ -45,12 +45,12 @@ class EnclosureOrganisationForm extends Component
 
         return [
             'enclosure.remark' => 'nullable',
-            'enclosure.commercial_register_extract' => new FileUploadRule($commercial_register_extract),
-            'enclosure.statute' => [new FileUploadRule($statute)],
-            'enclosure.activity' => [new FileUploadRule($activity)],
-            'enclosure.balance_sheet' => [new FileUploadRule($balance_sheet)],
-            'enclosure.tax_assessment' => [new FileUploadRule($tax_assessment)],
-            'enclosure.cost_receipts' => [new FileUploadRule($cost_receipts)],
+            'commercial_register_extract' => new FileUploadRule($commercial_register_extract),
+            'statute' => [new FileUploadRule($statute)],
+            'activity' => [new FileUploadRule($activity)],
+            'balance_sheet' => [new FileUploadRule($balance_sheet)],
+            'tax_assessment' => [new FileUploadRule($tax_assessment)],
+            'cost_receipts' => [new FileUploadRule($cost_receipts)],
         ];
     }
 

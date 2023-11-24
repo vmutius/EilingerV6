@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Antrag;
 
 use App\Models\Application;
 use App\Models\Enclosure;
+use App\Rules\FileUploadRule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Psr\Container\ContainerExceptionInterface;
@@ -65,18 +66,25 @@ class EnclosureFormStipendiumFolge extends Component
         'enclosure.parents_tax_factors' => 'sometimes',
     ];
 
-    public function messages(): array
+    public function rules()
     {
-        return [
-            'certificate_of_study' => 'Semesterbestätigung/ Studienbescheinigung muss hochgeladen werden',
-            'tax_assessment' => 'Kopie der neuesten Steuerveranlagung muss hochgeladen werden',
-            'expense_receipts' => 'Kostenbelege müssen hochgeladen werden',
-            'parents_tax_factors' => 'Steuerfaktoren der Eltern müssen hochgeladen werden',
+        $certificate_of_study = is_null($this->enclosure->certificate_of_study);
+        $tax_assessment = is_null($this->enclosure->tax_assessment);
+        $partner_tax_assessment = is_null($this->enclosure->partner_tax_assessment);
+        $supplementary_services = is_null($this->enclosure->supplementary_services);
+        $ects_points = is_null($this->enclosure->ects_points);
+        $parents_tax_factors = is_null($this->enclosure->parents_tax_factors);
+        $expense_receipts = is_null($this->enclosure->expense_receipts);
 
-            'passport' => 'Ausweis muss hochgeladen werden',
-            'cv' => 'Lebenslauf muss hochgeladen werden',
-            'apprenticeship_contract' => 'Ausbildungs- oder Lehrvertrag muss hochgeladen werden',
-            'diploma' => 'Ausweis über einen Berufsabschluss muss hochgeladen werden',
+        return [
+            'enclosure.remark' => 'nullable',
+            'certificate_of_study' => [new FileUploadRule($certificate_of_study)],
+            'tax_assessment' => [new FileUploadRule($tax_assessment)],
+            'partner_tax_assessment' => [new FileUploadRule($partner_tax_assessment)],
+            'supplementary_services' => [new FileUploadRule($supplementary_services)],
+            'ects_points' => [new FileUploadRule($ects_points)],
+            'parents_tax_factors' => [new FileUploadRule($parents_tax_factors)],
+            'expense_receipts' => [new FileUploadRule($expense_receipts)],
         ];
     }
 

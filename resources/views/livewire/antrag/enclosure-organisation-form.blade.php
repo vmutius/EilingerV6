@@ -36,7 +36,7 @@
                             <input wire:model.defer="commercial_register_extract" class="form-control" type="file">
                         </div>
                         <span
-                            class="text-danger">@error('enclosure.commercial_register_extract'){{ $message }}@enderror</span>
+                            class="text-danger">@error('commercial_register_extract'){{ $message }}@enderror</span>
                     </td>
                     <td>
                         @if ($enclosure->commercial_register_extract)
@@ -52,7 +52,7 @@
                         <div class="mb-3">
                             <input wire:model.defer="statute" class="form-control" type="file" id="formFile">
                         </div>
-                        <span class="text-danger">@error('enclosure.statute'){{ $message }}@enderror</span>
+                        <span class="text-danger">@error('statute'){{ $message }}@enderror</span>
                     </td>
                     <td>
                         @if ($enclosure->statute)
@@ -68,7 +68,7 @@
                         <div class="mb-3">
                             <input wire:model.defer="activity" class="form-control" type="file" id="formFile">
                         </div>
-                        <span class="text-danger">@error('enclosure.activity'){{ $message }}@enderror</span>
+                        <span class="text-danger">@error('activity'){{ $message }}@enderror</span>
                     </td>
                     <td>
                         @if ($enclosure->activity)
@@ -84,7 +84,7 @@
                         <div class="mb-3">
                             <input wire:model.defer="balance_sheet" class="form-control" type="file" id="formFile">
                         </div>
-                        <span class="text-danger">@error('enclosure.balance_sheet'){{ $message }}@enderror</span>
+                        <span class="text-danger">@error('balance_sheet'){{ $message }}@enderror</span>
                     </td>
                     <td>
                         @if ($enclosure->balance_sheet)
@@ -100,7 +100,7 @@
                         <div class="mb-3">
                             <input wire:model.defer="tax_assessment" class="form-control" type="file" id="formFile">
                         </div>
-                        <span class="text-danger">@error('enclosure.tax_assessment'){{ $message }}@enderror</span>
+                        <span class="text-danger">@error('tax_assessment'){{ $message }}@enderror</span>
                     </td>
                     <td>
                         @if ($enclosure->tax_assessment)
@@ -116,7 +116,7 @@
                         <div class="mb-3">
                             <input wire:model.defer="cost_receipts" class="form-control" type="file" id="formFile">
                         </div>
-                        <span class="text-danger">@error('enclosure.cost_receipts'){{ $message }}@enderror</span>
+                        <span class="text-danger">@error('cost_receipts'){{ $message }}@enderror</span>
                     </td>
                     <td>
                         @if ($enclosure->cost_receipts)

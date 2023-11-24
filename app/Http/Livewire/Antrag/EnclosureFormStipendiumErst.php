@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Antrag;
 
 use App\Models\Application;
 use App\Models\Enclosure;
+use App\Rules\FileUploadRule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Psr\Container\ContainerExceptionInterface;
@@ -47,48 +48,37 @@ class EnclosureFormStipendiumErst extends Component
 
     public $rental_contract;
 
-    protected $rules = [
-        'enclosure.remark' => 'nullable',
-        'passport' => 'required_if:enclosure.passport,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.passport' => 'sometimes',
-        'cv' => 'required_if:enclosure.cv,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.cv' => 'sometimes',
-        'apprenticeship_contract' => 'required_if:enclosure.apprenticeship_contract,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.apprenticeship_contract' => 'sometimes',
-        'diploma' => 'required_if:enclosure.diploma,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.diploma' => 'sometimes',
-        'divorce' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.divorce' => 'sometimes',
-        'rental_contract' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.rental_contract' => 'sometimes',
-        'certificate_of_study' => 'required_if:enclosure.certificate_of_study,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.certificate_of_study' => 'sometimes',
-        'tax_assessment' => 'required_if:enclosure.tax_assessment,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.tax_assessment' => 'sometimes',
-        'expense_receipts' => 'required_if:enclosure.expense_receipts,null|mimes:png,jpg,jpeg,pdf|max:2048,null',
-        'enclosure.expense_receipts' => 'sometimes',
-        'partner_tax_assessment' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.partner_tax_assessment' => 'sometimes',
-        'supplementary_services' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.supplementary_services' => 'sometimes',
-        'ects_points' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.ects_points' => 'sometimes',
-        'parents_tax_factors' => 'required_if:enclosure.parents_tax_factors,null',
-        'enclosure.parents_tax_factors' => 'sometimes',
-    ];
-
-    public function messages(): array
+    public function rules()
     {
-        return [
-            'certificate_of_study' => 'Semesterbestätigung/ Studienbescheinigung muss hochgeladen werden',
-            'tax_assessment' => 'Kopie der neuesten Steuerveranlagung muss hochgeladen werden',
-            'expense_receipts' => 'Kostenbelege müssen hochgeladen werden',
-            'parents_tax_factors' => 'Steuerfaktoren der Eltern müssen hochgeladen werden',
+        $passport = is_null($this->enclosure->passport);
+        $diploma = is_null($this->enclosure->diploma);
+        $apprenticeship_contract = is_null($this->enclosure->apprenticeship_contract);
+        $divorce = is_null($this->enclosure->divorce);
+        $rental_contract = is_null($this->enclosure->rental_contract);
+        $certificate_of_study = is_null($this->enclosure->certificate_of_study);
+        $tax_assessment = is_null($this->enclosure->tax_assessment);
+        $cv = is_null($this->enclosure->cv);
+        $partner_tax_assessment = is_null($this->enclosure->partner_tax_assessment);
+        $supplementary_services = is_null($this->enclosure->supplementary_services);
+        $ects_points = is_null($this->enclosure->ects_points);
+        $parents_tax_factors = is_null($this->enclosure->parents_tax_factors);
+        $expense_receipts = is_null($this->enclosure->expense_receipts);
 
-            'passport' => 'Ausweis muss hochgeladen werden',
-            'cv' => 'Lebenslauf muss hochgeladen werden',
-            'apprenticeship_contract' => 'Ausbildungs- oder Lehrvertrag muss hochgeladen werden',
-            'diploma' => 'Ausweis über einen Berufsabschluss muss hochgeladen werden',
+        return [
+            'enclosure.remark' => 'nullable',
+            'passport' => [new FileUploadRule($passport)],
+            'cv' => [new FileUploadRule($cv)],
+            'apprenticeship_contract' => [new FileUploadRule($apprenticeship_contract)],
+            'diploma' => [new FileUploadRule($diploma)],
+            'divorce' => [new FileUploadRule($divorce)],
+            'rental_contract' => [new FileUploadRule($rental_contract)],
+            'certificate_of_study' => [new FileUploadRule($certificate_of_study)],
+            'tax_assessment' => [new FileUploadRule($tax_assessment)],
+            'partner_tax_assessment' => [new FileUploadRule($partner_tax_assessment)],
+            'supplementary_services' => [new FileUploadRule($supplementary_services)],
+            'ects_points' => [new FileUploadRule($ects_points)],
+            'parents_tax_factors' => [new FileUploadRule($parents_tax_factors)],
+            'expense_receipts' => [new FileUploadRule($expense_receipts)],
         ];
     }
 

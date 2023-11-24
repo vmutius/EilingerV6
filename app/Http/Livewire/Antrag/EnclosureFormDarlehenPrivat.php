@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Antrag;
 
 use App\Models\Enclosure;
+use App\Rules\FileUploadRule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -46,6 +47,28 @@ class EnclosureFormDarlehenPrivat extends Component
         'enclosure.open_invoice' => 'sometimes',
 
     ];
+
+    public function rules()
+    {
+
+        $activity = is_null($this->enclosure->activity);
+        $activity_report = is_null($this->enclosure->activity_report);
+        $rental_contract = is_null($this->enclosure->rental_contract);
+        $balance_sheet = is_null($this->enclosure->balance_sheet);
+        $tax_assessment = is_null($this->enclosure->tax_assessment);
+        $cost_receipts = is_null($this->enclosure->cost_receipts);
+
+        return [
+            'enclosure.remark' => 'nullable',
+            'activity' => [new FileUploadRule($activity)],
+            'activity_report' => [new FileUploadRule($activity_report)],
+            'rental_contract' => [new FileUploadRule($rental_contract)],
+            'balance_sheet' => [new FileUploadRule($balance_sheet)],
+            'tax_assessment' => [new FileUploadRule($tax_assessment)],
+            'cost_receipts' => [new FileUploadRule($cost_receipts)],
+            'open_invoice' => [new FileUploadRule(false)],
+        ];
+    }
 
     public function mount()
     {

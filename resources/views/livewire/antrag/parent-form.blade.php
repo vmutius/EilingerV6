@@ -80,8 +80,6 @@
         <hr class="border border-dark opacity-40">
     @endforeach
 
-    <br/>
-
     <div class="row">
         <div class="col-md-12 mt-4">
             <button class="btn btn-secondary" wire:click.prevent="addParent">+ Weitere Elternteile</button>

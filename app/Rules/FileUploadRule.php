@@ -23,8 +23,9 @@ class FileUploadRule implements ValidationRule
 
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
+
         if ($this->isRequired && ! $value) {
-            $fail('The :attribute is required.');
+            $fail('The :attribute must be uploaded.');
         }
 
         if ($value instanceof UploadedFile) {
