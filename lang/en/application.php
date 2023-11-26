@@ -15,6 +15,7 @@ return [
     'payout_plan' => 'Payout Plan',
     'start_appl' => 'Start of the application',
     'end_appl' => 'End of the application',
+    'no_applications' => 'No application found',
 
     'status' => [
         ApplStatus::NOT_SEND->name => 'Not send',

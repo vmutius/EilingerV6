@@ -1,13 +1,27 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingEnclosureDarlehenPrivat">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                data-bs-target="#collapseEnclosureDarlehenPrivat">Bemerkungen und Beilagen (Darlehen)
-        </button>
+                data-bs-target="#collapseEnclosureDarlehenPrivat">{{ __('enclosure.title') }}
     </h2>
     <div id="collapseEnclosureDarlehenPrivat" class="accordion-collapse collapse">
         @if ($enclosure)
             <div class="card-body">
                 <div class=row>
+                    <div class="col-sm-12">
+                        <p>{{ __('enclosure.remark') }}: {{ $enclosure->remark }}</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>{{ __('enclosure.commercial_register_extract') }}:
+                            <a href="{{ asset('uploads/'.$enclosure->commercial_register_extract) }}"
+                               target="_blank">{{ $enclosure->commercial_register_extract }}</a>
+                        </p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>{{ __('enclosure.statute') }}:
+                            <a href="{{ asset('uploads/'.$enclosure->statute) }}"
+                               target="_blank">{{ $enclosure->statute }}</a>
+                        </p>
+                    </div>
                     <div class="col-sm-12">
                         <p>{{ __('enclosure.activity') }}:
                             <a href="{{ asset('uploads/'.$enclosure->activity) }}"

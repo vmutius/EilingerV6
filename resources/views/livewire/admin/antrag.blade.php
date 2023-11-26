@@ -44,7 +44,7 @@
                     @if($user->type == 'nat')
                         @include('partials.accEnclosureDarlehenPrivat')
                     @else
-                        @include('partials.accEnclosureDarlehenVerein')
+                        @include('partials.accEnclosureOrganisation')
                     @endif
                 @endif
             </div>

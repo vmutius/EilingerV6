@@ -9,6 +9,9 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
+                        <p>{{ __('enclosure.remark') }}: {{ $enclosure->remark }}</p>
+                    </div>
+                    <div class="col-sm-12">
                         <p>{{ __('enclosure.activity') }}:
                             <a href="{{ asset('uploads/'.$enclosure->activity) }}"
                                target="_blank">{{ $enclosure->activity }}</a>

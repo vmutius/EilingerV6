@@ -15,6 +15,7 @@ return [
     'payout_plan' => 'Auszahlungsform',
     'start_appl' => 'Startdatum',
     'end_appl' => 'Enddatum',
+    'no_applications' => 'Keine Anträge gefunden',
 
     'status' => [
         ApplStatus::NOT_SEND->name => 'Nicht eingereicht',

@@ -27,7 +27,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5">Keine Anträge gefunden</td>
+                            <td colspan="5">{{  __('application.no_applications')  }}</td>
                         </tr>
                     @endforelse
                 </tbody>
