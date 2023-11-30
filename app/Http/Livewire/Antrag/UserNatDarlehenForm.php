@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Antrag;
 
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 
 class UserNatDarlehenForm extends Component
@@ -19,6 +20,11 @@ class UserNatDarlehenForm extends Component
             'user.mobile' => 'sometimes',
             'user.contact_aboard' => 'sometimes',
         ];
+    }
+
+    public function validationAttributes()
+    {
+        return Lang::get('user');
     }
 
     public function mount()

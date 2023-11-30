@@ -3,6 +3,11 @@
 return [
     'username' => 'Username',
     'type' => 'Type',
+    'lastname' => 'Lastname',
+    'firstname' => 'Firstname',
+    'birthday' => 'Birthday',
+    'salutation' => 'Salutation',
+    'country' => 'Country',
     'nationality' => 'Nationality',
     'phone' => 'Phonenumber',
     'email' => 'E-Mail-Adress',

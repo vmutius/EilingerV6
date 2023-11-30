@@ -16,6 +16,7 @@ return [
     'start_appl' => 'Startdatum',
     'end_appl' => 'Enddatum',
     'no_applications' => 'Keine Anträge gefunden',
+    'reason_rejected' => 'Ablehngrund',
 
     'status' => [
         ApplStatus::NOT_SEND->name => 'Nicht eingereicht',

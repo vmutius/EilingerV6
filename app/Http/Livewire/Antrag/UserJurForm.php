@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Antrag;
 
 use App\Models\Country;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 
 class UserJurForm extends Component
@@ -23,6 +24,11 @@ class UserJurForm extends Component
         'user.mobile' => 'nullable',
         'user.contact_aboard' => 'sometimes',
     ];
+
+    public function validationAttributes(): array
+    {
+        return Lang::get('user');
+    }
 
     public function mount()
     {

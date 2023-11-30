@@ -118,24 +118,6 @@ return [
     */
 
     'attributes' => [
-        'name_inst' => 'Name der Organisation',
-        'phone_inst' => 'Telefon der Organisation',
-        'email_inst' => 'Email der Organisation',
-        'contact' => 'der Kontaktperson',
-        'website' => 'Webseite',
-        'salutation' => 'Anrede',
-        'name_bank' => 'Name der Bank',
-        'city_bank' => 'Ort der Bank',
-        'owner' => 'Kontoinhaber',
-        'nationality' => 'Nationalität',
-        'birthday' => 'Geburtsdatum',
-        'civil_status' => 'Zivilstand',
-        'education' => 'Ausbildung',
-        'final' => 'Abschluss',
-        'ects_points' => 'ECTS Punkte',
-        'grade' => 'Abschluss',
-        'currency_id' => 'Währung',
-        'personal contribution' => 'Eigenleistung vom Bewerber',
     ],
 
 ];

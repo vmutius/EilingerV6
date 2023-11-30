@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Antrag;
 use App\Models\Application;
 use App\Models\Enclosure;
 use App\Rules\FileUploadRule;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Psr\Container\ContainerExceptionInterface;
@@ -52,6 +53,11 @@ class EnclosureOrganisationForm extends Component
             'tax_assessment' => [new FileUploadRule($tax_assessment)],
             'cost_receipts' => [new FileUploadRule($cost_receipts)],
         ];
+    }
+
+    public function validationAttributes(): array
+    {
+        return Lang::get('enclosure');
     }
 
     /**

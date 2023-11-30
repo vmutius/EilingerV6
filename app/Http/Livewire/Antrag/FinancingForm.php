@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Antrag;
 use App\Models\Application;
 use App\Models\Currency;
 use App\Models\Financing;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 
 class FinancingForm extends Component
@@ -24,6 +25,11 @@ class FinancingForm extends Component
         'financing.assets' => 'required|numeric',
         'financing.scholarship' => 'required|numeric',
     ];
+
+    public function validationAttributes()
+    {
+        return Lang::get('financing');
+    }
 
     public function mount()
     {

@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Antrag;
 
 use App\Models\Enclosure;
 use App\Rules\FileUploadRule;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -47,6 +48,11 @@ class EnclosureFormDarlehenPrivat extends Component
         'enclosure.open_invoice' => 'sometimes',
 
     ];
+
+    public function validationAttributes(): array
+    {
+        return Lang::get('education');
+    }
 
     public function rules()
     {

@@ -8,11 +8,12 @@
         @endif
     </div>
     <h3>Status des Antrags</h3>
-    {{ __('application.status.' .$application->appl_status->name) }}
 
     <form wire:submit.prevent="setStatus">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
+                <p>Aktueller Status: {{ __('application.status.' .$application->appl_status->name) }}</p>
+                <p> Neuer Status:
                 @foreach (ApplStatus::cases() as $status)
                     <input type="radio" wire:model.lazy="application.appl_status" value={{ $status->value }}>
                     <span>{{ __('application.status.' .$status->name) }}</span>
@@ -22,9 +23,17 @@
                     {{ $message }}
                     @enderror
                 </span>
+                </p>
+
+                <p>
+                    <label class="form-label" for="reason_rejected">{{  __('application.reason_rejected')  }} </label>
+                    <input wire:model.lazy="application.reason_rejected" type="text" class="form-control" />
+                    <span class="text-danger">@error('application.reason_rejected'){{ $message }}@enderror</span>
+                </p>
             </div>
 
-            <div class="col-md-2">
+
+            <div class="text-end">
                 <button class="btn btn-colour-1" type="submit">
                     <span class="align-middle d-sm-inline-block d-none">Status ändern</span>
                 </button>

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Antrag;
 
 use App\Models\Account;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 
 class AccountForm extends Component
@@ -15,6 +16,10 @@ class AccountForm extends Component
         'account.owner' => 'required',
         'account.IBAN' => 'required|regex:/^([A-Z]{2}[ \-]?[0-9]{2})(?=(?:[ \-]?[A-Z0-9]){9,30}$)((?:[ \-]?[A-Z0-9]{3,5}){2,7})([ \-]?[A-Z0-9]{1,3})?$/',
     ];
+    public function validationAttributes(): array
+    {
+        return Lang::get('account');
+    }
 
     public function mount()
     {

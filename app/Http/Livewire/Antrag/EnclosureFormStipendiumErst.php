@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Antrag;
 use App\Models\Application;
 use App\Models\Enclosure;
 use App\Rules\FileUploadRule;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Psr\Container\ContainerExceptionInterface;
@@ -80,6 +81,11 @@ class EnclosureFormStipendiumErst extends Component
             'parents_tax_factors' => [new FileUploadRule($parents_tax_factors)],
             'expense_receipts' => [new FileUploadRule($expense_receipts)],
         ];
+    }
+
+    public function validationAttributes(): array
+    {
+        return Lang::get('education');
     }
 
     /**

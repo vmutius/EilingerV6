@@ -19,4 +19,6 @@ return [
     'cost_amount' => 'Betrag',
     'noCost' => 'Keine Kosten eingetragen',
     'totalCosts' => 'Gesamtkosten',
+    'cost_name_req' => 'Ausgabe muss ausgefüllt sein',
+    'cost_amount_req' => 'Betrag muss ausgefüllt sein',
 ];

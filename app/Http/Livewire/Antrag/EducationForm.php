@@ -6,6 +6,7 @@ use App\Enums\Education;
 use App\Enums\Grade;
 use App\Enums\Time;
 use App\Models\Education as EducationModel;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
@@ -13,6 +14,24 @@ class EducationForm extends Component
 {
     public $education;
 
+    protected function rules(): array
+    {
+        return [
+            'education.education' => ['required', new Enum(Education::class)],
+            'education.name' => 'required',
+            'education.final' => 'required',
+            'education.grade' => ['required', new Enum(Grade::class)],
+            'education.ects_points' => 'required',
+            'education.time' => ['required', new Enum(Time::class)],
+            'education.begin_edu' => 'required|date',
+            'education.duration_edu' => 'required',
+            'education.start_semester' => 'required',
+        ];
+    }
+    public function validationAttributes(): array
+    {
+        return Lang::get('education');
+    }
     public function mount()
     {
         $this->education = EducationModel::loggedInUser()
@@ -36,18 +55,5 @@ class EducationForm extends Component
         session()->flash('success', 'Ausbildungsdaten aktualisiert.');
     }
 
-    protected function rules(): array
-    {
-        return [
-            'education.education' => ['required', new Enum(Education::class)],
-            'education.name' => 'required',
-            'education.final' => 'required',
-            'education.grade' => ['required', new Enum(Grade::class)],
-            'education.ects_points' => 'required',
-            'education.time' => ['required', new Enum(Time::class)],
-            'education.begin_edu' => 'required|date',
-            'education.duration_edu' => 'required',
-            'education.start_semester' => 'required',
-        ];
-    }
+
 }

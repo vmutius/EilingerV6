@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Antrag;
 use App\Models\Application;
 use App\Models\Enclosure;
 use App\Rules\FileUploadRule;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Psr\Container\ContainerExceptionInterface;
@@ -48,24 +49,6 @@ class EnclosureFormStipendiumFolge extends Component
 
     public $rental_contract;
 
-    protected $rules = [
-        'enclosure.remark' => 'nullable',
-        'certificate_of_study' => 'required_if:enclosure.certificate_of_study,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.certificate_of_study' => 'sometimes',
-        'tax_assessment' => 'required_if:enclosure.tax_assessment,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.tax_assessment' => 'sometimes',
-        'expense_receipts' => 'required_if:enclosure.expense_receipts,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.expense_receipts' => 'sometimes',
-        'partner_tax_assessment' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.partner_tax_assessment' => 'sometimes',
-        'supplementary_services' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.supplementary_services' => 'sometimes',
-        'ects_points' => 'nullable|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.ects_points' => 'sometimes',
-        'parents_tax_factors' => 'required_if:enclosure.parents_tax_factors,null|mimes:png,jpg,jpeg,pdf|max:2048',
-        'enclosure.parents_tax_factors' => 'sometimes',
-    ];
-
     public function rules()
     {
         $certificate_of_study = is_null($this->enclosure->certificate_of_study);
@@ -86,6 +69,11 @@ class EnclosureFormStipendiumFolge extends Component
             'parents_tax_factors' => [new FileUploadRule($parents_tax_factors)],
             'expense_receipts' => [new FileUploadRule($expense_receipts)],
         ];
+    }
+
+    public function validationAttributes(): array
+    {
+        return Lang::get('enclosure');
     }
 
     /**

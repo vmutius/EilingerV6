@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Antrag;
 use App\Models\Application;
 use App\Models\Cost;
 use App\Models\Currency;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -16,6 +17,27 @@ class CostForm extends Component
     public $currency_id;
 
     public $myCurrency;
+
+    protected function rules(): array
+    {
+        return [
+            'cost.semester_fees' => 'required|numeric',
+            'cost.fees' => 'required|numeric',
+            'cost.educational_material' => 'required|numeric',
+            'cost.excursion' => 'required|numeric',
+            'cost.travel_expenses' => 'required|numeric',
+            'cost.cost_of_living_with_parents' => 'nullable|required_without_all:cost.cost_of_living_alone,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric',
+            'cost.cost_of_living_alone' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric',
+            'cost.cost_of_living_single_parent' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_with_partner|numeric',
+            'cost.cost_of_living_with_partner' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_single_parent|numeric',
+            'cost.number_of_children' => 'required|numeric|between:0,100',
+        ];
+    }
+
+    public function validationAttributes():array
+    {
+        return Lang::get('cost');
+    }
 
     /**
      * @throws ContainerExceptionInterface
@@ -61,19 +83,4 @@ class CostForm extends Component
             $this->cost->cost_of_living_with_partner;
     }
 
-    protected function rules(): array
-    {
-        return [
-            'cost.semester_fees' => 'required|numeric',
-            'cost.fees' => 'required|numeric',
-            'cost.educational_material' => 'required|numeric',
-            'cost.excursion' => 'required|numeric',
-            'cost.travel_expenses' => 'required|numeric',
-            'cost.cost_of_living_with_parents' => 'nullable|required_without_all:cost.cost_of_living_alone,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric',
-            'cost.cost_of_living_alone' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_single_parent,cost.cost_of_living_with_partner|numeric',
-            'cost.cost_of_living_single_parent' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_with_partner|numeric',
-            'cost.cost_of_living_with_partner' => 'nullable|required_without_all:cost.cost_of_living_with_parents,cost.cost_of_living_alone,cost.cost_of_living_single_parent|numeric',
-            'cost.number_of_children' => 'required|numeric|between:0,100',
-        ];
-    }
 }

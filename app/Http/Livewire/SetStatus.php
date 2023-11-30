@@ -29,6 +29,7 @@ class SetStatus extends Component
     {
         return [
             'application.appl_status' => ['required', new Enum(ApplStatus::class)],
+            'application.reason_rejected' => 'required_if:application, ApplStatus::BLOCKED',
         ];
     }
 }

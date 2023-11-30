@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Antrag;
 
 use App\Models\Address;
 use App\Models\Country;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 
 class AboardAddressForm extends Component
@@ -19,6 +20,11 @@ class AboardAddressForm extends Component
         'aboardAddress.plz' => 'required',
         'aboardAddress.country_id' => 'required',
     ];
+
+    public function validationAttributes(): array
+    {
+        return Lang::get('address');
+    }
 
     public function mount()
     {
