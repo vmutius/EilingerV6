@@ -1,5 +1,5 @@
 <section class="home-section">
-    <div class="text">Willkommen im Portal der Eilinger Stiftung</div>
+    <div class="text">{{  __('userdashboard.welcome')  }}</div>
 
     <div class="home-content">
         <div class="shadow p-3 mb-5 bg-body rounded">
@@ -9,48 +9,43 @@
                 <div class="container">
                     <div class="row pt-5">
                         <div class="col-12">
-                            <h3 class="text-uppercase border-bottom mb-4">Übersicht</h3>
+                            <h3 class="text-uppercase border-bottom mb-4">{{  __('userdashboard.overview')  }}</h3>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">Anträge / Neuen Antrag stellen</h5>
+                                <h5 class="card-header">{{  __('userdashboard.applications_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">Für die Erstellung eines neuen Antrags klicken Sie den Link
-                                        oder gehen Sie
-                                        über das Menu auf der linken Seite. Hier können Sie auch die noch nicht
-                                        eingereichten Anträge sehen und diese weiter bearbeiten.</p>
+                                    <p class="card-text">{{  __('userdashboard.applications_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_antraege', app()->getLocale()) }}" class="btn btn-colour-1">Anträge</a> 
+                                    <a href="{{ route('user_antraege', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.applications_button')  }}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">Gesuche</h5>
+                                <h5 class="card-header">{{  __('userdashboard.projects_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">Alle Anträge, die Sie bereits eingesendet haben, finden Sie hier.</p>
+                                    <p class="card-text">{{  __('userdashboard.projects_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_gesuch', app()->getLocale()) }}" class="btn btn-colour-1">Gesuche</a>
+                                    <a href="{{ route('user_gesuch', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.projects_button')  }}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">Nachrichten</h5>
+                                <h5 class="card-header">{{  __('userdashboard.message_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">Falls es Nachrichten zu Ihren eingesendeten Anträgen gibt,
-                                        finden Sie diese hier.
-                                    </p>
+                                    <p class="card-text">{{  __('userdashboard.message_body')  }} </p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_nachrichten', app()->getLocale()) }}" class="btn btn-colour-1">Nachrichten</a>
+                                    <a href="{{ route('user_nachrichten', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.message_button')  }}</a>
                                 </div>
                             </div>
                         </div>
@@ -59,42 +54,37 @@
                     <div class="row">
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">Profil</h5>
+                                <h5 class="card-header">{{  __('userdashboard.profil_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">Ihr Benutzerprofile können Sie unten dem unten angehängten Link
-                                        bearbeiten. Ihre Email Adresse und Ihr Password können Sie ebenfalls hier anpassen. Bei
-                                        Änderung der Email Adresse müssen Sie diese erneut verifizieren.
-                                    </p>
+                                    <p class="card-text">{{  __('userdashboard.profile_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_profile.edit', app()->getLocale()) }}" class="btn btn-colour-1">Benutzerprofil</a>
+                                    <a href="{{ route('user_profile.edit', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.profile_button')  }}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">Dateien</h5>
+                                <h5 class="card-header">{{  __('userdashboard.files_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">Dateien für Anträge oder laufende Projekte können Sie hier anhängen</p>
+                                    <p class="card-text">{{  __('userdashboard.files_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_dateien', app()->getLocale()) }}" class="btn btn-colour-1">Dateien</a>
+                                    <a href="{{ route('user_dateien', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.files_button')  }}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">Logout</h5>
+                                <h5 class="card-header">{{  __('userdashboard.logout_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">Den Link zum Logout finden Sie unter Ihren Benutzernamen oben
-                                        rechts
-                                        oder Sie klicken den angehängten Link</p>
+                                    <p class="card-text">{{  __('userdashboard.logout_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('logout', app()->getLocale()) }}" class="btn btn-colour-1">Logout</a>
-                                </div>  
+                                    <a href="{{ route('logout', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.logout_button')  }}</a>
+                                </div>
                             </div>
                         </div>
                     </div>

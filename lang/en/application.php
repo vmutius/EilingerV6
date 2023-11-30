@@ -7,7 +7,7 @@ use App\Enums\PayoutPlan;
 
 return [
     'name' => 'Name of the application',
-    'bereich' => 'Area',
+    'area' => 'Area',
     'form' => 'Form',
     'currency' => 'Curreny',
     'calc_amount' => 'Calculated Amount',
@@ -16,6 +16,11 @@ return [
     'start_appl' => 'Start of the application',
     'end_appl' => 'End of the application',
     'no_applications' => 'No application found',
+    'appl_overview' => 'Applications Overview',
+    'appl_overview_text' => 'Status Pending, Waiting for the user and Waiting for the foundation meeting',
+    'proj_overview' => 'Project Overview',
+    'proj_overview_text' => 'Ongoing projects (approved applications)',
+    'no_projects' => 'No projects found',
 
     'status' => [
         ApplStatus::NOT_SEND->name => 'Not send',

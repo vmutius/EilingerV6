@@ -1,17 +1,17 @@
 <section class="home-section">
-    <div class="text">Antragsübersicht</div>
-    <p>Status "waiting, pending, complete</p>
+    <div class="text">{{  __('application.appl_overview')  }}</div>
+    <p>{{  __('application.appl_overview_text')  }}</p>
 
     <div class="content">
         <div class="shadow p-3 mb-5 bg-body rounded">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Projektname</th>
-                        <th>Bereich</th>
-                        <th>Nachname</th>
-                        <th>Vorame</th>
-                        <th>Email</th>
+                        <th>{{  __('application.name')  }}</th>
+                        <th>{{  __('application.area')  }}</th>
+                        <th>{{  __('user.lastname')  }}</th>
+                        <th>{{  __('user.firstname')  }}</th>
+                        <th>{{  __('user.email')  }}</th>
                     </tr>
                 </thead>
                 <tbody>

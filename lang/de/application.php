@@ -7,7 +7,7 @@ use App\Enums\PayoutPlan;
 
 return [
     'name' => 'Name des Antrags',
-    'bereich' => 'Bereich',
+    'area' => 'Bereich',
     'form' => 'Form',
     'currency' => 'Länderwährung',
     'calc_amount' => 'Errechneter Betrag',
@@ -17,6 +17,11 @@ return [
     'end_appl' => 'Enddatum',
     'no_applications' => 'Keine Anträge gefunden',
     'reason_rejected' => 'Ablehngrund',
+    'appl_overview' => 'Antragsübersicht',
+    'appl_overview_text' => 'Status Ausstehend, Warten auf Benutzer und Warten auf Ratssitzung',
+    'proj_overview' => 'Projektübersicht',
+    'proj_overview_text' => 'Laufende Projekte (bewilligte Anträge)',
+    'no_projects' => 'Keine Projekte gefunden',
 
     'status' => [
         ApplStatus::NOT_SEND->name => 'Nicht eingereicht',
