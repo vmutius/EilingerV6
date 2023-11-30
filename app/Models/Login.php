@@ -9,5 +9,14 @@ class Login extends Model
 {
     use HasFactory;
 
-    //https://laracasts.com/series/eloquent-performance-patterns/episodes/4
+    protected $fillable = [
+        'user_id',
+        'ip_address',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

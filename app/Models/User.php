@@ -83,7 +83,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function lastLogin()
     {
-        return $this->belongsTo(Login::class);
+        return $this->hasMany(Login::class)->orderBy('created_at', 'desc');
     }
 
     public function applications()
