@@ -13,23 +13,32 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Datei</th>
                         <th>Inhalt</th>
+                        <th>Datei</th>
                         <th>Antrag</th>
                         <th>Erstellt</th>
                         <th>Zuletzt Geändert</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($applications as $application)
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>{{ $application->name }}</td>
-                            <td>{{ $application->created_at ? $application->created_at->format('d.m.Y H:i') : null }}</td>
-                            <td>{{ $application->updated_at ? $application->updated_at->format('d.m.Y H:i') : null }}</td>
-                           
-                        </tr>
+                @forelse ($enclosures as $enclosure)
+                    @foreach($enclosure->getAttributes() as $column => $value)
+                        @if(in_array($column, ['id', 'created_at', 'updated_at', 'application_id', 'remark', 'is_draft', 'deleted_at']))
+                            @continue
+                        @endif
+
+                        @if($value)
+                            <tr>
+                                <td>{{ __('enclosure.'.$column) }}</td>
+                                <td><a href="{{ asset('uploads/'.$enclosure->$column) }}"
+                                       target="_blank">{{ $enclosure->$column }}</a></td>
+                                <td>{{ $enclosure->application->name }}</td>
+                                <td>{{ $enclosure->created_at ? $enclosure->created_at->format('d.m.Y H:i') : null }}</td>
+                                <td>{{ $enclosure->updated_at ? $enclosure->updated_at->format('d.m.Y H:i') : null }}</td>
+
+                            </tr>
+                        @endif
+                        @endforeach
                     @empty
                         <tr>
                             <td colspan="5">Keine Dateien gefunden</td>
@@ -53,33 +62,35 @@
                         <div class="modal-body">
                             Antrag:
                             <br />
-                            <input wire:model="name" type="text" class="form-control" />
-                            @error('name')
+                            <select wire:model.lazy="application_id" class="form-select">
+                                <option selected value="">Bitte auswählen...</option>
+                                @foreach ($applications as $application)
+                                    <option value="{{ $application->id }}">{{ $application->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('application_id')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
-                            Bereich des Projektes:
+                            Typ der Datei:
                             <br />
+                            <select wire:model.lazy="column" class="form-select">
+                                <option selected value="">Bitte auswählen...</option>
+                                @foreach($this->columns as $column => $value)
+                                    @if(in_array($value, ['id', 'created_at', 'updated_at', 'application_id', 'remark', 'is_draft', 'deleted_at']))
+                                        @continue
+                                    @endif
+                                        <option value="{{ $value }}">{{ __('enclosure.'.$value) }}</option>
+                                @endforeach
+                            </select>
+                            @error('column')
+                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
+                            @enderror
 
-                            <select wire:model.lazy="bereich" class="form-select">
-                                <option selected value="">Bitte auswählen...</option>
-                                @foreach (App\Enums\Bereich::cases() as $bereich)
-                                    <option value="{{ $bereich }}">{{ $bereich }}</option>
-                                @endforeach
-                            </select>
-                            @error('bereich')
-                                <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
-                            @enderror
-                           
                             <br />
-                            Gewünschte Antragsform des Projektes:
+                            Datei:
                             <br />
-                            <select wire:model.lazy="form" class="form-select">
-                                <option selected value="">Bitte auswählen...</option>
-                                @foreach (App\Enums\Form::cases()  as $form)
-                                    <option value="{{ $form }}">{{ $form }}</option>
-                                @endforeach
-                            </select>
+                            <input wire:model.defer="file" class="form-control" type="file">
                             @error('form')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
@@ -89,7 +100,7 @@
                             <button type="submit" class="btn btn-primary">Speichern</button>
                             <button wire:click="close" type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
-                            </button> 
+                            </button>
                         </div>
                     </form>
                 </div>

@@ -111,7 +111,6 @@ class Antraege extends Component
 
     public function updatedIsFirst()
     {
-
         if (! $this->is_first) {
             $this->visible = true;
             $this->first_applications = Application::where('user_id', auth()->user()->id)

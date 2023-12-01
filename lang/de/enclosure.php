@@ -13,6 +13,7 @@ return [
     'cv' => 'Lebenslauf',
     'apprenticeship_contract' => 'Kopie: Ausbildungs- oder Lehrvertrag(Für Uni/FH: ausgefülltes Zusatzformular A)',
     'diploma' => 'Kopie: Ausweis über einen Berufsabschluss, BM, Matura bzw. andere Abschlüsse falls vorhanden',
+    'divorce' => '',
     'time' => 'Pensum',
     'begin_edu' => 'Beginn der Ausbildung',
     'duration_appl' => 'Dauer der Ausbildung',
