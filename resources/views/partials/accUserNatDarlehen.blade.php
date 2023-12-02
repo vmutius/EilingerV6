@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-sm-4">
-                    <p>{{ __('attributes.birthday') }}: {{ $user->birthday->format('d.m.Y')  }}</p>
+                    <p>{{ __('attributes.birthday') }}: {{ $user->birthday  }}</p>
                 </div>
                 <div class="col-sm-4">
                     <p>{{ __('user.email') }}: {{ $user->email }}</p>

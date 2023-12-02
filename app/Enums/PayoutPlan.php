@@ -4,6 +4,8 @@ namespace App\Enums;
 
 enum PayoutPlan: string
 {
-    case monthly = 'monatlich';
-    case oneTime = 'einmalig';
+    case monthly = 'Monatlich';
+    case oneTime = 'Einmalig';
+
+    case partialAmount = 'Abrufbar in Teilbeträgen';
 }
