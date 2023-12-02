@@ -16,7 +16,7 @@ class UserJurForm extends Component
         'user.name_inst' => 'required',
         'user.phone_inst' => 'required',
         'user.email_inst' => 'required|email:strict',
-        'user.website' => 'required',
+        'user.website' => 'sometimes',
         'user.firstname' => 'required',
         'user.lastname' => 'required',
         'user.salutation' => 'required',

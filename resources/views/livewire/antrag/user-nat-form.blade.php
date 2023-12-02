@@ -50,8 +50,8 @@
 
         </div>
         <div class="col-sm-5">
-            <label for="birthday" class="form-label">Geburtsdatum *</label>
-            <input wire:model="user.birthday" type="date" class="form-control">
+            <label class="form-label" for="birthday" >Geburtsdatum *</label>
+            <input wire:model.lazy="user.birthday" type="date" id="birthday" class="form-control">
             <span class="text-danger">@error('user.birthday'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">

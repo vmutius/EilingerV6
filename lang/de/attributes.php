@@ -2,6 +2,6 @@
 
 return [
     'please_select' => 'Bitte auswählen ...',
-    'save' => 'Zwischenspeichern',
+    'save' => 'Speichern',
     'fillSelected' => 'Bitte nur das Zutreffende ausfüllen',
 ];
