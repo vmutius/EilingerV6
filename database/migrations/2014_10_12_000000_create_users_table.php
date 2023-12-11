@@ -34,6 +34,8 @@ class CreateUsersTable extends Migration
             $table->char('granting')->nullable();
             $table->string('contact_aboard')->nullable();
             $table->boolean('is_draft')->default(true);
+            $table->string('two_factor_code')->nullable();
+            $table->dateTime('two_factor_expires_at')->nullable();
             $table->index('email');
             $table->rememberToken();
             $table->timestamps();

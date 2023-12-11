@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\Login;
+use App\Notifications\TwoFactorCode;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +35,10 @@ class AuthenticatedSessionController extends Controller
             'user_id' => auth()->user()->id,
             'ip_address' => $request->getClientIp(),
         ]);
+
+        $request->user()->generateTwoFactorCode();
+
+        $request->user()->notify(new TwoFactorCode());
 
         if (auth()->user()->is_admin) {
             return redirect()->route('admin_dashboard', app()->getLocale())->with('success', 'Sie sind eingeloggt');

@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Auth\TwoFactorController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ProfileController;
@@ -31,6 +32,8 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
     Route::view('disclaimer', 'home.disclaimer')->name('disclaimer');
     Route::view('impressum', 'home.impressum')->name('impressum');
     Route::view('datenschutz', 'home.datenschutz')->name('datenschutz');
+    Route::get('verify/resend', [TwoFactorController::class, 'resend'])->name('verify.resend');
+    Route::resource('verify', TwoFactorController::class)->only(['index', 'store']);
 
     Route::middleware('guest')->group(function () {
         Route::get('register-inst', App\Http\Livewire\Auth\RegisterInst::class)->name('registerInst');
@@ -39,7 +42,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
         Route::post('login', [AuthenticatedSessionController::class, 'store']);
     });
 
-    Route::middleware(['auth', 'verified'])->group(function () {
+    Route::middleware(['auth', 'verified','twofactor'])->group(function () {
         Route::get('user/dashboard', App\Http\Livewire\User\Uebersicht::class)->name('user_dashboard');
         Route::get('user/antraege', App\Http\Livewire\User\Antraege::class)->name('user_antraege');
         Route::get('user/antrag/{application_id}', App\Http\Livewire\User\Antrag::class)->name('user_antrag');
