@@ -3,6 +3,8 @@
 return [
     'title' => 'Educational and living costs',
     'subtitle' => 'Information on the costs for the upcoming training year. Please provide information in the respective national currency per year',
+    'title_loan' => 'Ongoing costs',
+    'subtitle_loan' => 'List of expenses. Please provide details in the respective national currency per year',
     'cost' => 'Costs',
     'semester_fees' => 'Semester Fees',
     'fees' => 'Other Fees',
@@ -19,5 +21,7 @@ return [
     'cost_amount' => 'Amount',
     'noCost' => 'No Expenses entered',
     'totalCosts' => 'Total costs',
-
+    'cost_name_req' => 'Expense is required',
+    'cost_amount_req' => 'Amount is required',
+    'add_cost' => '+ Add additional costs',
 ];

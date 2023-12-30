@@ -8,16 +8,16 @@
         <div class="card-body">
             <div class=row>
                 <div class="col-sm-4">
-                    <p>{{ __('attributes.lastname') }}: {{ $user->lastname }}</p>
+                    <p>{{ __('user.lastname') }}: {{ $user->lastname }}</p>
                 </div>
                 <div class="col-sm-4">
-                    <p>{{ __('attributes.firstname') }}: {{ $user->firstname }}</p>
+                    <p>{{ __('user.firstname') }}: {{ $user->firstname }}</p>
                 </div>
                 <div class="col-sm-4">
                     <p>{{ __('user.nationality') }}: {{ $user->nationality }}</p>
                 </div>
                 <div class="col-sm-4">
-                    <p>{{ __('attributes.birthday') }}: {{ $user->birthday  }}</p>
+                    <p>{{ __('user.birthday') }}: {{ $user->birthday  }}</p>
                 </div>
                 <div class="col-sm-4">
                     <p>{{ __('user.email') }}: {{ $user->email }}</p>

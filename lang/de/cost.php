@@ -3,6 +3,8 @@
 return [
     'title' => 'Ausbildungs- und Lebenskosten',
     'subtitle' => 'Angaben über die Kosten im bevorstehenden Ausbildungsjahr. Angaben bitte in der jeweiligen Landewährung pro Jahr',
+    'title_loan' => 'Laufende Kosten',
+    'subtitle_loan' => 'Auflistung der Ausgaben. Angaben bitte in der jeweiligen Landewährung pro Jahr',
     'cost' => 'Kosten',
     'semester_fees' => 'Semestergebühren',
     'fees' => 'Übrige Gebühren',
@@ -21,4 +23,5 @@ return [
     'totalCosts' => 'Gesamtkosten',
     'cost_name_req' => 'Ausgabe muss ausgefüllt sein',
     'cost_amount_req' => 'Betrag muss ausgefüllt sein',
+    'add_cost' => '+ Weitere Ausgaben hinzufügen',
 ];

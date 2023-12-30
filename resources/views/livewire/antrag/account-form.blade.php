@@ -1,9 +1,9 @@
 <form wire:submit.prevent="saveAccount">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Auszahlung</h3>
+        <h3 class="mb-0">{{  __('account.title')  }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Angaben über die Kontoverbindung</small>
+                <small>{{  __('account.subtitle')  }}</small>
             </div>
         </div>
     </div>

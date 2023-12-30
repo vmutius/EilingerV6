@@ -1,10 +1,10 @@
 @php use App\Enums\CivilStatus; @endphp
 <form wire:submit.prevent="saveUserNat">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Bewerber</h3>
+        <h3 class="mb-0">{{  __('user.applicant')  }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht</small>
+                <small>{{  __('user.subtitle')  }}</small>
             </div>
         </div>
     </div>
@@ -14,11 +14,11 @@
         <x-notification/>
 
         <div class="col-sm-2">
-            <label for="salutation" id="salutation" class="form-label">Anrede *</label>
+            <label for="salutation" id="salutation" class="form-label">{{  __('user.salutation')  }} *</label>
             <select wire:model.lazy="user.salutation" class="form-select">
-                <option selected value="" disabled>Bitte Anrede auswählen</option>
+                <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
                 @foreach (App\Enums\Salutation::cases() as $salutation)
-                    <option value="{{ $salutation }}">{{ $salutation }}</option>
+                    <option value="{{ $salutation }}">{{ __('user.salutation_name.' .$salutation->name) }}</option>
                 @endforeach
             </select>
             @error('user.salutatiom')
@@ -26,18 +26,18 @@
             @enderror
         </div>
         <div class="col-sm-5">
-            <label class="form-label" for="firstname">Vorname *</label>
+            <label class="form-label" for="firstname">{{  __('user.firstname')  }} *</label>
             <input wire:model.lazy="user.firstname" type="text" class="form-control"/>
             <span class="text-danger">@error('user.firstname'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-5">
-            <label class="form-label" for="lastname">Nachname *</label>
+            <label class="form-label" for="lastname">{{  __('user.lastname')  }} *</label>
             <input wire:model.lazy="user.lastname" type="text" class="form-control"/>
             <span class="text-danger">@error('user.lastname'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-sm-2">
-            <label class="form-label" for="country">Nationalität *</label>
+            <label class="form-label" for="country">{{  __('user.nationality')  }} *</label>
             <select wire:model.lazy="user.nationality" class="form-select">
                 <option selected value="">Bitte auswählen...</option>
                 @foreach ($countries as $country)
@@ -50,12 +50,12 @@
 
         </div>
         <div class="col-sm-5">
-            <label class="form-label" for="birthday" >Geburtsdatum *</label>
+            <label class="form-label" for="birthday" >{{  __('user.birthday')  }} *</label>
             <input wire:model.lazy="user.birthday" type="date" id="birthday" class="form-control">
             <span class="text-danger">@error('user.birthday'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-5">
-            <label class="form-label" for="civil_status">Zivilstand *</label>
+            <label class="form-label" for="civil_status">{{  __('user.civil_status')  }} *</label>
             <select wire:model.lazy="user.civil_status" class="form-select">
                 <option selected value="">-- Wählen Sie eine Option --</option>
                 @foreach (CivilStatus::cases() as $status)
@@ -71,24 +71,24 @@
         @endif
 
         <div class="col-md-4">
-            <label class="form-label" for="phone">Telefon</label>
+            <label class="form-label" for="phone">{{  __('user.phone')  }}</label>
             <input wire:model.lazy="user.phone" type="text" class="form-control"/>
         </div>
         <div class="col-md-4">
-            <label class="form-label" for="mobile">Mobile</label>
+            <label class="form-label" for="mobile">{{  __('user.mobile')  }}</label>
             <input wire:model.lazy="user.mobile" type="text" class="form-control"/>
         </div>
         <div class="col-md-4">
-            <label class="form-label" for="soz_vers_nr">Sozialversicherungsnummer</label>
+            <label class="form-label" for="soz_vers_nr">{{  __('user.soz_vers_nr')  }}</label>
             <input wire:model.lazy="user.soz_vers_nr" type="text" class="form-control"/>
         </div>
 
         <div class="col-sm-6">
-            <label class="form-label" for="in_ch_since">In der Schweiz seit (für Ausländer)</label>
+            <label class="form-label" for="in_ch_since">{{  __('user.in_ch_since')  }}</label>
             <input wire:model="user.in_ch_since" type="date" class="form-control"/>
         </div>
         <div class="col-sm-6">
-            <label class="form-label" for="granting">Art der Bewilligung (für Ausländer)</label>
+            <label class="form-label" for="granting">{{  __('user.granting')  }}</label>
             <select wire:model.lazy="user.granting" class="form-select">
                 <option selected value="">-- Wählen Sie eine Option --</option>
                 @foreach (App\Enums\Bewilligung::cases() as $granting)

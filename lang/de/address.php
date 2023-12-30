@@ -13,4 +13,5 @@ return [
     'plz' => 'PLZ',
     'town' => 'Stadt',
     'since' => 'seit',
+    'noAddress' => 'Keine Adresse eingetragen',
 ];

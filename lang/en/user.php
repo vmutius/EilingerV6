@@ -1,6 +1,11 @@
 <?php
 
+use App\Enums\Salutation;
+
 return [
+    'candidate' => 'Candidate',
+    'applicant' => 'Applicant',
+    'subtitle' => 'Details of the person in education who is applying for contributions',
     'username' => 'Username',
     'type' => 'Type',
     'lastname' => 'Lastname',
@@ -21,7 +26,13 @@ return [
     'contact' => 'of the contact',
     'website' => 'Website',
     'soz_vers_nr' => 'Social Security Number',
-    'in_ch_since' => 'In Switzerland since',
-    'granting' => 'Granting',
+    'in_ch_since' => 'In Switzerland since (as foreigner)',
+    'granting' => 'Granting (for foreigner)',
     'contact_aboard' => 'Contact Aboard',
+
+    'salutation_name' => [
+        Salutation::Divers->name => '--',
+        Salutation::Frau->name => 'Mrs.',
+        Salutation::Herr->name => 'Mr.',
+    ],
 ];

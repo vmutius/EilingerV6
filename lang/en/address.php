@@ -13,4 +13,5 @@ return [
     'plz' => 'Postal code',
     'town' => 'City',
     'since' => 'since',
+    'noAddress' => 'No address filled in',
 ];

@@ -29,7 +29,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Adresse im Ausland eingetragen</p>
+                        <p>{{ __('address.noAddress') }}</p>
                     </div>
                 </div>
             </div>

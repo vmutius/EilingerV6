@@ -1,6 +1,11 @@
 <?php
 
+use App\Enums\Salutation;
+
 return [
+    'candidate' => 'Gesuchssteller',
+    'applicant' => 'Bewerber',
+    'subtitle' => 'Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht',
     'username' => 'Benutzername',
     'type' => 'Typ',
     'lastname' => 'Nachname',
@@ -21,7 +26,13 @@ return [
     'contact' => 'des Kontakts',
     'website' => 'Webseite',
     'soz_vers_nr' => 'Sozialversicherungsnummer',
-    'in_ch_since' => 'In der Schweiz seit',
-    'granting' => 'Bewilligung',
+    'in_ch_since' => 'In der Schweiz seit (für Ausländer)',
+    'granting' => 'Bewilligung (für Ausländer)',
     'contact_aboard' => 'Ansprechpartner im Ausland',
+
+    'salutation_name' => [
+        Salutation::Divers->name => '--',
+        Salutation::Frau->name => 'Frau',
+        Salutation::Herr->name => 'Herr',
+    ],
 ];

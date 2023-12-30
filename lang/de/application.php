@@ -22,6 +22,7 @@ return [
     'proj_overview' => 'Projektübersicht',
     'proj_overview_text' => 'Laufende Projekte (bewilligte Anträge)',
     'no_projects' => 'Keine Projekte gefunden',
+    'bereich' => 'Bereich',
 
     'status' => [
         ApplStatus::NOT_SEND->name => 'Nicht eingereicht',

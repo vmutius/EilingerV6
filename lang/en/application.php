@@ -21,6 +21,7 @@ return [
     'proj_overview' => 'Project Overview',
     'proj_overview_text' => 'Ongoing projects (approved applications)',
     'no_projects' => 'No projects found',
+    'bereich' => 'Area',
 
     'status' => [
         ApplStatus::NOT_SEND->name => 'Not send',

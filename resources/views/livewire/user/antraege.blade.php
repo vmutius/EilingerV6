@@ -69,13 +69,13 @@
                             <select wire:model.lazy="bereich" class="form-select">
                                 <option selected value="">Bitte auswählen...</option>
                                 @foreach (App\Enums\Bereich::cases() as $bereich)
-                                    <option value="{{ $bereich }}">{{ $bereich }}</option>
+                                    <option value="{{ $bereich }}">{{ __('application.bereichs_name.' .$bereich->name) }}</option>
                                 @endforeach
                             </select>
                             @error('bereich')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
-                           
+
                             <br />
                             Gewünschte Antragsform des Projektes:
                             <br />
@@ -154,7 +154,7 @@
                             <button type="submit" class="btn btn-primary">Speichern</button>
                             <button wire:click="close" type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
-                            </button> 
+                            </button>
                         </div>
                     </form>
                 </div>

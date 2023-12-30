@@ -1,9 +1,9 @@
 <form wire:submit.prevent="saveCostDarlehen">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Laufende Kosten</h3>
+        <h3 class="mb-0">{{ __('cost.title_loan') }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Auflistung der Ausgaben. Angaben bitte in der jeweiligen Landewährung pro Jahr</small>
+                <small>{{ __('cost.subtitle_loan') }}</small>
             </div>
         </div>
     </div>
@@ -13,7 +13,7 @@
         @foreach ($costs as $index => $cost)
             <div class="row g-3">
                 <div class="col-sm-5">
-                    <label class="form-label" for="cost_name">Ausgabe</label>
+                    <label class="form-label" for="cost_name">{{ __('cost.cost') }}</label>
                     <input wire:model.lazy="costs.{{ $index }}.cost_name" type="text" class="form-control"/>
                     <span class="text-danger">@error('costs.'. $index .'.cost_name'){{ $message }}@enderror</span>
                 </div>
@@ -32,9 +32,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <button class="btn btn-secondary mt-4" wire:click.prevent="addCostDarlehen()">+ Weitere Ausgaben
-                    hinzufügen
-                </button>
+                <button class="btn btn-secondary mt-4" wire:click.prevent="addCostDarlehen()">{{ __('cost.add_cost') }} </button>
             </div>
         </div>
 

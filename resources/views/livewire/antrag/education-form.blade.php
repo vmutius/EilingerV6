@@ -1,7 +1,7 @@
 @php use App\Enums\Education; @endphp
 <form wire:submit.prevent="saveEducation">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Ausbildung</h3>
+        <h3 class="mb-0">{{ __('education.education') }}</h3>
         <div class="d-flex justify-content-between">
             <div>
                 <small>für welche Beiträge verlangt werden</small>
