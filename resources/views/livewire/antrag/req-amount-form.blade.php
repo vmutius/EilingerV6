@@ -1,12 +1,10 @@
 <form wire:submit.prevent="saveReqAmount">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Gewünschte Höhe des Stipendiums bzw. des Darlehens</h3>
+        <h3 class="mb-0">{{  __('reqAmount.title')  }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <p><small>Bitte geben sie die gewünsche Höhe des Stipendiums bzw. des Darlehens ein. Angezeigt ist der
-                        errechnete Betrag </small></p>
-                <p><small>Der gewünschte Betrag kann erst eingegeben werden, wenn Ausbildungs- und Lebenskosten und
-                        Finanzierung eingegeben sind </small></p>
+                <p><small>{{  __('reqAmount.subTitle')  }}</small></p>
+                <p><small>{{  __('reqAmount.addHint')  }} </small></p>
             </div>
         </div>
     </div>
@@ -18,14 +16,14 @@
             <thead>
             <tr>
                 <th class="text-center" scope="col"></th>
-                <th class="text-center" scope="col">Betrag</th>
-                <th class="text-center" scope="col">Währung</th>
+                <th class="text-center" scope="col">{{  __('reqAmount.amount')  }}</th>
+                <th class="text-center" scope="col">{{  __('reqAmount.currency')  }}</th>
             </tr>
             </thead>
 
             <tbody>
             <tr>
-                <td>Totale Kosten</td>
+                <td>{{  __('reqAmount.totalCost')  }}</td>
                 @if (!is_null($this->total_amount_costs))
                     <td class="text-end">{{ $this->total_amount_costs }}</td>
                     <td>{{ $this->application->currency->abbreviation }}</td>
@@ -35,7 +33,7 @@
                 @endif
             </tr>
             <tr>
-                <td>Totale Finanzierung</td>
+                <td>{{  __('reqAmount.totalFinancing')  }}</td>
                 @if (!is_null($this->total_amount_financing))
                     <td class="text-end">- {{ $this->total_amount_financing }}</td>
                     <td>{{ $this->application->currency->abbreviation }}</td>
@@ -46,7 +44,7 @@
 
             </tr>
             <tr>
-                <td>Berechneter Betrag</td>
+                <td>{{  __('reqAmount.diffAmount')  }}</td>
                 @if ($diffAmount != 0)
                     <td class="text-end">= {{ $this->diffAmount }}</td>
                     <td>{{ $this->application->currency->abbreviation }}</td>
@@ -56,14 +54,14 @@
                 @endif
             </tr>
             <tr>
-                <td>Gewünschter Betrag</td>
+                <td>{{  __('reqAmount.reqAmount')  }}</td>
                 <td><input wire:model.lazy="application.req_amount" type="number" class="form-control"/></td>
                 <td>{{ $this->application->currency->abbreviation }}</td>
 
             </tr>
             @if ($this->application->form->name == "Darlehen")
                 <tr>
-                    <td>Auszahlungsplan</td>
+                    <td>{{  __('reqAmount.payoutPlan')  }}</td>
                     <td>
                         <select wire:model.lazy="application.payout_plan" class="form-select">
                             <option selected value="" disabled>-- Wählen Sie eine Option --</option>

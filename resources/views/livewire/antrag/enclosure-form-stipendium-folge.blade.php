@@ -1,13 +1,13 @@
 <form wire:submit.prevent="saveEnclosure">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Ergänzende Angaben und Beilagen</h3>
-        <small>die mit dem Stipendienantrag einzureichen sind</small>
+        <h3 class="mb-0">{{  __('enclosure.title')  }}</h3>
+        <small>{{  __('enclosure.subtitle_stip')  }}</small>
     </div>
     <div class="row g-3">
 
         <x-notification/>
 
-        <h4 class="mb-0">Bemerkungen</h4>
+        <h4 class="mb-0">{{  __('enclosure.remark')  }}</h4>
         <div class="col-sm-12">
             <div class="row g-3">
                 <div class="col-sm-12">
@@ -16,15 +16,15 @@
             </div>
             <br/>
             <br/>
-            <h4 class="mb-0">Notwendige Dokumente</h4>
+            <h4 class="mb-0">{{  __('enclosure.reqDocs')  }} Dokumente</h4>
 
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Dokument</th>
-                    <th scope="col">Datein</th>
-                    <th scope="col">Hochgeladen</th>
+                    <th scope="col">{{  __('enclosure.doc')  }}</th>
+                    <th scope="col">{{  __('enclosure.file')  }}</th>
+                    <th scope="col">{{  __('enclosure.upload')  }}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,7 +32,7 @@
 
                 <tr>
                     <th scope="row">1</th>
-                    <td>Semesterbestätigung/ Studienbescheinigung</td>
+                    <td>{{  __('enclosure.certificate_of_study')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="certificate_of_study" class="form-control" type="file">
@@ -48,10 +48,7 @@
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>Für Steuerpflichtige Gesuchsteller: Kopie der neuesten Steuerveranlagung(Veranlagungsprotokoll
-                        nicht
-                        Steuerrechnung)
-                    </td>
+                    <td>{{  __('enclosure.tax_assessment')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="tax_assessment" class="form-control" type="file" id="formFile">
@@ -67,9 +64,7 @@
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht
-                        werden
-                    </td>
+                    <td>{{  __('enclosure.expense_receipts_stip')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="expense_receipts" class="form-control" type="file" id="formFile">
@@ -85,7 +80,7 @@
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td>Nur für Partner von in Partnerschaft lebenden Gesuchsteller: neueste Steuerveranlagung</td>
+                    <td>{{  __('enclosure.partner_tax_assessment')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="partner_tax_assessment" class="form-control" type="file"
@@ -102,7 +97,7 @@
                 </tr>
                 <tr>
                     <th scope="row">5</th>
-                    <td>Empfänger von IV-, Waisenrenten bzw. Ergänzungsleistungen: Kopie der Verfügung beilegen</td>
+                    <td>{{  __('enclosure.supplementary_services')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="supplementary_services" class="form-control" type="file"
@@ -119,8 +114,7 @@
                 </tr>
                 <tr>
                     <th scope="row">6</th>
-                    <td>Nur für Studenten an universitären Hochschulen: Beleg über die geplanten/gebuchten ECTS-Punkte
-                    </td>
+                    <td>{{  __('enclosure.ects_points')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="ects_points" class="form-control" type="file" id="formFile">
@@ -136,7 +130,7 @@
                 </tr>
                 <tr>
                     <th scope="row">7</th>
-                    <td>Steuerfaktoren der Eltern</td>
+                    <td>{{  __('enclosure.parents_tax_factors')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="parents_tax_factors" class="form-control" type="file"

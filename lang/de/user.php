@@ -23,7 +23,7 @@ return [
     'name_inst' => 'Name der Organisation',
     'phone_inst' => 'Telefon der Organisation',
     'email_inst' => 'E-Mail-Adresse der Organisation',
-    'contact' => 'des Kontakts',
+    'contact' => 'der Kontaktperson',
     'website' => 'Webseite',
     'soz_vers_nr' => 'Sozialversicherungsnummer',
     'in_ch_since' => 'In der Schweiz seit (für Ausländer)',

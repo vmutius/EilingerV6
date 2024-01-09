@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'profession' => 'Beruf',
-    'begin' => 'Anfang',
-    'end' => 'Ende',
+    'lastname' => 'Nachname Ehepartner',
+
 ];

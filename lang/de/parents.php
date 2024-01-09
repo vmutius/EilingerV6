@@ -1,17 +1,20 @@
 <?php
 
 return [
-    'parent_type' => 'Name of the bank',
-    'address' => 'City of the bank',
-    'plz_ort' => 'Account owner',
-    'since' => 'IBAN',
-    'job_type' => 'Name of the bank',
-    'job' => 'City of the bank',
-    'employer' => 'Account owner',
-    'in_ch_since' => 'IBAN',
+    'parent_type' => 'Elternteil',
+    'lastname' => 'Nachname',
+    'firstname' => 'Vorname',
+    'birthday' => 'Geburtsdatum',
+    'telefon' => 'Telefonnummer',
+    'address' => 'Strasse und Hausnummer',
+    'plz_ort' => 'PLZ und Ort',
+    'since' => 'Wohnhaft seit',
+    'job_type' => 'Arbeitsverhältnis',
+    'job' => 'Beruf',
+    'employer' => 'Arbeitgeber',
     'married_since' => 'Verheiratet seit',
     'separated_since' => 'Getrennt seit',
     'divorced_since' => 'Geschieden seit',
     'death' => 'Todesjahr',
-
+    'addParents' => '+ Weitere Elternteile',
 ];

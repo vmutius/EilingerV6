@@ -30,7 +30,7 @@
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Semesterbestätigung/ Studienbescheinigung</td>
+                    <td>{{  __('enclosure.certificate_of_study')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="certificate_of_study" class="form-control" type="file">
@@ -46,10 +46,7 @@
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>Für Steuerpflichtige Gesuchsteller: Kopie der neuesten Steuerveranlagung(Veranlagungsprotokoll
-                        nicht
-                        Steuerrechnung)
-                    </td>
+                    <td>{{  __('enclosure.tax_assessment')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="tax_assessment" class="form-control" type="file" id="formFile">
@@ -65,9 +62,7 @@
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>Kopie: Kostenbelege für Schulgeld und weitere Auslagen, die ausbildungsbedingt geltend gemacht
-                        werden
-                    </td>
+                    <td>{{  __('enclosure.expense_receipts_stip')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="expense_receipts" class="form-control" type="file" id="formFile">
@@ -83,7 +78,7 @@
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td>Nur für Partner von in Partnerschaft lebenden Gesuchsteller: neueste Steuerveranlagung</td>
+                    <td>{{  __('enclosure.partner_tax_assessment')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="partner_tax_assessment" class="form-control" type="file"
@@ -100,7 +95,7 @@
                 </tr>
                 <tr>
                     <th scope="row">5</th>
-                    <td>Empfänger von IV-, Waisenrenten bzw. Ergänzungsleistungen: Kopie der Verfügung beilegen</td>
+                    <td>{{  __('enclosure.supplementary_services')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="supplementary_services" class="form-control" type="file"
@@ -117,8 +112,7 @@
                 </tr>
                 <tr>
                     <th scope="row">6</th>
-                    <td>Nur für Studenten an universitären Hochschulen: Beleg über die geplanten/gebuchten ECTS-Punkte
-                    </td>
+                    <td>{{  __('enclosure.ects_points')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="ects_points" class="form-control" type="file" id="formFile">
@@ -134,7 +128,7 @@
                 </tr>
                 <tr>
                     <th scope="row">7</th>
-                    <td>Steuerfaktoren der Eltern</td>
+                    <td>{{  __('enclosure.parents_tax_factors')  }}</td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="parents_tax_factors" class="form-control" type="file"
@@ -152,7 +146,7 @@
                 @if($this->isInitialAppl)
                     <tr>
                         <th scope="row">8</th>
-                        <td>Kopie des aktuellen Personalausweises (Pass, ID, Ausländerausweis)</td>
+                        <td>{{  __('enclosure.passport')  }}</td>
                         <td>
                             <div class="mb-3">
                                 <input wire:model.defer="passport" class="form-control" type="file">
@@ -168,7 +162,7 @@
                     </tr>
                     <tr>
                         <th scope="row">9</th>
-                        <td>Lebenslauf</td>
+                        <td>{{  __('enclosure.cv')  }}</td>
                         <td>
                             <div class="mb-3">
                                 <input wire:model.defer="cv" class="form-control" type="file" id="formFile">
@@ -184,7 +178,7 @@
                     </tr>
                     <tr>
                         <th scope="row">10</th>
-                        <td>Kopie: Ausbildungs- oder Lehrvertrag(Für Uni/FH: ausgefülltes Zusatzformular A)</td>
+                        <td>{{  __('enclosure.apprenticeship_contract')  }}</td>
                         <td>
                             <div class="mb-3">
                                 <input wire:model.defer="apprenticeship_contract" class="form-control" type="file"
@@ -201,8 +195,7 @@
                     </tr>
                     <tr>
                         <th scope="row">11</th>
-                        <td>Kopie: Ausweis über einen Berufsabschluss, BM, Matura bzw. andere Abschlüsse falls vorhanden
-                        </td>
+                        <td>{{  __('enclosure.diploma')  }}</td>
                         <td>
                             <div class="mb-3">
                                 <input wire:model.defer="diploma" class="form-control" type="file" id="formFile">
@@ -218,9 +211,7 @@
                     </tr>
                     <tr>
                         <th scope="row">12</th>
-                        <td>Für Gesuchsteller aus getrennten oder geschiedenen Ehen: Kopie
-                            Unterhaltsvereinbarung/Scheidungsurteil
-                        </td>
+                        <td>{{  __('enclosure.divorce')  }}</td>
                         <td>
                             <div class="mb-3">
                                 <input wire:model.defer="divorce" class="form-control" type="file" id="formFile">
@@ -236,9 +227,7 @@
                     </tr>
                     <tr>
                         <th scope="row">13</th>
-                        <td>Für Gesuchsteller mit auswärtigem Wohnsitz: Kopie eines Mietvertrages /
-                            Wochenaufenthaltsbestätigung
-                        </td>
+                        <td>{{  __('enclosure.rental_contract_aboard')  }}</td>
                         <td>
                             <div class="mb-3">
                                 <input wire:model.defer="rental_contract" class="form-control" type="file"

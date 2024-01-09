@@ -8,5 +8,4 @@ return [
     'owner' => 'Account owner',
     'IBAN' => 'IBAN',
     'noAccount' => 'No account data filled in',
-
 ];

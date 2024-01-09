@@ -42,29 +42,29 @@
             <span class="text-danger">@error('user.salutation'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-5">
-            <label class="form-label" for="firstname">Vorname der Kontaktperson</label>
+            <label class="form-label" for="firstname">{{  __('user.firstname')  }} {{  __('user.contact')  }}</label>
             <input wire:model.lazy="user.firstname" type="text" class="form-control" />
             <span class="text-danger">@error('user.firstname'){{ $message }}@enderror</span>
         </div>
         <div class="col-sm-5">
-            <label class="form-label" for="lastname">Nachname der Kontaktperson</label>
+            <label class="form-label" for="lastname">{{  __('user.lastname')  }} {{  __('user.contact')  }}</label>
             <input wire:model.lazy="user.lastname" type="text" class="form-control"/>
             <span class="text-danger">@error('user.lastname'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-4">
-            <label class="form-label" for="phone">Telefon der Kontaktperson</label>
+            <label class="form-label" for="phone">{{  __('user.phone')  }} {{  __('user.contact')  }}</label>
             <input wire:model.lazy="user.phone" type="text" class="form-control" />
             <span class="text-danger">@error('user.phone'){{ $message }}@enderror</span>
         </div>
         <div class="col-md-4">
-            <label class="form-label" for="mobile">Mobile der Kontaktperson</label>
+            <label class="form-label" for="mobile">{{  __('user.mobile')  }} {{  __('user.contact')  }}</label>
             <input wire:model.lazy="user.mobile" type="text" class="form-control" />
             <span class="text-danger">@error('user.mobile'){{ $message }}@enderror</span>
         </div>
 
         <div class="col-md-12">
-            <label class="form-label" for="contact_aboard">Ansprechpartner im Ausland</label>
+            <label class="form-label" for="contact_aboard">{{  __('user.contact_aboard')  }}</label>
             <input wire:model.lazy="user.contact_aboard" type="text" class="form-control" />
         </div>
 

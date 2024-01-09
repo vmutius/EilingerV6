@@ -4,7 +4,7 @@
         <h3 class="mb-0">{{ __('education.education') }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>für welche Beiträge verlangt werden</small>
+                <small>{{ __('education.subtitle') }}</small>
             </div>
 
         </div>
@@ -13,9 +13,9 @@
             <x-notification/>
 
             <div class="col-sm-6">
-                <label class="form-label" for="education">Ausbildung *</label>
+                <label class="form-label" for="education">{{ __('education.education') }} *</label>
                 <select wire:model.lazy="education.education" name="education" class="form-select">
-                    <option selected value="">-- Wählen Sie eine Option --</option>
+                    <option selected value="">{{ __('attributes.please_select') }}</option>
                     @foreach (Education::cases() as $education)
                         <option value="{{ $education->value }}">{{ $education->value }}</option>
                     @endforeach
@@ -24,17 +24,17 @@
 
             </div>
             <div class="col-sm-6">
-                <label class="form-label" for="name">Bezeichnung und Ort der Ausbildungsstätte *</label>
+                <label class="form-label" for="name">{{ __('education.name') }} *</label>
                 <input wire:model.lazy="education.name" type="text" class="form-control"/>
                 <span class="text-danger">@error('education.name'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
-                <label class="form-label" for="final">beabsichtigter Abschluss als *</label>
+                <label class="form-label" for="final">{{ __('education.final') }} *</label>
                 <input wire:model.lazy="education.final" type="text" class="form-control"/>
                 <span class="text-danger">@error('education.final'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
-                <label class="form-label" for="grade">Abschluss *</label>
+                <label class="form-label" for="grade">{{ __('education.grade') }} *</label>
                 <select wire:model.lazy="education.grade" name="grade" class="form-select">
                     <option selected value="">-- Wählen Sie eine Option --</option>
                     @foreach (App\Enums\Grade::cases() as $grade)
@@ -44,12 +44,12 @@
                 <span class="text-danger">@error('education.grade'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
-                <label class="form-label" for="ects_points">ECTS-Punkte für das kommende Semester gemäss Beleg *</label>
+                <label class="form-label" for="ects_points">{{ __('education.ects_points') }} *</label>
                 <input wire:model.lazy="education.ects_points" type="text" id="ects_points" class="form-control"/>
                 <span class="text-danger">@error('education.ects_points'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
-                <label class="form-label" for="time">Pensum *</label>
+                <label class="form-label" for="time">{{ __('education.time') }} *</label>
                 <select wire:model.lazy="education.time" class="form-select">
                     <option selected value="">-- Wählen Sie eine Option --</option>
                     @foreach (App\Enums\Time::cases() as $time)
@@ -60,19 +60,19 @@
             </div>
 
             <div class="col-sm-4">
-                <label class="form-label" for="begin_edu">Begin der Ausbildung *</label>
+                <label class="form-label" for="begin_edu">{{ __('education.begin_edu') }} *</label>
                 <input wire:model.lazy="education.begin_edu" type="date" id="begin_edu" class="form-control"/>
                 <span class="text-danger">@error('education.begin_edu'){{ $message }}@enderror</span>
             </div>
 
             <div class="col-sm-4">
-                <label class="form-label" for="duration_edu">Dauer der Ausbildung *</label>
+                <label class="form-label" for="duration_edu">{{ __('education.duration_edu') }} *</label>
                 <input wire:model.lazy="education.duration_edu" type="number" id="duration_edu" class="form-control"/>
                 <span class="text-danger">@error('education.duration_edu'){{ $message }}@enderror</span>
             </div>
 
             <div class="col-sm-4">
-                <label class="form-label" for="start_semester">Ab Ausbildungsjahr/Semester *</label>
+                <label class="form-label" for="start_semester">{{ __('education.start_semester') }} *</label>
                 <input wire:model.lazy="education.start_semester" type="number" id="start_semester"
                        class="form-control"/>
                 <span class="text-danger">@error('education.start_semester'){{ $message }}@enderror</span>
