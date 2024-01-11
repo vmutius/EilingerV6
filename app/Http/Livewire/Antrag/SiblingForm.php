@@ -2,24 +2,29 @@
 
 namespace App\Http\Livewire\Antrag;
 
+use App\Enums\GetAmount;
 use App\Models\Sibling;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
 class SiblingForm extends Component
 {
     public $siblings;
 
-    protected $rules = [
-        'siblings.*.birth_year' => 'nullable',
-        'siblings.*.lastname' => 'nullable',
-        'siblings.*.firstname' => 'nullable',
-        'siblings.*.education' => 'nullable',
-        'siblings.*.graduation_year' => 'nullable',
-        'siblings.*.place_of_residence' => 'nullable',
-        'siblings.*.get_amount' => 'nullable',
-        'siblings.*.support_site' => 'nullable',
-    ];
+    protected function rules(): array
+    {
+        return [
+            'siblings.*.birth_year' => 'nullable',
+            'siblings.*.lastname' => 'nullable',
+            'siblings.*.firstname' => 'nullable',
+            'siblings.*.education' => 'nullable',
+            'siblings.*.graduation_year' => 'nullable',
+            'siblings.*.place_of_residence' => 'nullable',
+            'siblings.*.get_amount' => ['nullable',new Enum(GetAmount::class)],
+            'siblings.*.support_site' => 'nullable',
+        ];
+    }
 
     public function attributes(): array
     {

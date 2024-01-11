@@ -10,11 +10,6 @@ class Sibling extends Model
 {
     use HasFactory, SoftDeletes;
 
-    public const get_amount = [
-        true => 'Ja',
-        false => 'Nein',
-    ];
-
     protected $connection = 'mysql';
 
     /**

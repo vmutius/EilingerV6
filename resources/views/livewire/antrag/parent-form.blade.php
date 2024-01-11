@@ -1,7 +1,7 @@
 <form wire:submit.prevent="saveParents">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Eltern</h3>
-        <small>Leibliche Eltern der gesuchstellenden Person</small>
+        <h3 class="mb-0">{{  __('parents.title')  }}</h3>
+        <small>{{  __('parents.subtitle')  }}</small>
     </div>
 
     <x-notification/>
@@ -11,9 +11,9 @@
             <div class="col-sm-2">
                 <label class="form-label" for="parent_type">{{  __('parents.parent_type')  }}</label>
                 <select wire:model.lazy="parents.{{ $index }}.parent_type" name="parent_type" class="form-select">
-                    <option selected value="">-- Wählen Sie eine Option --</option>
-                    @foreach (App\Models\Parents::PARENT_TYPE as $key => $label)
-                        <option value="{{ $key }}">{{ $label }}</option>
+                    <option selected value="">{{  __('attributes.please_select')  }}</option>
+                    @foreach (App\Enums\ParentType::cases() as $parent_type)
+                        <option value="{{ $parent_type }}">{{ __('parents.parent_type_name.' .$parent_type->name) }}</option>
                     @endforeach
                 </select>
                 <span class="text-danger">@error('parents.'. $index .'.parent_type'){{ $message }}@enderror</span>
@@ -70,8 +70,8 @@
                 <label class="form-label" for="job_type">{{  __('parents.job_type')  }}</label>
                 <select wire:model.lazy="parents.{{ $index }}.job_type" name="job_type" class="form-select">
                     <option selected value="">-- Wählen Sie eine Option --</option>
-                    @foreach (App\Models\Parents::JOB_TYPE as $key => $label)
-                        <option value="{{ $key }}">{{ $label }}</option>
+                    @foreach (App\Enums\JobType::cases() as $job_type)
+                        <option value="{{ $job_type }}">{{ __('parents.job_type_name.' .$job_type->name) }}</option>
                     @endforeach
                 </select>
                 <span class="text-danger">@error('parents.'. $index .'.job_type'){{ $message }}@enderror</span>

@@ -1,11 +1,20 @@
 <?php
 
 return [
-    'personal_contribution' => 'Eigenleistung vom Bewerber selbst',
-    'netto_income' => 'Einkommen netto des Ehe- / Lebenspartners minus Freibetrag',
-    'assets' => 'eigenes Vermögen (Vermögen bei erster Gesuchstellung) ',
-    'scholarship' => 'zumutbare Elternleistung gem. Berechnung',
-    'other_income' => 'Anderweitige Einkünfte (Betrag)',
-    'income_where' => 'Auszahlende Stelle der anderweitige Einkünfte',
-    'incomeWho' => 'Begünstigter der anderweitige Einkünfte',
+    'title' => 'Financing',
+    'subTitle' => 'Information on income in the upcoming education year',
+    'titleOrg' => 'Income',
+    'subTitleOrg' => 'List of all income. Please provide details in the respective national currency per year',
+    'personal_contribution' => 'Personal contribution by the applicant',
+    'netto_income' => 'Net income of the spouse / partner minus tax-free amount',
+    'assets' => 'Own assets (assets at the time of first application) ',
+    'scholarship' => 'Reasonable parental contribution according to calculation',
+    'other_income' => 'Other income (amount)',
+    'income_where' => 'Paying office of the other income',
+    'incomeWho' => 'Beneficiary of the other income',
+    'financing_name' => 'Income',
+    'financing_amount' => 'Amount',
+    'addFinancing' => '+ Additional income',
+    'total' => 'Total costs in',
+    'other' => 'Other income',
 ];

@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\GetAmount;
+
 return [
     'title' => 'Geschwister',
     'subtitle' => 'Geschwister der gesuchstellenden Person',
@@ -12,4 +14,9 @@ return [
     'get_amount' => 'Bezieht Ausbildungsbeiträge',
     'support_site' => 'Beziehende Stelle',
     'addSibling' => '+ Weitere Geschwister',
+
+    'get_amount_name' => [
+        GetAmount::Yes->name => 'Ja',
+        GetAmount::No->name => 'Nein',
+    ]
 ];

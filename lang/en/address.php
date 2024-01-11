@@ -6,7 +6,7 @@ return [
     'titleWochen' => 'Address for Weekly Stay',
     'subTitle' => 'Information about Residence',
     'subTitleAboard' => 'If you don\'t have an address abroad, you don\'t need to enter anything.',
-    'subTitleWochen' => 'Different address for weekend stays. If you don\'t have a different address, you don\'t need to enter anything.',
+    'subTitleWochen' => 'Different address for weekely stays. If you don\'t have a different address, you don\'t need to enter anything.',
     'country' => 'Country',
     'street' => 'Street',
     'number' => 'House number',

@@ -36,7 +36,7 @@
             <div class="col-sm-6">
                 <label class="form-label" for="grade">{{ __('education.grade') }} *</label>
                 <select wire:model.lazy="education.grade" name="grade" class="form-select">
-                    <option selected value="">-- Wählen Sie eine Option --</option>
+                    <option selected value="">{{ __('attributes.please_select') }}</option>
                     @foreach (App\Enums\Grade::cases() as $grade)
                         <option value="{{ $grade->value }}">{{ $grade->value }}</option>
                     @endforeach
@@ -51,9 +51,9 @@
             <div class="col-sm-6">
                 <label class="form-label" for="time">{{ __('education.time') }} *</label>
                 <select wire:model.lazy="education.time" class="form-select">
-                    <option selected value="">-- Wählen Sie eine Option --</option>
+                    <option selected value="">{{ __('attributes.please_select') }}</option>
                     @foreach (App\Enums\Time::cases() as $time)
-                        <option value="{{ $time->value }}">{{ $time->name }}</option>
+                        <option value="{{ $time->value }}">{{ __('application.time.' .$time->name) }}</option>
                     @endforeach
                 </select>
                 <span class="text-danger">@error('education.time'){{ $message }}@enderror</span>

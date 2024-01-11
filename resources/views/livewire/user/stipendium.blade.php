@@ -3,7 +3,7 @@
     @if ($currentStep == 1)
         <div class="step-one">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 1/12 - Bewerber</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 1/12 - {{ __('user.applicant') }}</div>
                 <div class="card-body">
                     @livewire('antrag.user-nat-form')
                 </div>
@@ -15,7 +15,7 @@
     @if ($currentStep == 2)
         <div class="step-two">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 2/12- Adresse</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 2/12- {{ __('address.title') }}</div>
                 <div class="card-body">
                     @livewire('antrag.address-form')
                 </div>
@@ -27,7 +27,7 @@
     @if ($currentStep == 3)
         <div class="step-three">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 3/12 - Abweichende Adresse</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 3/12 - {{ __('address.titleWochen') }}</div>
                 <div class="card-body">
                     @livewire('antrag.abweichende-address-form')
                 </div>
@@ -40,7 +40,7 @@
     @if ($currentStep == 4)
         <div class="step-four">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 4/12 - Ausbildung</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 4/12 - {{ __('education.education') }}</div>
                 <div class="card-body">
                     @livewire('antrag.education-form')
                 </div>
@@ -52,7 +52,7 @@
     @if ($currentStep == 5)
         <div class="step-five">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 5/12 - Auszahlung</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 5/12 - {{ __('account.title') }}</div>
                 <div class="card-body">
                     @livewire('antrag.account-form')
                 </div>
@@ -64,7 +64,7 @@
     @if ($currentStep == 6)
         <div class="step-six">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 6/12 - Eltern</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 6/12 - {{ __('parents.title') }}</div>
                 <div class="card-body">
                     @livewire('antrag.parent-form')
                 </div>
@@ -76,7 +76,7 @@
     @if ($currentStep == 7)
         <div class="step-seven">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 7/12 - Geschwister</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 7/12 - {{ __('sibling.title') }}</div>
                 <div class="card-body">
                     @livewire('antrag.sibling-form')
                 </div>
@@ -88,7 +88,7 @@
     @if ($currentStep == 8)
         <div class="step-eight">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 8/12 - Kosten</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 8/12 - {{ __('cost.title') }}</div>
                 <div class="card-body">
                     @livewire('antrag.cost-form')
                 </div>
@@ -100,7 +100,7 @@
     @if ($currentStep == 9)
         <div class="step-nine">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 9/12 - Finanzierung</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 9/12 - {{ __('financing.title') }}</div>
                 <div class="card-body">
                     @livewire('antrag.financing-form')
                 </div>
@@ -112,7 +112,7 @@
     @if ($currentStep == 10)
         <div class="step-ten">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 10/12 - Gewünschter Betrag</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 10/12 - {{ __('reqAmount.title') }}</div>
                 <div class="card-body">
                     @livewire('antrag.req-amount-form')
                 </div>
@@ -125,7 +125,7 @@
     @if ($currentStep == 11)
         <div class="step-eleven">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 11/12 - Bemerkungen und Beilagen</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 11/12 - {{ __('enclosure.title') }}</div>
                 <div class="card-body">
                     @if($isInitialAppl)
                         @livewire('antrag.enclosure-form-stipendium-erst')
@@ -141,7 +141,7 @@
     @if ($currentStep == 12)
         <div class="step-twelve">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 12/12 - Finaler Check und Einreichen</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 12/12 - {{ __('sending.title') }}</div>
                 <div class="card-body">
                     @livewire('antrag.sending-form')
                 </div>

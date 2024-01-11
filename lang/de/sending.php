@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Desired amount of the scholarship/loan',
+    'title' => 'Finaler Check und Einreichen',
     'subTitle' => 'Please enter the desired amount of the scholarship or loan. The calculated amount is displayed.',
     'step' => 'Schritt',
     'data' => 'Daten',

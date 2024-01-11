@@ -3,7 +3,7 @@
 return [
     'education' => 'Education',
     'subtitle' => 'for which contributions are required',
-    'name' => 'Name and location of the training center',
+    'name' => 'Name and location of the education center',
     'final' => 'Intended degree as',
     'grade' => 'Grade',
     'ects_points' => 'ECTS points for the coming semester according to receipt',

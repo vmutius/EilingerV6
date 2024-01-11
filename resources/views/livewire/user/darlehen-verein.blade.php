@@ -3,7 +3,7 @@
     @if ($currentStep == 1)
         <div class="step-one">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 1/9 - Gesuchsteller</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 1/9 - Gesuchsteller</div>
                 <div class="card-body">
                     @livewire('antrag.user-jur-form')
                 </div>
@@ -15,7 +15,7 @@
     @if ($currentStep == 2)
         <div class="step-two">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 2/9- Adresse</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 2/9- Adresse</div>
                 <div class="card-body">
                     @livewire('antrag.address-form')
                 </div>
@@ -27,7 +27,7 @@
     @if ($currentStep == 3)
         <div class="step-three">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 3/9- Adresse im Ausland</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 3/9- Adresse im Ausland</div>
                 <div class="card-body">
                     @livewire('antrag.aboard-address-form')
                 </div>
@@ -39,7 +39,7 @@
     @if ($currentStep == 4)
         <div class="step-four">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 4/9 - Auszahlung</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 4/9 - Auszahlung</div>
                 <div class="card-body">
                     @livewire('antrag.account-form')
                 </div>
@@ -51,7 +51,7 @@
     @if ($currentStep == 5)
         <div class="step-five">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 5/9 - Kosten</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 5/9 - Kosten</div>
                 <div class="card-body">
                     @livewire('antrag.cost-form-darlehen')
                 </div>
@@ -63,7 +63,7 @@
     @if ($currentStep == 6)
         <div class="step-six">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 6/9 - Finanzierung</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 6/9 - Finanzierung</div>
                 <div class="card-body">
                     @livewire('antrag.financing-organisation-form')
                 </div>
@@ -75,7 +75,7 @@
     @if ($currentStep == 7)
         <div class="step-seven">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 7/9 - Gewünschter Betrag</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 7/9 - Gewünschter Betrag</div>
                 <div class="card-body">
                     @livewire('antrag.req-amount-form')
                 </div>
@@ -88,7 +88,7 @@
     @if ($currentStep == 8)
         <div class="step-eight">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 8/9 - Bemerkungen und Beilagen</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 8/9 - Bemerkungen und Beilagen</div>
                 <div class="card-body">
                     @livewire('antrag.enclosure-organisation-form')
                 </div>
@@ -100,7 +100,7 @@
     @if ($currentStep == 9)
         <div class="step-nine">
             <div class="card">
-                <div class="card-header bg-secondary text-white">Schritt 9/9 - Finaler Check und Einreichen</div>
+                <div class="card-header bg-secondary text-white">{{ __('attributes.step') }} 9/9 - Finaler Check und Einreichen</div>
                 <div class="card-body">
                     @livewire('antrag.sending-darlehen-form')
                 </div>

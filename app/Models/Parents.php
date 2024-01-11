@@ -10,18 +10,6 @@ class Parents extends Model
 {
     use HasFactory, SoftDeletes;
 
-    public const PARENT_TYPE = [
-        'mother' => 'Mutter',
-        'father' => 'Vater',
-        'stepmother' => 'Stiefmutter',
-        'stepfather' => 'Stiefvater',
-    ];
-
-    public const JOB_TYPE = [
-        'selbstständig' => 'selbstständig',
-        'angestellt' => 'angestellt',
-    ];
-
     protected $connection = 'mysql';
 
     /**

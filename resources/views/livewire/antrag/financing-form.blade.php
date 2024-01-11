@@ -31,6 +31,8 @@
             <input wire:model.lazy="financing.scholarship" type="number" class="form-control"/>
             <span class="text-danger">@error('financing.scholarship'){{ $message }}@enderror</span>
         </div>
+
+        <h4 class="mb-0">{{ __('financing.other') }}</h4>
         <div class="col-sm-4">
             <label class="form-label" for="other_income">{{ __('financing.other_income') }}</label>
             <input wire:model.lazy="financing.other_income" type="number" class="form-control"/>

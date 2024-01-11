@@ -16,4 +16,5 @@ return [
     'financing_amount' => 'Betrag',
     'addFinancing' => '+ Weitere Einnahmen hinzufügen',
     'total' => 'Totale Kosten in',
+    'other' => 'Anderweitige Einkünfte',
 ];

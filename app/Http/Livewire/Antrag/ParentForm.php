@@ -2,31 +2,38 @@
 
 namespace App\Http\Livewire\Antrag;
 
+use App\Enums\JobType;
+use App\Enums\ParentType;
 use App\Models\Parents;
+use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
 class ParentForm extends Component
 {
     public $parents;
 
-    protected $rules = [
-        'parents.*.firstname' => 'nullable',
-        'parents.*.parent_type' => 'nullable',
-        'parents.*.lastname' => 'nullable',
-        'parents.*.birthday' => 'nullable',
-        'parents.*.phone' => 'nullable',
-        'parents.*.address' => 'nullable',
-        'parents.*.plz_ort' => 'nullable',
-        'parents.*.since' => 'nullable',
-        'parents.*.job_type' => 'nullable',
-        'parents.*.job' => 'nullable',
-        'parents.*.employer' => 'nullable',
-        'parents.*.in_ch_since' => 'nullable',
-        'parents.*.married_since' => 'nullable',
-        'parents.*.separated_since' => 'nullable',
-        'parents.*.divorced_since' => 'nullable',
-        'parents.*.death' => 'nullable',
-    ];
+    protected function rules(): array
+    {
+        return [
+            'parents.*.firstname' => 'nullable',
+            'parents.*.parent_type' => ['nullable',new Enum(ParentType::class)],
+            'parents.*.lastname' => 'nullable',
+            'parents.*.birthday' => 'nullable',
+            'parents.*.phone' => 'nullable',
+            'parents.*.address' => 'nullable',
+            'parents.*.plz_ort' => 'nullable',
+            'parents.*.since' => 'nullable',
+            'parents.*.job_type' => ['nullable',new Enum(JobType::class)],
+            'parents.*.job' => 'nullable',
+            'parents.*.employer' => 'nullable',
+            'parents.*.in_ch_since' => 'nullable',
+            'parents.*.married_since' => 'nullable',
+            'parents.*.separated_since' => 'nullable',
+            'parents.*.divorced_since' => 'nullable',
+            'parents.*.death' => 'nullable',
+        ];
+    }
+
 
     public function mount()
     {

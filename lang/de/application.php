@@ -4,6 +4,7 @@ use App\Enums\ApplStatus;
 use App\Enums\Bereich;
 use App\Enums\Form;
 use App\Enums\PayoutPlan;
+use App\Enums\Time;
 
 return [
     'name' => 'Name des Antrags',
@@ -51,5 +52,10 @@ return [
     'payoutplan_name' => [
         PayoutPlan::monthly->name => 'monatlich',
         PayoutPlan::oneTime->name => 'einmalig',
+    ],
+
+    'time' => [
+        Time::Teilzeit->name => 'Teilzeit',
+        Time::Vollzeit->name => 'Vollzeit'
     ],
 ];

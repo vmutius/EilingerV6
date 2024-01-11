@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\GetAmount;
+
 return [
     'title' => 'Siblings',
     'subtitle' => 'Siblings of the applicant',
@@ -9,7 +11,12 @@ return [
     'place_of_residence' => 'Place of residence',
     'education' => 'Education/occupation (school/apprenticeship/apprenticeship year)',
     'graduation_year' => 'Graduation year',
-    'get_amount' => 'Bezieht Ausbildungsbeiträge',
-    'support_site' => 'Receives education contributions',
+    'get_amount' => 'Receives education contributions',
+    'support_site' => 'Supporting office',
     'addSibling' => '+ Additional Siblings',
+
+    'get_amount_name' => [
+        GetAmount::Yes->name => 'Yes',
+        GetAmount::No->name => 'No',
+    ]
 ];
