@@ -12,11 +12,11 @@
     <form wire:submit.prevent="setStatus">
         <div class="row">
             <div class="col-md-12">
-                <p>Aktueller Status: {{ __('application.status.' .$application->appl_status->name) }}</p>
+                <p>Aktueller Status: {{ __('application.status_name.' .$application->appl_status->name) }}</p>
                 <p> Neuer Status:
                 @foreach (ApplStatus::cases() as $status)
                     <input type="radio" wire:model.lazy="application.appl_status" value={{ $status->value }}>
-                    <span>{{ __('application.status.' .$status->name) }}</span>
+                    <span>{{ __('application.status_name.' .$status->name) }}</span>
                 @endforeach
                 <span class="text-danger">
                     @error('application.appl_status')

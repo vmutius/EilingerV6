@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\ApplStatus;
 use App\Enums\Bereich;
 use App\Enums\Form;
+use App\Enums\PayoutPlan;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -40,6 +41,7 @@ class Application extends Model
         'form' => Form::class,
         'start_appl' => 'date',
         'end_appl' => 'date',
+        'payout_plan' => PayoutPlan::class,
     ];
 
     public function messages()

@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+use App\Enums\Bewilligung;
+use App\Enums\CivilStatus;
+use App\Enums\Salutation;
+use App\Enums\Types;
 use App\Notifications\ResetPassword;
 use App\Notifications\VerifyEmail;
 use Carbon\Carbon;
@@ -65,6 +69,10 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'granting' => Bewilligung::class,
+        'civil_status' => CivilStatus::class,
+        'salutation' => Salutation::class,
+        'type' => Types::class,
     ];
 
     public function address()

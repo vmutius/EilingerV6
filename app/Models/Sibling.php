@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\GetAmount;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -28,6 +29,10 @@ class Sibling extends Model
         'get_amount',
         'support_site',
         'is_draft',
+    ];
+
+    protected $casts = [
+       'get_amount' => GetAmount::class,
     ];
 
     public function user()

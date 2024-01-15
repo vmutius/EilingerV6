@@ -8,7 +8,18 @@ use App\Enums\Time;
 
 return [
     'name' => 'Name des Antrags',
+    'application' => 'Antrag',
+    'applications' => 'Anträge',
+    'newApplication' => 'Neuen Antrag erstellen',
+    'createdAt' => 'Erstellt am',
+    'updatedAt' => 'Zuletzt geändert am',
     'area' => 'Bereich',
+    'desiredForm' => 'Gewünschte Form des Antrags',
+    'desiredCurrency' => 'Gewünschte Auszahlungswährung',
+    'startDate' => 'Startdatum',
+    'endDate' => 'Enddatum',
+    'firstAppl' => 'Erstantrag',
+    'followAppl' => 'Folgeantrag',
     'form' => 'Form',
     'currency' => 'Länderwährung',
     'calc_amount' => 'Errechneter Betrag',
@@ -24,8 +35,10 @@ return [
     'proj_overview_text' => 'Laufende Projekte (bewilligte Anträge)',
     'no_projects' => 'Keine Projekte gefunden',
     'bereich' => 'Bereich',
+    'requests' => 'Gesuche',
+    'status' => 'Status',
 
-    'status' => [
+    'status_name' => [
         ApplStatus::NOT_SEND->name => 'Nicht eingereicht',
         ApplStatus::PENDING->name => 'Ausstehend',
         ApplStatus::WAITING->name => 'Warten auf Benutzer',

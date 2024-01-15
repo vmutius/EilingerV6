@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\JobType;
+use App\Enums\ParentType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -35,6 +37,11 @@ class Parents extends Model
         'divorced_since',
         'death',
         'is_draft',
+    ];
+
+    protected $casts = [
+        'parent_type' => ParentType::class,
+        'job_type' => JobType::class,
     ];
 
     public function user()

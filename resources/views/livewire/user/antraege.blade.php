@@ -1,12 +1,11 @@
 <section class="home-section">
-    <div class="text">Anträge</div>
+    <div class="text">{{  __('application.applications')  }}</div>
 
     <div class="home-content">
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="row">
                 <div class="col-md-12">
-                    <button class="btn btn-colour-1  btn-next pull-right" wire:click="addApplication()">Neuen Antrag
-                        erstellen</button>
+                    <button class="btn btn-colour-1  btn-next pull-right" wire:click="addApplication()">{{  __('application.newApplication')  }}</button>
                 </div>
             </div>
             <hr class="border border-dark opacity-50">
@@ -14,30 +13,30 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Antrag</th>
-                        <th>Bereich</th>
-                        <th>Antragsform</th>
-                        <th>Erstellt</th>
-                        <th>Zuletzt Geändert</th>
+                        <th>{{  __('application.application')  }}</th>
+                        <th>{{  __('application.bereich')  }}</th>
+                        <th>{{  __('application.form')  }}</th>
+                        <th>{{  __('application.createdAt')  }}</th>
+                        <th>{{  __('application.updatedAt')  }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($applications as $application)
                         <tr>
                             <td>{{ $application->name }}</td>
-                            <td>{{ $application->bereich }}</td>
-                            <td>{{ $application->form }}</td>
+                            <td>{{ __('application.bereichs_name.' .$application->bereich->name) }}</td>
+                            <td>{{ __('application.form_name.' .$application->form->name) }}</td>
                             <td>{{ $application->created_at ? $application->created_at->format('d.m.Y H:i') : null }}</td>
                             <td>{{ $application->updated_at ? $application->updated_at->format('d.m.Y H:i') : null }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="{{ route('user_antrag', ['application_id' => $application->id, 'locale'=> app()->getLocale()]) }}">Bearbeiten</a>
-                                <a class="btn btn-sm btn-danger" wire:click="deleteApplication({{ $application->id }})">Löschen</a>
-                                <a class="btn btn-sm btn-success" href="{{ route('user_nachricht', ['application_id' => $application->id, 'locale'=> app()->getLocale()]) }}">Nachrichten ansehen</a>
+                                <a class="btn btn-sm btn-primary" href="{{ route('user_antrag', ['application_id' => $application->id, 'locale'=> app()->getLocale()]) }}">{{  __('attributes.edit')  }}</a>
+                                <a class="btn btn-sm btn-danger" wire:click="deleteApplication({{ $application->id }})">{{  __('attributes.delete')  }}</a>
+                                <a class="btn btn-sm btn-success" href="{{ route('user_nachricht', ['application_id' => $application->id, 'locale'=> app()->getLocale()]) }}">{{  __('attributes.showMessages')  }}</a>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5">Keine Anträge gefunden</td>
+                            <td colspan="5">{{  __('application.no_applications')  }}</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -49,25 +48,25 @@
                 <div class="modal-content">
                     <form wire:submit.prevent="save">
                         <div class="modal-header">
-                            <h5 class="modal-title">Neuen Antrag erstellen</h5>
+                            <h5 class="modal-title">{{  __('application.newApplication')  }}</h5>
                             <button wire:click="close" type="button" class="close" data-dismiss="modal"
                                 aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            Name des Projektes:
+                            {{  __('application.name')  }}:
                             <br />
                             <input wire:model="name" type="text" class="form-control" />
                             @error('name')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
-                            Bereich des Projektes:
+                            {{  __('application.bereich')  }}
                             <br />
 
-                            <select wire:model.lazy="bereich" class="form-select">
-                                <option selected value="">Bitte auswählen...</option>
+                            <select wire:model.lazy="bereich" class="form-select" wire:change="updateBereich($event.target.value)">
+                                <option selected value="">{{  __('attributes.please_select')  }}</option>
                                 @foreach (App\Enums\Bereich::cases() as $bereich)
                                     <option value="{{ $bereich }}">{{ __('application.bereichs_name.' .$bereich->name) }}</option>
                                 @endforeach
@@ -77,29 +76,25 @@
                             @enderror
 
                             <br />
-                            Gewünschte Antragsform des Projektes:
+                            {{  __('application.desiredForm')  }}:
                             <br />
-                            @if(auth()->user()->type == 'nat' && $this->bereich == "Bildung")
-                                <select wire:model.lazy="form" class="form-select">
-                                    <option selected value="">Bitte auswählen...</option>
-                                    @foreach (App\Enums\Form::cases()  as $form)
-                                        <option value="{{ $form }}">{{ $form }}</option>
-                                    @endforeach
-                                </select>
-                            @else
-                                <select wire:model.lazy="form" class="form-select">
-                                    <option selected value="">Bitte auswählen...</option>
-                                        <option value="{{ App\Enums\Form::Spende }}">{{ App\Enums\Form::Spende }}</option>
-                                </select>
+
+                            <select wire:model.lazy="form" class="form-select">
+                                <option selected value="">{{  __('attributes.please_select')  }}</option>
+                                @foreach ( $this->formOptions  as $form)
+                                    <option value="{{ $form }}">{{ __('application.form_name.' .$form) }}</option>
+                                @endforeach
+                            </select>
+
                             @error('form')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
-                            @endif
+
                             <br />
-                            Gewünschte Auszahlungswährung:
+                            {{  __('application.desiredCurrency')  }}:
                             <br />
                             <select wire:model.lazy="currency_id" class="form-select">
-                                <option selected value="">Bitte auswählen...</option>
+                                <option selected value="">{{  __('attributes.please_select')  }}</option>
                                 @foreach ($currencies as $currency)
                                     <option value="{{ $currency->id }}">{{ $currency->currency }}</option>
                                 @endforeach
@@ -108,14 +103,14 @@
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
-                            Startdatum:
+                            {{  __('application.startDate')  }}:
                             <br />
                             <input wire:model="start_appl" type="date"  class="form-control" />
                             @error('start_appl')
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
-                            Enddatum:
+                            {{  __('application.endDate')  }}:
                             <br />
                             <input wire:model="end_appl" type="date" class="form-control" />
                             @error('end_appl')
@@ -123,12 +118,12 @@
                             @enderror
                             <br />
                             <div class="form-check form-check-inline">
-                                <label class="form-check-label">Erstantrag
+                                <label class="form-check-label">{{  __('application.firstAppl')  }}
                                     <input wire:model.lazy="is_first" class="form-check-input" type="radio" value = "1">
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <label class="form-check-label">Folgeantrag
+                                <label class="form-check-label">{{  __('application.followAppl')  }}
                                     <input wire:model.lazy="is_first" class="form-check-input" type="radio" value = "0">
                                 </label>
                             </div>
@@ -137,10 +132,10 @@
                             @enderror
                             <br />
                             @if ($this->visible)
-                                ErstAntrag:
+                                {{  __('application.firstAppl')  }}:
                                 <br />
                                 <select wire:model.lazy="main_appl_id" class="form-select">
-                                    <option selected value="">Bitte auswählen...</option>
+                                    <option selected value="">{{  __('attributes.please_select')  }}</option>
                                     @foreach ($first_applications as $first_application)
                                         <option value="{{ $first_application->id }}">{{ $first_application->name }}</option>
                                     @endforeach
@@ -151,9 +146,9 @@
                             @endif
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Speichern</button>
+                            <button type="submit" class="btn btn-primary">{{  __('attributes.save')  }}</button>
                             <button wire:click="close" type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
+                                data-dismiss="modal">{{  __('attributes.close')  }}
                             </button>
                         </div>
                     </form>

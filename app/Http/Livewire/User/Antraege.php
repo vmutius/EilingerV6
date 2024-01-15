@@ -4,6 +4,7 @@ namespace App\Http\Livewire\User;
 
 use App\Enums\Bereich;
 use App\Enums\Form;
+use App\Enums\Types;
 use App\Models\Application;
 use App\Models\Currency;
 use App\View\Components\Layout\UserDashboard;
@@ -35,6 +36,8 @@ class Antraege extends Component
     public $start_appl;
 
     public $end_appl;
+
+    public $formOptions = [];
 
     protected function rules(): array
     {
@@ -91,6 +94,29 @@ class Antraege extends Component
             'end_appl' => $this->end_appl,
         ]);
 
+       $this->close();
+    }
+    public function updateBereich($value)
+    {
+        // Convert the string to an enum instance and compare
+        $bereichEnum = Bereich::tryFrom($value);
+        $userTypeValue = auth()->user()->type->value;
+
+        if ($bereichEnum === Bereich::Bildung && $userTypeValue === 'nat') {
+            $this->formOptions = [
+                Form::Stipendium->value,
+                Form::Darlehen->value,
+            ];
+        } else {
+            $this->formOptions = [
+                Form::Spende->value,
+            ];
+        }
+    }
+
+
+    public function close(): void
+    {
         $this->name = '';
         $this->bereich = '';
         $this->form = '';
@@ -104,11 +130,6 @@ class Antraege extends Component
         $this->showModal = false;
     }
 
-    public function close()
-    {
-        $this->showModal = false;
-    }
-
     public function updatedIsFirst()
     {
         if (! $this->is_first) {
@@ -119,4 +140,5 @@ class Antraege extends Component
                 ->get();
         }
     }
+
 }

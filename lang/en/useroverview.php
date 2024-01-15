@@ -3,10 +3,10 @@
 return [
     'welcome' => 'Welcome to the Eilinger Foundation portal',
     'overview' => 'Overview',
-    'applications_header' => 'Application / Submit new application',
+    'applications_header' => 'Applications / Submit new application',
     'applications_body' => 'To create a new application, click the link below or go to the menu on the left.
                             You can also see the applications that have submitted and process them further.',
-    'applications_button' => 'Application',
+    'applications_button' => 'Applications',
     'projects_header' => 'Projects',
     'projects_body' => 'All submitted applications (projects) can be found here.',
     'projects_button' => 'Projects',

@@ -56,7 +56,7 @@
                                 <td>{{ $application->created_at ? $application->created_at->format('d.m.Y H:i') : null }}</td>
                                 <td>{{ $application->updated_at ? $application->updated_at->format('d.m.Y H:i') : null }}</td>
                                 <td><span
-                                        class="badge text-bg-{{ $application->appl_status_context }}">{{ __('application.status.' .$application->appl_status->name) }}</span>
+                                        class="badge text-bg-{{ $application->appl_status_context }}">{{ __('application.status_name.' .$application->appl_status->name) }}</span>
                                 </td>
                             @empty
                                 <td></td>

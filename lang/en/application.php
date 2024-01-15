@@ -8,8 +8,19 @@ use App\Enums\Time;
 
 return [
     'name' => 'Name of the application',
+    'application' => 'Application',
+    'applications' => 'Applications',
+    'newApplication' => 'Create new application',
+    'createdAt' => 'Created at',
+    'updatedAt' => 'Last updated at',
     'area' => 'Area',
     'form' => 'Form',
+    'desiredForm' => 'Desired form of the application',
+    'desiredCurrency' => 'Desired currency',
+    'startDate' => 'Start Date',
+    'endDate' => 'End Date',
+    'firstAppl' => 'First Application',
+    'followAppl' => 'Follow Up Application',
     'currency' => 'Curreny',
     'calc_amount' => 'Calculated Amount',
     'req_amount' => 'Required Amount',
@@ -23,8 +34,10 @@ return [
     'proj_overview_text' => 'Ongoing projects (approved applications)',
     'no_projects' => 'No projects found',
     'bereich' => 'Area',
+    'requests' => 'Requests',
+    'status' => 'State',
 
-    'status' => [
+    'status_name' => [
         ApplStatus::NOT_SEND->name => 'Not send',
         ApplStatus::PENDING->name => 'Pending',
         ApplStatus::WAITING->name => 'Waiting for the user',
@@ -43,7 +56,7 @@ return [
     ],
 
     'form_name' => [
-        Form::Stipendium->name => 'Stipendium',
+        Form::Stipendium->name => 'Scholarship',
         Form::Darlehen->name => 'Loan',
         Form::Spende->name => 'Donation',
     ],

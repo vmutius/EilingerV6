@@ -1,5 +1,5 @@
 <section class="home-section">
-    <div class="text">{{  __('userdashboard.welcome')  }}</div>
+    <div class="text">{{  __('useroverview.welcome')  }}</div>
 
     <div class="home-content">
         <div class="shadow p-3 mb-5 bg-body rounded">
@@ -9,43 +9,43 @@
                 <div class="container">
                     <div class="row pt-5">
                         <div class="col-12">
-                            <h3 class="text-uppercase border-bottom mb-4">{{  __('userdashboard.overview')  }}</h3>
+                            <h3 class="text-uppercase border-bottom mb-4">{{  __('useroverview.overview')  }}</h3>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">{{  __('userdashboard.applications_header')  }}</h5>
+                                <h5 class="card-header">{{  __('useroverview.applications_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">{{  __('userdashboard.applications_body')  }}</p>
+                                    <p class="card-text">{{  __('useroverview.applications_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_antraege', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.applications_button')  }}</a>
+                                    <a href="{{ route('user_antraege', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('useroverview.applications_button')  }}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">{{  __('userdashboard.projects_header')  }}</h5>
+                                <h5 class="card-header">{{  __('useroverview.projects_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">{{  __('userdashboard.projects_body')  }}</p>
+                                    <p class="card-text">{{  __('useroverview.projects_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_gesuch', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.projects_button')  }}</a>
+                                    <a href="{{ route('user_gesuch', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('useroverview.projects_button')  }}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">{{  __('userdashboard.message_header')  }}</h5>
+                                <h5 class="card-header">{{  __('useroverview.message_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">{{  __('userdashboard.message_body')  }} </p>
+                                    <p class="card-text">{{  __('useroverview.message_body')  }} </p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_nachrichten', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.message_button')  }}</a>
+                                    <a href="{{ route('user_nachrichten', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('useroverview.message_button')  }}</a>
                                 </div>
                             </div>
                         </div>
@@ -54,36 +54,36 @@
                     <div class="row">
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">{{  __('userdashboard.profil_header')  }}</h5>
+                                <h5 class="card-header">{{  __('useroverview.profil_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">{{  __('userdashboard.profile_body')  }}</p>
+                                    <p class="card-text">{{  __('useroverview.profile_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_profile.edit', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.profile_button')  }}</a>
+                                    <a href="{{ route('user_profile.edit', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('useroverview.profile_button')  }}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">{{  __('userdashboard.files_header')  }}</h5>
+                                <h5 class="card-header">{{  __('useroverview.files_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">{{  __('userdashboard.files_body')  }}</p>
+                                    <p class="card-text">{{  __('useroverview.files_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('user_dateien', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.files_button')  }}</a>
+                                    <a href="{{ route('user_dateien', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('useroverview.files_button')  }}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-4 mb-3 d-flex align-items-stretch">
                             <div class="card">
-                                <h5 class="card-header">{{  __('userdashboard.logout_header')  }}</h5>
+                                <h5 class="card-header">{{  __('useroverview.logout_header')  }}</h5>
                                 <div class="card-body">
-                                    <p class="card-text">{{  __('userdashboard.logout_body')  }}</p>
+                                    <p class="card-text">{{  __('useroverview.logout_body')  }}</p>
                                 </div>
                                 <div class="card-footer p-3">
-                                    <a href="{{ route('logout', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('userdashboard.logout_button')  }}</a>
+                                    <a href="{{ route('logout', app()->getLocale()) }}" class="btn btn-colour-1">{{  __('useroverview.logout_button')  }}</a>
                                 </div>
                             </div>
                         </div>
