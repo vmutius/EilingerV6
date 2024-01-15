@@ -65,7 +65,7 @@ class ReqAmountForm extends Component
     {
         $this->application->calc_amount = $this->diffAmount;
         $this->application->save();
-        session()->flash('success', 'Gewünschter Betrag aktualisiert.');
+        session()->flash('success', __('userNotification.reqAmountSaved'));
     }
 
     protected function rules(): array

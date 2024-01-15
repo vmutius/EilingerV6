@@ -43,6 +43,6 @@ class AddressForm extends Component
         $this->validate();
         $this->address->is_draft = false;
         $this->address->save();
-        session()->flash('success', 'Adresse aktualisiert.');
+        session()->flash('success', __('userNotification.addressSaved'));
     }
 }

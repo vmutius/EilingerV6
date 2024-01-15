@@ -59,14 +59,13 @@
                 <td>{{ $this->application->currency->abbreviation }}</td>
 
             </tr>
-            @if ($this->application->form->name == "Darlehen")
                 <tr>
                     <td>{{  __('reqAmount.payoutPlan')  }}</td>
                     <td>
                         <select wire:model.lazy="application.payout_plan" class="form-select">
-                            <option selected value="" disabled>-- Wählen Sie eine Option --</option>
+                            <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
                             @foreach (App\Enums\PayoutPlan::cases() as $payoutplan)
-                                <option value="{{ $payoutplan }}">{{ $payoutplan }}</option>
+                                <option value="{{ $payoutplan }}">{{ __('application.payoutplan_name.' .$payoutplan->name) }}</option>
                             @endforeach
                         </select>
                         @error('payout_plan')
@@ -75,7 +74,6 @@
                     </td>
                     <td></td>
                 </tr>
-            @endif
 
             </tbody>
         </table>

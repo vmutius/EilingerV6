@@ -52,7 +52,7 @@ class FinancingForm extends Component
         $this->financing->total_amount_financing = $this->getAmountFinancing();
         $this->financing->application_id = session()->get('appl_id');
         $this->financing->save();
-        session()->flash('success', 'Finanzierung aktualisiert.');
+        session()->flash('success', __('userNotification.financingSaved'));
     }
 
     public function getAmountFinancing()

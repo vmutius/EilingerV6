@@ -8,6 +8,7 @@ return [
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
     'birthday' => 'Birthday',
+    'birthyear' => 'Birthyear',
     'place_of_residence' => 'Place of residence',
     'education' => 'Education/occupation (school/apprenticeship/apprenticeship year)',
     'graduation_year' => 'Graduation year',

@@ -53,7 +53,7 @@ class FinancingOrganisationForm extends Component
             $financing->save();
         });
 
-        session()->flash('success', 'Finanzierung aktualisiert.');
+        session()->flash('success', __('userNotification.financingSaved'));
     }
 
     public function getAmountFinancingOrganisation()

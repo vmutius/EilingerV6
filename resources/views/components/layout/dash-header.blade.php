@@ -3,7 +3,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
                 @livewire('message-notification')
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -22,7 +22,7 @@
                     <a class="nav-link" href="{{ route('logout', app()->getLocale()) }}">Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }} ({{ Auth::user()->username }})</a>
+                    <a class="nav-link" href="#" style="cursor:default">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }} ({{ Auth::user()->username }})</a>
                 </li>
             </ul>
         </div>

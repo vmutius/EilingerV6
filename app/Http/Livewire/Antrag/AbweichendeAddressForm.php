@@ -44,6 +44,6 @@ class AbweichendeAddressForm extends Component
         $this->abweichendeAddress->user_id = auth()->user()->id;
         $this->abweichendeAddress->is_wochenaufenthalt = true;
         $this->abweichendeAddress->save();
-        session()->flash('success', 'Adresse Wochenaufenthalt aktualisiert.');
+        session()->flash('success', __('userNotification.addressWeeklySaved'));
     }
 }

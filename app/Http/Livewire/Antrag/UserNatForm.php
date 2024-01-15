@@ -54,12 +54,13 @@ class UserNatForm extends Component
         $this->validate();
         $this->user->is_draft = false;
         $this->user->save();
-        session()->flash('success', 'Benutzerdaten aktualisiert.');
+        session()->flash('success', __('userNotification.userSaved'));
     }
 
-    public function updatedCivilStatus(): void
+    public function updatedCivilStatus($value): void
     {
-        if ($this->user->civil_status == CivilStatus::verheiratet) {
+        $civilStatus = CivilStatus::tryFrom($value);
+        if ($civilStatus == CivilStatus::verheiratet) {
             $this->partnerVisible = true;
         }
     }

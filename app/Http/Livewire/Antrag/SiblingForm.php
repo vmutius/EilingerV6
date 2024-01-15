@@ -15,7 +15,7 @@ class SiblingForm extends Component
     protected function rules(): array
     {
         return [
-            'siblings.*.birth_year' => 'nullable',
+            'siblings.*.birth_year' => 'sometimes|numeric|min:1910|max:3000',
             'siblings.*.lastname' => 'nullable',
             'siblings.*.firstname' => 'nullable',
             'siblings.*.education' => 'nullable',
@@ -53,13 +53,14 @@ class SiblingForm extends Component
 
     public function saveSiblings()
     {
+        $this->validate();
         $this->siblings->each(function ($sibling) {
             $sibling->is_draft = false;
             $sibling->user_id = auth()->user()->id;
             $sibling->save();
         });
 
-        session()->flash('success', 'Geschwister aktualisiert.');
+        session()->flash('success', __('userNotification.siblingSaved'));
     }
 
     public function addSibling()

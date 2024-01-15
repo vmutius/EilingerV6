@@ -49,7 +49,7 @@ class ParentForm extends Component
             $parent->save();
         });
 
-        session()->flash('success', 'Eltern aktualisiert.');
+        session()->flash('success', __('userNotification.parentSaved'));
     }
 
     public function addParent()

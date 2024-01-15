@@ -8,6 +8,7 @@ return [
     'lastname' => 'Nachname',
     'firstname' => 'Vorname',
     'birthday' => 'Geburtsdatum',
+    'birthyear' => 'Geburtsjahr',
     'place_of_residence' => 'Aufenthaltsadresse',
     'education' => 'Ausbildung/Berufstätigkeit (Schule/Lehre/Lehrjahr)',
     'graduation_year' => 'Abschlussjahr der Ausbildung',

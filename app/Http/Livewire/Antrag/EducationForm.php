@@ -52,7 +52,7 @@ class EducationForm extends Component
         $this->education->user_id = auth()->user()->id;
         $this->education->application_id = session()->get('appl_id');
         $this->education->save();
-        session()->flash('success', 'Ausbildungsdaten aktualisiert.');
+        session()->flash('success', __('userNotification.educationSaved'));
     }
 
 

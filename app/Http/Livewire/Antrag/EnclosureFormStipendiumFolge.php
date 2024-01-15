@@ -122,7 +122,7 @@ class EnclosureFormStipendiumFolge extends Component
         $this->enclosure->is_draft = false;
         $this->enclosure->application_id = session()->get('appl_id');
         $this->enclosure->save();
-        session()->flash('success', 'Beilagen aktualisiert.');
+        session()->flash('success', __('userNotification.enclosureSaved'));
     }
 
     /**

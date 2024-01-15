@@ -42,6 +42,6 @@ class UserNatDarlehenForm extends Component
         $this->validate();
         $this->user->is_draft = false;
         $this->user->save();
-        session()->flash('success', 'Benutzerdaten aktualisiert.');
+        session()->flash('success', __('userNotification.userSaved'));
     }
 }

@@ -39,7 +39,7 @@
         <div class="col-sm-2">
             <label class="form-label" for="country">{{  __('user.nationality')  }} *</label>
             <select wire:model.lazy="user.nationality" class="form-select">
-                <option selected value="">Bitte auswählen...</option>
+                <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
                 @foreach ($countries as $country)
                     <option value="{{ $country->short_code }}">{{ $country->name }}</option>
                 @endforeach
@@ -57,7 +57,7 @@
         <div class="col-md-5">
             <label class="form-label" for="civil_status">{{  __('user.civil_status')  }} *</label>
             <select wire:model.lazy="user.civil_status" class="form-select">
-                <option selected value="">-- Wählen Sie eine Option --</option>
+                <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
                 @foreach (CivilStatus::cases() as $status)
                     <option value="{{ $status->value }}">{{ $status->value }}</option>
                 @endforeach
@@ -90,7 +90,7 @@
         <div class="col-sm-6">
             <label class="form-label" for="granting">{{  __('user.granting')  }}</label>
             <select wire:model.lazy="user.granting" class="form-select">
-                <option selected value="">-- Wählen Sie eine Option --</option>
+                <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
                 @foreach (App\Enums\Bewilligung::cases() as $granting)
                     <option value="{{ $granting->value }}">{{ $granting->value }}</option>
                 @endforeach

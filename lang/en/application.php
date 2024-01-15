@@ -64,6 +64,7 @@ return [
     'payoutplan_name' => [
         PayoutPlan::monthly->name => 'monthly',
         PayoutPlan::oneTime->name => 'one time',
+        PayoutPlan::partialAmount->name => 'Can be called in installments',
     ],
 
     'time' => [

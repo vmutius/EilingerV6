@@ -45,6 +45,6 @@ class AboardAddressForm extends Component
         $this->aboardAddress->user_id = auth()->user()->id;
         $this->aboardAddress->is_aboard = true;
         $this->aboardAddress->save();
-        session()->flash('success', 'Adresse im Ausland aktualisiert.');
+        session()->flash('success', __('userNotification.addressAboardSaved'));
     }
 }

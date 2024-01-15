@@ -67,7 +67,7 @@ class CostForm extends Component
         $this->cost->total_amount_costs = $this->getAmountCost();
         $this->cost->application_id = session()->get('appl_id');
         $this->cost->save();
-        session()->flash('success', 'Kosten aktualisiert.');
+        session()->flash('success', __('userNotification.costSaved'));
     }
 
     public function getAmountCost(): int

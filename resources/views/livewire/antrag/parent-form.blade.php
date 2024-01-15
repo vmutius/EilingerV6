@@ -11,7 +11,7 @@
             <div class="col-sm-2">
                 <label class="form-label" for="parent_type">{{  __('parents.parent_type')  }}</label>
                 <select wire:model.lazy="parents.{{ $index }}.parent_type" name="parent_type" class="form-select">
-                    <option selected value="">{{  __('attributes.please_select')  }}</option>
+                    <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
                     @foreach (App\Enums\ParentType::cases() as $parent_type)
                         <option value="{{ $parent_type }}">{{ __('parents.parent_type_name.' .$parent_type->name) }}</option>
                     @endforeach
@@ -69,7 +69,7 @@
             <div class="col-sm-2">
                 <label class="form-label" for="job_type">{{  __('parents.job_type')  }}</label>
                 <select wire:model.lazy="parents.{{ $index }}.job_type" name="job_type" class="form-select">
-                    <option selected value="">-- Wählen Sie eine Option --</option>
+                    <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
                     @foreach (App\Enums\JobType::cases() as $job_type)
                         <option value="{{ $job_type }}">{{ __('parents.job_type_name.' .$job_type->name) }}</option>
                     @endforeach

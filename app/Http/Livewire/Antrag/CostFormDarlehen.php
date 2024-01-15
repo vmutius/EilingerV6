@@ -60,7 +60,7 @@ class CostFormDarlehen extends Component
             $cost->save();
         });
 
-        session()->flash('success', 'Kosten aktualisiert.');
+        session()->flash('success', __('userNotification.costSaved'));
     }
 
     public function getAmountCostDarlehen()
