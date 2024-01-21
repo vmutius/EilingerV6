@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\CivilStatus;
 use App\Enums\Salutation;
 
 return [
@@ -34,5 +35,12 @@ return [
         Salutation::Divers->name => '--',
         Salutation::Frau->name => 'Mrs.',
         Salutation::Herr->name => 'Mr.',
+    ],
+
+    'civil_status_name' => [
+        CivilStatus::ledig->name => 'unmarried',
+        CivilStatus::verheiratet->name => 'married',
+        CivilStatus::geschieden->name => 'divorced',
+        CivilStatus::verwitwet->name => 'widowed',
     ],
 ];

@@ -63,7 +63,7 @@
                     <td>{{  __('reqAmount.payoutPlan')  }}</td>
                     <td>
                         <select wire:model.lazy="application.payout_plan" class="form-select">
-                            <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
+                            <option hidden>{{  __('attributes.please_select')  }}</option>
                             @foreach (App\Enums\PayoutPlan::cases() as $payoutplan)
                                 <option value="{{ $payoutplan }}">{{ __('application.payoutplan_name.' .$payoutplan->name) }}</option>
                             @endforeach

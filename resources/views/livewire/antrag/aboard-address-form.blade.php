@@ -34,7 +34,7 @@
         <div class="col-sm-2">
             <label class="form-label" for="country">{{  __('address.country')  }} *</label>
             <select wire:model.lazy="aboardAddress.country_id" class="form-select" id="country">
-                <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
+                <option hidden>{{  __('attributes.please_select')  }}</option>
                 @foreach ($countries as $country)
                     <option value="{{ $country->id }}">{{ $country->name }}</option>
                 @endforeach

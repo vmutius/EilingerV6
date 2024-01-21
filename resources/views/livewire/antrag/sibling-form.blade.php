@@ -44,7 +44,7 @@
             <div class="col-sm-2">
                 <label class="form-label" for="get_amount">{{ __('sibling.get_amount') }}</label>
                 <select wire:model.lazy="siblings.{{ $index }}.get_amount" class="form-select">
-                    <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
+                    <option hidden>{{  __('attributes.please_select')  }}</option>
                     @foreach (App\Enums\GetAmount::cases() as $getAmount)
                         <option value="{{ $getAmount }}">{{ __('sibling.get_amount_name.' .$getAmount->name) }}</option>
                     @endforeach

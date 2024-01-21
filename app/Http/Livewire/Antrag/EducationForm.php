@@ -17,7 +17,7 @@ class EducationForm extends Component
     protected function rules(): array
     {
         return [
-            'education.education' => ['required', new Enum(Education::class)],
+            'education.education' => ['required', 'min:1',new Enum(Education::class)],
             'education.name' => 'required',
             'education.final' => 'required',
             'education.grade' => ['required', new Enum(Grade::class)],

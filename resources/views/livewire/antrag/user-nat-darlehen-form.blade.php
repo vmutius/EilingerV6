@@ -15,7 +15,7 @@
         <div class="col-sm-2">
             <label class="form-label" for="user.salutation">{{  __('user.salutation')  }}*</label>
             <select wire:model.lazy="user.salutation" class="form-select" id="user.salutation">
-                <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
+                <option hidden>{{  __('attributes.please_select')  }}</option>
                 @foreach (App\Enums\Salutation::cases() as $salutation)
                     <option value="{{ $salutation }}">{{ $salutation }}</option>
                 @endforeach
