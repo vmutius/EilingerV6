@@ -16,42 +16,35 @@ class EnclosureOrganisationForm extends Component
     use WithFileUploads;
 
     public $enclosure;
-
     public $filePath;
-
     public $UserName;
-
     public $isInitialAppl;
-
     public $commercial_register_extract;
-
     public $statute;
-
     public $activity;
-
     public $balance_sheet;
-
     public $tax_assessment;
-
     public $cost_receipts;
-
     public function rules()
     {
-        $commercial_register_extract = is_null($this->enclosure->commercial_register_extract);
-        $statute = is_null($this->enclosure->statute);
-        $activity = is_null($this->enclosure->activity);
-        $balance_sheet = is_null($this->enclosure->balance_sheet);
-        $tax_assessment = is_null($this->enclosure->tax_assessment);
-        $cost_receipts = is_null($this->enclosure->cost_receipts);
+        $commercial_register_extract = is_null($this->enclosure->commercial_register_extract) && $this->enclosure->commercialRegisterExtractSendLater==0;
+        $statute = is_null($this->enclosure->statute) && $this->enclosure->statuteSendLater==0;
+        $activity = is_null($this->enclosure->activity) && $this->enclosure->activitySendLater==0;
 
         return [
             'enclosure.remark' => 'nullable',
             'commercial_register_extract' => new FileUploadRule($commercial_register_extract),
             'statute' => [new FileUploadRule($statute)],
             'activity' => [new FileUploadRule($activity)],
-            'balance_sheet' => [new FileUploadRule($balance_sheet)],
-            'tax_assessment' => [new FileUploadRule($tax_assessment)],
-            'cost_receipts' => [new FileUploadRule($cost_receipts)],
+            'balance_sheet' => [new FileUploadRule()],
+            'tax_assessment' => [new FileUploadRule()],
+            'cost_receipts' => [new FileUploadRule()],
+            'enclosure.commercialRegisterExtractSendLater' => 'nullable',
+            'enclosure.statuteSendLater' => 'nullable',
+            'enclosure.activitySendLater' => 'nullable',
+            'enclosure.balanceSheetSendLater' => 'nullable',
+            'enclosure.taxAssessmentSendLater' => 'nullable',
+            'enclosure.costReceiptsSendLater' => 'nullable',
         ];
     }
 
@@ -87,19 +80,34 @@ class EnclosureOrganisationForm extends Component
     public function saveEnclosureOrg(): void
     {
         $this->validate();
+        if($this->commercial_register_extract) {
+            $file_commercial_register_extract = $this->upload($this->commercial_register_extract, 'commercial_register_extract');
+            $this->enclosure->commercial_register_extract = $file_commercial_register_extract;
+        }
 
-        $file_commercial_register_extract = $this->upload($this->commercial_register_extract, 'commercial_register_extract');
-        $this->enclosure->commercial_register_extract = $file_commercial_register_extract;
-        $file_statute = $this->upload($this->statute, 'statute');
-        $this->enclosure->statute = $file_statute;
-        $file_activity = $this->upload($this->activity, 'activity');
-        $this->enclosure->activity = $file_activity;
-        $file_balance_sheet = $this->upload($this->balance_sheet, 'balance_sheet');
-        $this->enclosure->balance_sheet = $file_balance_sheet;
-        $file_tax_assessment = $this->upload($this->tax_assessment, 'tax_assessment');
-        $this->enclosure->tax_assessment = $file_tax_assessment;
-        $file_cost_receipts = $this->upload($this->cost_receipts, 'cost_receipts');
-        $this->enclosure->cost_receipts = $file_cost_receipts;
+        if ($this->statute) {
+            $file_statute = $this->upload($this->statute, 'statute');
+            $this->enclosure->statute = $file_statute;
+        }
+
+        if ($this->activity) {
+            $file_activity = $this->upload($this->activity, 'activity');
+            $this->enclosure->activity = $file_activity;
+        }
+
+        if ($this->balance_sheet) {
+            $file_balance_sheet = $this->upload($this->balance_sheet, 'balance_sheet');
+            $this->enclosure->balance_sheet = $file_balance_sheet;
+        }
+
+        if ($this->tax_assessment) {
+            $file_tax_assessment = $this->upload($this->tax_assessment, 'tax_assessment');
+            $this->enclosure->tax_assessment = $file_tax_assessment;
+        }
+        if ($this->cost_receipts) {
+            $file_cost_receipts = $this->upload($this->cost_receipts, 'cost_receipts');
+            $this->enclosure->cost_receipts = $file_cost_receipts;
+        }
 
         $this->enclosure->is_draft = false;
         $this->enclosure->application_id = session()->get('appl_id');

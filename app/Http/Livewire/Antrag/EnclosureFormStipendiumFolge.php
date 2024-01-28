@@ -53,20 +53,16 @@ class EnclosureFormStipendiumFolge extends Component
     {
         $certificate_of_study = is_null($this->enclosure->certificate_of_study);
         $tax_assessment = is_null($this->enclosure->tax_assessment);
-        $partner_tax_assessment = is_null($this->enclosure->partner_tax_assessment);
-        $supplementary_services = is_null($this->enclosure->supplementary_services);
-        $ects_points = is_null($this->enclosure->ects_points);
-        $parents_tax_factors = is_null($this->enclosure->parents_tax_factors);
         $expense_receipts = is_null($this->enclosure->expense_receipts);
 
         return [
             'enclosure.remark' => 'nullable',
             'certificate_of_study' => [new FileUploadRule($certificate_of_study)],
             'tax_assessment' => [new FileUploadRule($tax_assessment)],
-            'partner_tax_assessment' => [new FileUploadRule($partner_tax_assessment)],
-            'supplementary_services' => [new FileUploadRule($supplementary_services)],
-            'ects_points' => [new FileUploadRule($ects_points)],
-            'parents_tax_factors' => [new FileUploadRule($parents_tax_factors)],
+            'partner_tax_assessment' => [new FileUploadRule()],
+            'supplementary_services' => [new FileUploadRule()],
+            'ects_points' => [new FileUploadRule()],
+            'parents_tax_factors' => [new FileUploadRule()],
             'expense_receipts' => [new FileUploadRule($expense_receipts)],
         ];
     }

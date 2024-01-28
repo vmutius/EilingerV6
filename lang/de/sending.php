@@ -2,7 +2,8 @@
 
 return [
     'title' => 'Finaler Check und Einreichen',
-    'subTitle' => 'Please enter the desired amount of the scholarship or loan. The calculated amount is displayed.',
+    'subTitle' => 'Der Antrag kann erst eingereicht werden, wenn alle Pflichangaben (*) gemacht wurden.
+                    Wenn Sie die Pflichtangaben gemacht haben, wird dies durch einen grünen Haken angezeigt. ',
     'step' => 'Schritt',
     'data' => 'Daten',
     'status' => 'Status',

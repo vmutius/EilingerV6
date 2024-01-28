@@ -18,7 +18,7 @@
                     <span class="text-danger">@error('costs.'. $index .'.cost_name'){{ $message }}@enderror</span>
                 </div>
                 <div class="col-sm-5">
-                    <label class="form-label" for="cost_amount">Betrag</label>
+                    <label class="form-label" for="cost_amount">{{ __('cost.cost_amount') }}</label>
                     <input wire:model.lazy="costs.{{ $index }}.cost_amount" type="number" class="form-control"/>
                     <span class="text-danger">@error('costs.'. $index .'.cost_amount'){{ $message }}@enderror</span>
                 </div>

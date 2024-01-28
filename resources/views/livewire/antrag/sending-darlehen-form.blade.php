@@ -18,7 +18,7 @@
         <tbody>
         <tr>
             <td>1</td>
-            <td>{{ __('sending.applicant') }}</td>
+            <td><b>{{ __('sending.applicant') }} * </b></td>
             <td>
                     <span id="boot-icon" {!! $userNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <td>2</td>
-            <td>{{ __('sending.address') }}</td>
+            <td><b>{{ __('sending.address') }} * </b></td>
             <td>
                     <span id="boot-icon" {!! $addressNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -48,7 +48,7 @@
         </tr>
         <tr>
             <td>4</td>
-            <td>{{ __('sending.account') }}</td>
+            <td><b>{{ __('sending.account') }} * </b></td>
             <td>
                     <span id="boot-icon" {!! $accountNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -58,7 +58,7 @@
         </tr>
         <tr>
             <td>5</td>
-            <td>{{ __('sending.cost') }}</td>
+            <td><b>{{ __('sending.cost') }} * </b></td>
             <td>
                     <span id="boot-icon" {!! $costNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'
@@ -68,7 +68,7 @@
         </tr>
         <tr>
         <td>6</td>
-        <td>{{ __('sending.financing') }}</td>
+        <td><b>{{ __('sending.financing') }} * </b></td>
             @if (auth()->user()->type == 'nat')
                 <td>
                         <span id="boot-icon" {!! $financingNoDraft
@@ -87,7 +87,7 @@
         </tr>
         <tr>
             <td>7</td>
-            <td>{{ __('sending.remark') }}</td>
+            <td><b>{{ __('sending.remark') }} * </b></td>
             <td>
                     <span id="boot-icon" {!! $enclosureNoDraft
                         ? 'class="bi bi-check-circle" style="color: rgb(0, 128, 55);"'

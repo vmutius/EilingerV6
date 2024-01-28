@@ -7,6 +7,8 @@ return [
     'candidate' => 'Candidate',
     'applicant' => 'Applicant',
     'subtitle' => 'Details of the person in education who is applying for contributions',
+    'subtitleOrg' => 'Details of the organisation',
+    'subTitleCandidate' => 'Details of the candidate',
     'username' => 'Username',
     'type' => 'Type',
     'lastname' => 'Lastname',

@@ -1,7 +1,7 @@
 <form wire:submit.prevent="saveUserJur">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Gesuchssteller</h3>
-        <small>Angaben über die Organisation</small>
+        <h3 class="mb-0">{{  __('user.candidate')  }}</h3>
+        <small>{{  __('user.subtitleOrg')  }}</small>
     </div>
     <div class="row g-3">
 

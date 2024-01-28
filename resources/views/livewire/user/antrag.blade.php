@@ -18,16 +18,16 @@
 
 
     <div class="home-content">
-        
+
         @if (session()->has('message'))
             <div class="alert alert-success">
                 {{ session('message') }}
             </div>
         @endif
 
-        @if ($application->form->value == 'Stipendium')
+        @if ($application->form->value === \App\Enums\Form::Stipendium->value)
             @livewire('user.stipendium')
-        @elseif (auth()->user()->type == 'nat')
+        @elseif (auth()->user()->type->value == \App\Enums\Types::nat->value)
             @livewire('user.darlehen-privat')
         @else
             @livewire('user.darlehen-verein')

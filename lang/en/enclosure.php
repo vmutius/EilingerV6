@@ -31,4 +31,5 @@ return [
     'partner_tax_assessment' => 'Only for partners of applicants living in a partnership: latest tax assessment',
     'supplementary_services' => 'Recipients of IV or orphan\'s pensions or supplementary benefits: Enclose a copy of the decree',
     'ects_points' => 'Only for students at universities: Proof of the planned/booked ECTS points',
+    'send_later' => 'Will be submitted later',
 ];

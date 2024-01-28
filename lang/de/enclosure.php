@@ -31,4 +31,5 @@ return [
     'partner_tax_assessment' => 'Nur für Partner von in Partnerschaft lebenden Gesuchsteller: neueste Steuerveranlagung',
     'supplementary_services' => 'Empfänger von IV-, Waisenrenten bzw. Ergänzungsleistungen: Kopie der Verfügung beilegen',
     'ects_points' => 'Nur für Studenten an universitären Hochschulen: Beleg über die geplanten/gebuchten ECTS-Punkte',
+    'send_later' => 'Wird nachgereicht',
 ];

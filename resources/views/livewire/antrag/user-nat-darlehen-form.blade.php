@@ -1,9 +1,9 @@
 <form wire:submit.prevent="saveUserNat">
     <div class="content-header mb-3">
-        <h3 class="mb-0">Gesuchssteller</h3>
+        <h3 class="mb-0">{{  __('user.candidate')  }}</h3>
         <div class="d-flex justify-content-between">
             <div>
-                <small>Angaben über den Gesuchssteller</small>
+                <small>{{  __('user.subTitleCandidate')  }}</small>
             </div>
         </div>
     </div>

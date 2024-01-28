@@ -25,12 +25,13 @@
                     <th scope="col">{{  __('enclosure.doc')  }}</th>
                     <th scope="col">{{  __('enclosure.file')  }}</th>
                     <th scope="col">{{  __('enclosure.upload')  }}</th>
+                    <th scope="col">{{  __('enclosure.send_later')  }}</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>{{  __('enclosure.commercial_register_extract')  }}*</td>
+                    <td><b>{{  __('enclosure.commercial_register_extract')  }} *</b></td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="commercial_register_extract" class="form-control" type="file">
@@ -44,10 +45,15 @@
                                target="_blank">{{ $enclosure->commercial_register_extract }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model="enclosure.commercialRegisterExtractSendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>{{  __('enclosure.statute')  }}</td>
+                    <td><b>{{  __('enclosure.statute')  }} * </b></td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="statute" class="form-control" type="file" id="formFile">
@@ -60,10 +66,15 @@
                                target="_blank">{{ $enclosure->statute }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model="enclosure.statuteSendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>{{  __('enclosure.activity')  }}</td>
+                    <td><b>{{  __('enclosure.activity')  }} * </b></td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="activity" class="form-control" type="file" id="formFile">
@@ -75,6 +86,11 @@
                             <a href="{{ asset('uploads/'.$enclosure->activity) }}"
                                target="_blank">{{ $enclosure->activity }}</a>
                         @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.activitySendLater" type="checkbox">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -92,6 +108,11 @@
                                target="_blank">{{ $enclosure->balance_sheet }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.balanceSheetSendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
@@ -108,6 +129,11 @@
                                target="_blank">{{ $enclosure->tax_assessment }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.taxAssessmentSendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">6</th>
@@ -123,6 +149,11 @@
                             <a href="{{ asset('uploads/'.$enclosure->cost_receipts) }}"
                                target="_blank">{{ $enclosure->cost_receipts }}</a>
                         @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model="enclosure.costReceiptsSendLater" type="checkbox">
+                        </div>
                     </td>
                 </tr>
                 </tbody>

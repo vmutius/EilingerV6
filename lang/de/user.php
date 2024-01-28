@@ -7,6 +7,8 @@ return [
     'candidate' => 'Gesuchssteller',
     'applicant' => 'Bewerber',
     'subtitle' => 'Angaben über die in Ausbildung stehende Person, welche um Beiträge nachsucht',
+    'subtitleOrg' => 'Angaben über die Organisation',
+    'subTitleCandidate' => 'Angaben über den Gesuchssteller',
     'username' => 'Benutzername',
     'type' => 'Typ',
     'lastname' => 'Nachname',
