@@ -83,30 +83,36 @@ class EnclosureOrganisationForm extends Component
         if($this->commercial_register_extract) {
             $file_commercial_register_extract = $this->upload($this->commercial_register_extract, 'commercial_register_extract');
             $this->enclosure->commercial_register_extract = $file_commercial_register_extract;
+            $this->enclosure->commercialRegisterExtractSendLater = false;
         }
 
         if ($this->statute) {
             $file_statute = $this->upload($this->statute, 'statute');
             $this->enclosure->statute = $file_statute;
+            $this->enclosure->statuteSendLater = false;
         }
 
         if ($this->activity) {
             $file_activity = $this->upload($this->activity, 'activity');
             $this->enclosure->activity = $file_activity;
+            $this->enclosure->activitySendLater = false;
         }
 
         if ($this->balance_sheet) {
             $file_balance_sheet = $this->upload($this->balance_sheet, 'balance_sheet');
             $this->enclosure->balance_sheet = $file_balance_sheet;
+            $this->enclosure->balanceSheetSendLater = false;
         }
 
         if ($this->tax_assessment) {
             $file_tax_assessment = $this->upload($this->tax_assessment, 'tax_assessment');
             $this->enclosure->tax_assessment = $file_tax_assessment;
+            $this->enclosure->taxAssessmentSendLater = false;
         }
         if ($this->cost_receipts) {
             $file_cost_receipts = $this->upload($this->cost_receipts, 'cost_receipts');
             $this->enclosure->cost_receipts = $file_cost_receipts;
+            $this->enclosure->costReceiptsSendLater = false;
         }
 
         $this->enclosure->is_draft = false;

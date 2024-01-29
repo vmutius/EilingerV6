@@ -51,19 +51,14 @@ class EnclosureFormStipendiumErst extends Component
 
     public function rules()
     {
-        $passport = is_null($this->enclosure->passport);
-        $diploma = is_null($this->enclosure->diploma);
-        $apprenticeship_contract = is_null($this->enclosure->apprenticeship_contract);
-        $divorce = is_null($this->enclosure->divorce);
-        $rental_contract = is_null($this->enclosure->rental_contract);
-        $certificate_of_study = is_null($this->enclosure->certificate_of_study);
-        $tax_assessment = is_null($this->enclosure->tax_assessment);
-        $cv = is_null($this->enclosure->cv);
-        $partner_tax_assessment = is_null($this->enclosure->partner_tax_assessment);
-        $supplementary_services = is_null($this->enclosure->supplementary_services);
-        $ects_points = is_null($this->enclosure->ects_points);
-        $parents_tax_factors = is_null($this->enclosure->parents_tax_factors);
-        $expense_receipts = is_null($this->enclosure->expense_receipts);
+        $passport = is_null($this->enclosure->passport) && $this->enclosure->passportSendLater==0;
+        $diploma = is_null($this->enclosure->diploma) && $this->enclosure->diplomaSendLater==0;
+        $apprenticeship_contract = is_null($this->enclosure->apprenticeship_contract) && $this->enclosure->apprenticeshipContractSendLater==0;
+        $certificate_of_study = is_null($this->enclosure->certificate_of_study) && $this->enclosure->certificateOfStudySendLater==0;
+        $tax_assessment = is_null($this->enclosure->tax_assessment) && $this->enclosure->taxAssessmentSendLater==0;
+        $cv = is_null($this->enclosure->cv) && $this->enclosure->cvSendLater==0;
+        $parents_tax_factors = is_null($this->enclosure->parents_tax_factors) && $this->enclosure->parentsTaxFactorsSendLater==0;
+        $expense_receipts = is_null($this->enclosure->expense_receipts) && $this->enclosure->expenseReceiptsSendLater==0;
 
         return [
             'enclosure.remark' => 'nullable',
@@ -71,15 +66,28 @@ class EnclosureFormStipendiumErst extends Component
             'cv' => [new FileUploadRule($cv)],
             'apprenticeship_contract' => [new FileUploadRule($apprenticeship_contract)],
             'diploma' => [new FileUploadRule($diploma)],
-            'divorce' => [new FileUploadRule($divorce)],
-            'rental_contract' => [new FileUploadRule($rental_contract)],
+            'divorce' => [new FileUploadRule()],
+            'rental_contract' => [new FileUploadRule()],
             'certificate_of_study' => [new FileUploadRule($certificate_of_study)],
             'tax_assessment' => [new FileUploadRule($tax_assessment)],
-            'partner_tax_assessment' => [new FileUploadRule($partner_tax_assessment)],
-            'supplementary_services' => [new FileUploadRule($supplementary_services)],
-            'ects_points' => [new FileUploadRule($ects_points)],
+            'partner_tax_assessment' => [new FileUploadRule()],
+            'supplementary_services' => [new FileUploadRule()],
+            'ects_points' => [new FileUploadRule()],
             'parents_tax_factors' => [new FileUploadRule($parents_tax_factors)],
             'expense_receipts' => [new FileUploadRule($expense_receipts)],
+            'enclosure.certificateOfStudySendLater' => 'nullable',
+            'enclosure.taxAssessmentSendLater' => 'nullable',
+            'enclosure.expenseReceiptsSendLater' => 'nullable',
+            'enclosure.partnerTaxAssessmentSendLater' => 'nullable',
+            'enclosure.supplementaryServicesSendLater' => 'nullable',
+            'enclosure.ectsPointsSendLater' => 'nullable',
+            'enclosure.parentsTaxFactorsSendLater' => 'nullable',
+            'enclosure.passportSendLater' => 'nullable',
+            'enclosure.cvSendLater' => 'nullable',
+            'enclosure.apprenticeshipContractSendLater' => 'nullable',
+            'enclosure.diplomaSendLater' => 'nullable',
+            'enclosure.divorceSendLater' => 'nullable',
+            'enclosure.rentalContractSendLater' => 'nullable',
         ];
     }
 
@@ -116,32 +124,80 @@ class EnclosureFormStipendiumErst extends Component
     {
         $this->validate();
 
-        $file_passport = $this->upload($this->passport, 'passport');
-        $this->enclosure->passport = $file_passport;
-        $file_cv = $this->upload($this->cv, 'cv');
-        $this->enclosure->cv = $file_cv;
-        $file_apprenticeship_contract = $this->upload($this->apprenticeship_contract, 'apprenticeship_contract');
-        $this->enclosure->apprenticeship_contract = $file_apprenticeship_contract;
-        $file_diploma = $this->upload($this->diploma, 'diploma');
-        $this->enclosure->diploma = $file_diploma;
-        $file_divorce = $this->upload($this->divorce, 'divorce');
-        $this->enclosure->divorce = $file_divorce;
-        $file_rental_contract = $this->upload($this->rental_contract, 'rental_contract');
-        $this->enclosure->rental_contract = $file_rental_contract;
-        $file_certificate_of_study = $this->upload($this->certificate_of_study, 'certificate_of_study');
-        $this->enclosure->certificate_of_study = $file_certificate_of_study;
-        $file_tax_assessment = $this->upload($this->tax_assessment, 'tax_assessment');
-        $this->enclosure->tax_assessment = $file_tax_assessment;
-        $file_expense_receipts = $this->upload($this->expense_receipts, 'expense_receipts');
-        $this->enclosure->expense_receipts = $file_expense_receipts;
-        $file_partner_tax_assessment = $this->upload($this->partner_tax_assessment, 'partner_tax_assessment');
-        $this->enclosure->partner_tax_assessment = $file_partner_tax_assessment;
-        $file_supplementary_services = $this->upload($this->supplementary_services, 'supplementary_services');
-        $this->enclosure->supplementary_services = $file_supplementary_services;
-        $file_ects_points = $this->upload($this->ects_points, 'ects_points');
-        $this->enclosure->ects_points = $file_ects_points;
-        $file_parents_tax_factors = $this->upload($this->parents_tax_factors, 'parents_tax_factors');
-        $this->enclosure->parents_tax_factors = $file_parents_tax_factors;
+        if($this->passport) {
+            $file_passport = $this->upload($this->passport, 'passport');
+            $this->enclosure->passport = $file_passport;
+            $this->enclosure->passportSendLater = false;
+        }
+        if($this->cv) {
+            $file_cv = $this->upload($this->cv, 'cv');
+            $this->enclosure->cv = $file_cv;
+        }
+        if($this->apprenticeship_contract) {
+            $file_apprenticeship_contract = $this->upload($this->apprenticeship_contract, 'apprenticeship_contract');
+            $this->enclosure->apprenticeship_contract = $file_apprenticeship_contract;
+            $this->enclosure->apprenticeshipContractSendLater = false;
+        }
+
+        if($this->diploma) {
+            $file_diploma = $this->upload($this->diploma, 'diploma');
+            $this->enclosure->diploma = $file_diploma;
+            $this->enclosure->diplomaSendLater = false;
+        }
+
+        if($this->divorce) {
+            $file_divorce = $this->upload($this->divorce, 'divorce');
+            $this->enclosure->divorce = $file_divorce;
+            $this->enclosure->divorceSendLater = false;
+        }
+
+        if($this->rental_contract) {
+            $file_rental_contract = $this->upload($this->rental_contract, 'rental_contract');
+            $this->enclosure->rental_contract = $file_rental_contract;
+            $this->enclosure->rentalContractSendLater = false;
+        }
+
+        if($this->certificate_of_study) {
+            $file_certificate_of_study = $this->upload($this->certificate_of_study, 'certificate_of_study');
+            $this->enclosure->certificate_of_study = $file_certificate_of_study;
+            $this->enclosure->certificateOfStudySendLater = false;
+        }
+
+        if($this->tax_assessment) {
+            $file_tax_assessment = $this->upload($this->tax_assessment, 'tax_assessment');
+            $this->enclosure->tax_assessment = $file_tax_assessment;
+            $this->enclosure->taxAssessmentSendLater = false;
+        }
+
+        if($this->expense_receipts) {
+            $file_expense_receipts = $this->upload($this->expense_receipts, 'expense_receipts');
+            $this->enclosure->expense_receipts = $file_expense_receipts;
+            $this->enclosure->expenseReceiptsSendLater = false;
+        }
+
+        if($this->partner_tax_assessment) {
+            $file_partner_tax_assessment = $this->upload($this->partner_tax_assessment, 'partner_tax_assessment');
+            $this->enclosure->partner_tax_assessment = $file_partner_tax_assessment;
+            $this->enclosure->partnerTaxAssessmentSendLater = false;
+        }
+
+        if($this->supplementary_services) {
+            $file_supplementary_services = $this->upload($this->supplementary_services, 'supplementary_services');
+            $this->enclosure->supplementary_services = $file_supplementary_services;
+            $this->enclosure->supplementaryServicesSendLater = false;
+        }
+
+        if($this->ects_points) {
+            $file_ects_points = $this->upload($this->ects_points, 'ects_points');
+            $this->enclosure->ects_points = $file_ects_points;
+            $this->enclosure->ectsPointsSendLater = false;
+        }
+
+        if($this->parents_tax_factors) {
+            $file_parents_tax_factors = $this->upload($this->parents_tax_factors, 'parents_tax_factors');
+            $this->enclosure->parents_tax_factors = $file_parents_tax_factors;
+            $this->enclosure->parentsTaxFactorsSendLater = false;
+        }
 
         $this->enclosure->is_draft = false;
         $this->enclosure->application_id = session()->get('appl_id');

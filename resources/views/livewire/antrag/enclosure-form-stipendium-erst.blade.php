@@ -25,12 +25,13 @@
                     <th scope="col">{{  __('enclosure.doc')  }}</th>
                     <th scope="col">{{  __('enclosure.file')  }}</th>
                     <th scope="col">{{  __('enclosure.upload')  }}</th>
+                    <th scope="col">{{  __('enclosure.send_later')  }}</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>{{  __('enclosure.certificate_of_study')  }}</td>
+                    <td><b>{{  __('enclosure.certificate_of_study')  }} *</b></td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="certificate_of_study" class="form-control" type="file">
@@ -43,10 +44,15 @@
                                target="_blank">{{ $enclosure->certificate_of_study }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.certificateOfStudySendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>{{  __('enclosure.tax_assessment')  }}</td>
+                    <td><b>{{  __('enclosure.tax_assessment')  }} *</b></td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="tax_assessment" class="form-control" type="file" id="formFile">
@@ -59,10 +65,15 @@
                                target="_blank">{{ $enclosure->tax_assessment }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.taxAssessmentSendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>{{  __('enclosure.expense_receipts_stip')  }}</td>
+                    <td><b>{{  __('enclosure.expense_receipts_stip')  }} *</b></td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="expense_receipts" class="form-control" type="file" id="formFile">
@@ -74,6 +85,11 @@
                             <a href="{{ asset('uploads/'.$enclosure->expense_receipts) }}"
                                target="_blank">{{ $enclosure->expense_receipts }}</a>
                         @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.expenseReceiptsSendLater" type="checkbox">
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -92,6 +108,11 @@
                                target="_blank">{{ $enclosure->partner_tax_assessment }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.partnerTaxAssessmentSendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
@@ -109,6 +130,11 @@
                                target="_blank">{{ $enclosure->supplementary_services }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.supplementaryServicesSendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">6</th>
@@ -125,10 +151,15 @@
                                target="_blank">{{ $enclosure->ects_points }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.ectsPointsSendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">7</th>
-                    <td>{{  __('enclosure.parents_tax_factors')  }}</td>
+                    <td><b>{{  __('enclosure.parents_tax_factors')  }} *</b></td>
                     <td>
                         <div class="mb-3">
                             <input wire:model.defer="parents_tax_factors" class="form-control" type="file"
@@ -142,108 +173,141 @@
                                target="_blank">{{ $enclosure->parents_tax_factors }}</a>
                         @endif
                     </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.parentsTaxFactorsSendLater" type="checkbox">
+                        </div>
+                    </td>
                 </tr>
-                @if($this->isInitialAppl)
-                    <tr>
-                        <th scope="row">8</th>
-                        <td>{{  __('enclosure.passport')  }}</td>
-                        <td>
-                            <div class="mb-3">
-                                <input wire:model.defer="passport" class="form-control" type="file">
-                            </div>
-                            <span class="text-danger">@error('passport'){{ $message }}@enderror</span>
-                        </td>
-                        <td>
-                            @if ($enclosure->passport)
-                                <a href="{{ asset('uploads/'.$enclosure->passport) }}"
-                                   target="_blank">{{ $enclosure->passport }}</a>
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9</th>
-                        <td>{{  __('enclosure.cv')  }}</td>
-                        <td>
-                            <div class="mb-3">
-                                <input wire:model.defer="cv" class="form-control" type="file" id="formFile">
-                            </div>
-                            <span class="text-danger">@error('cv'){{ $message }}@enderror</span>
-                        </td>
-                        <td>
-                            @if ($enclosure->cv)
-                                <a href="{{ asset('uploads/'.$enclosure->cv) }}"
-                                   target="_blank">{{ $enclosure->cv }}</a>
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">10</th>
-                        <td>{{  __('enclosure.apprenticeship_contract')  }}</td>
-                        <td>
-                            <div class="mb-3">
-                                <input wire:model.defer="apprenticeship_contract" class="form-control" type="file"
-                                       id="formFile">
-                            </div>
-                            <span class="text-danger">@error('apprenticeship_contract'){{ $message }}@enderror</span>
-                        </td>
-                        <td>
-                            @if ($enclosure->apprenticeship_contract)
-                                <a href="{{ asset('uploads/'.$enclosure->apprenticeship_contract) }}"
-                                   target="_blank">{{ $enclosure->apprenticeship_contract }}</a>
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">11</th>
-                        <td>{{  __('enclosure.diploma')  }}</td>
-                        <td>
-                            <div class="mb-3">
-                                <input wire:model.defer="diploma" class="form-control" type="file" id="formFile">
-                            </div>
-                            <span class="text-danger">@error('diploma'){{ $message }}@enderror</span>
-                        </td>
-                        <td>
-                            @if ($enclosure->diploma)
-                                <a href="{{ asset('uploads/'.$enclosure->diploma) }}"
-                                   target="_blank">{{ $enclosure->diploma }}</a>
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">12</th>
-                        <td>{{  __('enclosure.divorce')  }}</td>
-                        <td>
-                            <div class="mb-3">
-                                <input wire:model.defer="divorce" class="form-control" type="file" id="formFile">
-                            </div>
-                            <span class="text-danger">@error('divorce'){{ $message }}@enderror</span>
-                        </td>
-                        <td>
-                            @if ($enclosure->divorce)
-                                <a href="{{ asset('uploads/'.$enclosure->divorce) }}"
-                                   target="_blank">{{ $enclosure->divorce }}</a>
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">13</th>
-                        <td>{{  __('enclosure.rental_contract_aboard')  }}</td>
-                        <td>
-                            <div class="mb-3">
-                                <input wire:model.defer="rental_contract" class="form-control" type="file"
-                                       id="formFile">
-                            </div>
-                            <span class="text-danger">@error('rental_contract'){{ $message }}@enderror</span>
-                        </td>
-                        <td>
-                            @if ($enclosure->rental_contract)
-                                <a href="{{ asset('uploads/'.$enclosure->rental_contract) }}"
-                                   target="_blank">{{ $enclosure->rental_contract }}</a>
-                            @endif
-                        </td>
-                    </tr>
-                @endif
 
+                <tr>
+                    <th scope="row">8</th>
+                    <td><b>{{  __('enclosure.passport')  }} * </b></td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="passport" class="form-control" type="file">
+                        </div>
+                        <span class="text-danger">@error('passport'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->passport)
+                            <a href="{{ asset('uploads/'.$enclosure->passport) }}"
+                               target="_blank">{{ $enclosure->passport }}</a>
+                        @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.passportSendLater" type="checkbox">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td><b>{{  __('enclosure.cv')  }} *</b></td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="cv" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('cv'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->cv)
+                            <a href="{{ asset('uploads/'.$enclosure->cv) }}"
+                               target="_blank">{{ $enclosure->cv }}</a>
+                        @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.cvSendLater" type="checkbox">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td><b>{{  __('enclosure.apprenticeship_contract')  }} *</b></td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="apprenticeship_contract" class="form-control" type="file"
+                                   id="formFile">
+                        </div>
+                        <span class="text-danger">@error('apprenticeship_contract'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->apprenticeship_contract)
+                            <a href="{{ asset('uploads/'.$enclosure->apprenticeship_contract) }}"
+                               target="_blank">{{ $enclosure->apprenticeship_contract }}</a>
+                        @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.apprenticeshipContractSendLater" type="checkbox">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">11</th>
+                    <td><b>{{  __('enclosure.diploma')  }} *</b></td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="diploma" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('diploma'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->diploma)
+                            <a href="{{ asset('uploads/'.$enclosure->diploma) }}"
+                               target="_blank">{{ $enclosure->diploma }}</a>
+                        @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.diplomaSendLater" type="checkbox">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">12</th>
+                    <td>{{  __('enclosure.divorce')  }}</td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="divorce" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('divorce'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->divorce)
+                            <a href="{{ asset('uploads/'.$enclosure->divorce) }}"
+                               target="_blank">{{ $enclosure->divorce }}</a>
+                        @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.divorceSendLater" type="checkbox">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">13</th>
+                    <td>{{  __('enclosure.rental_contract_aboard')  }}</td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="rental_contract" class="form-control" type="file"
+                                   id="formFile">
+                        </div>
+                        <span class="text-danger">@error('rental_contract'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->rental_contract)
+                            <a href="{{ asset('uploads/'.$enclosure->rental_contract) }}"
+                               target="_blank">{{ $enclosure->rental_contract }}</a>
+                        @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.rentalContractSendLater" type="checkbox">
+                        </div>
+                    </td>
+                </tr>
                 </tbody>
             </table>
 
