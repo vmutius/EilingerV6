@@ -29,52 +29,52 @@
         <li>
             <a href="{{ route('user_dashboard', app()->getLocale()) }}">
                 <i class="bi bi-grid"></i>
-                <span class="links_name">Dashboard</span>
+                <span class="links_name">{{  __('userDashboard.dashboard')  }}</span>
             </a>
-            <span class="tooltip">Dashboard</span>
+            <span class="tooltip">{{  __('userDashboard.dashboard')  }}</span>
         </li>
         <li>
             <a href="{{ route('user_antraege', app()->getLocale()) }}">
                 <i class="bi bi-envelope-open"></i>
-                <span class="links_name">Anträge</span>
+                <span class="links_name">{{  __('userDashboard.applications')  }}</span>
             </a>
-            <span class="tooltip">Stellen Sie hier ihre Anträge</span>
+            <span class="tooltip">{{  __('userDashboard.applicationsToolTip')  }}</span>
         </li>
         <li>
             <a href="{{ route('user_gesuch', app()->getLocale()) }}">
                 <i class="bi bi-envelope-check"></i>
-                <span class="links_name">Gesuche</span>
+                <span class="links_name">{{  __('userDashboard.requests')  }}</span>
             </a>
-            <span class="tooltip">Sehen Sie hier ihre Gesuche</span>
+            <span class="tooltip">{{  __('userDashboard.requestsToolTip')  }}</span>
         </li>
         <li>
             <a href="{{ route('user_nachrichten', app()->getLocale()) }}">
                 <i class="bi bi-chat-dots"></i>
-                <span class="links_name">Nachrichten</span>
+                <span class="links_name">{{  __('userDashboard.messages')  }}</span>
             </a>
-            <span class="tooltip">Ihre Nachrichten</span>
+            <span class="tooltip">{{  __('userDashboard.messagesToolTip')  }}</span>
         </li>
         <li>
             <a href="{{ route('user_dateien', app()->getLocale()) }}">
                 <i class="bi bi-folder-plus"></i>
-                <span class="links_name">Datei Ablage</span>
+                <span class="links_name">{{  __('userDashboard.files')  }}</span>
             </a>
-            <span class="tooltip">Datei Ablage</span>
+            <span class="tooltip">{{  __('userDashboard.filesToolTip')  }}</span>
         </li>
         <li>
             <a href="{{ route('user_profile.edit', app()->getLocale()) }}">
                 <i class="bi bi-person"></i>
-                <span class="links_name">Profil</span>
+                <span class="links_name">{{  __('userDashboard.profile')  }}</span>
             </a>
-            <span class="tooltip">Profil</span>
+            <span class="tooltip">{{  __('userDashboard.profileToolTip')  }}</span>
         </li>
 
         <li>
             <a href="{{ route('user_delete', app()->getLocale()) }}">
                 <i class="bi bi-person-x"></i>
-                <span class="links_name">Account löschen</span>
+                <span class="links_name">{{  __('userDashboard.delAccount')  }}</span>
             </a>
-            <span class="tooltip">Account löschen</span>
+            <span class="tooltip">{{  __('userDashboard.delAccountToolTip')  }}</span>
         </li>
 
 

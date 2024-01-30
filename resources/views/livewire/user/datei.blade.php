@@ -1,11 +1,11 @@
 <section class="home-section">
-    <div class="text">Dateien</div>
+    <div class="text">{{  __('file.title')  }}</div>
 
     <div class="home-content">
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="row">
                 <div class="col-md-12">
-                    <button class="btn btn-colour-1  btn-next pull-right" wire:click="addEnclosure()">Neue Datei hochladen</button>
+                    <button class="btn btn-colour-1  btn-next pull-right" wire:click="addEnclosure()">{{  __('file.newFile')  }}</button>
                 </div>
             </div>
             <hr class="border border-dark opacity-50">
@@ -13,37 +13,43 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Inhalt</th>
-                        <th>Datei</th>
-                        <th>Antrag</th>
-                        <th>Erstellt</th>
-                        <th>Zuletzt Geändert</th>
+                        <th>{{  __('file.content')  }}</th>
+                        <th>{{  __('file.file')  }}</th>
+                        <th>{{  __('file.application')  }}</th>
+                        <th>{{  __('file.createdAt')  }}</th>
+                        <th>{{  __('file.lastUpdated')  }}</th>
                     </tr>
                 </thead>
                 <tbody>
-                @forelse ($enclosures as $enclosure)
-                    @foreach($enclosure->getAttributes() as $column => $value)
-                        @if(in_array($column, ['id', 'created_at', 'updated_at', 'application_id', 'remark', 'is_draft', 'deleted_at']))
-                            @continue
-                        @endif
+                @forelse ($applications as $application)
+                    @forelse ($application->enclosures as $enclosure)
+                        @foreach($enclosure->getAttributes() as $column => $value)
+                            @if(in_array($column, ['id', 'created_at', 'updated_at', 'application_id', 'remark', 'is_draft', 'deleted_at']))
+                                @continue
+                            @endif
 
-                        @if($value)
+                            @if($value)
+                                <tr>
+                                    <td>{{ __('enclosure.'.$column) }}</td>
+                                    <td><a href="{{ asset('uploads/'.$enclosure->$column) }}"
+                                           target="_blank">{{ $enclosure->$column }}</a></td>
+                                    <td>{{ $enclosure->application->name }}</td>
+                                    <td>{{ $enclosure->created_at ? $enclosure->created_at->format('d.m.Y H:i') : null }}</td>
+                                    <td>{{ $enclosure->updated_at ? $enclosure->updated_at->format('d.m.Y H:i') : null }}</td>
+
+                                </tr>
+                            @endif
+                            @endforeach
+                        @empty
                             <tr>
-                                <td>{{ __('enclosure.'.$column) }}</td>
-                                <td><a href="{{ asset('uploads/'.$enclosure->$column) }}"
-                                       target="_blank">{{ $enclosure->$column }}</a></td>
-                                <td>{{ $enclosure->application->name }}</td>
-                                <td>{{ $enclosure->created_at ? $enclosure->created_at->format('d.m.Y H:i') : null }}</td>
-                                <td>{{ $enclosure->updated_at ? $enclosure->updated_at->format('d.m.Y H:i') : null }}</td>
-
+                                <td colspan="5">{{  __('file.noFiles')  }}</td>
                             </tr>
-                        @endif
-                        @endforeach
-                    @empty
-                        <tr>
-                            <td colspan="5">Keine Dateien gefunden</td>
-                        </tr>
-                    @endforelse
+                        @endforelse
+                @empty
+                    <tr>
+                        <td colspan="5">{{  __('file.noFiles')  }}</td>
+                    </tr>
+                @endforelse
                 </tbody>
             </table>
         </div>
@@ -53,7 +59,7 @@
                 <div class="modal-content">
                     <form wire:submit.prevent="saveEnclosure">
                         <div class="modal-header">
-                            <h5 class="modal-title">Neue Datei hochladen</h5>
+                            <h5 class="modal-title">{{  __('file.newFile')  }}</h5>
                             <button wire:click="close" type="button" class="close" data-dismiss="modal"
                                 aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -63,7 +69,7 @@
                             Antrag:
                             <br />
                             <select wire:model.lazy="application_id" class="form-select">
-                                <option selected value="">Bitte auswählen...</option>
+                                <option hidden>{{  __('attributes.please_select')  }}</option>
                                 @foreach ($applications as $application)
                                     <option value="{{ $application->id }}">{{ $application->name }}</option>
                                 @endforeach
@@ -75,7 +81,7 @@
                             Typ der Datei:
                             <br />
                             <select wire:model.lazy="column" class="form-select">
-                                <option selected value="">Bitte auswählen...</option>
+                                <option hidden="">{{  __('attributes.please_select')  }}</option>
                                 @foreach($this->columns as $column => $value)
                                     @if(in_array($value, ['id', 'created_at', 'updated_at', 'application_id', 'remark', 'is_draft', 'deleted_at']))
                                         @continue
@@ -97,9 +103,9 @@
                             <br />
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Speichern</button>
+                            <button type="submit" class="btn btn-primary">{{  __('attributes.save')  }}</button>
                             <button wire:click="close" type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
+                                data-dismiss="modal">{{  __('attributes.close')  }}
                             </button>
                         </div>
                     </form>

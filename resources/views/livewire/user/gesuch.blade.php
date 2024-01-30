@@ -32,7 +32,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5">Keine Gesuche gefunden</td>
+                        <td colspan="6">{{  __('application.no_requests')  }}</td>
                     </tr>
                 @endforelse
                 </tbody>

@@ -36,6 +36,7 @@ return [
     'no_projects' => 'Keine Projekte gefunden',
     'bereich' => 'Bereich',
     'requests' => 'Gesuche',
+    'no_requests' => 'Keine Gesuche gefunden',
     'status' => 'Status',
 
     'status_name' => [

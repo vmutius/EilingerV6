@@ -1,6 +1,6 @@
 @php use Illuminate\Contracts\Auth\MustVerifyEmail; @endphp
-<h3 class="m-2">Profil Informationen</h3>
-<small>Wenn Sie Ihre Email Addresse ändern, müssen Sie diese erneut bestätigen.</small>
+<h3 class="m-0">{{  __('profile.title')  }}</h3>
+<small>{{  __('profile.subtitle')  }}</small>
 
 
 <form id="send-verification" method="post" action="{{ route('verification.send', app()->getLocale()) }}">
@@ -11,11 +11,11 @@
     @csrf
     @method('patch')
     <div class="row">
-        <x-input-text-all name="lastname" :value="old('lastname', $user->lastname)">Nachname *</x-input-text-all>
+        <x-input-text-all name="lastname" :value="old('lastname', $user->lastname)">{{  __('user.lastname')  }} *</x-input-text-all>
         <x-input-error :messages="$errors->get('lastname')"/>
-        <x-input-text-all name="firstname" :value="old('firstname', $user->firstname)">Vorname *</x-input-text-all>
+        <x-input-text-all name="firstname" :value="old('firstname', $user->firstname)">{{  __('user.firstname')  }} *</x-input-text-all>
         <x-input-error :messages="$errors->get('firstname')"/>
-        <x-input-text-all name="email" type="email" :value="old('email', $user->email)">Email *</x-input-text-all>
+        <x-input-text-all name="email" type="email" :value="old('email', $user->email)">{{  __('user.email')  }} *</x-input-text-all>
         <x-input-error :messages="$errors->get('email')"/>
 
 
@@ -40,7 +40,7 @@
     </div>
 
     <div class="flex mt-3">
-        <x-primary-button>{{ __('Save') }}</x-primary-button>
+        <x-primary-button>{{ __('attributes.save') }}</x-primary-button>
 
         @if (session('status') === 'profile-updated')
             <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
