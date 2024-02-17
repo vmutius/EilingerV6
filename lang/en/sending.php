@@ -17,5 +17,8 @@ return [
     'remark' => 'Remarks and Enclosure',
     'education' => 'Education',
     'parents' => 'Parents',
-    'sibling' => 'Sibling'
+    'sibling' => 'Sibling',
+    'submit' => 'Submit',
+    'submitApplication' => 'Submit Application',
+    'submitApplicationConfirmation' => 'By submitting this application, I confirm that I have provided all information truthfully.',
 ];

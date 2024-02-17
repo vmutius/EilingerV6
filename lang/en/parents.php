@@ -5,12 +5,12 @@ use App\Enums\ParentType;
 
 return [
     'title' => 'Parents',
-    'subtitle' => 'Natural parents of the applicant',
-    'parent_type' => 'Parent part',
-    'lastname' => 'Lastname',
-    'firstname' => 'Firstname',
+    'subtitle' => 'Parents of the applicant',
+    'parent_type' => 'Parent',
+    'lastname' => 'Last name',
+    'firstname' => 'First name',
     'birthday' => 'Birthday',
-    'telefon' => 'Phonenumber',
+    'telefon' => 'Phone number',
     'address' => 'Street and house number',
     'plz_ort' => 'Postal code and city',
     'since' => 'Resident since',
@@ -21,7 +21,7 @@ return [
     'separated_since' => 'Separated since',
     'divorced_since' => 'Divorced since',
     'death' => 'Year of death',
-    'addParents' => '+ Additional parent parts',
+    'addParents' => '+ Additional parent',
 
     'parent_type_name' => [
         ParentType::father->name => 'Father',

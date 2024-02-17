@@ -7,8 +7,8 @@ return [
     'amount' => 'Amount',
     'currency' => 'Currency',
     'totalCost' => 'Total Costs',
-    'totalFinancing' => 'Total financing',
+    'totalFinancing' => 'Total Financing',
     'diffAmount' => 'Calculated Amount',
     'reqAmount' => 'Required Amount',
-    'payoutPlan' => 'Payout plan',
+    'payoutPlan' => 'Payout Plan',
 ];

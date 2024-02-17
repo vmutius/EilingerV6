@@ -17,7 +17,7 @@
                 <select wire:model.lazy="education.education" name="education" class="form-select">
                     <option hidden>{{  __('attributes.please_select')  }}</option>
                     @foreach (Education::cases() as $education)
-                        <option value="{{ $education->value }}">{{ $education->name }}</option>
+                        <option value="{{ $education->value }}">{{ __('education.education_name.' .$education->name) }} </option>
                     @endforeach
                 </select>
                 <span class="text-danger">@error('education.education'){{ $message }}@enderror</span>
@@ -38,7 +38,7 @@
                 <select wire:model.lazy="education.grade" name="grade" class="form-select">
                     <option hidden>{{  __('attributes.please_select')  }}</option>
                     @foreach (App\Enums\Grade::cases() as $grade)
-                        <option value="{{ $grade->value }}">{{ $grade->value }}</option>
+                        <option value="{{ $grade->value }}">{{ __('education.grade_name.' .$grade->name) }}</option>
                     @endforeach
                 </select>
                 <span class="text-danger">@error('education.grade'){{ $message }}@enderror</span>

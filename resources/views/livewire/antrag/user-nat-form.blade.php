@@ -92,7 +92,7 @@
             <select wire:model.lazy="user.granting" class="form-select">
                 <option hidden>{{  __('attributes.please_select')  }}</option>
                 @foreach (App\Enums\Bewilligung::cases() as $granting)
-                    <option value="{{ $granting->value }}">{{ $granting->value }}</option>
+                    <option value="{{ $granting->value }}">{{ __('user.permit_name.' .$granting->name) }}</option>
                 @endforeach
             </select>
             @error('user.granting')

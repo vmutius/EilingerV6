@@ -18,4 +18,7 @@ return [
     'education' => 'Ausbildung',
     'parents' => 'Eltern',
     'sibling' => 'Geschwister',
+    'submit' => 'Einreichen',
+    'submitApplication' => 'Antrag einreichen',
+    'submitApplicationConfirmation' => 'Mit dem Einreichen des Antrags bestätige ich, dass ich alle Angaben wahrheitsmässig gemacht habe.',
 ];

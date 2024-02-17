@@ -9,4 +9,6 @@ return [
     'edit' => 'Bearbeiten',
     'delete' => 'Löschen',
     'showMessages' => 'Nachrichten ansehen',
+    'continue' => 'Weiter',
+    'back' => 'Zurück',
 ];

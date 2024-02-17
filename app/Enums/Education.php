@@ -10,5 +10,5 @@ enum Education: string
     case BM2 = 'BM2';
     case Fachschule = 'Fachschule';
     case Fachhochschule = 'Fachhochschule';
-    case Universität = 'Universität';
+    case Universitaet = 'Universität';
 }

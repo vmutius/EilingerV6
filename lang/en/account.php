@@ -2,7 +2,7 @@
 
 return [
     'title' => 'Payment',
-    'subtitle' => 'Details of the account details',
+    'subtitle' => 'Details of the account',
     'name_bank' => 'Name of the bank',
     'city_bank' => 'City of the bank',
     'owner' => 'Account owner',

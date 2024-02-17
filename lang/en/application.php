@@ -51,7 +51,7 @@ return [
     'bereichs_name' => [
         Bereich::Bildung->name => 'Education',
         Bereich::Menschen->name => 'People in need',
-        Bereich::Menschenrecht->name => 'Human right',
+        Bereich::Menschenrecht->name => 'Human rights',
         Bereich::Tierschutz->name => 'Animal welfare',
         Bereich::Umwelt->name => 'Environment',
     ],
@@ -65,7 +65,7 @@ return [
     'payoutplan_name' => [
         PayoutPlan::monthly->name => 'monthly',
         PayoutPlan::oneTime->name => 'one time',
-        PayoutPlan::partialAmount->name => 'Can be called in installments',
+        PayoutPlan::partialAmount->name => 'Can be requested in individual installments',
     ],
 
     'time' => [

@@ -153,17 +153,17 @@
         @if ($currentStep > 1)
             <button class="btn btn-colour-1 btn-prev pull-start" wire:click="decreaseStep()">
                 <i class="bx bx-chevron-left bx-sm ms-sm-n2 align-middle"></i>
-                <span class="align-middle d-sm-inline-block d-none">Zurück</span>
+                <span class="align-middle d-sm-inline-block d-none">{{ __('attributes.back') }}</span>
             </button>
         @endif
         @if ($currentStep == 12)
             @if (!$this->completeApp)
                 <button class="btn btn-danger btn-lg disabled" wire:click="saveApplication()">
-                    <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
+                    <span class="align-middle d-sm-inline-block d-none">{{ __('sending.submitApplication') }}</span>
                 </button>
             @else
                 <button class="btn btn-danger btn-lg" wire:click="saveApplication()">
-                    <span class="align-middle d-sm-inline-block d-none">Antrag einreichen</span>
+                    <span class="align-middle d-sm-inline-block d-none">{{ __('sending.submitApplication') }}</span>
                 </button>
 
                 <div class="modal" @if ($showModal) style="display:block" @endif>
@@ -171,7 +171,7 @@
                         <div class="modal-content">
                             <form wire:submit.prevent="save">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Antrag einreichem</h5>
+                                    <h5 class="modal-title">{{ __('sending.submitApplication') }}</h5>
                                     <button wire:click="close" type="button" class="close" data-dismiss="modal"
                                             aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -180,14 +180,14 @@
                                 <div class="modal-body">
 
                                     <br/>
-                                    Ich bestätige, dass ich alle Angaben wahrheitsmässig gemacht habe
+                                    {{ __('sending.submitApplicationConfirmation') }}
                                     <br/>
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Einreichen</button>
+                                    <button type="submit" class="btn btn-primary">{{ __('sending.submit') }}</button>
                                     <button wire:click="close" type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close
+                                            data-dismiss="modal">{{ __('attributes.close') }}
                                     </button>
                                 </div>
                             </form>
@@ -199,7 +199,7 @@
 
         @if ($currentStep < 12)
             <button class="btn btn-colour-1  btn-next pull-end" wire:click="increaseStep()">
-                <span class="align-middle d-sm-inline-block d-none me-sm-1 align-middle">Weiter</span>
+                <span class="align-middle d-sm-inline-block d-none me-sm-1 align-middle">{{ __('attributes.continue') }}</span>
                 <i class="bx bx-chevron-right bx-sm me-sm-n2 align-middle"></i>
             </button>
         @endif

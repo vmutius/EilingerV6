@@ -2,7 +2,7 @@
 
 return [
     'title' => 'Financing',
-    'subTitle' => 'Information on income in the upcoming education year',
+    'subTitle' => 'Information on income in the upcoming year',
     'titleOrg' => 'Income',
     'subTitleOrg' => 'List of all income. Please provide details in the respective national currency per year',
     'personal_contribution' => 'Personal contribution by the applicant',
@@ -15,6 +15,6 @@ return [
     'financing_name' => 'Income',
     'financing_amount' => 'Amount',
     'addFinancing' => '+ Additional income',
-    'total' => 'Total costs in',
+    'total' => 'Total financing in',
     'other' => 'Other income',
 ];
