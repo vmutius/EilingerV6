@@ -4,14 +4,14 @@
         <section>
             <div class="container">
                 <div class="section-title">
-                    <h2>Two Factor Verification</h2>
+                    <h2>{{  __('regLog.2FA')  }}</h2>
                 </div>
 
                 <form method="POST" action="{{ route('verify.store', app()->getLocale()) }}">
                     @csrf
                     <p class="text-muted">
-                        You have received an email which contains two factor login code.
-                        If you haven't received it, press <a href="{{ route('verify.resend', app()->getLocale()) }}">here</a>.
+                        {{  __('regLog.2FANote')  }}
+                        {{  __('regLog.2FAResend')  }} <a href="{{ route('verify.resend', app()->getLocale()) }}"></a>.
                     </p>
 
                     <div>

@@ -4,7 +4,7 @@
         <section>
             <div class="container">
                 <div class="section-title">
-                    <h2>Passwort zurücksetzen</h2>
+                    <h2>{{  __('regLog.resetPassword')  }}</h2>
                 </div>
 
                 <form method="POST" action="{{ route('password.store', app()->getLocale()) }}">
@@ -22,7 +22,7 @@
 
                     <!-- Password -->
                     <div class="group">
-                        <label class="form-label" for="password">Passwort *</label>
+                        <label class="form-label" for="password">{{  __('user.password')  }} *</label>
                         <input name="password" class="form-control @error('password') is-invalid @enderror @if (session('valid-password')) is-valid @endif"
                             id="password" type="password" required autocomplete="new-password" />
                         @error('password')
@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="group">
-                        <label class="form-label" for="password_confirmation">Passwort bestätigen*</label>
+                        <label class="form-label" for="password_confirmation">{{  __('user.password_confirmation')  }}*</label>
                         <input name="password_confirmation"
                             class="form-control @error('password_confirmation') is-invalid @enderror @if (session('valid-password_confirmation')) is-valid @endif"
                             id="password_confirmation" type="password" required autocomplete="new-password" />

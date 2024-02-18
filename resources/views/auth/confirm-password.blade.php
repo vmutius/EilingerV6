@@ -4,7 +4,7 @@
         <section>
             <div class="container">
                 <div class="section-title">
-                    <h2>Bestätigung des Passworts</h2>
+                    <h2>{{  __('regLog.confirmationPassword') }}</h2>
                 </div>
 
                 <div class="mb-4 text-sm text-gray-600">

@@ -9,7 +9,7 @@
             <form wire:submit.prevent="registerPrivat">
                 @csrf
                 <div class="group">
-                    <label class="form-label" for="username">Benutzername *</label>
+                    <label class="form-label" for="username">{{  __('user.username')  }} *</label>
                     <input wire:model.lazy="username" class="form-control @error('username') is-invalid @enderror @if (session('valid-username')) is-valid @endif" id="username" type="text"
                         placeholder="Wählen Sie einen Benutzernamen" autofocus autocomplete="off">
                     @error('username')
@@ -26,14 +26,12 @@
 
 
                 <div class="group">
-                    <label class="form-label" for="salutation">Anrede *</label>
+                    <label class="form-label" for="salutation">{{  __('user.salutation')  }} *</label>
                     <select wire:model.lazy="salutation" class="form-select @error('salutation') is-invalid @enderror @if (session('valid-salutation'))
                         is-valid @endif" id="salutation" type="text" autofocus autocomplete="off">
                         <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
-                        @foreach (App\Enums\Salutation::cases() as $key => $label)
-                            <option value="{{ $key }}"
-                                {{ old('salutation', '') === (string) $key ? 'selected' : '' }}>{{ $label }}
-                            </option>
+                        @foreach (App\Enums\Salutation::cases() as $salutation)
+                            <option value="{{ $salutation->value }}">{{ __('user.salutation_name.' .$salutation->name) }}</option>
                         @endforeach
                     </select>
                     @error('salutation')
@@ -49,7 +47,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="firstname">Vorname *</label>
+                    <label class="form-label" for="firstname">{{  __('user.firstname')  }} *</label>
                     <input wire:model.lazy="firstname" class="form-control @error('firstname') is-invalid @enderror @if (session('valid-firstname'))
                         is-valid @endif" id="firstname" type="text" placeholder="Max"  autofocus autocomplete="off">
                     @error('firstname')
@@ -65,7 +63,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="lastname">Nachname *</label>
+                    <label class="form-label" for="lastname">{{  __('user.lastname')  }} *</label>
                     <input wire:model.lazy="lastname" class="form-control @error('lastname') is-invalid @enderror @if (session('valid-lastname'))
                         is-valid @endif" id="lastname" type="text" placeholder="Muster"  autofocus autocomplete="off">
                     @error('lastname')
@@ -81,7 +79,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="street">Strasse *</label>
+                    <label class="form-label" for="street">{{  __('address.street')  }} *</label>
                     <input wire:model.lazy="street" class="form-control @error('street') is-invalid @enderror @if (session('valid-street'))
                         is-valid @endif" id="street" type="text" placeholder="Mustergasse"  autofocus autocomplete="off">
                     @error('street')
@@ -97,7 +95,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="number">Hausnummer </label>
+                    <label class="form-label" for="number">{{  __('address.number')  }} </label>
                     <input wire:model.lazy="number" class="form-control @error('number') is-invalid @enderror @if (session('valid-number'))
                         is-valid @endif" id="number" type="text" placeholder="12"  autofocus autocomplete="off">
                     @error('number')
@@ -114,7 +112,7 @@
 
 
                 <div class="group">
-                    <label class="form-label" for="plz">Postleitzahl *</label>
+                    <label class="form-label" for="plz">{{  __('address.plz')  }} *</label>
                     <input wire:model.lazy="plz" class="form-control @error('plz') is-invalid @enderror @if (session('valid-plz'))
                         is-valid @endif" id="plz" type="number" placeholder="7000"  autofocus autocomplete="off">
                     @error('plz')
@@ -130,7 +128,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="town">Ort *</label>
+                    <label class="form-label" for="town">{{  __('address.plz')  }} *</label>
                     <input wire:model.lazy="town" class="form-control @error('town') is-invalid @enderror @if (session('valid-town'))
                         is-valid @endif" id="town" type="text" placeholder="Musterhausen"  autofocus autocomplete="off">
                     @error('town')
@@ -146,7 +144,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="country">Land *</label>
+                    <label class="form-label" for="country">{{  __('address.country')  }} *</label>
                     <select wire:model.lazy="country_id" class="form-select @error('country_id') is-invalid @enderror @if (session('valid-country_id'))
                         is-valid @endif" id="country" type="text" placeholder="Schweiz"  autofocus autocomplete="off">
                         <option selected value="" disabled>{{  __('attributes.please_select')  }}</option>
@@ -168,7 +166,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="phone">Telefonnummer *</label>
+                    <label class="form-label" for="phone">{{  __('user.phone')  }} *</label>
                     <input wire:model.lazy="phone" class="form-control @error('phone') is-invalid @enderror @if (session('valid-phone'))
                         is-valid @endif" id="phone" type="text" placeholder="+41 81 123 4567"  autofocus autocomplete="off">
                     @error('phone')
@@ -185,7 +183,7 @@
 
 
                 <div class="group">
-                    <label class="form-label" for="email">Email *</label>
+                    <label class="form-label" for="email">{{  __('user.email')  }} *</label>
                     <input wire:model.lazy="email" class="form-control @error('email') is-invalid @enderror @if (session('valid-email'))
                         is-valid @endif" id="email" type="email" placeholder="max@mustermann.ch"  autofocus autocomplete="off">
                     @error('email')
@@ -201,7 +199,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="password">Passwort * (Mindestens 8 Zeichen, einen Grossbuchstaben, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen)</label>
+                    <label class="form-label" for="password">{{  __('user.password')  }}</label>
                     <input wire:model.lazy="password" class="form-control @error('password') is-invalid @enderror @if (session('valid-password'))
                         is-valid @endif" id="password" type="password" autofocus autocomplete="off">
                     @error('password')
@@ -217,7 +215,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="password_confirmation">Passwort bestätigen*</label>
+                    <label class="form-label" for="password_confirmation">{{  __('user.password_confirmation')  }} *</label>
                     <input wire:model.lazy="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror @if (session('valid-password_confirmation'))
                         is-valid @endif" id="password_confirmation" type="password" autofocus autocomplete="off">
                     @error('password_confirmation')
@@ -246,7 +244,7 @@
                                 {{ session(['valid-terms' => 'OK']) }}
                             </div>
                         @endif
-                        Ich akzeptiere die Nutzungsbedingungen.
+                        {{  __('regLog.accept')  }}
                     </label>
                 </div>
                 <div class="col-md-12 text-center">

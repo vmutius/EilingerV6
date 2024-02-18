@@ -4,10 +4,10 @@
         <section>
             <div class="container">
                 <div class="section-title">
-                    <h2>Passwort vergessen?</h2>
+                    <h2>{{  __('regLog.forgottenPassword')  }}</h2>
                 </div>
 
-                <p>Sie haben Ihr Passwort vergessen? Kein Problem. Geben Sie Ihre Email Adress ein und wir senden Ihnen eine Link, um das Passwort neu zu setzen.</p>
+                <p>{{  __('regLog.forgottenPasswordNote')  }}</p>
 
                 <!-- Session Status -->
                 <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -17,7 +17,7 @@
 
                     <!-- Email Address -->
                     <div>
-                        <label class="form-label" for="email">Email *</label>
+                        <label class="form-label" for="email">{{  __('user.email')  }} *</label>
                         <input name='email' class="form-control @error('email') is-invalid @enderror @if (session('valid-email')) is-valid @endif" id="email" type="text">
                     @error('email')
                         <div id="invalidFeedback" class="invalid-feedback">
@@ -33,7 +33,7 @@
 
                     <div class="col-md-12 text-center">
                         <x-primary-button>
-                            {{ __('Email Password Reset Link') }}
+                            {{  __('regLog.resetPasswordLink')  }}
                         </x-primary-button>
                     </div>
                 </form>
