@@ -76,7 +76,7 @@ class Application extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function enclosure() {
-        return $this->belongsTo(Enclosure::class);
+    public function enclosures() {
+        return $this->hasMany(Enclosure::class, 'application_id');
     }
 }

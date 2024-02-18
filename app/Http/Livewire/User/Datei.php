@@ -40,13 +40,11 @@ class Datei extends Component
         ];
     }
 
+    protected $listeners = ['refreshComponent' => '$refresh'];
+
     public function mount()
     {
-        $this->applications = Application::with('enclosure')->LoggedInUser()->get();
-        foreach ($this->applications as $application)
-        {
-            $this->enclosures=Enclosure::where('application_id', $application->id)->get();
-        }
+        $this->applications = Application::with('enclosures')->LoggedInUser()->get();
 
         $lastname = auth()->user()->lastname;
         $firstname = auth()->user()->firstname;
@@ -79,6 +77,7 @@ class Datei extends Component
         $this->file = '';
 
         $this->showModal = false;
+        $this->emit('fileUploaded');
     }
 
     public function updatedApplicationId($application_id) {

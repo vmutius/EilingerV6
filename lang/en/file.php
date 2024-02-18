@@ -9,4 +9,5 @@ return [
     'createdAt' => 'Created at',
     'lastUpdated' => 'Last updated at',
     'noFiles' => 'No files available',
+    'noApplication' => 'No applications or requests found',
 ];

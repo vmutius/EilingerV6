@@ -9,4 +9,5 @@ return [
     'createdAt' => 'Erstellt am',
     'lastUpdated' => 'Zuletzt geändert am',
     'noFiles' => 'Keine Dateien vorhanden',
+    'noApplication' => 'Keine Anträge oder Gesuche vorhanden',
 ];

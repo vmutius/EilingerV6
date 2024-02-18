@@ -28,7 +28,8 @@
                                 @continue
                             @endif
 
-                            @if($value)
+
+                            @if($value && !\Illuminate\Support\Str::endsWith($column, 'SendLater') )
                                 <tr>
                                     <td>{{ __('enclosure.'.$column) }}</td>
                                     <td><a href="{{ asset('uploads/'.$enclosure->$column) }}"
@@ -47,7 +48,7 @@
                         @endforelse
                 @empty
                     <tr>
-                        <td colspan="5">{{  __('file.noFiles')  }}</td>
+                        <td colspan="5">{{  __('file.noApplication')  }}</td>
                     </tr>
                 @endforelse
                 </tbody>
@@ -66,7 +67,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            Antrag:
+                            {{  __('file.application')  }}:
                             <br />
                             <select wire:model.lazy="application_id" class="form-select">
                                 <option hidden>{{  __('attributes.please_select')  }}</option>
@@ -78,7 +79,7 @@
                                 <div style="font-size: 0.75rem; color: red">{{ $message }}</div>
                             @enderror
                             <br />
-                            Typ der Datei:
+                            {{  __('file.content')  }}:
                             <br />
                             <select wire:model.lazy="column" class="form-select">
                                 <option hidden="">{{  __('attributes.please_select')  }}</option>
@@ -86,7 +87,9 @@
                                     @if(in_array($value, ['id', 'created_at', 'updated_at', 'application_id', 'remark', 'is_draft', 'deleted_at']))
                                         @continue
                                     @endif
+                                    @if(!\Illuminate\Support\Str::endsWith($value, 'SendLater') )
                                         <option value="{{ $value }}">{{ __('enclosure.'.$value) }}</option>
+                                    @endif
                                 @endforeach
                             </select>
                             @error('column')
@@ -94,7 +97,7 @@
                             @enderror
 
                             <br />
-                            Datei:
+                            {{  __('file.file')  }}:
                             <br />
                             <input wire:model.defer="file" class="form-control" type="file">
                             @error('form')
@@ -112,5 +115,11 @@
                 </div>
             </div>
         </div>
+        <script>
+            // Listen for the 'fileUploaded' event and refresh the component.
+            Livewire.on('fileUploaded', () => {
+                Livewire.emit('refreshComponent');
+            });
+        </script>
     </div>
 </section>
