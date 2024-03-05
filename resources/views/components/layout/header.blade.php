@@ -5,15 +5,15 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link active" href="{{ route('index', app()->getLocale()) }}#hero">{{ __('Home') }}</a></li>
-              <li><a class="nav-link scrollto" href="{{ route('index', app()->getLocale()) }}#about">{{ __('About Us') }}</a></li>
-              <li><a class="nav-link scrollto" href="{{ route('index', app()->getLocale()) }}#our-values">{{ __('Funding Area') }}</a></li>
-              <li><a class="nav-link scrollto" href="{{ route('index', app()->getLocale()) }}#projekte">{{ __('Projects') }}</a>
+              <li><a class="nav-link active" href="{{ route('index', app()->getLocale()) }}#hero">{{ __('home.home') }}</a></li>
+              <li><a class="nav-link scrollto" href="{{ route('index', app()->getLocale()) }}#about">{{ __('home.about') }}</a></li>
+              <li><a class="nav-link scrollto" href="{{ route('index', app()->getLocale()) }}#our-values">{{ __('home.funding') }}</a></li>
+              <li><a class="nav-link scrollto" href="{{ route('index', app()->getLocale()) }}#projekte">{{ __('home.projects') }}</a>
               </li>
-              <li><a class="nav-link scrollto" href="{{ route('index', app()->getLocale()) }}#gesuche">Gesuche</a>
+              <li><a class="nav-link scrollto" href="{{ route('index', app()->getLocale()) }}#gesuche">{{ __('home.requests') }}</a>
               </li>
               @if (Auth::guest())
-                  <li><a class="getstarted" href="{{ route('login', app()->getLocale()) }}">Registrieren | Einloggen</a></li>
+                  <li><a class="getstarted" href="{{ route('login', app()->getLocale()) }}">{{ __('home.register') }}</a></li>
               @else
                   <li><a class="getstarted" href="{{ route('user_dashboard', app()->getLocale()) }}">Dashboard</a>
                   </li>
