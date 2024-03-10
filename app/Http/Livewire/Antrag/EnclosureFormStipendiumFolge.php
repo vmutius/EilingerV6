@@ -166,7 +166,7 @@ class EnclosureFormStipendiumFolge extends Component
             $appl_id = session()->get('appl_id');
             $fileName = 'Appl'.$appl_id.'_'.$text.'.'.$type->getClientOriginalExtension();
 
-            return $type->storeAs($this->UserName, $fileName, 'uploads');
+            return $type->storeAs($this->UserName, $fileName, 's3');
         }
     }
 }

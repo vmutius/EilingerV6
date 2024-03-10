@@ -153,9 +153,8 @@ class EnclosureFormDarlehenPrivat extends Component
         if (! is_null($type)) {
             $appl_id = session()->get('appl_id');
             $fileName = 'Appl'.$appl_id.'_'.$text.'.'.$type->getClientOriginalExtension();
-            $file = $type->storeAs($this->UserName, $fileName, 'uploads');
 
-            return $file;
+            return $type->storeAs($this->UserName, $fileName, 's3');
         }
     }
 }

@@ -12,56 +12,58 @@
                     </div>
                     <div class="col-sm-12">
                         <p>{{ __('enclosure.commercial_register_extract') }}:
-                            <a href="{{ asset('uploads/'.$enclosure->commercial_register_extract) }}"
-                               target="_blank">{{ $enclosure->commercial_register_extract }}</a>
+                            @if ($enclosure->commercial_register_extract)
+                                <a href="{{ Storage::disk('s3')->url($enclosure->commercial_register_extract) }}"
+                                   target="_blank">{{ $enclosure->commercial_register_extract }}</a>
+                            @endif
                         </p>
                     </div>
                     <div class="col-sm-12">
                         <p>{{ __('enclosure.statute') }}:
-                            <a href="{{ asset('uploads/'.$enclosure->statute) }}"
-                               target="_blank">{{ $enclosure->statute }}</a>
+                            @if ($enclosure->statute)
+                                <a href="{{ Storage::disk('s3')->url($enclosure->statute) }}"
+                                   target="_blank">{{ $enclosure->statute }}</a>
+                            @endif
                         </p>
                     </div>
                     <div class="col-sm-12">
                         <p>{{ __('enclosure.activity') }}:
-                            <a href="{{ asset('uploads/'.$enclosure->activity) }}"
-                               target="_blank">{{ $enclosure->activity }}</a>
+                            @if ($enclosure->activity)
+                                <a href="{{ Storage::disk('s3')->url($enclosure->activity) }}"
+                                   target="_blank">{{ $enclosure->activity }}</a>
+                            @endif
                         </p>
                     </div>
                     <div class="col-sm-12">
                         <p>{{ __('enclosure.activity_report') }}:
-                            <a href="{{ asset('uploads/'.$enclosure->actvity_report) }}"
-                               target="_blank">{{ $enclosure->activity_report }}</a>
-                        </p>
-                    </div>
-                    <div class="col-sm-12">
-                        <p>{{ __('enclosure.rental_contract') }}:
-                            <a href="{{ asset('uploads/'.$enclosure->rental_contract) }}"
-                               target="_blank">{{ $enclosure->rental_contract }}</a>
+                            @if ($enclosure->actvity_report)
+                                <a href="{{ Storage::disk('s3')->url($enclosure->actvity_report) }}"
+                                   target="_blank">{{ $enclosure->actvity_report }}</a>
+                            @endif
                         </p>
                     </div>
                     <div class="col-sm-12">
                         <p>{{ __('enclosure.balance_sheet') }}:
-                            <a href="{{ asset('uploads/'.$enclosure->balance_sheet) }}"
-                               target="_blank">{{ $enclosure->balance_sheet }}</a>
+                            @if ($enclosure->balance_sheet)
+                                <a href="{{ Storage::disk('s3')->url($enclosure->balance_sheet) }}"
+                                   target="_blank">{{ $enclosure->balance_sheet }}</a>
+                            @endif
                         </p>
                     </div>
                     <div class="col-sm-12">
                         <p>{{ __('enclosure.tax_assessment') }}:
-                            <a href="{{ asset('uploads/'.$enclosure->tax_assessment) }}"
-                               target="_blank">{{ $enclosure->tax_assessment }}</a>
+                            @if ($enclosure->tax_assessment)
+                                <a href="{{ Storage::disk('s3')->url($enclosure->tax_assessment) }}"
+                                   target="_blank">{{ $enclosure->tax_assessment }}</a>
+                            @endif
                         </p>
                     </div>
                     <div class="col-sm-12">
                         <p>{{ __('enclosure.cost_receipts') }}:
-                            <a href="{{ asset('uploads/'.$enclosure->cost_receipts) }}"
-                               target="_blank">{{ $enclosure->cost_receipts }}</a>
-                        </p>
-                    </div>
-                    <div class="col-sm-12">
-                        <p>{{ __('enclosure.open_invoice') }}:
-                            <a href="{{ asset('uploads/'.$enclosure->open_invoice) }}"
-                               target="_blank">{{ $enclosure->open_invoice }}</a>
+                            @if ($enclosure->cost_receipts)
+                                <a href="{{ Storage::disk('s3')->url($enclosure->cost_receipts) }}"
+                                   target="_blank">{{ $enclosure->cost_receipts }}</a>
+                            @endif
                         </p>
                     </div>
                 </div>

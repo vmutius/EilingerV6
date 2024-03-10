@@ -21,6 +21,7 @@ class CreateEducationsTable extends Migration
             $table->date('begin_edu')->nullable();
             $table->integer('duration_edu')->nullable(); // in Jahren
             $table->integer('start_semester')->nullable(); // Gesuch gestellt ab start_semester
+            $table->boolean('initial_education')->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();
             $table->softDeletes();

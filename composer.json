@@ -11,6 +11,7 @@
         "laravel/sanctum": "^v3.3.1",
         "laravel/tinker": "^v2.9.0",
         "laravel/ui": "^v4.4.0",
+        "league/flysystem-aws-s3-v3": "^3.24",
         "livewire/livewire": "^2.12"
     },
     "require-dev": {

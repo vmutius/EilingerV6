@@ -94,6 +94,27 @@
                     </td>
                 </tr>
                 <tr>
+                    <th scope="row">3</th>
+                    <td><b>{{  __('enclosure.activity_report')  }} * </b></td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="activity_report" class="form-control" type="file" id="formFile">
+                        </div>
+                        <span class="text-danger">@error('activity_report'){{ $message }}@enderror</span>
+                    </td>
+                    <td>
+                        @if ($enclosure->activity_report)
+                            <a href="{{ asset('uploads/'.$enclosure->activity_report) }}"
+                               target="_blank">{{ $enclosure->activity_report }}</a>
+                        @endif
+                    </td>
+                    <td>
+                        <div class="mb-3">
+                            <input wire:model.defer="enclosure.activityReportSendLater" type="checkbox">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
                     <th scope="row">4</th>
                     <td>{{  __('enclosure.balance_sheet')  }}</td>
                     <td>
