@@ -14,7 +14,8 @@ return [
     'graduation_year' => 'Graduation year',
     'get_amount' => 'Receives education contributions',
     'support_site' => 'Supporting office',
-    'addSibling' => '+ Additional Siblings',
+    'addSibling' => '+ Additional Sibling',
+    'noSiblings' => 'No siblings entered',
 
     'get_amount_name' => [
         GetAmount::Yes->name => 'Yes',

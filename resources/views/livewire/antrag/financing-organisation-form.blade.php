@@ -46,7 +46,7 @@
 
         <hr class="border border-dark opacity-50">
         <div class="col-sm-12 text-end">
-            <p>{{  __('financing.total')  }} {{ $this->myCurrency->abbreviation }} {{ $this->getAmountFinancingOrganisation()}}</p>
+            <p>{{  __('financing.total')  }} in {{ $this->myCurrency->abbreviation }} {{ $this->getAmountFinancingOrganisation()}}</p>
         </div>
 
 

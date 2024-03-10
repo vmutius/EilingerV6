@@ -9,37 +9,37 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-4">
-                        <p>Elternteil: {{ $parent->parent_type }}</p>
+                        <p>{{ __('parents.parent_type') }}: {{ $parent->parent_type }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Nachname: {{ $parent->lastname }}</p>
+                        <p>{{ __('parents.lastname') }}: {{ $parent->lastname }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Vorname: {{ $parent->firstname }}</p>
+                        <p>{{ __('parents.firstname') }}: {{ $parent->firstname }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Geburtstag: {{ $parent->birthday }}</p>
+                        <p>{{ __('parents.birthday') }}: {{ $parent->birthday }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Telefon: {{ $parent->phone }}</p>
+                        <p>{{ __('parents.phone') }}: {{ $parent->phone }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Anschrift: {{ $parent->address }}</p>
+                        <p>{{ __('parents.address') }}: {{ $parent->address }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>PLZ und Ort: {{ $parent->plz_ort }}</p>
+                        <p>{{ __('parents.plz_ort') }}: {{ $parent->plz_ort }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Wohnhaft seit: {{ $parent->since }}</p>
+                        <p>{{ __('parents.since') }}: {{ $parent->since }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Beruf: {{ $parent->job }}</p>
+                        <p>{{ __('parents.job') }}: {{ $parent->job }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Arbeitgeber: {{ $parent->employer }}</p>
+                        <p>{{ __('parents.employer') }}: {{ $parent->employer }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <p>Arbeitsverhältnis: {{ $parent->job_type }}</p>
+                        <p>{{ __('parents.job_type') }}: {{ $parent->job_type }}</p>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Eltern eingetragen</p>
+                        <p>{{ __('parents.noParents') }}</p>
                     </div>
                 </div>
             </div>

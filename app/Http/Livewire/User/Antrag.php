@@ -4,6 +4,8 @@ namespace App\Http\Livewire\User;
 
 use App\Enums\ApplStatus;
 use App\Models\Application;
+use App\Models\User;
+use App\Notifications\NewApplication;
 use App\View\Components\Layout\UserDashboard;
 use Livewire\Component;
 
@@ -31,6 +33,10 @@ class Antrag extends Component
     {
         $this->application->appl_status = ApplStatus::PENDING;
         $this->application->save();
+        $admins = User::where('is_admin', 1)->get();
+        foreach ($admins as $admin) {
+            $admin->notify(new NewApplication($this->application));
+        }
         redirect()->route('user_gesuch', app()->getLocale());
     }
 

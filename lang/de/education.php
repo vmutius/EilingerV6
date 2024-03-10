@@ -11,8 +11,9 @@ return [
     'ects_points' => 'ECTS-Punkte für das kommende Semester gemäss Beleg',
     'time' => 'Pensum',
     'begin_edu' => 'Beginn der Ausbildung',
-    'duration_edu' => 'Dauer der Ausbildung',
+    'duration_edu' => 'Reguläre Ausbildungs/studienzeit',
     'start_semester' => 'Ab Ausbildungsjahr/Semester',
+    'noEducation' => 'Keine Ausbildungsdaten eingetragen',
 
     'education_name' => [
     Education::Matura->name => 'Matura',

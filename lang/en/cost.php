@@ -20,7 +20,7 @@ return [
     'cost_name' => 'Expenses',
     'cost_amount' => 'Amount',
     'noCost' => 'No Expenses entered',
-    'totalCosts' => 'Total costs in',
+    'totalCosts' => 'Total costs',
     'cost_name_req' => 'Expense is required',
     'cost_amount_req' => 'Amount is required',
     'add_cost' => '+ Add additional costs',

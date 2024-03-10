@@ -11,8 +11,9 @@ return [
     'ects_points' => 'ECTS points for the coming semester according to receipt',
     'time' => 'Workload',
     'begin_edu' => 'Begin of the education',
-    'duration_edu' => 'Duration of the education',
+    'duration_edu' => 'Regular training/study period',
     'start_semester' => 'Payment request from training year/semester',
+    'noEducation' => 'No education data entered',
 
     'education_name' => [
         Education::Matura->name => 'High school diploma',

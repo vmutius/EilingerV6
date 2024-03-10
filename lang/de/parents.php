@@ -10,7 +10,7 @@ return [
     'lastname' => 'Nachname',
     'firstname' => 'Vorname',
     'birthday' => 'Geburtsdatum',
-    'telefon' => 'Telefonnummer',
+    'phone' => 'Telefonnummer',
     'address' => 'Strasse und Hausnummer',
     'plz_ort' => 'PLZ und Ort',
     'since' => 'Wohnhaft seit',
@@ -22,6 +22,7 @@ return [
     'divorced_since' => 'Geschieden seit',
     'death' => 'Todesjahr',
     'addParents' => '+ Weitere Elternteile',
+    'noParents' => 'Keine Eltern eingetragen',
 
     'parent_type_name' => [
         ParentType::father->name => 'Vater',

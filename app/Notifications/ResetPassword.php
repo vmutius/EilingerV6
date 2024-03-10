@@ -15,8 +15,6 @@ class ResetPassword extends Notification implements ShouldQueue
 
     public $token;
 
-    public static $createUrlCallback;
-
     public static $toMailCallback;
 
     public function __construct($token)

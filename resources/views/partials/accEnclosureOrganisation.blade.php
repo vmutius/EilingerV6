@@ -70,7 +70,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Auszahlungsdaten eingetragen</p>
+                        <p>{{ __('enclosure.noEnclosure') }}</p>
                     </div>
                 </div>
             </div>

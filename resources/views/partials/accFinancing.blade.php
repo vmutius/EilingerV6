@@ -1,7 +1,7 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingFinancing">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                data-bs-target="#collapseFinancing">Finanzierung
+                data-bs-target="#collapseFinancing">{{ __('financing.title') }}
         </button>
     </h2>
     <div id="collapseFinancing" class="accordion-collapse collapse">
@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="col-12 text-end">
-                        <p>Gesamtkosten {{ $financing->total_amount_financing}}</p>
+                        <p>{{ __('financing.total') }} {{ $financing->total_amount_financing}}</p>
                     </div>
                 </div>
             </div>

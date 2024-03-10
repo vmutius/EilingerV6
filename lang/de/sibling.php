@@ -15,6 +15,7 @@ return [
     'get_amount' => 'Bezieht Ausbildungsbeiträge',
     'support_site' => 'Beziehende Stelle',
     'addSibling' => '+ Weitere Geschwister',
+    'noSiblings' => 'Keine Geschwister eingetragen',
 
     'get_amount_name' => [
         GetAmount::Yes->name => 'Ja',

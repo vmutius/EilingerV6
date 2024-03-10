@@ -26,7 +26,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Kontodaten eingetragen</p>
+                        <p>{{  __('account.noAccount')  }}</p>
                     </div>
                 </div>
             </div>

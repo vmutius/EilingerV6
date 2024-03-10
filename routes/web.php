@@ -41,8 +41,8 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
         Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
         Route::post('login', [AuthenticatedSessionController::class, 'store']);
     });
-
-    Route::middleware(['auth', 'verified','twofactor'])->group(function () {
+    //TODO: 'twofactor' muss hier und bei Admin wieder rein
+    Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('user/dashboard', App\Http\Livewire\User\Uebersicht::class)->name('user_dashboard');
         Route::get('user/antraege', App\Http\Livewire\User\Antraege::class)->name('user_antraege');
         Route::get('user/antrag/{application_id}', App\Http\Livewire\User\Antrag::class)->name('user_antrag');

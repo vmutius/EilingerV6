@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="col-12 text-end">
-                        <p>Gesamtkosten {{ $cost->total_amount_costs}}</p>
+                        <p>{{  __('cost.totalCosts')  }} {{ $cost->total_amount_costs}}</p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Kostendaten eingetragen</p>
+                        <p>{{  __('cost.noCost')  }}</p>
                     </div>
                 </div>
             </div>

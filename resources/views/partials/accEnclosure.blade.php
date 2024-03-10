@@ -1,7 +1,7 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingEnclosure">
         <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                data-bs-target="#collapseEnclosure">Bemerkungen und Beilagen
+                data-bs-target="#collapseEnclosure">{{ __('enclosure.title') }}
         </button>
     </h2>
     <div id="collapseEnclosure" class="accordion-collapse collapse">
@@ -41,7 +41,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Auszahlungsdaten eingetragen</p>
+                        <p>{{ __('enclosure.noEnclosure') }}</p>
                     </div>
                 </div>
             </div>

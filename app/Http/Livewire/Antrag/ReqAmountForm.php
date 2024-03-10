@@ -38,7 +38,7 @@ class ReqAmountForm extends Component
             $this->total_amount_financing = Financing::where('application_id', session()->get('appl_id'))
                 ->sum('total_amount_financing');
         }
-        if ($this->application->form == Form::Stipendium) {
+        if ($this->application->form === Form::Stipendium) {
             $this->total_amount_costs = Cost::where('application_id', session()->get('appl_id'))
                 ->sum('total_amount_costs');
         } else {

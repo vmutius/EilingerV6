@@ -69,7 +69,7 @@
         </div>
         <hr class="border border-dark opacity-50">
         <div class="col-sm-12 text-end">
-            <p>{{ __('cost.totalCosts') }} {{ $this->myCurrency->abbreviation }} {{ $this->getAmountCost() }}</p>
+            <p>{{ __('cost.totalCosts') }} in {{ $this->myCurrency->abbreviation }} {{ $this->getAmountCost() }}</p>
         </div>
 
         <div class="col-md-12 text-center">

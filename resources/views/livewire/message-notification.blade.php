@@ -25,16 +25,25 @@
                             </div>
                             <p><small>{{ $notification->created_at->diffForHumans() }}</small></p>
                         </a>
-                    @else
+                    @elseif ($notification->type == App\Notifications\NewApplication::class)
                         <a href="{{ $notification->data['url'] }}"
                            class="notification-list notification-list--unread text-dark">
                             <div class="notification-list_detail">
-                                <p>Der Status Ihres Gesuchs <br/> <b>{{ $notification->data['appl_name'] }}</b><br/>
-                                    <span class="text-muted">wurde geändert auf</span><br/>
-                                    <b>{{ $notification->data['appl_status'] }}</b></p>
+                                <p>Es wurde ein neuer Antrag <br/> <b>{{ $notification->data['appl_name'] }}</b><br/>
+                                    <span class="text-muted">eingereicht.</span><br/>
                             </div>
                             <p><small>{{ $notification->created_at->diffForHumans() }}</small></p>
                         </a>
+                    @else
+                    <a href="{{ $notification->data['url'] }}"
+                       class="notification-list notification-list--unread text-dark">
+                        <div class="notification-list_detail">
+                            <p>Der Status Ihres Gesuchs <br/> <b>{{ $notification->data['appl_name'] }}</b><br/>
+                                <span class="text-muted">wurde geändert auf</span><br/>
+                                <b>{{ $notification->data['appl_status'] }}</b></p>
+                        </div>
+                        <p><small>{{ $notification->created_at->diffForHumans() }}</small></p>
+                    </a>
                     @endif
                 @endforeach
             </div>

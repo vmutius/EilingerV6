@@ -8,10 +8,9 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class StatusUpdated extends Notification implements ShouldQueue
+class NewApplication extends Notification implements ShouldQueue
 {
     use Queueable;
-
     private Application $application;
 
     /**
@@ -38,11 +37,10 @@ class StatusUpdated extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject(__('notify.new_status'))
+            ->subject(__('notify.new_appl'))
             ->greeting(__('notify.greeting'))
-            ->line("Der Status ihres Gesuchs {$this->application->name} wurde geändert auf ")
-            ->line(__('application.status_name.'.$this->application->appl_status->name))
-            ->action('Zum Gesuch', route('user_gesuch', ['application_id' => $this->application->id, 'locale' => app()->getLocale()]));
+            ->line("Es wurde ein neuer Antrag  {$this->application->name} eingereicht")
+            ->action('Zum Gesuch', route('admin_antrag', ['application_id' => $this->application->id, 'locale' => app()->getLocale()]));
     }
 
     /**
@@ -55,8 +53,7 @@ class StatusUpdated extends Notification implements ShouldQueue
         return [
             'appl_id' => $this->application->id,
             'appl_name' => $this->application->name,
-            'appl_status' => __('application.status.'.$this->application->appl_status->name),
-            'url' => route('user_gesuch', ['locale' => app()->getLocale()]),
+            'url' => route('admin_antrag', ['locale' => app()->getLocale()]),
         ];
     }
 }

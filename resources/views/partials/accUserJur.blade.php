@@ -20,22 +20,22 @@
                     <p>{{  __('user.website')  }}: {{ $user->website }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('attributes.salutation')  }}: {{ $user->salutation }}</p>
+                    <p>{{  __('user.salutation')  }}: {{ $user->salutation }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{ __('attributes.lastname') }} {{ __('attributes.contact') }}: {{ $user->lastname }}</p>
+                    <p>{{ __('user.lastname') }} {{ __('user.contact') }}: {{ $user->lastname }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{ __('attributes.firstname') }} {{ __('attributes.contact') }}: {{ $user->firstname }}</p>
+                    <p>{{ __('user.firstname') }} {{ __('user.contact') }}: {{ $user->firstname }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('user.email')  }} {{ __('attributes.contact') }}: {{ $user->email }}</p>
+                    <p>{{  __('user.email')  }} {{ __('user.contact') }}: {{ $user->email }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('user.phone')  }} {{ __('attributes.contact') }}: {{ $user->phone }}</p>
+                    <p>{{  __('user.phone')  }} {{ __('user.contact') }}: {{ $user->phone }}</p>
                 </div>
                 <div class="col-sm-3">
-                    <p>{{  __('user.mobile')  }} {{ __('attributes.contact') }}: {{ $user->mobile }}</p>
+                    <p>{{  __('user.mobile')  }} {{ __('user.contact') }}: {{ $user->mobile }}</p>
                 </div>
             </div>
         </div>

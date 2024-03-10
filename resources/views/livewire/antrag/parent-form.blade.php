@@ -35,7 +35,7 @@
                 <span class="text-danger">@error('parents.'. $index .'.birthday'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-6">
-                <label class="form-label" for="phone">{{  __('parents.telefon')  }}</label>
+                <label class="form-label" for="phone">{{  __('parents.phone')  }}</label>
                 <input wire:model.lazy="parents.{{ $index }}.phone" type="text" class="form-control"/>
                 <span class="text-danger">@error('parents.'. $index .'.phone'){{ $message }}@enderror</span>
             </div>

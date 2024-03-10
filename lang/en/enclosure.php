@@ -32,4 +32,5 @@ return [
     'supplementary_services' => 'Recipients of IV or orphan\'s pensions or supplementary benefits: Enclose a copy of the decree',
     'ects_points' => 'Only for students at universities: Proof of the planned/booked ECTS points',
     'send_later' => 'Will be submitted later',
+    'noEnclosure' => 'No remarks or enclosures entered',
 ];

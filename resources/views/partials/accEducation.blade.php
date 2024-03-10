@@ -29,7 +29,7 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">
-                        <p>Keine Ausbildungsdaten eingetragen</p>
+                        <p>{{ __('education.noEducation') }}</p>
                     </div>
                 </div>
             </div>
