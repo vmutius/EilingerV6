@@ -199,7 +199,7 @@
                 </div>
 
                 <div class="group">
-                    <label class="form-label" for="password">{{  __('user.password')  }}</label>
+                    <label class="form-label" for="password">{{  __('user.password_register')  }}</label>
                     <input wire:model.lazy="password" class="form-control @error('password') is-invalid @enderror @if (session('valid-password'))
                         is-valid @endif" id="password" type="password" autofocus autocomplete="off">
                     @error('password')

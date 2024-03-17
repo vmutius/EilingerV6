@@ -93,7 +93,7 @@ class EnclosureFormStipendiumErst extends Component
 
     public function validationAttributes(): array
     {
-        return Lang::get('education');
+        return Lang::get('enclosure');
     }
 
     /**

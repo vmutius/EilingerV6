@@ -13,7 +13,7 @@ class CreateApplicationsTable extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('appl_status')->default(ApplStatus::NOT_SEND->value);
+            $table->string('appl_status')->default(ApplStatus::NOTSEND->value);
             $table->string('bereich');
             $table->string('form');
             $table->date('start_appl')->nullable();

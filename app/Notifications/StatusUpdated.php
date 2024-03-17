@@ -55,7 +55,7 @@ class StatusUpdated extends Notification implements ShouldQueue
         return [
             'appl_id' => $this->application->id,
             'appl_name' => $this->application->name,
-            'appl_status' => __('application.status.'.$this->application->appl_status->name),
+            'appl_status' => $this->application->appl_status,
             'url' => route('user_gesuch', ['locale' => app()->getLocale()]),
         ];
     }

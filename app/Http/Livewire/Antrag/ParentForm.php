@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Antrag;
 use App\Enums\JobType;
 use App\Enums\ParentType;
 use App\Models\Parents;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
@@ -32,6 +33,10 @@ class ParentForm extends Component
             'parents.*.divorced_since' => 'nullable',
             'parents.*.death' => 'nullable',
         ];
+    }
+    public function validationAttributes()
+    {
+        return Lang::get('parents');
     }
 
 

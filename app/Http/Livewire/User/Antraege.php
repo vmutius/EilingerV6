@@ -8,6 +8,7 @@ use App\Enums\Types;
 use App\Models\Application;
 use App\Models\Currency;
 use App\View\Components\Layout\UserDashboard;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
@@ -51,6 +52,11 @@ class Antraege extends Component
             'start_appl' => 'required',
             'end_appl' => 'sometimes',
         ];
+    }
+
+    public function validationAttributes()
+    {
+        return Lang::get('application');
     }
 
     public function render()

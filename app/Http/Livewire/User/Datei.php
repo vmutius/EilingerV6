@@ -64,6 +64,7 @@ class Datei extends Component
 
     public function saveEnclosure()
     {
+        $this->validate();
         $column = $this->column;
         $file = $this->file;
         $appl_id = $this->application_id;
@@ -91,6 +92,10 @@ class Datei extends Component
 
     public function close()
     {
+        $this->application_id = '';
+        $this->column = '';
+        $this->file = '';
+
         $this->showModal = false;
     }
 }

@@ -57,7 +57,7 @@ class Application extends Model
             ApplStatus::COMPLETE->name => 'dark', //Angaben im Antrag vollständig. Wartet auf nächste Stiftungsratssitzung
             ApplStatus::APPROVED->name => 'success',
             ApplStatus::BLOCKED->name => 'danger',
-            ApplStatus::NOT_SEND->name => 'secondary',
+            ApplStatus::NOTSEND->name => 'secondary',
         ][$this->appl_status->name] ?? 'gray';
     }
 

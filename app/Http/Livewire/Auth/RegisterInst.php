@@ -11,6 +11,7 @@ use App\Notifications\UserRegistered;
 use App\View\Components\Layout\Eilinger;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
@@ -64,6 +65,14 @@ class RegisterInst extends Component
             'town' => 'required|min:3',
             'country_id' => 'required',
             'terms' => 'accepted',
+        ];
+    }
+
+    public function validationAttributes(): array
+    {
+        return [
+            Lang::get('user'),
+            Lang::get('address')
         ];
     }
 

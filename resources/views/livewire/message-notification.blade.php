@@ -9,7 +9,7 @@
         </a>
         <div class="dropdown-menu notification-ui_dd" aria-labelledby="navbarDropdown">
             <div class="notification-ui_dd-header">
-                <h3 class="text-center">Nachrichten</h3>
+                <h3 class="text-center">{{__('message.messages')}}</h3>
             </div>
             <div class="notification-ui_dd-content">
 
@@ -19,7 +19,7 @@
                         <a href="{{ $notification->data['url'] }}"
                            class="notification-list notification-list--unread text-dark">
                             <div class="notification-list_detail">
-                                <p><b>{{ $notification->data['username'] }}</b> <br><span class="text-muted">kommentierte zu
+                                <p><b>{{ $notification->data['username'] }}</b> <br><span class="text-muted">{{__('message.commented')}}
                                     {{ $notification->data['appl_name'] }}</span></p>
                                 <p class="nt-link text-truncate">{{ $notification->data['message_body'] }}</p>
                             </div>
@@ -29,8 +29,8 @@
                         <a href="{{ $notification->data['url'] }}"
                            class="notification-list notification-list--unread text-dark">
                             <div class="notification-list_detail">
-                                <p>Es wurde ein neuer Antrag <br/> <b>{{ $notification->data['appl_name'] }}</b><br/>
-                                    <span class="text-muted">eingereicht.</span><br/>
+                                <p>{{__('message.newAppl')}} <br/> <b>{{ $notification->data['appl_name'] }}</b><br/>
+                                    <span class="text-muted">{{__('message.submitted')}}.</span><br/>
                             </div>
                             <p><small>{{ $notification->created_at->diffForHumans() }}</small></p>
                         </a>
@@ -38,9 +38,9 @@
                     <a href="{{ $notification->data['url'] }}"
                        class="notification-list notification-list--unread text-dark">
                         <div class="notification-list_detail">
-                            <p>Der Status Ihres Gesuchs <br/> <b>{{ $notification->data['appl_name'] }}</b><br/>
-                                <span class="text-muted">wurde geändert auf</span><br/>
-                                <b>{{ $notification->data['appl_status'] }}</b></p>
+                            <p>{{__('message.status')}} <br/> <b>{{ $notification->data['appl_name'] }}</b><br/>
+                                <span class="text-muted">{{__('message.changed')}}</span><br/>
+                                <b>{{ __('application.status_name.' . Illuminate\Support\Str::after($notification->data['appl_status'], 'application.status.'))  }}</b></p>
                         </div>
                         <p><small>{{ $notification->created_at->diffForHumans() }}</small></p>
                     </a>
@@ -48,7 +48,7 @@
                 @endforeach
             </div>
             <div class="notification-ui_dd-footer text-center p-3">
-                <a wire:click.prevent="markAllAsRead" class="btn btn-success btn-block">Alle als gelesen markieren</a>
+                <a wire:click.prevent="markAllAsRead" class="btn btn-success btn-block">{{__('message.markAllRead')}}</a>
             </div>
 
         </div>

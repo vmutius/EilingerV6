@@ -38,9 +38,11 @@ return [
     'requests' => 'Gesuche',
     'no_requests' => 'Keine Gesuche gefunden',
     'status' => 'Status',
+    'is_first' => 'Erstantrag',
+    'currency_id' => 'Währung',
 
     'status_name' => [
-        ApplStatus::NOT_SEND->name => 'Nicht eingereicht',
+        ApplStatus::NOTSEND->name => 'Nicht eingereicht',
         ApplStatus::PENDING->name => 'Ausstehend',
         ApplStatus::WAITING->name => 'Warten auf Benutzer',
         ApplStatus::COMPLETE->name => 'Warten auf Ratssitzung',

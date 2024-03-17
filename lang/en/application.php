@@ -37,9 +37,11 @@ return [
     'requests' => 'Requests',
     'no_requests' => 'No requests found',
     'status' => 'State',
+    'is_first' => 'First Application',
+    'currency_id' => 'Currency',
 
     'status_name' => [
-        ApplStatus::NOT_SEND->name => 'Not send',
+        ApplStatus::NOTSEND->name => 'Not send',
         ApplStatus::PENDING->name => 'Pending',
         ApplStatus::WAITING->name => 'Waiting for the user',
         ApplStatus::COMPLETE->name => 'Waiting for the foundation meeting',

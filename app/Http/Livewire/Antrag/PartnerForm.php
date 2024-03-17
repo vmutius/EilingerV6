@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Antrag;
 
 use App\Models\Partner;
+use Illuminate\Support\Facades\Lang;
 use Livewire\Component;
 
 class PartnerForm extends Component
@@ -20,6 +21,11 @@ class PartnerForm extends Component
             'end' => ['nullable', 'date'],
             'is_draft' => ['required'],
         ];
+    }
+
+    public function validationAttributes(): array
+    {
+        return Lang::get('partner');
     }
 
     public function mount()

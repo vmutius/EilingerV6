@@ -97,7 +97,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function sendApplications()
     {
-        return $this->hasMany(Application::class)->where('appl_status', '!=', 'not_send');
+        return $this->hasMany(Application::class)->where('appl_status', '!=', 'notsend');
     }
 
     public function messages()

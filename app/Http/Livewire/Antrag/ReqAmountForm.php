@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Antrag;
 
 use App\Enums\Form;
+use App\Enums\Types;
 use App\Models\Application;
 use App\Models\Cost;
 use App\Models\CostDarlehen;
@@ -31,7 +32,7 @@ class ReqAmountForm extends Component
     public function mount(): void
     {
         $this->application = Application::where('id', session()->get('appl_id'))->first();
-        if ($this->application->form == Form::Spende) {
+        if ($this->application->user->type ==Types::jur) {
             $this->total_amount_financing = FinancingOrganisation::where('application_id', session()->get('appl_id'))
                 ->sum('financing_amount');
         } else {

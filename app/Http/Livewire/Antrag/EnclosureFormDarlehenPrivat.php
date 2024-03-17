@@ -51,7 +51,7 @@ class EnclosureFormDarlehenPrivat extends Component
 
     public function validationAttributes(): array
     {
-        return Lang::get('education');
+        return Lang::get('enclosure');
     }
 
     public function rules()
