@@ -3,7 +3,7 @@
     <section>
         <div class="container">
             <div class="section-title">
-                <h2>Registrierung für Privatperson</h2>
+                <h2>{{  __('regLog.regPrivat')  }}</h2>
             </div>
 
             <form wire:submit.prevent="registerPrivat">

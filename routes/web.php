@@ -29,7 +29,6 @@ Route::get('/', function () {
 
 Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () {
     Route::view('/', 'home.index')->name('index');
-    Route::view('disclaimer', 'home.disclaimer')->name('disclaimer');
     Route::view('impressum', 'home.impressum')->name('impressum');
     Route::view('datenschutz', 'home.datenschutz')->name('datenschutz');
     Route::get('verify/resend', [TwoFactorController::class, 'resend'])->name('verify.resend');

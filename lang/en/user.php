@@ -35,6 +35,11 @@ return [
     'granting' => 'Granting (for foreigner)',
     'contact_aboard' => 'Contact Aboard',
     'delAccountConfirmation' => 'Do you really want to delete your account?',
+    'usernameUnique' => 'This username is already taken',
+    'nameInstUnique' => 'Your organization is already registered',
+    'emailInstUnique' => 'This email of your organization is already registered',
+    'passwordRegexp' => 'The password must be at least 8 characters long and must contain at least 1 uppercase letter,
+                    one lower case letter, one number and one special character',
 
     'salutation_name' => [
         Salutation::Divers->name => '--',

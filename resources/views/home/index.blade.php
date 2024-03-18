@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 offset-3 d-flex align-items-stretch mt-4">
-                        <div class="card" style='background-image: url("images/Tier_1.jpeg");'>
+                        <div class="card" style='background-image: url("images/Menschen_4.jpg");'>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="">{{ __('home.rights') }}</a></h5>
                                 <p class="card-text">{{ __('home.rights_text1') }}</p>
@@ -181,13 +181,11 @@
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">{{ __('home.education') }}</h3>
                                 <ul>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für ein Stipendium</li>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen (ausser Stipendien)
-                                    </li>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_stip') }}</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_privat') }}</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_org') }}</li>
                                 </ul>
-                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum
-                                    Gesuchsportal</a>
+                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">{{ __('home.to_portal') }}</a>
                             </div>
                         </div>
                     </div>
@@ -196,11 +194,10 @@
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">{{ __('home.welfare') }} </h3>
                                 <ul>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen</li>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_privat') }}</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_org') }}</li>
                                 </ul>
-                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum
-                                    Gesuchsportal</a>
+                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">{{ __('home.to_portal') }}</a>
                             </div>
                         </div>
                     </div>
@@ -209,11 +206,10 @@
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">{{ __('home.rights') }}</h3>
                                 <ul>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen</li>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_privat') }}</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_org') }}</li>
                                 </ul>
-                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum
-                                    Gesuchsportal</a>
+                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">{{ __('home.to_portal') }}</a>
                             </div>
                         </div>
                     </div>
@@ -222,11 +218,10 @@
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">{{ __('home.environment') }} </h3>
                                 <ul>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen</li>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_privat') }}</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_org') }}</li>
                                 </ul>
-                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum
-                                    Gesuchsportal</a>
+                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">{{ __('home.to_portal') }}</a>
                             </div>
                         </div>
                     </div>
@@ -235,11 +230,10 @@
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title">{{ __('home.need') }} </h3>
                                 <ul>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Privatpersonen</li>
-                                    <li><i class="bi bi-check-all"></i> Gesuch für Vereine oder Organisationen</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_privat') }}</li>
+                                    <li><i class="bi bi-check-all"></i> {{ __('home.app_org') }}</li>
                                 </ul>
-                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">Zum
-                                    Gesuchsportal</a>
+                                <a href="{{ route('user_dashboard', app()->getLocale()) }}" class="buy-btn mt-auto">{{ __('home.to_portal') }}</a>
                             </div>
                         </div>
                     </div>

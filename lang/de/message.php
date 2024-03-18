@@ -18,4 +18,6 @@ return [
     'editMessage' => 'Nachricht ändern',
     'saveReply' => 'Antwort speichern',
     'messageRequest' => 'Nachrichten für Gesuch',
+    'body' => 'Nachricht',
+
 ];

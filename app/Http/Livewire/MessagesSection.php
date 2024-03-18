@@ -23,10 +23,6 @@ class MessagesSection extends Component
         'body' => 'required',
     ];
 
-    protected $messages = [
-        'body' => 'Nachricht muss eingegeben werden.',
-    ];
-
     public function render()
     {
         $messages = $this->application

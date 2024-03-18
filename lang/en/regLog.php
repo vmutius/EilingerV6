@@ -2,6 +2,7 @@
 
 return [
     'regOrg' => 'Registration for club/institution',
+    'regPrivat' => 'Registration for privat person',
     'loginTitle' => 'Welcome to the application portal of the Eilinger Foundation',
     'loginSubTitle' => 'Do you need financial support for your project or vocational training? Here you can
                     submit your funding request to the Eilinger Foundation.',

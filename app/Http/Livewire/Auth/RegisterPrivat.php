@@ -10,6 +10,7 @@ use App\Models\User;
 use App\View\Components\Layout\Eilinger;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 
@@ -21,15 +22,14 @@ class RegisterPrivat extends Component
 
     public $model;
 
-    protected $messages = [
-        //User
-        'username.unique' => 'Dieser Benutzername ist bereits vergeben',
-        'name_inst.unique' => 'Ihre Organisation ist bereits registriert',
-        'email_inst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
-
-        //Address
-        'plz' => 'Postleitzahl ist eine vierstellige Zahl',
-    ];
+    public function messages()
+    {
+        return [
+            //User
+            'username.unique' => __('user.usernameUnique'),
+            'password.regexp' =>__('user.passwordRegexp'),
+        ];
+    }
 
     public function rules()
     {
@@ -58,6 +58,14 @@ class RegisterPrivat extends Component
             'country_id' => 'required',
             'terms' => 'accepted',
         ];
+    }
+
+    public function validationAttributes(): array
+    {
+        return array_merge(
+            Lang::get('user'),
+            Lang::get('address')
+        );
     }
 
     public function updated($propertyName)

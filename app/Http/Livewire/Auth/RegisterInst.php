@@ -24,17 +24,16 @@ class RegisterInst extends Component
 
     public $model;
 
-    protected $messages = [
-        //User
-        'username.unique' => 'Dieser Benutzername ist bereits vergeben',
-        'name_inst.unique' => 'Ihre Organisation ist bereits registriert',
-        'email_inst.unique' => 'Diese Email ihrer Organisation ist bereits registriert',
-        'password.regexp' => 'Das Passwort muss mindestens 8 Zeichen lang sein und muss mindestens 1 Grossbuchstaben,
-                    einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten',
-
-        //Address
-        'plz' => 'Postleitzahl ist eine vierstellige Zahl',
-    ];
+    public function messages()
+    {
+        return [
+            //User
+            'username.unique' => __('user.usernameUnique'),
+            'name_inst.unique' =>  __('user.nameInstUnique'),
+            'email_inst.unique' =>  __('user.emailInstUnique'),
+            'password.regexp' =>__('user.passwordRegexp'),
+        ];
+    }
 
     public function rules()
     {
@@ -70,10 +69,10 @@ class RegisterInst extends Component
 
     public function validationAttributes(): array
     {
-        return [
+        return array_merge(
             Lang::get('user'),
             Lang::get('address')
-        ];
+        );
     }
 
     public function updated($propertyName)

@@ -18,4 +18,5 @@ return [
     'editMessage' => 'Edit Message',
     'saveReply' => 'Save Reply',
     'messageRequest' => 'Message for Request',
+    'body' => 'Message',
 ];

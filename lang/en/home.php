@@ -58,5 +58,11 @@ return [
     'request_text3' => 'Non-profit institutions and organizations operating in both domestic and/or foreign settings that assist individuals or groups in socially and/or economically disadvantaged situations or emergencies. Explicit support may also be provided directly to individuals or groups facing social and/or economic hardships or emergencies;  ',
     'request_text4' => 'Non-profit institutions and organizations, as well as individuals, operating in both domestic and/or foreign settings, engaged in the field of animal welfare/animal rescue and/or activities aimed at the well-being of animals of all kinds. This includes explicit support for smaller entities such as associations; ',
     'request_text5' => 'Non-profit institutions and organizations, along with individuals or groups, operating in both domestic and/or foreign settings, dedicated to the protection of nature and/or the environment.',
-    'request_disclaimer' => 'It is emphasized that the recipients have no legal claims to foundation benefits. The level of support depends on actual needs and internal funding criteria. '
+    'request_disclaimer' => 'It is emphasized that the recipients have no legal claims to foundation benefits. The level of support depends on actual needs and internal funding criteria. ',
+    'app_stip' => 'Application for a scholarship',
+    'app_privat' => 'Application for private persons (except scholarships)',
+    'app_org' => 'Application for associations or organizations',
+    'to_portal' => 'To the application portal',
+    'desired_contact' => 'No postal or telephone contact desired. Please use the email address provided or the form on the website (preferred option) to contact us',
+    'links' => 'Useful links',
 ];

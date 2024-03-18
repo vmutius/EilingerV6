@@ -92,7 +92,6 @@ return [
     'upload_format' => 'Das Dateiformat für :attribute muss vom Typ png, jpg, jpeg oder pfd sein.',
     'upload_size' => 'Die Datei :attribute muss kleiner als 2MB sein.',
 
-
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

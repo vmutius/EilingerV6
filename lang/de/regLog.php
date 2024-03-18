@@ -2,6 +2,7 @@
 
 return [
     'regOrg' => 'Registrierung für Verein/Institut',
+    'regPrivat' => 'Registration für Privatperson',
     'loginTitle' => 'Willkommen auf dem Gesuchsportal der Eilinger Stiftung',
     'loginSubTitle' => 'Sie brauchen für Ihr Projekt oder Ihre berufliche Ausbildung finanzielle Unterstützung? Hier können Sie
                     Ihre Förderanfrage an die Eilinger Stiftung stellen.',

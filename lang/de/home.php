@@ -59,6 +59,11 @@ return [
     'request_text3' => 'Im In- und/oder Ausland tätige nicht profitorientierte Institutionen und Organisationen, die Einzelpersonen oder Personengruppen aus sozial und/oder wirtschaftlich schwachen Verhältnissen oder Notsituationen unterstützen. Es können explizit auch Einzelpersonen oder Personengruppen aus sozial und/oder wirtschaftlich schwachen Verhältnissen oder Notsituationen direkt unterstützt werden; ',
     'request_text4' => 'Im In- und/oder Ausland tätige nicht profitorientierte Institutionen und Organisationen und Einzelpersonen, die sich mit dem Thema Tierschutz/Tierrettung befassen und/oder deren Tätigkeit das Wohl von Tieren aller Art zum Ziel hat. Es sollen explizit auch kleinere Institutionen wie Vereine unterstützt werden; ',
     'request_text5' => 'Im In- und/oder Ausland tätige nicht profitorientierte Institutionen und Organisationen sowie Einzelpersonen oder Personengruppen, die sich für den Schutz von Natur und/oder Umwelt einsetzen.',
-    'request_disclaimer' => 'Es wird darauf hingewiesen, dass die DestinatärInnen keine Rechtsansprüche auf Stiftungsleistungen haben. Die Höhe der Unterstützung richtet sich nach dem tatsächlichen Bedarf sowie internen Förderungskriterien. '
-
+    'request_disclaimer' => 'Es wird darauf hingewiesen, dass die DestinatärInnen keine Rechtsansprüche auf Stiftungsleistungen haben. Die Höhe der Unterstützung richtet sich nach dem tatsächlichen Bedarf sowie internen Förderungskriterien. ',
+    'app_stip' => 'Gesuch für ein Stipendium',
+    'app_privat' => 'Gesuch für Privatpersonen (ausser Stipendien)',
+    'app_org' => 'Gesuch für Vereine oder Organisationen',
+    'to_portal' => 'Zum Gesuchsportal',
+    'desired_contact' => 'Keine postalische und phoneische Kontaktaufnahme erwünscht. Für Kontaktaufnahmen soll die angegebene Emailadresse oder das Formular auf der Webseite (bevorzugte Variante) verwendet werden.',
+    'links' => 'Nützliche Links',
 ];

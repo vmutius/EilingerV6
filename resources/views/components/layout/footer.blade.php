@@ -12,17 +12,16 @@
                     Schweiz <br><br>
                     <strong>Email:</strong> EilingerStiftung@gmx.net <br>
                     <br>
-                    <strong>Keine postalische und phoneische Kontaktaufnahme erwünscht. Für Kontaktaufnahmen soll die angegebene Emailadresse oder das Formular auf der Webseite (bevorzugte Variante) verwendet werden.</strong>
+                    <strong>{{__('home.desired_contact') }}</strong>
                     </p>
                 </div>
 
                 <div class="col-lg-6 col-md-6 footer-links">
-                    <h4>Nützliche Links</h4>
+                    <h4>{{__('home.links') }}</h4>
                     <ul>
                     <li><i class="bi bi-chevron-right"></i> <a href="{{ route('index', app()->getLocale()) }}">Home</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="{{ route('disclaimer', app()->getLocale()) }}">Disclaimer</a></li>
                     <li><i class="bi bi-chevron-right"></i> <a href="{{ route('impressum', app()->getLocale()) }}">Impressum</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="{{ route('datenschutz', app()->getLocale()) }}">Datenschutzerklärung</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="{{ route('datenschutz', app()->getLocale()) }}">{{__('dataprotection.data-protection') }}</a></li>
                     </ul>
                 </div>
 

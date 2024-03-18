@@ -35,6 +35,11 @@ return [
     'granting' => 'Bewilligung (für Ausländer)',
     'contact_aboard' => 'Ansprechpartner im Ausland',
     'delAccountConfirmation' => 'Wollen Sie ihren Account wirklich löschen?',
+    'usernameUnique' => 'Dieser Benutzername ist bereits vergeben',
+    'nameInstUnique' => 'Ihre Organisation ist bereits registriert',
+    'emailInstUnique' => 'Diese Email ihrer Organisation ist bereits registriert',
+    'passwordRegexp' => 'Das Passwort muss mindestens 8 Zeichen lang sein und muss mindestens 1 Grossbuchstaben,
+                    einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten',
 
     'salutation_name' => [
         Salutation::Divers->name => '--',
