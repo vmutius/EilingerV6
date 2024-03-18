@@ -7,7 +7,7 @@
         @endif
     </div>
     <div class="col-md-12">
-        <h3>Nachrichten zu {{ $application->name }}</h3>
+        <h3>{{__('message.messages')}} </h3>
 
         <form wire:submit.prevent="postMessage">
             <div class="blog-comment">
@@ -20,7 +20,7 @@
             <br />
             <div class="col-md-12 text-end">
                 <button class="btn btn-colour-1" type="submit">
-                    <span class="align-middle d-sm-inline-block d-none">Nachricht speichern</span>
+                    <span class="align-middle d-sm-inline-block d-none">{{__('message.saveMessage')}}</span>
                 </button>
             </div>
         </form>
@@ -34,7 +34,7 @@
                 </li>
 
             @empty
-                Keine Nachrichten vorhanden
+                {{__('message.noMessages')}}
             @endforelse
         </ul>
     </div>

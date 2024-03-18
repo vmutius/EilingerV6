@@ -2,11 +2,11 @@
     <p class="meta">{{ $message->created_at->diffForHumans() }} <a href="#">{{ $message->user->username }}</a>
         says : <i class="pull-right">
             @if (!$message->main_message_id)
-                <button wire:click="$toggle('isReplying')" type="button" class="btn btn-success btn-sm">Reply</button>
+                <button wire:click="$toggle('isReplying')" type="button" class="btn btn-success btn-sm">{{__('message.reply')}}</button>
             @endif
 
             @can ('update', $message)
-                <button wire:click="$toggle('isEditing')" type="button" class="btn btn-primary btn-sm">Bearbeiten
+                <button wire:click="$toggle('isEditing')" type="button" class="btn btn-primary btn-sm">{{__('message.edit')}}
                 </button>
             @endcan
 
@@ -16,12 +16,14 @@
                         x-on:click="confirmMessageDeletion"
                         x-data="{
                     confirmMessageDeletion () {
-                        if (window.confirm('Wollen Sie die Nachricht wirklich löschen?')) {
+                       const message = this.$el.getAttribute('data-confirm-message');
+                        if (window.confirm(message)) {
                             @this.call('deleteMessage')
                         }
                     }
                 }"
-                >Löschen
+                        data-confirm-message="{{ __('message.confirmDelete') }}"
+                >{{ __('message.delete') }}
                 </button>
             @endcan
         </i>
@@ -38,7 +40,7 @@
             <br/>
             <div class="col-md-12 text-end">
                 <button class="btn btn-colour-1" type="submit">
-                    <span class="align-middle d-sm-inline-block d-none">Nachricht ändern</span>
+                    <span class="align-middle d-sm-inline-block d-none">{{__('message.editMessage')}}</span>
                 </button>
             </div>
         </form>
@@ -57,7 +59,7 @@
             <br/>
             <div class="col-md-12 text-end">
                 <button class="btn btn-colour-1" type="submit">
-                    <span class="align-middle d-sm-inline-block d-none">Reply speichern</span>
+                    <span class="align-middle d-sm-inline-block d-none">{{__('message.saveReply')}}</span>
                 </button>
             </div>
         </form>

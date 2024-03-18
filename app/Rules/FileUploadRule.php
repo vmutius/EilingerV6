@@ -25,16 +25,16 @@ class FileUploadRule implements ValidationRule
     {
 
         if ($this->isRequired && ! $value) {
-            $fail('The :attribute must be uploaded.');
+            $fail(__('validation.required_upload'));
         }
 
         if ($value instanceof UploadedFile) {
             if (! empty($this->allowedMimes) && ! in_array($value->getMimeType(), $this->allowedMimes)) {
-                $fail('The :attribute must be of type png, jpg, jpeg or pfd.');
+                $fail(__('validation.upload_format'));
             }
 
             if ($this->maxSize !== null && $value->getSize() > $this->maxSize * 1024) {
-                $fail('The :attribute must be smaller than 2MB.');
+                $fail(__('validation.upload_size'));
             }
         }
     }

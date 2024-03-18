@@ -40,7 +40,7 @@
                     </td>
                     <td>
                         @if ($enclosure->certificate_of_study)
-                            <a href="{{ asset('uploads/'.$enclosure->certificate_of_study) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->certificate_of_study) }}"
                                target="_blank">{{ $enclosure->certificate_of_study }}</a>
                         @endif
                     </td>
@@ -61,7 +61,7 @@
                     </td>
                     <td>
                         @if ($enclosure->tax_assessment)
-                            <a href="{{ asset('uploads/'.$enclosure->tax_assessment) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->tax_assessment) }}"
                                target="_blank">{{ $enclosure->tax_assessment }}</a>
                         @endif
                     </td>
@@ -82,7 +82,7 @@
                     </td>
                     <td>
                         @if ($enclosure->expense_receipts)
-                            <a href="{{ asset('uploads/'.$enclosure->expense_receipts) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->expense_receipts) }}"
                                target="_blank">{{ $enclosure->expense_receipts }}</a>
                         @endif
                     </td>
@@ -104,7 +104,7 @@
                     </td>
                     <td>
                         @if ($enclosure->partner_tax_assessment)
-                            <a href="{{ asset('uploads/'.$enclosure->partner_tax_assessment) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->partner_tax_assessment) }}"
                                target="_blank">{{ $enclosure->partner_tax_assessment }}</a>
                         @endif
                     </td>
@@ -126,7 +126,7 @@
                     </td>
                     <td>
                         @if ($enclosure->supplementary_services)
-                            <a href="{{ asset('uploads/'.$enclosure->supplementary_services) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->supplementary_services) }}"
                                target="_blank">{{ $enclosure->supplementary_services }}</a>
                         @endif
                     </td>
@@ -147,7 +147,7 @@
                     </td>
                     <td>
                         @if ($enclosure->ects_points)
-                            <a href="{{ asset('uploads/'.$enclosure->ects_points) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->ects_points) }}"
                                target="_blank">{{ $enclosure->ects_points }}</a>
                         @endif
                     </td>
@@ -169,7 +169,7 @@
                     </td>
                     <td>
                         @if ($enclosure->parents_tax_factors)
-                            <a href="{{ asset('uploads/'.$enclosure->parents_tax_factors) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->parents_tax_factors) }}"
                                target="_blank">{{ $enclosure->parents_tax_factors }}</a>
                         @endif
                     </td>
@@ -191,7 +191,7 @@
                     </td>
                     <td>
                         @if ($enclosure->passport)
-                            <a href="{{ asset('uploads/'.$enclosure->passport) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->passport) }}"
                                target="_blank">{{ $enclosure->passport }}</a>
                         @endif
                     </td>
@@ -212,7 +212,7 @@
                     </td>
                     <td>
                         @if ($enclosure->cv)
-                            <a href="{{ asset('uploads/'.$enclosure->cv) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->cv) }}"
                                target="_blank">{{ $enclosure->cv }}</a>
                         @endif
                     </td>
@@ -234,7 +234,7 @@
                     </td>
                     <td>
                         @if ($enclosure->apprenticeship_contract)
-                            <a href="{{ asset('uploads/'.$enclosure->apprenticeship_contract) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->apprenticeship_contract) }}"
                                target="_blank">{{ $enclosure->apprenticeship_contract }}</a>
                         @endif
                     </td>
@@ -255,7 +255,7 @@
                     </td>
                     <td>
                         @if ($enclosure->diploma)
-                            <a href="{{ asset('uploads/'.$enclosure->diploma) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->diploma) }}"
                                target="_blank">{{ $enclosure->diploma }}</a>
                         @endif
                     </td>
@@ -276,7 +276,7 @@
                     </td>
                     <td>
                         @if ($enclosure->divorce)
-                            <a href="{{ asset('uploads/'.$enclosure->divorce) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->divorce) }}"
                                target="_blank">{{ $enclosure->divorce }}</a>
                         @endif
                     </td>
@@ -298,7 +298,7 @@
                     </td>
                     <td>
                         @if ($enclosure->rental_contract)
-                            <a href="{{ asset('uploads/'.$enclosure->rental_contract) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->rental_contract) }}"
                                target="_blank">{{ $enclosure->rental_contract }}</a>
                         @endif
                     </td>

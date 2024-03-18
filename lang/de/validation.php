@@ -88,6 +88,10 @@ return [
     'unique' => ':attribute ist schon vergeben.',
     'uploaded' => 'Der :attribute konnte nicht hochgeladen werden.',
     'url' => 'Das Format von :attribute ist ungültig.',
+    'required_upload' => 'Die Datei :attribute muss hochgeladen werden',
+    'upload_format' => 'Das Dateiformat für :attribute muss vom Typ png, jpg, jpeg oder pfd sein.',
+    'upload_size' => 'Die Datei :attribute muss kleiner als 2MB sein.',
+
 
     /*
     |--------------------------------------------------------------------------

@@ -22,6 +22,7 @@ class EnclosureOrganisationForm extends Component
     public $commercial_register_extract;
     public $statute;
     public $activity;
+    public $activity_report;
     public $balance_sheet;
     public $tax_assessment;
     public $cost_receipts;
@@ -30,12 +31,14 @@ class EnclosureOrganisationForm extends Component
         $commercial_register_extract = is_null($this->enclosure->commercial_register_extract) && $this->enclosure->commercialRegisterExtractSendLater==0;
         $statute = is_null($this->enclosure->statute) && $this->enclosure->statuteSendLater==0;
         $activity = is_null($this->enclosure->activity) && $this->enclosure->activitySendLater==0;
+        $activity_report = is_null($this->enclosure->activity_report) && $this->enclosure->activityReportSendLater==0;
 
         return [
             'enclosure.remark' => 'nullable',
             'commercial_register_extract' => new FileUploadRule($commercial_register_extract),
             'statute' => [new FileUploadRule($statute)],
             'activity' => [new FileUploadRule($activity)],
+            'activity_report' => [new FileUploadRule($activity_report)],
             'balance_sheet' => [new FileUploadRule()],
             'tax_assessment' => [new FileUploadRule()],
             'cost_receipts' => [new FileUploadRule()],
@@ -96,6 +99,12 @@ class EnclosureOrganisationForm extends Component
             $file_activity = $this->upload($this->activity, 'activity');
             $this->enclosure->activity = $file_activity;
             $this->enclosure->activitySendLater = false;
+        }
+
+        if ($this->activity_report) {
+            $file_activity_report = $this->upload($this->activity_report, 'activity_report');
+            $this->enclosure->activity_report = $file_activity_report;
+            $this->enclosure->activityReportSendLater = false;
         }
 
         if ($this->balance_sheet) {

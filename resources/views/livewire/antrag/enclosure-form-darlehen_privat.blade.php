@@ -40,7 +40,7 @@
                     </td>
                     <td>
                         @if ($enclosure->activity)
-                            <a href="{{ asset('uploads/'.$enclosure->activity) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->activity) }}"
                                target="_blank">{{ $enclosure->activity }}</a>
                         @endif
                     </td>
@@ -61,7 +61,7 @@
                     </td>
                     <td>
                         @if ($enclosure->activity_report)
-                            <a href="{{ asset('uploads/'.$enclosure->activity_report) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->activity_report) }}"
                                target="_blank">{{ $enclosure->activity_report }}</a>
                         @endif
                     </td>
@@ -82,7 +82,7 @@
                     </td>
                     <td>
                         @if ($enclosure->rental_contract)
-                            <a href="{{ asset('uploads/'.$enclosure->rental_contract) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->rental_contract) }}"
                                target="_blank">{{ $enclosure->rental_contract }}</a>
                         @endif
                     </td>
@@ -103,7 +103,7 @@
                     </td>
                     <td>
                         @if ($enclosure->balance_sheet)
-                            <a href="{{ asset('uploads/'.$enclosure->balance_sheet) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->balance_sheet) }}"
                                target="_blank">{{ $enclosure->balance_sheet }}</a>
                         @endif
                     </td>
@@ -124,7 +124,7 @@
                     </td>
                     <td>
                         @if ($enclosure->tax_assessment)
-                            <a href="{{ asset('uploads/'.$enclosure->tax_assessment) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->tax_assessment) }}"
                                target="_blank">{{ $enclosure->tax_assessment }}</a>
                         @endif
                     </td>
@@ -145,7 +145,7 @@
                     </td>
                     <td>
                         @if ($enclosure->cost_receipts)
-                            <a href="{{ asset('uploads/'.$enclosure->cost_receipts) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->cost_receipts) }}"
                                target="_blank">{{ $enclosure->cost_receipts }}</a>
                         @endif
                     </td>
@@ -166,7 +166,7 @@
                     </td>
                     <td>
                         @if ($enclosure->open_invoice)
-                            <a href="{{ asset('uploads/'.$enclosure->open_invoice) }}"
+                            <a href="{{ Storage::disk('s3')->url($enclosure->open_invoice) }}"
                                target="_blank">{{ $enclosure->open_invoice }}</a>
                         @endif
                     </td>

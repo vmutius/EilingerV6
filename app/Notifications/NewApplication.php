@@ -53,7 +53,7 @@ class NewApplication extends Notification implements ShouldQueue
         return [
             'appl_id' => $this->application->id,
             'appl_name' => $this->application->name,
-            'url' => route('admin_antrag', ['locale' => app()->getLocale()]),
+            'url' => route('admin_antrag', ['application_id' => $this->application->id, 'locale' => app()->getLocale()]),
         ];
     }
 }

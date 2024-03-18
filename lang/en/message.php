@@ -10,4 +10,12 @@ return [
     'changed' => 'has been changed to',
     'noMessages' => 'No messages available',
     'markAllRead' => 'Mark all as read',
+    'saveMessage' => 'Save Message',
+    'reply' => 'Reply',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'confirmDelete' => 'Do you really want to delete the message?',
+    'editMessage' => 'Edit Message',
+    'saveReply' => 'Save Reply',
+    'messageRequest' => 'Message for Request',
 ];
