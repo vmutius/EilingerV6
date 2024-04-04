@@ -14,7 +14,7 @@
                     <strong>Eilinger Stiftung</strong><br>
                     Seeweg 45<br>
                     8264 Eschenz, CH<br>
-                    <a href="mailto:EilingerStiftung@gmx.net" target="_blank">EilingerStiftung@gmx.net</a>
+                    <a href="mailto:{{ config('mail.from.address') }}" target="_blank">{{ config('mail.from.address') }}</a>
                 </address>
                 <br>
                 <h3>{{ __('dataprotection.categories') }}</h3>

@@ -12,7 +12,7 @@
                     <strong>Eilinger Stiftung</strong><br>
                     Seeweg 45<br>
                     8264 Eschenz, CH<br>
-                    <a href="mailto:EilingerStiftung@gmx.net" target="_blank">EilingerStiftung@gmx.net</a><br>
+                    <a href="mailto:{{ config('mail.from.address') }}" target="_blank">{{ config('mail.from.address') }}</a><br>
                     UID: CHE-247.433.436<br>
                     © Eilinger Stiftung 2024
                 </address>

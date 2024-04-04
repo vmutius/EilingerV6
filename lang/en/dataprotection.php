@@ -50,7 +50,7 @@ An XSRF (Cross-Site Request Forgery) token is a security mechanism used to preve
     'cookie_session_meaning1' => 'A session token is a string used to identify and manage a specific session between a user and a website. It is used to maintain the state of the user session as the user navigates and interacts with the website.',
     'cookie_session_meaning2' => 'Overall, the session token is an essential part of web development that helps to improve the user experience, ensure security and efficiently manage the interaction between users and websites.',
     'rights' => 'Your rights',
-    'rights_text' => 'The DPA provides a number of rights for data subjects. If you wish to exercise any of these rights, please contact info@EilingerStifung.ch. The exercise of one of the rights may require that your identity is verified.',
+    'rights_text' => 'The DPA provides a number of rights for data subjects. If you wish to exercise any of these rights, please contact us via mail. The exercise of one of the rights may require that your identity is verified.',
     'rights_text1' => 'In particular, data subjects have the following rights: ',
     'rights_text2' => 'Right of access: You have the right to know whether the controller is processing data about you and, if so, the right to access a copy of that data. This is subject to the restrictions of the right of access pursuant to Art. 26 FADP. ',
     'rights_text3' => 'Right to data rectification: You have the right to have your data rectified at any time. ',

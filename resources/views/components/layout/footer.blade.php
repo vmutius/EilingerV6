@@ -10,7 +10,7 @@
                     Seeweg 45<br>
                     8260 Eschenz<br>
                     Schweiz <br><br>
-                    <strong>Email:</strong> EilingerStiftung@gmx.net <br>
+                    <strong>Email:</strong> <a href="mailto:{{ config('mail.from.address') }}" target="_blank">{{ config('mail.from.address') }}</a> <br>
                     <br>
                     <strong>{{__('home.desired_contact') }}</strong>
                     </p>
