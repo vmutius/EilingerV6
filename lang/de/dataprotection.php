@@ -9,15 +9,55 @@ return [
     'category' => 'Datenkategorie',
     'purpose' => 'Zweck',
     'category_contact' => 'Kontaktdaten (bspw. Name, E-Mail Adresse, Anschrift, Telefonnummer) ',
-    'purpose_contact' => 'Im Rahmen der Antragstellung werden Kontaktdaten für die folgenden Zwecke erhoben:
-- Log-in für die Webseite
-
-- Kontaktaufnahme
-
-- Zuordnung der Anträge
-
-
-
-Ferner können Kontaktdaten für den Tätigkeitsbericht so wie die Jahresberichterstattung verwendet werden.'
-
+    'purpose_contact' => 'Im Rahmen der Antragstellung werden Kontaktdaten für die folgenden Zwecke erhoben:',
+    'purpose_contact1'=> 'Log-in für die Webseite',
+    'purpose_contact2'=> 'Kontaktaufnahme',
+    'purpose_contact3'=> 'Zuordnung der Anträge',
+    'purpose_contact4' => 'Ferner können Kontaktdaten für den Tätigkeitsbericht so wie die Jahresberichterstattung verwendet werden.',
+    'category_ip' => 'IP Adresse ',
+    'purpose_ip' => 'Im Rahmen der Antragstellung wird die IP Adresse für die folgenden Zwecke erhoben: ',
+    'purpose_ip1' => 'Nutzung der Webseite',
+    'category_education' => 'Ausbildungsdaten (bspw. Abgeschlossene Ausbildungen, Qualifikationen) ',
+    'purpose_education' => 'Im Rahmen der Antragstellung für ein Stipendium werden die Ausbildungsdaten der Antragstellenden abgefragt. Zusätzlich können diese aus dem Lebenslauf der Antragstellenden ersichtlich werden. Die Daten dienen zu folgenden Zwecken: ',
+    'purpose_education1' => 'Evaluation des Antrags',
+    'category_family' => 'Familiendaten (bspw. Namen und Informationen der Kinder, Eltern oder Ehepartnern) ',
+    'purpose_family' => 'Im Rahmen der Antragstellung werden Daten bezüglich der Eltern, Kinder, Geschwister, Ehepartnern oder anderen verwandten Personen abgefragt. Dies dient zu folgenden Zwecken: ',
+    'purpose_family1' => 'Evaluation des Antrags ',
+    'purpose_family2' => 'Entscheid über die Finanzierungshilfe ',
+    'purpose_family3' => 'Überblick über die Lebenslage der Antragstellenden',
+    'category_finance' => 'Finanzdaten (bspw. Kontodaten, Angaben zum Vermögen, weitere Unterstützungen) ',
+    'purpose_finance' => 'Im Rahmen der Antragstellung werden Finanzdaten für die folgenden Zwecke erhoben: ',
+    'purpose_finance1' => 'Evaluation des Antrags ',
+    'purpose_finance2' => 'Auszahlung der Finanzierungshilfe',
+    'category_voluntary' => 'Freiwillig bereitgestellte Informationen',
+    'purpose_voluntary' => 'Im Rahmen der Antragstellung und Kontaktaufnahme können, zusätzlich zu den oben genannten Daten, freiwillig bereitgestellte Daten bearbeitet werden.',
+    'data_transfer' => 'Datenübermittlung an Dritte ',
+    'data_transfer_text' => 'Wir übermitteln keine Ihrer Daten an Drittpersonen oder in ein Drittland. Ihre Daten werden lediglich von den Mitgliedern der Eilinger Stiftung bearbeitet. ',
+    'cookies' => 'Cookies',
+    'cookies_text' => 'Um das Funktionieren der Webseite zu gewährleisten und die Verwendung möglichst benutzerfreundlich zu gestalten, werden auf der Webseite Cookies erhoben. Diese sind alle zwingend, also technisch für das Funktionieren der Webseite notwendig, und können daher nicht ausgeschaltet werden. Es werden keine Marketing oder Analyse Cookies erhoben.',
+    'cookie_name' => 'Name des Cookies',
+    'cookie_function' => 'Funktion',
+    'cookie_meaning' => 'Bededeutung',
+    'cookie_XSRF_function' => 'Wenn Sie eine Aktion auf einer Webseite ausführen, die eine Formularübermittlung oder eine AJAX-Anfrage beinhaltet, wird ein eindeutiges Token in das Formular oder die Anfrage eingebettet. Dieses Token wird vom Server generiert und ist nur für eine bestimmte Sitzung gültig. Wenn die Anfrage gesendet wird, überprüft der Server, ob das mitgesendete Token mit dem erwarteten Token übereinstimmt. Wenn dies der Fall ist, wird die Anfrage akzeptiert und die Aktion ausgeführt. Andernfalls wird die Anfrage abgelehnt.',
+    'cookie_XSRF_meaning' => '
+Ein XSRF-Token (Cross-Site Request Forgery) ist ein Sicherheitsmechanismus, der dazu dient, bestimmte Arten von Angriffen auf Webanwendungen zu verhindern. Diese Angriffe treten auf, wenn ein Angreifer eine Anfrage in Ihrem Namen an eine andere Website sendet, ohne dass Sie es wissen oder zustimmen. Das XSRF-Token ist eine Art "Geheimcode", der mit jedem Formular oder jeder Anfrage auf einer Webseite gesendet wird und dazu dient, sicherzustellen, dass die Anfrage tatsächlich von Ihnen stammt und nicht von einem böswilligen Angreifer.',
+    'cookie_session_function' => 'Die Funktion eines Session-Tokens in einer Webseite sind vielfältig:',
+    'cookie_session_function1' => 'Identifizierung der Benutzersitzung: Das Session-Token ermöglicht es dem Webserver, die Sitzung eines bestimmten Benutzers zu identifizieren. Wenn ein Benutzer sich bei einer Webseite anmeldet, wird ihm ein eindeutiges Session-Token zugewiesen, das für die Dauer seiner Sitzung gültig ist.',
+    'cookie_session_function2' => 'Aufrechterhaltung des Sitzungszustands: Das Session-Token wird verwendet, um den Zustand der Benutzersitzung aufrechtzuerhalten. Das bedeutet, dass Informationen über den angemeldeten Benutzer und andere relevante Daten während seiner Interaktion mit der Webseite gespeichert und abgerufen werden können, ohne dass der Benutzer sich wiederholt anmelden muss.',
+    'cookie_session_function3' => 'Authentifizierung und Autorisierung: Das Session-Token wird oft verwendet, um die Authentizität eines Benutzers zu überprüfen und sicherzustellen, dass er auf bestimmte Ressourcen oder Funktionen der Webseite zugreifen kann, für die er autorisiert ist.',
+    'cookie_session_function4' => 'Sicherheit: Session-Tokens müssen sicher sein, um zu verhindern, dass böswillige Angreifer sie stehlen oder manipulieren können, um unautorisierten Zugriff zu erlangen. Daher werden sie oft verschlüsselt und mit Sicherheitsmechanismen wie HTTPS übertragen.',
+    'cookie_session_function5' => 'Ablauf und Vernichtung: Session-Tokens haben normalerweise eine begrenzte Gültigkeitsdauer, nach der sie ablaufen und nicht mehr verwendet werden können. Dies hilft, die Sicherheit zu erhöhen und sicherzustellen, dass veraltete Sitzungen nicht mehr aktiv sind.',
+    'cookie_session_meaning1' => 'Ein Session-Token ist eine Zeichenfolge, die verwendet wird, um eine bestimmte Sitzung zwischen einem Benutzer und einer Webseite zu identifizieren und zu verwalten. Es dient dazu, den Zustand der Benutzersitzung aufrechtzuerhalten, während der Benutzer auf der Webseite navigiert und mit ihr interagiert.',
+    'cookie_session_meaning2' => 'Insgesamt ist das Session-Token ein wesentlicher Bestandteil der Webentwicklung, der dazu beiträgt, die Benutzererfahrung zu verbessern, die Sicherheit zu gewährleisten und die Interaktion zwischen Benutzern und Webseiten effizient zu verwalten.',
+    'rights' => 'Ihre Rechte',
+    'rights_text' => 'Das DSG stellt eine Reihe an Rechten der betroffenen Personen zur Verfügung. Sollten Sie eines dieser Rechte geltend machen wollen, wenden Sie sich bitte an info@EilingerStifung.ch. Die Ausübung eines der Rechte kann voraussetzen, dass Ihre Identität geprüft wird.',
+    'rights_text1' => 'Insbesondere haben die betroffenen Personen die folgenden Rechte: ',
+    'rights_text2' => 'Auskunftsrecht: Sie haben das Recht zu erfahren, ob der Verantwortliche Daten über Sie bearbeitet, und wenn ja, das Recht auf Zugang zu einer Kopie dieser Daten. Vorbehalten bleiben die Einschränkungen des Aufkunftsrechts gemäss Art. 26 DSG. ',
+    'rights_text3' => 'Recht auf Datenberichtigung: Sie haben jederzeit das Recht, ihre Daten berichtigen zu lassen. ',
+    'rights_text4' => 'Recht auf Datenherausgabe oder -übertragung: Sie haben das Recht auf die Herausgabe oder Übertragbarkeit Ihrer Daten in einem gängigen elektronischen Format. ',
+    'rights_text5' => 'Recht auf Löschung: Sie haben das Recht, ihre Daten zu löschen, solange die gesetzlichen Anforderungen erfüllt sind. Dies bezieht sich insbesondere darauf, dass die Daten nicht mehr für die Zwecke, für welche die Daten erhoben wurden,verwendet werden, zur Unterstützung von Rechtsstreitigkeiten oder zur Einhaltung gesetzlicher Aufbewahrungspflichten. ',
+    'rights_text6' => 'Recht auf Beschwerde: Sie haben das Recht, eine Beschwerde bei der zuständigen Aufsichtsbehörde einzulegen. Dies ist die für Ihren Wohnsitz, Ihren Arbeitsplatz oder den Ort der behaupteten Verletzung zuständigen Datenschutzbehörde. ',
+    'rights_text7' => 'Recht auf Rückruf der Einwilligung: Wenn eine Verarbeitung auf Ihrer Einwilligung beruht, können Sie das Recht haben, diese Einwilligung jederzeit zu widerrufen, ohne dass dies die Verarbeitung vor dem Widerruf der Einwilligung beeinträchtigt. ',
+    'change' => 'Änderungen der Datenschutzerklärung',
+    'change_text' => 'Der Verantwortliche behält das Recht, diese Datenschutzerklärung jederzeit ohne Vorankündigung zu ändern. ',
 ];
