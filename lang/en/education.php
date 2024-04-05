@@ -1,6 +1,7 @@
 <?php
 use \App\Enums\Education;
 use App\Enums\Grade;
+use App\Enums\InitialEducation;
 
 return [
     'education' => 'Education',
@@ -14,6 +15,12 @@ return [
     'duration_edu' => 'Regular training/study period',
     'start_semester' => 'Payment request from training year/semester',
     'noEducation' => 'No education data entered',
+    'initial_education' => 'Initial Education',
+
+    'initial_education_name' => [
+        InitialEducation::Yes->name => 'Yes',
+        InitialEducation::No->name => 'No',
+    ],
 
     'education_name' => [
         Education::Matura->name => 'High school diploma',

@@ -40,6 +40,7 @@ return [
     'emailInstUnique' => 'This email of your organization is already registered',
     'passwordRegexp' => 'The password must be at least 8 characters long and must contain at least 1 uppercase letter,
                     one lower case letter, one number and one special character',
+    'deleteAccountText' => 'Please note that the Eilinger Foundation may not be able to delete your data immediately. This is because we may still need it for internal policies, annual reporting, or other legal requirements. Once we no longer need your data, it will be permanently deleted from our servers. ',
 
     'salutation_name' => [
         Salutation::Divers->name => '--',

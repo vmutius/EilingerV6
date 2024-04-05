@@ -5,7 +5,7 @@
         </button>
     </h2>
     <div id="collapseEnclosure" class="accordion-collapse collapse">
-        @if ($education)
+        @if ($enclosure)
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-12">

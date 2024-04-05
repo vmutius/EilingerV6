@@ -17,7 +17,7 @@ class CreateSiblingsTable extends Migration
             $table->string('education', 255)->nullable();
             $table->year('graduation_year')->nullable();
             $table->string('place_of_residence', 500)->nullable();
-            $table->boolean('get_amount')->nullable();
+            $table->string('get_amount')->nullable();
             $table->string('support_site', 255)->nullable();
             $table->boolean('is_draft')->default(true);
             $table->timestamps();

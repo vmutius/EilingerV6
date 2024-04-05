@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\Grade;
 use App\Enums\Time;
+use App\Enums\InitialEducation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -31,6 +32,7 @@ class Education extends Model
         'begin_edu',
         'duration_edu',
         'start_semester',
+        'initial_education',
         'is_draft',
     ];
 
@@ -38,6 +40,7 @@ class Education extends Model
         'education' => \App\Enums\Education::class,
         'grade' => Grade::class,
         'time' => Time::class,
+        'inital_education' => InitialEducation::class,
     ];
 
     public function application()

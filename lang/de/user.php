@@ -40,6 +40,7 @@ return [
     'emailInstUnique' => 'Diese Email ihrer Organisation ist bereits registriert',
     'passwordRegexp' => 'Das Passwort muss mindestens 8 Zeichen lang sein und muss mindestens 1 Grossbuchstaben,
                     einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten',
+    'deleteAccountText' => 'Bitte beachten Sie, dass die Eilinger Stiftung Ihre Daten nicht umgehend löschen kann. Grund dafür ist, dass wir diese möglicherweise noch für interne Richtlinien, die Jahresberichterstattung oder sonstige rechtliche Anforderungen benötigen. Sobald wir Ihre Daten nicht mehr benötigen, werden diese permanent von unseren Servern gelöscht.',
 
     'salutation_name' => [
         Salutation::Divers->name => '--',

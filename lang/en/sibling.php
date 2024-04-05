@@ -16,6 +16,7 @@ return [
     'support_site' => 'Supporting office',
     'addSibling' => '+ Additional Sibling',
     'noSiblings' => 'No siblings entered',
+    'supportedSiteNeeded' => 'Please enter the supporting office from which you receive contributions',
 
     'get_amount_name' => [
         GetAmount::Yes->name => 'Yes',

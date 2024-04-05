@@ -19,7 +19,7 @@
                 <span class="text-danger">@error('siblings.'. $index .'.firstname'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-2">
-                <label class="form-label" for="birth_year">{{ __('sibling.birthday') }}</label>
+                <label class="form-label" for="birth_year">{{ __('sibling.birthyear') }}</label>
                 <input wire:model.lazy="siblings.{{ $index }}.birth_year" type="number" class="form-control"/>
                 <span class="text-danger">@error('siblings.'. $index .'.birth_year'){{ $message }}@enderror</span>
             </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="col-sm-2">
                 <label class="form-label" for="graduation_year">{{ __('sibling.graduation_year') }}</label>
-                <input wire:model.lazy="siblings.{{ $index }}.graduation_year" type="text" class="form-control"/>
+                <input wire:model.lazy="siblings.{{ $index }}.graduation_year" type="number" class="form-control"/>
                 <span class="text-danger">@error('siblings.'. $index .'.employer'){{ $message }}@enderror</span>
             </div>
             <div class="col-sm-2">

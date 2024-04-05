@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Antrag;
 use App\Enums\Education;
 use App\Enums\Grade;
 use App\Enums\Time;
+use App\Enums\InitialEducation;
 use App\Models\Education as EducationModel;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Validation\Rules\Enum;
@@ -26,6 +27,7 @@ class EducationForm extends Component
             'education.begin_edu' => 'required|date',
             'education.duration_edu' => 'required',
             'education.start_semester' => 'required',
+            'education.initial_education' => ['required', new Enum(InitialEducation::class)],
         ];
     }
     public function validationAttributes(): array

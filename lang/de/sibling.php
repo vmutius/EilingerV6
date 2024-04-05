@@ -16,6 +16,7 @@ return [
     'support_site' => 'Beziehende Stelle',
     'addSibling' => '+ Weitere Geschwister',
     'noSiblings' => 'Keine Geschwister eingetragen',
+    'supportedSiteNeeded' => 'Bitte geben sie die beziehende Stelle an, von der sie Beiträge erhalten',
 
     'get_amount_name' => [
         GetAmount::Yes->name => 'Ja',

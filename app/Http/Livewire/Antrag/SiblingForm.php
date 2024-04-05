@@ -22,7 +22,17 @@ class SiblingForm extends Component
             'siblings.*.graduation_year' => 'nullable',
             'siblings.*.place_of_residence' => 'nullable',
             'siblings.*.get_amount' => ['nullable',new Enum(GetAmount::class)],
-            'siblings.*.support_site' => 'nullable',
+            'siblings.*.support_site' => [
+                // Use a callback to define the condition for required_if
+                function ($attribute, $value, $fail) {
+                    $index = explode('.', $attribute)[1];
+                    $getAmountValue = $this->siblings[$index]['get_amount'] ?? null;
+
+                    if ($getAmountValue === GetAmount::Yes && empty($value)) {
+                        $fail(__('sibling.supportedSiteNeeded'));
+                    }
+                },
+            ],
         ];
     }
 

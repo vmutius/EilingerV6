@@ -9,6 +9,9 @@
             <div class="card-body">
                 <div class=row>
                     <div class="col-sm-4">
+                        <p>{{ __('education.initial_education') }}: {{ $education->initial_education }}</p>
+                    </div>
+                    <div class="col-sm-4">
                         <p>{{ __('education.education') }}: {{ $education->education }}</p>
                     </div>
                     <div class="col-sm-4">

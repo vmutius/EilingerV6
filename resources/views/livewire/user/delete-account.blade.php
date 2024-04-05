@@ -4,7 +4,7 @@
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="row">
                 <div class="mt-6">
-
+                    <p>{{  __('user.deleteAccountText')  }}</p>
                 </div>
 
                 <div class="modal" @if ($showModal) style="display:block" @endif>
@@ -21,12 +21,12 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
+                                    <p>{{  __('user.delAccountConfirmation')  }}</p>
+                                    <br />
                                     <label class="form-label" for="password">{{  __('user.password')  }} *</label>
                                     <input wire:model="current_password" type="password" class="form-control" />
                                     <span class="text-danger">@error('current_password'){{ $message }}@enderror</span>
-                                    <br />
-                                    {{  __('user.delAccountConfirmation')  }}
-                                    <br />
+
 
                                 </div>
                                 <div class="modal-footer">

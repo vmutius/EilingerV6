@@ -1,4 +1,7 @@
-@php use App\Enums\Education; @endphp
+@php
+    use App\Enums\Education;
+    use App\Enums\InitialEducation;
+@endphp
 <form wire:submit.prevent="saveEducation">
     <div class="content-header mb-3">
         <h3 class="mb-0">{{ __('education.education') }}</h3>
@@ -12,7 +15,18 @@
 
             <x-notification/>
 
-            <div class="col-sm-6">
+            <div class="col-sm-2">
+                <label class="form-label" for="name">{{ __('education.initial_education') }}? *</label>
+                <select wire:model.lazy="education.initial_education" name="initialEducation" class="form-select">
+                    <option hidden>{{  __('attributes.please_select')  }}</option>
+                    @foreach (InitialEducation::cases() as $inital)
+                        <option value="{{ $inital->value }}">{{ __('education.initial_education_name.' .$inital->name) }} </option>
+                    @endforeach
+                </select>
+                <span class="text-danger">@error('education.name'){{ $message }}@enderror</span>
+            </div>
+
+            <div class="col-sm-5">
                 <label class="form-label" for="education">{{ __('education.education') }} *</label>
                 <select wire:model.lazy="education.education" name="education" class="form-select">
                     <option hidden>{{  __('attributes.please_select')  }}</option>
@@ -23,7 +37,7 @@
                 <span class="text-danger">@error('education.education'){{ $message }}@enderror</span>
 
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-5">
                 <label class="form-label" for="name">{{ __('education.name') }} *</label>
                 <input wire:model.lazy="education.name" type="text" class="form-control"/>
                 <span class="text-danger">@error('education.name'){{ $message }}@enderror</span>
