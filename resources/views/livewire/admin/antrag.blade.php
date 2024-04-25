@@ -5,7 +5,7 @@
         <div class="shadow p-3 mb-5 bg-body rounded">
             <div class="accordion" id="AntragAdmin">
                 @include('partials.accAppl')
-                @if($user->type == 'nat')
+                @if($user->type == App\Enums\Types::nat)
                     @if($application->form==App\Enums\Form::Darlehen)
                         @include('partials.accUserNatDarlehen')
                     @else
@@ -33,7 +33,7 @@
                 @else
                     @include('partials.accCostDarlehen')
                 @endif
-                @if($user->type == 'nat')
+                @if($user->type == App\Enums\Types::nat)
                     @include('partials.accFinancing')
                 @else
                     @include('partials.accFinancingOrganisation')
@@ -41,7 +41,7 @@
                 @if($application->form==App\Enums\Form::Stipendium)
                     @include('partials.accEnclosure')
                 @else
-                    @if($user->type == 'nat')
+                    @if($user->type == App\Enums\Types::nat)
                         @include('partials.accEnclosureDarlehenPrivat')
                     @else
                         @include('partials.accEnclosureOrganisation')

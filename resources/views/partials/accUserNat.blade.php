@@ -23,6 +23,9 @@
                     <p>{{ __('user.email') }}: {{ $user->email }}</p>
                 </div>
                 <div class="col-sm-4">
+                    <p>{{ __('user.civil_status') }}: {{ $user->civil_status }}</p>
+                </div>
+                <div class="col-sm-4">
                     <p>{{ __('user.phone') }}: {{ $user->phone }}</p>
                 </div>
                 <div class="col-sm-4">

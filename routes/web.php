@@ -40,8 +40,8 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
         Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
         Route::post('login', [AuthenticatedSessionController::class, 'store']);
     });
-    //TODO: 'twofactor' muss hier und bei Admin wieder rein
-    Route::middleware(['auth', 'verified'])->group(function () {
+
+    Route::middleware(['auth', 'verified', 'twofactor'])->group(function () {
         Route::get('user/dashboard', App\Http\Livewire\User\Uebersicht::class)->name('user_dashboard');
         Route::get('user/antraege', App\Http\Livewire\User\Antraege::class)->name('user_antraege');
         Route::get('user/antrag/{application_id}', App\Http\Livewire\User\Antrag::class)->name('user_antrag');
@@ -55,7 +55,7 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'setLocale'], function () 
         //Route::delete('user/delete', App\Http\Livewire\User\DeleteAccount::class)->name('user_delete');
     });
 
-    Route::group(['middleware' => ['admin']], function () {
+    Route::group(['middleware' => ['admin', 'twofactor']], function () {
         Route::get('admin/dashboard', App\Http\Livewire\Admin\Uebersicht::class)->name('admin_dashboard');
         Route::get('admin/users', App\Http\Livewire\Admin\Users::class)->name('admin_users');
         Route::get('admin/antrag/{application_id}', App\Http\Livewire\Admin\Antrag::class)->name('admin_antrag');

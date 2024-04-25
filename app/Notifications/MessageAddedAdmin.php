@@ -38,13 +38,12 @@ class MessageAddedAdmin extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('Neue Nachricht zu Ihrem Antrag')
-            ->greeting('Guten Tag ')
-            ->line("Sie haben eine neue Nachricht zum ihren Antrag {$this->message->application->name}")
-            ->line("{$this->message->user->username} hat folgende Nachricht hinterlassen")
+            ->subject(__('notify.new_message'))
+            ->greeting(__('notify.greeting'))
+            ->line(__('notify.new_message_line1'). [$this->message->application->name])
+            ->line([$this->message->user->username] .  __('notify.new_message_line2'))
             ->line("Nachricht: {$this->message->body}")
-            ->action('Zur Nachricht', route('user_nachricht', ['application_id' => $this->message->application->id, 'locale' => app()->getLocale()]))
-            ->line('Thank you for using our application!');
+            ->action('Zur Nachricht', route('user_nachricht', ['application_id' => $this->message->application->id, 'locale' => app()->getLocale()]));
     }
 
     /**

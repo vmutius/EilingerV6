@@ -52,7 +52,7 @@
             </div>
             <div class="col-sm-2">
                 <label class="form-label" for="since">{{  __('parents.since')  }}</label>
-                <input wire:model.lazy="parents.{{ $index }}.since" type="text" class="form-control"/>
+                <input wire:model.lazy="parents.{{ $index }}.since" type="number" class="form-control"/>
                 <span class="text-danger">@error('parents.'. $index .'.since'){{ $message }}@enderror</span>
             </div>
 
