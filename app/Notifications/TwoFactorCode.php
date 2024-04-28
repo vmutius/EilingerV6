@@ -38,10 +38,11 @@ class TwoFactorCode extends Notification implements ShouldQueue
     public function toMail(User $notifiable): MailMessage
     {
         return (new MailMessage)
+            ->subject(__('notify.two_factor'))
             ->line(__('notify.two_factor_line1', ['code' => $notifiable->two_factor_code]))
-            ->action('Verify Here', route('verify.index', app()->getLocale()))
-            ->line('The code will expire in 10 minutes')
-            ->line('If you have not tried to login, ignore this message.');
+            ->action(__('notify.two_factor_action'), route('verify.index', app()->getLocale()))
+            ->line(__('notify.two_factor_line2'))
+            ->line(__('notify.two_factor_line3'));
     }
 
     /**

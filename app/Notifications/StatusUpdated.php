@@ -40,9 +40,9 @@ class StatusUpdated extends Notification implements ShouldQueue
         return (new MailMessage)
             ->subject(__('notify.new_status'))
             ->greeting(__('notify.greeting'))
-            ->line("Der Status ihres Gesuchs {$this->application->name} wurde geändert auf ")
+            ->line(__('notify.new_status_line1', ['application' => $this->application->name]))
             ->line(__('application.status_name.'.$this->application->appl_status->name))
-            ->action('Zum Gesuch', route('user_gesuch', ['application_id' => $this->application->id, 'locale' => app()->getLocale()]));
+            ->action(__('notify.new_status_action'), route('user_gesuch', ['application_id' => $this->application->id, 'locale' => app()->getLocale()]));
     }
 
     /**

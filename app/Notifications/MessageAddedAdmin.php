@@ -40,10 +40,10 @@ class MessageAddedAdmin extends Notification implements ShouldQueue
         return (new MailMessage)
             ->subject(__('notify.new_message'))
             ->greeting(__('notify.greeting'))
-            ->line(__('notify.new_message_line1'). [$this->message->application->name])
-            ->line([$this->message->user->username] .  __('notify.new_message_line2'))
-            ->line("Nachricht: {$this->message->body}")
-            ->action('Zur Nachricht', route('user_nachricht', ['application_id' => $this->message->application->id, 'locale' => app()->getLocale()]));
+            ->line(__('notify.new_message_line1', ['application'=>$this->message->application->name]))
+            ->line(__('notify.new_message_line2', ['user' => $this->message->user->username]))
+            ->line(__('notify.new_message_line3', ['message' => $this->message->body]))
+            ->action(__('notify.new_message_action'), route('user_nachricht', ['application_id' => $this->message->application->id, 'locale' => app()->getLocale()]));
     }
 
     /**
