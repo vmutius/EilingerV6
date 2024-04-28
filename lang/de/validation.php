@@ -121,6 +121,13 @@ return [
     */
 
     'attributes' => [
+        'siblings.*.birth_year' => 'Geburtsjahr des Geschwisters',
+        'siblings.*.lastname' => 'Nachname des Geschwisters',
+        'siblings.*.firstname' => 'Vorname des Geschwisters',
+        'parents.*.firstname' => 'Vorname des Elternteils',
+        'parents.*.lastname' => 'Nachname des Elternteil',
+        'parents.*.parent_type' => 'Elternteil',
+        'parents.*.birthday' => 'Geburtstag des Elternteils',
     ],
 
 ];

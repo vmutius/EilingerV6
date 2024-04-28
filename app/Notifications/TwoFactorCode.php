@@ -7,6 +7,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Log;
+
 
 class TwoFactorCode extends Notification implements ShouldQueue
 {
@@ -36,7 +38,7 @@ class TwoFactorCode extends Notification implements ShouldQueue
     public function toMail(User $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->line("Your two factor code is {$notifiable->two_factor_code}")
+            ->line(__('notify.two_factor_line1', ['code' => $notifiable->two_factor_code]))
             ->action('Verify Here', route('verify.index', app()->getLocale()))
             ->line('The code will expire in 10 minutes')
             ->line('If you have not tried to login, ignore this message.');

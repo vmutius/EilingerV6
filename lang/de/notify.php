@@ -9,4 +9,5 @@ return [
     'new_message_line2' => 'hat folgende Nachricht hinterlassen',
     'new_message_line3' => 'Nachricht:',
     'new_message_action' => 'Zur Nachricht',
+    'two_factor_line1' => 'Your two-factor code is :code.',
 ];

@@ -183,6 +183,13 @@ return [
     */
 
     'attributes' => [
+        'siblings.*.birth_year' => 'Year of birth of the sibling',
+        'siblings.*.lastname' => 'Sibling\'s last name',
+        'siblings.*.firstname' => 'sibling\'s first name',
+        'parents.*.firstname' => 'First name of the parent',
+        'parents.*.lastname' => 'Last name of the parent',
+        'parents.*.parent_type' => 'Parent type',
+        'parents.*.birthday' => 'Parent\'s birthday',
     ],
 
 ];

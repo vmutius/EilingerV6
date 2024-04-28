@@ -6,6 +6,7 @@ use App\Enums\JobType;
 use App\Enums\ParentType;
 use App\Models\Parents;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
@@ -16,10 +17,10 @@ class ParentForm extends Component
     protected function rules(): array
     {
         return [
-            'parents.*.firstname' => 'nullable',
-            'parents.*.parent_type' => ['nullable',new Enum(ParentType::class)],
-            'parents.*.lastname' => 'nullable',
-            'parents.*.birthday' => 'nullable',
+            'parents.*.firstname' => 'required',
+            'parents.*.parent_type' => ['required',new Enum(ParentType::class)],
+            'parents.*.lastname' => 'required',
+            'parents.*.birthday' => 'required',
             'parents.*.phone' => 'nullable',
             'parents.*.address' => 'nullable',
             'parents.*.plz_ort' => 'nullable',
@@ -34,11 +35,12 @@ class ParentForm extends Component
             'parents.*.death' => 'nullable',
         ];
     }
+
     public function validationAttributes()
     {
+        Log::info('Parents ValidationAttributes method called');
         return Lang::get('parents');
     }
-
 
     public function mount()
     {
@@ -48,6 +50,7 @@ class ParentForm extends Component
 
     public function saveParents()
     {
+        $this->validate();
         $this->parents->each(function ($parent) {
             $parent->is_draft = false;
             $parent->user_id = auth()->user()->id;

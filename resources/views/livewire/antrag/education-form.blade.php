@@ -23,7 +23,7 @@
                         <option value="{{ $inital->value }}">{{ __('education.initial_education_name.' .$inital->name) }} </option>
                     @endforeach
                 </select>
-                <span class="text-danger">@error('education.name'){{ $message }}@enderror</span>
+                <span class="text-danger">@error('education.initial_education'){{ $message }}@enderror</span>
             </div>
 
             <div class="col-sm-5">
