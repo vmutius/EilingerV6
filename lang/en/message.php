@@ -19,4 +19,5 @@ return [
     'saveReply' => 'Save Reply',
     'messageRequest' => 'Message for Request',
     'body' => 'Message',
+    'no_appl' => 'No requests or projects available',
 ];

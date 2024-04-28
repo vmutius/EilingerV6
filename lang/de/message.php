@@ -19,5 +19,6 @@ return [
     'saveReply' => 'Antwort speichern',
     'messageRequest' => 'Nachrichten für Gesuch',
     'body' => 'Nachricht',
+    'no_appl' => 'Keine Gesuche oder Projekte vorhanden',
 
 ];

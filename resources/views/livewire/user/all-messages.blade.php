@@ -32,7 +32,7 @@
                             <div class="card-body">
                                 <div class=row>
                                     <div class="col-sm-12">
-                                        <p>Keine Gesuche oder Projekte vorhanden</p>
+                                        <p>{{  __('message.no_appl')  }}</p>
                                     </div>
                                 </div>
                             </div>

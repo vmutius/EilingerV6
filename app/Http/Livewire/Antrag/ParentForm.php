@@ -38,7 +38,6 @@ class ParentForm extends Component
 
     public function validationAttributes()
     {
-        Log::info('Parents ValidationAttributes method called');
         return Lang::get('parents');
     }
 
